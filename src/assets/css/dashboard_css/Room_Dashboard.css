@@ -153,9 +153,13 @@
     #floor_selection_active p {
         font-size: large;
         font-weight: bold;
-        color: rgb(255, 255, 255);
-      
+        color: rgb(255, 255, 255); 
     }
+
+    #floor_selection_active img {
+        filter: invert(1);
+        }
+
    
 
 /* Room selection tiles*/
@@ -192,10 +196,12 @@
     justify-items: center;
     align-items: center;
     
-    background-color: rgb(50, 50, 50);
+    background-color: rgba(50, 50, 50, 0.85);
     text-decoration: none;
     
-    border-radius: 10px;
+    backdrop-filter: blur(25px);
+
+    border-radius: 25px;
     box-shadow: 
         -5px -5px 15px #5a5656, 
         5px 5px 15px #ffffff;

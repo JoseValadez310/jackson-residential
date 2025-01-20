@@ -11,6 +11,7 @@ import DirecTv from "../../components/controllers/DirecTv"
 import BluRay from "../../components/controllers/BluRay"
 import Kaleidescape from "../../components/controllers/Kaleidescape"
 
+// Music Page import 
 
 //CSS for Controllers
 
@@ -22,7 +23,7 @@ import "../../assets/css/page_css/sourceLayout.css"
 
 
 // Componenets 
-import Clock from "../../components/Clock"
+
 //import DateDisplay from "../../components/DateDisplay"
 // Logos
 
@@ -53,12 +54,11 @@ const FamilyRoom = () =>{
 ---------------------------------------------------------------------------- Basic information regarding the page
 */
     const roomName = "Family Room"
-    const returnLocation:string = "/FamilyRoom"
 /*
 ---------------------------------------------------------------------------- Room dashboard apps 
 */
-    const [roomApps, setRoomApps]         = useState(true) 
-    const [tvOptions, setTvOptions]       = useState(false)
+    const [roomApps, setRoomApps]         = useState(false) 
+    const [tvOptions, setTvOptions]       = useState(true)
     const [musicOption, setMusicOption]   = useState(false)
     const [lightsOption, setLightsOption] = useState(false)
 /*
@@ -613,33 +613,55 @@ const FamilyRoom = () =>{
 
         <div className="generic_room">
 
-            <Link to={ roomApps? "/RoomsDashboard" : returnLocation} onClick={() => {roomApp("RoomApps"),closeOutPowerOption}} > 
+
+       <div className="side_bar_nav">
+
+            <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
                 <button className="back_button" >
                     <img src={menu_button}/>
                 </button>
             </Link>  
+        
 
-
-
-         
-            {active_media?
-            
-                <button className="home_button" onClick={()=>powerMenu("menu")}>
-                    <img src={power}  />
-                </button>
-            
-            :
-                <Link to={"/"} className="home_button">
-                    <img src={home_button}/>
-                </Link>
-            }
-            
-         
-
-            <div className="generic_room_title">
-                    <h1 >{roomName}</h1>
-                    <p> <Clock/> </p>
+            <div className="nav">
+                    <button onClick={() => roomApp("TV")} className='btn_square' id={tvOptions? "floor_selection_active":"floor_selection_nonactive"}    style={{width:"4.5rem"}}>  <img src={TV}     style={{height:"50%"}}/> </button>
+                    <Link to={"/AudioDashboard"} className='btn_square' id={musicOption? "floor_selection_active":"floor_selection_nonactive"}  style={{width:"4.5rem"}}>  <img src={music}  style={{height:"50%"}} /> </Link>
+                    <button onClick={() => roomApp("Lights")}className='btn_square' id={lightsOption? "floor_selection_active":"floor_selection_nonactive"} style={{width:"4.5rem"}}>  <img src={lights} style={{height:"50%"}} /> </button>
             </div>
+            
+
+            <div className="nav_clock">
+                {active_media?
+                    <div className="room_home_corner">
+                        <button className="home_button" onClick={()=>powerMenu("menu")}>
+                            <img src={power}  />
+                        </button> 
+                    </div>
+                    :
+                    <div className="room_home_corner">
+                        <Link to={"/"} className="home_button">
+                            <img src={home_button}/>
+                        </Link>
+                    </div>
+                }
+            </div>
+
+       </div>
+
+       
+
+           
+
+
+
+         
+           
+            
+         
+
+
+            <h1 className="title_info"> {roomName}</h1>
+
 
 
            
@@ -720,7 +742,7 @@ const FamilyRoom = () =>{
                     <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
                         <div className={active_media? "media_off":"room_sources_container"}>
                             
-                            <div className="source_card" onClick={()=>playSource('media1')}>
+                            <div className="source_card" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
 
                                 <div className="img_container">
                                     <img src={bluRay} style={{height:"45%"}}/>
@@ -729,38 +751,38 @@ const FamilyRoom = () =>{
                                 <p>House</p>
                             </div>
 
-                            <div className="source_card" onClick={()=>playSource('media2')}>
+                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
                                 <div className="img_container">
-                                    <img src={appleTV} style={{filter:"invert(1)",height:"50%"}}/>
+                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
                                 </div>
 
                                 <p>His</p>
                             </div>
 
-                            <div className="source_card" onClick={()=>playSource('media3')}>
+                            <div className="source_card" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
                                 <div className="img_container">
-                                    <img src={appleTV} style={{filter:"invert(1)",height:"50%"}}/>
+                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
                                 </div>
 
                                 <p>Her</p>
                             </div>
 
-                            <div className="source_card" onClick={()=>playSource('media4')}>
+                            <div className="source_card" id= { media4? 'active_source' : 'not_active' } onClick={()=>playSource('media4')}>
                                 <div className="img_container">
-                                    <img src={appleTV} style={{filter:"invert(1)",height:"50%"}}/>
+                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
                                 </div>
 
                                 <p>House</p>
                             </div>
 
-                            <div className="source_card" onClick={()=>playSource('media5')}>
+                            <div className="source_card" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
                                 <div className="img_container">
                                     <img src={small_dtv} style={{height:"65%"}}  />
                                 </div>
                                 <p>DTV 1</p>
                             </div>
 
-                            <div className="source_card" onClick={()=>playSource('media6')}>
+                            <div className="source_card" id= { media6? 'active_source' : 'not_active' } onClick={()=>playSource('media6')}>
                                 <div className="img_container">
                                     <img src={small_dtv} style={{height:"65%"}}  />
                                 </div>
@@ -772,10 +794,10 @@ const FamilyRoom = () =>{
 
 
 
-                            <div className="source_card" onClick={()=>playSource('media7')}>
+                            <div className="source_card" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
 
                             <div className="img_container">
-                                <img src={roku} id="svg_white"  style={{height:"25%"}}/>
+                                <img src={roku} id="svg_white"style={{height:"35%"}}/>
                             </div>
                              
                                 <p>House</p>
@@ -926,7 +948,6 @@ const FamilyRoom = () =>{
 
 
                     <div className={musicOption? "music_app" : "media_off"} >
-                            <p> No music app - lunches to dashboard music page</p>
                     </div>
 
                     <div className={lightsOption? "lights_app" : "media_off"} >

@@ -153,7 +153,7 @@ body {
     }
 
   .home_button{
-    grid-column: 8/9;
+    grid-column: 12/13;
     grid-row: 1/2;
     width: 4rem;
     height: 3rem;
@@ -368,4 +368,9 @@ body {
 
 #svg_white{
   filter: invert(208%) sepia(56%) saturate(7%) hue-rotate(314deg) brightness(306%) contrast(87%);
+}
+
+#svg_gray{
+  filter: invert(208%) sepia(56%) saturate(7%) hue-rotate(314deg) brightness(306%) contrast(87%);
+
 }

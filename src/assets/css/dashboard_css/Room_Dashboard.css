@@ -1,0 +1,362 @@
+/*
+-------------------------- top nav 
+.floor_options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 2;
+    grid-column: 2/8;
+    background-color: transparent;
+    width: 100%;
+    height: 60%;
+    gap: 1rem;
+    animation: room_selection 1000ms;
+
+}
+
+    .display_tab{
+        width: 100%;
+        height: 100%;
+        border-radius:10px;
+    }
+
+        .display_tab button{
+            border: solid 2px rgb(30,30,30);
+            box-shadow: rgb(30, 30, 30) 0px 10px 10px -10px;
+        }
+
+            .display_tab p {
+                font-size: large;
+                font-weight: bold;
+                color: rgb(30,30,30);
+            }
+
+
+*/
+
+.rooms_dashboard{
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    justify-items: start;
+    align-items: center;
+    gap: 10px;
+
+    overflow: hidden;
+    max-height: 100vh; 
+    max-width: 100vw;  
+    box-sizing: border-box; 
+    padding: 1rem;
+}
+
+.title_info{
+    grid-row: 1;
+    grid-column: 2/13;
+    margin: 0%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    font-size: 3.75rem;
+    font-weight: bold;
+    color: rgb(50, 50, 50);
+  
+
+    
+
+        
+    
+   
+
+    animation: room_selection 1000ms;
+}
+
+.back_button{
+    animation: room_selection 1000ms;
+}
+
+
+
+
+
+
+
+
+
+/* Floor Selection Buttons */
+
+.side_bar_nav{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgb(50, 50, 50);
+    grid-row: 1/9;
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    justify-items: center;
+    align-items: center;
+    animation: room_selection 1000ms;
+}
+    .nav{
+        grid-row: 2/9;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;   
+        gap: 1.75rem;
+    }
+        .nav .btn_square{
+            height: 5rem;
+            width: 85%;
+        }
+            .nav .btn_square p{
+                font-weight: bold;
+                color: black; 
+                font-size: 1rem;
+                
+            }
+                
+    
+.nav_clock{
+    grid-row: 9/10;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+}
+    .nav_clock .clock{
+        font-size: 1rem;
+        padding: 0%;
+        left: 0px;
+      
+    }
+
+
+
+
+
+ /* active selection of floor button*/
+    .btn_square#floor_selection_active{
+        background-color: rgb(56, 87, 133);
+        box-shadow: none;
+        border: solid 2px rgb(255, 255, 255);
+    }
+
+    #floor_selection_active p {
+        font-size: large;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+      
+    }
+   
+
+/* Room selection tiles*/
+
+.room_selection_options{
+    grid-column: 2/13;
+    grid-row: 2/8;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+
+    gap: 1.25rem;
+   
+    border-radius: 10px;
+    animation: room_selection 1000ms;
+   
+
+}
+
+
+.room_card{
+    height: 15rem;
+    width: 15rem;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+    
+    background-color: rgb(50, 50, 50);
+    text-decoration: none;
+    
+    border-radius: 10px;
+    box-shadow: 
+        -5px -5px 15px #5a5656, 
+        5px 5px 15px #ffffff;
+  }
+    .test{
+        grid-column: 1/4;
+        grid-row: 1/4;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .room_card p{
+        font-size: 2rem;
+        grid-column: 1/4;
+        grid-row: 2/3;
+        font-size: 1rem;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        width: 80%;
+        border-bottom:solid 1px gray ;
+    }
+
+    .icon_preview{
+        grid-column: 1/4;
+        grid-row: 3/4;
+
+        gap: .5rem;
+        padding-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        width: 100%;
+        height: 100%;
+
+       
+    }
+        .icon_preview{
+            filter: invert(1);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Animation */
+ 
+ @keyframes tile-load {
+
+    0%{
+
+    
+        opacity: 0;
+    }
+
+    100%{
+
+        opacity: 1;
+
+
+    }
+
+}           
+
+
+
+@keyframes room_selection1 {
+
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes room_selection {
+
+    0%{
+        opacity: 0;
+        
+    }
+
+
+    100%{
+        
+         opacity: 1;
+    }
+
+}
+
+@media 
+only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait) {
+
+    .title_info{
+        grid-row: 1;
+        grid-column: 3/9;
+        font-size: 2rem;
+    }
+
+    .floor_options{
+        grid-column: 1/9;
+        width: 95%;
+    }
+
+    .room_selection_options{
+        grid-column: 1/9;
+        width: 95%;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+
+}
+
+
+    @media screen  and (orientation: portrait) {
+
+
+        .title_info{
+            grid-column: 2/8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floor_options button{
+            height: 4.25rem;
+
+        }
+        .room_selection_options{
+            grid-column: 1/9;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3, 1fr) ;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }

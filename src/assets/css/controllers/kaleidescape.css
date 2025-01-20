@@ -1,0 +1,577 @@
+/***** iF media_off is active, the controller should not display  *******/
+
+.media_off#kaleidescape_controller{
+    display: none;
+}
+
+
+/***** Start of controller CSS *******/
+#kaleidescape_controller{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+ .kaleidescape_controller_movement{
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/********* Controller related CSS**********/
+
+
+
+
+
+/*********** Side controls 1***********/
+
+ .kaleidescape_controller_controls{
+    grid-column: 1/2;
+    grid-row: 1;
+
+    width: 95%;
+    height: 90%;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr) ;
+    grid-template-rows: repeat(3,1fr) ;
+    justify-items: center;
+    align-items: center;
+
+    box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;  
+    border-radius: 20px;  
+
+}
+
+
+.kaleidescape_controller_controls .transport_button p {
+    font-size: 1.35rem;
+}
+
+
+/*********** Side controls 2***********/
+
+.kaleidescape_controller_controls_2{
+    box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;    
+    border-radius: 20px;  
+
+    grid-column: 3;
+    grid-row: 1;
+
+    width: 95%;
+    height: 90%;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr) ;
+    grid-template-rows: repeat(3,1fr) ;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.kaleidescape_controller_controls_2 .channel_container{
+    grid-column: 3;
+    grid-row: 1/5;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+    .channel_container button{
+       
+        width: 100%;
+        z-index: 2;
+        border-radius: 20px;
+        border: none;
+    }
+
+
+    .channel_container button:active{
+        animation: highlight_background_controller 100ms;
+     } 
+        .channel_container button img{
+            height: 70%;
+        }
+ 
+
+.kaleidescape_controller_controls_2 .transport_button p {
+    font-size: 1.35rem;
+}
+
+
+
+
+@media (orientation: portrait) {
+        
+    #kaleidescape_controller{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        align-items: center;
+    }
+    
+    .kaleidescape_controller_movement{
+        grid-column: 3/5;
+        grid-row:1/3;
+    }
+
+    .kaleidescape_controller_controls{
+        grid-column: 1/3;
+        grid-row: 2;
+        width: 100%;
+        height: 100%;
+    }
+  
+    .kaleidescape_controller_controls_2{
+        grid-column: 1/3;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
+/***************** only for ipad pro**********************/
+
+@media screen and (max-width: 1024px) and (max-height: 1366px) and (orientation: portrait){
+
+   
+    .kaleidescape_controller_controls, .kaleidescape_controller_controls_2{
+        width: 85%;
+    }
+   
+    .kaleidescape_controller_controls .transport_button p {
+        font-size: .9rem;
+    }
+           
+    .kaleidescape_controller_controls_2 .transport_button p {
+        font-size: .9rem;
+    }
+
+    .kaleidescape_controller_controls_2 .channel_container {
+        height: 50px;
+    }
+        .channel_container h2{
+            margin: 0%;
+        }
+        
+    }
+    
+    .kaleidescape_controller_controls_2{
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+
+
+/**********************  Crestron Tablet *********************************/
+@media screen and (max-width: 1300px) and (max-height: 950px) and (orientation: landscape){
+
+    .kaleidescape_controller_controls .transport_button p {
+        font-size: .9rem;
+    }
+           
+    .kaleidescape_controller_controls_2 .transport_button p {
+        font-size: .9rem;
+    }
+
+    .kaleidescape_controller_controls_2 .channel_container {
+       
+    }
+        .channel_container h2{
+            margin: 0%;
+        }
+        
+    }
+
+
+
+
+@media screen and (max-width: 950px) and (max-height: 1300px) and (orientation: portrait){
+
+    .kaleidescape_controller_controls, .kaleidescape_controller_controls_2{
+        width: 85%;
+    }
+   
+    .kaleidescape_controller_controls .transport_button p {
+        font-size: .9rem;
+    }
+           
+    .kaleidescape_controller_controls_2 .transport_button p {
+        font-size: .9rem;
+    }
+
+    .kaleidescape_controller_controls_2 .channel_container {
+        height: 50px;
+    }
+        .channel_container h2{
+            margin: 0%;
+        }
+        
+    }
+
+/**********************  Ipad Screen specs *********************************/
+@media screen and (max-width: 1024px) and (max-height: 768px) and (orientation: landscape){
+
+    .kaleidescape_controller_controls .transport_button p {
+        font-size: .9rem;
+    }
+           
+    .kaleidescape_controller_controls_2 .transport_button p {
+        font-size: .9rem;
+    }
+
+    .kaleidescape_controller_controls_2 .channel_container {
+       width: 90%;
+    }
+        .channel_container h2{
+            margin: 0%;
+        }
+        
+    }
+    
+@media screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait){
+
+        .kaleidescape_controller_controls, .kaleidescape_controller_controls_2{
+            width: 85%;
+        }
+       
+        .kaleidescape_controller_controls .transport_button p {
+            font-size: .9rem;
+        }
+               
+        .kaleidescape_controller_controls_2 .transport_button p {
+            font-size: .9rem;
+        }
+    
+        .kaleidescape_controller_controls_2 .channel_container {
+            height: 50px;
+        }
+            .channel_container h2{
+                margin: 0%;
+            }
+            
+        }
+
+
+
+
+
+.keyboard_off{
+
+    animation: app-load 800ms;
+    display: none;
+}
+
+
+
+  .keyboard_page{
+
+ 
+
+    grid-column: 1/15;
+    grid-row: 2/10;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+
+    align-items: center;
+    justify-items: center;
+
+    background-color: rgb(41, 41, 41);
+
+  }     
+    
+     
+
+    .keyboard{
+        grid-column: 1/8;
+        grid-row: 1/8;
+        height: 60%;
+        width: 80%;
+        border-radius: 20px;
+       
+
+        display: grid;
+
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        justify-items: center;
+        align-items: center;
+
+     gap: 10px;
+      
+
+    }
+
+        .keyboard .transport_button{
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border-radius: 15px;
+            border: 2px solid grey;
+            color: white;
+
+            background-color: rgb(30, 30, 30);
+
+        }
+        .keyboard .transport_button p{
+            font-size: 200%;
+        }
+
+
+            
+
+        /***************** Keyboard section ***********************/
+
+            #Q{
+                grid-column: 2/3 ;
+                grid-row: 1;
+                width: 105%;
+
+                
+            }
+            
+            #W{
+                grid-column: 3/4 ;
+                grid-row: 1;
+                width: 105%;
+            }
+
+            
+            #E{
+                grid-column: 4/5 ;
+                grid-row: 1;
+                width: 105%;
+            }
+            
+            #R{
+                grid-column: 5/6 ;
+                grid-row: 1;
+                width: 105%;
+            }
+            
+            #T{
+                grid-column: 6/7 ;
+                grid-row: 1;
+                width: 105%;
+            }
+            
+            #Y{
+                grid-column: 7/8 ;
+                grid-row: 1;
+                width: 105%;
+            }
+            
+            #U{
+                grid-column: 8/9 ;
+                grid-row: 1;
+                width: 105%;
+            }
+            
+            #I{
+                grid-column: 9/10 ;
+                grid-row: 1;
+                width: 105%;
+            }
+            
+            #O{
+                grid-column: 10/11 ;
+                grid-row: 1;
+                width: 105%;
+            }
+            
+            #P{
+                grid-column: 11/12 ;
+                grid-row: 1;
+                width: 105%;
+            }
+
+
+
+
+            
+            #A{
+                grid-column: 2/4 ;
+                grid-row: 2;
+                width: 50%;
+                
+            }
+            
+            #S{
+                grid-column: 3/5 ;
+                grid-row: 2;
+                width: 50%;
+            }
+
+            
+            #D{
+                grid-column: 4/6 ;
+                grid-row: 2;
+                width: 50%;
+            }
+            
+            #F{
+                grid-column: 5/7 ;
+                grid-row: 2;
+                width: 50%;
+            }
+            
+            #G{
+                grid-column: 6/8 ;
+                grid-row: 2;
+                width: 50%;
+            }
+            
+            #H{
+                grid-column: 7/9 ;
+                grid-row: 2;
+                width: 50%;
+            }
+            
+            #J{
+                grid-column: 8/10 ;
+                grid-row: 2;
+                width: 50%;
+            }
+            
+            #K{
+                grid-column: 9/11 ;
+                grid-row: 2;
+                width: 50%;
+            }
+            
+            #L{
+                grid-column: 10/12 ;
+                grid-row: 2;
+                width: 50%;
+            }
+
+
+
+            #num, #letter{
+                grid-column: 1/4 ;
+                grid-row: 3;
+                width: 65%;   
+            }
+
+
+
+
+
+
+
+            #Z{
+                grid-column: 3/5 ;
+                grid-row: 3;
+                width: 50%;
+            }
+            
+            #X{
+                grid-column: 4/6 ;
+                grid-row: 3;
+                width: 50%;
+            }
+
+            
+            #C{
+                grid-column: 5/7 ;
+                grid-row: 3;
+                width: 50%;
+            }
+            
+            #V{
+                grid-column: 6/8 ;
+                grid-row: 3;
+                width: 50%;
+            }
+            
+            #B{
+                grid-column: 7/9 ;
+                grid-row: 3;
+                width: 50%;
+            }
+            
+            #N{
+                grid-column: 8/10 ;
+                grid-row: 3;
+                width: 50%;
+            }
+            
+            #M{
+                grid-column: 9/11 ;
+                grid-row: 3;
+                width: 50%;
+            }
+            
+            #backspace{
+                grid-column: 10/13 ;
+                grid-row: 3;
+                width: 65%; 
+            }
+
+
+
+
+
+
+
+
+            #clear{
+                grid-column: 2/4 ;
+                grid-row: 4;
+            }
+            
+            #space{
+                grid-column: 4/10 ;
+                grid-row: 4;
+            }
+            #enter{
+                grid-column: 10/12 ;
+                grid-row: 4;
+
+            }
+            
+            
+         
+            
+               
+
+  #hide_current_source{
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+
+  @keyframes app-load-reverse {
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+  }

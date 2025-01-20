@@ -1,0 +1,141 @@
+zones
+
+    1    Backyard 
+    2    basement
+    3    breaskfast 
+    4    bar and library 
+    5    dining 
+    6    family room 
+    7    fpyer 
+    8    kids room 
+    9    kitvhen 
+    10   living room 
+    11   master bed 
+    12   master bath 
+    13   office and game 
+
+
+
+
+
+
+    zone 1 lights   
+        - Hanging 
+        - Sconces
+        - Flood lights 
+        - Side lights 
+        - Planter 
+        - Scene 6 
+        - Scene 7
+
+    zone 2 lights   
+        - Media 
+        - playroom
+        - gym 
+        - hall
+        - stairs
+        - Scene 6 
+        - Scene 7
+
+    zone 3 lights   
+        - breakfast 
+        - Chandelier
+        - Cove
+        - down lights 
+        - area off
+        - Scene 6 
+        - Scene 7
+
+    zone 4 lights   
+        - bar downs 
+        - Cove cabinet
+        - library downs
+        - library sconces
+        - hallway
+        - Scene 6 
+        - Scene 7
+    
+    zone 5 lights   
+        - downlights 
+        - Chandelier
+        - cabinet
+        - butler sink
+        - dine hall
+        - Scene 6 
+        - Scene 7
+
+    zone 6 lights   
+        - downlights 
+        - center
+        - cabinet
+        - library hall
+        - vaulted hall
+        - Scene 6 
+        - Scene 7
+
+    zone 7 lights   
+        - front sconces 
+        - front Chandelier
+        - int Chandelier
+        - party
+        - nitche
+        - Scene 6 
+        - Scene 7
+
+    zone 8 lights   
+        - madison 
+        - logan
+        - hudson
+        - top hall
+        - kids hal
+        - Scene 6 
+        - Scene 7
+        - Scene 8 
+        - Scene 9
+
+    zone 9 lights   
+        - downlights 
+        - sink
+        - under cab
+        - desk
+        - Chandelier
+        - Scene 6
+
+    zone 10 lights   
+        - living 
+        - perimiter
+        - Chandelier
+        - downlights
+        - sconces
+        - Scene 6 
+        - Scene 7
+
+    zone 11 lights   
+        - center 
+        - shower
+        - vanities
+        - Chandelier
+        - bath hall
+        - Scene 6 
+        - Scene 7
+        - Scene 8
+
+    zone 12 lights   
+        - center 
+        - perimiter
+        - balcony
+        - kids hall
+        - bath hall
+        - top hall
+        - Scene 6
+        - Scene 7
+
+    zone 13 lights   
+        - office 
+        - game downs
+        - gamew balcony
+        - Chandelier
+        - top hall 
+        - kids hall
+        - Scene 6
+        - Scene 7

@@ -1,0 +1,252 @@
+
+.lights_app{
+    grid-column: 1/9;
+    grid-row: 3/9;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+
+}
+    .lights_app button:active{
+        background-color: rgb(255, 255, 255);
+    }
+
+/****** lighting_short_cut ******/
+    .lighting_short_cut{
+        position: relative;
+        z-index: 1;
+        grid-column: 2/5;
+        grid-row: 5/5;
+        width: 50%;
+        height: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+        backdrop-filter: blur(25px);
+        overflow: hidden;
+        animation: light-load 1500ms;
+
+    }
+        .lighting_short_cut::before{
+            content: '';
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(30, 30, 30); 
+            opacity: .5; 
+            z-index: 0; 
+            
+        }
+ 
+        .lighting_action{
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+            .lighting_action button{
+                height: 4rem;
+                width: 40%; 
+                border-radius: 10px;
+                background-color:  rgb(201, 198, 198);   
+                border: none;
+            }   
+                .lighting_action p{
+                  color: black;
+                  font-weight: 300;
+                  font-size: 1.55rem;
+                }
+
+/****** light_container_switch ******/
+
+
+.light_container_switch{
+    position: relative;
+    z-index: 1;
+
+    border-radius: 15px;
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(1,1fr);
+
+    height: 100%;
+    width:  100%;
+
+    justify-items: center;
+    align-items: center;
+   
+    backdrop-filter: blur(25px);
+    overflow: hidden;
+    
+    animation: light-load 1500ms;
+}
+    .light_container_switch::before{
+        content: '';
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(187, 186, 186); 
+        opacity: .5; 
+        z-index: 0; 
+    }
+
+    .light_indicator{
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+        .light_icon_off{
+            border: none;
+            background-color: rgb(0, 0, 0);
+            border-radius: 100%;
+            height: 5rem;
+            width: 5rem;    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .light_icon_off img{
+                height: 65%;
+                filter: invert(1);
+            }
+
+        .light_icon_on{
+            border: none;
+            background-color: rgb(234, 236, 117);
+            border-radius: 100%;
+            height: 5rem;
+            width: 5rem;    
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }    
+            .light_icon_on img{
+                height: 65%;
+                filter: invert(0);
+            }
+
+            
+
+.light_container_switch_tile{
+    grid-column: 2/4;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: rgb(30,30,30);
+    font-weight: bolder;
+    font-size: 2rem;
+    z-index: 2;
+}
+    .light_name{
+        margin-right: 1rem;
+    }
+    .light_name_status_on{
+        font-size: 1.45rem;
+        color: rgb(234, 236, 117);
+    }
+    .light_name_status_off{
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: rgb(3, 0, 0);
+    }
+
+
+.light_container_switch_light_off{
+    grid-column: 4/5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 90%; 
+    border-radius: 10px;
+    background-color: rgb(201, 198, 198);
+    border:none;
+    z-index: 2;
+}
+    .light_container_switch_light_off p{
+        font-size: 1.75rem;
+        color: rgb(30,30,30);
+    }
+    .light_container_switch_light_off img{
+        height: 65%;
+        width: 65%;
+    }
+.light_container_switch_light_on{
+    grid-column: 5/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 90%; 
+    border-radius: 10px;
+    background-color:  rgb(201, 198, 198);   
+    border:none;
+    z-index: 2;
+}
+    .light_container_switch_light_on p{
+        font-size: 1.75rem;
+        color: rgb(30,30,30);
+    }
+        .light_container_switch_light_on img{
+        height: 65%;
+        width: 65%;
+    }
+
+
+
+
+
+
+
+
+/****Family Room*****/
+
+#light_1{
+    grid-row: 1;
+    grid-column: 2/5;
+}
+#light_2{
+    grid-row: 2;
+    grid-column:2/5;
+}
+#light_3{
+    grid-row: 3;
+    grid-column:2/5;
+}
+#light_4{
+    grid-row: 4;
+    grid-column:2/5;
+}
+
+@keyframes light-load {
+
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+
+    }
+}
+

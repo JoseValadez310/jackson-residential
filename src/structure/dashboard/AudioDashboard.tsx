@@ -516,8 +516,8 @@ const MediaServerWebSocket: React.FC = () => {
       <div className='audio_dashboard'>
 
     
-        <div style={{gridColumn:"1/2", gridRow:"1/2", display:"flex", justifyContent:"center", alignItems:"center", width:'100%', height:'100%'}}> 
-          <button  className="back_button"  id="menu_button"  onClick={() => navigate(-1)}>
+        <div  style={{gridColumn:"1/2", gridRow:"1/2", display:"flex", justifyContent:"center", alignItems:"center", width:'100%', height:'100%'}}> 
+          <button className="home_button" onClick={() => navigate(-1)} style={{zIndex:"10"}}>
             <img 
               className='back_button_image' 
               src={backbutton} 
@@ -569,27 +569,28 @@ const MediaServerWebSocket: React.FC = () => {
         <div className='playback_controls'>
           <button 
             onClick={toggleShuffle} 
-            className={currentStatus.shuffle ? 'transport_button_active' : 'transport_button'}
+            className={currentStatus.shuffle ? 'transport_button_active' : 'btn_circle'}
           >
-            <img src={shuffle} alt="shuffle" />
+            <img className='btn_image' src={shuffle} alt="shuffle" />
           </button>
-          <button onClick={skipPrevious} className='transport_button'>
-            <img src={skip} style={{transform:'rotate(180deg)'}} alt="previous" />
+          <button onClick={skipPrevious} className='btn_circle'>
+            <img  className='btn_image' src={skip} style={{transform:'rotate(180deg)'}} alt="previous" />
           </button>
-          <button onClick={togglePlayPause} className='transport_button'>
+          <button onClick={togglePlayPause} className='btn_circle'>
             <img 
+             className='btn_image'
               src={currentStatus.playState === 'Playing' ? pasue : play} 
               alt="play/pause" 
             />
           </button>
-          <button onClick={skipNext} className='transport_button'>
-            <img src={skip} alt="next" />
+          <button onClick={skipNext} className='btn_circle'>
+            <img className='btn_image' src={skip} alt="next" />
           </button>
           <button 
             onClick={toggleRepeat} 
-            className={currentStatus.repeat ? 'transport_button_active' : 'transport_button'}
+            className={currentStatus.repeat ? 'transport_button_active' : 'btn_circle'}
           >
-            <img src={repeat} className='flip_image' alt="repeat"/>
+            <img className='btn_image' src={repeat} alt="repeat" style={{transform:"scaleX(-1)"}}/>
           </button>
         </div>
 
@@ -613,7 +614,7 @@ const MediaServerWebSocket: React.FC = () => {
 
         <div className='music_button_container'>
           <button 
-            className="music_button" 
+            className="home_button" 
             onClick={() => {
               console.log("[music_button] Toggling browser menu");
               if (!isBrowseMenuVisible) {
@@ -682,7 +683,7 @@ const MediaServerWebSocket: React.FC = () => {
         <div className="volume_controls">
           <button 
             onClick={muteVolume} 
-            className={currentStatus.mute === "True" ? 'transport_button_active' : 'transport_button'}
+            className={currentStatus.mute === "True" ? 'transport_button_active' : 'btn_circle'}
           >
             <p style={{fontSize:"16px"}}>Mute</p>
           </button>
@@ -732,20 +733,20 @@ const MediaServerWebSocket: React.FC = () => {
               <div>
                 <button
                   onClick={() => handleQuestionAnswer("Artist Name")}
-                  className='transport_button'
+                  className='btn_circle'
                 >
                   Artist
                 </button>
                 <button
                   onClick={() => handleQuestionAnswer("Song Name")}
-                  className='transport_button' 
+                  className='btn_circle' 
                   style={{ marginLeft: "1rem" }}
                 >
                   Song
                 </button>
                 <button
                   onClick={() => handleQuestionAnswer("Cancel")}
-                  className='transport_button' 
+                  className='btn_circle' 
                   style={{ marginLeft: "1rem" }}
                 >
                   Cancel

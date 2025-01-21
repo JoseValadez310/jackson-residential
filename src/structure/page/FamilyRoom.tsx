@@ -614,7 +614,7 @@ const FamilyRoom = () =>{
         <div className="generic_room">
 
 
-       <div className="side_bar_nav">
+       <div className="nav_container">
 
             <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
                 <button className="back_button" >
@@ -807,60 +807,60 @@ const FamilyRoom = () =>{
                 
                         <div className={active_media? "controller_layout": "media_off"}>
 
-                            <button className="controller_layout_back_button" onClick = {display_tile}>
+                            <button id="controller_layout_back_button"  onClick = {display_tile}>
                                 
                                 <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
 
                             </button>
 
                             <div className="logo_display">
-                                <div className={media1? "sonos_header_logo":"media_off"}>
+                                <div className={media1? "dtv_header_logo":"media_off"}>
                                     <img src={bluRay} style={{height:"4rem"}} alt="" />
                                 </div>
 
                                 <div className={media2? "sonos_header_logo":"media_off"}>
-                                  <img src={appleTV} alt="" />
+                                  <img src={appleTV} id="svg_gray"  alt="" />
                                   <p className="user_title_controller"> His</p>
                                 </div>
 
                                 <div className={media3? "dtv_header_logo":"media_off"}>
                                
-                                <img src={appleTV} alt="" />
+                                <img src={appleTV} id="svg_gray"  alt="" />
                                 <p className="user_title_controller"> Hers</p>
                                 </div>
 
                                 <div className={media4? "dtv_header_logo":"media_off"}>
-                               
-                                    <p className="user_title_controller"> Camera</p>
+                                <img src={appleTV} id="svg_gray"  alt="" />
+                                    <p className="user_title_controller"> House </p>
 
                                 </div>
 
                                 <div className={media5? "dtv_header_logo":"media_off"}>
                                   
-                                <img src={direcTv} style={{height:"2rem"}} alt="" />
+                                <img src={direcTv} style={{height:"2rem"}} id="svg_gray"  alt="" />
                                 <p className="user_title_controller">  His</p>
                                 </div>
 
-                                <div className={media6? "apple_tv_header_logo":"media_off"}>
-                                <img src={direcTv} style={{height:"2rem"}} alt="" />
+                                <div className={media6? "dtv_header_logo":"media_off"}>
+                                <   img src={direcTv} style={{height:"2rem"}} id="svg_gray" alt="" />
                                     <p className="user_title_controller">  Hers</p>
                                 </div>
 
-                                <div className={media7? "apple_tv_header_logo":"media_off"}>
-                               
-                                    <p className="user_title_controller"> Roku </p>
+                                <div className={media7? "dtv_header_logo":"media_off"}>
+                                    <img src={roku}  id="svg_gray"  style={{height:"2rem"}} alt="" />
+                                 
                                 </div>
 
-                                <div className={media8? "apple_tv_header_logo":"media_off"}>
+                                <div className={media8? "dtv_header_logo":"media_off"}>
                                   
-                                    <p className="user_title_controller"> Steve </p>
+                                    <p className="user_title_controller">   </p>
                                 </div>
 
 
                     
                             </div>
 
-                            <button className={media2 ||media3? "transport_button": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
+                            <button className={media2 ||media3? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
                                 <p> REBOOT </p>
                             </button>
 
@@ -882,7 +882,7 @@ const FamilyRoom = () =>{
 
 
                                 <div className={media_4} id="apple_tv_controller">
-                                    <p>Camera</p>
+                                    < AppleTv />
                                 </div>
 
 

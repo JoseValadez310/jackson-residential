@@ -33,51 +33,60 @@
     animation:controller-load 1000ms;
 }
     .time_date_info p{
-        color: rgb(30,30,30);
+        color: rgb(255, 255, 255);
     }
 
 
 .dashboard_container{
     grid-column:2/8 ;
     grid-row: 4/7;
- 
     width: 100%;
-    height: 90%;
-
+    height: 75%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 1fr;
-    
     overflow: hidden;
-
     animation: controller-load 1000ms;
     border-radius: 25px;
-    background-color: white;
-
+    box-shadow: 
+    -3px -3px 10px #5a5656, 
+    3px 3px 10px #ffffff8f;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(25px);
     }
-        .card_container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-
-            height: 100%;
+        .dashboard_container::before{
+            content: " ";
+            position: absolute;
+            top: 0;
+            bottom: 0;
             width: 100%;
-            
-            overflow: hidden;
+            height: 100%;
+            background-color: rgb(70, 70, 70);
+            opacity: 0.65;
+            z-index: 0;
+            border-radius: 20px;
         }
-            /*Edit card container image and title*/
-            .card_image{
-                height: 40%;
-
+            .card_container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
             }
-                .card_title{
-                    padding: 0%;
-                    margin: 0%;
-                    font-size: 1.75rem;
-                    font-weight: light;
-                    color: rgb(30,30,30);
+                .card_image{
+                    height: 35%;
+                    filter: invert(1);
                 }
+                    .card_title{
+                        padding: 0%;
+                        margin: 0%;
+                        font-size: 1.75rem;
+                        font-weight: light;
+                        color: rgb(255, 255, 255);
+                    }
        
       
             

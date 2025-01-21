@@ -86,27 +86,34 @@ body {
     margin: 0%;
     height: 100vh;
     width: 100%;
-    background-image: url('../images/backgrounds/sumner-mahaffey-7Y0NshQLohk-unsplash.jpg');
-    /*
-    background-image: url("../images/backgrounds/(s) og.jpg") ;
+   
+
+    background-image: url('../images/backgrounds/birmingham-museums-trust-g-DSjyFFcXE-unsplash.jpg');
+
+     /*
+      background-image: url('../images/backgrounds/laurianne-huggins-AeT8VR7qss0-unsplash.jpg');
+      background-image: url('../images/backgrounds/mostafa-meraji-fUex6n_txNw-unsplash.jpg');
+      background-image: url('../images/backgrounds/pawel-czerwinski-bN8UPda2xFY-unsplash.jpg');
+      background-image: url('../images/backgrounds/alan-scales-1_WMZARl81c-unsplash.jpg');
+      background-image: url('../images/backgrounds/birmingham-museums-trust-g-DSjyFFcXE-unsplash.jpg');
+      background-image: url('../images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg');
+
     
     
     overflow: hidden;
-    background-image: url("../images/backgrounds/apple-art-2a-2x1.webp");
-    background-image: url("../images/backgrounds/manhattan-beach-1920-1080.webp");  */
+    */
     background-repeat: no-repeat;
     background-size:cover;    
-    background-color: #c2c2c2;
-   
+    background-color: #dbdbdb;
     -webkit-tap-highlight-color:transparent;
 
   }
   
     h1, h2, h3, h4, h5, h6 {
-        font-style: normal;
+        font-style: 100;
         color:rgba(255, 255, 255);
         font-family: 'Chillax-Medium';
-    }
+      }
         p {  
             font-family: 'Chillax-Regular';
             font-style: normal;
@@ -143,7 +150,7 @@ body {
 
     border: solid 2px black;
     border-radius: 50px;
-    background: #e0e0e0;
+    background: #ffffff;
     box-shadow: inset 11px 11px 21px #bebebe,
                 inset -11px -11px 21px #ffffff;
 
@@ -152,6 +159,8 @@ body {
       height: 75%;
     }
 
+
+ 
   .home_button{
     grid-column: 12/13;
     grid-row: 1/2;
@@ -167,7 +176,7 @@ body {
 
     border: solid 2px black;
     border-radius: 50px;
-    background: #e0e0e0;
+    background: #ffffff;
     box-shadow: inset 11px 11px 21px #bebebe,
                 inset -11px -11px 21px #ffffff;
 
@@ -182,7 +191,9 @@ body {
 
 
 
-
+/*
+------------------------------------- nav selection 
+*/
 
 
   .btn_square_border {
@@ -197,6 +208,7 @@ body {
   }
 
   .btn_square , .btn_square_wide{
+    z-index: 1;
     width: 4rem;
     height: 4rem;
     border-radius: 10px;
@@ -220,7 +232,14 @@ body {
   }
 
 
+
+
+/*
+------------------------------------- used on volume control
+*/
+
   .btn_square_wide{
+    z-index: 1;
     width: 7.5rem;
     display: flex;
     justify-content:center ;
@@ -241,9 +260,13 @@ body {
   
 
 
+
+  /*
+  ----------------------------------------------------- Used for transport btns
+  */
   .btn_circle {
-    width: 5rem;
-    height: 5rem;
+    width: 4.25rem;
+    height: 4.25rem;
     border-radius: 100%;
     border: none;
     outline: none;
@@ -271,7 +294,14 @@ body {
         .btn_circle .key_num{
           font-size: 1.75rem;
         }
+          .btn_image{
+            filter: invert(1);
+            height: 50%;
+          }
 
+  /*
+  ------------------------------------------------------------ used on dvr RGYB
+  */
 
   .small_btn_circle{
     width: 2.25rem;
@@ -294,67 +324,18 @@ body {
       #c7c3c0 -3.2px -3.2px 8px 0px inset;
     }
 
-  .btn_image{
-    filter: invert(1);
-    height: 50%;
-  }
+
+
 
 
 
 
 #flip{
-
   transform: rotate(180deg);
 }
 
 
 
-  /************Use across all transport buttons ********/
-.transport_button{
-  border-radius: 50%;
-  height: 5rem;
-  width:  5rem;
-  background-color: rgb(41,41,41);
-  border: none;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;
-  
-}
-
-.transport_button:active{
-  background-color: rgb(59, 117, 136);
-}
-
-.transport_button img{
-  filter: invert(78%) sepia(56%) saturate(7%) hue-rotate(314deg) brightness(106%) contrast(87%);
-  height: 60px
-}
-
-#transport_hide{
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  animation: none;
-}
-#transport_flip{
-  transform: rotate(180deg);
-}
-
-#transport_flip:active{
-  animation: ripple_flipped_icons;
-  animation-duration:1250ms;
-}
-
-
-
-
-.btn_circle_border:active{
-  background-color: transparent;
-  user-select: none;
-}
 
 
 
@@ -374,3 +355,108 @@ body {
   filter: invert(208%) sepia(56%) saturate(7%) hue-rotate(314deg) brightness(306%) contrast(87%);
 
 }
+
+
+/*
+---------------------------------------------------------- nav 
+*/
+
+
+.nav_container{
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  background-color: transparent;
+  grid-row: 1/9;
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  justify-items: center;
+  align-items: center;
+  animation: room_selection 1000ms;
+  backdrop-filter: blur(15px);
+  position: relative;
+  z-index: 1;
+}
+  a{
+    z-index: 1;
+  }
+  .nav{
+    z-index: 1;
+      grid-row: 2/9;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;   
+      gap: 1.75rem;
+  }
+      .nav .btn_square{
+          height: 5rem;
+          border-radius: 15px;
+          width: 85%;
+          z-index: 1;
+          background-color: transparent;
+          backdrop-filter: blur(90px);
+      }
+          .nav .btn_square p{
+              font-weight: bold;
+              color: rgb(0, 0, 0); 
+              font-size: 1rem;
+              
+          }
+              
+  
+.nav_clock{
+  z-index: 1;
+  grid-row: 9/10;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+}
+  .nav_clock .clock{
+    z-index: 1;
+      font-size: 1rem;
+      padding: 0%;
+      left: 0px;
+    
+  }
+
+
+  .nav_container::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.3250;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+
+
+
+
+/* active selection of floor button*/
+  .btn_square#floor_selection_active{
+    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+    #6b6a6a -3.2px -3.2px 8px 0px inset;
+      background-color: rgb(56, 87, 133);
+  }
+
+  #floor_selection_active p {
+   
+      font-weight: 100;
+      color: rgb(255, 255, 255); 
+  }
+
+  #floor_selection_active img {
+      filter: invert(1);
+      }
+
+ 

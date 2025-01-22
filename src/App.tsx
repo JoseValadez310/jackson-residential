@@ -19,7 +19,7 @@ import Mediaroom from './structure/page/mediaroom';
 import Gym from './structure/page/gym';
 
 import BreakfastNook from './structure/page/breakfastnook';
-import FamilyRoom from './structure/page/familyroom';
+import FamilyRoom from './structure/page/FamilyRoom';
 import Bar from './structure/page/bar'
 
 import GameRoom from './structure/page/gameroom';
@@ -27,6 +27,12 @@ import MasterBedroom from './structure/page/masterbedroom';
 import MasterBathroom from './structure/page/masterbathroom'
 import Office from './structure/page/office';
 
+//lights only 
+import Backyard from './structure/page/backyard';
+import DinningRoom from './structure/page/dinningroom';
+import Foyer from './structure/page/foyer';
+import KidsRoom from './structure/page/kidsroom';
+import LivingRoom from './structure/page/livingroom';
       
 // Tools
 import ScreenSize from './structure/tools/ScreenSize';
@@ -86,6 +92,17 @@ function App() {
     path: '/bar',
     element: <Bar />
   },
+  {
+    path: '/dinningroom',
+    element: <DinningRoom />
+  },
+  {
+    path: '/foyer',
+    element: <Foyer />
+  }, {
+    path: '/livingroom',
+    element: <LivingRoom />
+  },
 
   //------------------------------------ Second Floor
   {
@@ -104,9 +121,21 @@ function App() {
     path: '/office',
     element: <Office />
   },
+  {
+    path: '/kidsroom',
+    element: <KidsRoom />
+  },
+
+  //-------------------------------------- outdoors
+
+    {
+      path:'/backyard',
+      element: <Backyard />
+    },
 
 
   //------------------------------------ Tools
+
 
   {
     path: '/ScreenSize',

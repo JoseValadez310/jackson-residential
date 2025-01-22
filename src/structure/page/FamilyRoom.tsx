@@ -99,11 +99,11 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
-    const light_1_join = "250"
-    const light_2_join = "251"
-    const light_3_join = "252"
-    const light_4_join = "253"
-    const light_5_join = "254"
+    const light_1_join = "285"
+    const light_2_join = "286"
+    const light_3_join = "287"
+    const light_4_join = "288"
+    const light_5_join = "289"
     const light_6_join = ""
     const light_7_join = ""
     const light_8_join = ""
@@ -187,11 +187,11 @@ const FamilyRoom = () =>{
 
             // lights 
 
-            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_1)
-            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_2)
-            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_3)
-            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_4)
-            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_5)
+            window.CrComLib.unsubscribeState("b",`${light_1_join}`,light_1)
+            window.CrComLib.unsubscribeState("b",`${light_2_join}`,light_2)
+            window.CrComLib.unsubscribeState("b",`${light_3_join}`,light_3)
+            window.CrComLib.unsubscribeState("b",`${light_4_join}`,light_4)
+            window.CrComLib.unsubscribeState("b",`${light_5_join}`,light_5)
 
 
             
@@ -202,58 +202,110 @@ const FamilyRoom = () =>{
 
 
 /*
----------------------------------------------------------------------------- Light function 
+---------------------------------------------------------------------------- Light section  
 */
 
 const sliderValue = (value: boolean, id: string) => {
-    
+    console.log(value)
 
 
      if(id === "light_1"){
-        setLight_1(value);
+
+        // not needed during deployment
+        if(light_1){
+            setLight_1(false);
+        } else {
+            setLight_1(true);
+
+        }
 
             
         // some crestron commands
-        window.CrComLib.publishEvent("b",`${light_1_join}`,value)
-        window.CrComLib.publishEvent("b",`${light_1_join}`,!value)
+        window.CrComLib.publishEvent("b",`${light_1_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_1_join}`,false)
 
-        console.log(`window.CrComLib.publishEvent("b",${light_2_join},${value})`)
-        console.log(`window.CrComLib.publishEvent("b",${light_2_join},${!value})`)
+        console.log("sending join", light_1_join)
+      
      } else if (id === "light_2"){
-        setLight_2(value);
+           // not needed during deployment
+           if(light_2){
+            setLight_2(false);
+        } else {
+            setLight_2(true);
+
+        }
+
+            
         // some crestron commands
-        window.CrComLib.publishEvent("b",`${light_2_join}`,value)
-        console.log(`window.CrComLib.publishEvent("b",${light_3_join},${value})`)
+        window.CrComLib.publishEvent("b",`${light_2_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_2_join}`,false)
+
+        console.log("sending join", light_2_join)
      } else if (id === "light_3"){
-        setLight_3(value);
-        // some crestron commands
-        window.CrComLib.publishEvent("b",`${light_3_join}`,value)
-        console.log(`window.CrComLib.publishEvent("b",${light_3_join},${value})`)
+             // not needed during deployment
+            light_3? setLight_3(false) : setLight_3(true)
+    
+                
+            // some crestron commands
+            window.CrComLib.publishEvent("b",`${light_3_join}`,true)
+            window.CrComLib.publishEvent("b",`${light_3_join}`,false)
+    
+            console.log("sending join", light_3_join)
      } else if (id === "light_4"){
-        setLight_4(value);
-        // some crestron commands
-        window.CrComLib.publishEvent("b",`${light_4_join}`,value)
-        console.log(`window.CrComLib.publishEvent("b",${light_4_join},${value})`)
+             // not needed during deployment
+             light_4? setLight_4(false) : setLight_4(true)
+    
+    
+                
+            // some crestron commands
+            window.CrComLib.publishEvent("b",`${light_4_join}`,true)
+            window.CrComLib.publishEvent("b",`${light_4_join}`,false)
+    
+            console.log("sending join", light_4_join)
      } else if (id === "light_5"){
-        setLight_5(value);
-        // some crestron commands
-        window.CrComLib.publishEvent("b",`${light_5_join}`,value)
-        console.log(`window.CrComLib.publishEvent("b",${light_5_join},${value})`)
+             // not needed during deployment
+             light_5? setLight_5(false) : setLight_5(true)
+    
+            
+    
+                
+            // some crestron commands
+            window.CrComLib.publishEvent("b",`${light_5_join}`,true)
+            window.CrComLib.publishEvent("b",`${light_5_join}`,false)
+    
+            console.log("sending join", light_5_join)
      } else if (id === "light_6"){
-        setLight_6(value);
-        // some crestron commands
-        window.CrComLib.publishEvent("b",`${light_6_join}`,value)
-        console.log(`window.CrComLib.publishEvent("b",${light_6_join},${value})`)
+            // not needed during deployment
+            light_6? setLight_6(false) : setLight_6(true)
+    
+    
+                
+            // some crestron commands
+            window.CrComLib.publishEvent("b",`${light_6_join}`,true)
+            window.CrComLib.publishEvent("b",`${light_6_join}`,false)
+    
+            console.log("sending join", light_6_join)
      } else if (id === "light_7"){
-        setLight_7(value);
-        // some crestron commands
-        window.CrComLib.publishEvent("b",`${light_7_join}`,value)
-        console.log(`window.CrComLib.publishEvent("b",${light_7_join},${value})`)
+              // not needed during deployment
+              light_7? setLight_7(false) : setLight_7(true)
+    
+    
+                
+            // some crestron commands
+            window.CrComLib.publishEvent("b",`${light_7_join}`,true)
+            window.CrComLib.publishEvent("b",`${light_7_join}`,false)
+    
+            console.log("sending join", light_7_join)
      } else if (id === "light_8"){
-        setLight_8(value);
-        // some crestron commands
-        window.CrComLib.publishEvent("b",`${light_8_join}`,value)
-        console.log(`window.CrComLib.publishEvent("b",${light_8_join},${value})`)
+              // not needed during deployment
+              light_8? setLight_8(false) : setLight_8(true)
+    
+    
+            // some crestron commands
+            window.CrComLib.publishEvent("b",`${light_8_join}`,true)
+            window.CrComLib.publishEvent("b",`${light_8_join}`,false)
+    
+            console.log("sending join", light_8_join)
      }
     }
 
@@ -720,10 +772,7 @@ const sliderValue = (value: boolean, id: string) => {
             active_media = false
         }
 
-        /*
-        
-        ----------------------------------------------------------------------------------------------------------------------------------------- light section
-        */
+       
 
       
        

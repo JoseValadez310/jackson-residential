@@ -427,7 +427,7 @@
 
 
 .light_container{
-    grid-column: 2/9;
+    grid-column: 1/10;
     grid-row: 1/6;
     display: flex;
     justify-content: center;

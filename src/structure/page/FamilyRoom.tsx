@@ -84,6 +84,8 @@ const FamilyRoom = () =>{
     let media_6:string
     let media_7:string
     let media_8:string
+
+    const roomLocation:string = "8"
 /*
 ---------------------------------------------------------------------------- Room Vol / Mute status
 */
@@ -97,10 +99,45 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
-    const [family_light_1, setFamily_light_1] = useState(false)
-    const [family_light_2, setFamily_light_2] = useState(false)
-    const [family_light_3, setFamily_light_3] = useState(false)
-    const [family_light_4, setFamily_light_4] = useState(false)
+    const light_1_join = "250"
+    const light_2_join = "251"
+    const light_3_join = "252"
+    const light_4_join = "253"
+    const light_5_join = "254"
+    const light_6_join = ""
+    const light_7_join = ""
+    const light_8_join = ""
+
+
+    const light_1_name:string = "Down Light"
+    const light_2_name:string = "Center"
+    const light_3_name:string = "Cabinet"
+    const light_4_name:string = "Library Hall"
+    const light_5_name:string = "Vaulted Hall"
+
+    const light_6_name:string = "null"
+    const light_7_name:string = "null"
+    const light_8_name:string = "null"
+   
+    const [light_1, setLight_1] = useState(false)
+    const [light_2, setLight_2] = useState(false)
+    const [light_3, setLight_3] = useState(false)
+    const [light_4, setLight_4] = useState(false)
+    const [light_5, setLight_5] = useState(false)
+
+    const [light_6, setLight_6] = useState(false)
+    const [light_7, setLight_7] = useState(false)
+    const [light_8, setLight_8] = useState(false)
+
+
+
+
+
+
+// console.log 
+
+
+
 /*
 ----------------------------------------------------------------------------------------------------------------------------------------
 */
@@ -124,10 +161,13 @@ const FamilyRoom = () =>{
         const roomMute    = window.CrComLib.subscribeState("b","317",(value: boolean) => {setRoomMute(value);});
 
         // Lights
-        const light1  = window.CrComLib.subscribeState("b","403",(value: boolean) => {setFamily_light_1(value);});  
-        const light2  = window.CrComLib.subscribeState("b","404",(value: boolean) => {setFamily_light_2(value);});  
-        const light3  = window.CrComLib.subscribeState("b","405",(value: boolean) => {setFamily_light_3(value);});  
-        const light4  = window.CrComLib.subscribeState("b","406",(value: boolean) => {setFamily_light_4(value);});  
+
+        const light_1 = window.CrComLib.subscribeState("b",`${light_1_join}`,(value: boolean) => {setLight_1(value);});
+        const light_2 = window.CrComLib.subscribeState("b",`${light_2_join}`,(value: boolean) => {setLight_2(value);});
+        const light_3 = window.CrComLib.subscribeState("b",`${light_3_join}`,(value: boolean) => {setLight_3(value);});
+        const light_4 = window.CrComLib.subscribeState("b",`${light_4_join}`,(value: boolean) => {setLight_4(value);});
+        const light_5 = window.CrComLib.subscribeState("b",`${light_5_join}`,(value: boolean) => {setLight_5(value);});
+  
 
         return () => {
 
@@ -146,13 +186,77 @@ const FamilyRoom = () =>{
             window.CrComLib.unsubscribeState("b","317",roomMute)
 
             // lights 
-            window.CrComLib.unsubscribeState("b","403",light1)
-            window.CrComLib.unsubscribeState("b","404",light2)
-            window.CrComLib.unsubscribeState("b","405",light3)
-            window.CrComLib.unsubscribeState("b","406",light4)
+
+            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_1)
+            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_2)
+            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_3)
+            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_4)
+            window.CrComLib.unsubscribeState("n",`${light_1_join}`,light_5)
+
+
+            
+          
             
         }
       }, []);
+
+
+/*
+---------------------------------------------------------------------------- Light function 
+*/
+
+const sliderValue = (value: boolean, id: string) => {
+    
+
+
+     if(id === "light_1"){
+        setLight_1(value);
+
+            
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_1_join}`,value)
+        window.CrComLib.publishEvent("b",`${light_1_join}`,!value)
+
+        console.log(`window.CrComLib.publishEvent("b",${light_2_join},${value})`)
+        console.log(`window.CrComLib.publishEvent("b",${light_2_join},${!value})`)
+     } else if (id === "light_2"){
+        setLight_2(value);
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_2_join}`,value)
+        console.log(`window.CrComLib.publishEvent("b",${light_3_join},${value})`)
+     } else if (id === "light_3"){
+        setLight_3(value);
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_3_join}`,value)
+        console.log(`window.CrComLib.publishEvent("b",${light_3_join},${value})`)
+     } else if (id === "light_4"){
+        setLight_4(value);
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_4_join}`,value)
+        console.log(`window.CrComLib.publishEvent("b",${light_4_join},${value})`)
+     } else if (id === "light_5"){
+        setLight_5(value);
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_5_join}`,value)
+        console.log(`window.CrComLib.publishEvent("b",${light_5_join},${value})`)
+     } else if (id === "light_6"){
+        setLight_6(value);
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_6_join}`,value)
+        console.log(`window.CrComLib.publishEvent("b",${light_6_join},${value})`)
+     } else if (id === "light_7"){
+        setLight_7(value);
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_7_join}`,value)
+        console.log(`window.CrComLib.publishEvent("b",${light_7_join},${value})`)
+     } else if (id === "light_8"){
+        setLight_8(value);
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_8_join}`,value)
+        console.log(`window.CrComLib.publishEvent("b",${light_8_join},${value})`)
+     }
+    }
+
     
 /*
 ---------------------------------------------------------------------------- Checks to see if any media sources are currently on
@@ -160,7 +264,7 @@ const FamilyRoom = () =>{
 
     if(media1){
     //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n","28",1)
+        window.CrComLib.publishEvent("n",`${roomLocation}`,1)
     //display controller and hide source selection
        active_media = true
     //displaying the correct controller and hiding the rest
@@ -175,7 +279,7 @@ const FamilyRoom = () =>{
     } 
     else if(media2){
     //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n","28",2)
+        window.CrComLib.publishEvent("n",`${roomLocation}`,2)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -190,7 +294,7 @@ const FamilyRoom = () =>{
     } 
     else if(media3){
     //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n","28",3)
+        window.CrComLib.publishEvent("n",`${roomLocation}`,3)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -205,7 +309,7 @@ const FamilyRoom = () =>{
     } 
     else if(media4){
     //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n","28",4)
+        window.CrComLib.publishEvent("n",`${roomLocation}`,4)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -220,7 +324,7 @@ const FamilyRoom = () =>{
     } 
     else if(media5){
     //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n","28",5)
+        window.CrComLib.publishEvent("n",`${roomLocation}`,5)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -235,7 +339,7 @@ const FamilyRoom = () =>{
     } 
     else if(media6){
     //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n","28",6)
+        window.CrComLib.publishEvent("n",`${roomLocation}`,6)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -250,7 +354,7 @@ const FamilyRoom = () =>{
     } 
     else if(media7){
     //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n","28",7)
+        window.CrComLib.publishEvent("n",`${roomLocation}`,7)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -265,7 +369,7 @@ const FamilyRoom = () =>{
     } 
     else if(media8){
     //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n","28",8)
+        window.CrComLib.publishEvent("n",`${roomLocation}`,8)
     //display controller and hide source selection
         active_media = true
      //displaying the correct controller and hiding the rest
@@ -313,12 +417,12 @@ const FamilyRoom = () =>{
                 
 
                 // Signal Name 
-                window.CrComLib.publishEvent("b","2",true)
-                window.CrComLib.publishEvent("b","2",false)
+                window.CrComLib.publishEvent("b","1",true)
+                window.CrComLib.publishEvent("b","1",false)
 
-                console.log("BluRay join", 2)
+                console.log("BluRay join", 1)
                 //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n","28",1)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,1)
             } 
             else if (id === "media2"){
                 // Send command to Crestron 
@@ -333,12 +437,12 @@ const FamilyRoom = () =>{
                 
                 
 
-                window.CrComLib.publishEvent("b","3",true)
-                window.CrComLib.publishEvent("b","3",false)
+                window.CrComLib.publishEvent("b","2",true)
+                window.CrComLib.publishEvent("b","2",false)
 
-                console.log("Kaleidescape join", 3)
+                console.log("Kaleidescape join", 2)
                 //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n","28",2)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,2)
             } 
             else if (id === "media3"){
                 // Send command to Crestron 
@@ -354,12 +458,12 @@ const FamilyRoom = () =>{
                 
 
                 // Signal Name 
-                window.CrComLib.publishEvent("b","4",true)
-                window.CrComLib.publishEvent("b","4",false)
+                window.CrComLib.publishEvent("b","3",true)
+                window.CrComLib.publishEvent("b","3",false)
 
-                console.log("DTV 3 House 1 join", 4)
+                console.log("DTV 3 House 1 join", 3)
                 //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n","28",3)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,3)
             } 
             else if (id === "media4"){
                 // Send command to Crestron 
@@ -375,12 +479,12 @@ const FamilyRoom = () =>{
                 
 
                 // Signal Name 
-                window.CrComLib.publishEvent("b","5",true)
-                window.CrComLib.publishEvent("b","5",false)
+                window.CrComLib.publishEvent("b","4",true)
+                window.CrComLib.publishEvent("b","4",false)
 
-                console.log("DTV 4 House 2 join", 5)
+                console.log("DTV 4 House 2 join", 4)
                 //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n","28",4)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,4)
             } 
             else if (id === "media5"){
                 // Send command to Crestron 
@@ -396,13 +500,13 @@ const FamilyRoom = () =>{
                 
 
                 // Signal Name 
-                window.CrComLib.publishEvent("b","6",true)
-                window.CrComLib.publishEvent("b","6",false)
+                window.CrComLib.publishEvent("b","5",true)
+                window.CrComLib.publishEvent("b","5",false)
     
-                console.log("DTV 5 Steve join", 6)
+                console.log("DTV 5 Steve join", 5)
 
                 //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n","28",5)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,5)
             } 
             else if (id === "media6"){
                 // Send command to Crestron 
@@ -418,12 +522,12 @@ const FamilyRoom = () =>{
                 
 
             // Signal Name 
-            window.CrComLib.publishEvent("b","7",true)
-            window.CrComLib.publishEvent("b","7",false)
+            window.CrComLib.publishEvent("b","6",true)
+            window.CrComLib.publishEvent("b","6",false)
 
-            console.log("ATV 1 House 1 join", 7)
+            console.log("ATV 1 House 1 join", 6)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n","28",6)
+            window.CrComLib.publishEvent("n",`${roomLocation}`,6)
             } 
             else if (id === "media7"){
                 // c
@@ -439,12 +543,12 @@ const FamilyRoom = () =>{
                 
 
                 // Signal Name 
-            window.CrComLib.publishEvent("b","8",true)
-            window.CrComLib.publishEvent("b","8",false)
+            window.CrComLib.publishEvent("b","7",true)
+            window.CrComLib.publishEvent("b","7",false)
 
-            console.log("ATV 2 House 2 join", 8)
+            console.log("ATV 2 House 2 join", 7)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n","28",7)
+            window.CrComLib.publishEvent("n",`${roomLocation}`,7)
             } 
             else if (id === "media8"){
                 // c
@@ -460,12 +564,12 @@ const FamilyRoom = () =>{
                 
 
             // Signal Name 
-            window.CrComLib.publishEvent("b","9",true)
-            window.CrComLib.publishEvent("b","9",false)
+            window.CrComLib.publishEvent("b","8",true)
+            window.CrComLib.publishEvent("b","8",false)
 
-            console.log("ATV 3 Steve join", 9)
+            console.log("ATV 3 Steve join", 8)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n","28",8)
+            window.CrComLib.publishEvent("n",`${roomLocation}`,8)
             } 
             }
 
@@ -539,6 +643,8 @@ const FamilyRoom = () =>{
             setMedia7(false)
             setMedia8(false)
 
+
+           
         }
 
     //Apple TV Controls
@@ -554,6 +660,12 @@ const FamilyRoom = () =>{
             window.CrComLib.publishEvent("b","50",false)
 
             setDisplayReboot(!displayReboot)
+        } else{
+             // not in use and they are only here because of react refresh  feature 
+             console.log(light_6_name, light_7_name, light_8_name ,"not being used")
+             console.log(light_6, light_7, light_8 ,               "not being used")
+             console.log(light_6_join, light_7_join, light_8_join ,"not being used")
+ 
         }
 
 
@@ -608,6 +720,12 @@ const FamilyRoom = () =>{
             active_media = false
         }
 
+        /*
+        
+        ----------------------------------------------------------------------------------------------------------------------------------------- light section
+        */
+
+      
        
     return (
 
@@ -624,9 +742,9 @@ const FamilyRoom = () =>{
         
 
             <div className="nav">
-                    <button onClick={() => roomApp("TV")} className='btn_square' id={tvOptions? "floor_selection_active":"floor_selection_nonactive"}    style={{width:"4.5rem"}}>  <img src={TV}     style={{height:"50%"}}/> </button>
-                    <Link to={"/AudioDashboard"} className='btn_square' id={musicOption? "floor_selection_active":"floor_selection_nonactive"}  style={{width:"4.5rem"}}>  <img src={music}  style={{height:"50%"}} /> </Link>
-                    <button onClick={() => roomApp("Lights")}className='btn_square' id={lightsOption? "floor_selection_active":"floor_selection_nonactive"} style={{width:"4.5rem"}}>  <img src={lights} style={{height:"50%"}} /> </button>
+                    <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     style={{height:"50%"}}/> </button>
+                    <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}  style={{height:"50%"}} /> </Link>
+                    <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights} style={{height:"50%"}} /> </button>
             </div>
             
 
@@ -951,104 +1069,114 @@ const FamilyRoom = () =>{
                     </div>
 
                     <div className={lightsOption? "lights_app" : "media_off"} >
-                           
-                            <div className="light_container_switch" id="light_1">
-                                <div className="light_indicator"> 
-                                    {family_light_1? 
-                                     <button className="light_icon_on" onClick={()=> (window.CrComLib.publishEvent("b","403",true),window.CrComLib.publishEvent("b","403",false)) }> <img src={lightOn}/> </button> 
-                                    :
-                                     <button className="light_icon_off" onClick={()=> (window.CrComLib.publishEvent("b","403",true),window.CrComLib.publishEvent("b","403",false)) }> <img src={lightOff}/></button>  
-                                    }
+
+                        <div className="light_container">
+                            
+                            
+                            
+                            
+                            <div className="light_tile" id={light_1? 'card_glow':''}>
+                                <div className="light_info">
+                                    <p className="light_value">{light_1? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="light_name">{light_1_name}</p>
                                 </div>
+                                                
+                                <div className="light_controls">
+                                    <button className="btn_circle"  id={light_1? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_1")}>
+                                        <img className="btn_image" src={lightOff} />
+                                    </button>
+                                       
+                                    <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
+                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_1")}/>
+                                    </button>
 
-
-                                <div className="light_container_switch_tile">
-                                    <p className="light_name"> Sconces  {family_light_1? <p className="light_name_status_on"> On </p> : <p  className="light_name_status_off"> Off </p>}</p>
                                 </div>
-
-
-                                {family_light_1? 
-                                    <button className="light_container_switch_light_on"  onClick={()=> (window.CrComLib.publishEvent("b","403",true),window.CrComLib.publishEvent("b","403",false)) }> <p> Turn Off </p> </button>
-                                    :
-                                    <button className="light_container_switch_light_on"  onClick={()=> (window.CrComLib.publishEvent("b","403",true),window.CrComLib.publishEvent("b","403",false)) }> <p> Turn On  </p> </button>
-                                }
                             </div>
 
-                            <div className="light_container_switch" id="light_2">
-                                <div className="light_indicator"> 
-                                    {family_light_2? 
-                                     <button className="light_icon_on" onClick={()=> (window.CrComLib.publishEvent("b","404",true),window.CrComLib.publishEvent("b","404",false)) }> <img src={lightOn}/> </button> 
-                                    :
-                                     <button className="light_icon_off" onClick={()=> (window.CrComLib.publishEvent("b","404",true),window.CrComLib.publishEvent("b","404",false)) }> <img src={lightOff}/></button>  
-                                    }
+                            <div className="light_tile" id={light_2? 'card_glow':''}>
+                                <div className="light_info">
+                                    <p className="light_value">{light_2? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="light_name">{light_2_name}</p>
                                 </div>
+                                                
+                                <div className="light_controls">
+                                    <button className="btn_circle"  id={light_2? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_2")}>
+                                        <img className="btn_image" src={lightOff} />
+                                    </button>
+                                       
+                                    <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
+                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_2")}/>
+                                    </button>
 
-
-                                <div className="light_container_switch_tile">
-                                    <p className="light_name"> Accent  {family_light_2? <p className="light_name_status_on"> On </p> : <p  className="light_name_status_off"> Off </p>}</p>
                                 </div>
-
-
-                                {family_light_2? 
-                                    <button className="light_container_switch_light_on"  onClick={()=> (window.CrComLib.publishEvent("b","404",true),window.CrComLib.publishEvent("b","404",false)) }> <p> Turn Off </p> </button>
-                                    :
-                                    <button className="light_container_switch_light_on"  onClick={()=> (window.CrComLib.publishEvent("b","404",true),window.CrComLib.publishEvent("b","404",false)) }> <p> Turn On  </p> </button>
-                                }
                             </div>
 
-                            <div className="light_container_switch" id="light_3">
-                                <div className="light_indicator"> 
-                                    {family_light_3? 
-                                     <button className="light_icon_on" onClick={()=> (window.CrComLib.publishEvent("b","405",true),window.CrComLib.publishEvent("b","405",false)) }> <img src={lightOn}/> </button> 
-                                    :
-                                     <button className="light_icon_off" onClick={()=> (window.CrComLib.publishEvent("b","405",true),window.CrComLib.publishEvent("b","405",false)) }> <img src={lightOff}/></button>  
-                                    }
+                            <div className="light_tile" id={light_3? 'card_glow':''}>
+                                <div className="light_info">
+                                    <p className="light_value">{light_3? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="light_name">{light_3_name}</p>
                                 </div>
+                                                
+                                <div className="light_controls">
+                                    <button className="btn_circle"  id={light_3? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_3")}>
+                                        <img className="btn_image" src={lightOff} />
+                                    </button>
+                                       
+                                    <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
+                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_3")}/>
+                                    </button>
 
-
-                                <div className="light_container_switch_tile">
-                                    <p className="light_name"> Window  {family_light_3? <p className="light_name_status_on"> On </p> : <p  className="light_name_status_off"> Off </p>}</p>
                                 </div>
-
-
-                                {family_light_3? 
-                                    <button className="light_container_switch_light_on"  onClick={()=> (window.CrComLib.publishEvent("b","405",true),window.CrComLib.publishEvent("b","405",false)) }> <p> Turn Off </p> </button>
-                                    :
-                                    <button className="light_container_switch_light_on"  onClick={()=> (window.CrComLib.publishEvent("b","405",true),window.CrComLib.publishEvent("b","405",false)) }> <p> Turn On  </p> </button>
-                                }
                             </div>
 
-                            <div className="light_container_switch" id="light_4">
-                                <div className="light_indicator"> 
-                                    {family_light_4? 
-                                     <button className="light_icon_on" onClick={()=> (window.CrComLib.publishEvent("b","406",true),window.CrComLib.publishEvent("b","406",false)) }> <img src={lightOn}/> </button> 
-                                    :
-                                     <button className="light_icon_off" onClick={()=> (window.CrComLib.publishEvent("b","406",true),window.CrComLib.publishEvent("b","406",false)) }> <img src={lightOff}/></button>  
-                                    }
+                            <div className="light_tile" id={light_4? 'card_glow':''}>
+                                <div className="light_info">
+                                    <p className="light_value">{light_4? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="light_name">{light_4_name}</p>
                                 </div>
+                                                
+                                <div className="light_controls">
+                                    <button className="btn_circle"  id={light_4? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_4")}>
+                                        <img className="btn_image" src={lightOff} />
+                                    </button>
+                                       
+                                    <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
+                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_4")}/>
+                                    </button>
 
-
-                                <div className="light_container_switch_tile">
-                                    <p className="light_name"> Ceiling  {family_light_4? <p className="light_name_status_on"> On </p> : <p  className="light_name_status_off"> Off </p>}</p>
                                 </div>
-
-
-                                {family_light_4? 
-                                    <button className="light_container_switch_light_on"  onClick={()=> (window.CrComLib.publishEvent("b","406",true),window.CrComLib.publishEvent("b","406",false)) }> <p> Turn Off </p> </button>
-                                    :
-                                    <button className="light_container_switch_light_on"  onClick={()=> (window.CrComLib.publishEvent("b","406",true),window.CrComLib.publishEvent("b","406",false)) }> <p> Turn On  </p> </button>
-                                }
                             </div>
 
-                            <div className="lighting_short_cut">
-                              
-
-                                <div className="lighting_action">
-                                    <button onClick={()=> (window.CrComLib.publishEvent("b","401",true),window.CrComLib.publishEvent("b","401",false))} ><p>All Off</p></button>
-                                    <button onClick={()=> (window.CrComLib.publishEvent("b","402",true),window.CrComLib.publishEvent("b","402",false))} ><p>All On </p></button>
+                            <div className="light_tile" id={light_5? 'card_glow':''}>
+                                <div className="light_info">
+                                    <p className="light_value">{light_5? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="light_name">{light_5_name}</p>
                                 </div>
-                                
+                                                
+                                <div className="light_controls">
+                                    <button className="btn_circle"  id={light_5? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_5")}>
+                                        <img className="btn_image" src={lightOff} />
+                                    </button>
+                                       
+                                    <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
+                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_5")}/>
+                                    </button>
+
+                                </div>
                             </div>
+
+                          
+
+                          
+                        </div>
+
+                      
+                      
+    
+
+                       
+
+                            
                     </div>
 
             
@@ -1057,5 +1185,7 @@ const FamilyRoom = () =>{
 
     )
 }
+
+
 
 export default FamilyRoom

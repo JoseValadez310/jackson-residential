@@ -52,36 +52,42 @@ const RoomsDashboard = () => {
       ({
         location_1: {
             active: false,
-            title:"Down Stairs",
+            title:"Up Stairs",
             rooms:[
-                {'Media Room':["media","music","light"]}, 
-                {'Gym':["media","music","light"]}
+                {"Game Room":["media","music","light"]},
+                {"Master Bedroom":["media","music","light"]},
+                {"Master Bathroom":["media","music","light"]},
+                {"Office":["media","music","light"]},
+                {"Kids Room":["light"]},
             ]
         },
         location_2: {
             active: true,
             title:"Main",
             rooms:[
-                {"Breakfast Nook":["media","music"]},
-                {"Family Room":["media","music"]},
-                {"Bar":["media","music"]},    
+                {"Breakfast Nook":["media","music","light"]},
+                {"Family Room":["media","music","light"]},
+                {"Bar":["media","music","light"]},    
+
+                {"Dinning Room":["light"]}, 
+                {"Living Room":["light"]}, 
+                {"Foyer":["light"]}, 
             ]
         },
         location_3: {
             active: false,
-            title:"Up Stairs",
+            title:"Down Stairs",
             rooms:[
-                {"Game Room":["media","music"]},
-                {"Master Bedroom":["media","music"]},
-                {"Master Bathroom":["media","music"]},
-                {"Office":["media","music"]},
+                {'Media Room':["media","music","light"]}, 
+                {'Gym':["media","music","light"]}
             ]
         },
         location_4: {
             active: false,
-            title:"null",
-            rooms:[]
+            title:"Out Doors",
+            rooms:[  {"Backyard":["light"]},]
         },
+        
         location_5: {
             active: false,
             title:"null",
@@ -144,14 +150,14 @@ const RoomsDashboard = () => {
             </Link>
 
         <div className="nav">
-                <button className={zone.location_1.title === "null"? "display_none" : 'btn_square'} id={zone.location_1.active? "floor_selection_active":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_1")}> <p>{zone.location_1.title}  </p> </button>
-                <button className={zone.location_2.title === "null"? "display_none" : 'btn_square'} id={zone.location_2.active? "floor_selection_active":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_2")}> <p>{zone.location_2.title}  </p> </button>
-                <button className={zone.location_3.title === "null"? "display_none" : 'btn_square'} id={zone.location_3.active? "floor_selection_active":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_3")}> <p>{zone.location_3.title}  </p> </button>
-                <button className={zone.location_4.title === "null"? "display_none" : 'btn_square'} id={zone.location_4.active? "floor_selection_active":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_4")}> <p>{zone.location_4.title}  </p> </button>
-                <button className={zone.location_5.title === "null"? "display_none" : 'btn_square'} id={zone.location_5.active? "floor_selection_active":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_5")}> <p>{zone.location_5.title}  </p> </button>
-                <button className={zone.location_6.title === "null"? "display_none" : 'btn_square'} id={zone.location_6.active? "floor_selection_active":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_6")}> <p>{zone.location_6.title}  </p> </button>
-                <button className={zone.location_7.title === "null"? "display_none" : 'btn_square'} id={zone.location_7.active? "floor_selection_active":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_7")}> <p>{zone.location_7.title}  </p> </button>
-                <button className={zone.location_8.title === "null"? "display_none" : 'btn_square'} id={zone.location_8.active? "floor_selection_active":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_8")}> <p>{zone.location_8.title}  </p> </button>
+                <button className={zone.location_1.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_1.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_1")}> <p>{zone.location_1.title}  </p> </button>
+                <button className={zone.location_2.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_2.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_2")}> <p>{zone.location_2.title}  </p> </button>
+                <button className={zone.location_3.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_3.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_3")}> <p>{zone.location_3.title}  </p> </button>
+                <button className={zone.location_4.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_4.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_4")}> <p>{zone.location_4.title}  </p> </button>
+                <button className={zone.location_5.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_5.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_5")}> <p>{zone.location_5.title}  </p> </button>
+                <button className={zone.location_6.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_6.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_6")}> <p>{zone.location_6.title}  </p> </button>
+                <button className={zone.location_7.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_7.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_7")}> <p>{zone.location_7.title}  </p> </button>
+                <button className={zone.location_8.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_8.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_8")}> <p>{zone.location_8.title}  </p> </button>
         </div>
            
 

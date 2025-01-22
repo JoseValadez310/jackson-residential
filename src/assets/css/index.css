@@ -125,6 +125,9 @@ body {
   .display_none{
     display: none;
   }
+  #display_none{
+    display: none;
+  }
 
   /*Card*/
 
@@ -262,7 +265,7 @@ body {
 
 
   /*
-  ----------------------------------------------------- Used for transport btns
+  ----------------------------------------------------- Used for transport and light btns
   */
   .btn_circle {
     width: 4.25rem;
@@ -299,6 +302,32 @@ body {
             height: 50%;
           }
 
+
+
+   
+  #light_btn_off{
+    background-color: rgb(204, 80, 80);
+    pointer-events: none;
+    cursor: not-allowed; /* For devices with a cursor */
+  }     
+    
+  #light_btn_on{
+    background-color: rgb(252 , 234, 187);
+
+    pointer-events: none;
+    cursor: not-allowed; /* For devices with a cursor */
+  }
+  #light_btn_on img{
+    filter: invert(0);
+  }
+  #light_btn_off img{
+    filter: invert(0);
+    height: 60%;
+  }
+
+ #btn_off img{
+  height: 60%;
+ }
   /*
   ------------------------------------------------------------ used on dvr RGYB
   */
@@ -421,6 +450,7 @@ body {
       font-size: 1rem;
       padding: 0%;
       left: 0px;
+      color: black;
     
   }
 
@@ -439,24 +469,66 @@ body {
 }
 
 
+.card_glow{
+
+}
+
+
 
 
 
 /* active selection of floor button*/
-  .btn_square#floor_selection_active{
-    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
-    #6b6a6a -3.2px -3.2px 8px 0px inset;
-      background-color: rgb(56, 87, 133);
-  }
+ 
 
-  #floor_selection_active p {
-   
-      font-weight: 100;
-      color: rgb(255, 255, 255); 
+  .btn_not_selected{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      height: 4.5rem;
+      width: 4.5rem;
+      border-radius: 100%;
+      border: none;
+      font-size: large;
+      
   }
+  .btn_selected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 100%;
+    animation: glow 2.5s ease-in-out infinite alternate;
+    font-size: large;
+  }
+    .btn_selected p{
+      color: rgb(255, 255, 255);
+      
+    }
+    .btn_not_selected p{
+      color: rgb(0, 0, 0);
+      font-weight: 600;
 
-  #floor_selection_active img {
-      filter: invert(1);
-      }
+    }
+
+    .btn_selected img{
+      filter: invert(1);      
+    }
+
+
+
 
  
+
+    @keyframes glow {
+      from{
+        background-color: rgb(70, 70, 70);
+       
+      } to {
+        background-color: rgba(70, 70, 70, 0.65);
+  
+      }
+    }

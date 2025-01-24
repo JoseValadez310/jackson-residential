@@ -12,6 +12,7 @@ import RoomsDashboard from './structure/dashboard/RoomDashboard';
 import AudioDashboard from './structure/dashboard/AudioDashboard'
 import LightDashboard from './structure/dashboard/LightDashboard'
 import Climate  from './structure/dashboard/ClimateDashboard';
+import Security from './structure/dashboard/SecurityDashboard'
 
 // Pages
 
@@ -68,6 +69,10 @@ function App() {
   {
     path: '/Climate',
     element: <Climate />
+  },
+  {
+    path: '/Security',
+    element: <Security />
   },
   
    //------------------------------------ Basement Floor

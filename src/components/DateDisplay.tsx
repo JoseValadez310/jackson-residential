@@ -1,7 +1,8 @@
 
 
 // CSS
-import "../assets/css/clock_date.css"
+import "../assets/css/componets_css/clock_date.css";
+
 
 const DateDisplay = () => {
   const currentDate = new Date();

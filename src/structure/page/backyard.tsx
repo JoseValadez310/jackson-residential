@@ -128,7 +128,8 @@ const Backyard = () =>{
 */
 
 const sliderValue = (value: boolean, id: string) => {
-    
+
+    console.log(value)
 
 
      if(id === "light_1"){

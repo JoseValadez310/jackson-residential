@@ -140,7 +140,7 @@ body {
   .back_button{
     grid-column: 1/2;
     grid-row: 1/2;
-    width: 4rem;
+    width: 4.25rem;
     height: 3rem;
 
 
@@ -149,13 +149,13 @@ body {
     justify-content: center;
    
     background-color: transparent;
-    border-radius: 100%;
 
-    border: solid 2px black;
-    border-radius: 50px;
+    border: none;
+    border-radius: 15px;
     background: #ffffff;
-    box-shadow: inset 11px 11px 21px #bebebe,
-                inset -11px -11px 21px #ffffff;
+    box-shadow: inset 2px 5px 6px #bebebe,
+                inset -5px -5px 6px #ffffff;
+ 
 
   }
     .back_button img{
@@ -167,8 +167,9 @@ body {
   .home_button{
     grid-column: 12/13;
     grid-row: 1/2;
-    width: 4rem;
+    width: 4.25rem;
     height: 3rem;
+
 
     display: flex;
     align-items: center;
@@ -177,11 +178,13 @@ body {
     background-color: transparent;
     border-radius: 100%;
 
-    border: solid 2px black;
-    border-radius: 50px;
+   
+    border-radius: 15px;
     background: #ffffff;
-    box-shadow: inset 11px 11px 21px #bebebe,
-                inset -11px -11px 21px #ffffff;
+  ;
+    box-shadow: inset 2px 5px 6px #bebebe,
+                inset -5px -5px 6px #ffffff;
+    border: none;
 
   }
     .home_button img{
@@ -218,8 +221,7 @@ body {
     border: none;
     outline: none;
     background-color: #c7c3c0;
-    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px,
-      #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -3.2px -3.2px 8px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px;
     cursor: pointer;
     font-family: Montserrat;
     transition: 0.1s ease-in-out;

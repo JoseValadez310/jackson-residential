@@ -129,7 +129,7 @@ const LivingRoom = () =>{
 const sliderValue = (value: boolean, id: string) => {
     
 
-
+    console.log(value)
      if(id === "light_1"){
 
         // not needed during deployment

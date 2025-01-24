@@ -90,7 +90,7 @@
     align-content: center;
     flex-wrap: wrap;
 
-    gap: 1.25rem;
+    gap: 10px;
    
     border-radius: 10px;
 
@@ -110,13 +110,13 @@
 
     justify-items: center;
     align-items: center;
-    background-color: rgb(70, 70, 70, .75);
+    background-color: rgb(70, 70, 70, .65);
     text-decoration: none;
     backdrop-filter: blur(25px);
-    border-radius: 25px;
+    border-radius: 5px;
     box-shadow: 
-        -5px -5px 15px #5a5656, 
-        5px 5px 15px #ffffff8f;
+    -3px -3px 5px #5a5656, 
+    3px 3px 10px #ffffff8f;
  
   }
     .test{

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 // CSS
-import "../assets/css/clock_date.css";
+import "../assets/css/componets_css/clock_date.css";
 
 function Clock() {
   const [dateState, setDateState] = useState(new Date());

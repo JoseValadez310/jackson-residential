@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    justify-items: start;
+    justify-items: center;
     align-items: center;
     gap: 10px;
 
@@ -15,32 +15,56 @@
     box-sizing: border-box; 
     padding: 1rem;
 }
+    .security_dashboard .title_info{
+        grid-column: 2/13;
+    }
 
 
 
 .security_keypad_container{
     grid-column: 5/10;
     grid-row: 2/9;
+    height: 90%;
+    width: 90%;
+    background-size: 400% 400%;
 
-    height: 100%;
-    width: 100%;
-
- 
-
-   display: flex;
-   justify-content: center;
- align-items: center;
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+   
+    border: double .5rem transparent;
+    border-radius: 1.25rem;
+
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+
+     
 }
+    #green_ready{
+        background-image: linear-gradient(rgb(36, 35, 35), #ffffff), 
+        linear-gradient(to right, green, rgb(0, 0, 0));
+    }
+
+    #yellow_stay{
+        background-image: linear-gradient(rgb(165, 164, 164), #ffffff), 
+        linear-gradient(to right, #FFF200 , #f5e8a3, #c5be34 , #f5e8a3 );
+    }
+    
+    #red_armed{
+        background-image: linear-gradient(black, #ffffff), 
+        linear-gradient(to right, #ff0000 , #e27b7b, #b4170c , #e4563d );
+    }
+
+
+
+
 
 .security_keypad_inner_contianer{
-
-    height: 85%;
-    width: 75%;
-
-    border-radius: 10px;
-    background-size: cover;
-    backdrop-filter: blur(25px);
+    height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5,1fr);
@@ -49,10 +73,7 @@
     position: relative;
   
 }
-.security_keypad_inner_contianer::before{
-    background-image: url("../../images/backgrounds/cai-fang-LyehvPBNvHQ-unsplash.jpg");
 
-}
 .feedback_viewer{
     z-index: 20;
     display: flex;
@@ -61,13 +82,21 @@
 
     grid-row: 1;
     grid-column: 1;
-    width: 80%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
     background-color: rgb(70,70,70);
-    border-radius: 10px;
+  
 }
     .feedback_viewer h1{
+        width: 92%;
+        height: 75%;
+        border-radius: 10px;
         font-weight: 100;
+        border:solid 3px rgb(255, 255, 255);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 .keypad{
     grid-row: 2/6;
@@ -82,12 +111,42 @@
     grid-template-columns: repeat(3,1fr);    
     grid-template-rows: repeat(4,1fr);   
 }
-    .keypad button{
-        height: 5.25rem;
-        width: 5.25rem;
+    .keypad .btn_circle{
+        height: 6.15rem;
+        width: 6.15rem;
+        background-color: rgb(70, 70, 70);
     }
-        .keypad button .num{
-            font-size: 2rem;
+        .keypad .btn_circle:active{
+            background-color: rgb(60, 103, 158);
         }
+        #btn_active_red:active{
+            background-color: rgb(201, 30, 30);
+
+        }
+        
+        .keypad button .num{
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+
+        }
+           
 
 
+    .control_container{
+        grid-column:3/5;
+        grid-row: 3/9;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 90%;
+    }
+        .control_container .btn_circle{
+            height: 5.5rem;
+            width: 5.5rem;
+        }
+        .control_container .btn_circle p{
+            text-align: center;
+        }

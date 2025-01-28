@@ -1123,7 +1123,7 @@ const sliderValue = (value: boolean, id: string) => {
 
                     <div className={lightsOption? "lights_app" : "media_off"} >
 
-                        <div className="light_container">
+                        <div className="light_container" id="breakfast_nook">
                             
                             
                             

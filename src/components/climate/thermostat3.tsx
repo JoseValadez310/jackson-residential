@@ -7,6 +7,8 @@ import exit from "../../assets/images/icons/icons8-x.svg"
 //CSS
 import "../../assets/css/componets_css/climate.css"
 
+//icon
+import arrow from "../../assets/images/icons/icons8-triangle-arrow.svg"
 
 
 const Thermostat3 = () =>{
@@ -181,12 +183,12 @@ const Thermostat3 = () =>{
     } else if(mode_off){
         mode_name   = "Off"
         color_wheel = "outter_circle_off"
-        set_point   = "System Off"
+        
 
     } else {
         mode_name   = "Off"
         color_wheel = "outter_circle_off"
-        set_point   = "System Off"
+        
     }
 
 
@@ -233,7 +235,7 @@ const Thermostat3 = () =>{
                             </div>
                                                 
                             <div className="thermostat_controls">
-                                <div className="thermostat_decrease"> <button onClick = {()=>thermostatTempControl('decrease')}> <p>-</p> </button></div>
+                                <div className="thermostat_decrease"> <button onClick = {()=>thermostatTempControl('decrease')}> <img className="btn_image" src={arrow} /> </button></div>
                                 
                                 <div className="thermostat_setpoint">  
                                     <div className="setpoint_container">
@@ -242,7 +244,7 @@ const Thermostat3 = () =>{
                                     </div>
                                 </div>
 
-                                <div className="thermostat_increase"> <button onClick = {()=>thermostatTempControl('increase')}> <p>+</p> </button></div>
+                                <div className="thermostat_increase"> <button onClick = {()=>thermostatTempControl('increase')}><img className="btn_image"  id="flip" src={arrow} /> </button></div>
                             </div>
 
                             <div className="thermostat_controls_two">

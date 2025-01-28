@@ -33,10 +33,7 @@ console.log(green, yellow, red)
                     </Link>
 
                 <div className="nav">
-                    <button className="btn_circle"><p>Stay</p></button>
-                    <button className="btn_circle"><p>Away</p></button>
-                    <button className="btn_circle"><p>Disarm</p></button>
-                    <button className="btn_circle"><p>Bypass All</p></button>
+                   
                 </div>
                 
 
@@ -85,9 +82,10 @@ console.log(green, yellow, red)
 
 
             <div className=" control_container">
-
-               
-
+                    <button className="btn_circle"><p>Stay</p></button>
+                    <button className="btn_circle"><p>Away</p></button>
+                    <button className="btn_circle"><p>Disarm</p></button>
+                    <button className="btn_circle"><p>Bypass All</p></button>
             </div>
 
           

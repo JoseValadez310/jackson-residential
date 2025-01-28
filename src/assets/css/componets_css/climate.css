@@ -118,6 +118,8 @@
             flex-direction: column;
         }
             .setPoint_value{
+                position: relative;
+                left: 5px;
                 font-size: 2rem;
                 margin: 0%;
             }
@@ -687,3 +689,117 @@
     }
 
 
+
+
+
+    /*
+    --------------------------------------------------------------------------- styles only for climate_dashboard_container
+    */
+
+
+    .climate_dashboard_container .thermostat_container{
+        height: 100%;
+        width: 100%;
+    }
+
+    .container_thermo .thermostat{
+        grid-template-rows: repeat(4,1fr);
+    }
+
+     .container_thermo .thermostat_value{
+        grid-row: 1/3;
+    }
+
+    .container_thermo .circles{
+        grid-row: 1/3;  
+        display: flex;
+        justify-content: center;
+        align-items: center;       
+    }
+        .container_thermo .outter_circle{
+            height: 130px;
+            width: 130px;
+            position: absolute;
+        }
+            .container_thermo .inner_circle{
+                height: 120px;
+                width: 120px;
+            }
+
+
+    .container_thermo .thermostat_controls{
+        grid-row: 3;
+    }
+
+    .container_thermo .thermostat_controls_two{
+        grid-row: 4;
+    }
+    .container_thermo .climate_modal_open{
+        grid-row: 1/5;
+        z-index: 200;
+    }
+    .container_thermo .climate_modal_exit{
+        grid-row: 1/5;
+    }
+    .container_thermo .exit_climate_menu {
+        position: relative;
+        left: 10px;
+    }
+
+    .container_thermo .exit_container{
+        grid-column: 4/6 ;
+    }
+    .container_thermo .modal_title{
+        display: none;
+    }
+    .container_thermo .thermostat_controls{
+        border: none;
+    }
+
+    .container_thermo .thermostat_increase{
+        margin-right: 3px;
+        width: 100%;
+        height: 3.75rem;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        background-color: rgba(202, 79, 79, 0.35);
+        box-shadow: rgba(0, 0, 0, 0.377) -5px 5px 8px;
+        cursor: pointer;
+        font-family: Montserrat;
+        transition: 0.1s ease-in-out;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container_thermo .thermostat_decrease{
+        margin-left: 4px;
+        width: 100%;
+        height: 3.75rem;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        background-color: rgba(86, 149, 221, 0.35);
+        box-shadow: rgba(0, 0, 0, 0.377) 5px 5px 8px;
+        cursor: pointer;
+        font-family: Montserrat;
+        transition: 0.1s ease-in-out;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .container_thermo .thermostat_increase:active{
+        background-color: rgb(211, 34, 34);
+        box-shadow: inset -5px 5px 10px rgb(70, 70, 70);
+    }
+
+    .container_thermo .thermostat_decrease:active{
+        background-color: rgb(67, 122, 206);
+        box-shadow: inset 5px 5px 10px rgb(70, 70, 70);
+    }
+   

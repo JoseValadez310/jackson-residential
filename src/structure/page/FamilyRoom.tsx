@@ -780,8 +780,31 @@ const sliderValue = (value: boolean, id: string) => {
 
         <div className="generic_room">
 
+            {active_media?
+            <> </>
+                :
+                <Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
+                    <button className="back_button">
+                        <img src={menu_button}/>
+                    </button>
+                </Link> 
+            }
 
-       <div className="nav_container">
+            {active_media?
+                    <div className="room_home_corner" id="mobile_power_btn">
+                        <button className="home_button" onClick={()=>powerMenu("menu")}>
+                            <img src={power}  />
+                        </button> 
+                    </div>
+                    :
+                    <div className="room_home_corner" id="mobile_home_btn">
+                        <Link to={"/"} className="home_button">
+                            <img src={home_button}/>
+                        </Link>
+                    </div>
+                }
+
+       <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
 
             <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
                 <button className="back_button" >
@@ -827,7 +850,7 @@ const sliderValue = (value: boolean, id: string) => {
          
 
 
-            <h1 className="title_info"> {roomName}</h1>
+            <h1 className="title_info"> {roomName} <p style={{fontSize:"large"}}> {tvOptions? "Media" :"lights" }</p></h1>
 
 
 
@@ -1117,7 +1140,7 @@ const sliderValue = (value: boolean, id: string) => {
                     <div className={musicOption? "music_app" : "media_off"} >
                     </div>
 
-                    <div className={lightsOption? "lights_app" : "media_off"} >
+                    <div className={lightsOption? "lights_app" : "display_none"} >
 
                         <div className="light_container">
                             

@@ -54,9 +54,9 @@ const RoomsDashboard = () => {
             active: false,
             title:"Up Stairs",
             rooms:[
-                {"Game Room":["media","music","light"]},
-                {"Master Bedroom":["media","music","light"]},
                 {"Master Bathroom":["media","music","light"]},
+                {"Master Bedroom":["media","music","light"]},
+                {"Game Room":["media","music","light"]},
                 {"Office":["media","music","light"]},
                 {"Kids Room":["light"]},
             ]
@@ -140,6 +140,13 @@ const RoomsDashboard = () => {
 
     return (
         <div className="rooms_dashboard">
+
+            <Link to={"/"} className="mobile_back_btn"> 
+                <button className="back_button">
+                    <img src={menu_button}/>
+                </button>
+            </Link>
+
        
 
       
@@ -193,7 +200,7 @@ const RoomsDashboard = () => {
                             >
                             {/* Display the room name */}
                             <div className="test">
-                                <p style={{fontSize:"1.25rem"}}>{roomName}</p>
+                                <p className="room_name">{roomName}</p>
 
                                 {/* Now display the relevant icons or text for each item in `items` */}
                                 <div className="icon_preview">

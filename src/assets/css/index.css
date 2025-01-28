@@ -87,8 +87,8 @@ body {
     height: 100vh;
     width: 100%;
    
+    background-image: url('../images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg');
 
-    background-image: url('../images/backgrounds/birmingham-museums-trust-g-DSjyFFcXE-unsplash.jpg');
 
      /*
       background-image: url('../images/backgrounds/laurianne-huggins-AeT8VR7qss0-unsplash.jpg');
@@ -191,7 +191,11 @@ body {
       height: 75%;
     } 
 
-   
+    .title_info{
+      font-size: x-large;
+      grid-column: 2/13;
+  
+  }
     
 
 
@@ -256,6 +260,14 @@ body {
   .btn_square_wide:active{
     box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
     #c7c3c0 -3.2px -3.2px 8px 0px inset;
+    background-color: rgb(94, 198, 233);
+  } 
+
+
+  .btn_square:active{
+    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+    #c7c3c0 -3.2px -3.2px 8px 0px inset;
+    background-color: rgb(94, 198, 233);
   } 
 
 
@@ -287,11 +299,35 @@ body {
     z-index: 1;
   }
 
+  .btn_circle_active{
+    width: 4.25rem;
+    height: 4.25rem;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    background-color: #b9b9b9;
+    box-shadow: rgba(0, 0, 0, 0.377) 5px 10px 15px,
+      #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -1.5px -1.5px 2px 0px inset;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;  
+  }
+
     .btn_circle:active{
         box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
         #c7c3c0 -3.2px -3.2px 8px 0px inset;
         background-color: rgb(67, 189, 230);
     }
+
+    .btn_circle_active:active{
+      box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+      #c7c3c0 -3.2px -3.2px 8px 0px inset;
+      background-color: rgb(67, 189, 230);
+  }
 
       .btn_circle p{
         font-size: medium;
@@ -365,6 +401,11 @@ body {
   transform: rotate(180deg);
 }
 
+#transport_hide{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;  
+}
 
 
 
@@ -533,4 +574,46 @@ body {
         background-color: rgba(70, 70, 70, 0.65);
   
       }
+    }
+
+
+
+
+
+
+
+    /*
+    --------------------------------------------- mobile 
+    */
+
+    .mobile_back_btn{
+      display: none;
+    }
+    #mobile_power_btn{
+      display: none;
+    }
+    #mobile_home_btn{
+      display: none;
+    }
+    @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+      .title_info{
+          font-size: x-large;
+          grid-column: 2/12;
+      
+      }
+
+
+      /*
+      ---------------------------------------------------------------- mobile controls
+      */
+
+      .btn_circle{
+        width: 3.25rem;
+        height: 3.25rem;
+      }
+
+    
+
+
+      
     }

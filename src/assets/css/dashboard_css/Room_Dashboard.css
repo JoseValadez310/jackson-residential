@@ -137,6 +137,7 @@
         text-align: center;
         width: 80%;
         border-bottom:solid 1px gray ;
+        font-size: 1.25rem;
     }
 
     .icon_preview{
@@ -227,61 +228,80 @@
 
 
 
+@media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+.rooms_dashboard .title_info{
+    font-size: 2rem;
+    grid-column: 2/12;
+    bottom: 0;
+    position: relative;
+    bottom: 1.25rem;
 
-@media 
-only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait) {
+}
 
-    .title_info{
-        grid-row: 1;
-        grid-column: 3/9;
-        font-size: 2rem;
+    .mobile_back_btn{
+        display: contents;
+    
+    }
+    .back_button{
+        position: relative;
+        bottom: 1.25rem;
     }
 
-    .floor_options{
-        grid-column: 1/9;
-        width: 95%;
+
+ /*
+    ------------------------------------------- Nav
+ */   
+.nav_container{
+    grid-column: 1/13;
+    grid-row: 8;
+
+    display: flex;
+}
+
+.nav_clock{
+    display: none;
+}
+a{
+    display: none;
+}
+
+.nav{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+/*
+---------------------------------------------- Cards
+*/
+.room_selection_options{
+    grid-column: 1/13;
+    grid-row: 2/8;
+}
+.room_card{
+    height: 10rem;
+    width: 11rem;
+}
+    .room_card .room_name{
+        font-size: 1.1rem;
     }
 
-    .room_selection_options{
-        grid-column: 1/9;
-        width: 95%;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(3,1fr);
-    }
+
 
 }
 
 
-    @media screen  and (orientation: portrait) {
-
-
-        .title_info{
-            grid-column: 2/8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .floor_options button{
-            height: 4.25rem;
-
-        }
-        .room_selection_options{
-            grid-column: 1/9;
-            grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(3, 1fr) ;
-        }
 
 
 
+/*
+----------------------------------------- iphone 14
+*/
 
-
-
-
-
-
-
-
-
-
+@media only screen and (max-device-width: 390px) and (max-device-width: 763px) and (orientation: portrait){
+    .room_card{
+        height: 10rem;
+        width: 10.75rem;
     }
+}

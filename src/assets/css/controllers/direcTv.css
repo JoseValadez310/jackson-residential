@@ -357,34 +357,7 @@
 }
 
 
-/***************** only for ipad pro**********************/
 
-@media screen and (max-width: 1024px) and (max-height: 1366px) and (orientation: portrait){}
-
-  
-
-/**********************  Crestron Tablet *********************************/
-@media screen and (max-width: 1300px) and (max-height: 950px) and (orientation: landscape){}
-
-   
-@media screen and (max-width: 950px) and (max-height: 1300px) and (orientation: portrait){}
-
-   
-
-/**********************  Ipad Screen specs *********************************/
-@media screen and (max-width: 1024px) and (max-height: 768px) and (orientation: landscape){}
-
-    
-@media screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait){}
-
-     
-
-
-
-
-
-
-   
 
 
             
@@ -422,155 +395,75 @@
 
 
 
-  @media screen and (max-width: 768px) and (max-height: 1024px) and (orientation: portrait){
-    .controller_nav{
-        position: relative;
-        bottom: 20px;
-    }
-   
-    
-#direct_controller_mobile{
-    display: block;
-}
+  @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
 
-    .controller_nav{
-        height: 6%;
-    } 
-    .controller_nav img{
-        height: 50%;
-    }
-  
-    #dvr_img{
-        position: relative;
-        bottom: 8px;
-    }
-    
-   
-     
-      #direct_controller{
-        display: none;
-      }
 
-      .mobile_nav{
-        z-index: 1;
-        display: block;
-        display: flex;
-        justify-content: space-evenly;
-        grid-column: 8/15;
-        display: none;
+ 
 
-      }
-        .mobile_nav button{
-            height: 3rem;
-            width: 3rem;
-            border-radius: 100%;
-            border: none;
 
-        }
-    #direct_controller_mobile{
+    #direct_controller {
         height: 100%;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: column;
-    }
-    .direct_controller_mobile{
-        height: 100%;
-        width: 100%;
-      }
-
-      .dtv_controller_movement{
-        height: 100%;
-        width: 100%;
-
-        display: flex;
-      }
-        
-      .dtv_controller_controls{
-        height: 100%;
-        width: 100%;
-      }
-      .dtv_controller_controls_2{
-        height: 100%;
-        width: 100%;
-      }
-
-
-
-
-
-                       
-      .show_option_0{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-items: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        border-radius: 20px;
-        box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;
-        width: 100%;
-    }         
-        .show_option_0 .channel_container{
-            grid-row: 1/4;
-            grid-column: 3/4;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 10% 85%;
+        position: relative;
+    }
+        #direct_controller .control-icon.right{
+            right: 30px;
+        }
+
+        #direct_controller .control-icon.left{
+            left: 30px;
+        }
+
+        #direct_controller .control-icon.top{
+            top: 30px;
+        }
+
+        #direct_controller .control-icon.bottom{
+            bottom: 30px;
+        }
+
+
+
+    #direct_controller .controller{
+        position: relative;
+        top: 20px;
+    }
+
+    #direct_controller .container{
+        justify-content: flex-start;
+        position: relative;
+        right: 10px;
+
+    }
+
+
+    .channel_container{
+        position: relative;
+        right: 1.2rem;
+    }
+        .channel_container .btn_circle{
+            width: 3.5rem;
+        }
+        .channel_container .btn_circle img{
+            height:40%;
+        }
+
+
+        .dtv_controller_movement{
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column-reverse;
-            height: 80%;
-        }   
-            #chan_down_mobile{
-                
-                border-radius: 0%;
-                border-bottom-right-radius: 10px;
-                border-bottom-left-radius: 10px;
-            }
-                #chan_down_mobile img{
-                    height: 60%
-                }
-            #chan_title_mobile{
-                height: 2.5rem;
-                border-radius: 0%;
-            }
-
-            #chan_up_mobile{
-               
-                border-radius: 0%;
-                border-top-right-radius: 10px;
-                border-top-left-radius: 10px;
-            }
-                #chan_up_mobile img{
-                    height: 60%
-                }
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            gap: 1rem;
+        }
 
 
-            .show_option_0 .controller{
-                grid-row: 1/4;
-                grid-column: 1/3;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: row;
-            }   
-            .show_option_0 .controller_buttons{
-                grid-row: 2/4;
-                grid-column: 1/4;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: row;
-            }   
 
-      
-            .transport_button .key_num{
-                font-size: 2.75rem;
-            }
-            .transport_button img {
-                height: 55px;
-            }
-    
-    }
+}
 
 

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 
 //CSS
-import "../../assets/css/index.css"
+import "../../assets/css/page_css/genericRoom.css"
 import "../../assets/css/controllers/bluRay.css"
 
 //Icons 
@@ -15,6 +15,9 @@ import skip        from "../../assets/images/icons/icons8-fast-forward.svg"
 import pause       from "../../assets/images/icons/icons8-pause.svg"
 import play        from "../../assets/images/icons/icons8-play.svg"
 
+import controller from "../../assets/images/icons/icons8-remote-control.svg"
+import dvr        from "../../assets/images/icons/DVR.svg"
+
 
 
 
@@ -23,7 +26,7 @@ import play        from "../../assets/images/icons/icons8-play.svg"
 const BluRay = () => {
 
 
-    const [currentTab, setCurrentTab] = useState(1)
+    const [currentTab, setCurrentTab] = useState(2)
 
     const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
     
@@ -123,6 +126,8 @@ const BluRay = () => {
                 <p> Subtitle </p>
             </button>
 
+
+
         </div>
     </>)
 
@@ -172,7 +177,146 @@ const BluRay = () => {
     </>)
 
 
-      
+    const mobile_section_one = (
+        <>
+            <div className="bluRay_controller_movement">
+                <div className="controller">
+                    <div className="container">
+                        <div className="circle-menu">
+                            
+                            <div className="circle ok-outer">
+                                <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
+                                    <img src={center} style={{height:"85%"}} className="center"/>
+                                </button>
+                            </div>
+
+                            <div className="control-icon right" >
+                                <button className="btn_circle" onClick={() => controllerClick("right")}>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
+                                </button> 
+                            </div>
+
+                            <div className="control-icon bottom">
+                                <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
+                                </button>
+                            </div>
+
+                            <div className="control-icon left">
+                                <button className="btn_circle" onClick={() => controllerClick("left")}>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
+                                </button>
+                            </div>
+
+                            <div className="control-icon top">
+                                <button className="btn_circle" onClick={() => controllerClick("top")}>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+          
+
+                <div className="bottom_row_1_controller"> 
+
+                    <button className="btn_circle" onClick={() => bluRayTransports("scan-")}>
+                        <img className="btn_image" id="flip" src={scan} alt="" />
+                    </button>
+
+                    <button className="btn_circle" onClick={() => bluRayTransports("skip-")}>
+                        <img className="btn_image"  id="flip"  src={skip} alt="" />
+                    </button>
+
+                    <button className="btn_circle" onClick={() => bluRayTransports("skip+")}>
+                        <img className="btn_image" src={skip} alt="" />
+                    </button>
+
+                    <button className="btn_circle"  onClick={() => bluRayTransports("scan+")}>
+                        <img className="btn_image" src={scan} alt="" />
+                    </button>
+
+                   
+
+                </div>
+
+              
+                <div className="bottom_row_2_controller"> 
+
+                    <button className="btn_circle" onClick={() => bluRayTransports("audio")}>
+                        <p> Audio </p>
+                    </button>
+
+                    <button className="btn_circle" onClick={() => bluRayTransports("pause")}>
+                        <img className="btn_image" src={pause} alt="" />
+                    </button>
+
+                    <button className="btn_circle"  onClick={() => bluRayTransports("play")}>
+                        <img className="btn_image" src={play} alt="" />
+                    </button>
+
+                    <button className="btn_circle" onClick={() => bluRayTransports("subtitle")}>
+                        <p> Subtitle </p>
+                    </button>
+
+                   
+                </div>
+        
+            </div>
+        </>
+    )
+
+    const mobile_section_two = (
+
+   
+        <>
+            <div className="bluRay_controller_controls_2">
+
+            <button className="btn_circle" onClick={() => bluRayTransports("home")}>
+                <p> Home </p>
+            </button>
+
+            <button className="btn_circle" onClick={() => bluRayTransports("popup_menu")}>
+                <p> PopUp Menu </p>
+            </button>
+
+            <button className="btn_circle" onClick={() => bluRayTransports("top_menu")}>
+                <p> Top Menu </p>
+            </button>
+
+            <button className="btn_circle"  onClick={() => bluRayTransports("stop")}>
+                <img className="btn_image" src={stop} alt="" />
+            </button>
+
+            <button className="btn_circle" id="transport_hide">
+            </button>
+
+            <button className="btn_circle" onClick={() => bluRayTransports("return")}>
+                <p> Return </p>
+            </button>
+
+                <div className="RGYB_button"> 
+
+                <button className="small_btn_circle" id="button_red"    onClick={() => bluRayTransports("small_red")}>  
+                R  
+                </button>
+
+                <button className="small_btn_circle" id="button_green"  onClick={() => bluRayTransports("small_green")}> 
+                G
+                </button>
+
+                <button className="small_btn_circle" id="button_yellow" onClick={() => bluRayTransports("small_yellow")}> 
+                Y
+                </button>
+
+                <button className="small_btn_circle" id="button_blue"   onClick={() => bluRayTransports("small_blue")}> 
+                B
+                </button>
+
+                </div>
+            </div>
+        </>
+    )
 
 
     const controllerClick = (id:string) =>{
@@ -329,15 +473,15 @@ const BluRay = () => {
 
     
     if(currentTab === 1 ){
-        currentViewing = section_one
+        currentViewing = mobile_section_two
     } else  if(currentTab === 2 ){
-        currentViewing = section_two
+        currentViewing = mobile_section_one
     } else  if(currentTab === 3 ){
         currentViewing = section_three
     }
 
 
-    const bluRayNav = (id:number) =>{
+    const coontrollerNav = (id:number) =>{
 
         if (id === 1){
             setCurrentTab(id)
@@ -345,11 +489,7 @@ const BluRay = () => {
         } else if (id === 2){
             setCurrentTab(id)
 
-        } else if (id === 3){
-            setCurrentTab(id)
-
-        }
-
+        } 
     }
 
 
@@ -373,10 +513,10 @@ const BluRay = () => {
 
 
        
-        <div className="bluRay_nav">
-                <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onClick={() => bluRayNav(1)}>1</button>
-                <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onClick={() => bluRayNav(2)}>2</button>
-                <button className={currentTab === 3? "btn_circle_active" : "btn_circle"} onClick={() => bluRayNav(3)}>3</button>
+        <div className="mobile_controller_nav">
+                <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(2)}> <img className="btn_image" src={controller}/></button>
+                <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(1)}> <img className="btn_image" style={{position:"relative",bottom:"3px"}} src={dvr}/></button>
+
         </div>
 
 

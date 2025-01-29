@@ -9,8 +9,7 @@ import { Link } from "react-router-dom"
 import AppleTv from "../../components/controllers/AppleTv"
 import DirecTv from "../../components/controllers/DirecTv"
 import BluRay from "../../components/controllers/BluRay"
-import Kaleidescape from "../../components/controllers/Kaleidescape"
-
+import Roku from "../..//components/controllers/Roku"
 // Music Page import 
 
 //CSS for Controllers
@@ -781,7 +780,7 @@ const sliderValue = (value: boolean, id: string) => {
         <div className="generic_room">
 
             {active_media?
-            <> </>
+                <> </>
                 :
                 <Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
                     <button className="back_button">
@@ -791,141 +790,110 @@ const sliderValue = (value: boolean, id: string) => {
             }
 
             {active_media?
-                    <div className="room_home_corner" id="mobile_power_btn">
-                        <button className="home_button" onClick={()=>powerMenu("menu")}>
-                            <img src={power}  />
-                        </button> 
-                    </div>
-                    :
-                    <div className="room_home_corner" id="mobile_home_btn">
-                        <Link to={"/"} className="home_button">
-                            <img src={home_button}/>
-                        </Link>
-                    </div>
-                }
+                <div className="room_home_corner" id="mobile_power_btn">
+                    <button className="home_button" onClick={()=>powerMenu("menu")}>
+                        <img src={power}  />
+                    </button> 
+                </div>
+                :
+                <div className="room_home_corner" id="mobile_home_btn">
+                    <Link to={"/"} className="home_button">
+                        <img src={home_button}/>
+                    </Link>
+                </div>
+            }
 
-       <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
+            <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
 
-            <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
-                <button className="back_button" >
-                    <img src={menu_button}/>
-                </button>
-            </Link>  
-        
-
-            <div className="nav">
-                    <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     style={{height:"50%"}}/> </button>
-                    <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}  style={{height:"50%"}} /> </Link>
-                    <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights} style={{height:"50%"}} /> </button>
-            </div>
+                <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
+                    <button className="back_button" >
+                        <img src={menu_button}/>
+                    </button>
+                </Link>  
             
+                <div className="nav">
+                        <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     style={{height:"50%"}}/> </button>
+                        <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}  style={{height:"50%"}} /> </Link>
+                        <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights} style={{height:"50%"}} /> </button>
+                </div>
+                
+                <div className="nav_clock">
+                    {active_media?
+                        <div className="room_home_corner">
+                            <button className="home_button" onClick={()=>powerMenu("menu")}>
+                                <img src={power}  />
+                            </button> 
+                        </div>
+                        :
+                        <div className="room_home_corner">
+                            <Link to={"/"} className="home_button">
+                                <img src={home_button}/>
+                            </Link>
+                        </div>
+                    }
+                </div>
 
-            <div className="nav_clock">
-                {active_media?
-                    <div className="room_home_corner">
-                        <button className="home_button" onClick={()=>powerMenu("menu")}>
-                            <img src={power}  />
-                        </button> 
-                    </div>
-                    :
-                    <div className="room_home_corner">
-                        <Link to={"/"} className="home_button">
-                            <img src={home_button}/>
-                        </Link>
-                    </div>
-                }
             </div>
-
-       </div>
 
        
+            <h1 className="title_info"> {roomName} </h1>
 
-           
+            <div className={tvPowerMenu? "power_menu_overlay" : "hide_power_menu_overlay"} >
+                <div className="power_menu">
+                    <p className="power_menu_text" style={{margin:"1rem"}}> 
+                        Would you like to turn off the {roomName}?
+                    </p>
 
-
-
-         
-           
-            
-         
-
-
-            <h1 className="title_info"> {roomName} <p style={{fontSize:"large"}}> {tvOptions? "Media" :"lights" }</p></h1>
-
-
-
-           
-                <div className={tvPowerMenu? "power_menu_overlay" : "hide_power_menu_overlay"} >
-                    <div className="power_menu">
-
-                        <p className="power_menu_text" style={{margin:"1rem"}}> 
-                            Would you like to turn off the {roomName}?
-                        </p>
-
-                        <div className="power_menu_button">
-                            <Link className="yes_reboot" to={"/"}> 
-                                <button className="yes_reboot" onClick={()=> powerMenu("menu_off")}> 
-                                    <p>YES</p> 
-                                </button> 
-                            </Link>
-                            
-                            <button className="no_reboot" onClick={()=> powerMenu("menu")}> 
-                                <p>NO</p> 
-                            </button>
-                        </div>
-
+                    <div className="power_menu_button">
+                        <Link className="yes_reboot" to={"/"}> 
+                            <button className="yes_reboot" onClick={()=> powerMenu("menu_off")}> 
+                                <p>YES</p> 
+                            </button> 
+                        </Link>
+                        
+                        <button className="no_reboot" onClick={()=> powerMenu("menu")}> 
+                            <p>NO</p> 
+                        </button>
                     </div>
                 </div>
+            </div>
 
-                <div className={displayReboot? "power_menu_overlay": "hide_reboot_menu"} onClick={()=> appleTvRebootMenu("menu")}>
-                                <div className="power_menu" onClick={()=> appleTvRebootMenu("menu")}>
-                                    <p className="power_menu_text">
-                                        Would you like to Reboot the {roomName}'s Apple TV?
-                                    </p>
+            <div className={displayReboot? "power_menu_overlay": "hide_reboot_menu"} onClick={()=> appleTvRebootMenu("menu")}>
+                <div className="power_menu" onClick={()=> appleTvRebootMenu("menu")}>
+                    <p className="power_menu_text">
+                        Would you like to Reboot the {roomName}'s Apple TV?
+                    </p>
 
-                                    <div className="power_menu_button">
-                                        <button className="yes_reboot" onClick={() => appleTvRebootMenu("reboot")}> 
-                                            <p>YES</p> 
-                                        </button> 
-                                        
-                                        <button className="no_reboot"  onClick={()=> appleTvRebootMenu("menu")}> 
-                                            <p>NO</p> 
-                                        </button>
-                                    </div>
-                                </div>
+                    <div className="power_menu_button">
+                        <button className="yes_reboot" onClick={() => appleTvRebootMenu("reboot")}> 
+                            <p>YES</p> 
+                        </button> 
+                        
+                        <button className="no_reboot"  onClick={()=> appleTvRebootMenu("menu")}> 
+                            <p>NO</p> 
+                        </button>
+                    </div>
                 </div>
+            </div>
 
            
+            <div className={roomApps? "generic_room_dashboard" : "media_off"}>
+                <div className="generic_room_card" onClick={() => roomApp("TV")}>
+                    <img src={TV}/>
+                    <p> TV </p>
+                </div>   
 
-
-               
-
-
-
-
-
+                <Link to={'/AudioDashboard'} className="generic_room_card" style={{textDecoration:"none"}}>
+                    <img src={music}/>
+                    <p> Music </p>
+                </Link>
                 
+                <div className="generic_room_card" onClick={() => roomApp("Lights")}>
+                    <img src={lights}/>
+                    <p> Lights </p>
+                </div>  
 
-             
-
-                   
-                <div className={roomApps? "generic_room_dashboard" : "media_off"}>
-                    <div className="generic_room_card" onClick={() => roomApp("TV")}>
-                        <img src={TV}/>
-                        <p> TV </p>
-                    </div>   
-
-                    <Link to={'/AudioDashboard'} className="generic_room_card" style={{textDecoration:"none"}}>
-                        <img src={music}/>
-                        <p> Music </p>
-                    </Link>
-                   
-                    <div className="generic_room_card" onClick={() => roomApp("Lights")}>
-                        <img src={lights}/>
-                        <p> Lights </p>
-                    </div>  
-
-                </div>
+            </div>
                    
 
 
@@ -933,7 +901,6 @@ const sliderValue = (value: boolean, id: string) => {
                         <div className={active_media? "media_off":"room_sources_container"}>
                             
                             <div className="source_card" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
-
                                 <div className="img_container">
                                     <img src={bluRay} style={{height:"45%"}}/>
                                 </div>
@@ -969,6 +936,7 @@ const sliderValue = (value: boolean, id: string) => {
                                 <div className="img_container">
                                     <img src={small_dtv} style={{height:"65%"}}  />
                                 </div>
+
                                 <p>DTV 1</p>
                             </div>
 
@@ -977,18 +945,13 @@ const sliderValue = (value: boolean, id: string) => {
                                     <img src={small_dtv} style={{height:"65%"}}  />
                                 </div>
                                
-                            
                                 <p>DTV 2</p>
-                            
                             </div>
-
-
 
                             <div className="source_card" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
-
-                            <div className="img_container">
-                                <img src={roku} id="svg_white"style={{height:"35%"}}/>
-                            </div>
+                                <div className="img_container">
+                                    <img src={roku} id="svg_white"style={{height:"35%"}}/>
+                                </div>
                              
                                 <p>House</p>
                             </div>
@@ -998,9 +961,7 @@ const sliderValue = (value: boolean, id: string) => {
                         <div className={active_media? "controller_layout": "media_off"}>
 
                             <button id="controller_layout_back_button"  onClick = {display_tile}>
-                                
                                 <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
-
                             </button>
 
                             <div className="logo_display">
@@ -1050,7 +1011,7 @@ const sliderValue = (value: boolean, id: string) => {
                     
                             </div>
 
-                            <button className={media2 ||media3? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
+                            <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
                                 <p> REBOOT </p>
                             </button>
 
@@ -1060,39 +1021,32 @@ const sliderValue = (value: boolean, id: string) => {
                                    < BluRay />
                                 </div>
 
-
                                 <div className={media_2} id="apple_tv_controller">
                                     < AppleTv />
                                 </div>
-
                                    
                                 <div className={media_3} id="apple_tv_controller">
                                     < AppleTv />
                                 </div>
 
-
                                 <div className={media_4} id="apple_tv_controller">
                                     < AppleTv />
                                 </div>
-
 
                                 <div className={media_5} id="direct_controller">
                                     < DirecTv />
                                 </div>
 
-
                                 <div className={media_6} id="direct_controller">
                                     < DirecTv />
                                 </div>
 
-                                <div className={media_7} id="direct_controller">
-                                    
-                                   < Kaleidescape />
-                                    
+                                <div className={media_7} id="roku_controller" >
+                                   < Roku />
                                 </div>
 
                                 <div className={media_8} id="apple_tv_controller">
-                                   
+                               
                                 </div>
                                 
 
@@ -1132,10 +1086,6 @@ const sliderValue = (value: boolean, id: string) => {
 
                         </div>
                     </div>
-
-
-
-
 
                     <div className={musicOption? "music_app" : "media_off"} >
                     </div>

@@ -96,19 +96,7 @@
 @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
 
 
-    #bluRay_controller .btn_circle{
-        height: 5rem;
-        width: 5rem;
-    }
-
-    #bluRay_controller .bluRay_nav .btn_circle{
-        height: 3.5rem;
-        width: 3.5rem;
-    }
-    #bluRay_controller .bluRay_nav .btn_circle_active{
-        height: 3.5rem;
-        width: 3.5rem;
-    }
+ 
 
 
     #bluRay_controller {
@@ -117,32 +105,32 @@
 
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: 20% 80%;
+        grid-template-rows: 10% 80%;
        
-        position: relative;
-        
+        position: relative;   
+      
     }
 
-    .bluRay_nav{
-        width: 80%;
-        height: 105%;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 10px;
-        border-bottom: solid 1px white;
+   .bluRay_controller_movement{
+       height: 100%;
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       position: relative; 
+       top: 15px;
+   
+       gap: 1rem;
     }
-       
 
-    .currentViewing{
-        height: 100%;
-        width: 100%;
-     
-        display: flex;
-        justify-content: center;
-        align-items: center;
+   
+    .bluRay_controller_controls_2{
+        height: 90%;
     }
+
+
 
 
 

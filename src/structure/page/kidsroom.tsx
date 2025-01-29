@@ -240,6 +240,12 @@ const sliderValue = (value: boolean, id: string) => {
 
         <div className="generic_room">
 
+<Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
+            <button className="back_button">
+                <img src={menu_button}/>
+            </button>
+        </Link> 
+
 
        <div className="nav_container">
 

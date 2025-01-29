@@ -83,8 +83,13 @@
 
 
 body {
+
+    height: 100svh;
+    width: 100%;
+    overflow: hidden;
+
     margin: 0%;
-    height: 100vh;
+ 
     width: 100%;
    
     background-image: url('../images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg');

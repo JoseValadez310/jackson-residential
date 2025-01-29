@@ -1,6 +1,5 @@
 // react 
-import { useState } from "react"
-
+import { useState, useEffect } from "react"
 //CSS
 import "../../assets/css/controllers/direcTv.css"
 
@@ -11,7 +10,6 @@ import arrow       from "../../assets/images/icons/icons8-slide-up.svg"
 import keypad      from "../../assets/images/icons/icons8-keypad.svg"
 import favorite    from "../../assets/images/icons/icons8-add-to-favorites.svg"
 import DVR         from "../../assets/images/icons/DVR.svg"
-import remote      from "../../assets/images/icons/icons8-remote-control.svg"
 
 import increment   from "../../assets/images/icons/icons8-triangle-arrow.svg"
 import rewind      from "../../assets/images/icons/icons8-replay.svg"
@@ -25,6 +23,10 @@ import stop        from "../../assets/images/icons/icons8-stop.svg"
 
 
 
+import controller from "../../assets/images/icons/icons8-remote-control.svg"
+
+
+
 
 
 
@@ -34,11 +36,427 @@ const DirecTv = () =>{
     const [dtv_option_2,setdtv_option_2] = useState(false)
     const [dtv_option_3,setdtv_option_3] = useState(false)
 
-    const [mobile_nav_0, setMobile_nav_0] = useState(true)
-    const [mobile_nav_1, setMobile_nav_1] = useState(false)
-    const [mobile_nav_2, setMobile_nav_2] = useState(false)
-    const [mobile_nav_3, setMobile_nav_3] = useState(false)
+
+    const [currentTab, setCurrentTab] = useState(2)
     
+    const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+    
+        const updateScreenSize = () => {
+            setScreenSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            });
+        };
+        
+        useEffect(() => {
+            window.addEventListener('resize', updateScreenSize);
+            return () => window.removeEventListener('resize', updateScreenSize);
+        }, []);
+    
+
+ // -------------------------------------------------------------------------------------- controller sections
+
+    const section_one   = (<> 
+            <div className="dtv_controller_controls">
+                <div className="controller_nav">
+
+                    <button onClick={()=>changedtvOptions("dtv_1")} className = {dtv_option_1? "controller_nav_1_selected" : "controller_nav_1"}>
+                        <img className="btn_image" src={keypad}/>
+                    </button>
+
+                    <button onClick={()=>changedtvOptions("dtv_2")}  className = {dtv_option_2? "controller_nav_2_selected" : "controller_nav_2"}>
+                        <img className="btn_image" src={DVR} id ="dvr_img"/>
+                    </button>
+
+                    <button onClick={()=>changedtvOptions("dtv_3")} className = {dtv_option_3? "controller_nav_3_selected" : "controller_nav_3"} id="favorite_hide">
+                        <img className="btn_image" src={favorite}/>
+                    </button>
+
+                </div>
+                
+                <div className={dtv_option_1?"show_option_1":"none_option"}>
+
+                        <button className="btn_circle" onClick={()=> dtvTransports("key1")}>
+                            <p className="key_num">1</p>
+                        </button>
+                        
+                        <button className="btn_circle" onClick={()=> dtvTransports("key2")}>
+                            <p className="key_num">2</p>
+                        </button>
+
+                        <button className="btn_circle" onClick={()=> dtvTransports("key3")}>
+                            <p className="key_num">3</p>
+                        </button>
+
+                        <button className="btn_circle" onClick={()=> dtvTransports("key4")}>
+                            <p className="key_num">4</p>
+                        </button>
+                        
+                        <button className="btn_circle" onClick={()=> dtvTransports("key5")}>
+                            <p className="key_num">5</p>
+                        </button>
+
+                        <button className="btn_circle" onClick={()=> dtvTransports("key6")}>
+                            <p className="key_num">6</p>
+                        </button>
+                
+                        <button className="btn_circle" onClick={()=> dtvTransports("key7")}>
+                            <p className="key_num">7</p>
+                        </button>
+                        
+                        <button className="btn_circle" onClick={()=> dtvTransports("key8")}>
+                            <p className="key_num">8</p>
+                        </button>
+
+                        <button className="btn_circle" onClick={()=> dtvTransports("key9")}>
+                            <p className="key_num">9</p>
+                        </button>
+                
+                        <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("dash_key")}>
+                            <p>DASH</p>
+                        </button>
+                        
+                        <button className="btn_circle"  onClick={()=> dtvTransports("key0")}>
+                            <p className="key_num">0</p>
+                        </button>
+
+                        <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("enter")}>
+                            <p>ENTER</p>
+                        </button>
+                    
+                
+                </div>
+
+                <div className={dtv_option_2?"show_option_2":"none_option"}>
+                    <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
+                        <img className="btn_image" src={stop} alt="stop btn" />
+                    </button>
+
+                    <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
+                        <img className="btn_image" src={play} />
+                    </button>
+
+                    <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
+                        <img className="btn_image" src={pause} />
+                    </button>
+
+                    <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
+                        <img className="btn_image" src={skip} style={{transform:"rotate(180deg)"}}/>
+                    </button>
+
+                    <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
+                        <img className="btn_image" src={rewind} />
+                    </button>
+
+                    <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
+                        <img className="btn_image" src={skip} />
+                    </button>
+
+                    <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
+                        <img className="btn_image" src={returnArrow} />
+                    </button>
+
+                    <button className="btn_circle" id="transport_hide"onClick={()=>dtvTransports("DVR")}></button>
+
+                    <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
+                        <img className="btn_image" src={record} />
+                    </button>
+
+
+                    <div className="rgyb">
+                        <button className="small_btn_circle" id="button_red"    onClick={() => dtvTransports("small_red")}>  
+                            R  
+                        </button>
+
+                        <button className="small_btn_circle" id="button_green"  onClick={() => dtvTransports("small_green")}> 
+                            G
+                        </button>
+
+                        <button className="small_btn_circle" id="button_yellow" onClick={() => dtvTransports("small_yellow")}> 
+                            Y
+                        </button>
+
+                        <button className="small_btn_circle" id="button_blue"   onClick={() => dtvTransports("small_blue")}> 
+                            B
+                        </button>
+                    </div>
+
+                </div>
+
+                <div className={dtv_option_3?"show_option_3":"none_option"}>
+                    <p> determine favorites here </p>
+                </div>
+            </div>
+    </>)
+
+    const section_two   = (<> 
+            <div className="dtv_controller_movement">
+    <div className="controller">
+                <div className="container">
+                    <div className="circle-menu">
+                        
+                        <div className="circle ok-outer">
+                            <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
+                                <img src={center} style={{height:"85%"}} className="center"/>
+                            </button>
+                        </div>
+
+                        <div className="control-icon right" >
+                            <button className="btn_circle" onClick={() => controllerClick("right")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
+                            </button> 
+                        </div>
+
+                        <div className="control-icon bottom">
+                            <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
+                            </button>
+                        </div>
+
+                        <div className="control-icon left">
+                            <button className="btn_circle" onClick={() => controllerClick("left")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
+                            </button>
+                        </div>
+
+                        <div className="control-icon top">
+                            <button className="btn_circle" onClick={() => controllerClick("top")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            </div>
+
+    </>)
+
+    const section_three = (<> 
+        <div className="dtv_controller_controls_2">
+
+    <div className="controller_nav">
+    </div>
+
+    <div className="show_option_1">
+
+        <div className="channel_container">
+            <button onClick={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down">
+                    <img className="btn_image" src={increment} alt="chan down" />
+            </button>
+
+            <button className="btn_circle" id="chan_title" >
+                <h2> CH </h2>
+            </button>
+
+            <button className="btn_circle"  id="chan_up" onClick={()=> dtvTransports("channel+")}>
+                <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
+            </button>
+        </div>
+
+
+
+        <button className="btn_circle"id="guide" onClick={()=> dtvTransports("guide")}>
+            <p> GUIDE </p>
+        </button>
+
+        <button className="btn_circle" id="menu" onClick={()=> dtvTransports("menu")}>
+            <p> MENU </p>
+        </button>
+
+        <button className="btn_circle" id="list" onClick={()=> dtvTransports("list")}>
+            <p> LIST </p>
+        </button>
+
+        <button className="btn_circle" id="exit" onClick={()=> dtvTransports("exit")}>
+            <p> EXIT </p>
+        </button>
+
+
+        <button className="btn_circle" id="info" onClick={()=> dtvTransports("info")}>
+            <p className="id"> INFO </p>
+        </button>
+
+
+        <button className="btn_circle" id="prev" onClick={()=> dtvTransports("prev")}>
+        <p> PREV </p>
+        </button>
+
+
+        
+
+
+
+
+
+        
+
+
+        
+
+    </div>
+
+
+    </div>
+    </>)
+
+
+        const mobile_section_one =(
+            <>
+                <div className="dtv_controller_movement">
+                    <div className="controller">
+                        <div className="container">
+                            <div className="circle-menu">
+                                
+                                <div className="circle ok-outer">
+                                    <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
+                                        <img src={center} style={{height:"85%"}} className="center"/>
+                                    </button>
+                                </div>
+
+                                <div className="control-icon right" >
+                                    <button className="btn_circle" onClick={() => controllerClick("right")}>
+                                        <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
+                                    </button> 
+                                </div>
+
+                                <div className="control-icon bottom">
+                                    <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                                        <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
+                                    </button>
+                                </div>
+
+                                <div className="control-icon left">
+                                    <button className="btn_circle" onClick={() => controllerClick("left")}>
+                                        <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
+                                    </button>
+                                </div>
+
+                                <div className="control-icon top">
+                                    <button className="btn_circle" onClick={() => controllerClick("top")}>
+                                        <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="channel_container">
+                            <button onClick={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down">
+                                    <img className="btn_image" src={increment} alt="chan down" />
+                            </button>
+
+                            <button className="btn_circle" id="chan_title"  >
+                                <h2> CH </h2>
+                            </button>
+
+                            <button className="btn_circle"  id="chan_up" onClick={()=> dtvTransports("channel+")}>
+                                <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
+                            </button>
+                    </div>
+                    </div> 
+
+
+                  
+
+                    <div className="bottom_row_1_controller">
+                            <button className="btn_circle"id="guide" onClick={()=> dtvTransports("guide")}>
+                                <p> GUIDE </p>
+                            </button>
+
+                            <button className="btn_circle" id="menu" onClick={()=> dtvTransports("menu")}>
+                                <p> MENU </p>
+                            </button>
+
+                            <button className="btn_circle" id="list" onClick={()=> dtvTransports("list")}>
+                                <p> LIST </p>
+                            </button>
+
+                            
+
+                    </div>
+                    <div className="bottom_row_2_controller">
+                           
+
+                            <button className="btn_circle" id="exit" onClick={()=> dtvTransports("exit")}>
+                                <p> EXIT </p>
+                            </button>
+
+
+                            <button className="btn_circle" id="info" onClick={()=> dtvTransports("info")}>
+                                <p className="id"> INFO </p>
+                            </button>
+
+
+                            <button className="btn_circle" id="prev" onClick={()=> dtvTransports("prev")}>
+                            <p> PREV </p>
+                            </button>
+
+                    </div>
+
+       
+
+
+
+
+
+
+
+                </div>
+            </>
+        )
+
+
+    let currentViewing 
+
+        
+    if(currentTab === 1 ){
+        currentViewing = section_three
+    } else  if(currentTab === 2 ){
+        currentViewing = mobile_section_one
+    } else  if(currentTab === 3 ){
+        currentViewing = section_one
+    }
+
+
+    const tabletController = (
+        <>
+            {section_one}
+
+            {section_two}
+
+            {section_three}
+        </>
+        )
+
+    const mobileController = (
+            <>
+    
+                <div className="mobile_controller_nav">
+                        <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(2)}> <img className="btn_image" src={controller}/></button>
+                        <button className={currentTab === 3? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(3)}> <img className="btn_image" style={{position:"relative",bottom:"3px"}} src={DVR}/></button>
+                </div>
+        
+        
+                <div className="currentViewing"> {currentViewing}</div>
+                   
+            </>
+        )
+
+    const coontrollerNav = (id:number) =>{
+
+        if (id === 1){
+            setCurrentTab(id)
+
+        } else if (id === 2){
+            setCurrentTab(id)
+
+        } else if (id === 3){
+            setCurrentTab(id)
+
+        }
+
+    }
+
+   
     const controllerClick = (id:string) =>{
             
         
@@ -290,498 +708,18 @@ const DirecTv = () =>{
                         
                     }
                     }
-                        const change_mobile_nav = (id:string) =>{
-                            if(id === "nav_1"){
-                                console.log(id)
-                                setMobile_nav_0(false)
-                                setMobile_nav_1(true)
-                                setMobile_nav_2(false)
-                                setMobile_nav_3(false)
-                            } else if (id === "nav_2"){
-                                console.log(id)
-                                setMobile_nav_0(false)
-                                setMobile_nav_1(false)
-                                setMobile_nav_2(true)
-                                setMobile_nav_3(false)
-                            } else if (id === "nav_3"){
-                                console.log(id)
-                                setMobile_nav_0(false)
-                                setMobile_nav_1(false)
-                                setMobile_nav_2(false)
-                                setMobile_nav_3(true)
-                            } else if (id === "nav_0"){
-                                console.log(id)
-                                setMobile_nav_0(true)
-                                setMobile_nav_1(false)
-                                setMobile_nav_2(false)
-                                setMobile_nav_3(false)
-                            }
-                        }
+                      
 
 
 
-    return(
 
-        <>
-        <div className="dtv_controller_controls">
-            <div className="controller_nav">
+        return(
+            <>
+                {screenSize.width <= 430? mobileController :tabletController }
+            </>
+        )
 
-                <button onClick={()=>changedtvOptions("dtv_1")} className = {dtv_option_1? "controller_nav_1_selected" : "controller_nav_1"}>
-                    <img className="btn_image" src={keypad}/>
-                </button>
-
-                <button onClick={()=>changedtvOptions("dtv_2")}  className = {dtv_option_2? "controller_nav_2_selected" : "controller_nav_2"}>
-                    <img className="btn_image" src={DVR} id ="dvr_img"/>
-                </button>
-
-                <button onClick={()=>changedtvOptions("dtv_3")} className = {dtv_option_3? "controller_nav_3_selected" : "controller_nav_3"} id="favorite_hide">
-                    <img className="btn_image" src={favorite}/>
-                </button>
-
-            </div>
-            
-            <div className={dtv_option_1?"show_option_1":"none_option"}>
-
-                    <button className="btn_circle" onClick={()=> dtvTransports("key1")}>
-                        <p className="key_num">1</p>
-                    </button>
-                    
-                    <button className="btn_circle" onClick={()=> dtvTransports("key2")}>
-                        <p className="key_num">2</p>
-                    </button>
-
-                    <button className="btn_circle" onClick={()=> dtvTransports("key3")}>
-                        <p className="key_num">3</p>
-                    </button>
-
-                    <button className="btn_circle" onClick={()=> dtvTransports("key4")}>
-                        <p className="key_num">4</p>
-                    </button>
-                    
-                    <button className="btn_circle" onClick={()=> dtvTransports("key5")}>
-                        <p className="key_num">5</p>
-                    </button>
-
-                    <button className="btn_circle" onClick={()=> dtvTransports("key6")}>
-                        <p className="key_num">6</p>
-                    </button>
-            
-                    <button className="btn_circle" onClick={()=> dtvTransports("key7")}>
-                        <p className="key_num">7</p>
-                    </button>
-                    
-                    <button className="btn_circle" onClick={()=> dtvTransports("key8")}>
-                        <p className="key_num">8</p>
-                    </button>
-
-                    <button className="btn_circle" onClick={()=> dtvTransports("key9")}>
-                        <p className="key_num">9</p>
-                    </button>
-            
-                    <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("dash_key")}>
-                        <p>DASH</p>
-                    </button>
-                    
-                    <button className="btn_circle"  onClick={()=> dtvTransports("key0")}>
-                        <p className="key_num">0</p>
-                    </button>
-
-                    <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("enter")}>
-                        <p>ENTER</p>
-                    </button>
-                
-            
-            </div>
-
-            <div className={dtv_option_2?"show_option_2":"none_option"}>
-                <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                    <img className="btn_image" src={stop} alt="stop btn" />
-                </button>
-
-                <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                    <img className="btn_image" src={play} />
-                </button>
-
-                <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                    <img className="btn_image" src={pause} />
-                </button>
-
-                <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                    <img className="btn_image" src={skip} style={{transform:"rotate(180deg)"}}/>
-                </button>
-
-                <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                    <img className="btn_image" src={rewind} />
-                </button>
-
-                <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                    <img className="btn_image" src={skip} />
-                </button>
-
-                <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                    <img className="btn_image" src={returnArrow} />
-                </button>
-
-                <button className="btn_circle" id="transport_hide"onClick={()=>dtvTransports("DVR")}></button>
-
-                <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                    <img className="btn_image" src={record} />
-                </button>
-
-
-                <div className="rgyb">
-                    <button className="small_btn_circle" id="button_red"    onClick={() => dtvTransports("small_red")}>  
-                        R  
-                    </button>
-
-                    <button className="small_btn_circle" id="button_green"  onClick={() => dtvTransports("small_green")}> 
-                        G
-                    </button>
-
-                    <button className="small_btn_circle" id="button_yellow" onClick={() => dtvTransports("small_yellow")}> 
-                        Y
-                    </button>
-
-                    <button className="small_btn_circle" id="button_blue"   onClick={() => dtvTransports("small_blue")}> 
-                        B
-                    </button>
-                </div>
-
-            </div>
-
-            <div className={dtv_option_3?"show_option_3":"none_option"}>
-                <p> determine favorites here </p>
-            </div>
-        </div>
-
-        <div className="dtv_controller_movement">
-            <div className="controller">
-                <div className="container">
-                    <div className="circle-menu">
-                        
-                        <div className="circle ok-outer">
-                            <button className="btn_circle" style={{height:"5.75rem", width:"5.75rem"}} onClick={() => controllerClick("center")}>
-                                <img src={center} style={{height:"85%"}} className="center"/>
-                            </button>
-                        </div>
-
-                        <div className="control-icon right" >
-                            <button className="btn_circle" onClick={() => controllerClick("right")}>
-                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
-                            </button> 
-                        </div>
-
-                        <div className="control-icon bottom">
-                            <button className="btn_circle" onClick={() => controllerClick("bottom")}>
-                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
-                            </button>
-                        </div>
-
-                        <div className="control-icon left">
-                            <button className="btn_circle" onClick={() => controllerClick("left")}>
-                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
-                            </button>
-                        </div>
-
-                        <div className="control-icon top">
-                            <button className="btn_circle" onClick={() => controllerClick("top")}>
-                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>   
-        </div>
-
-        <div className="dtv_controller_controls_2">
-
-            <div className="controller_nav">
-            </div>
-
-            <div className="show_option_1">
-
-                <div className="channel_container">
-                    <button onClick={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down">
-                            <img className="btn_image" src={increment} alt="chan down" />
-                    </button>
-
-                    <button className="btn_circle" id="chan_title" >
-                        <h2> CH </h2>
-                    </button>
-
-                    <button className="btn_circle"  id="chan_up" onClick={()=> dtvTransports("channel+")}>
-                        <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
-                    </button>
-                </div>
-
-            
-            
-                <button className="btn_circle"id="guide" onClick={()=> dtvTransports("guide")}>
-                    <p> GUIDE </p>
-                </button>
-
-                <button className="btn_circle" id="menu" onClick={()=> dtvTransports("menu")}>
-                    <p> MENU </p>
-                </button>
-
-                <button className="btn_circle" id="list" onClick={()=> dtvTransports("list")}>
-                    <p> LIST </p>
-                </button>
-
-                <button className="btn_circle" id="exit" onClick={()=> dtvTransports("exit")}>
-                    <p> EXIT </p>
-                </button>
-
-
-                <button className="btn_circle" id="info" onClick={()=> dtvTransports("info")}>
-                    <p className="id"> INFO </p>
-                </button>
-
-            
-                <button className="btn_circle" id="prev" onClick={()=> dtvTransports("prev")}>
-                <p> PREV </p>
-                </button>
-
-            
-                
-
-
-            
-
-
-                
-
-
-                
-
-            </div>
-        
-        
-        </div>
-
-
-
-
-            <div className="display_none">
-                <div className="dtv_controller_controls">
-                    <div className="controller_nav">
-
-                        <button onClick={()=>change_mobile_nav("nav_0")} className = {mobile_nav_0? "controller_nav_0_selected" : "controller_nav_0"}>
-                            <img className="btn_image" src={remote}/>
-                        </button>
-
-                        <button onClick={()=>change_mobile_nav("nav_1")} className = {mobile_nav_1? "controller_nav_1_selected" : "controller_nav_1"}>
-                            <img className="btn_image" src={keypad}/>
-                        </button>
-
-                        <button onClick={()=>change_mobile_nav("nav_2")} className = {mobile_nav_2? "controller_nav_2_selected" : "controller_nav_2"}>
-                            <img className="btn_image" src={DVR} id ="dvr_img"/>
-                        </button>
-
-                        <button onClick={()=>change_mobile_nav("nav_3")} className = {mobile_nav_3? "controller_nav_3_selected" : "controller_nav_3"} id="favorite_hide">
-                            <img className="btn_image" src={favorite}/>
-                        </button>
-                    </div>
-
-                    <div className={mobile_nav_0?"show_option_0":"none_option"}>
-
-                        <div className="channel_container">
-                                <button onClick={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down_mobile">
-                                        <img className="btn_image" src={increment} alt="chan down" />
-                                </button>
-
-                                <button className="btn_circle" id="chan_title_mobile">
-                                    <h2> CH </h2>
-                                </button>
-
-                                <button className="btn_circle"  id="chan_up_mobile" onClick={()=> dtvTransports("channel+")}>
-                                    <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
-                                </button>
-                        </div>
-
-                        <div className="controller">
-                            <div className="container">
-                                <div className="circle-menu">
-                                    
-                                    <div className="circle ok-outer">
-                                        <button className="btn_circle" onClick={() => controllerClick("center")}>
-                                                <img className="btn_image" src={center} style={{filter:'invert(0)',height:"75%"}} />
-                                            </button>
-                                    </div>
-
-                                    <div className="control-icon right" >
-                                        <button className="btn_circle" onClick={() => controllerClick("right")}>
-                                            <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
-                                        </button> 
-                                    </div>
-
-                                    <div className="control-icon bottom">
-                                        <button className="btn_circle" onClick={() => controllerClick("bottom")}>
-                                            <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
-                                        </button>
-                                    </div>
-
-                                    <div className="control-icon left">
-                                        <button className="btn_circle" onClick={() => controllerClick("left")}>
-                                            <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
-                                        </button>
-                                    </div>
-
-                                    <div className="control-icon top">
-                                        <button className="btn_circle" onClick={() => controllerClick("top")}>
-                                            <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>   
-
-                        <button className="btn_circle"id="guide" onClick={()=> dtvTransports("guide")}>
-                            <p> GUIDE </p>
-                        </button>
-
-                        <button className="btn_circle" id="menu" onClick={()=> dtvTransports("menu")}>
-                            <p> MENU </p>
-                        </button>
-
-                        <button className="btn_circle" id="list" onClick={()=> dtvTransports("list")}>
-                            <p> LIST </p>
-                        </button>
-
-                        <button className="btn_circle" id="exit" onClick={()=> dtvTransports("exit")}>
-                            <p> EXIT </p>
-                        </button>
-
-                        <button className="btn_circle" id="info" onClick={()=> dtvTransports("info")}>
-                            <p className="id"> INFO </p>
-                        </button>
-                        
-                        <button className="btn_circle" id="prev" onClick={()=> dtvTransports("prev")}>
-                            <p> PREV </p>
-                        </button>
-
-                        
-                    
-                    </div>
-                    
-                    <div className={mobile_nav_1?"show_option_1":"none_option"}>
-
-                            <button className="btn_circle" onClick={()=> dtvTransports("key1")}>
-                                <p className="key_num">1</p>
-                            </button>
-                            
-                            <button className="btn_circle" onClick={()=> dtvTransports("key2")}>
-                                <p className="key_num">2</p>
-                            </button>
-
-                            <button className="btn_circle" onClick={()=> dtvTransports("key3")}>
-                                <p className="key_num">3</p>
-                            </button>
-
-                            <button className="btn_circle" onClick={()=> dtvTransports("key4")}>
-                                <p className="key_num">4</p>
-                            </button>
-                            
-                            <button className="btn_circle" onClick={()=> dtvTransports("key5")}>
-                                <p className="key_num">5</p>
-                            </button>
-
-                            <button className="btn_circle" onClick={()=> dtvTransports("key6")}>
-                                <p className="key_num">6</p>
-                            </button>
-                    
-                            <button className="btn_circle" onClick={()=> dtvTransports("key7")}>
-                                <p className="key_num">7</p>
-                            </button>
-                            
-                            <button className="btn_circle" onClick={()=> dtvTransports("key8")}>
-                                <p className="key_num">8</p>
-                            </button>
-
-                            <button className="btn_circle" onClick={()=> dtvTransports("key9")}>
-                                <p className="key_num">9</p>
-                            </button>
-                    
-                            <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("dash_key")}>
-                                <p>DASH</p>
-                            </button>
-                            
-                            <button className="btn_circle"  onClick={()=> dtvTransports("key0")}>
-                                <p className="key_num">0</p>
-                            </button>
-
-                            <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("enter")}>
-                                <p>ENTER</p>
-                            </button>
-
-                        
-                    
-                    </div>
-
-                    <div className={mobile_nav_2?"show_option_2":"none_option"}>
-                        <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                            <img className="btn_image" src={stop} alt="stop btn" />
-                        </button>
-
-                        <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                            <img className="btn_image" src={play} />
-                        </button>
-
-                        <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                            <img className="btn_image" src={pause} />
-                        </button>
-
-                        <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                            <img className="btn_image" src={skip} style={{transform:"rotate(180deg)"}}/>
-                        </button>
-
-                        <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                            <img className="btn_image" src={rewind} />
-                        </button>
-
-                        <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                            <img className="btn_image" src={skip} />
-                        </button>
-
-                        <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                            <img className="btn_image" src={returnArrow} />
-                        </button>
-
-                        <button className="btn_circle" id="transport_hide"onClick={()=>dtvTransports("DVR")}></button>
-
-                        <button className="btn_circle" onClick={()=>dtvTransports("DVR")}>
-                            <img className="btn_image" src={record} />
-                        </button>
-
-
-                        <div className="rgyb">
-                            <button className="small_btn_circle" id="button_red"    onClick={() => dtvTransports("small_red")}>  
-                                R  
-                            </button>
-
-                            <button className="small_btn_circle" id="button_green"  onClick={() => dtvTransports("small_green")}> 
-                                G
-                            </button>
-
-                            <button className="small_btn_circle" id="button_yellow" onClick={() => dtvTransports("small_yellow")}> 
-                                Y
-                            </button>
-
-                            <button className="small_btn_circle" id="button_blue"   onClick={() => dtvTransports("small_blue")}> 
-                                B
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <div className={mobile_nav_3?"show_option_3":"none_option"}>
-                        <p> determine favorites here </p>
-                    </div>
-                </div>
-            </div>
-        
-        </>
-    )
+    
 }
 
 

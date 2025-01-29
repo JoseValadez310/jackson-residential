@@ -1,5 +1,8 @@
+// React 
+import { useState, useEffect } from "react"
+
+
 // CSS
-import "../../assets/css/index.css"
 import"../../assets/css/controllers/appleTv.css"
 
 //Icons
@@ -12,7 +15,209 @@ import playPause   from "../../assets/images/icons/icons8-resume-button.svg"
 
 
 
+
+
 const AppleTv = () => {
+
+    
+        const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+        
+        const updateScreenSize = () => {
+            setScreenSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            });
+        };
+          
+        useEffect(() => {
+            window.addEventListener('resize', updateScreenSize);
+            return () => window.removeEventListener('resize', updateScreenSize);
+        }, []);
+
+
+    
+    
+      
+        const section_one   = (<>
+            <div className="apple_tv_controller_movement">
+            <div className="controller">
+                <div className="container">
+                    <div className="circle-menu">
+                        
+                        <div className="circle ok-outer">
+                            <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
+                                <img src={center} style={{height:"85%"}} className="center"/>
+                            </button>
+                        </div>
+
+                        <div className="control-icon right" >
+                            <button className="btn_circle" onClick={() => controllerClick("right")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
+                            </button> 
+                        </div>
+
+                        <div className="control-icon bottom">
+                            <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
+                            </button>
+                        </div>
+
+                        <div className="control-icon left">
+                            <button className="btn_circle" onClick={() => controllerClick("left")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
+                            </button>
+                        </div>
+
+                        <div className="control-icon top">
+                            <button className="btn_circle" onClick={() => controllerClick("top")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            </div>
+        </>)
+
+
+
+        const section_two   = (<>
+            <div className="apple_tv_controller_controls">
+                <div className="side_controls_grid" style={{zIndex:'1'}}>
+
+                    <div className="slot_1a">
+                        <button className="btn_circle"  onClick={() => appleTvTransports("skip-")}>
+                            <img className ="btn_image" src={skip} id="flip"/>
+                        </button>
+                    </div>
+            
+                    <div className="slot_2a">
+
+                    </div>
+                    
+                    <div className="slot_3a">
+                        <button className="btn_circle"  onClick={() => appleTvTransports("skip+")}>
+                            <img className ="btn_image" src={skip} />
+                        </button>
+                    </div>
+
+                    <div className="slot_1b"> 
+
+                    </div>
+
+                    <div className="slot_2b" >
+                        <button className="btn_circle" onClick={() => appleTvTransports("playPause")}>
+                            <img className ="btn_image"src={playPause} />
+                        </button>
+                    </div>
+
+                    <div className="slot_3b">
+
+                    </div>
+
+                    <div className="slot_1c">
+                        <button className="btn_circle" onClick={() => appleTvTransports("Menu")}>
+                            <p> MENU </p>
+                        </button>
+                    </div>
+
+                    <div className="slot_2c">
+                        
+                    </div>
+
+                    <div className="slot_3c">
+                        <button className="btn_circle" onClick={() => appleTvTransports("Home")}>
+                            <p> HOME </p>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </>)
+
+
+
+        const mobile_controlller = (<>
+        
+            <div className="apple_tv_controller_movement">
+                <div className="controller">
+                    <div className="container">
+                        <div className="circle-menu">
+                            
+                            <div className="circle ok-outer">
+                                <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
+                                    <img src={center} style={{height:"85%"}} className="center"/>
+                                </button>
+                            </div>
+
+                            <div className="control-icon right" >
+                                <button className="btn_circle" onClick={() => controllerClick("right")}>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
+                                </button> 
+                            </div>
+
+                            <div className="control-icon bottom">
+                                <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
+                                </button>
+                            </div>
+
+                            <div className="control-icon left">
+                                <button className="btn_circle" onClick={() => controllerClick("left")}>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
+                                </button>
+                            </div>
+
+                            <div className="control-icon top">
+                                <button className="btn_circle" onClick={() => controllerClick("top")}>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
+               
+
+                <div className="bottom_row_1_controller">
+
+                <button className="btn_circle" onClick={() => appleTvTransports("Menu")}>
+                            <p> Menu </p>
+                        </button>
+
+                        <button className="btn_circle" onClick={() => appleTvTransports("Home")}>
+                            <p> Home </p>
+                        </button>
+                </div>
+
+                <div className="bottom_row_2_controller">
+
+                    <button className="btn_circle"  onClick={() => appleTvTransports("skip-")}>
+                        <img className ="btn_image" src={skip} id="flip"/>
+                    </button>
+
+                        <button className="btn_circle" onClick={() => appleTvTransports("playPause")}>
+                            <img className ="btn_image"src={playPause} />
+                        </button>
+
+
+                    <button className="btn_circle"  onClick={() => appleTvTransports("skip+")}>
+                        <img className ="btn_image" src={skip} />
+                    </button>
+                </div>
+
+            </div>
+        
+        
+        
+        </>)
+      
+
+    
+       
+    
+    
+
 
     const controllerClick = (id:string) =>{
             
@@ -92,192 +297,22 @@ const AppleTv = () => {
         }
 
     }
+
+
+
+    const mobileController = ( <> 
+        {mobile_controlller}
+    </>)
+    const tabletController = ( <>
+        {section_one}
+        {section_two}
+    </>)
       
 
     return(
-       <>
-            <div className="apple_tv_controller_movement">
-                <div className="controller">
-                    <div className="container">
-                        <div className="circle-menu">
-                            
-                            <div className="circle ok-outer">
-                                <button className="btn_circle" style={{height:"5.75rem", width:"5.75rem"}} onClick={() => controllerClick("center")}>
-                                    <img src={center} style={{height:"85%"}} className="center"/>
-                                </button>
-                            </div>
-
-                            <div className="control-icon right" >
-                                <button className="btn_circle" onClick={() => controllerClick("right")}>
-                                    <img src={arrow} className="arrow_right"/>
-                                </button> 
-                            </div>
-
-                            <div className="control-icon bottom">
-                                <button className="btn_circle" onClick={() => controllerClick("bottom")}>
-                                    <img src={arrow} className="arrow_bottom"/>
-                                </button>
-                            </div>
-
-                            <div className="control-icon left">
-                                <button className="btn_circle" onClick={() => controllerClick("left")}>
-                                    <img src={arrow} className="arrow_left"/>
-                                </button>
-                            </div>
-
-                            <div className="control-icon top">
-                                <button className="btn_circle" onClick={() => controllerClick("top")}>
-                                    <img src={arrow} className="arrow_top"/>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="apple_tv_controller_controls">
-                <div className="side_controls_grid" style={{zIndex:'1'}}>
-
-                    <div className="slot_1a">
-                        <button className="btn_circle"  onClick={() => appleTvTransports("skip-")}>
-                            <img className ="btn_image" src={skip} id="flip"/>
-                        </button>
-                    </div>
-            
-                    <div className="slot_2a">
-
-                    </div>
-                    
-                    <div className="slot_3a">
-                        <button className="btn_circle"  onClick={() => appleTvTransports("skip+")}>
-                            <img className ="btn_image" src={skip} />
-                        </button>
-                    </div>
-
-                    <div className="slot_1b"> 
-
-                    </div>
-
-                    <div className="slot_2b" >
-                        <button className="btn_circle" onClick={() => appleTvTransports("playPause")}>
-                            <img className ="btn_image"src={playPause} />
-                        </button>
-                    </div>
-
-                    <div className="slot_3b">
-
-                    </div>
-
-                    <div className="slot_1c">
-                        <button className="btn_circle" onClick={() => appleTvTransports("Menu")}>
-                            <p> MENU </p>
-                        </button>
-                    </div>
-
-                    <div className="slot_2c">
-                        
-                    </div>
-
-                    <div className="slot_3c">
-                        <button className="btn_circle" onClick={() => appleTvTransports("Home")}>
-                            <p> HOME </p>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div className="display_none">
-            <div className="container">
-                                                    <div className="circle-menu">
-                                                        <div className="circle ok-inner">
-                                                            <button className="btn_circle" onClick={() => controllerClick("center")}>
-                                                                <img src={center} className="center"/>
-                                                            </button>
-                                                        </div>
-
-                                                        <div className="circle ok-outer">
-
-                                                        </div>
-
-                                                        <div className="control-icon right" >
-                                                            <button className="btn_circle" onClick={() => controllerClick("right")}>
-                                                                <img src={arrow} className="arrow_right"/>
-                                                            </button> 
-                                                        </div>
-
-                                                        <div className="control-icon bottom">
-                                                            <button className="btn_circle" onClick={() => controllerClick("bottom")}>
-                                                                <img src={arrow} className="arrow_bottom"/>
-                                                            </button>
-                                                        </div>
-
-                                                        <div className="control-icon left">
-                                                            <button className="btn_circle" onClick={() => controllerClick("left")}>
-                                                                <img src={arrow} className="arrow_left"/>
-                                                            </button>
-                                                        </div>
-
-                                                        <div className="control-icon top">
-                                                            <button className="btn_circle" onClick={() => controllerClick("top")}>
-                                                                <img src={arrow} className="arrow_top"/>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                
-
-                                                <div className="slot_1a">
-                                                    <button className="transport_button" id="transport_flip" onClick={() => appleTvTransports("skip-")}>
-                                                        <img src={skip} />
-                                                    </button>
-                                                </div>
-                                        
-                                                <div className="slot_2a">
-
-                                                </div>
-                                                
-                                                <div className="slot_3a">
-                                                    <button className="transport_button"  onClick={() => appleTvTransports("skip+")}>
-                                                        <img src={skip} />
-                                                    </button>
-                                                </div>
-
-                                                <div className="slot_1b"> 
-
-                                                </div>
-
-                                                <div className="slot_2b">
-                                                    <button className="transport_button" onClick={() => appleTvTransports("playPause")}>
-                                                        <img src={playPause} />
-                                                    </button>
-                                                </div>
-
-                                                <div className="slot_3b">
-
-                                                </div>
-
-                                                <div className="slot_1c">
-                                                    <button className="transport_button" onClick={() => appleTvTransports("Menu")}>
-                                                        <p> MENU </p>
-                                                    </button>
-                                                </div>
-
-                                                <div className="slot_2c">
-                                                    
-                                                </div>
-
-                                                <div className="slot_3c">
-                                                    <button className="transport_button" onClick={() => appleTvTransports("Home")}>
-                                                        <p> HOME </p>
-                                                    </button>
-                                                </div>
-
-            </div>
-       
-       </>
+        <>
+            {screenSize.width <= 430? mobileController :tabletController }
+        </>
     )
 }
 

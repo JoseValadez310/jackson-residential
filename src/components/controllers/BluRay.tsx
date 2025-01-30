@@ -186,31 +186,31 @@ const BluRay = () => {
                             
                             <div className="circle ok-outer">
                                 <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
-                                    <img src={center} style={{height:"85%"}} className="center"/>
+                                    <img src={center} style={{height:"95%"}} className="center"/>
                                 </button>
                             </div>
 
                             <div className="control-icon right" >
                                 <button className="btn_circle" onClick={() => controllerClick("right")}>
-                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"85%"}}/>
                                 </button> 
                             </div>
 
                             <div className="control-icon bottom">
                                 <button className="btn_circle" onClick={() => controllerClick("bottom")}>
-                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"85%"}}/>
                                 </button>
                             </div>
 
                             <div className="control-icon left">
                                 <button className="btn_circle" onClick={() => controllerClick("left")}>
-                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"85%"}}/>
                                 </button>
                             </div>
 
                             <div className="control-icon top">
                                 <button className="btn_circle" onClick={() => controllerClick("top")}>
-                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
+                                    <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"85%"}}/>
                                 </button>
                             </div>
                         </div>

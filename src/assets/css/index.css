@@ -538,8 +538,10 @@ body {
       border-radius: 100%;
       border: none;
       font-size: large;
-      
   }
+    .btn_not_selected img{
+      height: 50%;
+    }
   .btn_selected{
     display: flex;
     justify-content: center;
@@ -549,9 +551,12 @@ body {
     height: 4.5rem;
     width: 4.5rem;
     border-radius: 100%;
-    animation: glow 2.5s ease-in-out infinite alternate;
+    animation: glow 5s infinite linear;
     font-size: large;
   }
+    .btn_selected img{
+      height: 50%;
+    }
     .btn_selected p{
       color: rgb(255, 255, 255);
       
@@ -572,14 +577,24 @@ body {
  
 
     @keyframes glow {
-      from{
-        background-color: rgb(70, 70, 70);
+      0%{
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.25);
        
-      } to {
-        background-color: rgba(70, 70, 70, 0.65);
-  
+      } 
+      
+        
+      50% {
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);     }
+      
+      
+      100% {
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.25);    }
+      
+      
       }
-    }
 
 
 
@@ -617,7 +632,45 @@ body {
         height: 3.25rem;
       }
 
+      /*
+      ---------------------------------------------------------------- nav bar highlight
+      */
+
+      .btn_selected{
+        height: 2.25rem;
+        width: 4rem;
+        border-radius: 1rem;
+        
+      }
+        .btn_selected img{
+          height: 75%;
+        }
     
+
+
+
+        
+    @keyframes glow {
+      0%{
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.25);
+       
+      } 
+      
+        
+      50% {
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);     }
+      
+      
+      100% {
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.25);    }
+      
+      
+      }
+    
+
 
 
       

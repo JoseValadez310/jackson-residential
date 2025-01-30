@@ -42,9 +42,9 @@ const HomeDashboard = () => {
                     <div className="clock_info" onClick = {ViewPortCounter}>
                         <Clock  />
 
-                        <p>
-                            {viewportViewer?  <button style={{height:"3rem",width:"20rem"}}> <Link to={"/ScreenSize"}> <p style={{fontSize:"large", color:"black"}}> Enter ViewPort Viewer  </p> </Link> </button>  : '' }
-                        </p>
+                        <>
+                            {viewportViewer?  <div style={{height:"3rem",width:"20rem", backgroundColor:"rgb(70,70,70)", display:"flex",justifyContent:'center',alignContent:"center"}}> <Link to={"/ScreenSize"}> <p style={{fontSize:"large"}}> Enter ViewPort Viewer  </p> </Link> </div>  : '' }
+                        </>
                     </div>
 
                     <div className="date-info">

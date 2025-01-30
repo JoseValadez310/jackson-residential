@@ -151,3 +151,72 @@
         .control_container .btn_circle p{
             text-align: center;
         }
+
+
+ /*
+        ------------------------------- short nav 
+    */
+
+    .security_dashboard .nav_container{
+        grid-row: 1/2;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+
+
+
+
+
+
+
+
+
+    
+    @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+       
+        .security_dashboard .nav_container{
+            display: none;
+        }
+
+   
+        
+        .security_dashboard .title_info{
+            font-size: 1.75rem;
+            grid-column: 2/12;
+            bottom: 0;
+            position: relative;
+            bottom: 1.25rem;
+        
+        }
+
+        .security_keypad_container{
+            grid-column: 1/13;
+            grid-row: 3/8;
+            width: 90%;
+            height: 100%;
+        }
+
+       
+
+        .keypad .btn_circle{
+            height: 5rem;
+            width: 6rem;
+        }
+        
+        .control_container{
+            grid-column: 1/13;
+            grid-row: 8;
+            flex-direction: row;
+            position: relative;
+            top: 10px;
+        }
+            .control_container .btn_circle{
+                height: 4.75rem;
+                width: 4.75rem;
+            }
+    
+    
+    
+    
+    }

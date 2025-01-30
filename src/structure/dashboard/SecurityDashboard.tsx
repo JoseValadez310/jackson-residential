@@ -25,6 +25,13 @@ console.log(green, yellow, red)
     return(
         <div className="security_dashboard">
 
+            <Link to={"/"} className="mobile_back_btn"> 
+                <button className="back_button">
+                    <img src={menu_button}/>
+                </button>
+            </Link>
+
+
             <div className="nav_container">
                     <Link to={"/"}> 
                         <button className="back_button">
@@ -37,7 +44,7 @@ console.log(green, yellow, red)
                 </div>
                 
 
-                <div className="nav_clock">
+                <div className="display_none">
                     <Clock />
                 </div>
 

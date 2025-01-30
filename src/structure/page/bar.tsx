@@ -813,9 +813,9 @@ const sliderValue = (value: boolean, id: string) => {
             </Link>  
         
             <div className="nav">
-                    <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     style={{height:"50%"}}/> </button>
-                    <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}  style={{height:"50%"}} /> </Link>
-                    <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights} style={{height:"50%"}} /> </button>
+                    <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}/> </button>
+                    <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}/> </Link>
+                    <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights} /> </button>
             </div>
             
             <div className="nav_clock">

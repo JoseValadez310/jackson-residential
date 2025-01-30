@@ -261,15 +261,21 @@
 .nav_clock{
     display: none;
 }
-a{
+
+.back_button{
     display: none;
 }
-
+.mobile_back_btn .back_button{
+    display: block;
+}
 .nav{
     width: 100%;
     flex-direction: row;
     justify-content: space-evenly;
 }
+    .nav p{
+        font-size: medium;
+    }
 
 
 /*

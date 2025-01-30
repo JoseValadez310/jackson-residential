@@ -54,6 +54,11 @@ const ClimateDashboard = () =>{
             <div className="climate_page">
 
 
+<Link to={"/"} className="mobile_back_btn"> 
+                <button className="back_button">
+                    <img src={menu_button}/>
+                </button>
+            </Link>
 
 
 

@@ -516,8 +516,8 @@ const MediaServerWebSocket: React.FC = () => {
       <div className='audio_dashboard'>
 
     
-        <div  style={{gridColumn:"1/2", gridRow:"1/2", display:"flex", justifyContent:"center", alignItems:"center", width:'100%', height:'100%'}}> 
-          <button className="home_button" onClick={() => navigate(-1)} style={{zIndex:"10"}}>
+    
+          <button className="back_button" onClick={() => navigate(-1)} style={{zIndex:"10"}}>
             <img 
               className='back_button_image' 
               src={backbutton} 
@@ -525,7 +525,21 @@ const MediaServerWebSocket: React.FC = () => {
               style={{height:"60%", zIndex:"1px"}} 
             />
           </button>
-        </div>
+
+          
+         
+
+
+
+          <div  className="mobile_back_btn" onClick={() => navigate(-1)}> 
+                    <button className="back_button">
+                        <img src={backbutton}/>
+                    </button>
+                </div> 
+
+        
+        
+     
 
 
         <div className='streaming_service_logo'>

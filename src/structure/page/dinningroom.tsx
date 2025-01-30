@@ -257,7 +257,7 @@ const sliderValue = (value: boolean, id: string) => {
         
 
             <div className="nav">
-                    <button  className={lightsOption? "btn_selected" : "btn_not_selected"}>  <img src={lights} style={{height:"50%"}} /> </button>
+                    <button  className={lightsOption? "btn_selected" : "btn_not_selected"}>  <img src={lights}  /> </button>
             </div>
             
 

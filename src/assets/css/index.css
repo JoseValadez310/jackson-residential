@@ -77,40 +77,37 @@
     font-style: normal;
   }
   
+.project_container{
 
+  display: grid;
+  overflow: hidden;
+
+
+}
  
+
+ .imageApp{
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    position: absolute;
+    object-fit: cover;
+
+
+
+ }
   
 
 
 body {
 
-    height: 100svh;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
 
     margin: 0%;
- 
-    width: 100%;
-   
-    background-image: url('../images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg');
-
-
-     /*
-      background-image: url('../images/backgrounds/laurianne-huggins-AeT8VR7qss0-unsplash.jpg');
-      background-image: url('../images/backgrounds/mostafa-meraji-fUex6n_txNw-unsplash.jpg');
-      background-image: url('../images/backgrounds/pawel-czerwinski-bN8UPda2xFY-unsplash.jpg');
-      background-image: url('../images/backgrounds/alan-scales-1_WMZARl81c-unsplash.jpg');
-      background-image: url('../images/backgrounds/birmingham-museums-trust-g-DSjyFFcXE-unsplash.jpg');
-      background-image: url('../images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg');
-
     
-    
-    overflow: hidden;
-    */
-    background-repeat: no-repeat;
-    background-size:cover;    
-    background-color: #dbdbdb;
-    -webkit-tap-highlight-color:transparent;
+    background-color: black;
 
   }
   
@@ -199,6 +196,8 @@ body {
     .title_info{
       font-size: x-large;
       grid-column: 2/13;
+      z-index: 1;
+      font-weight: 100;
   
   }
     

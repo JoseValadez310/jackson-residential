@@ -50,6 +50,8 @@
     max-width: 100vw;  
     box-sizing: border-box; 
     padding: 1rem;
+
+    z-index: 10;
   
 }
 
@@ -230,7 +232,7 @@
 
 @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
 .rooms_dashboard .title_info{
-    font-size: 2rem;
+    font-size: x-large;
     grid-column: 2/12;
     bottom: 0;
     position: relative;

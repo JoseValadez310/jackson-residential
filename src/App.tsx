@@ -5,6 +5,9 @@ import useWebXPanel from './hooks/useWebXPanel';
 
 import {createHashRouter, RouterProvider} from 'react-router-dom'
 
+//css
+import "../src/assets/css/index.css"
+
 
 // Dashboard
 import Home from './structure/dashboard/HomeDashboard';
@@ -39,8 +42,7 @@ import LivingRoom from './structure/page/livingroom';
 import ScreenSize from './structure/tools/ScreenSize';
 
        
-     
-        
+     import imageBackground from "../src/assets/images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg"
         
         
    
@@ -159,12 +161,16 @@ function App() {
   }), []); // Dependencies array is empty, so this object is created only once
 
   useWebXPanel(webXPanelConfig);
+
+  
+
+  
   return (
-  <body>
-    <RouterProvider router={router}/>
-  </body>
-    
-  )
+    <div className='project_container'>
+      <RouterProvider router={router} />
+      <img className="imageApp" src={imageBackground} />
+    </div>
+  );
 }
 
 export default App

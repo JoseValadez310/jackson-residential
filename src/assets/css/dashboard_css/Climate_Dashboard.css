@@ -16,6 +16,8 @@
     max-width: 100vw;  
     box-sizing: border-box; 
     padding: 1rem;
+
+    z-index: 10;
   
 }
 
@@ -56,7 +58,6 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 1rem;
-        backdrop-filter: blur(10px);
         animation: controller-load 1500ms;
     }
         .container_thermo{    
@@ -101,7 +102,12 @@
         }
 
         .climate_page .title_info{
-            font-size: 2rem;
+            font-size: x-large;
+            grid-column: 2/12;
+            bottom: 0;
+            position: relative;
+            bottom: 1.25rem;
+            font-weight: 100;
         }
         
         .climate_dashboard_container{
@@ -113,16 +119,7 @@
         }
     
 
-        .climate_page .title_info{
-            font-size: 1.5rem;
-            grid-column: 2/12;
-            bottom: 0;
-            position: relative;
-            bottom: 1.25rem;
-            font-weight: 100;
-        
-        }
-     
+
     
     
     

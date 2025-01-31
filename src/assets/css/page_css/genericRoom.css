@@ -420,6 +420,7 @@
     grid-template-rows: repeat(5,1fr);
     justify-items: center;
     align-items: center;
+    z-index: 1;
 
 }
 
@@ -695,7 +696,7 @@
     .generic_room .title_info{
         position: relative;
         bottom: 20px;
-        font-size: 2rem;
+        font-size: x-large;
         grid-column: 3/11;
         text-align: center;
     

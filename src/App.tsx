@@ -16,6 +16,7 @@ import AudioDashboard from './structure/dashboard/AudioDashboard'
 import LightDashboard from './structure/dashboard/LightDashboard'
 import Climate  from './structure/dashboard/ClimateDashboard';
 import Security from './structure/dashboard/SecurityDashboard'
+import PoolSpa from './structure/dashboard/PoolSpaDashboard';
 
 // Pages
 
@@ -76,7 +77,10 @@ function App() {
     path: '/Security',
     element: <Security />
   },
-  
+  {
+    path: '/PoolSpa',
+    element: <PoolSpa />
+  },
    //------------------------------------ Basement Floor
   {
     path: '/mediaroom',

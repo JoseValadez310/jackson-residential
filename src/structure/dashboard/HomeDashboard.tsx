@@ -39,7 +39,7 @@ const HomeDashboard = () => {
         <div className="living_room_page">
           
                 <div className="time_date_info">
-                    <div className="clock_info" onClick = {ViewPortCounter}>
+                    <div className="clock_info" onClick = {ViewPortCounter} style={{width:"100%"}}>
                         <Clock  />
 
                         <>
@@ -78,7 +78,7 @@ const HomeDashboard = () => {
                         <p className="card_title"> Security </p>
                     </Link> 
                 
-                    <Link  className="card_container" to='/' style={{textDecoration:"none"}}> 
+                    <Link  className="card_container" to='/PoolSpa' style={{textDecoration:"none"}}> 
                         <img className="card_image" src={Pool}/>
                         <p className="card_title"> Pool - Spa </p>
                     </Link> 

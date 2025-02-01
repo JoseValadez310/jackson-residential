@@ -13,9 +13,6 @@ import { Link } from "react-router-dom"
 //CSS for Controllers
 
 import "../../assets/css/page_css/genericRoom.css"
-import "../../assets/css/page_css/lightingLayout.css"
-import "../../assets/css/page_css/roomLayout.css"
-import "../../assets/css/page_css/sourceLayout.css"
 
 
 

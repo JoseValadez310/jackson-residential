@@ -1,5 +1,4 @@
 p{
-
     margin: 0%;
     padding: 0%;
     color: rgb(255, 255, 255);
@@ -10,15 +9,14 @@ p{
     font-weight: bold;
     position: relative;
     left: 10px;
+    width: 100%;
 }
 
 .date_text {
-
     font-size: 1.15rem;
     color: white;
     text-align: center;
     margin: 0%;
-    
 }
 
 
@@ -27,12 +25,12 @@ p{
     font-size: 2rem;
     font-weight: normal;
     color: white;
-
 }
 
 .period{
     font-size: small;
     margin: 0%;
 }
+
 
 

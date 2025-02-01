@@ -96,6 +96,10 @@
 
 
     @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+        .climate_page{
+            grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+
+        }
        
         .climate_page .nav_container{
             display: none;
@@ -103,10 +107,8 @@
 
         .climate_page .title_info{
             font-size: x-large;
-            grid-column: 2/12;
-            bottom: 0;
-            position: relative;
-            bottom: 1.25rem;
+            grid-column: 2/13;
+
             font-weight: 100;
         }
         

@@ -21,8 +21,8 @@ function Clock() {
   const [time, period] = timeString.split(" ");
 
   return (
-    <div className="App">
-      <p className="clock">
+    <div className="App" style={{width:"100%"}}>
+      <p className="clock" style={{width:"100%", textAlign:"center"}}>
         {time} <span className="period">{period}</span>
       </p>
     </div>

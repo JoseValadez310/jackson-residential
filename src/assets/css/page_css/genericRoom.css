@@ -2,8 +2,7 @@
 
 
 .generic_room{
-    height: 100%;
-    width: 100%;
+   
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(8, 1fr);
@@ -11,12 +10,17 @@
     align-items: center;
     gap: 10px;
     overflow: hidden;
-    max-height: 100vh;
-    max-width: 100vw;
+    height: 100vh;
+    width: 100vw;
     box-sizing: border-box;
     padding: 1rem;
 }
 
+.media_off{
+    display: none;    
+}
+    
+    
 
 
 /*
@@ -127,6 +131,21 @@
 --------------------------------------------------------- controller layout
 */
 
+.logo_display{
+    grid-row: 1/3;
+    grid-column:6/10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    text-align: center;
+}
+
+
+
 .controller_layout{
     /* Layout and position */
        grid-row: 1/7;
@@ -206,9 +225,19 @@
    }
 
 
+   .controller_grid{
+        grid-column:1/15 ;
+        grid-row:2/9 ;
+        justify-items: center;
+        align-content: center;
+    }
+
+    .back_button_svg{
+        height: 60%;
+        filter: invert(78%) sepia(56%) saturate(7%) hue-rotate(314deg) brightness(106%) contrast(87%);
+    }
 
 
-   
 
 
    /*
@@ -683,6 +712,19 @@
 
 
 
+                                            /*
+    ------------------------------------------msic 
+    
+    */
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -693,9 +735,12 @@
 
 
 @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+    .generic_room{
+        grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+
+    }
     .generic_room .title_info{
-        position: relative;
-        bottom: 20px;
+      
         font-size: x-large;
         grid-column: 3/11;
         text-align: center;
@@ -712,10 +757,9 @@
         grid-row: 8;
     
         display: flex;
-        height: 55%;
+        height: 100%;
 
-        position: relative;
-        top: 20px;
+   
     }
     
     .nav_clock{
@@ -811,12 +855,12 @@
         grid-row: 2/8;
     }
         .controller_layout{
-            grid-row: 1/11;
+            grid-row: 1/8;
             width: 100%;
-            height: 105%;
+            height: 95%;
             position: relative;
-            bottom: 15px;
-
+            bottom: 1.2rem;
+         
         }
 
 
@@ -1005,14 +1049,7 @@
         .mobile_back_btn{
             display: contents; 
         }
-            .back_button{
-                position: relative;
-                bottom: 1.25rem;
-                width: 100%;
-                height: 35%;
-            }
-        
-        
+           
         
         #reboot_button{
             height: 70%;
@@ -1022,21 +1059,14 @@
             
         }
             .home_button{
-                position: relative;
-                bottom: 1.25rem;
-                width: 100%;
-                height: 35%;
-            }
-
-            .home_button{
                 grid-column: 11/13;
                 width: 100%;
-                height: 35%;
+                height: 2rem;
             }
             .back_button{
                 grid-column: 1/3;
                 width: 100%;
-                height: 35%;
+                height: 2rem;
             }
 /*
 ----------------------------------------------------------------------------------------------------------------- display_logo
@@ -1047,6 +1077,12 @@
 }
    
 
+
+
+
+
+
+
 /*
 ----------------------------------------------------------------------------------------------------------------- volume container
 */
@@ -1054,19 +1090,26 @@
         .volume_container .nav_container{
             display: none;
         }
+      
+
         .volume_container{
             background-color: transparent;
             grid-column: 1/10;
-            height: 110%;
+            height: 90%;
             position: relative;
-            top: 6.25rem;
-
+            top: 4rem;
+          
+          
         }
 
         #mobile_display_none{
             display: none;
         }
     }
+
+
+
+
 
 
 
@@ -1111,7 +1154,7 @@
 
     .volume_container{
    
-        top: 5.75rem;
+        top: 3.75rem;
  
     }
 

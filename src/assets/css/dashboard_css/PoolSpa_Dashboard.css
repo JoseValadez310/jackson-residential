@@ -14,6 +14,9 @@
     padding: 1rem;
 
     z-index: 10;
+    
+
+
 }
 
   .pool_spa_dashboard .title_info{
@@ -58,6 +61,7 @@
             align-items: center;
             flex-direction: column;
             border-radius: 1rem;
+            animation: controller-load 1000ms
 
 
         }
@@ -74,6 +78,7 @@
         justify-content: space-evenly;
         align-items: center;
         flex-direction: column;
+        animation: controller-load 1000ms
     }
         .pool_spa_dashboard .btn_square_wide{
             background-color: rgb(70,70,70);
@@ -107,7 +112,7 @@
         align-items: center;
         flex-direction: column;
         border-radius: 1rem;
-
+        animation: controller-load 1000ms
        
     }
 
@@ -194,4 +199,112 @@
             justify-content: space-evenly;
             align-items: center;
 
+        }
+
+
+
+
+
+
+
+
+        @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+           
+            .pool_spa_dashboard .nav_container{
+                display: none;
+            }
+            .pool_spa_dashboard{
+                grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                
+            }
+
+            .button_container{
+                grid-row: 8/9;
+                grid-column: 1/13;
+                flex-direction: row;
+                justify-content: space-evenly;
+
+                background-color: rgba(255, 255, 255, 0.325);
+                backdrop-filter: blur(25px);
+                border-radius: 1rem;
+                height: 80%;
+
+
+                
+            }
+            .button_container .btn_square_wide{
+                width: 4.25rem;
+
+            }
+
+
+            /*
+            -------------------------------------pool 
+            */
+
+            .pool_container{
+                grid-column: 2/12;
+                grid-row: 2/5;
+                height: 100%;
+                width: 110%;
+            }
+
+            .spa_container{
+                grid-column: 2/12;
+                grid-row: 5/8;
+                height: 100%;
+                width: 110%;
+               
+            
+            }
+
+            .container_title{
+                position: absolute;
+                border-bottom: none;
+                top: 10px;
+                right: 195px;
+                
+            }
+
+            .pool_control_button .btn_square_wide{
+                width: 7rem;
+                height: 3rem;
+
+
+            }
+        }
+
+        @media only screen and (max-device-width: 390px) and (max-device-width: 763px) and (orientation: portrait){
+            .pool_container{
+                grid-column: 2/12;     
+                width: 110%;
+            }
+
+            .spa_container{
+                grid-column: 2/12;
+                width: 110%;
+
+            }
+
+
+
+            .container_title{
+                position: absolute;
+                border-bottom: none;
+                top: 10px;
+                right: 185px;
+                
+            }
+
+            .button_container .btn_square_wide{
+                width: 3.75rem;
+                height: 3.75rem;
+
+            }
+            .current_temp{
+                height: 8rem;
+                width: 8rem;
+            }
+
+          
         }

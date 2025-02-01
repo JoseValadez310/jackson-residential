@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 //CSS
 import "../../assets/css/dashboard_css/PoolSpa_Dashboard.css"
-
+import "../../assets/css/index.css"
 //Icons
 import menu_button from "../../assets/images/icons/icons8-arrow.svg"
 import arrow from "../../assets/images/icons/icons8-triangle-arrow.svg"
@@ -85,7 +85,6 @@ const PoolSpa = () =>{
 
 
         </div>
-
 
         <div className="button_container">
             <button className="btn_square_wide"> <p>Filter          </p></button>

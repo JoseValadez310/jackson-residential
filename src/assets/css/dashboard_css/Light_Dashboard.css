@@ -37,6 +37,8 @@
         flex-wrap: wrap;
         
         overflow-y: scroll;
+        animation: room_selection 1000ms;
+
 
     }
 

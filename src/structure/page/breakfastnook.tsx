@@ -181,8 +181,8 @@ const BreakfastNook = () =>{
             window.CrComLib.unsubscribeState("b","--",media8)
          
             // TV audio controls
-            window.CrComLib.unsubscribeState("n","15",roomVolume)
-            window.CrComLib.unsubscribeState("b","317",roomMute)
+            window.CrComLib.unsubscribeState("n","100",roomVolume)
+            window.CrComLib.unsubscribeState("b","501",roomMute)
 
             // lights 
 
@@ -630,24 +630,24 @@ const sliderValue = (value: boolean, id: string) => {
         const tvVolState = (id:string) =>{
 
         if(id === "up"){
-            console.log('vol up join', 316)
+            console.log('vol up join', 502)
             
-            window.CrComLib.publishEvent("b","316",true)
-            window.CrComLib.publishEvent("b","316",false)
+            window.CrComLib.publishEvent("b","502",true)
+            window.CrComLib.publishEvent("b","502",false)
         } 
         
         else if(id === "down"){
             console.log('vol down join', 315)
             
-            window.CrComLib.publishEvent("b","315",true)
-            window.CrComLib.publishEvent("b","315",false)
+            window.CrComLib.publishEvent("b","500",true)
+            window.CrComLib.publishEvent("b","500",false)
         } 
         
         else if(id === "mute"){
             console.log('vol mute join',317 )
             
-            window.CrComLib.publishEvent("b","317",true)
-            window.CrComLib.publishEvent("b","317",false)
+            window.CrComLib.publishEvent("b","501",true)
+            window.CrComLib.publishEvent("b","501",false)
         }
 
             }
@@ -665,10 +665,10 @@ const sliderValue = (value: boolean, id: string) => {
             } 
             
             else if(id==="menu_off"){
-                console.log("Turning off room join", 1)
+                console.log("Turning off room join", 49)
                 setTvPowerMenu(!tvPowerMenu)
-                window.CrComLib.publishEvent("b","1",true)
-                window.CrComLib.publishEvent("b","1",false)
+                window.CrComLib.publishEvent("b","49",true)
+                window.CrComLib.publishEvent("b","49",false)
 
             }
             }

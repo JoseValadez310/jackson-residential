@@ -390,7 +390,64 @@
         height: 3.5rem;
         filter: invert(1);
     }
+
+
+    /*
+    ---------------------------------------------- audio menu 
+    */
+
+    .zone_menu{
+
+        grid-column: 1/10;
+        grid-row:2/9;
+        background-color: rgba(20, 20, 20, 0.75);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 7px;
+        flex-direction: row;
+        border-radius: 20px;
+        z-index: 210;
+
+
+        overflow-y: scroll;
+        animation: controller-load 1000ms;
     
+    }
+    
+
+    .zone_container{
+       z-index: 50;
+        height: 8.5rem;
+        width: 23rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+        #active_zone{
+            background-color: rgb(79, 125, 154);
+            animation: glow 6s infinite linear alternate;           
+
+        }
+    .zone_title{
+        text-align: center;
+        font-size: larger;
+    }
+        .zone_controls{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
     
 
 
@@ -750,3 +807,19 @@
 
 
  
+    @keyframes glow {
+        0%{
+        
+            box-shadow: inset 1px 1px 3px 1px rgba(255, 255, 255, 0.6), inset -1px -1px 3px 1px rgba(255, 255, 255, 0.6);       
+        } 
+        
+        50% {
+          box-shadow: inset 3px 3px 10px 5px rgba(255, 255, 255, 0.3), inset -3px -3px 10px 5px rgba(255, 255, 255, 0.3);   ;     
+        }
+        
+        
+        100% {
+            box-shadow: inset 1px 1px 2px 1px rgba(255, 255, 255, 0.6), inset -1px -1px 3px 1px rgba(255, 255, 255, 0.6);             
+        }        
+        
+        }

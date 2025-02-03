@@ -505,8 +505,8 @@ body {
 }
 
 
-.card_glow{
-
+#card_glow{
+animation: light-glow 6s infinite linear
 }
 
 
@@ -534,12 +534,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+  
     border: none;
     height: 4.5rem;
     width: 4.5rem;
     border-radius: 100%;
-    animation: glow 5s infinite linear;
+    animation: glow-out 5s infinite linear;
     font-size: large;
   }
     .btn_selected img{
@@ -564,7 +564,7 @@ body {
 
  
 
-    @keyframes glow {
+    @keyframes glow-out {
       0%{
         background-color: rgb(70, 70, 70, .5);
         box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.25);
@@ -668,3 +668,21 @@ body {
 
       
     }
+
+
+    @keyframes light-glow {
+      0%{
+      
+          box-shadow: inset 1px 1px 3px 1px  rgba(252, 234, 187, 0.3), inset -1px -1px 3px 1px rgba(252, 234, 187, 0.3), 4px 4px 15px 2px rgb(0, 0, 0, 0.25) , -4px -4px 15px 2px rgba(0, 0, 0, .25);        
+      } 
+      
+      50% {
+        box-shadow: inset 3px 3px 5px 2px  rgba(252, 234, 187, 0.4), inset -3px -3px 5px 2px  rgba(252, 234, 187, 0.4), 4px 4px 15px 2px rgb(0, 0, 0, 0.25) , -4px -4px 15px 2px rgba(0, 0, 0, .25);   
+      }
+      
+      
+      100% {
+          box-shadow: inset 1px 1px 2px 1px  rgba(252, 234, 187, 0.3), inset -1px -1px 3px 1px  rgba(252, 234, 187, 0.3), 4px 4px 15px 2px rgb(0, 0, 0, 0.25) , -4px -4px 15px 2px rgba(0, 0, 0, .25);         
+      }        
+      
+      }

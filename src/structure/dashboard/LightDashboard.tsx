@@ -116,80 +116,90 @@ const LightDashboard = () =>{
         useEffect(() => {
         
             // Lights
+
+
+            const light_1 =  window.CrComLib.subscribeState("b","250",(value: boolean) => {setLight_1(value);});
+            const light_2 =  window.CrComLib.subscribeState("b","251",(value: boolean) => {setLight_2(value);});
+            const light_3 =  window.CrComLib.subscribeState("b","252",(value: boolean) => {setLight_3(value);});
+            const light_4 =  window.CrComLib.subscribeState("b","252",(value: boolean) => {setLight_4(value);});
+            const light_5 =  window.CrComLib.subscribeState("b","254",(value: boolean) => {setLight_5(value);});
+
+            const light_6 =  window.CrComLib.subscribeState("b","257",(value: boolean) => {setLight_6(value);});
+            const light_7 =  window.CrComLib.subscribeState("b","258",(value: boolean) => {setLight_7(value);});
+            const light_8 =  window.CrComLib.subscribeState("b","259",(value: boolean) => {setLight_8(value);});
+            const light_9 =  window.CrComLib.subscribeState("b","260",(value: boolean) => {setLight_9(value);});
+            const light_10 = window.CrComLib.subscribeState("b","261",(value: boolean) => {setLight_10(value);});
+
+            const light_11 = window.CrComLib.subscribeState("b","264",(value: boolean) => {setLight_11(value);});
+            const light_12 = window.CrComLib.subscribeState("b","265",(value: boolean) => {setLight_12(value);});
+            const light_13 = window.CrComLib.subscribeState("b","266",(value: boolean) => {setLight_13(value);});
+            const light_14 = window.CrComLib.subscribeState("b","267",(value: boolean) => {setLight_14(value);});
+
+            const light_15 = window.CrComLib.subscribeState("b","343",(value: boolean) => {setLight_15(value);});
+            const light_16 = window.CrComLib.subscribeState("b","271",(value: boolean) => {setLight_16(value);});
+            const light_17 = window.CrComLib.subscribeState("b","272",(value: boolean) => {setLight_17(value);});
+            const light_18 = window.CrComLib.subscribeState("b","273",(value: boolean) => {setLight_18(value);});
+            const light_19 = window.CrComLib.subscribeState("b","274",(value: boolean) => {setLight_19(value);});
+            const light_20 = window.CrComLib.subscribeState("b","275",(value: boolean) => {setLight_20(value);});
+
+            const light_21 = window.CrComLib.subscribeState("b","278",(value: boolean) => {setLight_21(value);});
+            const light_22 = window.CrComLib.subscribeState("b","279",(value: boolean) => {setLight_22(value);});
+            const light_23 = window.CrComLib.subscribeState("b","280",(value: boolean) => {setLight_23(value);});
+            const light_24 = window.CrComLib.subscribeState("b","281",(value: boolean) => {setLight_24(value);});
+            const light_25 = window.CrComLib.subscribeState("b","282",(value: boolean) => {setLight_25(value);});
+
+            const light_26 = window.CrComLib.subscribeState("b","285",(value: boolean) => {setLight_26(value);});
+            const light_27 = window.CrComLib.subscribeState("b","286",(value: boolean) => {setLight_27(value);});
+            const light_28 = window.CrComLib.subscribeState("b","287",(value: boolean) => {setLight_28(value);});
+            const light_29 = window.CrComLib.subscribeState("b","288",(value: boolean) => {setLight_29(value);});
+            const light_30 = window.CrComLib.subscribeState("b","289",(value: boolean) => {setLight_30(value);});
+
+            const light_31 = window.CrComLib.subscribeState("b","292",(value: boolean) => {setLight_31(value);});
+            const light_32 = window.CrComLib.subscribeState("b","293",(value: boolean) => {setLight_32(value);});
+            const light_33 = window.CrComLib.subscribeState("b","294",(value: boolean) => {setLight_33(value);});
+            const light_34 = window.CrComLib.subscribeState("b","295",(value: boolean) => {setLight_34(value);});
+            const light_35 = window.CrComLib.subscribeState("b","296",(value: boolean) => {setLight_35(value);});
+
+            const light_36 = window.CrComLib.subscribeState("b","299",(value: boolean) => {setLight_36(value);});
+            const light_37 = window.CrComLib.subscribeState("b","300",(value: boolean) => {setLight_37(value);});
+            const light_38 = window.CrComLib.subscribeState("b","301",(value: boolean) => {setLight_38(value);});
+            const light_39 = window.CrComLib.subscribeState("b","302",(value: boolean) => {setLight_39(value);});
+            const light_40 = window.CrComLib.subscribeState("b","303",(value: boolean) => {setLight_40(value);});
+
+            const light_41 = window.CrComLib.subscribeState("b","308",(value: boolean) => {setLight_41(value);});
+            const light_42 = window.CrComLib.subscribeState("b","309",(value: boolean) => {setLight_42(value);});
+            const light_43 = window.CrComLib.subscribeState("b","310",(value: boolean) => {setLight_43(value);});
+            const light_44 = window.CrComLib.subscribeState("b","311",(value: boolean) => {setLight_44(value);});
+            const light_45 = window.CrComLib.subscribeState("b","312",(value: boolean) => {setLight_45(value);});
+
+            const light_46 = window.CrComLib.subscribeState("b","315",(value: boolean) => {setLight_46(value);});
+            const light_47 = window.CrComLib.subscribeState("b","316",(value: boolean) => {setLight_47(value);});
+            const light_48 = window.CrComLib.subscribeState("b","317",(value: boolean) => {setLight_48(value);});
+            const light_49 = window.CrComLib.subscribeState("b","318",(value: boolean) => {setLight_49(value);});
+            const light_50 = window.CrComLib.subscribeState("b","319",(value: boolean) => {setLight_50(value);});
+
+            const light_51 = window.CrComLib.subscribeState("b","322",(value: boolean) => {setLight_51(value);});
+            const light_52 = window.CrComLib.subscribeState("b","323",(value: boolean) => {setLight_52(value);});
+            const light_53 = window.CrComLib.subscribeState("b","324",(value: boolean) => {setLight_53(value);});
+            const light_54 = window.CrComLib.subscribeState("b","325",(value: boolean) => {setLight_54(value);});
+            const light_55 = window.CrComLib.subscribeState("b","326",(value: boolean) => {setLight_55(value);});
+
+            const light_56 = window.CrComLib.subscribeState("b","330",(value: boolean) => {setLight_56(value);});
+            const light_57 = window.CrComLib.subscribeState("b","331",(value: boolean) => {setLight_57(value);});
+            const light_58 = window.CrComLib.subscribeState("b","332",(value: boolean) => {setLight_58(value);});
+            const light_59 = window.CrComLib.subscribeState("b","333",(value: boolean) => {setLight_59(value);});
+            const light_60 = window.CrComLib.subscribeState("b","334",(value: boolean) => {setLight_60(value);});
+
+            const light_61 = window.CrComLib.subscribeState("b","338",(value: boolean) => {setLight_61(value);});
+            const light_62 = window.CrComLib.subscribeState("b","339",(value: boolean) => {setLight_62(value);});
+            const light_63 = window.CrComLib.subscribeState("b","340",(value: boolean) => {setLight_63(value);});
+            const light_64 = window.CrComLib.subscribeState("b","341",(value: boolean) => {setLight_64(value);});
+            const light_65 = window.CrComLib.subscribeState("b","342",(value: boolean) => {setLight_65(value);});
+            
+
+          
     
-            const light_1 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_1(value);});
-            const light_2 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_2(value);});
-            const light_3 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_3(value);});
-            const light_4 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_4(value);});
-            const light_5 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_5(value);});
-            const light_6 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_6(value);});
-            const light_7 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_7(value);});
-            const light_8 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_8(value);});
-            const light_9 =  window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_9(value);});
-            const light_10 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_10(value);});
-
-            const light_11 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_11(value);});
-            const light_12 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_12(value);});
-            const light_13 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_13(value);});
-            const light_14 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_14(value);});
-            const light_15 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_15(value);});
-            const light_16 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_16(value);});
-            const light_17 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_17(value);});
-            const light_18 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_18(value);});
-            const light_19 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_19(value);});
-            const light_20 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_20(value);});
             
-            const light_21 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_21(value);});
-            const light_22 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_22(value);});
-            const light_23 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_23(value);});
-            const light_24 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_24(value);});
-            const light_25 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_25(value);});
-            const light_26 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_26(value);});
-            const light_27 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_27(value);});
-            const light_28 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_28(value);});
-            const light_29 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_29(value);});
-            const light_30 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_30(value);});
-
-            const light_31 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_31(value);});
-            const light_32 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_32(value);});
-            const light_33 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_33(value);});
-            const light_34 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_34(value);});
-            const light_35 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_35(value);});
-            const light_36 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_36(value);});
-            const light_37 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_37(value);});
-            const light_38 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_38(value);});
-            const light_39 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_39(value);});
-            const light_40 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_40(value);});
-
-            const light_41 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_41(value);});
-            const light_42 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_42(value);});
-            const light_43 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_43(value);});
-            const light_44 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_44(value);});
-            const light_45 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_45(value);});
-            const light_46 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_46(value);});
-            const light_47 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_47(value);});
-            const light_48 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_48(value);});
-            const light_49 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_49(value);});
-            const light_50 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_50(value);});
-
-            const light_51 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_51(value);});
-            const light_52 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_52(value);});
-            const light_53 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_53(value);});
-            const light_54 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_54(value);});
-            const light_55 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_55(value);});
-            const light_56 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_56(value);});
-            const light_57 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_57(value);});
-            const light_58 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_58(value);});
-            const light_59 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_59(value);});
-            const light_60 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_60(value);});
-
-            const light_61 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_61(value);});
-            const light_62 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_62(value);});
-            const light_63 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_63(value);});
-            const light_64 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_64(value);});
-            const light_65 = window.CrComLib.subscribeState("b","",(value: boolean) => {setLight_65(value);});
-            
-
       
     
             return () => {
@@ -198,78 +208,88 @@ const LightDashboard = () =>{
     
                 // lights 
     
-                window.CrComLib.unsubscribeState("b","",light_1)
-                window.CrComLib.unsubscribeState("b","",light_2)
-                window.CrComLib.unsubscribeState("b","",light_3)
-                window.CrComLib.unsubscribeState("b","",light_4)
-                window.CrComLib.unsubscribeState("b","",light_5)
-                window.CrComLib.unsubscribeState("b","",light_6)
-                window.CrComLib.unsubscribeState("b","",light_7)
-                window.CrComLib.unsubscribeState("b","",light_8)
-                window.CrComLib.unsubscribeState("b","",light_9)
-                window.CrComLib.unsubscribeState("b","",light_10)
-
-                window.CrComLib.unsubscribeState("b","",light_11)
-                window.CrComLib.unsubscribeState("b","",light_12)
-                window.CrComLib.unsubscribeState("b","",light_13)
-                window.CrComLib.unsubscribeState("b","",light_14)
-                window.CrComLib.unsubscribeState("b","",light_15)
-                window.CrComLib.unsubscribeState("b","",light_16)
-                window.CrComLib.unsubscribeState("b","",light_17)
-                window.CrComLib.unsubscribeState("b","",light_18)
-                window.CrComLib.unsubscribeState("b","",light_19)
-                window.CrComLib.unsubscribeState("b","",light_20)
-
-                window.CrComLib.unsubscribeState("b","",light_21)
-                window.CrComLib.unsubscribeState("b","",light_22)
-                window.CrComLib.unsubscribeState("b","",light_23)
-                window.CrComLib.unsubscribeState("b","",light_24)
-                window.CrComLib.unsubscribeState("b","",light_25)
-                window.CrComLib.unsubscribeState("b","",light_26)
-                window.CrComLib.unsubscribeState("b","",light_27)
-                window.CrComLib.unsubscribeState("b","",light_28)
-                window.CrComLib.unsubscribeState("b","",light_29)
-                window.CrComLib.unsubscribeState("b","",light_30)
-
-                window.CrComLib.unsubscribeState("b","",light_31)
-                window.CrComLib.unsubscribeState("b","",light_32)
-                window.CrComLib.unsubscribeState("b","",light_33)
-                window.CrComLib.unsubscribeState("b","",light_34)
-                window.CrComLib.unsubscribeState("b","",light_35)
-                window.CrComLib.unsubscribeState("b","",light_36)
-                window.CrComLib.unsubscribeState("b","",light_37)
-                window.CrComLib.unsubscribeState("b","",light_38)
-                window.CrComLib.unsubscribeState("b","",light_39)
-                window.CrComLib.unsubscribeState("b","",light_40)
-
-                window.CrComLib.unsubscribeState("b","",light_41)
-                window.CrComLib.unsubscribeState("b","",light_42)
-                window.CrComLib.unsubscribeState("b","",light_43)
-                window.CrComLib.unsubscribeState("b","",light_44)
-                window.CrComLib.unsubscribeState("b","",light_45)
-                window.CrComLib.unsubscribeState("b","",light_46)
-                window.CrComLib.unsubscribeState("b","",light_47)
-                window.CrComLib.unsubscribeState("b","",light_48)
-                window.CrComLib.unsubscribeState("b","",light_49)
-                window.CrComLib.unsubscribeState("b","",light_50)
-
-                window.CrComLib.unsubscribeState("b","",light_51)
-                window.CrComLib.unsubscribeState("b","",light_52)
-                window.CrComLib.unsubscribeState("b","",light_53)
-                window.CrComLib.unsubscribeState("b","",light_54)
-                window.CrComLib.unsubscribeState("b","",light_55)
-                window.CrComLib.unsubscribeState("b","",light_56)
-                window.CrComLib.unsubscribeState("b","",light_57)
-                window.CrComLib.unsubscribeState("b","",light_58)
-                window.CrComLib.unsubscribeState("b","",light_59)
-                window.CrComLib.unsubscribeState("b","",light_60)
-
-                window.CrComLib.unsubscribeState("b","",light_61)
-                window.CrComLib.unsubscribeState("b","",light_62)
-                window.CrComLib.unsubscribeState("b","",light_63)
-                window.CrComLib.unsubscribeState("b","",light_64)
-                window.CrComLib.unsubscribeState("b","",light_65)
+      
+             
             
+                window.CrComLib.unsubscribeState("b","250",light_1);
+                window.CrComLib.unsubscribeState("b","251",light_2);
+                window.CrComLib.unsubscribeState("b","252",light_3);
+                window.CrComLib.unsubscribeState("b","252",light_4);
+                window.CrComLib.unsubscribeState("b","254",light_5);
+    
+                window.CrComLib.unsubscribeState("b","257",light_6);
+                window.CrComLib.unsubscribeState("b","258",light_7);
+                window.CrComLib.unsubscribeState("b","259",light_8);
+                window.CrComLib.unsubscribeState("b","260",light_9);
+                window.CrComLib.unsubscribeState("b","261",light_10);
+    
+                window.CrComLib.unsubscribeState("b","264",light_11);
+                window.CrComLib.unsubscribeState("b","265",light_12);
+                window.CrComLib.unsubscribeState("b","266",light_13);
+                window.CrComLib.unsubscribeState("b","267",light_14);
+    
+                window.CrComLib.unsubscribeState("b","343",light_15);
+                window.CrComLib.unsubscribeState("b","271",light_16);
+                window.CrComLib.unsubscribeState("b","272",light_17);
+                window.CrComLib.unsubscribeState("b","273",light_18);
+                window.CrComLib.unsubscribeState("b","274",light_19);
+                window.CrComLib.unsubscribeState("b","275",light_20);
+    
+                window.CrComLib.unsubscribeState("b","278",light_21);
+                window.CrComLib.unsubscribeState("b","279",light_22);
+                window.CrComLib.unsubscribeState("b","280",light_23);
+                window.CrComLib.unsubscribeState("b","281",light_24);
+                window.CrComLib.unsubscribeState("b","282",light_25);
+    
+                window.CrComLib.unsubscribeState("b","285",light_26);
+                window.CrComLib.unsubscribeState("b","286",light_27);
+                window.CrComLib.unsubscribeState("b","287",light_28);
+                window.CrComLib.unsubscribeState("b","288",light_29);
+                window.CrComLib.unsubscribeState("b","289",light_30);
+    
+                window.CrComLib.unsubscribeState("b","292",light_31);
+                window.CrComLib.unsubscribeState("b","293",light_32);
+                window.CrComLib.unsubscribeState("b","294",light_33);
+                window.CrComLib.unsubscribeState("b","295",light_34);
+                window.CrComLib.unsubscribeState("b","296",light_35);
+    
+                window.CrComLib.unsubscribeState("b","299",light_36);
+                window.CrComLib.unsubscribeState("b","300",light_37);
+                window.CrComLib.unsubscribeState("b","301",light_38);
+                window.CrComLib.unsubscribeState("b","302",light_39);
+                window.CrComLib.unsubscribeState("b","303",light_40);
+    
+                window.CrComLib.unsubscribeState("b","308",light_41);
+                window.CrComLib.unsubscribeState("b","309",light_42);
+                window.CrComLib.unsubscribeState("b","310",light_43);
+                window.CrComLib.unsubscribeState("b","311",light_44);
+                window.CrComLib.unsubscribeState("b","312",light_45);
+    
+                window.CrComLib.unsubscribeState("b","315",light_46);
+                window.CrComLib.unsubscribeState("b","316",light_47);
+                window.CrComLib.unsubscribeState("b","317",light_48);
+                window.CrComLib.unsubscribeState("b","318",light_49);
+                window.CrComLib.unsubscribeState("b","319",light_50);
+    
+                window.CrComLib.unsubscribeState("b","322",light_51);
+                window.CrComLib.unsubscribeState("b","323",light_52);
+                window.CrComLib.unsubscribeState("b","324",light_53);
+                window.CrComLib.unsubscribeState("b","325",light_54);
+                window.CrComLib.unsubscribeState("b","326",light_55);
+    
+                window.CrComLib.unsubscribeState("b","330",light_56);
+                window.CrComLib.unsubscribeState("b","331",light_57);
+                window.CrComLib.unsubscribeState("b","332",light_58);
+                window.CrComLib.unsubscribeState("b","333",light_59);
+                window.CrComLib.unsubscribeState("b","334",light_60);
+    
+                window.CrComLib.unsubscribeState("b","338",light_61);
+                window.CrComLib.unsubscribeState("b","339",light_62);
+                window.CrComLib.unsubscribeState("b","340",light_63);
+                window.CrComLib.unsubscribeState("b","341",light_64);
+                window.CrComLib.unsubscribeState("b","342",light_65);
+                
+    
     
     
                 

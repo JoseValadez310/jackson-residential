@@ -153,8 +153,8 @@ const FamilyRoom = () =>{
         const media8 = window.CrComLib.subscribeState("b","-",(value: boolean) => {setMedia8(value);});  
        
         // TV audio controls
-        const roomVolume     = window.CrComLib.subscribeState("n","15",(value: number) => {setRoomVolume(value);});
-        const roomMute    = window.CrComLib.subscribeState("b","317",(value: boolean) => {setRoomMute(value);});
+        const roomVolume     = window.CrComLib.subscribeState("n","107",(value: number) => {setRoomVolume(value);});
+        const roomMute    = window.CrComLib.subscribeState("b","522",(value: boolean) => {setRoomMute(value);});
 
         // Lights
 
@@ -178,8 +178,8 @@ const FamilyRoom = () =>{
             window.CrComLib.unsubscribeState("b","--",media8)
          
             // TV audio controls
-            window.CrComLib.unsubscribeState("n","15",roomVolume)
-            window.CrComLib.unsubscribeState("b","317",roomMute)
+            window.CrComLib.unsubscribeState("n","107",roomVolume)
+            window.CrComLib.unsubscribeState("b","522",roomMute)
 
             // lights 
 
@@ -625,24 +625,24 @@ const sliderValue = (value: boolean, id: string) => {
         const tvVolState = (id:string) =>{
 
         if(id === "up"){
-            console.log('vol up join', 316)
+            console.log('vol up join', 523)
             
-            window.CrComLib.publishEvent("b","316",true)
-            window.CrComLib.publishEvent("b","316",false)
+            window.CrComLib.publishEvent("b","523",true)
+            window.CrComLib.publishEvent("b","523",false)
         } 
         
         else if(id === "down"){
-            console.log('vol down join', 315)
+            console.log('vol down join', 521)
             
-            window.CrComLib.publishEvent("b","315",true)
-            window.CrComLib.publishEvent("b","315",false)
+            window.CrComLib.publishEvent("b","521",true)
+            window.CrComLib.publishEvent("b","521",false)
         } 
         
         else if(id === "mute"){
-            console.log('vol mute join',317 )
+            console.log('vol mute join',522 )
             
-            window.CrComLib.publishEvent("b","317",true)
-            window.CrComLib.publishEvent("b","317",false)
+            window.CrComLib.publishEvent("b","522",true)
+            window.CrComLib.publishEvent("b","522",false)
         }
 
             }
@@ -660,10 +660,10 @@ const sliderValue = (value: boolean, id: string) => {
             } 
             
             else if(id==="menu_off"){
-                console.log("Turning off room join", 1)
+                console.log("Turning off room join", 49)
                 setTvPowerMenu(!tvPowerMenu)
-                window.CrComLib.publishEvent("b","1",true)
-                window.CrComLib.publishEvent("b","1",false)
+                window.CrComLib.publishEvent("b","49",true)
+                window.CrComLib.publishEvent("b","49",false)
 
             }
             }

@@ -12,6 +12,9 @@ import musicIcon from "../../assets/images/icons/icons8-music (1).svg";
 import close from "../../assets/images/icons/icons8-x.svg";
 import backbutton from "../../assets/images/icons/icons8-arrow.svg";
 import topmenu from "../../assets/images/icons/icons8-top-menu.svg";
+import menu from "../../assets/images/icons/icons8-menu.svg"
+import arrow from "../../assets/images/icons/icons8-triangle-arrow.svg"
+import mute from "../../assets/images/icons/icons8-no-audio.svg"
 
 // Streaming services
 import amazonMusic from "../../assets/images/logos/streaming_services_logos/Amazon_Music_(Logo).svg"
@@ -25,6 +28,7 @@ import soundMachine from "../../assets/images/logos/streaming_services_logos/idM
 import spotify from "../../assets/images/logos/streaming_services_logos/2024_Spotify_Logo.svg"
 import tidal from "../../assets/images/logos/streaming_services_logos/tidal.svg"
 import tuneIn from "../../assets/images/logos/streaming_services_logos/TuneIn_Logo_2018.svg"
+
 
 
 
@@ -507,17 +511,189 @@ const MediaServerWebSocket: React.FC = () => {
 
 
 
+    const [openZones, setOpenZones] = useState(false)
+   
+    const [zone1_vol, setZone1_vol]   = useState (0)
+    const [zone1_mute, setZone1_mute] = useState(false)
+    const zone_decrease_1 = "500"
+    const zone_mute_1     = "501"
+    const zone_increase_1 = "502"
+
+    const [zone2_vol, setZone2_vol]   = useState (0)
+    const [zone2_mute, setZone2_mute] = useState(false)
+    const zone_decrease_2 = "503"
+    const zone_mute_2     = "504"
+    const zone_increase_2 = "505"
+
+    const [zone3_vol, setZone3_vol]   = useState (0)
+    const [zone3_mute, setZone3_mute] = useState(false)
+    const zone_decrease_3 = "506"
+    const zone_mute_3     = "507"
+    const zone_increase_3 = "508"
+
+    const [zone4_vol, setZone4_vol]   = useState (0)
+    const [zone4_mute, setZone4_mute] = useState(false)
+    const zone_decrease_4 = "509"
+    const zone_mute_4     = "510"
+    const zone_increase_4 = "511"
+
+    const [zone5_vol, setZone5_vol]   = useState (0)
+    const [zone5_mute, setZone5_mute] = useState(false)
+    const zone_decrease_5 = "512"
+    const zone_mute_5     = "513"
+    const zone_increase_5 = "514"
+
+    const [zone6_vol, setZone6_vol]   = useState (0)
+    const [zone6_mute, setZone6_mute] = useState(false)
+    const zone_decrease_6 = "515"
+    const zone_mute_6     = "516"
+    const zone_increase_6 = "517"
+
+    const [zone7_vol, setZone7_vol]   = useState (0)
+    const [zone7_mute, setZone7_mute] = useState(false)
+    const zone_decrease_7 = "518"
+    const zone_mute_7     = "519"
+    const zone_increase_7 = "520"
+
+    const [zone8_vol, setZone8_vol]   = useState (0)
+    const [zone8_mute, setZone8_mute] = useState(false)
+    const zone_decrease_8 = "521"
+    const zone_mute_8     = "522"
+    const zone_increase_8 = "523"
+
+    const [zone9_vol, setZone9_vol]   = useState (0)
+    const [zone9_mute, setZone9_mute] = useState(false)
+    const zone_decrease_9 = "524"
+    const zone_mute_9     = "525"
+    const zone_increase_9 = "526"
+
+    const [zone10_vol, setZone10_vol]   = useState (0)
+    const [zone10_mute, setZone10_mute] = useState(false)
+    const zone_decrease_10 = "527"
+    const zone_mute_10     = "528"
+    const zone_increase_10 = "529"
+
+    const [zone11_vol, setZone11_vol]   = useState (0)
+    const [zone11_mute, setZone11_mute] = useState(false)
+    const zone_decrease_11 = "530"
+    const zone_mute_11     = "531"
+    const zone_increase_11 = "532"
+
+    const [zone12_vol, setZone12_vol]   = useState (0)
+    const [zone12_mute, setZone12_mute] = useState(false)
+    const zone_decrease_12 = "533"
+    const zone_mute_12     = "534"
+    const zone_increase_12 = "535"
+
+    const [zone13_vol, setZone13_vol]   = useState (0)
+    const [zone13_mute, setZone13_mute] = useState(false)
+    const zone_decrease_13 = "536"
+    const zone_mute_13     = "537"
+    const zone_increase_13 = "538"
+
+
+
+
+    useEffect(() => {
+   
+      const zone_1 = window.CrComLib.subscribeState("b", zone_mute_1 ,(value: boolean) => {setZone1_mute(value);});  
+      const zone_2 = window.CrComLib.subscribeState("b", zone_mute_2 ,(value: boolean) => {setZone2_mute(value);});  
+      const zone_3 = window.CrComLib.subscribeState("b", zone_mute_3 ,(value: boolean) => {setZone3_mute(value);});  
+      const zone_4 = window.CrComLib.subscribeState("b", zone_mute_4 ,(value: boolean) => {setZone4_mute(value);});  
+      const zone_5 = window.CrComLib.subscribeState("b", zone_mute_5 ,(value: boolean) => {setZone5_mute(value);});  
+      const zone_6 = window.CrComLib.subscribeState("b", zone_mute_6 ,(value: boolean) => {setZone6_mute(value);});  
+      const zone_7 = window.CrComLib.subscribeState("b", zone_mute_7 ,(value: boolean) => {setZone7_mute(value);});  
+      const zone_8 = window.CrComLib.subscribeState("b", zone_mute_8 ,(value: boolean) => {setZone8_mute(value);});  
+      const zone_9 = window.CrComLib.subscribeState("b", zone_mute_9 ,(value: boolean) => {setZone9_mute(value);});  
+      const zone_10 = window.CrComLib.subscribeState("b", zone_mute_10 ,(value: boolean) => {setZone10_mute(value);});  
+      const zone_11 = window.CrComLib.subscribeState("b", zone_mute_11 ,(value: boolean) => {setZone11_mute(value);});  
+      const zone_12 = window.CrComLib.subscribeState("b", zone_mute_12 ,(value: boolean) => {setZone12_mute(value);});  
+      const zone_13 = window.CrComLib.subscribeState("b", zone_mute_13 ,(value: boolean) => {setZone13_mute(value);});  
+
+      
+
+      const zone_vol_1 = window.CrComLib.subscribeState("n","100",(value: number) => {setZone1_vol(value);});  
+      const zone_vol_2 = window.CrComLib.subscribeState("n","101",(value: number) => {setZone2_vol(value);});  
+      const zone_vol_3 = window.CrComLib.subscribeState("n","102",(value: number) => {setZone3_vol(value);});  
+      const zone_vol_4 = window.CrComLib.subscribeState("n","103",(value: number) => {setZone4_vol(value);});  
+      const zone_vol_5 = window.CrComLib.subscribeState("n","104",(value: number) => {setZone5_vol(value);});  
+      const zone_vol_6 = window.CrComLib.subscribeState("n","105",(value: number) => {setZone6_vol(value);});  
+      const zone_vol_7 = window.CrComLib.subscribeState("n","106",(value: number) => {setZone7_vol(value);});  
+      const zone_vol_8 = window.CrComLib.subscribeState("n","107",(value: number) => {setZone8_vol(value);});  
+      const zone_vol_9 = window.CrComLib.subscribeState("n","108",(value: number) => {setZone9_vol(value);});  
+      const zone_vol_10 = window.CrComLib.subscribeState("n","109",(value: number) => {setZone10_vol(value);});  
+      const zone_vol_11 = window.CrComLib.subscribeState("n","110",(value: number) => {setZone11_vol(value);});  
+      const zone_vol_12 = window.CrComLib.subscribeState("n","111",(value: number) => {setZone12_vol(value);});  
+      const zone_vol_13 = window.CrComLib.subscribeState("n","112",(value: number) => {setZone13_vol(value);});  
+      
+
+
+
+
+    
+   
+
+      return () => {
+
+        window.CrComLib.unsubscribeState("b",zone_mute_1,zone_1)
+        window.CrComLib.unsubscribeState("b",zone_mute_2,zone_2)
+        window.CrComLib.unsubscribeState("b",zone_mute_3,zone_3)
+        window.CrComLib.unsubscribeState("b",zone_mute_4,zone_4)
+        window.CrComLib.unsubscribeState("b",zone_mute_5,zone_5)
+        window.CrComLib.unsubscribeState("b",zone_mute_6,zone_6)
+        window.CrComLib.unsubscribeState("b",zone_mute_7,zone_7)
+        window.CrComLib.unsubscribeState("b",zone_mute_8,zone_8)
+        window.CrComLib.unsubscribeState("b",zone_mute_9,zone_9)
+        window.CrComLib.unsubscribeState("b",zone_mute_10,zone_10)
+        window.CrComLib.unsubscribeState("b",zone_mute_11,zone_11)
+        window.CrComLib.unsubscribeState("b",zone_mute_12,zone_12)
+        window.CrComLib.unsubscribeState("b",zone_mute_13,zone_13)
+
+
+        window.CrComLib.unsubscribeState("n","100",zone_vol_1)
+        window.CrComLib.unsubscribeState("n","101",zone_vol_2)
+        window.CrComLib.unsubscribeState("n","102",zone_vol_3)
+        window.CrComLib.unsubscribeState("n","103",zone_vol_4)
+        window.CrComLib.unsubscribeState("n","104",zone_vol_5)
+        window.CrComLib.unsubscribeState("n","105",zone_vol_6)
+        window.CrComLib.unsubscribeState("n","106",zone_vol_7)
+        window.CrComLib.unsubscribeState("n","107",zone_vol_8)
+        window.CrComLib.unsubscribeState("n","108",zone_vol_9)
+        window.CrComLib.unsubscribeState("n","109",zone_vol_10)
+        window.CrComLib.unsubscribeState("n","110",zone_vol_11)
+        window.CrComLib.unsubscribeState("n","111",zone_vol_12)
+        window.CrComLib.unsubscribeState("n","112",zone_vol_13)
+
+
+
+        
+        
+          
+      }
+    }, []);
+
+
 
     const navigate = useNavigate()
+
+    const zoneMenu = (id:string) =>{
+      
+      if(id === "menuOpen"){
+        setOpenZones(true)
+      } else if (id === "menuClose"){
+        setOpenZones(false)
+
+      }
+
+    }
 
 
   return (
    
       <div className='audio_dashboard'>
 
-    
-    
-          <button className="back_button" onClick={() => navigate(-1)} style={{zIndex:"10"}}>
+<div style={{display:"flex", justifyContent:"center", alignItems:"center", gridColumn:'1/2',gridRow:'1' }}>
+      <button className="back_button" onClick={() => navigate(-1)} style={{zIndex:"10"}}>
             <img 
               className='back_button_image' 
               src={backbutton} 
@@ -525,18 +701,446 @@ const MediaServerWebSocket: React.FC = () => {
               style={{height:"60%", zIndex:"1px"}} 
             />
           </button>
-
+    </div>
           
+
+    <div style={{display:"flex", justifyContent:"center", alignItems:"center", gridColumn:'1/2',gridRow:'9' }} onClick={() => zoneMenu("menuOpen")}>
+      <button className="back_button" style={{zIndex:"10"}}>
+            <img 
+              className='back_button_image' 
+              src={menu} 
+              style={{height:"60%", zIndex:"1px"}} 
+            />
+          </button>
+    </div>
+
+
+    <div className={openZones? "zone_menu": "display_none"} style={{gridColumn:'1/10', gridRow:'1/10', paddingInline:".2rem"}}>
+      <div className={openZones? "zone_menu": "display_none"}>
+
+            <div className='zone_container' style={{background:"none"}}onClick={() => zoneMenu("menuClose")}>
+              <button className='btn_square_wide' style={{background:"rgb(70,70,70)"}}> <img className="btn_image"  src={close} alt="" /></button>
+            </div>
+
+            <div className='zone_container' id={zone1_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Break - Kitchen</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_1,true),window.CrComLib.publishEvent("b",zone_decrease_1,false), console.log(zone_decrease_1))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_1,true),window.CrComLib.publishEvent("b",zone_mute_1,false), console.log(zone_mute_1))}>
+                        {zone1_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone1_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_1,true),window.CrComLib.publishEvent("b",zone_increase_1,false), console.log(zone_increase_1))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone2_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Gym</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_2,true),window.CrComLib.publishEvent("b",zone_decrease_2,false), console.log(zone_decrease_2))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_2,true),window.CrComLib.publishEvent("b",zone_mute_2,false), console.log(zone_mute_2))}>
+                        {zone2_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone2_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_2,true),window.CrComLib.publishEvent("b",zone_increase_2,false), console.log(zone_increase_2))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone3_vol>1?"active_zone": "" }>
+              <p className='zone_title'>Game room</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_3,true),window.CrComLib.publishEvent("b",zone_decrease_3,false), console.log(zone_decrease_3))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_3,true),window.CrComLib.publishEvent("b",zone_mute_3,false), console.log(zone_mute_3))}>
+                        {zone3_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone3_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_3,true),window.CrComLib.publishEvent("b",zone_increase_3,false), console.log(zone_increase_3))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone4_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Master Bedroom</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_4,true),window.CrComLib.publishEvent("b",zone_decrease_4,false), console.log(zone_decrease_4))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_4,true),window.CrComLib.publishEvent("b",zone_mute_4,false), console.log(zone_mute_4))}>
+                        {zone4_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone4_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_4,true),window.CrComLib.publishEvent("b",zone_increase_4,false), console.log(zone_increase_4))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone5_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Master Bathroom</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_5,true),window.CrComLib.publishEvent("b",zone_decrease_5,false), console.log(zone_decrease_5))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_5,true),window.CrComLib.publishEvent("b",zone_mute_5,false), console.log(zone_mute_5))}>
+                        {zone5_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone5_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_5,true),window.CrComLib.publishEvent("b",zone_increase_5,false), console.log(zone_increase_5))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone6_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Office</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_6,true),window.CrComLib.publishEvent("b",zone_decrease_6,false), console.log(zone_decrease_6))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_6,true),window.CrComLib.publishEvent("b",zone_mute_6,false), console.log(zone_mute_6))}>
+                        {zone6_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone6_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_6,true),window.CrComLib.publishEvent("b",zone_increase_6,false), console.log(zone_increase_6))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone7_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Media Room</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_7,true),window.CrComLib.publishEvent("b",zone_decrease_7,false), console.log(zone_decrease_7))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_7,true),window.CrComLib.publishEvent("b",zone_mute_7,false), console.log(zone_mute_7))}>
+                        {zone7_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone7_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_7,true),window.CrComLib.publishEvent("b",zone_increase_7,false), console.log(zone_increase_7))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone8_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Family Room</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_8,true),window.CrComLib.publishEvent("b",zone_decrease_8,false), console.log(zone_decrease_8))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_8,true),window.CrComLib.publishEvent("b",zone_mute_8,false), console.log(zone_mute_8))}>
+                        {zone8_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone8_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_8,true),window.CrComLib.publishEvent("b",zone_increase_8,false), console.log(zone_increase_8))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone9_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Bar</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_9,true),window.CrComLib.publishEvent("b",zone_decrease_9,false), console.log(zone_decrease_9))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_9,true),window.CrComLib.publishEvent("b",zone_mute_9,false), console.log(zone_mute_9))}>
+                        {zone9_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone9_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_9,true),window.CrComLib.publishEvent("b",zone_increase_9,false), console.log(zone_increase_9))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone10_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Patio</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_10,true),window.CrComLib.publishEvent("b",zone_decrease_10,false), console.log(zone_decrease_10))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_10,true),window.CrComLib.publishEvent("b",zone_mute_10,false), console.log(zone_mute_10))}>
+                        {zone10_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone10_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_10,true),window.CrComLib.publishEvent("b",zone_increase_10,false), console.log(zone_increase_10))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone11_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Backyard</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_11,true),window.CrComLib.publishEvent("b",zone_decrease_11,false), console.log(zone_decrease_11))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_11,true),window.CrComLib.publishEvent("b",zone_mute_11,false), console.log(zone_mute_11))}>
+                        {zone11_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone11_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_11,true),window.CrComLib.publishEvent("b",zone_increase_11,false), console.log(zone_increase_11))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone12_vol>1?"active_zone": "" }>
+              <p className='zone_title'> Pool</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_12,true),window.CrComLib.publishEvent("b",zone_decrease_12,false), console.log(zone_decrease_1))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_12,true),window.CrComLib.publishEvent("b",zone_mute_12,false), console.log(zone_mute_12))}>
+                        {zone12_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone12_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_12,true),window.CrComLib.publishEvent("b",zone_increase_12,false), console.log(zone_increase_12))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+            <div className='zone_container' id={zone13_vol>1?"active_zone": "" }>
+              <p className='zone_title'> North and West Planters</p>
+                <div className='zone_controls'>
+
+                  <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_13,true),window.CrComLib.publishEvent("b",zone_decrease_13,false), console.log(zone_decrease_13))}>
+                    <img className="btn_image"src={arrow} />
+                  </button>
+                                  
+
+                    <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b",zone_mute_13,true),window.CrComLib.publishEvent("b",zone_mute_13,false), console.log(zone_mute_13))}>
+                        {zone13_mute ? 
+                        <>
+                          <img src={mute} style={{height:"50%"}}/>
+                          <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            :
+                        <>
+                            <p className="volume_txt"> {zone13_vol} </p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                          </>
+                        }
+                    </button>
+
+
+                    <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_increase_13,true),window.CrComLib.publishEvent("b",zone_increase_13,false), console.log(zone_increase_13))}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+                </div>
+            </div>
+
+
+
+      </div>
+              
+    </div>
+  
          
 
 
-
-          <div  className="mobile_back_btn" onClick={() => navigate(-1)}> 
-                    <button className="back_button">
-                        <img src={backbutton}/>
-                    </button>
-                </div> 
-
+          <div style={{display:"flex", justifyContent:"center", alignItems:"center", gridColumn:'1/3',gridRow:'1' }}>
+              <div  className="mobile_back_btn" onClick={() => navigate(-1)}> 
+                  <button className="back_button">
+                      <img src={backbutton}/>
+                  </button>
+              </div> 
+          </div> 
         
         
      

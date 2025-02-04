@@ -704,7 +704,17 @@ const MediaServerWebSocket: React.FC = () => {
     </div>
           
 
-    <div style={{display:"flex", justifyContent:"center", alignItems:"center", gridColumn:'1/2',gridRow:'9' }} onClick={() => zoneMenu("menuOpen")}>
+    <div className='menu_tablet' onClick={() => zoneMenu("menuOpen")}>
+      <button className="back_button" style={{zIndex:"10"}}>
+            <img 
+              className='back_button_image' 
+              src={menu} 
+              style={{height:"60%", zIndex:"1px"}} 
+            />
+          </button>
+    </div>
+
+    <div className='menu_mobile' onClick={() => zoneMenu("menuOpen")}>
       <button className="back_button" style={{zIndex:"10"}}>
             <img 
               className='back_button_image' 
@@ -723,7 +733,7 @@ const MediaServerWebSocket: React.FC = () => {
             </div>
 
             <div className='zone_container' id={zone1_vol>1?"active_zone": "" }>
-              <p className='zone_title'> Break - Kitchen</p>
+              <p className='zone_title'> Breakfast/Kitchen</p>
                 <div className='zone_controls'>
 
                   <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b",zone_decrease_1,true),window.CrComLib.publishEvent("b",zone_decrease_1,false), console.log(zone_decrease_1))}>

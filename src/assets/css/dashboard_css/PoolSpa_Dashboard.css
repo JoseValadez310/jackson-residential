@@ -91,6 +91,10 @@
             box-shadow: inset 1px 1px 2px white, inset -1px -1px 2px whitesmoke, 5px 6px 15px black;
         }
 
+        .button_container p{
+            font-size: larger;
+        }
+
         
 
 
@@ -200,6 +204,9 @@
             align-items: center;
 
         }
+            .pool_control_button p{
+                font-size: larger;
+            }
 
 
 
@@ -272,6 +279,10 @@
 
 
             }
+
+            .button_container p{
+                font-size: .8rem;
+            }
         }
 
         @media only screen and (max-device-width: 390px) and (max-device-width: 763px) and (orientation: portrait){
@@ -306,5 +317,18 @@
                 width: 8rem;
             }
 
+           
+
           
         }
+
+
+
+#heat_active{
+    background-color: rgb(247, 77, 77);
+}
+
+#active_btn{
+    background-color: rgb(39, 109, 171);
+}
+    

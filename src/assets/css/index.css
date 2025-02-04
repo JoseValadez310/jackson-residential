@@ -506,7 +506,7 @@ body {
 
 
 #card_glow{
-animation: light-glow 6s infinite linear
+animation: light-glow 6s infinite alternate;
 }
 
 
@@ -534,13 +534,14 @@ animation: light-glow 6s infinite linear
     display: flex;
     justify-content: center;
     align-items: center;
-  
+    background-color: rgb(70, 70, 70, .85);
     border: none;
     height: 4.5rem;
     width: 4.5rem;
     border-radius: 100%;
-    animation: glow-out 5s infinite linear;
+    animation: glow 5s infinite linear;
     font-size: large;
+
   }
     .btn_selected img{
       height: 50%;
@@ -660,6 +661,10 @@ animation: light-glow 6s infinite linear
     
     
     
+
+          .title_info{
+            color: black;
+          }
 
 
  

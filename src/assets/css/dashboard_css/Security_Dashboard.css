@@ -14,6 +14,8 @@
     padding: 1rem;
 
     z-index: 10;
+
+    animation: controller-load 1s;
 }
     .security_dashboard .title_info{
         grid-column: 2/13;
@@ -23,10 +25,9 @@
 
 .security_keypad_container{
     grid-column: 5/10;
-    grid-row: 2/9;
-    height: 90%;
+    grid-row: 3/9;
+    height: 100%;
     width: 90%;
-    background-size: 400% 400%;
 
     
     display: flex;
@@ -37,25 +38,21 @@
     border: double .5rem transparent;
     border-radius: 1.25rem;
 
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-
+   background-color: rgb(70, 70, 70, .75);
+   backdrop-filter: blur(30px);
 
      
 }
     #green_ready{
-        background-image: linear-gradient(rgb(36, 35, 35), #ffffff), 
-        linear-gradient(to right, green, rgb(0, 0, 0));
+       background-color:  linear-gradient(to right, green, rgb(0, 0, 0));
     }
 
     #yellow_stay{
-        background-image: linear-gradient(rgb(165, 164, 164), #ffffff), 
-        linear-gradient(to right, #FFF200 , #f5e8a3, #c5be34 , #f5e8a3 );
+       background-color:  linear-gradient(to right, #FFF200 , #f5e8a3, #c5be34 , #f5e8a3 );
     }
     
     #red_armed{
-        background-image: linear-gradient(black, #ffffff), 
-        linear-gradient(to right, #ff0000 , #e27b7b, #b4170c , #e4563d );
+    background-color: linear-gradient (to right, #ff0000 , #e27b7b, #b4170c , #e4563d );
     }
 
 
@@ -139,7 +136,7 @@
         grid-row: 3/9;
         display: flex;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: flex-end;
         flex-direction: column;
         width: 100%;
         height: 90%;
@@ -150,8 +147,19 @@
         }
         .control_container .btn_circle p{
             text-align: center;
+            font-size: large;
         }
 
+    .security_dashboard .light_indicator .btn_square_wide{
+        background-color: gray;
+        font-size: larger;
+        height: 2.75rem;
+        pointer-events: none;
+        cursor: not-allowed;
+
+    }
+    
+   
 
  /*
         ------------------------------- short nav 
@@ -167,13 +175,24 @@
 
 
 
+    /*
+    --------------------------------------------------------- light_indicator
+    */
+
+    .light_indicator{
+        grid-column: 5/10;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
 
 
 
 
 
     
-    @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+    @media only screen and (max-device-width: 430px) and (max-device-height: 837px) and (orientation: portrait){
        
         .security_dashboard .nav_container{
             display: none;
@@ -216,8 +235,54 @@
                 height: 4.75rem;
                 width: 4.75rem;
             }
+
+
+            .light_indicator{
+                grid-column: 1/13;
+                gap: 10px;
+            }
     
+            .control_container .btn_circle{
+                grid-column: 1/13;
+                height: 4rem;
+                width: 5.75rem;
+                border-radius: 10px;   
+            }          
+            .control_container .btn_circle p{ 
+                font-size: large;
+            }
     
     
     
     }
+
+
+
+
+
+
+    @media only screen and (max-device-width: 390px) and (max-device-height: 763px) and (orientation: portrait){
+    
+      .control_container .btn_circle{
+        width: 5rem;  
+    }
+
+
+
+
+
+
+    #active_btn_sec{
+        background-color: rgb(39, 109, 171);
+    }
+
+    #active_btn_ready{
+        background-color: rgb(8, 179, 8);
+    }
+    #active_btn_stay{
+        background-color: rgb(179, 176, 8);
+    }
+    #active_btn_armed{
+        background-color: rgb(213, 10, 10);
+    }
+}

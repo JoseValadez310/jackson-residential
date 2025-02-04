@@ -1074,8 +1074,23 @@
 .generic_media_container .logo_display{
     grid-row: 1 / 1;
     height: 100%;
+    animation: logo-load 1s;
 }
-   
+
+
+.logo_display .roku_logo img{
+    height: 2rem;
+    }
+    .logo_display .dtv_header_logo img{
+        height:1.5rem;
+    }
+
+    .logo_display .bluRay_logo img{
+        height: 3rem;
+    }
+
+    
+
 
 
 
@@ -1305,6 +1320,23 @@
         }
     }
     
+    
+
+
+
+    
+
+.logo_display .roku_logo img{
+    height: 2rem;
+    }
+    .logo_display .dtv_header_logo img{
+        height:1.5rem;
+    }
+
+    .logo_display .bluRay_logo img{
+        height: 3rem;
+    }
+
     
 
 

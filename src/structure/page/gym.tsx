@@ -777,15 +777,18 @@ const sliderValue = (value: boolean, id: string) => {
 
         <div className="generic_room">
 
-        {active_media?
-            <> </>
-            :
-            <Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link> 
-        }
+{active_media?
+            
+            <button style={{gridColumn:"11/13", gridRow:"1", width:"3.5rem", height:"2rem", borderRadius:"20px"}} className="btn_circle" onClick={()=>powerMenu("menu")}>
+                   <img className="btn_image" style={{height:"80%"}} src={power}  />
+               </button> 
+           :
+           <Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
+               <button className="back_button">
+                   <img src={menu_button}/>
+               </button>
+           </Link> 
+       }
 
         {active_media?
             <div className="room_home_corner" id="mobile_power_btn">
@@ -963,8 +966,8 @@ const sliderValue = (value: boolean, id: string) => {
                         </button>
 
                         <div className="logo_display">
-                            <div className={media1? "dtv_header_logo":"media_off"}>
-                                <img src={bluRay} style={{height:"4rem"}} alt="" />
+                            <div className={media1? "bluRay_logo":"media_off"}>
+                                <img src={bluRay} alt="" />
                             </div>
 
                             <div className={media2? "sonos_header_logo":"media_off"}>
@@ -986,17 +989,16 @@ const sliderValue = (value: boolean, id: string) => {
 
                             <div className={media5? "dtv_header_logo":"media_off"}>
                               
-                            <img src={direcTv} style={{height:"2rem"}} id="svg_gray"  alt="" />
+                            <img src={direcTv}  id="svg_gray"  alt="" />
                             <p className="user_title_controller">  His</p>
                             </div>
 
                             <div className={media6? "dtv_header_logo":"media_off"}>
-                            <   img src={direcTv} style={{height:"2rem"}} id="svg_gray" alt="" />
+                            <   img src={direcTv}  id="svg_gray" alt="" />
                                 <p className="user_title_controller">  Hers</p>
                             </div>
-
-                            <div className={media7? "dtv_header_logo":"media_off"}>
-                                <img src={roku}  id="svg_gray"  style={{height:"2rem"}} alt="" />
+                            <div className={media7? "roku_logo":"media_off"}>
+                                <img src={roku} id="svg_gray"   alt="" />
                              
                             </div>
 
@@ -1008,6 +1010,7 @@ const sliderValue = (value: boolean, id: string) => {
 
                 
                         </div>
+
 
                         <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
                             <p> REBOOT </p>

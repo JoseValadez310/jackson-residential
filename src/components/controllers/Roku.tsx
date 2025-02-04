@@ -50,17 +50,37 @@ const Roku = () => {
                     <button  className="btn_circle">
                         <img className="btn_image" src={Rewind}/>
                     </button>
+
+                    <button  className="btn_circle" onClick={() => roku_transports("*")}>
+                        <p> * </p>
+                    </button>
+
                     
-                    <button  className="btn_circle" onClick={() => roku_transports("play/pause")}>
-                        <img className="btn_image" src={playPause}  />
+                    <button className="btn_circle" onClick={() => roku_transports("return")}>
+                        <img src={Return} className="btn_image"/>
                     </button>
 
                     <button  className="btn_circle" onClick={() => roku_transports("scan-")}>
                         <img className="btn_image" id="flip" src={skip}  />
                     </button>
 
+                    <button  className="btn_circle" onClick={() => roku_transports("play/pause")}>
+                        <img className="btn_image" src={playPause}  />
+                    </button>
+                    
+                   
+
+                    
                     <button  className="btn_circle" onClick={() => roku_transports("scan+")}>
                         <img className="btn_image" src={skip}  />
+                    </button>
+
+                    <button style={{border:"none", backgroundColor:"transparent"}}></button>
+
+                    
+
+                    <button className="btn_circle" onClick={() => roku_transports("home")}>
+                        <p> Home </p>
                     </button>
             </div>
                
@@ -70,12 +90,12 @@ const Roku = () => {
 
         const section_two   = (<>
               <div className="roku_controller_movement">
-                <div className="controller">
+              <div className="controller">
                 <div className="container">
                     <div className="circle-menu">
                         
                         <div className="circle ok-outer">
-                            <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
+                            <button className="btn_circle" style={{height:"5.75rem", width:"5.75rem"}} onClick={() => controllerClick("center")}>
                                 <img src={center} style={{height:"85%"}} className="center"/>
                             </button>
                         </div>
@@ -105,22 +125,10 @@ const Roku = () => {
                         </div>
                     </div>
                 </div>
-                </div>   
+            </div>   
 
 
-                <div className="controlShortCutRoku" >
-                    <button  className="btn_circle" onClick={() => roku_transports("*")}>
-                        <p> * </p>
-                    </button>
-
-                    <button className="btn_circle" onClick={() => roku_transports("home")}>
-                        <p> Home </p>
-                    </button>
-
-                    <button className="btn_circle" onClick={() => roku_transports("return")}>
-                        <img src={Return} className="btn_image"/>
-                    </button>
-                </div>
+               
 
             </div>
         </>)

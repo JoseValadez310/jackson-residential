@@ -192,7 +192,7 @@
 
 
     
-    @media only screen and (max-device-width: 430px) and (max-device-height: 837px) and (orientation: portrait){
+    @media only screen and (max-device-width: 430px) and (orientation: portrait){
        
         .security_dashboard .nav_container{
             display: none;
@@ -200,6 +200,7 @@
 
         .security_dashboard{
             grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            overflow: hidden;
 
         }
    
@@ -252,6 +253,10 @@
                 font-size: large;
             }
     
+
+            .nav_container{
+                display: none;
+            }
     
     
     }

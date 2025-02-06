@@ -781,7 +781,7 @@ const sliderValue = (value: boolean, id: string) => {
 
 {active_media?
             
-            <button style={{gridColumn:"11/13", gridRow:"1", width:"3.5rem", height:"2rem", borderRadius:"20px"}} className="btn_circle" onClick={()=>powerMenu("menu")}>
+            <button id="mobile_power" style={{gridColumn:"11/13", gridRow:"1", width:"3.5rem", height:"2rem", borderRadius:"20px"}} className="btn_circle" onClick={()=>powerMenu("menu")}>
                    <img className="btn_image" style={{height:"80%"}} src={power}  />
                </button> 
            :
@@ -1103,12 +1103,12 @@ const sliderValue = (value: boolean, id: string) => {
                             
                             <div className="light_tile" id={light_1? 'card_glow':''}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_1? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="display_none">{light_1? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_1_name}</p>
                                 </div>
                                                 
                                 <div className="light_controls">
-                                    <button className="btn_circle"  id={light_1? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_1")}>
+                                    <button className="btn_circle"   id={light_1? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_1")}>
                                         <img className="btn_image" src={lightOff} />
                                     </button>
                                        
@@ -1121,12 +1121,12 @@ const sliderValue = (value: boolean, id: string) => {
 
                             <div className="light_tile" id={light_2? 'card_glow':''}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_2? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="display_none">{light_2? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_2_name}</p>
                                 </div>
                                                 
                                 <div className="light_controls">
-                                    <button className="btn_circle"  id={light_2? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_2")}>
+                                    <button className="btn_circle"   id={light_2? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_2")}>
                                         <img className="btn_image" src={lightOff} />
                                     </button>
                                        
@@ -1139,12 +1139,12 @@ const sliderValue = (value: boolean, id: string) => {
 
                             <div className="light_tile" id={light_3? 'card_glow':''}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_3? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="display_none">{light_3? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_3_name}</p>
                                 </div>
                                                 
                                 <div className="light_controls">
-                                    <button className="btn_circle"  id={light_3? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_3")}>
+                                    <button className="btn_circle"   id={light_3? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_3")}>
                                         <img className="btn_image" src={lightOff} />
                                     </button>
                                        
@@ -1157,12 +1157,12 @@ const sliderValue = (value: boolean, id: string) => {
 
                             <div className="light_tile" id={light_4? 'card_glow':''}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_4? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="display_none">{light_4? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_4_name}</p>
                                 </div>
                                                 
                                 <div className="light_controls">
-                                    <button className="btn_circle"  id={light_4? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_4")}>
+                                    <button className="btn_circle"   id={light_4? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_4")}>
                                         <img className="btn_image" src={lightOff} />
                                     </button>
                                        
@@ -1175,12 +1175,12 @@ const sliderValue = (value: boolean, id: string) => {
 
                             <div className="light_tile" id={light_5? 'card_glow':''}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_5? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="display_none">{light_5? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_5_name}</p>
                                 </div>
                                                 
                                 <div className="light_controls">
-                                    <button className="btn_circle"  id={light_5? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_5")}>
+                                    <button className="btn_circle"   id={light_5? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_5")}>
                                         <img className="btn_image" src={lightOff} />
                                     </button>
                                        
@@ -1193,12 +1193,12 @@ const sliderValue = (value: boolean, id: string) => {
 
                             <div className="light_tile" id={light_6? 'card_glow':''}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_6? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                    <p className="display_none">{light_6? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_6_name}</p>
                                 </div>
                                                 
                                 <div className="light_controls">
-                                    <button className="btn_circle"  id={light_6? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_6")}>
+                                    <button className="btn_circle"   id={light_6? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_6")}>
                                         <img className="btn_image" src={lightOff} />
                                     </button>
                                        

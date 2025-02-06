@@ -475,9 +475,9 @@
 .light_tile{
     height: 15rem;
     width: 15rem;
-    background-color: rgba(70,70,70, .75);
+    background-color: rgb(70,70,70);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     border-radius: 5px;
@@ -486,7 +486,6 @@
     box-shadow: 
     -5px -5px 15px #5a5656, 
     5px 5px 15px #ffffff8f;
-    animation: fade 1000ms;
 
 }
     .light_tile .light_info{
@@ -717,6 +716,10 @@
     
     */
 
+
+    #mobile_power{
+        display: none;
+    }
     
 
 
@@ -735,6 +738,9 @@
 
 
 @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+    #mobile_power{
+        display: block;
+    }
     .generic_room{
         grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
 

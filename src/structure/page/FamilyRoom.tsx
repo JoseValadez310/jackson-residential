@@ -10,6 +10,7 @@ import AppleTv from "../../components/controllers/AppleTv"
 import DirecTv from "../../components/controllers/DirecTv"
 import BluRay from "../../components/controllers/BluRay"
 import Roku from "../..//components/controllers/Roku"
+import Camera from "../../components/controllers/Camera"
 // Music Page import 
 
 //CSS for Controllers
@@ -30,6 +31,7 @@ import roku from "../../assets/images/logos/Roku_logo.svg"
 //import kscape       from "../../assets/images/logos/Kaleidescape_(logo).svg"
 import bluRay       from '../../assets/images/logos/blu-ray-disc.svg'
 //import vhs          from "../../assets/images/logos/VHS_logo.svg"
+import camera_icon from "../../assets/images/icons8-bullet-camera.svg"
 
 // General Icons
 import TV          from "../../assets/images/icons/icons8-tv.svg"
@@ -140,9 +142,9 @@ const FamilyRoom = () =>{
 
     useEffect(() => {
         // TV Soucres
-        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  
-        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // ATV 1 his
-        const media3 = window.CrComLib.subscribeState("b","3",(value: boolean) => {setMedia3(value);});  // ATV 2 hers
+        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  // bluRay
+        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // ATV 1
+        const media3 = window.CrComLib.subscribeState("b","3",(value: boolean) => {setMedia3(value);});  // ATV 2 
         const media4 = window.CrComLib.subscribeState("b","4",(value: boolean) => {setMedia4(value);});  // Camera
         const media5 = window.CrComLib.subscribeState("b","5",(value: boolean) => {setMedia5(value);});  // DTV 1 his
         const media6 = window.CrComLib.subscribeState("b","6",(value: boolean) => {setMedia6(value);});  // DTV 2 hers
@@ -175,7 +177,7 @@ const FamilyRoom = () =>{
             window.CrComLib.unsubscribeState("b","5",media5)
             window.CrComLib.unsubscribeState("b","6",media6)
             window.CrComLib.unsubscribeState("b","7",media7)
-            window.CrComLib.unsubscribeState("b","--",media8)
+            window.CrComLib.unsubscribeState("b","8",media8)
          
             // TV audio controls
             window.CrComLib.unsubscribeState("n","107",roomVolume)
@@ -778,7 +780,7 @@ const sliderValue = (value: boolean, id: string) => {
 
 {active_media?
             
-            <button style={{gridColumn:"11/13", gridRow:"1", width:"3.5rem", height:"2rem", borderRadius:"20px"}} className="btn_circle" onClick={()=>powerMenu("menu")}>
+            <button id="mobile_power" style={{gridColumn:"11/13", gridRow:"1", width:"3.5rem", height:"2rem", borderRadius:"20px"}} className="btn_circle" onClick={()=>powerMenu("menu")}>
                    <img className="btn_image" style={{height:"80%"}} src={power}  />
                </button> 
            :
@@ -926,10 +928,10 @@ const sliderValue = (value: boolean, id: string) => {
 
                             <div className="source_card" id= { media4? 'active_source' : 'not_active' } onClick={()=>playSource('media4')}>
                                 <div className="img_container">
-                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                    <img src={camera_icon} id="svg_gray" style={{height:"50%"}}/>
                                 </div>
 
-                                <p>House</p>
+                                <p> Camera</p>
                             </div>
 
                             <div className="source_card" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
@@ -1031,7 +1033,7 @@ const sliderValue = (value: boolean, id: string) => {
                                 </div>
 
                                 <div className={media_4} id="apple_tv_controller">
-                                    < AppleTv />
+                                    <Camera />
                                 </div>
 
                                 <div className={media_5} id="direct_controller">
@@ -1098,79 +1100,58 @@ const sliderValue = (value: boolean, id: string) => {
                             
                             
                             
-                            <div className="light_tile" id={light_1? 'card_glow':''}>
+                            <div className="light_tile" id={light_1? 'card_glow':''} onClick={() => sliderValue(true,"light_1")}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_1? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_1_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_1? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_1")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_1")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={lightOn}/>
+                                </button>
                             </div>
 
-                            <div className="light_tile" id={light_2? 'card_glow':''}>
+
+                            <div className="light_tile" id={light_2? 'card_glow':''} onClick={() => sliderValue(true,"light_2")}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_2? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_2_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_2? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_2")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_2")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={lightOn} />
+                                </button>
                             </div>
 
-                            <div className="light_tile" id={light_3? 'card_glow':''}>
+                            <div className="light_tile" id={light_3? 'card_glow':''} onClick={() => sliderValue(true,"light_3")}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_3? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_3_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_3? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_3")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_3")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={lightOn} />
+                                </button>
                             </div>
 
-                            <div className="light_tile" id={light_4? 'card_glow':''}>
+                            <div className="light_tile" id={light_4? 'card_glow':''} onClick={() => sliderValue(true,"light_4")}>
                                 <div className="light_info">
-                                    <p className="light_value">{light_4? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_4_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_4? "" : "light_btn_off"}  onClick={() => sliderValue(true,"light_4")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_4")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={lightOn} />
+                                </button>
                             </div>
 
-                            <div className="light_tile" id={light_5? 'card_glow':''}>
+                            <div className="light_tile" id={light_5? 'card_glow':''} onClick={() => sliderValue(true,"light_5")}>
+                                <div className="light_info">
+                                    <p className="light_name">{light_5_name}</p>
+                                </div>
+
+                                <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={lightOn} />
+                                </button>
+                            </div>
+
+                            <div className="display_none" id={light_5? '':''}>
                                 <div className="light_info">
                                     <p className="light_value">{light_5? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_5_name}</p>

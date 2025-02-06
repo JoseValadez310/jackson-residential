@@ -30,9 +30,10 @@ const LightDashboard = () =>{
     //--------------------------------------------------------------------------------------------------------------------------------------- Current Floor section 
 
         const [upStairs, setUpStairs]     = useState(false)
-        const [main, setMain]             = useState(true)
+        const [main, setMain]             = useState(false)
         const [downStairs, setDownStairs] = useState(false)
         const [outSide, setOutSide]       = useState(false)
+        const [globalScenes, setGlobalScenes]       = useState(true)
 
         // local 
 
@@ -109,12 +110,41 @@ const LightDashboard = () =>{
         const [light_62, setLight_62] = useState(false)
         const [light_63, setLight_63] = useState(false)
         const [light_64, setLight_64] = useState(false)
-        const [light_65, setLight_65] = useState(false)
-      
+
+        const [global_1, setGlobal_1] = useState(false)
+        const [global_2, setGlobal_2] = useState(false)
+        const [global_3, setGlobal_3] = useState(false)
+        const [global_4, setGlobal_4] = useState(false)
+        const [global_5, setGlobal_5] = useState(false)
+        const [global_6, setGlobal_6] = useState(false)
+        const [global_7, setGlobal_7] = useState(false)
+        const [global_8, setGlobal_8] = useState(false)
+        const [global_9, setGlobal_9] = useState(false)
+        const [global_10, setGlobal_10] = useState(false)
+        const [global_11, setGlobal_11] = useState(false)
+        const [global_12, setGlobal_12] = useState(false)
+
 
 
         useEffect(() => {
         
+            //Global
+
+            const global_1 =  window.CrComLib.subscribeState("b","348",(value: boolean) => {setGlobal_1(value);});
+            const global_2 =  window.CrComLib.subscribeState("b","349",(value: boolean) => {setGlobal_2(value);});
+            const global_3 =  window.CrComLib.subscribeState("b","350",(value: boolean) => {setGlobal_3(value);});
+            const global_4 =  window.CrComLib.subscribeState("b","351",(value: boolean) => {setGlobal_4(value);});
+            const global_5 =  window.CrComLib.subscribeState("b","352",(value: boolean) => {setGlobal_5(value);});
+            const global_6 =  window.CrComLib.subscribeState("b","353",(value: boolean) => {setGlobal_6(value);});
+            const global_7 =  window.CrComLib.subscribeState("b","354",(value: boolean) => {setGlobal_7(value);});
+            const global_8 =  window.CrComLib.subscribeState("b","355",(value: boolean) => {setGlobal_8(value);});
+            const global_9 =  window.CrComLib.subscribeState("b","356",(value: boolean) => {setGlobal_9(value);});
+            const global_10 =  window.CrComLib.subscribeState("b","357",(value: boolean) => {setGlobal_10(value);});
+            const global_11 =  window.CrComLib.subscribeState("b","358",(value: boolean) => {setGlobal_11(value);});
+            const global_12 =  window.CrComLib.subscribeState("b","359",(value: boolean) => {setGlobal_12(value);});
+
+          
+
             // Lights
 
 
@@ -135,7 +165,7 @@ const LightDashboard = () =>{
             const light_13 = window.CrComLib.subscribeState("b","266",(value: boolean) => {setLight_13(value);});
             const light_14 = window.CrComLib.subscribeState("b","267",(value: boolean) => {setLight_14(value);});
 
-            const light_15 = window.CrComLib.subscribeState("b","343",(value: boolean) => {setLight_15(value);});
+            const light_15 = window.CrComLib.subscribeState("b","342",(value: boolean) => {setLight_15(value);});
             const light_16 = window.CrComLib.subscribeState("b","271",(value: boolean) => {setLight_16(value);});
             const light_17 = window.CrComLib.subscribeState("b","272",(value: boolean) => {setLight_17(value);});
             const light_18 = window.CrComLib.subscribeState("b","273",(value: boolean) => {setLight_18(value);});
@@ -194,7 +224,6 @@ const LightDashboard = () =>{
             const light_62 = window.CrComLib.subscribeState("b","339",(value: boolean) => {setLight_62(value);});
             const light_63 = window.CrComLib.subscribeState("b","340",(value: boolean) => {setLight_63(value);});
             const light_64 = window.CrComLib.subscribeState("b","341",(value: boolean) => {setLight_64(value);});
-            const light_65 = window.CrComLib.subscribeState("b","342",(value: boolean) => {setLight_65(value);});
             
 
           
@@ -203,6 +232,20 @@ const LightDashboard = () =>{
       
     
             return () => {
+                window.CrComLib.unsubscribeState("b","348",global_1);
+                window.CrComLib.unsubscribeState("b","349",global_2);
+                window.CrComLib.unsubscribeState("b","350",global_3);
+                window.CrComLib.unsubscribeState("b","351",global_4);
+                window.CrComLib.unsubscribeState("b","352",global_5);
+                window.CrComLib.unsubscribeState("b","353",global_6);
+                window.CrComLib.unsubscribeState("b","354",global_7);
+                window.CrComLib.unsubscribeState("b","355",global_8);
+                window.CrComLib.unsubscribeState("b","356",global_9);
+                window.CrComLib.unsubscribeState("b","357",global_10);
+                window.CrComLib.unsubscribeState("b","358",global_11);
+                window.CrComLib.unsubscribeState("b","359",global_12);
+
+
     
                 
     
@@ -228,7 +271,7 @@ const LightDashboard = () =>{
                 window.CrComLib.unsubscribeState("b","266",light_13);
                 window.CrComLib.unsubscribeState("b","267",light_14);
     
-                window.CrComLib.unsubscribeState("b","343",light_15);
+                window.CrComLib.unsubscribeState("b","342",light_15);
                 window.CrComLib.unsubscribeState("b","271",light_16);
                 window.CrComLib.unsubscribeState("b","272",light_17);
                 window.CrComLib.unsubscribeState("b","273",light_18);
@@ -287,7 +330,6 @@ const LightDashboard = () =>{
                 window.CrComLib.unsubscribeState("b","339",light_62);
                 window.CrComLib.unsubscribeState("b","340",light_63);
                 window.CrComLib.unsubscribeState("b","341",light_64);
-                window.CrComLib.unsubscribeState("b","342",light_65);
                 
     
     
@@ -429,9 +471,9 @@ const LightDashboard = () =>{
                     light1: ["Office","338",light_61],
                     light2: ["Game Downs","339",light_62],
                     light3: ["Game Balcony","340",light_63],
-                    light4: ["Chandelier","341",light_64],
-                    light5: ["Top Hall","342",light_65],
-                    light6: ["Kids Hall","343",light_15]
+                    light4: ["Top Hall","341",light_64],
+                    light5: ["Kids Hall","342",light_15],
+                
 
         }
 
@@ -449,14 +491,14 @@ const LightDashboard = () =>{
                     <h1 className="zone_title"> {zone_12.title} </h1>
 
                     <div className="light_wrapper">
-                    <div className="light_tile" id={zone_12.light1[2]? 'card_glow':''}>
+                    <div className="light_tile" id={zone_12.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_12.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_12.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_12.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_12.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_12.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -467,14 +509,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_12.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_12.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_12.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_12.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_12.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_12.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_12.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -485,14 +527,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_12.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_12.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_12.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_12.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_12.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_12.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_12.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -503,14 +545,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_12.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_12.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_12.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_12.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_12.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_12.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_12.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -521,14 +563,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_12.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_12.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_12.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_12.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_12.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_12.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_12.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_12.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_12.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -550,14 +592,14 @@ const LightDashboard = () =>{
                     <div className="light_wrapper">
 
                                                  
-            <div className="light_tile" id={zone_11.light1[2]? 'card_glow':''}>
+            <div className="light_tile" id={zone_11.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_11.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_11.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_11.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_11.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_11.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -568,14 +610,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_11.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_11.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_11.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_11.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_11.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_11.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_11.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -586,14 +628,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_11.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_11.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_11.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_11.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_11.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_11.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_11.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -604,14 +646,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_11.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_11.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_11.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_11.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_11.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_11.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_11.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -622,14 +664,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_11.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_11.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_11.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_11.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_11.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_11.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_11.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_11.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_11.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -652,14 +694,14 @@ const LightDashboard = () =>{
 
                                                     
                             
-            <div className="light_tile" id={zone_8.light1[2]? 'card_glow':''}>
+            <div className="light_tile" id={zone_8.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_8.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_8.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_8.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_8.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_8.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -670,14 +712,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_8.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_8.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_8.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_8.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_8.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_8.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_8.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -688,14 +730,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_8.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_8.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_8.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_8.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_8.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_8.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_8.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -706,14 +748,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_8.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_8.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_8.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_8.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_8.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_8.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_8.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -724,14 +766,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_8.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_8.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_8.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_8.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_8.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_8.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_8.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_8.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_8.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -753,14 +795,14 @@ const LightDashboard = () =>{
 
                     <div className="light_wrapper">
 
-                    <div className="light_tile" id={zone_13.light1[2]? 'card_glow':''}>
+                    <div className="light_tile" id={zone_13.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_13.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_13.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_13.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_13.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_13.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -771,14 +813,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_13.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_13.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_13.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_13.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_13.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_13.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_13.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -789,14 +831,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_13.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_13.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_13.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_13.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_13.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_13.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_13.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -807,14 +849,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_13.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_13.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_13.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_13.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_13.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_13.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_13.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -825,14 +867,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_13.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_13.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_13.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_13.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_13.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_13.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_13.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_13.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_13.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -873,14 +915,14 @@ const LightDashboard = () =>{
                     <h1 className="zone_title"> {zone_3.title} & {zone_9.title} </h1>
 
                     <div className="light_wrapper">
-                    <div className="light_tile" id={zone_3.light1[2]? 'card_glow':''}>
+                    <div className="light_tile" id={zone_3.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_3.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_3.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_3.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_3.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_3.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_3.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_3.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_3.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_3.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -891,14 +933,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_3.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_3.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_3.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_3.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_3.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_3.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_3.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_3.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_3.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_3.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_3.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -909,14 +951,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_3.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_3.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_3.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_3.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_3.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_3.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_3.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_3.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_3.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_3.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_3.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -927,14 +969,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_3.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_3.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_3.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_3.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_3.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_3.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_3.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_3.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_3.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_3.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_3.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -946,14 +988,14 @@ const LightDashboard = () =>{
             </div>
 
 
-            <div className="light_tile" id={zone_9.light1[2]? 'card_glow':''}>
+            <div className="light_tile" id={zone_9.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_9.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_9.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_9.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_9.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_9.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -964,14 +1006,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_9.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_9.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_9.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_9.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_9.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_9.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_9.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -982,14 +1024,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_9.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_9.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_9.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_9.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_9.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_9.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_9.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1000,14 +1042,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_9.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_9.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_9.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_9.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_9.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_9.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_9.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1018,14 +1060,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_9.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_9.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_9.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_9.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_9.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_9.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_9.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_9.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_9.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1046,14 +1088,14 @@ const LightDashboard = () =>{
 
                     <div className="light_wrapper">
 
-                    <div className="light_tile" id={zone_6.light1[2]? 'card_glow':''}>
+                    <div className="light_tile" id={zone_6.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_6.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_6.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_6.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_6.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_6.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1064,14 +1106,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_6.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_6.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_6.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_6.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_6.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_6.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_6.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1082,14 +1124,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_6.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_6.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_6.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_6.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_6.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_6.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_6.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1100,14 +1142,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_6.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_6.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_6.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_6.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_6.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_6.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_6.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1118,14 +1160,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_6.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_6.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_6.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_6.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_6.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_6.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_6.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_6.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_6.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1145,14 +1187,14 @@ const LightDashboard = () =>{
 
                     <div className="light_wrapper">
 
-                    <div className="light_tile" id={zone_4.light1[2]? 'card_glow':''}>
+                    <div className="light_tile" id={zone_4.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_4.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_4.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_4.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_4.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_4.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1163,14 +1205,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_4.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_4.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_4.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_4.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_4.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_4.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_4.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1181,14 +1223,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_4.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_4.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_4.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_4.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_4.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_4.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_4.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1199,14 +1241,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_4.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_4.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_4.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_4.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_4.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_4.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_4.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1217,14 +1259,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_4.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_4.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_4.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_4.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_4.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_4.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_4.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_4.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_4.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1246,14 +1288,14 @@ const LightDashboard = () =>{
 
                     <div className="light_wrapper">
 
-                    <div className="light_tile" id={zone_5.light1[2]? 'card_glow':''}>
+                    <div className="light_tile" id={zone_5.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_5.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_5.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_5.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_5.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_5.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1264,14 +1306,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_5.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_5.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_5.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_5.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_5.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_5.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_5.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1282,14 +1324,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_5.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_5.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_5.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_5.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_5.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_5.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_5.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1300,14 +1342,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_5.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_5.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_5.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_5.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_5.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_5.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_5.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1318,14 +1360,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_5.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_5.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_5.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_5.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_5.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_5.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_5.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_5.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_5.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1348,14 +1390,14 @@ const LightDashboard = () =>{
                     <div className="light_wrapper">
                             
                             
-            <div className="light_tile" id={zone_10.light1[2]? 'card_glow':''}>
+            <div className="light_tile" id={zone_10.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_10.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_10.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_10.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_10.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_10.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1366,14 +1408,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_10.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_10.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_10.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_10.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_10.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_10.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_10.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1384,14 +1426,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_10.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_10.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_10.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_10.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_10.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_10.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_10.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1402,14 +1444,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_10.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_10.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_10.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_10.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_10.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_10.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_10.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1420,14 +1462,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_10.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_10.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_10.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_10.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_10.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_10.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_10.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_10.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_10.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1449,14 +1491,14 @@ const LightDashboard = () =>{
                     <h1 className="zone_title"> {zone_7.title} </h1>
 
                     <div className="light_wrapper">
-                    <div className="light_tile" id={zone_7.light1[2]? 'card_glow':''}>
+                    <div className="light_tile" id={zone_7.light1[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_7.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_7.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_7.light1[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_7.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light1[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_7.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light1[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1467,14 +1509,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_7.light2[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_7.light2[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_7.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_7.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_7.light2[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_7.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light2[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_7.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light2[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1485,14 +1527,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_7.light3[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_7.light3[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_7.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_7.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_7.light3[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_7.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light3[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_7.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light3[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1503,14 +1545,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_7.light4[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_7.light4[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_7.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_7.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_7.light4[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_7.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light4[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_7.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light4[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1521,14 +1563,14 @@ const LightDashboard = () =>{
                 </div>
             </div>
 
-              <div className="light_tile" id={zone_7.light5[2]? 'card_glow':''}>
+              <div className="light_tile" id={zone_7.light5[2]? '':''}>
                 <div className="light_info">
-                    <p className="light_value">{zone_7.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                    <p className="display_none">{zone_7.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                     <p className="light_name">{zone_7.light5[0]}</p>
                 </div>
                                 
                 <div className="light_controls">
-                    <button className="btn_circle"  id={zone_7.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light5[1]}`,false) )}>
+                    <button className="btn_circle"  id={zone_7.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_7.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_7.light5[1]}`,false) )}>
                         <img className="btn_image" src={lightOff} />
                     </button>
                         
@@ -1563,14 +1605,14 @@ const LightDashboard = () =>{
                     <div className="light_wrapper">
 
                                         
-                        <div className="light_tile" id={zone_2.light1[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_2.light1[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_2.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_2.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_2.light1[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_2.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light1[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_2.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light1[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1581,14 +1623,14 @@ const LightDashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="light_tile" id={zone_2.light2[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_2.light2[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_2.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_2.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_2.light2[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_2.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light2[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_2.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light2[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1599,14 +1641,14 @@ const LightDashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="light_tile" id={zone_2.light3[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_2.light3[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_2.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_2.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_2.light3[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_2.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light3[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_2.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light3[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1617,14 +1659,14 @@ const LightDashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="light_tile" id={zone_2.light4[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_2.light4[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_2.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_2.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_2.light4[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_2.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light4[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_2.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light4[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1635,14 +1677,14 @@ const LightDashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="light_tile" id={zone_2.light5[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_2.light5[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_2.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_2.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_2.light5[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_2.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light5[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_2.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_2.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_2.light5[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1672,14 +1714,14 @@ const LightDashboard = () =>{
                     <div className="light_wrapper">
 
                                         
-                        <div className="light_tile" id={zone_1.light1[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_1.light1[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_1.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_1.light1[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_1.light1[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_1.light1[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light1[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_1.light1[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light1[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light1[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1690,14 +1732,14 @@ const LightDashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="light_tile" id={zone_1.light2[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_1.light2[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_1.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_1.light2[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_1.light2[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_1.light2[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light2[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_1.light2[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light2[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light2[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1708,14 +1750,14 @@ const LightDashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="light_tile" id={zone_1.light3[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_1.light3[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_1.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_1.light3[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_1.light3[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_1.light3[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light3[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_1.light3[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light3[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light3[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1726,14 +1768,14 @@ const LightDashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="light_tile" id={zone_1.light4[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_1.light4[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_1.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_1.light4[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_1.light4[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_1.light4[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light4[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_1.light4[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light4[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light4[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1744,14 +1786,14 @@ const LightDashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="light_tile" id={zone_1.light5[2]? 'card_glow':''}>
+                        <div className="light_tile" id={zone_1.light5[2]? '':''}>
                             <div className="light_info">
-                                <p className="light_value">{zone_1.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
+                                <p className="display_none">{zone_1.light5[2]? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                 <p className="light_name">{zone_1.light5[0]}</p>
                             </div>
                                             
                             <div className="light_controls">
-                                <button className="btn_circle"  id={zone_1.light5[2]? "" : "light_btn_off"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light5[1]}`,false) )}>
+                                <button className="btn_circle"  id={zone_1.light5[2]? "display_none" : "display_none"}  onClick={() => (window.CrComLib.publishEvent("b",`${zone_1.light5[1]}`,true),window.CrComLib.publishEvent("b",`${zone_1.light5[1]}`,false) )}>
                                     <img className="btn_image" src={lightOff} />
                                 </button>
                                     
@@ -1769,6 +1811,92 @@ const LightDashboard = () =>{
             </>
         ) 
 
+        const lightingGroup_5 = (
+            <>
+                     
+                <div className="zone_section" id="global_lighting">
+
+                    <h1 className="zone_title"> Global Scenes </h1>
+
+        <div className="light_wrapper">
+
+            <button className="btn_square_wide" id={global_1?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","348",true),window.CrComLib.publishEvent("b","348",false))}>
+                 <p> Entry </p>
+            </button>
+
+            <button className="btn_square_wide" id={global_2?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","349",true),window.CrComLib.publishEvent("b","349",false))}>
+                <p>Goodnight</p>
+            </button>
+
+            <button className="btn_square_wide" id={global_3?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","350",true),window.CrComLib.publishEvent("b","350",false))}>
+                <p>Stairs</p>
+            </button>
+
+            <button  className="btn_square_wide" id={global_4?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","351",true),window.CrComLib.publishEvent("b","351",false))}>
+                <p>Floods</p>
+            </button>
+
+
+
+            <button className="btn_square_wide" id={global_5?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","352",true),window.CrComLib.publishEvent("b","352",false))}>
+                <p>             
+                    Downstairs Off
+
+                </p>            </button>
+
+            <button className="btn_square_wide" id={global_6?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","353",true),window.CrComLib.publishEvent("b","353",false))}>
+                <p>
+
+                Main Off
+                </p>
+            </button>
+
+            <button className="btn_square_wide" id={global_7?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","354",true),window.CrComLib.publishEvent("b","354",false))}>
+               <p>
+               Up Stairs Off
+               </p>
+            </button>
+
+            <button className="btn_square_wide" id={global_8?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","355",true),window.CrComLib.publishEvent("b","355",false))}>
+                <p>                Drive Sconce
+                </p>
+            </button>
+
+
+
+
+            <button className="btn_square_wide" id={global_9?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","356",true),window.CrComLib.publishEvent("b","356",false))}>
+              <p>  All On</p>
+            </button>
+
+            <button className="btn_square_wide" id={global_10?"active_global":""}  onClick={() => (window.CrComLib.publishEvent("b","357",true),window.CrComLib.publishEvent("b","357",false))}>
+              <p>  All off</p>
+            </button>
+
+            <button className="btn_square_wide" id={global_11?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","358",true),window.CrComLib.publishEvent("b","358",false))}>
+              <p>  Welcome</p>
+            </button>
+
+            <button className="btn_square_wide" id={global_12?"active_global":""} onClick={() => (window.CrComLib.publishEvent("b","359",true),window.CrComLib.publishEvent("b","359",false))}>
+               <p> Away/Vacation</p>
+            </button>
+
+
+
+                            
+            
+            
+
+        </div>
+
+                </div>
+
+            </>
+        ) 
+
+
+
+
     
 
     
@@ -1782,23 +1910,39 @@ const LightDashboard = () =>{
                 setMain(false)
                 setDownStairs(false)
                 setOutSide(false)
+                setGlobalScenes(false)
             } else if (id === "main"){
                 setUpStairs(false)
                 setMain(true)
                 setDownStairs(false)
                 setOutSide(false)
+                setGlobalScenes(false)
+
             } else if (id === "down"){
                 setUpStairs(false)
                 setMain(false)
                 setDownStairs(true)
                 setOutSide(false)
+                setGlobalScenes(false)
+
         
             } else if (id === "out"){
                 setUpStairs(false)
                 setMain(false)
                 setDownStairs(false)
                 setOutSide(true)
+                setGlobalScenes(false)
+
             }
+             else if (id === "global"){
+                setUpStairs(false)
+                setMain(false)
+                setDownStairs(false)
+                setOutSide(false)
+                setGlobalScenes(true)
+
+
+             }
         }
  
     
@@ -1843,11 +1987,21 @@ const LightDashboard = () =>{
                 </Link>
 
                 <div className="nav">
+                    <button onClick={() => currentFloor("global")}    className={globalScenes?   "btn_selected" : "btn_not_selected"}>      <p> Global</p>     </button>
                     <button onClick={() => currentFloor("up")}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> Up Stairs</p>     </button>
                     <button onClick={() => currentFloor("main")}  className={main? "btn_selected" : "btn_not_selected"}>            <p> Main </p>         </button>
                     <button onClick={() => currentFloor("down")}  className={downStairs?   "btn_selected" : "btn_not_selected"}>    <p> Down Stairs</p>   </button>
                     <button onClick={() => currentFloor("out")}   className={outSide? "btn_selected" : "btn_not_selected"}>         <p> Out Doors</p>     </button>
                 </div>
+        </div>
+
+
+        <div className="mobile_nav">
+            <button onClick={() => currentFloor("global")}    className={globalScenes?   "btn_selected" : "btn_not_selected"}>      <p> Global</p>     </button>
+            <button onClick={() => currentFloor("up")}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> Up Stairs</p>     </button>
+            <button onClick={() => currentFloor("main")}  className={main? "btn_selected" : "btn_not_selected"}>            <p> Main </p>         </button>
+            <button onClick={() => currentFloor("down")}  className={downStairs?   "btn_selected" : "btn_not_selected"}>    <p> Down Stairs</p>   </button>
+            <button onClick={() => currentFloor("out")}   className={outSide? "btn_selected" : "btn_not_selected"}>         <p> Out Doors</p>     </button>
         </div>
 
         
@@ -1865,6 +2019,7 @@ const LightDashboard = () =>{
                         {main? lightingGroup_2 : <> </>}
                         {downStairs? lightingGroup_3 : <> </>}
                         {outSide? lightingGroup_4 : <> </>}
+                        {globalScenes? lightingGroup_5 : <> </>}
 
                 
                          

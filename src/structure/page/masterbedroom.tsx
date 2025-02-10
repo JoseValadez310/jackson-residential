@@ -778,11 +778,11 @@ const sliderValue = (value: boolean, id: string) => {
 
 {active_media?
             
-            <button id="mobile_power" style={{gridColumn:"11/13", gridRow:"1", width:"3.5rem", height:"2rem", borderRadius:"20px"}} className="btn_circle" onClick={()=>powerMenu("menu")}>
+            <button id="mobile_power"style={{gridColumn:"11/13", gridRow:"1", width:"3.5rem", height:"2rem", borderRadius:"20px"}} className="btn_circle" onClick={()=>powerMenu("menu")}>
                    <img className="btn_image" style={{height:"80%"}} src={power}  />
                </button> 
            :
-           <Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
+           <Link to={"/RoomsDashboard"} state={{previousLocation: 'Up Stairs'}} className="mobile_back_btn"> 
                <button className="back_button">
                    <img src={menu_button}/>
                </button>
@@ -805,16 +805,16 @@ const sliderValue = (value: boolean, id: string) => {
 
         <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
 
-            <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
+            <Link to={"/RoomsDashboard"} state={{previousLocation: 'Up Stairs'}} onClick={() => closeOutPowerOption} > 
                 <button className="back_button" >
                     <img src={menu_button}/>
                 </button>
             </Link>  
         
             <div className="nav">
-                    <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
-                    <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music} /> </Link>
-                    <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights} /> </button>
+                    <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}  /> </button>
+                    <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+                    <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
             </div>
             
             <div className="nav_clock">

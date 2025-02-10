@@ -49,12 +49,12 @@
     */  
     
     .climate_dashboard_container{
-        grid-column: 1/13;
+        grid-column: 2/12;
         grid-row: 2/9;
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
         gap: 1rem;
@@ -62,7 +62,7 @@
     }
         .container_thermo{    
            height: 20rem;
-           width: 22rem;
+           width: 19rem;
         }
             .climate_label{
                 position: absolute;
@@ -95,7 +95,7 @@
 
 
 
-    @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+    @media only screen and (max-device-width: 430px)  and (orientation: portrait){
         .climate_page{
             grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
 
@@ -114,12 +114,65 @@
         
         .climate_dashboard_container{
             overflow-y: scroll;
+            width: 100%;
+            grid-column: 1/13;
         }
 
-        .climate_dashboard_container{
-            backdrop-filter: blur(0px);
-        }
+        
     
+     .climate_label{
+        position: relative;
+        top: 30px;
+     }
+        .container_thermo{
+            position: relative;
+            bottom: 10px;
+            width: 100%;
+        }
+
+
+    
+    
+    
+    
+    
+    }
+
+    
+    @media only screen and (max-device-width: 390px)  and (orientation: portrait){
+        .climate_page{
+            grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+
+        }
+       
+        .climate_page .nav_container{
+            display: none;
+        }
+
+        .climate_page .title_info{
+            font-size: x-large;
+            grid-column: 2/13;
+
+            font-weight: 100;
+        }
+        
+        .climate_dashboard_container{
+            grid-column: 1/13;
+            overflow-y: scroll;
+            width: 100%;
+        }
+
+        
+    
+     .climate_label{
+        position: relative;
+        top: 30px;
+     }
+        .container_thermo{
+            position: relative;
+            bottom: 10px;
+            width: 100%;
+        }
 
 
     

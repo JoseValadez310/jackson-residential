@@ -1,11 +1,10 @@
 // React 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 
 // React Router 
-import { Link } from "react-router-dom"
-
+import { Link,useLocation  } from "react-router-dom"
 // CSS 
 import "../../assets/css/dashboard_css/Room_Dashboard.css"
 import "../../assets/css/index.css"
@@ -35,6 +34,38 @@ type RoomObject = {
 
 
 const RoomsDashboard = () => {
+
+    const location = useLocation();
+    const previousLocation = location.state?.previousLocation || "Unknown";
+
+
+    useEffect( () => {
+
+        if(previousLocation === "Main"){
+            floorSelection("location_2")
+            console.log("location 2")
+        } else if(previousLocation === "Up Stairs"){
+            floorSelection("location_1")
+            console.log("location 1")
+    
+        } else if(previousLocation === "Down Stairs"){
+            floorSelection("location_3")
+    
+            console.log("location 3")
+    
+        } else if (previousLocation === "Out Doors"){
+            floorSelection("location_4")
+    
+            console.log("location 4")
+    
+        }else (
+            console.log(previousLocation)
+        )
+    
+    },[])
+    
+
+   
 
     
 

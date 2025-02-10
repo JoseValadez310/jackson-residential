@@ -784,7 +784,7 @@ const sliderValue = (value: boolean, id: string) => {
                    <img className="btn_image" style={{height:"80%"}} src={power}  />
                </button> 
            :
-           <Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
+           <Link to={"/RoomsDashboard"} state={{previousLocation: 'Up Stairs'}} className="mobile_back_btn"> 
                <button className="back_button">
                    <img src={menu_button}/>
                </button>
@@ -807,7 +807,7 @@ const sliderValue = (value: boolean, id: string) => {
 
         <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
 
-            <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
+            <Link to={"/RoomsDashboard"} state={{previousLocation: 'Up Stairs'}} onClick={() => closeOutPowerOption} > 
                 <button className="back_button" >
                     <img src={menu_button}/>
                 </button>

@@ -25,7 +25,7 @@ const ScreenSize = () =>{
 
 
 
-        <div style={{height:"100vh",width:"100vw", display:"flex", justifyContent:"center",alignItems:"center",gap:"2rem"}}>
+        <div style={{height:"100vh",width:"100vw", display:"flex", justifyContent:"center",alignItems:"center",gap:"2rem", zIndex:"30"}}>
 
 
             <h1>{`Width: ${screenSize.width}, Height: ${screenSize.height}`}</h1>

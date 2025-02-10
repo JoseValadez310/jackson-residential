@@ -235,7 +235,7 @@ const sliderValue = (value: boolean, id: string) => {
 
         <div className="generic_room">
 
-<Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
+<Link to={"/RoomsDashboard"} state={{previousLocation: 'Up Stairs'}} className="mobile_back_btn"> 
             <button className="back_button">
                 <img src={menu_button}/>
             </button>
@@ -244,7 +244,7 @@ const sliderValue = (value: boolean, id: string) => {
 
        <div className="nav_container">
 
-            <Link to={"/RoomsDashboard"}> 
+            <Link to={"/RoomsDashboard"} state={{previousLocation: 'Up Stairs'}}> 
                 <button className="back_button" >
                     <img src={menu_button}/>
                 </button>
@@ -265,6 +265,8 @@ const sliderValue = (value: boolean, id: string) => {
        
 
            
+
+
 
 
 

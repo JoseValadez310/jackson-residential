@@ -28,7 +28,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-
         box-shadow: 5px 5px 10px rgb(80, 79, 79);
     }
 
@@ -325,11 +324,14 @@
                                 border-radius: 5px;
                                 border: none;
                                 background-color: brown;
-
                                 width: 100%;
                                 height: 100%;
-                                
-                            }
+                                transition: 0.1s ease-in-out;
+                                box-shadow: rgba(0, 0, 0, 0.377) 5px 10px 15px, #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -1.5px -1.5px 2px 0px inset;                            }
+                                #mode_off:active{
+                                    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000, #c7c3c0 -3.2px -3.2px 8px 0px inset;
+                                                                        background-color: rgb(238, 151, 151);
+                                }
                                
                             #mode_heat{
                                 grid-row: 2;
@@ -667,13 +669,14 @@
     }
 
     .container_thermo .thermostat_increase{
-        margin-right: 3px;
+        position: relative;
+        right: 8px;
+      
         width: 100%;
-        height: 3.75rem;
-        border-radius: 50px;
+        height: 3rem;
+        border-radius: 35px;
         border: none;
         outline: none;
-        background-color: rgba(202, 79, 79, 0.55);
         box-shadow: rgba(0, 0, 0, 0.377) -5px 5px 8px;
         cursor: pointer;
         font-family: Montserrat;
@@ -685,14 +688,16 @@
     }
 
     .container_thermo .thermostat_decrease{
+        position: relative;
+        left: 8px;
+      
         margin-left: 4px;
         width: 100%;
-        height: 3.75rem;
-        border-radius: 50px;
+        height: 3rem;
+       border-radius: 35px;
         border: none;
         outline: none;
-        background-color: rgba(86, 149, 221, 0.35);
-        box-shadow: rgba(0, 0, 0, 0.377) 5px 5px 8px;
+        box-shadow: rgba(0, 0, 0, 0.377) 5px 5px 13px;
         cursor: pointer;
         font-family: Montserrat;
         transition: 0.1s ease-in-out;

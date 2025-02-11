@@ -39,6 +39,9 @@ const PoolSpa = () =>{
      const [spaMode, SetSpaMode] = useState(false)
     
 
+     // MISC
+     const [airTemp, setAirTemp] = useState(0)
+     const [lockOutMode, setLockOutMode] = useState(false)
 
      
          useEffect(() => {
@@ -66,6 +69,12 @@ const PoolSpa = () =>{
              const spaHeat = window.CrComLib.subscribeState("b","611",(value: boolean) => {setSpaHeat(value);});
              const spaMode = window.CrComLib.subscribeState("b","612",(value: boolean) => {SetSpaMode(value);});
 
+             // Air Related
+
+             const airTemp = window.CrComLib.subscribeState("n","304",(value:number) => {setAirTemp(value)})
+             const lockOut = window.CrComLib.subscribeState("b","617",(value: boolean) => {setLockOutMode(value);});
+
+
      
              return () => {
      
@@ -88,6 +97,9 @@ const PoolSpa = () =>{
                  window.CrComLib.unsubscribeState("n","303",spaSetPoint)
                  window.CrComLib.unsubscribeState("b","611",spaHeat)
                  window.CrComLib.unsubscribeState("b","612",spaMode)
+
+                 window.CrComLib.unsubscribeState("n","304",airTemp)
+                 window.CrComLib.unsubscribeState("b","617",lockOut)
 
 
 
@@ -131,6 +143,14 @@ const PoolSpa = () =>{
 
        <h1 className="title_info"> Pool - Spa </h1>
 
+
+{
+    lockOutMode?
+    <div className="lock_out_mode"> <h1>Service Mode Enabled</h1></div> 
+    : ""
+
+}
+      
             
 
         <div className="pool_container">
@@ -175,6 +195,10 @@ const PoolSpa = () =>{
         </div>
 
         <div className="button_container">
+
+
+            <div className="air_temp_wrapper"><p>{airTemp}</p> <p>Air Temp.</p></div>
+
             <button className="btn_square_wide" id = {filter?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","600",true),window.CrComLib.publishEvent("b","600",false), console.log("Filter 600")}}> <p>Filter          </p></button>
             <button className="btn_square_wide" id = {solarHeat?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","601",true),window.CrComLib.publishEvent("b","601",false), console.log("Solar heat 601")}}> <p>Solar Heat      </p></button>
             <button className="btn_square_wide" id = {solarHeatPref?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","602",true),window.CrComLib.publishEvent("b","602",false), console.log("solar heat pref 602")}}> <p>Solar Heat Pref </p></button>

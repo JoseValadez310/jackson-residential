@@ -69,13 +69,6 @@ const ClimateDashboard = () =>{
                     <img src={menu_button}/>
                 </button>
             </Link>
-
-       
-
-      
-
-      
-
        </div>
 
 

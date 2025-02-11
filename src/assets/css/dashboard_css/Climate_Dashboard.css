@@ -61,8 +61,8 @@
         animation: controller-load 1500ms;
     }
         .container_thermo{    
-           height: 20rem;
-           width: 19rem;
+           height: 25rem;
+           width: 22rem;
         }
             .climate_label{
                 position: absolute;
@@ -85,6 +85,11 @@
         grid-row: 1/2;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
+        backdrop-filter: blur(0px);
+    }
+
+    .climate_page .nav_container:before{
+        background-color: transparent;
     }
 
 

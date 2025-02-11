@@ -964,41 +964,38 @@ const sliderValue = (value: boolean, id: string) => {
                         </button>
 
                         <div className="logo_display">
-                            <div className={media1? "bluRay_logo":"media_off"}>
+                        <div className={media1? "bluRay_logo":"media_off"}>
                                 <img src={bluRay} alt="" />
                             </div>
 
-                            <div className={media2? "sonos_header_logo":"media_off"}>
+                            <div className={media2? "apple_display_logo":"media_off"}>
                               <img src={appleTV} id="svg_gray"  alt="" />
                               <p className="user_title_controller"> His</p>
                             </div>
 
-                            <div className={media3? "dtv_header_logo":"media_off"}>
+                            <div className={media3? "apple_display_logo":"media_off"}>
                            
                             <img src={appleTV} id="svg_gray"  alt="" />
                             <p className="user_title_controller"> Hers</p>
                             </div>
 
-                            <div className={media4? "dtv_header_logo":"media_off"}>
-                            <img src={appleTV} id="svg_gray"  alt="" />
+                            <div className={media4? "apple_display_logo":"media_off"}>
+                                <img src={appleTV} id="svg_gray"  alt="" />
                                 <p className="user_title_controller"> House </p>
-
                             </div>
 
                             <div className={media5? "dtv_header_logo":"media_off"}>
-                              
-                            <img src={direcTv}  id="svg_gray"  alt="" />
-                            <p className="user_title_controller">  His</p>
+                                <img src={direcTv}  id="svg_gray"  alt="" />
+                                <p className="user_title_controller">  His</p>
                             </div>
 
                             <div className={media6? "dtv_header_logo":"media_off"}>
-                            <   img src={direcTv}  id="svg_gray" alt="" />
+                                <img src={direcTv}  id="svg_gray" alt="" />
                                 <p className="user_title_controller">  Hers</p>
                             </div>
 
                             <div className={media7? "roku_logo":"media_off"}>
                                 <img src={roku} id="svg_gray"   alt="" />
-                             
                             </div>
 
                             <div className={media8? "dtv_header_logo":"media_off"}>

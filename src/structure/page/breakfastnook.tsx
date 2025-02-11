@@ -10,7 +10,6 @@ import AppleTv from "../../components/controllers/AppleTv"
 import DirecTv from "../../components/controllers/DirecTv"
 import BluRay from "../../components/controllers/BluRay"
 import Roku from "../../components/controllers/Roku"
-import Camera from "../../components/controllers/Camera"
 
 // Music Page import 
 
@@ -42,7 +41,6 @@ import menu_button from "../../assets/images/icons/icons8-arrow.svg"
 import mute        from "../../assets/images/icons/icons8-no-audio.svg"
 import power       from "../../assets/images/icons/icons8-power.svg"
 import arrow       from "../../assets/images/icons/icons8-triangle-arrow.svg"
-import camera_icon from "../../assets/images/icons8-bullet-camera.svg"
 
 // Light SVGs
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
@@ -903,107 +901,107 @@ const sliderValue = (value: boolean, id: string) => {
                
 
 
-            <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
-                        <div className={active_media? "media_off":"room_sources_container"}>
-                            
-                            <div className="source_card" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
-                                <div className="img_container">
-                                    <img src={bluRay} style={{height:"45%"}}/>
-                                </div>
-                               
-                                <p>House</p>
+            
+        <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
+                    <div className={active_media? "media_off":"room_sources_container"}>
+                        
+                        <div className="source_card" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
+                            <div className="img_container">
+                                <img src={bluRay} style={{height:"45%"}}/>
                             </div>
-
-                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
-                                <div className="img_container">
-                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
-                                </div>
-
-                                <p>His</p>
-                            </div>
-
-                            <div className="source_card" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
-                                <div className="img_container">
-                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
-                                </div>
-
-                                <p>Her</p>
-                            </div>
-
-                            <div className="source_card" id= { media4? 'active_source' : 'not_active' } onClick={()=>playSource('media4')}>
-                                <div className="img_container">
-                                    <img src={camera_icon} id="svg_gray" style={{height:"50%"}}/>
-                                </div>
-
-                                <p> Camera</p>
-                            </div>
-
-                            <div className="source_card" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
-                                <div className="img_container">
-                                    <img src={small_dtv} style={{height:"65%"}}  />
-                                </div>
-
-                                <p>DTV 1</p>
-                            </div>
-
-                            <div className="source_card" id= { media6? 'active_source' : 'not_active' } onClick={()=>playSource('media6')}>
-                                <div className="img_container">
-                                    <img src={small_dtv} style={{height:"65%"}}  />
-                                </div>
-                               
-                                <p>DTV 2</p>
-                            </div>
-
-                            <div className="source_card" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
-                                <div className="img_container">
-                                    <img src={roku} id="svg_white"style={{height:"35%"}}/>
-                                </div>
-                             
-                                <p>House</p>
-                            </div>
-                            
+                           
+                            <p>House</p>
                         </div>
-                
-                        <div className={active_media? "controller_layout": "media_off"}>
 
-                            <button id="controller_layout_back_button"  onClick = {display_tile}>
-                                <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
-                            </button>
+                        <div className="source_card" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
+                            <div className="img_container">
+                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                            </div>
 
-                            <div className="logo_display">
-                            <div className={media1? "bluRay_logo":"media_off"}>
+                            <p>His</p>
+                        </div>
+
+                        <div className="source_card" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
+                            <div className="img_container">
+                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                            </div>
+
+                            <p>Her</p>
+                        </div>
+
+                        <div className="source_card" id= { media4? 'active_source' : 'not_active' } onClick={()=>playSource('media4')}>
+                            <div className="img_container">
+                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                            </div>
+
+                            <p>House</p>
+                        </div>
+
+                        <div className="source_card" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
+                            <div className="img_container">
+                                <img src={small_dtv} style={{height:"65%"}}  />
+                            </div>
+
+                            <p>DTV 1</p>
+                        </div>
+
+                        <div className="source_card" id= { media6? 'active_source' : 'not_active' } onClick={()=>playSource('media6')}>
+                            <div className="img_container">
+                                <img src={small_dtv} style={{height:"65%"}}  />
+                            </div>
+                           
+                            <p>DTV 2</p>
+                        </div>
+
+                        <div className="source_card" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
+                            <div className="img_container">
+                                <img src={roku} id="svg_white"style={{height:"35%"}}/>
+                            </div>
+                         
+                            <p>House</p>
+                        </div>
+                        
+                    </div>
+            
+                    <div className={active_media? "controller_layout": "media_off"}>
+
+                        <button id="controller_layout_back_button"  onClick = {display_tile}>
+                            <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
+                        </button>
+
+                        <div className="logo_display">
+                        <div className={media1? "bluRay_logo":"media_off"}>
                                 <img src={bluRay} alt="" />
                             </div>
 
-                            <div className={media2? "sonos_header_logo":"media_off"}>
+                            <div className={media2? "apple_display_logo":"media_off"}>
                               <img src={appleTV} id="svg_gray"  alt="" />
                               <p className="user_title_controller"> His</p>
                             </div>
 
-                            <div className={media3? "dtv_header_logo":"media_off"}>
+                            <div className={media3? "apple_display_logo":"media_off"}>
                            
                             <img src={appleTV} id="svg_gray"  alt="" />
                             <p className="user_title_controller"> Hers</p>
                             </div>
 
-                            <div className={media4? "dtv_header_logo":"media_off"}>
-                                <img src={camera_icon} id="svg_gray"  alt="" />
+                            <div className={media4? "apple_display_logo":"media_off"}>
+                                <img src={appleTV} id="svg_gray"  alt="" />
+                                <p className="user_title_controller"> House </p>
                             </div>
 
                             <div className={media5? "dtv_header_logo":"media_off"}>
-                              
-                            <img src={direcTv}  id="svg_gray"  alt="" />
-                            <p className="user_title_controller">  His</p>
+                                <img src={direcTv}  id="svg_gray"  alt="" />
+                                <p className="user_title_controller">  His</p>
                             </div>
 
                             <div className={media6? "dtv_header_logo":"media_off"}>
-                            <   img src={direcTv}  id="svg_gray" alt="" />
+                                <img src={direcTv}  id="svg_gray" alt="" />
                                 <p className="user_title_controller">  Hers</p>
                             </div>
 
                             <div className={media7? "roku_logo":"media_off"}>
                                 <img src={roku} id="svg_gray"   alt="" />
-                             
                             </div>
 
                             <div className={media8? "dtv_header_logo":"media_off"}>
@@ -1015,82 +1013,82 @@ const sliderValue = (value: boolean, id: string) => {
                 
                         </div>
 
+                        <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
+                            <p> REBOOT </p>
+                        </button>
 
-                            <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
-                                <p> REBOOT </p>
+                        <div className="controller_grid">
+
+                            <div className={media_1} id="bluRay_controller">
+                               < BluRay />
+                            </div>
+
+                            <div className={media_2} id="apple_tv_controller">
+                                < AppleTv />
+                            </div>
+                               
+                            <div className={media_3} id="apple_tv_controller">
+                                < AppleTv />
+                            </div>
+
+                            <div className={media_4} id="apple_tv_controller">
+                                < AppleTv />
+                            </div>
+
+                            <div className={media_5} id="direct_controller">
+                                < DirecTv />
+                            </div>
+
+                            <div className={media_6} id="direct_controller">
+                                < DirecTv />
+                            </div>
+
+                            <div className={media_7} id="roku_controller" >
+                               < Roku />
+                            </div>
+
+                            <div className={media_8} id="apple_tv_controller">
+                           
+                            </div>
+                            
+
+                        </div>
+                               
+
+                    </div>
+
+                    <div className={active_media? "volume_container" : "media_off"}>
+           
+                      
+                            <button className="btn_square">
+                                <img className="btn_image"src={arrow} onClick={()=> tvVolState("down")}/>
+                            </button>
+                            
+                           
+
+                            <button className="btn_square_wide" onClick={()=> tvVolState("mute")}>
+                                {roomMute? 
+                                <>
+                                  <img src={mute} style={{height:"50%"}}/>
+                                  <p className="mute_btn_txt">Click to Unmute</p>
+                                </>
+                                  
+                                    :
+                                <>
+                                    <p className="volume_txt">{roomVolume}</p>
+                                    <p className="mute_btn_txt">Click to Mute</p>
+                                  </>
+                            }
                             </button>
 
-                            <div className="controller_grid">
-
-                                <div className={media_1} id="bluRay_controller">
-                                   < BluRay />
-                                </div>
-
-                                <div className={media_2} id="apple_tv_controller">
-                                    < AppleTv />
-                                </div>
-                                   
-                                <div className={media_3} id="apple_tv_controller">
-                                    < AppleTv />
-                                </div>
-
-                                <div className={media_4} id="apple_tv_controller">
-                                    <Camera />
-                                </div>
-
-                                <div className={media_5} id="direct_controller">
-                                    < DirecTv />
-                                </div>
-
-                                <div className={media_6} id="direct_controller">
-                                    < DirecTv />
-                                </div>
-
-                                <div className={media_7} id="roku_controller" >
-                                   < Roku />
-                                </div>
-
-                                <div className={media_8} id="apple_tv_controller">
-                               
-                                </div>
-                                
-
-                            </div>
-                                   
-
-                        </div>
-
-                        <div className={active_media? "volume_container" : "media_off"}>
-               
-                          
-                                <button className="btn_square">
-                                    <img className="btn_image"src={arrow} onClick={()=> tvVolState("down")}/>
-                                </button>
-                                
-                               
-
-                                <button className="btn_square_wide" onClick={()=> tvVolState("mute")}>
-                                    {roomMute? 
-                                    <>
-                                      <img src={mute} style={{height:"50%"}}/>
-                                      <p className="mute_btn_txt">Click to Unmute</p>
-                                    </>
-                                      
-                                        :
-                                    <>
-                                        <p className="volume_txt">{roomVolume}</p>
-                                        <p className="mute_btn_txt">Click to Mute</p>
-                                      </>
-                                }
-                                </button>
-
-                                <button className="btn_square" onClick={()=> tvVolState("up")}>
-                                    <img className="btn_image"src={arrow} id="flip"/>
-                                </button>
+                            <button className="btn_square" onClick={()=> tvVolState("up")}>
+                                <img className="btn_image"src={arrow} id="flip"/>
+                            </button>
 
 
-                        </div>
                     </div>
+                </div>
+
 
 
 

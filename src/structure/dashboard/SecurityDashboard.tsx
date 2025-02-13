@@ -25,9 +25,6 @@ const SecurityDashboard =()=>{
         const [optionDisarm, setOptionDisarm]       = useState(false)
         const [optionBypassAll, setOptionBypassAll] = useState(false)
 
-        const [indicatorReady, setIndicatorReady] = useState(false)
-        const [indicatorStay,  setIndicatorStay]  = useState(false)
-        const [indicatorArmed, setIndicatorArmed] = useState(false)
 
 
         const [secZone1_title, setSecZone1_title] = useState("")
@@ -281,10 +278,7 @@ const SecurityDashboard =()=>{
                      const optionDisarm = window.CrComLib.subscribeState("b","665",(value: boolean) => {setOptionDisarm(value);});
                      const optionBypassAll = window.CrComLib.subscribeState("b","666",(value: boolean) => {setOptionBypassAll(value);});
         
-                     // indicator
-                     const indicatorReady = window.CrComLib.subscribeState("b","668",(value:boolean) =>{setIndicatorReady(value)})
-                     const indicatorStay = window.CrComLib.subscribeState("b","669",(value:boolean) =>{setIndicatorStay(value);});
-                     const indicatorArmed = window.CrComLib.subscribeState("b","670",(value: boolean) => {setIndicatorArmed(value);});
+                
         
                      // code input
 
@@ -802,15 +796,12 @@ const SecurityDashboard =()=>{
              
                           
              
-                         window.CrComLib.unsubscribeState("b","663",optionStay)
-                         window.CrComLib.unsubscribeState("b","664",optionAway)
-                         window.CrComLib.unsubscribeState("b","665",optionDisarm)
-                         window.CrComLib.unsubscribeState("b","666",optionBypassAll)
+                         window.CrComLib.unsubscribeState("b","663",optionStay) //
+                         window.CrComLib.unsubscribeState("b","664",optionAway) //
+                         window.CrComLib.unsubscribeState("b","665",optionDisarm) //
+                         window.CrComLib.unsubscribeState("b","666",optionBypassAll) // 
 
-                         window.CrComLib.unsubscribeState("b","668",indicatorReady)
-                         window.CrComLib.unsubscribeState("b","669",indicatorStay)
-                         window.CrComLib.unsubscribeState("b","670",indicatorArmed)
-                        
+                       
                          window.CrComLib.unsubscribeState("s","10", codeInput)
         
         
@@ -1318,9 +1309,9 @@ console.log(green, yellow, red)
             </div>
 
             <div className=" light_indicator">
-                    <div className="light_indicator_container"><p>Ready</p> <div id={indicatorReady? "active_btn_ready":"not_active_ind"}></div> </div>
-                    <div className="light_indicator_container"><p>Stay</p>  <div id={indicatorStay? "active_btn_stay" :"not_active_ind"}></div> </div>
-                    <div className="light_indicator_container"><p>Armed</p> <div id={indicatorArmed? "active_btn_armed":"not_active_ind"}></div> </div>
+                    <div className="light_indicator_container"><p>Ready</p> <div id={optionDisarm? "active_btn_ready":"not_active_ind"}></div> </div>
+                    <div className="light_indicator_container"><p>Stay</p>  <div id={optionStay? "active_btn_stay" :"not_active_ind"}></div> </div>
+                    <div className="light_indicator_container"><p>Armed</p> <div id={optionAway? "active_btn_armed":"not_active_ind"}></div> </div>
             </div>
 
           

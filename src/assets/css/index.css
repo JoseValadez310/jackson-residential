@@ -642,10 +642,18 @@ body {
       /*
       ---------------------------------------------------------------- nav bar highlight
       */
+      .btn_not_selected{
+        height: 4.25rem;
+        width: 4.25rem;
+        border-radius: 100%;
+   
+
+        
+      }
 
       .btn_selected{
-        height: 4rem;
-        width: 4rem;
+        height: 4.25rem;
+        width: 4.25rem;
         border-radius: 100%;
         background-color: rgb(70, 70, 70, .95);
 

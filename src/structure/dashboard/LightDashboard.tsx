@@ -19,6 +19,17 @@ import lightOff from "../../assets/images/icons/icons8-light-off.svg"
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
 
 
+import entry from "../../assets/images/icons/icons8-open-door.svg"
+import goodnight from "../../assets/images/icons/icons8-moon-and-stars.svg"
+import stairs from "../../assets/images/icons/icons8-stairs.svg"
+import floodLights from "../../assets/images/icons/icons8-floodlight.svg"
+import downS from "../../assets/images/icons/icons8-stairs-down.svg"
+import mainIcon from "../../assets/images/icons/icons8-studio-floor-plan.svg"
+import upS from "../../assets/images/icons/icons8-stairs-up.svg"
+import driveSconce from "../../assets/images/icons/noun-half-moon-wall-light-4939443.svg"
+import welcome from "../../assets/images/icons/icons8-doormat.svg"
+import vac from "../../assets/images/icons/icons8-holiday.svg"
+
 
  
   
@@ -2877,6 +2888,8 @@ const LightDashboard = () =>{
                        window.CrComLib.publishEvent("b", "348", false))
                     }
                   >
+
+                    <img className="btn_image" src={entry} />
                     <p> Entry </p>
                   </button>
           
@@ -2888,6 +2901,7 @@ const LightDashboard = () =>{
                        window.CrComLib.publishEvent("b", "349", false))
                     }
                   >
+                       <img className="btn_image" src={goodnight} />
                     <p>Goodnight</p>
                   </button>
           
@@ -2899,6 +2913,7 @@ const LightDashboard = () =>{
                        window.CrComLib.publishEvent("b", "350", false))
                     }
                   >
+                      <img className="btn_image" src={stairs} />
                     <p>Stairs</p>
                   </button>
           
@@ -2910,7 +2925,8 @@ const LightDashboard = () =>{
                        window.CrComLib.publishEvent("b", "351", false))
                     }
                   >
-                    <p>Floods</p>
+                      <img className="btn_image" src={floodLights} />
+                    <p>Flood Lights</p>
                   </button>
           
                   <button
@@ -2921,6 +2937,7 @@ const LightDashboard = () =>{
                        window.CrComLib.publishEvent("b", "352", false))
                     }
                   >
+                      <img className="btn_image" src={downS} />
                     <p> Downstairs Off </p>
                   </button>
           
@@ -2932,6 +2949,7 @@ const LightDashboard = () =>{
                        window.CrComLib.publishEvent("b", "353", false))
                     }
                   >
+                      <img className="btn_image" src={mainIcon} />
                     <p> Main Off </p>
                   </button>
           
@@ -2943,6 +2961,7 @@ const LightDashboard = () =>{
                        window.CrComLib.publishEvent("b", "354", false))
                     }
                   >
+                      <img className="btn_image" src={upS} />
                     <p> Up Stairs Off </p>
                   </button>
           
@@ -2954,9 +2973,35 @@ const LightDashboard = () =>{
                        window.CrComLib.publishEvent("b", "355", false))
                     }
                   >
+                      <img className="btn_image" src={driveSconce} style ={{transform:"scaleY(-1)", position:"relative", bottom:"5px"}} />
                     <p> Drive Sconce </p>
                   </button>
           
+            
+                  <button
+                    className="btn_square_wide"
+                    id={global_11 ? "active_global" : ""}
+                    onClick={() =>
+                      (window.CrComLib.publishEvent("b", "358", true),
+                       window.CrComLib.publishEvent("b", "358", false))
+                    }
+                  >
+                      <img className="btn_image" src={welcome} />
+                    <p> Welcome</p>
+                  </button>
+          
+                  <button
+                    className="btn_square_wide"
+                    id={global_12 ? "active_global" : ""}
+                    onClick={() =>
+                      (window.CrComLib.publishEvent("b", "359", true),
+                       window.CrComLib.publishEvent("b", "359", false))
+                    }
+                  >
+                      <img className="btn_image" src={vac} />
+                    <p> Away/Vacation</p>
+                  </button>
+
                   <button
                     className="btn_square_wide"
                     id={global_9 ? "active_global" : ""}
@@ -2979,27 +3024,6 @@ const LightDashboard = () =>{
                     <p> All off</p>
                   </button>
           
-                  <button
-                    className="btn_square_wide"
-                    id={global_11 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "358", true),
-                       window.CrComLib.publishEvent("b", "358", false))
-                    }
-                  >
-                    <p> Welcome</p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_12 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "359", true),
-                       window.CrComLib.publishEvent("b", "359", false))
-                    }
-                  >
-                    <p> Away/Vacation</p>
-                  </button>
                 </div>
               </div>
             </>

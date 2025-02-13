@@ -269,6 +269,13 @@
 
         @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
 
+           .pool_spa_dashboard .title_info{
+                font-size: 1.75rem;
+                grid-column: 1/13;
+                font-weight: 100;
+            }
+
+
             .air_temp_wrapper{
                 display: none;
             }
@@ -343,7 +350,7 @@
             }
         }
 
-        @media only screen and (max-device-width: 390px) and (max-device-width: 763px) and (orientation: portrait){
+        @media only screen and (max-device-width: 390px) and (orientation: portrait){
             .pool_container{
                 grid-column: 2/12;     
                 width: 110%;
@@ -374,6 +381,11 @@
                 height: 8rem;
                 width: 8rem;
             }
+            .title_info{
+                font-size: 1.5rem;
+                grid-column: 1/13;
+                font-weight: 100;
+            }
 
            
 
@@ -390,3 +402,5 @@
     background-color: rgb(39, 109, 171);
 }
     
+
+

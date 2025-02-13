@@ -154,8 +154,8 @@ const Gym = () =>{
         const media8 = window.CrComLib.subscribeState("b","-",(value: boolean) => {setMedia8(value);});  
        
         // TV audio controls
-        const roomVolume     = window.CrComLib.subscribeState("n","101",(value: number) => {setRoomVolume(value);});
-        const roomMute    = window.CrComLib.subscribeState("b","504",(value: boolean) => {setRoomMute(value);});
+        const roomVolume     = window.CrComLib.subscribeState("n","111",(value: number) => {setRoomVolume(value);});
+        const roomMute    = window.CrComLib.subscribeState("b","545",(value: boolean) => {setRoomMute(value);});
 
         // Lights
 
@@ -179,8 +179,8 @@ const Gym = () =>{
             window.CrComLib.unsubscribeState("b","--",media8)
          
             // TV audio controls
-            window.CrComLib.unsubscribeState("n","101",roomVolume)
-            window.CrComLib.unsubscribeState("b","504",roomMute)
+            window.CrComLib.unsubscribeState("n","111",roomVolume)
+            window.CrComLib.unsubscribeState("b","545",roomMute)
 
             // lights 
 
@@ -626,24 +626,24 @@ const sliderValue = (value: boolean, id: string) => {
         const tvVolState = (id:string) =>{
 
         if(id === "up"){
-            console.log('vol up join', 505)
+            console.log('vol up join', 546)
             
-            window.CrComLib.publishEvent("b","505",true)
-            window.CrComLib.publishEvent("b","505",false)
+            window.CrComLib.publishEvent("b","546",true)
+            window.CrComLib.publishEvent("b","546",false)
         } 
         
         else if(id === "down"){
-            console.log('vol down join', 503)
+            console.log('vol down join', 544)
             
-            window.CrComLib.publishEvent("b","503",true)
-            window.CrComLib.publishEvent("b","503",false)
+            window.CrComLib.publishEvent("b","544",true)
+            window.CrComLib.publishEvent("b","544",false)
         } 
         
         else if(id === "mute"){
-            console.log('vol mute join',504 )
+            console.log('vol mute join',545 )
             
-            window.CrComLib.publishEvent("b","504",true)
-            window.CrComLib.publishEvent("b","504",false)
+            window.CrComLib.publishEvent("b","545",true)
+            window.CrComLib.publishEvent("b","545",false)
         }
 
             }
@@ -661,10 +661,10 @@ const sliderValue = (value: boolean, id: string) => {
             } 
             
             else if(id==="menu_off"){
-                console.log("Turning off room join", 49)
+                console.log("Turning off room join", 32)
                 setTvPowerMenu(!tvPowerMenu)
-                window.CrComLib.publishEvent("b","49",true)
-                window.CrComLib.publishEvent("b","49",false)
+                window.CrComLib.publishEvent("b","32",true)
+                window.CrComLib.publishEvent("b","32",false)
 
             }
             }
@@ -704,9 +704,9 @@ const sliderValue = (value: boolean, id: string) => {
         }
         else if(id === "reboot"){
 
-            console.log(id, "signal name 50")
-            window.CrComLib.publishEvent("b","50",true)
-            window.CrComLib.publishEvent("b","50",false)
+            console.log(id, "signal name 170")
+            window.CrComLib.publishEvent("b","170",true)
+            window.CrComLib.publishEvent("b","170",false)
 
             setDisplayReboot(!displayReboot)
         } else{
@@ -911,7 +911,7 @@ const sliderValue = (value: boolean, id: string) => {
 
                         <div className="source_card" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
                             <div className="img_container">
-                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                <img src={appleTV} id="svg_gray" style={{height:"170%"}}/>
                             </div>
 
                             <p>His</p>
@@ -919,7 +919,7 @@ const sliderValue = (value: boolean, id: string) => {
 
                         <div className="source_card" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
                             <div className="img_container">
-                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                <img src={appleTV} id="svg_gray" style={{height:"170%"}}/>
                             </div>
 
                             <p>Her</p>
@@ -927,7 +927,7 @@ const sliderValue = (value: boolean, id: string) => {
 
                         <div className="source_card" id= { media4? 'active_source' : 'not_active' } onClick={()=>playSource('media4')}>
                             <div className="img_container">
-                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                <img src={appleTV} id="svg_gray" style={{height:"170%"}}/>
                             </div>
 
                             <p>House</p>
@@ -1065,7 +1065,7 @@ const sliderValue = (value: boolean, id: string) => {
                             <button className="btn_square_wide" onClick={()=> tvVolState("mute")}>
                                 {roomMute? 
                                 <>
-                                  <img src={mute} style={{height:"50%"}}/>
+                                  <img src={mute} style={{height:"170%"}}/>
                                   <p className="mute_btn_txt">Click to Unmute</p>
                                 </>
                                   

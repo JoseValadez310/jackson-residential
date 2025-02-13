@@ -136,6 +136,15 @@
         }
 
 
+        .climate_page .title_info{
+            font-size: 1.75rem;
+            grid-column: 2/13;
+
+            font-weight: 100;
+        }
+        
+
+
     
     
     
@@ -155,12 +164,13 @@
         }
 
         .climate_page .title_info{
-            font-size: x-large;
+            font-size: 1.5rem;
             grid-column: 2/13;
 
             font-weight: 100;
         }
-        
+
+      
         .climate_dashboard_container{
             grid-column: 1/13;
             overflow-y: scroll;

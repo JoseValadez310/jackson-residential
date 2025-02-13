@@ -65,6 +65,9 @@
     backdrop-filter: blur(25px);
     box-shadow: inset 1px 1px 2px white, inset -1px -1px 2px whitesmoke, 5px 6px 15px black;
 }
+    #global_lighting .btn_square_wide img{
+        height: 35%;
+    }
     #global_lighting .btn_square_wide p{
         font-size: x-large;
     }
@@ -130,8 +133,13 @@
         }
 
         .title_info{
-            font-size: x-large;    
-            bottom: 1.25rem;
+           
+        font-size: 1.75rem;
+        grid-column: 1/13;
+
+        font-weight: 100;
+
+            
     
         }
         #global_lighting {
@@ -206,5 +214,18 @@
         
 
 
+    }
+
+
+    
+    @media only screen and (max-device-width: 390px) and (orientation: portrait){
+      
+
+        .title_info{
+            font-size: 1.75rem;
+            grid-column: 1/13;
+            font-weight: 100;
+        }
+ 
     }
 

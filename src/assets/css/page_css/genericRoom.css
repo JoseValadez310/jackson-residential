@@ -102,12 +102,16 @@
     overflow: hidden;
 }
     #active_source{
-        box-shadow: 
-        -5px -5px 25px rgb(255, 255, 255), 
-        5px 5px 25px rgb(255, 255, 255);
+        
 
-        background-color: rgba(56, 87, 133, 0.673);
+        background-color: rgba(255, 255, 255, 0.5);
     }
+        #active_source p{
+            color: black;
+        }
+        #active_source img{
+            filter: invert(0);
+        }
     
 
 .source_card .img_container {

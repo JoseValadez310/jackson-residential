@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/ch5-react-ts-template/sw.js', { scope: '/ch5-react-ts-template/' })})}

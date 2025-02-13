@@ -78,14 +78,14 @@ const RoomsDashboard = () => {
             active: false,
             title:"Up Stairs",
             rooms:[
-                {"Master Bedroom":["media","music","light"]},
-                {"Guest Bedroom":["media","music","light"]},
-                {"Guest Bathroom":["media","music","light"]},
+                {"Master Bedroom":["media","music"]},
+                {"Guest Bedroom":["media","music"]},
+                {"Guest Bathroom":["media","music"]},
 
-                {"Steves Bath":["media","music","light"]},
-                {"Ellens Office":["media","music","light"]},
-                {"Ellens Bath":["media","music","light"]}, 
-                {"Ellens Excercise":["media","music","light"]}, 
+                {"Steves Bath":["media","music"]},
+                {"Ellens Office":["media","music"]},
+                {"Ellens Bath":["media","music"]}, 
+                {"Ellens Excercise":["media","music"]}, 
 
                 
                 {"Media Room":["media","music","light"]},
@@ -112,8 +112,8 @@ const RoomsDashboard = () => {
             title:"Down Stairs",
             rooms:[
              
-                {'Arcade':["media","music","light"]},
-                {'Basketball Court':["media","music","light"]}
+                {'Arcade':["media","music"]},
+                {'Basketball Court':["media","music"]}
 
             ]
         },

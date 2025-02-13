@@ -842,7 +842,7 @@ const sliderValue = (value: boolean, id: string) => {
                             <p>Music</p>
                          </Link>
 
-                        <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"} >  
+                        <button onClick={() => roomApp("Lights")} className={lightsOption? "display_none" : "display_none"} >  
                             <img src={lights}  /> 
                             <p>Lights</p>
                         </button>

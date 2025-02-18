@@ -899,9 +899,9 @@ const sliderValue = (value: boolean, id: string) => {
 
 
                 <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
-                    <div className={active_media? "media_off":"room_sources_container"}>
+                <div className={active_media? "media_off":"room_sources_container"}>
                         
-                        <div className="source_card" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
+                        <div className="display_none" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
                             <div className="img_container">
                                 <img src={bluRay} style={{height:"45%"}}/>
                             </div>
@@ -909,7 +909,7 @@ const sliderValue = (value: boolean, id: string) => {
                             <p>House</p>
                         </div>
 
-                        <div className="source_card" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
+                        <div className="display_none" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
                             <div className="img_container">
                                 <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
                             </div>
@@ -917,7 +917,7 @@ const sliderValue = (value: boolean, id: string) => {
                             <p>His</p>
                         </div>
 
-                        <div className="source_card" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
+                        <div className="display_none" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
                             <div className="img_container">
                                 <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
                             </div>
@@ -933,7 +933,7 @@ const sliderValue = (value: boolean, id: string) => {
                             <p>House</p>
                         </div>
 
-                        <div className="source_card" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
+                        <div className="display_none" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
                             <div className="img_container">
                                 <img src={small_dtv} style={{height:"65%"}}  />
                             </div>
@@ -949,7 +949,7 @@ const sliderValue = (value: boolean, id: string) => {
                             <p>DTV 2</p>
                         </div>
 
-                        <div className="source_card" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
+                        <div className="display_none" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
                             <div className="img_container">
                                 <img src={roku} id="svg_white"style={{height:"35%"}}/>
                             </div>
@@ -958,7 +958,6 @@ const sliderValue = (value: boolean, id: string) => {
                         </div>
                         
                     </div>
-            
                     <div className={active_media? "controller_layout": "media_off"}>
 
                         <button id="controller_layout_back_button"  onClick = {display_tile}>
@@ -1064,13 +1063,13 @@ const sliderValue = (value: boolean, id: string) => {
                             <button className="btn_square_wide" onClick={()=> tvVolState("mute")}>
                                 {roomMute? 
                                 <>
-                                  <img src={mute} style={{height:"50%"}}/>
-                                  <p className="mute_btn_txt">Click to Unmute</p>
+                                 <img src={mute} className="volume_mute_btn" />
+                                 <p className="mute_btn_txt">Click to Unmute</p>
                                 </>
                                   
                                     :
                                 <>
-                                    <p className="volume_txt">{roomVolume}</p>
+                                    <p className="volume_txt">{((roomVolume/65535) * 100).toFixed(0)}</p>
                                     <p className="mute_btn_txt">Click to Mute</p>
                                   </>
                             }

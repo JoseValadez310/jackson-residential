@@ -49,7 +49,7 @@
     */  
     
     .climate_dashboard_container{
-        grid-column: 2/12;
+        grid-column: 1/13;
         grid-row: 2/9;
         width: 100%;
         height: 100%;
@@ -57,18 +57,21 @@
         justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: .5rem;
         animation: controller-load 1500ms;
+
+        overflow-y: scroll;
     }
         .container_thermo{    
-           height: 25rem;
-           width: 22rem;
+           height: 35rem;
+           width: 27rem;
         }
             .climate_label{
-                position: absolute;
+                position: relative;
+                top: 2.5rem;
+                left: 1rem;
                 z-index: 9;
-                padding-top: 10px;
-                padding-left: 10px;
+               
                 font-size: 1.15rem;
             }
 
@@ -121,6 +124,7 @@
             overflow-y: scroll;
             width: 100%;
             grid-column: 1/13;
+            justify-content: center;
         }
 
         
@@ -128,6 +132,7 @@
      .climate_label{
         position: relative;
         top: 30px;
+        width: 10rem;
      }
         .container_thermo{
             position: relative;

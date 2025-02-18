@@ -7,7 +7,7 @@
 .thermostat_container{
     position: relative;
     z-index: 1; 
-    width: 100%;
+    width: 101%;
     height: 100%;
     border-radius: 10px;
     display: flex;
@@ -19,40 +19,70 @@
 
 
     .thermostat{
-        overflow: hidden;
-        background: rgba(70, 70, 70);
+        
+        background: rgb(70, 70, 70);
         backdrop-filter: blur(25px);
         height: 100%;
         width: 100%;
         border-radius: 20px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5,1fr);
         box-shadow: 5px 5px 10px rgb(80, 79, 79);
+
+        overflow: hidden;
     }
 
+
+    .thermostat_system_off{
+        background: rgb(70, 70, 70);
+        backdrop-filter: blur(25px);
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(4,1fr);
+        box-shadow: 5px 5px 10px rgb(80, 79, 79);
+
+        overflow: hidden;
+    }
+        .thermostat_controls_system_off{
+            grid-row: 3/4;
+            grid-column: 1/7;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .thermostat_controls_two_system_off{
+            grid-row: 4/5;
+            grid-column: 1/7;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
     .thermostat_value{
         grid-column: 1/7;
         grid-row:    1/5;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
         z-index: 10;
         backdrop-filter: blur(1px);
-
     }
         .thermostat_value p{
             color: white;
             font-size: 100px;
             margin: 0%;
-            font-size: 4rem;
+            font-size: 3rem;
         }
 
         .circles{
-            
             grid-column: 3/5;
             grid-row:    2/4;
             z-index: 1;
@@ -108,7 +138,7 @@
 
         border-top: 1px solid rgb(255, 255, 255);
         border-bottom: 1px solid rgb(255, 255, 255);
-        grid-row: 5/6;
+        grid-row: 3/5;
         grid-column: 1/7;
         display: flex;
         height: 100%;
@@ -117,6 +147,36 @@
         align-items: center;
     }
 
+    .thermostat_controls_duo{
+        grid-row: 3/5;
+        grid-column: 1/7;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .dual_mode{
+        display: flex;
+        justify-content: center;
+        align-items: center;     
+        flex-direction: column-reverse;
+        width: 25%;   
+        height: 100%;
+    }
+       .container_thermo .dual_mode .thermostat_decrease{
+            left: 0px;
+            right: 0px;
+            
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.572);
+        }
+
+        .container_thermo .dual_mode .thermostat_increase{
+            left: 0px;
+            right: 0px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.572);
+        }
 
         .setpoint_container, .thermostat_mode_container{
             
@@ -199,8 +259,7 @@
 
     .thermostat_controls_two{
         backdrop-filter: blur(1px);
-
-        grid-row: 6/7;
+        grid-row: 5/6;
         grid-column: 1/7;
         display: flex;
         height: 100%;
@@ -323,14 +382,21 @@
                                 grid-row: 3;
                                 border-radius: 5px;
                                 border: none;
-                                background-color: brown;
+                              
+                                font-size: large;
+
+                                background: rgb(192,50,50);
+
                                 width: 100%;
                                 height: 100%;
                                 transition: 0.1s ease-in-out;
                                 box-shadow: rgba(0, 0, 0, 0.377) 5px 10px 15px, #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -1.5px -1.5px 2px 0px inset;                            }
                                 #mode_off:active{
                                     box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000, #c7c3c0 -3.2px -3.2px 8px 0px inset;
-                                                                        background-color: rgb(238, 151, 151);
+                                    font-size: large;
+                                    background: rgb(70, 70, 70);
+
+
                                 }
                                
                             #mode_heat{
@@ -394,26 +460,36 @@
                                     grid-row: 2;
                                     grid-column: 2/3;
                                     background: rgb(192,50,50);
+                                    font-size: large;
+
                                 }
                                 .active#mode_cool{
                                     grid-row: 2;
                                     grid-column: 4/5;
-                                    background-color: rgb(23,158,202)
+                                    background-color: rgb(23,158,202);
+                                    font-size: large;
+
                                 }
                                 .active#mode_auto{
                                     grid-row: 2;
                                     grid-column: 3/4;
                                     background: linear-gradient(90deg, rgb(23,158,202) 0%, rgb(192,50,50) 100%);
+                                    font-size: large;
+
                                 }
                                 .active#mode_auto_fan{
                                     grid-row: 3;
                                     grid-column: 2/3;
-                                    background-color: rgb(163, 162, 162)
+                                    background-color: rgb(163, 162, 162);
+                                    font-size: large;
+
                                 }
                                 .active#mode_on_fan{
                                     grid-row: 3;
                                     grid-column: 4/5;
-                                    background-color: rgb(163, 162, 162)
+                                    background-color: rgb(163, 162, 162);
+                                    font-size: large;
+
                                 }
                                 #mode_off_gray{
                                     grid-column:3/4;
@@ -421,6 +497,8 @@
                                     border-radius: 5px;
                                     border: none;
                                     background-color: rgb(90, 90, 90);
+                                    font-size: large;
+
                                     width: 100%;
                                     height: 100%;
                                 }
@@ -610,11 +688,6 @@
         width: 100%;
     }
 
-    .container_thermo .thermostat{
-        grid-template-rows: repeat(4,1fr);
-
-    }
-
      .container_thermo .thermostat_value{
         grid-row: 1/3;
         
@@ -638,16 +711,14 @@
 
 
     .container_thermo .thermostat_controls{
-        grid-row: 3;
 
     }
 
     .container_thermo .thermostat_controls_two{
-        grid-row: 4;
 
     }
     .container_thermo .climate_modal_open{
-        grid-row: 1/5;
+        grid-row: 1/7;
         z-index: 200;
     }
     .container_thermo .climate_modal_exit{
@@ -720,3 +791,9 @@
    
 
     
+    @media only screen and (max-device-width: 430px)  and (orientation: portrait){
+        .thermostat{
+        
+        box-shadow: none;
+        }
+    }

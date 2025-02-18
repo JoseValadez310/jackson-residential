@@ -203,3 +203,19 @@ $dark-gray: rgb(70,70,70)
 
 
 
+@media only screen and (max-device-width: 375px) and (orientation: portrait)
+    .time_date_info p
+        font-size: x-large
+    
+    .card_title
+        font-size: large
+
+
+@media only screen and (max-device-height: 430px) and (orientation: landscape)
+    .time_date_info p
+        font-size: large
+
+    .dashboard_container
+        grid-row: 2/9
+        grid-column: 2/8
+        width: 75%

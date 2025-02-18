@@ -141,9 +141,9 @@ const Roku = () => {
                     <div className="circle-menu">
                         
                         <div className="circle ok-outer">
-                            <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
-                                <img src={center} style={{height:"95%"}} className="center"/>
-                            </button>
+                        <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onClick={() => controllerClick("center")}>
+                                        <img src={center} style={{height:"90%"}} className="center"/>
+                                    </button>
                         </div>
 
                         <div className="control-icon right" >

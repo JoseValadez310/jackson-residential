@@ -404,3 +404,10 @@
     
 
 
+
+
+@media only screen and (max-device-width: 375px) and (orientation: portrait){
+.container_title{
+    font-size: large;
+}
+}

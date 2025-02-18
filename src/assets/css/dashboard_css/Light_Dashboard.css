@@ -229,3 +229,29 @@
  
     }
 
+
+
+
+
+    @media only screen and (max-device-width: 375px) and (orientation: portrait){
+
+        .title_info{
+            font-size: 1.5rem;
+            grid-column: 1/13;
+            font-weight: 100;
+        }
+      
+        #global_lighting .btn_square_wide{
+            width: 9rem;
+            height: 5rem;
+        }
+        #global_lighting .btn_square_wide p {
+            font-size: medium;
+        }
+    
+        .light_tile{
+            height: 10rem;
+            width: 9.5rem;
+        }
+    }
+    

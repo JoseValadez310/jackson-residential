@@ -428,17 +428,20 @@
 
 
 
-    #active_btn_sec{
-        background-color: rgb(39, 109, 171);
-    }
+  
+}
 
-    #active_btn_ready{
-        background-color: rgb(8, 179, 8);
-    }
-    #active_btn_stay{
-        background-color: rgb(179, 176, 8);
-    }
-    #active_btn_armed{
-        background-color: rgb(213, 10, 10);
-    }
+
+#active_btn_sec{
+    background-color: rgb(39, 109, 171);
+}
+
+#active_btn_ready{
+    background-color: rgb(8, 179, 8);
+}
+#active_btn_stay{
+    background-color: rgb(179, 176, 8);
+}
+#active_btn_armed{
+    background-color: rgb(213, 10, 10);
 }

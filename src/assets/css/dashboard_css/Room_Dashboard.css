@@ -272,3 +272,67 @@
         width: 10.75rem;
     }
 }
+
+
+@media only screen and (max-device-width: 375px) and (orientation: portrait){
+    
+    .room_card{
+        height: 10rem;
+        width: 9.5rem;
+    }
+}
+
+
+
+@media only screen and (max-device-height: 430px) and  (orientation: landscape){
+
+    .rooms_dashboard .title_info{
+        font-size: x-large;
+    }
+    .room_card{
+        height: 40%;
+        width: 20%;
+    }
+
+    .nav_clock{
+        display: none;
+    }
+    .nav{
+        grid-row:2/10;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .btn_not_selected p {
+        font-size: medium;
+    }
+    .btn_selected p{
+        font-size: medium;
+    }
+
+    .btn_selected {
+        height: 3rem;
+        width: 3.75rem;
+        border-radius: 10px;
+        animation: none;
+    }
+    .btn_not_selected{
+        height: 3rem;
+        width: 4rem;
+    }
+    .back_button{
+        height: 3rem;
+        width: 4rem;
+        border-radius: 20px;
+        border: solid 1px black
+    }
+
+    
+  
+
+  
+
+    .room_card p{
+        font-size: medium;
+    }
+}

@@ -96,8 +96,9 @@ const RoomsDashboard = () => {
             active: true,
             title:"Main",
             rooms:[
-                {"Breakfast Nook":["media","music","light"]},
                 {"Family Room":["media","music","light"]},
+
+                {"Breakfast Nook":["media","music","light"]},
                 {"Bar":["media","music","light"]},    
 
                 {"Dinning Room":["light"]}, 

@@ -35,7 +35,8 @@ const AppleTv = () => {
         }, []);
 
 
-    
+
+      
     
       
         const section_one   = (<>
@@ -45,7 +46,7 @@ const AppleTv = () => {
                         <div className="circle-menu">
                             
                             <div className="circle ok-outer">
-                                <button className="btn_circle" style={{height:"5.75rem", width:"5.75rem"}} onClick={() => controllerClick("center")}>
+                                <button className="btn_circle" id="center_button" onClick={() => controllerClick("center")}>
                                     <img src={center} style={{height:"85%"}} className="center"/>
                                 </button>
                             </div>
@@ -145,9 +146,9 @@ const AppleTv = () => {
                         <div className="circle-menu">
                             
                             <div className="circle ok-outer">
-                                <button className="btn_circle" style={{height:"4.75rem", width:"4.75rem"}} onClick={() => controllerClick("center")}>
-                                    <img src={center} style={{height:"90%"}} className="center"/>
-                                </button>
+                            <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onClick={() => controllerClick("center")}>
+                                        <img src={center} style={{height:"90%"}} className="center"/>
+                                    </button>
                             </div>
 
                             <div className="control-icon right" >
@@ -224,33 +225,33 @@ const AppleTv = () => {
         
 
         if(id === "top"){
-
+            
             window.CrComLib.publishEvent("b","107",true)
             window.CrComLib.publishEvent("b","107",false)
             console.log("top")
         }else if(id === "bottom"){
-
+            
             window.CrComLib.publishEvent("b","108",true)
             window.CrComLib.publishEvent("b","108",false)
             console.log("bottom")
 
 
         }else if( id === "left"){
-
+            
             window.CrComLib.publishEvent("b","109",true)
             window.CrComLib.publishEvent("b","109",false)
             console.log("left")
 
 
         }else if( id === "right"){
-
+            
             window.CrComLib.publishEvent("b","110",true)
             window.CrComLib.publishEvent("b","110",false)
             console.log("right")
 
 
         } else  if(id === "center"){
-
+            
             window.CrComLib.publishEvent("b","111",true)
             window.CrComLib.publishEvent("b","111",false)
             console.log("center")

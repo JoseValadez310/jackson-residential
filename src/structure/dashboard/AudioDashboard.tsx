@@ -939,12 +939,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
     <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_1, true), window.CrComLib.publishEvent("b", zone_mute_1, false), console.log(zone_mute_1))}>
       {zone1_mute ? (
         <>
-          <img src={mute} style={{ height: "50%" }} />
+          <img src={mute} className="volume_mute_btn" />
           <p className="mute_btn_txt">Click to Unmute</p>
         </>
       ) : (
         <>
-          <p className="volume_txt">{zone1_vol}</p>
+          <p className="volume_txt">{ ((zone1_vol/65535) * 100).toFixed(0)}</p>
           <p className="mute_btn_txt">Click to Mute</p>
         </>
       )}
@@ -972,16 +972,16 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_2, true), window.CrComLib.publishEvent("b", zone_decrease_2, false), console.log(zone_decrease_2))}>
                   <img className="btn_image" src={arrow} />
                 </button>
-
+                
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_2, true), window.CrComLib.publishEvent("b", zone_mute_2, false), console.log(zone_mute_2))}>
                   {zone2_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone2_vol}</p>
+                      <p className="volume_txt">{ ((zone2_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1013,12 +1013,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_3, true), window.CrComLib.publishEvent("b", zone_mute_3, false), console.log(zone_mute_3))}>
                   {zone3_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone3_vol}</p>
+                      <p className="volume_txt">{ ((zone3_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1050,12 +1050,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_4, true), window.CrComLib.publishEvent("b", zone_mute_4, false), console.log(zone_mute_4))}>
                   {zone4_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone4_vol}</p>
+                      <p className="volume_txt">{ ((zone4_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1087,12 +1087,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_5, true), window.CrComLib.publishEvent("b", zone_mute_5, false), console.log(zone_mute_5))}>
                   {zone5_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone5_vol}</p>
+                      <p className="volume_txt">{ ((zone5_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1124,12 +1124,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_6, true), window.CrComLib.publishEvent("b", zone_mute_6, false), console.log(zone_mute_6))}>
                   {zone6_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone6_vol}</p>
+                      <p className="volume_txt">{ ((zone6_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1161,12 +1161,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_7, true), window.CrComLib.publishEvent("b", zone_mute_7, false), console.log(zone_mute_7))}>
                   {zone7_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone7_vol}</p>
+                      <p className="volume_txt">{ ((zone7_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1198,12 +1198,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_8, true), window.CrComLib.publishEvent("b", zone_mute_8, false), console.log(zone_mute_8))}>
                   {zone8_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone8_vol}</p>
+                      <p className="volume_txt">{ ((zone8_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1235,12 +1235,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_9, true), window.CrComLib.publishEvent("b", zone_mute_9, false), console.log(zone_mute_9))}>
                   {zone9_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone9_vol}</p>
+                      <p className="volume_txt">{ ((zone9_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1272,12 +1272,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_10, true), window.CrComLib.publishEvent("b", zone_mute_10, false), console.log(zone_mute_10))}>
                   {zone10_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone10_vol}</p>
+                      <p className="volume_txt">{ ((zone10_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1309,12 +1309,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_11, true), window.CrComLib.publishEvent("b", zone_mute_11, false), console.log(zone_mute_11))}>
                   {zone11_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone11_vol}</p>
+                      <p className="volume_txt">{ ((zone11_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1346,12 +1346,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_12, true), window.CrComLib.publishEvent("b", zone_mute_12, false), console.log(zone_mute_12))}>
                   {zone12_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone12_vol}</p>
+                      <p className="volume_txt">{ ((zone12_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1383,12 +1383,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_13, true), window.CrComLib.publishEvent("b", zone_mute_13, false), console.log(zone_mute_13))}>
                   {zone13_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone13_vol}</p>
+                      <p className="volume_txt">{ ((zone13_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1420,12 +1420,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_14, true), window.CrComLib.publishEvent("b", zone_mute_14, false), console.log(zone_mute_14))}>
                   {zone14_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone14_vol}</p>
+                      <p className="volume_txt">{ ((zone14_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1457,12 +1457,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_15, true), window.CrComLib.publishEvent("b", zone_mute_15, false), console.log(zone_mute_15))}>
                   {zone15_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone15_vol}</p>
+                      <p className="volume_txt">{ ((zone15_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1494,12 +1494,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_16, true), window.CrComLib.publishEvent("b", zone_mute_16, false), console.log(zone_mute_16))}>
                   {zone16_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone16_vol}</p>
+                      <p className="volume_txt">{ ((zone16_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1531,12 +1531,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_17, true), window.CrComLib.publishEvent("b", zone_mute_17, false), console.log(zone_mute_17))}>
                   {zone17_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone17_vol}</p>
+                      <p className="volume_txt">{ ((zone17_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1568,12 +1568,12 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_18, true), window.CrComLib.publishEvent("b", zone_mute_18, false), console.log(zone_mute_18))}>
                   {zone18_mute ? (
                     <>
-                      <img src={mute} style={{ height: "50%" }} />
+                      <img src={mute} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{zone18_vol}</p>
+                      <p className="volume_txt">{ ((zone18_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
@@ -1596,13 +1596,13 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
          
 
 
-          <div style={{display:"flex", justifyContent:"center", alignItems:"center", gridColumn:'1/3',gridRow:'1' }}>
-              <div  className="mobile_back_btn" onClick={() => navigate(-1)}> 
-                  <button className="back_button">
-                      <img src={backbutton}/>
-                  </button>
-              </div> 
-          </div> 
+          
+        <div  className="audio_back_button" onClick={() => navigate(-1)}> 
+            <button className="audio_back">
+                <img src={backbutton}/>
+            </button>
+        </div> 
+           
         
         
      

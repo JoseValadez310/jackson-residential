@@ -49,8 +49,7 @@ const PoolSpa = () =>{
      
      
          
-             // five middle btns
-     
+             // five middle btn 
              const filter = window.CrComLib.subscribeState("b","600",(value: boolean) => {setFilter(value);});
              const solarHeat = window.CrComLib.subscribeState("b","601",(value: boolean) => {setSolarHeat(value);});
              const solarHeatPref = window.CrComLib.subscribeState("b","602",(value: boolean) => {setSolarHeatPref(value);});
@@ -58,20 +57,20 @@ const PoolSpa = () =>{
              const poolLights = window.CrComLib.subscribeState("b","604",(value: boolean) => {setPoolLight(value);});
 
              // Pool Related
-             const poolCurrentTemp = window.CrComLib.subscribeState("n","300",(value:number) =>{setCurrentPoolTemp(value)})
+             const poolCurrentTemp = window.CrComLib.subscribeState("n","300",(value:number) =>{setCurrentPoolTemp(Math.round(value))})
              const poolSetPoint = window.CrComLib.subscribeState("n","301",(value:number) =>{setPoolSetPoint(value);});
              const poolHeat = window.CrComLib.subscribeState("b","606",(value: boolean) => {setPoolHeat(value);});
              const poolMode = window.CrComLib.subscribeState("b","607",(value: boolean) => {SetPoolMode(value);});
 
             // Spa Related
-             const spaCurrentTemp = window.CrComLib.subscribeState("n","302",(value:number) =>{setCurrentSpaTemp(value)} )
+             const spaCurrentTemp = window.CrComLib.subscribeState("n","302",(value:number) =>{setCurrentSpaTemp(Math.round(value))} )
              const spaSetPoint = window.CrComLib.subscribeState("n","303",(value:number) =>{setSpaSetPoint(value)} )
              const spaHeat = window.CrComLib.subscribeState("b","611",(value: boolean) => {setSpaHeat(value);});
              const spaMode = window.CrComLib.subscribeState("b","612",(value: boolean) => {SetSpaMode(value);});
 
              // Air Related
 
-             const airTemp = window.CrComLib.subscribeState("n","304",(value:number) => {setAirTemp(value)})
+             const airTemp = window.CrComLib.subscribeState("n","304",(value:number) => {setAirTemp(Math.round(value))})
              const lockOut = window.CrComLib.subscribeState("b","617",(value: boolean) => {setLockOutMode(value);});
 
 
@@ -170,7 +169,7 @@ const PoolSpa = () =>{
 
             <div className="current_temp_wrapper">
 
-                <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","608",true),window.CrComLib.publishEvent("b","608",false), console.log("pool down 608")}}>
+                <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","609",true),window.CrComLib.publishEvent("b","609",false), console.log("pool down 609")}}>
                     <img className="btn_image" src={arrow} />
                 </button>
 
@@ -179,7 +178,7 @@ const PoolSpa = () =>{
                         <p> Pool Set Point </p>
                    </div>
 
-                <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","609",true),window.CrComLib.publishEvent("b","609",false), console.log("pool up 609")}}>
+                <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","608",true),window.CrComLib.publishEvent("b","608",false), console.log("pool up 608")}}>
                     <img className="btn_image" id="flip" src={arrow}  />
                 </button>
 

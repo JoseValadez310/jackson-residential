@@ -630,7 +630,7 @@
     }
 
 
-    @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+    @media only screen and (max-device-width: 550px)  and (orientation: portrait){
        
        .off_button_menu{
         padding-top: 5px;
@@ -738,9 +738,9 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
     }
-        .playback_controls .transport_button{
-            height: 3.25rem;
-            width: 3.25rem;
+        .playback_controls .btn_circle{
+            height: 3rem;
+            width: 3rem;
         }
         .playback_controls .transport_button img{
           height: 75%;
@@ -876,8 +876,8 @@
 
 
                     .playback_controls .transport_button_active {
-                        height: 3.25rem;
-                        width: 3.25rem;
+                        height: 3rem;
+                        width: 3rem;
                     }
                     
                     .transport_button_active:active{
@@ -907,6 +907,7 @@
                             display: flex;
                             justify-content: center;
                             align-items: center;
+                            border: none;
 
                         }
                             .audio_back img{
@@ -915,47 +916,7 @@
                     
                     
                     
-    }
-
-    @media screen and (max-width: 837px) and (max-height: 430px) and (orientation: landscape) {
-
-        .album_art img{
-            width: 85%;
-        }
-
-        .playback_controls .transport_button{
-            height: 3.5rem;
-            width:  3.5rem;
-        }
-
-        .volume_controls .transport_button{
-            height: 3.5rem;
-            width:  3.5rem;
-        }
-
-        .streaming_service_logo{
-            display: none;
-        }
-
-
-        .album_art{
-            grid-row: 2/9;
-        }
-        .album_info{
-            grid-row: 2/6;
-        }
-
-             .album_info_title{
-           font-size: x-large;
-        }
-        .progress_bar{
-            grid-row: 7/9;
-        }
-    }
-
-
-    @media screen and (max-device-width: 375px) and (orientation: portrait) {
-
+  
         .current_postition{
             bottom: 0px;
         }
@@ -964,10 +925,7 @@
             bottom: 0px;
         }
 
-        .playback_controls .btn_circle{
-            width: 2.75rem;
-            height: 2.75rem;
-        }
+      
         .volume_controls .btn_circle{
             width: 4.5rem;
             height: 2.25rem;

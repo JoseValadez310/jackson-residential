@@ -3144,31 +3144,17 @@ const LightDashboard = () =>{
 
 
             <h1 className="title_info"> Light Dashboard</h1>
-                <div className="light_container">
-
-            
-            
-                    
-
+                <div className={globalScenes? "display_none":"light_container"}>
                         {upStairs? lightingGroup_1 : <> </>}
                         {main? lightingGroup_2 : <> </>}
                         {downStairs? lightingGroup_3 : <> </>}
                         {outSide? lightingGroup_4 : <> </>}
-                        {globalScenes? lightingGroup_5 : <> </>}
-
-                
-                         
-
-
-
-
-            
-
-        
-
-            
+                       
                 </div>
 
+                <div className="light_container_global">
+                  {globalScenes? lightingGroup_5 : <> </>}
+                </div>
 
 
 

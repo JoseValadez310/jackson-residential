@@ -317,7 +317,7 @@
 
 
     
-    @media only screen and (max-device-width: 430px) and (orientation: portrait){
+    @media only screen and (max-device-width:550px) and (orientation: portrait){
 
         .security_zones, .security_zones_title{
             display: none;
@@ -352,7 +352,7 @@
         .security_keypad_container{
             grid-column: 1/13;
             grid-row: 4/9;
-            width: 90%;
+            width: 95%;
             height: 100%;
             bottom: 0;
         }
@@ -360,9 +360,13 @@
        
 
         .keypad .btn_circle{
-            height: 5rem;
-            width: 6rem;
+            height: 80%;
+            width: 90%;
         }
+        .keypad .btn_circle p {
+            font-size: x-large;
+        }
+
         
         .control_container{
             grid-column: 1/13;
@@ -370,14 +374,10 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            gap: 6px; 
             
         }
-            .control_container .btn_circle{
-                height: 4.75rem;
-                width: 4.75rem;
-            }
-
-
+          
             .light_indicator{
                 grid-column: 1/13;
                 gap: 10px;
@@ -386,9 +386,10 @@
     
             .control_container .btn_circle{
                 grid-column: 1/13;
-                height: 4rem;
-                width: 5.75rem;
-                border-radius: 10px;   
+                height: 70%;
+                width: 100%;
+                border-radius: 10px; 
+               
             }          
             .control_container .btn_circle p{ 
                 font-size: large;
@@ -407,29 +408,6 @@
 
 
 
-    @media only screen and (max-device-width: 390px) and (orientation: portrait){
-    
-      .control_container .btn_circle{
-        width: 5rem;  
-
-
-    }
-
-
-        .security_dashboard .title_info{
-            
-                font-size: 1.5rem;
-                grid-column: 1/13;
-                font-weight: 100;
-            
-
-        
-        }
-
-
-
-  
-}
 
 
 #active_btn_sec{

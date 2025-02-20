@@ -113,13 +113,14 @@ const RoomsDashboard = () => {
             title:"Down Stairs",
             rooms:[
                 {'Media Room':["media","music","light"]}, 
-                {'Gym':["media","music","light"]}
+                {'Gym':["media","music","light"]},
+                {"Backyard":["light"]}
             ]
         },
         location_4: {
             active: false,
-            title:"Out Doors",
-            rooms:[  {"Backyard":["light"]},]
+            title:"null",
+            rooms:[]
         },
         
         location_5: {

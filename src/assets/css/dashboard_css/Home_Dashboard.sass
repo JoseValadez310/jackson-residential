@@ -139,7 +139,7 @@ $dark-gray: rgb(70,70,70)
                         
                 
 
-@media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait) 
+@media only screen and (max-device-width: 550px) and (orientation: portrait) 
     .source_select_home
         padding-inline: 1rem
   
@@ -151,6 +151,9 @@ $dark-gray: rgb(70,70,70)
         background-color: transparent
         backdrop-filter: blur(0px)
         border-radius: 0%
+    
+    .time_date_info p 
+        font-size: x-large
     
     .weather_info
         grid-column: 3/9
@@ -164,32 +167,23 @@ $dark-gray: rgb(70,70,70)
         grid-row: 3/9
         width: 100%
         height: 100%
+     
     
     .dashboard_container
+        grid-row: 3/9
+        grid-column: 1/9
         display: grid
         grid-template-columns: repeat(2,1fr)
         grid-template-rows: repeat(3,1fr)
-        width: 115%
+        width: 95%
+        height: 85%
+       
     
     .room_container
         height: 100%
         width: 100% 
-        grid-row: 2
-        grid-column: 2
+       
 
-    .room_container .family_room
-        height: 100%
-        width: 100%
-    
-    .room_container :family_room home_room_card img
-        filter: none
-    
-    .room_container :family_room home_room_card 
-        color: black
-                    
-    .dashboard_title
-        display: none
-        
 
 
     
@@ -201,21 +195,3 @@ $dark-gray: rgb(70,70,70)
 
 
 
-
-
-@media only screen and (max-device-width: 375px) and (orientation: portrait)
-    .time_date_info p
-        font-size: x-large
-    
-    .card_title
-        font-size: large
-
-
-@media only screen and (max-device-height: 430px) and (orientation: landscape)
-    .time_date_info p
-        font-size: large
-
-    .dashboard_container
-        grid-row: 2/9
-        grid-column: 2/8
-        width: 75%

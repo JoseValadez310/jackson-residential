@@ -47,11 +47,12 @@
         flex-wrap: wrap;
         
         overflow-y: scroll;
-        animation: room_selection 1000ms;
     }
 
     .light_dashboard .light_container .light_wrapper{
         justify-content: center;
+   
+
     }
 
 
@@ -104,7 +105,7 @@
         width: 100%;
         display: flex;
         justify-content:  flex-start;
-     align-items: center;
+        align-items: center;
         gap: .4rem;
         flex-wrap: wrap;
     }
@@ -127,40 +128,74 @@
 
 
 
-    @media only screen and (max-device-width: 430px) and (orientation: portrait){
+    @media only screen and (max-device-width: 550px) and (orientation: portrait){
         .light_dashboard{
-                grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+                grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6.75%;
         }
 
         .title_info{
-           
-        font-size: 1.75rem;
-        grid-column: 1/13;
-
-        font-weight: 100;
-
-            
-    
+            font-size: 1.75rem;
+            grid-column: 1/13;
+            font-weight: 100;
         }
-        #global_lighting {
+
+        /*
+        ---------------------------------------------------------------- Global tab
+        */
+
+        .light_container_global{
+            grid-column: 1/13;
+            grid-row: 2/8;
+            overflow: hidden;
             height: 100%;
+            width: 100%;
+            animation: room_selection 1000ms;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #global_lighting{
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        #global_lighting .light_wrapper{
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(6,1fr);
+            
         }
 
         #global_lighting .btn_square_wide{
-            height: 6rem;
-            width: 10rem;
+            height: 90%;
+            width: 100%;
+
             background-color: rgba(70, 70, 70, 0.55);
             backdrop-filter: blur(25px);
             box-shadow: inset 1px 1px 2px white, inset -1px -1px 2px whitesmoke, 5px 6px 15px black;
         }
-        #global_lighting .btn_square_wide p{
-            font-size: large;
-        }
+            #global_lighting .btn_square_wide p{
+                font-size: large;
+            }
+            #global_lighting .btn_square_wide img{
+                height: 30px;
+            }
+
+
+        /*
+        ---------------------------------------------------------------- end of Global tab
+        */
+
 
         .light_dashboard .nav_container {
-            
-         display: none;
-        
+            display: none;
         }
 
         .light_dashboard .mobile_nav{
@@ -201,12 +236,16 @@
             color: white;
         }
         .light_wrapper{
-            justify-content: center;
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-rows: 10rem;        
+            justify-items: center
 
         }
         .light_dashboard .light_tile{
-            height: 9.5rem;
-            width: 48%;
+            height: 100%;
+            width: 100%;
             background-color: rgb(70,70,70);
         }
 
@@ -217,44 +256,6 @@
     }
 
 
-    
-    @media only screen and (max-device-width: 390px) and (orientation: portrait){
-      
-
-        .title_info{
-            font-size: 1.75rem;
-            grid-column: 1/13;
-            font-weight: 100;
-        }
- 
-    }
-
-
-
-
-
-    @media only screen and (max-device-width: 375px) and (orientation: portrait){
-
-        .title_info{
-            font-size: 1.5rem;
-            grid-column: 1/13;
-            font-weight: 100;
-        }
-      
-        #global_lighting .btn_square_wide{
-            width: 9rem;
-            height: 5rem;
-        }
-        #global_lighting .btn_square_wide p {
-            font-size: medium;
-        }
-    
-        .light_tile{
-            height: 10rem;
-            width: 9.5rem;
-        }
-    }
-    
 
 
     @media only screen and (max-device-height: 650px) and  (orientation: landscape){

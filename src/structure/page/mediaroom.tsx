@@ -39,6 +39,7 @@ import menu_button from "../../assets/images/icons/icons8-arrow.svg"
 import mute        from "../../assets/images/icons/icons8-no-audio.svg"
 import power       from "../../assets/images/icons/icons8-power.svg"
 import arrow       from "../../assets/images/icons/icons8-triangle-arrow.svg"
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
 
 // Light SVGs
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
@@ -895,68 +896,66 @@ const sliderValue = (value: boolean, id: string) => {
         </div>
                
 
-
-                <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
-                <div className={active_media? "media_off":"room_sources_container"}>
-                        
-                        <div className="source_card" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
-                            <div className="img_container">
-                                <img src={bluRay} style={{height:"45%"}}/>
-                            </div>
-                           
-                            <p>House</p>
-                        </div>
-
-                        <div className="source_card" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
-                            <div className="img_container">
-                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+            <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
+                    <div className={active_media? "media_off":"room_sources_container"}>
+                            
+                            <div className="source_card" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
+                                <div className="img_container">
+                                    <img src={bluRay} style={{height:"45%"}}/>
+                                </div>
+                            
+                                <p></p>
                             </div>
 
-                            <p>His</p>
-                        </div>
+                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
+                                <div className="img_container">
+                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                </div>
 
-                        <div className="source_card" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
-                            <div className="img_container">
-                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                <p>His 4k</p>
                             </div>
 
-                            <p>Her</p>
-                        </div>
+                            <div className="source_card" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
+                                <div className="img_container">
+                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                </div>
 
-                        <div className="display_none" id= { media4? 'active_source' : 'not_active' } onClick={()=>playSource('media4')}>
-                            <div className="img_container">
-                                <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                <p>Her 4k</p>
                             </div>
 
-                            <p>House</p>
-                        </div>
+                            <div className="source_card" id= { media4? 'active_source' : 'not_active' } onClick={()=>playSource('media4')}>
+                                <div className="img_container">
+                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                </div>
 
-                        <div className="source_card" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
-                            <div className="img_container">
-                                <img src={small_dtv} style={{height:"65%"}}  />
+                                <p>1080p</p>
                             </div>
 
-                            <p>DTV 1</p>
-                        </div>
+                            <div className="source_card" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
+                                <div className="img_container">
+                                    <img src={small_dtv} style={{height:"65%"}}  />
+                                </div>
 
-                        <div className="display_none" id= { media6? 'active_source' : 'not_active' } onClick={()=>playSource('media6')}>
-                            <div className="img_container">
-                                <img src={small_dtv} style={{height:"65%"}}  />
+                                <p>4k</p>
                             </div>
-                           
-                            <p>DTV 2</p>
-                        </div>
 
-                        <div className="source_card" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
-                            <div className="img_container">
-                                <img src={roku} id="svg_white"style={{height:"35%"}}/>
+                            <div className="source_card" id= { media6? 'active_source' : 'not_active' } onClick={()=>playSource('media6')}>
+                                <div className="img_container">
+                                    <img src={small_dtv} style={{height:"65%"}}  />
+                                </div>
+                            
+                                <p>1080p</p>
                             </div>
-                         
-                            <p>House</p>
+
+                            <div className="source_card" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
+                                <div className="img_container">
+                                    <img src={roku} id="svg_white"style={{height:"35%"}}/>
+                                </div>
+                            
+                                <p></p>
+                            </div>
+                            
                         </div>
-                        
-                    </div>
-            
                     <div className={active_media? "controller_layout": "media_off"}>
 
                         <button id="controller_layout_back_button"  onClick = {display_tile}>
@@ -1085,7 +1084,6 @@ const sliderValue = (value: boolean, id: string) => {
                 </div>
 
 
-
                     <div className={musicOption? "music_app" : "media_off"} >
                     </div>
 
@@ -1200,6 +1198,11 @@ const sliderValue = (value: boolean, id: string) => {
                             
                     </div>
 
+
+                    <div className="landscape_warning">
+                    <h1> Please rotate your device back to portrait mode. </h1>
+                    <img src={portraitMode}  />
+                 </div>
             
         </div>
 

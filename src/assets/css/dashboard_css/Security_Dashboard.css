@@ -445,3 +445,54 @@
 #active_btn_armed{
     background-color: rgb(213, 10, 10);
 }
+
+
+
+
+
+
+@media only screen and (max-device-height:650px) and (orientation:landscape){
+    /*
+    ------------------------------------------ Warning
+    */
+
+    .security_dashboard .landscape_warning{
+        grid-column: 2/12 ;
+        grid-row: 2/9;
+        z-index: 10;
+
+    }
+
+    /*
+    ----------------------------------------- keypad 
+    */
+
+    .security_keypad_container{
+        display: none;
+    }
+
+    .control_container{
+        display: none;
+    }
+
+    .light_indicator{
+        display: none;
+    }
+
+
+    /*
+    ---------------------------------------- open zones 
+    */
+
+   
+    .security_zones_title{
+        display: none;
+    }
+
+    .security_zones{
+        display: none;
+    }
+
+
+
+}

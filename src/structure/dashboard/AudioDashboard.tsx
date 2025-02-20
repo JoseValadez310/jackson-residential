@@ -32,6 +32,7 @@ import tuneIn from "../../assets/images/logos/streaming_services_logos/TuneIn_Lo
 //import power from "../../assets/images/icons/icons8-power.svg"
 
 
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
 
 
 
@@ -873,7 +874,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
    
       <div className='audio_dashboard'>
 
-<div style={{display:"flex", justifyContent:"center", alignItems:"center", gridColumn:'1/2',gridRow:'1' }}>
+<div className='audio_back_button' style={{display:"flex", justifyContent:"center", alignItems:"center", gridColumn:'1/2',gridRow:'1' }}>
       <button className="back_button" onClick={() => navigate(-1)} style={{zIndex:"10"}}>
             <img 
               className='back_button_image' 
@@ -1835,8 +1836,19 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
             </div>
           </div>
         )}
+
+
+
+
+    <div className="landscape_warning">
+                <h1> Please rotate your device back to portrait mode. </h1>
+                <img src={portraitMode}  />
       </div>
  
+
+ 
+
+ </div>
   );
 };
 

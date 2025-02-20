@@ -411,3 +411,28 @@
     font-size: large;
 }
 }
+
+
+@media only screen and (max-device-height: 650px) and  (orientation: landscape){
+
+    .pool_container, .spa_container, .button_container{
+        display: none;
+    }
+
+    .pool_spa_dashboard .title_info{
+        text-align: center;
+        font-weight: 100;
+        font-size: xx-large;
+    }
+
+
+    .pool_spa_dashboard .landscape_warning{
+        grid-column: 2/12;
+        grid-row: 2/9;
+        z-index: 10;
+ 
+    }
+}
+
+
+

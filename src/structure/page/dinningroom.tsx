@@ -26,6 +26,9 @@ import lights      from "../../assets/images/icons/noun-light-bulb-2216273.svg"
 import menu_button from "../../assets/images/icons/icons8-arrow.svg"
 
 
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
+
+
 // Light SVGs
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
 import Clock from "../../components/Clock"
@@ -387,6 +390,12 @@ const sliderValue = (value: boolean, id: string) => {
                             
                     </div>
 
+
+
+                    <div className="landscape_warning">
+                    <h1> Please rotate your device back to portrait mode. </h1>
+                    <img src={portraitMode}  />
+                 </div>
             
         </div>
 

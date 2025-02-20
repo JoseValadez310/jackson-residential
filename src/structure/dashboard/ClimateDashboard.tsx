@@ -9,6 +9,8 @@ import "../../assets/css/dashboard_css/Climate_Dashboard.css"
 
 //Icons
 import menu_button from "../../assets/images/icons/icons8-arrow.svg"
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
+
 
 // Thermo
 import Thermostat1 from "../../components/climate/thermostat1";
@@ -106,6 +108,13 @@ const ClimateDashboard = () =>{
                 </div>
                 
                   
+
+
+   
+                <div className="landscape_warning">
+                <h1> Please rotate your device back to portrait mode. </h1>
+                <img src={portraitMode}  />
+        </div>
 
 
                     

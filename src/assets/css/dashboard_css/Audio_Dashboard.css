@@ -1029,3 +1029,37 @@
         }        
         
         }
+
+
+
+
+        @media only screen and (max-device-height: 650px) and  (orientation: landscape){
+           
+
+            .album_art, .album_info, .playback_controls, .progress_bar, .volume_controls {
+                display: none;
+            }
+     
+            .audio_back_button, .menu_tablet{
+                padding: 10px;
+            }
+
+            
+          
+              .audio_dashboard .landscape_warning{
+                  grid-column: 2/9;
+                  grid-row: 4/7;
+                  z-index: 10;
+                  width: 110%;
+                  padding-inline: 0%;
+                  height: 100%;
+                  
+                  position: relative;
+                  right: 20px;
+           
+              }
+          
+           
+          
+          }
+          

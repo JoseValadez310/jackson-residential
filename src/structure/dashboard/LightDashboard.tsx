@@ -30,6 +30,8 @@ import driveSconce from "../../assets/images/icons/noun-half-moon-wall-light-493
 import welcome from "../../assets/images/icons/icons8-doormat.svg"
 import vac from "../../assets/images/icons/icons8-holiday.svg"
 
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
+
 
  
   
@@ -3166,6 +3168,15 @@ const LightDashboard = () =>{
 
             
                 </div>
+
+
+
+
+                <div className="landscape_warning">
+                <h1> Please rotate your device back to portrait mode. </h1>
+                <img src={portraitMode}  />
+        </div>
+
         </div>
 
     )

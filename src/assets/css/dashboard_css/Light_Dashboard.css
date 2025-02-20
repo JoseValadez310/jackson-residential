@@ -255,3 +255,23 @@
         }
     }
     
+
+
+    @media only screen and (max-device-height: 650px) and  (orientation: landscape){
+
+     .zone_section{
+        display: none;
+     }
+    
+        
+    
+        .light_dashboard .landscape_warning{
+            grid-column: 2/12;
+            grid-row: 2/9;
+            z-index: 10;
+     
+        }
+    }
+    
+    
+    

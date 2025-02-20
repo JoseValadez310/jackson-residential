@@ -6,6 +6,7 @@ import "../../assets/css/dashboard_css/Security_Dashboard.css"
 import menu_button from "../../assets/images/icons/icons8-arrow.svg"
 import backspace from "../../assets/images/icons/icons8-backspace.svg"
 import clear from "../../assets/images/icons/icons8-x.svg"
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
 //Componets
 import Clock from "../../components/Clock"
 import { useState, useEffect } from "react"
@@ -1313,6 +1314,15 @@ console.log(green, yellow, red)
                     <div className="light_indicator_container"><p>Stay</p>  <div id={optionStay? "active_btn_stay" :"not_active_ind"}></div> </div>
                     <div className="light_indicator_container"><p>Armed</p> <div id={optionAway? "active_btn_armed":"not_active_ind"}></div> </div>
             </div>
+
+
+
+
+        <div className="landscape_warning">
+                <h1> Please rotate your device back to portrait mode. </h1>
+                <img src={portraitMode}  />
+        </div>
+   
 
           
 

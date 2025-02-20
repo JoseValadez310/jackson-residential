@@ -26,6 +26,8 @@ import menu_button from "../../assets/images/icons/icons8-arrow.svg"
 // Light SVGs
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
 import lightOff from "../../assets/images/icons/icons8-light-off.svg"
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
+
 import Clock from "../../components/Clock"
 
 const KidsRoom = () =>{
@@ -402,7 +404,10 @@ const sliderValue = (value: boolean, id: string) => {
                             
                     </div>
 
-            
+                    <div className="landscape_warning">
+                    <h1> Please rotate your device back to portrait mode. </h1>
+                    <img src={portraitMode}  />
+                 </div>
         </div>
 
 

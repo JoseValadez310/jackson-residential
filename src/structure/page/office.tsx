@@ -40,6 +40,7 @@ import menu_button from "../../assets/images/icons/icons8-arrow.svg"
 import mute        from "../../assets/images/icons/icons8-no-audio.svg"
 import power       from "../../assets/images/icons/icons8-power.svg"
 import arrow       from "../../assets/images/icons/icons8-triangle-arrow.svg"
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
 
 // Light SVGs
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
@@ -900,9 +901,8 @@ const sliderValue = (value: boolean, id: string) => {
         </div>
                
 
-
-                <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
-                <div className={active_media? "media_off":"room_sources_container"}>
+        <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
+                    <div className={active_media? "media_off":"room_sources_container"}>
                         
                         <div className="display_none" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
                             <div className="img_container">
@@ -933,7 +933,7 @@ const sliderValue = (value: boolean, id: string) => {
                                 <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
                             </div>
 
-                            <p>House</p>
+                            <p>1080p</p>
                         </div>
 
                         <div className="display_none" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
@@ -949,7 +949,7 @@ const sliderValue = (value: boolean, id: string) => {
                                 <img src={small_dtv} style={{height:"65%"}}  />
                             </div>
                            
-                            <p>DTV 2</p>
+                            <p>1080p</p>
                         </div>
 
                         <div className="display_none" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
@@ -961,6 +961,7 @@ const sliderValue = (value: boolean, id: string) => {
                         </div>
                         
                     </div>
+            
                     <div className={active_media? "controller_layout": "media_off"}>
 
                         <button id="controller_layout_back_button"  onClick = {display_tile}>
@@ -1010,7 +1011,6 @@ const sliderValue = (value: boolean, id: string) => {
 
                 
                         </div>
-
 
                         <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
                             <p> REBOOT </p>
@@ -1220,6 +1220,11 @@ const sliderValue = (value: boolean, id: string) => {
                             
                     </div>
 
+
+                    <div className="landscape_warning">
+                    <h1> Please rotate your device back to portrait mode. </h1>
+                    <img src={portraitMode}  />
+                 </div>
             
         </div>
 

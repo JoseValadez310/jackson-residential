@@ -9,6 +9,8 @@ import "../../assets/css/dashboard_css/PoolSpa_Dashboard.css"
 import "../../assets/css/index.css"
 //Icons
 import menu_button from "../../assets/images/icons/icons8-arrow.svg"
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
+
 import arrow from "../../assets/images/icons/icons8-triangle-arrow.svg"
 
 
@@ -242,6 +244,14 @@ const PoolSpa = () =>{
 
 
 
+        </div>
+
+
+
+        
+        <div className="landscape_warning">
+                <h1> Please rotate your device back to portrait mode. </h1>
+                <img src={portraitMode}  />
         </div>
 
 

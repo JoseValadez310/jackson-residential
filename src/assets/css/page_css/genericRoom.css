@@ -757,7 +757,7 @@
 
 
 
-@media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+@media only screen and (max-device-width: 550px) and (orientation: portrait){
     #mobile_power{
         display: block;
     }
@@ -867,12 +867,13 @@
         position: relative;
         top: 5px;
         overflow: visible;
-        width: 0%;
+        width: 90%;
+        height: 90%;
      
     }
         .source_card{
-            height:155px;
-            width: 170px;
+            height:100%;
+            width: 100%;
         }
             .source_card .img_container {
                 height: 70%;
@@ -888,38 +889,42 @@
     */        
     
     .lights_app{
-        grid-column: 1/13;
-        grid-row: 2/8;
-        width: 100%;
+        grid-column: 1 / 13;
+        grid-row: 2 / 8;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        border-radius: 10px;
+        width: 100%;
+        grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+
+   
+        border-radius: 15px;
     }
 
         .light_container{
-            grid-row: 2/7;
-            grid-column: 1/13;
-         
-     
+            grid-row: 2/8;
+            grid-column: 1/10;
+            width: 90%;
+            height: 90%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+
+            top: 5px;
+            overflow: visible;
         }
 
         #breakfast_nook.light_container{
+            grid-row: 1/9;
+            height: 100%;
             grid-template-rows: repeat(4,1fr);
         }
             .light_tile{
-            
-              height: 160px;
-              width: 176px;
+                height: 100%;
+                width: 100%;
                 gap: 0;
-
                 justify-content: space-evenly;
-
-
+            }
+            .light_tile .light_info p {
+                font-size: larger;
             }
                 .light_tile .light_info{
                     width:95%
@@ -1221,7 +1226,7 @@
 
 /*
 ----------------------------------------------------------------------------------------------------------------- iphone 14
-*/
+
 
 @media only screen and (max-device-width: 390px) and (max-device-width: 763px) and (orientation: portrait){
     .generic_room .title_info{
@@ -1237,7 +1242,7 @@
     }
     /*
     ----------------------------------------------------------------------- source card
-    */
+ 
     .source_card{
         height:8.7rem;
         width: 10.75rem;
@@ -1245,7 +1250,7 @@
 
      /*
     ----------------------------------------------------------------------- light cards
-    */
+  
     .light_tile{
         height:165px;
         width: 170px;
@@ -1259,7 +1264,7 @@
 
     /*
     ----------------------------------------------------------------------------------------------------------------- volume container
-    */
+  
 
 
     .volume_container{
@@ -1279,9 +1284,7 @@
 
 
 
-/*
-------------------------- iphone 16
-*/
+
 
 
 @media only screen and (max-device-width: 375px) and (orientation: portrait){
@@ -1303,6 +1306,7 @@
 }
 
 
+*/
 
 
 
@@ -1314,42 +1318,39 @@
 
 
 
-@media only screen and (max-device-height: 430px) and  (orientation: landscape){
+@media only screen and (max-device-height: 550px) and  (orientation: landscape){
     .generic_room .title_info{
         font-size: x-large;
     }
     .source_card{
-        height: 40%;
-        width: 20%;
+     display: none;
     }
-        .source_card .img_container{
-            height: 70%;    
-        }
+      
     
     .light_tile{
-        height: 40%;
-        width: 20%;
+      display: none;
     }
-        .light_tile .light_info p{
-            font-size: medium;
-        }
-        .light_controls .btn_circle{
-            height: 3rem;
-            width: 3rem;
-
-        }
-
-
-
+       
     .controller_layout{
-        grid-row:1/8;
-        grid-column: 1/10;
-        height: 100%;
-        width: 100%;
+     display: none;
     }
 
     .volume_container{
         display: none;
+    }
+
+
+
+    
+    .generic_room .landscape_warning{
+        grid-column: 2/12;
+        grid-row: 4/7;
+        z-index: 10;
+        width: 100%;
+        padding-inline: 0%;
+        height: 100%;
+        
+    
     }
 }
 

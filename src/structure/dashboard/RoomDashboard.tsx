@@ -11,6 +11,8 @@ import "../../assets/css/index.css"
 
 // icons
 import menu_button from "../../assets/images/icons/icons8-arrow.svg"
+import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
+
 
 // Test icons
 import Audio   from "../../assets/images/icons/icons8-music.svg"
@@ -173,95 +175,88 @@ const RoomsDashboard = () => {
     return (
         <div className="rooms_dashboard">
 
-            <Link to={"/"} className="mobile_back_btn"> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link>
+        <Link to={"/"} className="mobile_back_btn"> 
+            <button className="back_button">
+                <img src={menu_button}/>
+            </button>
+        </Link>
 
        
+        <div className="nav_container">
+                <Link to={"/"}> 
+                    <button className="back_button">
+                        <img src={menu_button}/>
+                    </button>
+                </Link>
 
-      
-       <div className="nav_container">
-            <Link to={"/"}> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link>
+            <div className="nav">
+                    <button className={zone.location_1.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_1.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_1")}> <p>{zone.location_1.title}  </p> </button>
+                    <button className={zone.location_2.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_2.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_2")}> <p>{zone.location_2.title}  </p> </button>
+                    <button className={zone.location_3.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_3.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_3")}> <p>{zone.location_3.title}  </p> </button>
+                    <button className={zone.location_4.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_4.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_4")}> <p>{zone.location_4.title}  </p> </button>
+                    <button className={zone.location_5.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_5.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_5")}> <p>{zone.location_5.title}  </p> </button>
+                    <button className={zone.location_6.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_6.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_6")}> <p>{zone.location_6.title}  </p> </button>
+                    <button className={zone.location_7.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_7.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_7")}> <p>{zone.location_7.title}  </p> </button>
+                    <button className={zone.location_8.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_8.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_8")}> <p>{zone.location_8.title}  </p> </button>
+            </div>
+            
 
-        <div className="nav">
-                <button className={zone.location_1.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_1.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_1")}> <p>{zone.location_1.title}  </p> </button>
-                <button className={zone.location_2.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_2.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_2")}> <p>{zone.location_2.title}  </p> </button>
-                <button className={zone.location_3.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_3.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_3")}> <p>{zone.location_3.title}  </p> </button>
-                <button className={zone.location_4.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_4.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_4")}> <p>{zone.location_4.title}  </p> </button>
-                <button className={zone.location_5.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_5.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_5")}> <p>{zone.location_5.title}  </p> </button>
-                <button className={zone.location_6.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_6.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_6")}> <p>{zone.location_6.title}  </p> </button>
-                <button className={zone.location_7.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_7.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_7")}> <p>{zone.location_7.title}  </p> </button>
-                <button className={zone.location_8.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_8.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_8")}> <p>{zone.location_8.title}  </p> </button>
+            <div className="nav_clock">
+                <Clock />
+            </div>
+
         </div>
-           
 
-        <div className="nav_clock">
-            <Clock />
-        </div>
+        <h1 className="title_info"> Room Selection</h1>
+        {activeLocations.map((location, idx) => (
+            <div className="room_selection_options" key={idx}>
+                {location.rooms.map((roomObj, roomIdx) => {
+                // Extract the single key and its array of items
+                const roomName = Object.keys(roomObj)[0];       // e.g. "Media Room"
+                const items = roomObj[roomName];               // e.g. ["media", "music", "light"]
 
-       </div>
+                return (
+                    <Link
+                        to={`/${roomName.replace(/\s/g, "").toLowerCase()}`}
+                        className="room_card"
+                        key={roomIdx}
+                    >
+                    {/* Display the room name */}
+                    <div className="test">
+                        <p className="room_name">{roomName}</p>
 
-                
-
-                <h1 className="title_info"> Room Selection</h1>
-
-
-
-
-        
-
-             
-                {activeLocations.map((location, idx) => (
-                    <div className="room_selection_options" key={idx}>
-                        {location.rooms.map((roomObj, roomIdx) => {
-                        // Extract the single key and its array of items
-                        const roomName = Object.keys(roomObj)[0];       // e.g. "Media Room"
-                        const items = roomObj[roomName];               // e.g. ["media", "music", "light"]
-
-                        return (
-                            <Link
-                                to={`/${roomName.replace(/\s/g, "").toLowerCase()}`}
-                                className="room_card"
-                                key={roomIdx}
-                            >
-                            {/* Display the room name */}
-                            <div className="test">
-                                <p className="room_name">{roomName}</p>
-
-                                {/* Now display the relevant icons or text for each item in `items` */}
-                                <div className="icon_preview">
-                                    {items.includes("media") && (
-                                    <img src={TV} style={{ height: "1.25rem" }} />
-                                    )}
-                                    {items.includes("light") && (
-                                    <img src={Light} style={{ height: "1.25rem" }} />
-                                    )}
-                                    {items.includes("music") && (
-                                    <img src={Audio} style={{ height: "1.25rem" }} />
-                                    )}
-                                    {items.includes("climate") && (
-                                    <img src={Climate} style={{ height: "1.25rem" }} />
-                                    )}
-                                    {/* etc. Add any other items as needed */}
-                                </div>
-                            </div>
-                            </Link>
-                        );
-                        })}
+                        {/* Now display the relevant icons or text for each item in `items` */}
+                        <div className="icon_preview">
+                            {items.includes("media") && (
+                            <img src={TV} style={{ height: "1.25rem" }} />
+                            )}
+                            {items.includes("light") && (
+                            <img src={Light} style={{ height: "1.25rem" }} />
+                            )}
+                            {items.includes("music") && (
+                            <img src={Audio} style={{ height: "1.25rem" }} />
+                            )}
+                            {items.includes("climate") && (
+                            <img src={Climate} style={{ height: "1.25rem" }} />
+                            )}
+                            {/* etc. Add any other items as needed */}
+                        </div>
                     </div>
-                    ))}
+                    </Link>
+                );
+                })}
+            </div>
+        ))}
 
              
 
+        <div className="landscape_warning">
+                <h1> Please rotate your device back to portrait mode. </h1>
+                <img src={portraitMode}  />
+        </div>
 
                     
-           </div>
+        </div>
     )
 }
 

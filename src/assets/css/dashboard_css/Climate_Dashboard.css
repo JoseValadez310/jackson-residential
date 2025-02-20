@@ -201,3 +201,28 @@
     
     
     }
+
+
+
+    
+@media only screen and (max-device-height: 650px) and  (orientation: landscape){
+
+  .climate_page .title_info{
+    text-align: center;
+    font-weight: 100;
+    font-size: xx-large;
+  }
+  
+
+    .climate_page .landscape_warning{
+        grid-column: 2/12;
+        grid-row: 2/9;
+        z-index: 10;
+ 
+    }
+
+    .climate_dashboard_container{
+        display: none;
+    }
+
+}

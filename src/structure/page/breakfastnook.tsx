@@ -316,9 +316,7 @@ const sliderValue = (value: boolean, id: string) => {
 ---------------------------------------------------------------------------- Checks to see if any media sources are currently on
 */
 
-    if(media1){
-    //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation}`,1)
+if(media1){
     //display controller and hide source selection
        active_media = true
     //displaying the correct controller and hiding the rest
@@ -332,8 +330,6 @@ const sliderValue = (value: boolean, id: string) => {
         media_8 = "media_off"  
     } 
     else if(media2){
-    //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation}`,2)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -347,8 +343,6 @@ const sliderValue = (value: boolean, id: string) => {
        media_8 = "media_off"     
     } 
     else if(media3){
-    //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation}`,3)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -362,8 +356,6 @@ const sliderValue = (value: boolean, id: string) => {
         media_8 = "media_off"  
     } 
     else if(media4){
-    //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation}`,4)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -377,8 +369,6 @@ const sliderValue = (value: boolean, id: string) => {
         media_8 = "media_off"  
     } 
     else if(media5){
-    //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation}`,5)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -392,8 +382,6 @@ const sliderValue = (value: boolean, id: string) => {
         media_8 = "media_off"  
     } 
     else if(media6){
-    //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation}`,6)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -407,8 +395,6 @@ const sliderValue = (value: boolean, id: string) => {
         media_8 = "media_off"  
     } 
     else if(media7){
-    //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation}`,7)
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -422,8 +408,6 @@ const sliderValue = (value: boolean, id: string) => {
         media_8 = "media_off"  
     } 
     else if(media8){
-    //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation}`,8)
     //display controller and hide source selection
         active_media = true
      //displaying the correct controller and hiding the rest
@@ -452,6 +436,7 @@ const sliderValue = (value: boolean, id: string) => {
         media_8 = "media_off"  
     }
    
+
 
 
 
@@ -782,64 +767,42 @@ const sliderValue = (value: boolean, id: string) => {
 
         <div className="generic_room">
 
-        {active_media?
+<div className="room_back_corner" >
+                <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
+                    <button className="back_button" >
+                        <img src={menu_button}/>
+                    </button>
+                </Link>  
+            </div>
+           
+
+            <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
+
             
-             <button id="mobile_power" style={{gridColumn:"11/13", gridRow:"1", width:"3.5rem", height:"2rem", borderRadius:"20px"}} className="btn_circle" onClick={()=>powerMenu("menu")}>
-                    <img className="btn_image" style={{height:"80%"}} src={power}  />
-                </button> 
-            :
-            <Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link> 
-        }
+                <div className="nav">
+                        <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
+                        <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+                        <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
+                </div>
+                
+              
 
-        {active_media?
-            <div className="room_home_corner" id="mobile_power_btn">
-                <button className="home_button" onClick={()=>powerMenu("menu")}>
-                    <img src={power}  />
-                </button> 
-            </div>
-            :
-            <div className="room_home_corner" id="mobile_home_btn">
-                <Link to={"/"} className="home_button">
-                    <img src={home_button}/>
-                </Link>
-            </div>
-        }
-
-        <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
-
-            <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
-                <button className="back_button" >
-                    <img src={menu_button}/>
-                </button>
-            </Link>  
-        
-            <div className="nav">
-                    <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
-                    <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
-                    <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
-            </div>
-            
-            <div className="nav_clock">
-                {active_media?
-                    <div className="room_home_corner">
-                        <button className="home_button" onClick={()=>powerMenu("menu")}>
-                            <img src={power}  />
-                        </button> 
-                    </div>
-                    :
-                    <div className="room_home_corner">
-                        <Link to={"/"} className="home_button">
-                            <img src={home_button}/>
-                        </Link>
-                    </div>
-                }
             </div>
 
-        </div>
+            {active_media?
+                <div className="room_home_corner">
+                    <button className="home_button" onClick={()=>powerMenu("menu")}>
+                        <img src={power}  />
+                    </button> 
+                </div>
+                :
+                <div className="room_home_corner">
+                    <Link to={"/"} className="home_button">
+                        <img src={home_button}/>
+                    </Link>
+                </div>
+            }
+
 
    
         <h1 className="title_info"> {roomName} </h1>
@@ -971,39 +934,44 @@ const sliderValue = (value: boolean, id: string) => {
                             <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
                         </button>
 
+                
                         <div className="logo_display">
                         <div className={media1? "bluRay_logo":"media_off"}>
                                 <img src={bluRay} alt="" />
+                                <p className="user_title_controller">4k</p>
+
                             </div>
 
                             <div className={media2? "apple_display_logo":"media_off"}>
                               <img src={appleTV} id="svg_gray"  alt="" />
-                              <p className="user_title_controller"> His</p>
+                              <p className="user_title_controller"> His 4k</p>
                             </div>
 
                             <div className={media3? "apple_display_logo":"media_off"}>
                            
                             <img src={appleTV} id="svg_gray"  alt="" />
-                            <p className="user_title_controller"> Hers</p>
+                            <p className="user_title_controller"> Her 4k</p>
                             </div>
 
                             <div className={media4? "apple_display_logo":"media_off"}>
                                 <img src={appleTV} id="svg_gray"  alt="" />
-                                <p className="user_title_controller"> House </p>
+                                <p className="user_title_controller"> 1080p </p>
                             </div>
 
                             <div className={media5? "dtv_header_logo":"media_off"}>
                                 <img src={direcTv}  id="svg_gray"  alt="" />
-                                <p className="user_title_controller">  His</p>
+                                <p className="user_title_controller">  4k</p>
                             </div>
 
                             <div className={media6? "dtv_header_logo":"media_off"}>
                                 <img src={direcTv}  id="svg_gray" alt="" />
-                                <p className="user_title_controller">  Hers</p>
+                                <p className="user_title_controller">1080p</p>
                             </div>
 
                             <div className={media7? "roku_logo":"media_off"}>
                                 <img src={roku} id="svg_gray"   alt="" />
+                                <p className="user_title_controller">4k</p>
+
                             </div>
 
                             <div className={media8? "dtv_header_logo":"media_off"}>
@@ -1014,7 +982,6 @@ const sliderValue = (value: boolean, id: string) => {
 
                 
                         </div>
-
                         <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
                             <p> REBOOT </p>
                         </button>

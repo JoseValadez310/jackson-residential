@@ -31,7 +31,6 @@ import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
 
 // Light SVGs
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
-import Clock from "../../components/Clock"
 
 const DinningRoom = () =>{
 /*
@@ -240,31 +239,21 @@ const sliderValue = (value: boolean, id: string) => {
         <div className="generic_room">
 
 
-        <Link to={"/RoomsDashboard"} className="mobile_back_btn"> 
-            <button className="back_button">
-                <img src={menu_button}/>
-            </button>
-        </Link> 
-
-
-       <div className="nav_container">
-
-            <Link to={"/RoomsDashboard"}> 
+        <div className="room_back_corner" >
+            <Link to={"/RoomsDashboard"}  > 
                 <button className="back_button" >
                     <img src={menu_button}/>
                 </button>
             </Link>  
-        
+        </div>
+           
+
+       <div className="nav_container">
 
             <div className="nav">
                     <button  className={lightsOption? "btn_selected" : "btn_not_selected"}>  <img src={lights}  /> </button>
             </div>
-            
-
-            <div className="nav_clock">
-                <Clock />
-            </div>
-
+                
        </div>
 
        

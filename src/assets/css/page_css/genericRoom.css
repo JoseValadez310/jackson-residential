@@ -1151,16 +1151,37 @@
             display: contents;
             
         }
-            .home_button{
+
+
+           .room_home_corner {
                 grid-column: 11/13;
                 width: 100%;
                 height: 2rem;
+                z-index: 100;
+
             }
-            .back_button{
+               .room_home_corner .home_button{
+                    width: 100%;
+                    height: 2rem;
+                }
+           .room_back_corner {
                 grid-column: 1/3;
                 width: 100%;
                 height: 2rem;
+                z-index: 100;
+
             }
+            .room_back_corner a{
+                width: 100%;
+                height: 2rem;
+            }
+            .room_back_corner .back_button{
+                width: 100%;
+                height: 2rem;
+                z-index: 100;
+            }
+
+           
 /*
 ----------------------------------------------------------------------------------------------------------------- display_logo
 */
@@ -1318,7 +1339,7 @@
 
 
 
-@media only screen and (max-device-height: 550px) and  (orientation: landscape){
+@media only screen and (max-height: 550px) and  (orientation: landscape){
     .generic_room .title_info{
         font-size: x-large;
     }

@@ -33,10 +33,6 @@
     animation: room_selection 1000ms;
 }
 
-.back_button{
-    animation: room_selection 1000ms;
-}
-
 
 
 /* Room selection tiles*/
@@ -223,9 +219,7 @@
     display: none;
 }
 
-.back_button{
-    display: none;
-}
+
 .mobile_back_btn .back_button{
     display: flex;
 }
@@ -297,7 +291,7 @@
 
 */
 
-@media only screen and (max-device-height: 650px) and  (orientation: landscape){
+@media only screen and (max-height: 550px) and (orientation: landscape){
 
     .room_card{
       display: none;

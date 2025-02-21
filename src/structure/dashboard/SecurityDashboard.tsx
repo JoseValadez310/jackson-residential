@@ -8,7 +8,6 @@ import backspace from "../../assets/images/icons/icons8-backspace.svg"
 import clear from "../../assets/images/icons/icons8-x.svg"
 import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
 //Componets
-import Clock from "../../components/Clock"
 import { useState, useEffect } from "react"
 
 
@@ -827,30 +826,15 @@ console.log(green, yellow, red)
     return(
         <div className="security_dashboard">
 
-            <Link to={"/"} className="mobile_back_btn"> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link>
-
-
-            <div className="nav_container">
-                    <Link to={"/"}> 
-                        <button className="back_button">
-                            <img src={menu_button}/>
-                        </button>
-                    </Link>
-
-                <div className="nav">
-                   
-                </div>
-                
-
-                <div className="display_none">
-                    <Clock />
-                </div>
+<div className="room_back_corner">
+              <Link to={"/"}> 
+                    <button className="back_button">
+                        <img src={menu_button}/>
+                    </button>
+                </Link>
 
             </div>
+
 
 
             <h1 className="title_info"> Security </h1>

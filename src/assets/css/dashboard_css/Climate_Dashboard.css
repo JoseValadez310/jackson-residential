@@ -205,7 +205,7 @@
 
 
     
-@media only screen and (max-device-height: 650px) and  (orientation: landscape){
+@media only screen and (max-height: 550px) and (orientation: landscape){
 
   .climate_page .title_info{
     text-align: center;

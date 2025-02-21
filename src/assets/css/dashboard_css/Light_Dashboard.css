@@ -24,6 +24,7 @@
     animation: none;
 }
 
+
 /*
 ---------------------------------------------------------------------------------
 */
@@ -55,6 +56,17 @@
 
     }
 
+    .light_container_global{
+        grid-row: 2/9;
+        grid-column:2/13;
+
+        height: 100%;
+        width: 100%;
+    }
+
+        .light_container_global .light_wrapper{
+            justify-content: center;
+        }
 
 /*
 --------------------------------------------------------------------------------------- zones 
@@ -258,7 +270,7 @@
 
 
 
-    @media only screen and (max-device-height: 650px) and  (orientation: landscape){
+    @media only screen and (max-height: 550px) and  (orientation: landscape){
 
      .zone_section{
         display: none;

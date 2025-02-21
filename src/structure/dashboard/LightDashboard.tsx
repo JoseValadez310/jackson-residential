@@ -3104,22 +3104,20 @@ const LightDashboard = () =>{
         
         
 
-            
-        <Link to={"/"} className="mobile_back_btn"> 
-            <button className="back_button">
-                <img src={menu_button}/>
-            </button>
-        </Link>
-
-
-
-
-        <div className="nav_container">
-                <Link to={"/"}> 
+            <div className="room_back_corner">
+              <Link to={"/"}> 
                     <button className="back_button">
                         <img src={menu_button}/>
                     </button>
                 </Link>
+
+            </div>
+          
+
+
+
+        <div className="nav_container">
+            
 
                 <div className="nav">
                     <button onClick={() => currentFloor("global")}    className={globalScenes?   "btn_selected" : "btn_not_selected"}>      <p> Global</p>     </button>

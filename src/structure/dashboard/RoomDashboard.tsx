@@ -19,7 +19,6 @@ import Audio   from "../../assets/images/icons/icons8-music.svg"
 import Light   from "../../assets/images/icons/noun-light-bulb-2216273.svg"
 import Climate from "../../assets/images/icons/icons8-winter.svg"
 import TV          from "../../assets/images/icons/icons8-tv.svg"
-import Clock from "../../components/Clock"
 
 
 type RoomObject = {
@@ -176,19 +175,19 @@ const RoomsDashboard = () => {
     return (
         <div className="rooms_dashboard">
 
-        <Link to={"/"} className="mobile_back_btn"> 
-            <button className="back_button">
-                <img src={menu_button}/>
-            </button>
-        </Link>
+ 
+<div className="room_back_corner" >
+                <Link to={"/"}  > 
+                    <button className="back_button" >
+                        <img src={menu_button}/>
+                    </button>
+                </Link>  
+            </div>
+           
 
        
         <div className="nav_container">
-                <Link to={"/"}> 
-                    <button className="back_button">
-                        <img src={menu_button}/>
-                    </button>
-                </Link>
+              
 
             <div className="nav">
                     <button className={zone.location_1.active ? "btn_selected" : 'btn_not_selected'} id={zone.location_1.title === "null"? "display_none":"floor_selection_nonactive"}  onClick={()=> floorSelection("location_1")}> <p>{zone.location_1.title}  </p> </button>
@@ -202,13 +201,13 @@ const RoomsDashboard = () => {
             </div>
             
 
-            <div className="nav_clock">
-                <Clock />
-            </div>
+          
 
         </div>
 
-        <h1 className="title_info"> Room Selection</h1>
+        <h1 className="title_info"> Room Selection </h1>
+        
+        
         {activeLocations.map((location, idx) => (
             <div className="room_selection_options" key={idx}>
                 {location.rooms.map((roomObj, roomIdx) => {

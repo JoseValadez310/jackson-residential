@@ -124,23 +124,16 @@ const PoolSpa = () =>{
     return(
         <div className="pool_spa_dashboard">
             
-            <Link to={"/"} className="mobile_back_btn"> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link>
+            <div className="room_back_corner">
+              <Link to={"/"}> 
+                    <button className="back_button">
+                        <img src={menu_button}/>
+                    </button>
+                </Link>
+
+            </div>
 
 
-
-
-        <div className="nav_container">
-            <Link to={"/"}> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link>
-
-       </div>
 
        <h1 className="title_info"> Pool - Spa </h1>
 

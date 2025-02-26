@@ -102,7 +102,7 @@ const RoomsDashboard = () => {
                 {"Breakfast Nook":["media","music","light"]},
                 {"Bar":["media","music","light"]},    
 
-                {"Dinning Room":["light"]}, 
+                {"Dining Room":["light"]}, 
                 {"Living Room":["light"]}, 
                 {"Foyer":["light"]}, 
             ]

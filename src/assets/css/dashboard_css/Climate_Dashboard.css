@@ -226,3 +226,20 @@
     }
 
 }
+
+
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+    .climate_dashboard_container{
+        justify-content: center
+    }
+    .container_thermo{
+        width: 45%;
+
+    }
+    .climate_page .title_info{
+        font-size: 3.15rem;
+    }
+
+
+  }

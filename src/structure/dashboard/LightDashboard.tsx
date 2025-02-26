@@ -399,7 +399,7 @@ const LightDashboard = () =>{
 
         const zone_5 =
                 {
-                    title: "Dinning Room",
+                    title: "Dining Room",
                     light1: ["Down Lights ","278",light_21],
                     light2: ["Chandelier","279",light_22],
                     light3: ["Cabinet","280",light_23],

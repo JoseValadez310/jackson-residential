@@ -460,3 +460,17 @@
     }
         
 }
+
+
+
+
+
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+
+
+    .side_controls_grid{
+        height: 40%;
+    }
+
+}

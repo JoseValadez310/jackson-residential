@@ -395,7 +395,28 @@
 
 
 
-  @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+  @media only screen and (max-width: 550px) and (orientation: portrait){
+
+    .show_option_2{
+        height: 90%;
+        width: 90%;
+    }
+    .show_option_2 .btn_circle{
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .show_option_1{
+        height: 90%;
+        width: 90%;
+    }
+    .show_option_1 .btn_circle{
+        height: 5rem;
+        width: 5rem;
+    }
+
+    
+
 
 
  
@@ -464,6 +485,71 @@
 
 
 
+}
+
+
+
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+
+ 
+
+    .dtv_controller_controls{
+     
+        width: 100%;
+        height: 90%;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 1fr;
+        box-shadow: 0px 10px 20px 1px rgb(75, 74, 74);
+        border-radius: 20px;
+        position: relative;
+        bottom: 15px;
+
+    }
+        .show_option_1, .show_option_2{
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-rows: 1fr;
+            height: 90%;
+        }
+
+        .dtv_controller_controls_2 .show_option_1 {
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-rows: 1fr;
+            height: 90%;
+        }
+
+        .show_option_2 .rgyb{
+            grid-column: 1/3;
+            grid-row: auto;
+        }
+
+
+    .dtv_controller_controls_2{
+     
+        width: 100%;
+        height: 90%;
+        grid-template-columns: repeat(2,1fr);
+        box-shadow: 0px 10px 20px 1px rgb(75, 74, 74);
+        border-radius: 20px;
+        position: relative;
+        bottom: 15px;
+    }
+
+    .channel_container{
+        grid-column: 2/3;
+       
+        
+    }
+
+    .RGYB_button{
+    
+    
+       grid-column: 1/3;
+    }
+
+    #transport_hide{
+        display: none;    
+    }
 }
 
 

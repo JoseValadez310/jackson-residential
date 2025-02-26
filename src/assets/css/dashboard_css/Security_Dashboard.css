@@ -474,3 +474,95 @@
 
 
 }
+
+
+
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+    .security_zones, .security_zones_title{
+        display: none;
+    }
+
+    .light_indicator_container{
+        width: 33%;
+    }
+   
+    .security_dashboard .nav_container{
+        display: none;
+    }
+
+    .security_dashboard{
+        grid-template-rows: 6% 6% 1fr 1fr 1fr 1fr 1fr 1fr;
+        overflow: hidden;
+
+    }
+
+
+    
+    .security_dashboard .title_info{
+        
+            font-size: 3.25rem;
+            grid-column: 1/13;
+            font-weight: 100;
+        
+
+    
+    }
+
+    .security_keypad_container{
+        grid-column: 1/13;
+        grid-row: 4/9;
+        width: 75%;
+        height: 90%;
+        bottom: 0;
+    }
+
+   
+
+    .keypad .btn_circle{
+        height: 80%;
+        width: 90%;
+    }
+    .keypad .btn_circle p {
+        font-size: x-large;
+    }
+
+    
+    .control_container{
+        grid-column: 1/13;
+        grid-row: 3;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px; 
+        width: 80%;
+        
+    }
+      
+        .light_indicator{
+            grid-column: 1/13;
+            gap: 10px;
+            height: 100%;
+            align-items: center;
+        }
+
+        .control_container .btn_circle{
+            grid-column: 1/13;
+            height: 70%;
+            width: 100%;
+            border-radius: 10px; 
+           
+        }          
+        .control_container .btn_circle p{ 
+            font-size: large;
+        }
+
+
+        .nav_container{
+            display: none;
+        }
+
+
+
+
+  }

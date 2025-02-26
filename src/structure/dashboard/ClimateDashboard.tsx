@@ -55,23 +55,16 @@ const ClimateDashboard = () =>{
      
             <div className="climate_page">
 
+<div className="room_back_corner">
+              <Link to={"/"}> 
+                    <button className="back_button">
+                        <img src={menu_button}/>
+                    </button>
+                </Link>
 
-<Link to={"/"} className="mobile_back_btn"> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link>
+            </div>
 
 
-
-
-    <div className="nav_container">
-            <Link to={"/"}> 
-                <button className="back_button">
-                    <img src={menu_button}/>
-                </button>
-            </Link>
-       </div>
 
 
 
@@ -81,7 +74,7 @@ const ClimateDashboard = () =>{
                 <div className="climate_dashboard_container">
                 
                   <div className="container_thermo">
-                    <p className="climate_label"> Dine Hall</p>
+                    <p className="climate_label"> Dining Hall</p>
                       <Thermostat1 />
                   </div>
 

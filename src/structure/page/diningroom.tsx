@@ -36,7 +36,7 @@ const DinningRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Basic information regarding the page
 */
-    const roomName = "Dinning Room"
+    const roomName = "Dining Room"
 /*
 ---------------------------------------------------------------------------- Room dashboard apps 
 */

@@ -14,7 +14,7 @@ import backbutton from "../../assets/images/icons/icons8-arrow.svg";
 import topmenu from "../../assets/images/icons/icons8-top-menu.svg";
 import menu from "../../assets/images/icons/icons8-menu.svg"
 import arrow from "../../assets/images/icons/icons8-triangle-arrow.svg"
-import mute from "../../assets/images/icons/icons8-no-audio.svg"
+import MuteIcon from "../../assets/images/icons/icons8-no-audio.svg"
 
 // Streaming services
 import amazonMusic from "../../assets/images/logos/streaming_services_logos/Amazon_Music_(Logo).svg"
@@ -61,7 +61,16 @@ interface BrowseItem {
   action?: string;
 }
 
-const MediaServerWebSocket: React.FC = () => {
+interface AudioDashboardProps {
+  mute: string;
+  setMute: (mute: string) => void;
+}
+
+
+
+
+
+const MediaServerWebSocket: React.FC<AudioDashboardProps>  = ({ mute, setMute }) => {
 
   //change these based on information 
   const serverUrl = 'ws://10.10.10.46:5004'; 
@@ -184,6 +193,16 @@ const filteredItems = items.filter(item => {
     return (
       item.name !== "My Music" &&
       item.name !== "Recently Tuned" &&
+      item.name !== "Deezer" &&
+      item.name !== "SiriusXM Internet Radio" &&
+      item.name !== "iHeartRadio" &&
+      item.name !== "LiveOne" &&
+      item.name !== "Murfie" &&
+      item.name !== "Pandora Internet Radio" &&
+      item.name !== "SoundMachine" &&
+      item.name !== "TIDAL" &&
+      item.name !== "TuneIn Radio" &&
+      item.name !== "Napster" &&
       item.name !== "Create a Pandora station..." &&
       item.name !== "Now Playing Queue"
     );
@@ -267,6 +286,7 @@ const filteredItems = items.filter(item => {
       }
     }
 
+   
     const baseWebUrl = parsedData['BaseWebUrl']; 
     const nowPlayingGuid = parsedData['NowPlayingGuid'];
     let albumArtUrl = '';
@@ -279,6 +299,9 @@ const filteredItems = items.filter(item => {
 
     const volume = parsedData['Volume'] ? parseInt(parsedData['Volume']) : currentStatus.volume;
     const backAvailable = parsedData['Back'] === 'True';
+    const newMute = parsedData['Mute'] || currentStatus.mute || "False";
+
+
     const newStatus: StatusState = {
       title: parsedData['TrackName'] || currentStatus.title,
       artist: parsedData['ArtistName'] || currentStatus.artist,
@@ -291,10 +314,16 @@ const filteredItems = items.filter(item => {
       albumArtUrl: albumArtUrl,
       volume: volume,
       source: parsedData["NowPlayingSrce"] || currentStatus.source,
-      mute: parsedData['Mute'] || currentStatus.mute
+      mute: newMute,
+ 
     };
 
+
+
+    
+
     setCurrentStatus((prev) => {
+    
       // Only update state if there's an actual change
       const isChanged = (Object.keys(newStatus) as (keyof StatusState)[]).some(
         (key) => newStatus[key] !== prev[key]
@@ -303,6 +332,7 @@ const filteredItems = items.filter(item => {
     });
 
     setCanGoBack(backAvailable);
+    setMute(newMute);
 
     if (parsedData['TrackTime']) {
       setSeekPosition(parseInt(parsedData['TrackTime']));
@@ -724,70 +754,77 @@ const zone_increase_18 = "570"; // zone_increase
 const zone_name_18    = "Media Room";
 
 
+const [houseMute, setHouseMute] = useState(false)
+const [houseVol, setHouseVol] = useState(0)
+
+
 
 
 
 
     useEffect(() => {
+
+      const houseVol   = window.CrComLib.subscribeState("n", "118",  (value: number) => { setHouseVol(value); });
+      const houseMute  = window.CrComLib.subscribeState("b", "581",  (value: boolean) => { setHouseMute(value); });
    
       const zone_1  = window.CrComLib.subscribeState("b", zone_mute_1,  (value: boolean) => { setZone1_mute(value); });
-const zone_2  = window.CrComLib.subscribeState("b", zone_mute_2,  (value: boolean) => { setZone2_mute(value); });
-const zone_3  = window.CrComLib.subscribeState("b", zone_mute_3,  (value: boolean) => { setZone3_mute(value); });
-const zone_4  = window.CrComLib.subscribeState("b", zone_mute_4,  (value: boolean) => { setZone4_mute(value); });
-const zone_5  = window.CrComLib.subscribeState("b", zone_mute_5,  (value: boolean) => { setZone5_mute(value); });
-const zone_6  = window.CrComLib.subscribeState("b", zone_mute_6,  (value: boolean) => { setZone6_mute(value); });
-const zone_7  = window.CrComLib.subscribeState("b", zone_mute_7,  (value: boolean) => { setZone7_mute(value); });
-const zone_8  = window.CrComLib.subscribeState("b", zone_mute_8,  (value: boolean) => { setZone8_mute(value); });
-const zone_9  = window.CrComLib.subscribeState("b", zone_mute_9,  (value: boolean) => { setZone9_mute(value); });
-const zone_10 = window.CrComLib.subscribeState("b", zone_mute_10, (value: boolean) => { setZone10_mute(value); });
-const zone_11 = window.CrComLib.subscribeState("b", zone_mute_11, (value: boolean) => { setZone11_mute(value); });
-const zone_12 = window.CrComLib.subscribeState("b", zone_mute_12, (value: boolean) => { setZone12_mute(value); });
-const zone_13 = window.CrComLib.subscribeState("b", zone_mute_13, (value: boolean) => { setZone13_mute(value); });
-const zone_14 = window.CrComLib.subscribeState("b", zone_mute_14, (value: boolean) => { setZone14_mute(value); });
-const zone_15 = window.CrComLib.subscribeState("b", zone_mute_15, (value: boolean) => { setZone15_mute(value); });
-const zone_16 = window.CrComLib.subscribeState("b", zone_mute_16, (value: boolean) => { setZone16_mute(value); });
-const zone_17 = window.CrComLib.subscribeState("b", zone_mute_17, (value: boolean) => { setZone17_mute(value); });
-const zone_18 = window.CrComLib.subscribeState("b", zone_mute_18, (value: boolean) => { setZone18_mute(value); });
+      const zone_2  = window.CrComLib.subscribeState("b", zone_mute_2,  (value: boolean) => { setZone2_mute(value); });
+      const zone_3  = window.CrComLib.subscribeState("b", zone_mute_3,  (value: boolean) => { setZone3_mute(value); });
+      const zone_4  = window.CrComLib.subscribeState("b", zone_mute_4,  (value: boolean) => { setZone4_mute(value); });
+      const zone_5  = window.CrComLib.subscribeState("b", zone_mute_5,  (value: boolean) => { setZone5_mute(value); });
+      const zone_6  = window.CrComLib.subscribeState("b", zone_mute_6,  (value: boolean) => { setZone6_mute(value); });
+      const zone_7  = window.CrComLib.subscribeState("b", zone_mute_7,  (value: boolean) => { setZone7_mute(value); });
+      const zone_8  = window.CrComLib.subscribeState("b", zone_mute_8,  (value: boolean) => { setZone8_mute(value); });
+      const zone_9  = window.CrComLib.subscribeState("b", zone_mute_9,  (value: boolean) => { setZone9_mute(value); });
+      const zone_10 = window.CrComLib.subscribeState("b", zone_mute_10, (value: boolean) => { setZone10_mute(value); });
+      const zone_11 = window.CrComLib.subscribeState("b", zone_mute_11, (value: boolean) => { setZone11_mute(value); });
+      const zone_12 = window.CrComLib.subscribeState("b", zone_mute_12, (value: boolean) => { setZone12_mute(value); });
+      const zone_13 = window.CrComLib.subscribeState("b", zone_mute_13, (value: boolean) => { setZone13_mute(value); });
+      const zone_14 = window.CrComLib.subscribeState("b", zone_mute_14, (value: boolean) => { setZone14_mute(value); });
+      const zone_15 = window.CrComLib.subscribeState("b", zone_mute_15, (value: boolean) => { setZone15_mute(value); });
+      const zone_16 = window.CrComLib.subscribeState("b", zone_mute_16, (value: boolean) => { setZone16_mute(value); });
+      const zone_17 = window.CrComLib.subscribeState("b", zone_mute_17, (value: boolean) => { setZone17_mute(value); });
+      const zone_18 = window.CrComLib.subscribeState("b", zone_mute_18, (value: boolean) => { setZone18_mute(value); });
 
 // --- Subscribe to Volume States for Zones 1-18 ---
-const zone_vol_1  = window.CrComLib.subscribeState("n", "100", (value: number) => { setZone1_vol(value); });
-const zone_vol_2  = window.CrComLib.subscribeState("n", "101", (value: number) => { setZone2_vol(value); });
-const zone_vol_3  = window.CrComLib.subscribeState("n", "102", (value: number) => { setZone3_vol(value); });
-const zone_vol_4  = window.CrComLib.subscribeState("n", "103", (value: number) => { setZone4_vol(value); });
-const zone_vol_5  = window.CrComLib.subscribeState("n", "104", (value: number) => { setZone5_vol(value); });
-const zone_vol_6  = window.CrComLib.subscribeState("n", "105", (value: number) => { setZone6_vol(value); });
-const zone_vol_7  = window.CrComLib.subscribeState("n", "106", (value: number) => { setZone7_vol(value); });
-const zone_vol_8  = window.CrComLib.subscribeState("n", "107", (value: number) => { setZone8_vol(value); });
-const zone_vol_9  = window.CrComLib.subscribeState("n", "108", (value: number) => { setZone9_vol(value); });
-const zone_vol_10 = window.CrComLib.subscribeState("n", "109", (value: number) => { setZone10_vol(value); });
-const zone_vol_11 = window.CrComLib.subscribeState("n", "110", (value: number) => { setZone11_vol(value); });
-const zone_vol_12 = window.CrComLib.subscribeState("n", "111", (value: number) => { setZone12_vol(value); });
-const zone_vol_13 = window.CrComLib.subscribeState("n", "112", (value: number) => { setZone13_vol(value); });
-const zone_vol_14 = window.CrComLib.subscribeState("n", "113", (value: number) => { setZone14_vol(value); });
-const zone_vol_15 = window.CrComLib.subscribeState("n", "114", (value: number) => { setZone15_vol(value); });
-const zone_vol_16 = window.CrComLib.subscribeState("n", "115", (value: number) => { setZone16_vol(value); });
-const zone_vol_17 = window.CrComLib.subscribeState("n", "116", (value: number) => { setZone17_vol(value); });
-const zone_vol_18 = window.CrComLib.subscribeState("n", "117", (value: number) => { setZone18_vol(value); });
+      const zone_vol_1  = window.CrComLib.subscribeState("n", "100", (value: number) => { setZone1_vol(value); });
+      const zone_vol_2  = window.CrComLib.subscribeState("n", "101", (value: number) => { setZone2_vol(value); });
+      const zone_vol_3  = window.CrComLib.subscribeState("n", "102", (value: number) => { setZone3_vol(value); });
+      const zone_vol_4  = window.CrComLib.subscribeState("n", "103", (value: number) => { setZone4_vol(value); });
+      const zone_vol_5  = window.CrComLib.subscribeState("n", "104", (value: number) => { setZone5_vol(value); });
+      const zone_vol_6  = window.CrComLib.subscribeState("n", "105", (value: number) => { setZone6_vol(value); });
+      const zone_vol_7  = window.CrComLib.subscribeState("n", "106", (value: number) => { setZone7_vol(value); });
+      const zone_vol_8  = window.CrComLib.subscribeState("n", "107", (value: number) => { setZone8_vol(value); });
+      const zone_vol_9  = window.CrComLib.subscribeState("n", "108", (value: number) => { setZone9_vol(value); });
+      const zone_vol_10 = window.CrComLib.subscribeState("n", "109", (value: number) => { setZone10_vol(value); });
+      const zone_vol_11 = window.CrComLib.subscribeState("n", "110", (value: number) => { setZone11_vol(value); });
+      const zone_vol_12 = window.CrComLib.subscribeState("n", "111", (value: number) => { setZone12_vol(value); });
+      const zone_vol_13 = window.CrComLib.subscribeState("n", "112", (value: number) => { setZone13_vol(value); });
+      const zone_vol_14 = window.CrComLib.subscribeState("n", "113", (value: number) => { setZone14_vol(value); });
+      const zone_vol_15 = window.CrComLib.subscribeState("n", "114", (value: number) => { setZone15_vol(value); });
+      const zone_vol_16 = window.CrComLib.subscribeState("n", "115", (value: number) => { setZone16_vol(value); });
+      const zone_vol_17 = window.CrComLib.subscribeState("n", "116", (value: number) => { setZone17_vol(value); });
+      const zone_vol_18 = window.CrComLib.subscribeState("n", "117", (value: number) => { setZone18_vol(value); });
 
 
-const zone_music_state_1  = window.CrComLib.subscribeState("b", zone_music_1,  (value: boolean) => { setZone_music_1_state(value); });
-const zone_music_state_2  = window.CrComLib.subscribeState("b", zone_music_2,  (value: boolean) => { setZone_music_2_state(value); });
-const zone_music_state_3  = window.CrComLib.subscribeState("b", zone_music_3,  (value: boolean) => { setZone_music_3_state(value); });
-const zone_music_state_4  = window.CrComLib.subscribeState("b", zone_music_4,  (value: boolean) => { setZone_music_4_state(value); });
-const zone_music_state_5  = window.CrComLib.subscribeState("b", zone_music_5,  (value: boolean) => { setZone_music_5_state(value); });
-const zone_music_state_6  = window.CrComLib.subscribeState("b", zone_music_6,  (value: boolean) => { setZone_music_6_state(value); });
-const zone_music_state_7  = window.CrComLib.subscribeState("b", zone_music_7,  (value: boolean) => { setZone_music_7_state(value); });
-const zone_music_state_8  = window.CrComLib.subscribeState("b", zone_music_8,  (value: boolean) => { setZone_music_8_state(value); });
-const zone_music_state_9  = window.CrComLib.subscribeState("b", zone_music_9,  (value: boolean) => { setZone_music_9_state(value); });
-const zone_music_state_10 = window.CrComLib.subscribeState("b", zone_music_10, (value: boolean) => { setZone_music_10_state(value); });
-const zone_music_state_11 = window.CrComLib.subscribeState("b", zone_music_11, (value: boolean) => { setZone_music_11_state(value); });
-const zone_music_state_12 = window.CrComLib.subscribeState("b", zone_music_12, (value: boolean) => { setZone_music_12_state(value); });
-const zone_music_state_13 = window.CrComLib.subscribeState("b", zone_music_13, (value: boolean) => { setZone_music_13_state(value); });
-const zone_music_state_14 = window.CrComLib.subscribeState("b", zone_music_14, (value: boolean) => { setZone_music_14_state(value); });
-const zone_music_state_15 = window.CrComLib.subscribeState("b", zone_music_15, (value: boolean) => { setZone_music_15_state(value); });
-const zone_music_state_16 = window.CrComLib.subscribeState("b", zone_music_16, (value: boolean) => { setZone_music_16_state(value); });
-const zone_music_state_17 = window.CrComLib.subscribeState("b", zone_music_17, (value: boolean) => { setZone_music_17_state(value); });
-const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (value: boolean) => { setZone_music_18_state(value); });
+      const zone_music_state_1  = window.CrComLib.subscribeState("b", zone_music_1,  (value: boolean) => { setZone_music_1_state(value); });
+      const zone_music_state_2  = window.CrComLib.subscribeState("b", zone_music_2,  (value: boolean) => { setZone_music_2_state(value); });
+      const zone_music_state_3  = window.CrComLib.subscribeState("b", zone_music_3,  (value: boolean) => { setZone_music_3_state(value); });
+      const zone_music_state_4  = window.CrComLib.subscribeState("b", zone_music_4,  (value: boolean) => { setZone_music_4_state(value); });
+      const zone_music_state_5  = window.CrComLib.subscribeState("b", zone_music_5,  (value: boolean) => { setZone_music_5_state(value); });
+      const zone_music_state_6  = window.CrComLib.subscribeState("b", zone_music_6,  (value: boolean) => { setZone_music_6_state(value); });
+      const zone_music_state_7  = window.CrComLib.subscribeState("b", zone_music_7,  (value: boolean) => { setZone_music_7_state(value); });
+      const zone_music_state_8  = window.CrComLib.subscribeState("b", zone_music_8,  (value: boolean) => { setZone_music_8_state(value); });
+      const zone_music_state_9  = window.CrComLib.subscribeState("b", zone_music_9,  (value: boolean) => { setZone_music_9_state(value); });
+      const zone_music_state_10 = window.CrComLib.subscribeState("b", zone_music_10, (value: boolean) => { setZone_music_10_state(value); });
+      const zone_music_state_11 = window.CrComLib.subscribeState("b", zone_music_11, (value: boolean) => { setZone_music_11_state(value); });
+      const zone_music_state_12 = window.CrComLib.subscribeState("b", zone_music_12, (value: boolean) => { setZone_music_12_state(value); });
+      const zone_music_state_13 = window.CrComLib.subscribeState("b", zone_music_13, (value: boolean) => { setZone_music_13_state(value); });
+      const zone_music_state_14 = window.CrComLib.subscribeState("b", zone_music_14, (value: boolean) => { setZone_music_14_state(value); });
+      const zone_music_state_15 = window.CrComLib.subscribeState("b", zone_music_15, (value: boolean) => { setZone_music_15_state(value); });
+      const zone_music_state_16 = window.CrComLib.subscribeState("b", zone_music_16, (value: boolean) => { setZone_music_16_state(value); });
+      const zone_music_state_17 = window.CrComLib.subscribeState("b", zone_music_17, (value: boolean) => { setZone_music_17_state(value); });
+      const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (value: boolean) => { setZone_music_18_state(value); });
 
 
 
@@ -796,6 +833,9 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
    
 
       return () => {
+
+        window.CrComLib.unsubscribeState("b", "581",houseMute);
+        window.CrComLib.unsubscribeState("n", "118",houseVol);
 
         window.CrComLib.unsubscribeState("b", zone_mute_1,  zone_1);
         window.CrComLib.unsubscribeState("b", zone_mute_2,  zone_2);
@@ -935,7 +975,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_8, true), window.CrComLib.publishEvent("b", zone_mute_8, false), console.log(zone_mute_8))}>
                   {zone8_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -972,7 +1012,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_9, true), window.CrComLib.publishEvent("b", zone_mute_9, false), console.log(zone_mute_9))}>
                   {zone9_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1009,7 +1049,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_10, true), window.CrComLib.publishEvent("b", zone_mute_10, false), console.log(zone_mute_10))}>
                   {zone10_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1052,7 +1092,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_17, true), window.CrComLib.publishEvent("b", zone_mute_17, false), console.log(zone_mute_17))}>
                   {zone17_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1089,7 +1129,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
               <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_1, true), window.CrComLib.publishEvent("b", zone_mute_1, false), console.log(zone_mute_1))}>
                 {zone1_mute ? (
                   <>
-                    <img src={mute} className="volume_mute_btn" />
+                    <img src={MuteIcon} className="volume_mute_btn" />
                     <p className="mute_btn_txt">Click to Unmute</p>
                   </>
                 ) : (
@@ -1126,7 +1166,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_2, true), window.CrComLib.publishEvent("b", zone_mute_2, false), console.log(zone_mute_2))}>
                   {zone2_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1163,7 +1203,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_3, true), window.CrComLib.publishEvent("b", zone_mute_3, false), console.log(zone_mute_3))}>
                   {zone3_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1200,7 +1240,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_4, true), window.CrComLib.publishEvent("b", zone_mute_4, false), console.log(zone_mute_4))}>
                   {zone4_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1237,7 +1277,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_5, true), window.CrComLib.publishEvent("b", zone_mute_5, false), console.log(zone_mute_5))}>
                   {zone5_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1274,7 +1314,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_6, true), window.CrComLib.publishEvent("b", zone_mute_6, false), console.log(zone_mute_6))}>
                   {zone6_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1293,7 +1333,6 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
       
       </>
     )
-
 
     const zoneGroup3 = (
       <>
@@ -1318,7 +1357,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_18, true), window.CrComLib.publishEvent("b", zone_mute_18, false), console.log(zone_mute_18))}>
                   {zone18_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1356,7 +1395,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_11, true), window.CrComLib.publishEvent("b", zone_mute_11, false), console.log(zone_mute_11))}>
                   {zone11_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1393,7 +1432,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_12, true), window.CrComLib.publishEvent("b", zone_mute_12, false), console.log(zone_mute_12))}>
                   {zone12_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1430,7 +1469,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_13, true), window.CrComLib.publishEvent("b", zone_mute_13, false), console.log(zone_mute_13))}>
                   {zone13_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1473,7 +1512,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_7, true), window.CrComLib.publishEvent("b", zone_mute_7, false), console.log(zone_mute_7))}>
                   {zone7_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1511,7 +1550,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_14, true), window.CrComLib.publishEvent("b", zone_mute_14, false), console.log(zone_mute_14))}>
                   {zone14_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1548,7 +1587,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_15, true), window.CrComLib.publishEvent("b", zone_mute_15, false), console.log(zone_mute_15))}>
                   {zone15_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1585,7 +1624,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_16, true), window.CrComLib.publishEvent("b", zone_mute_16, false), console.log(zone_mute_16))}>
                   {zone16_mute ? (
                     <>
-                      <img src={mute} className="volume_mute_btn" />
+                      <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
@@ -1609,18 +1648,14 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
    
       <div className='audio_dashboard'>
 
-<div className='audio_back_button' style={{display:"flex", justifyContent:"center", alignItems:"center", gridColumn:'1/2',gridRow:'1' }}>
-      <button className="back_button" onClick={() => navigate(-1)} style={{zIndex:"10"}}>
-            <img 
-              className='back_button_image' 
-              src={backbutton} 
-              alt="" 
-              style={{height:"60%", zIndex:"1px"}} 
-            />
-          </button>
-    </div>
-          
 
+          
+    <div className="audio_back_button" onClick={() => navigate(-1)}> 
+        <button className="audio_back">
+            <img src={backbutton}/>
+        </button>
+    </div> 
+        
     <div className='menu_tablet' onClick={() => zoneMenu("menuOpen")}>
       <button className="back_button" style={{zIndex:"10"}}>
             <img 
@@ -1640,7 +1675,6 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
             />
           </button>
     </div>
-
 
     <div className={openZones? "zone_menu": "display_none"} style={{gridColumn:'1/10', gridRow:'1/10', paddingInline:".2rem"}}>
             <div className='off_button_menu' style={{background:"none"}}>
@@ -1696,21 +1730,6 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
               
     </div>
   
-         
-
-
-          
-        <div  className="audio_back_button" onClick={() => navigate(-1)}> 
-            <button className="audio_back">
-                <img src={backbutton}/>
-            </button>
-        </div> 
-           
-        
-        
-     
-
-
         <div className='streaming_service_logo'>
           {currentStatus.source === "Spotify"       && <img src={spotify}        className='Spotify_logo'/>}
           {currentStatus.source === "AmazonMusic"   && <img src={amazonMusic}    className='AmazonMusic_logo'/>}
@@ -1832,8 +1851,8 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
               <div>
                 <button 
                   onClick={goBackOneLevel} 
-                  className={canGoBack ? "transport_button" : "display_none"}  
-                  style={{ height: "3rem", width:"3rem" }}
+                  className={canGoBack ? "audio_back" : "display_none"}  
+                  style={{ height: "2rem", width:"4rem" }}
                 >
                   <img style={{height:"75%"}} src={backbutton} alt="" />
                 </button>
@@ -1870,11 +1889,18 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
           >
             <p style={{fontSize:"16px"}}>Mute</p>
           </button>
+
+
+
+
+          <button className='display_none' id='house_vol_down' onClick={()=> (window.CrComLib.publishEvent("b","580",true),window.CrComLib.publishEvent("b","580",false), console.log("house vol down"))}> <img className='btn_image' src={arrow} /></button>
+          <button className='display_none' id='house_vol_mute' onClick={()=> (window.CrComLib.publishEvent("b","581",true),window.CrComLib.publishEvent("b","581",false), console.log("house vol mute"))}> {houseMute? <img className='btn_image' src={mute}/> : <p>{((houseVol/65535) * 100).toFixed(0)}</p> } </button>
+          <button className='display_none' id='house_vol_up'   onClick={()=> (window.CrComLib.publishEvent("b","582",true),window.CrComLib.publishEvent("b","582",false), console.log("house vol up"))}  > <img className='btn_image' src={arrow} id='flip' /></button>
         </div>
 
         {showSearchBox && (
           <div className='search_overlay'>
-            <div className='search_box'>
+            <div className='search_box' >
               <input 
                 className='search_box_input'
                 type="text" 
@@ -1945,7 +1971,7 @@ const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (
     <div className="landscape_warning">
                 <h1> Please rotate your device back to portrait mode. </h1>
                 <img src={portraitMode}  />
-      </div>
+    </div>
  
 
  

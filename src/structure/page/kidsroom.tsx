@@ -237,7 +237,7 @@ const sliderValue = (value: boolean, id: string) => {
         <div className="generic_room">
 
 <div className="room_back_corner" >
-            <Link to={"/RoomsDashboard"}  > 
+            <Link to={"/RoomsDashboard"}  state ={{previousLocation:"Up Stairs"}} > 
                 <button className="back_button" >
                     <img src={menu_button}/>
                 </button>

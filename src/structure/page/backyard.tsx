@@ -29,7 +29,6 @@ import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
 
 // Light SVGs
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
-import Clock from "../../components/Clock"
 
 const Backyard = () =>{
 /*
@@ -242,35 +241,24 @@ const sliderValue = (value: boolean, id: string) => {
 
 
        
-            
-        <Link to={"/RoomsDashboard"} state={{previousLocation: 'Out Doors'}} className="mobile_back_btn"> 
-            <button className="back_button">
-                <img src={menu_button}/>
-            </button>
-        </Link> 
-       
-      
-
-
-       <div className="nav_container">
-
-            <Link to={"/RoomsDashboard"} state={{previousLocation: 'Out Doors'}}> 
+<div className="room_back_corner" >
+            <Link to={"/RoomsDashboard"} state ={{previousLocation:"Down Stairs"}} > 
                 <button className="back_button" >
                     <img src={menu_button}/>
                 </button>
             </Link>  
-        
+        </div>
+           
+
+       <div className="nav_container">
 
             <div className="nav">
-                    <button  className={lightsOption? "btn_selected" : "btn_not_selected"}>  <img src={lights}/> </button>
+                    <button  className={lightsOption? "btn_selected" : "btn_not_selected"}>  <img src={lights}  /> </button>
             </div>
-            
-
-            <div className="nav_clock">
-                <Clock />
-            </div>
-
+                
        </div>
+
+       
 
        
 

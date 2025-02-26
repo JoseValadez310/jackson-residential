@@ -767,7 +767,7 @@ if(media1){
         <div className="generic_room">
 
 <div className="room_back_corner" >
-                <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
+                <Link to={"/RoomsDashboard"}state ={{previousLocation:"Up Stairs"}} onClick={() => closeOutPowerOption} > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>
@@ -920,7 +920,7 @@ if(media1){
                                 <img src={roku} id="svg_white"style={{height:"35%"}}/>
                             </div>
                          
-                            <p>House</p>
+                            <p>hi</p>
                         </div>
                         
                     </div>
@@ -932,11 +932,6 @@ if(media1){
                         </button>
 
                         <div className="logo_display">
-                        <div className={media1? "bluRay_logo":"media_off"}>
-                                <img src={bluRay} alt="" />
-                            </div>
-
-                            <div className="logo_display">
                         <div className={media1? "bluRay_logo":"media_off"}>
                                 <img src={bluRay} alt="" />
                                 <p className="user_title_controller">4k</p>
@@ -983,41 +978,6 @@ if(media1){
 
                 
                         </div>
-
-                            <div className={media3? "apple_display_logo":"media_off"}>
-                           
-                            <img src={appleTV} id="svg_gray"  alt="" />
-                            <p className="user_title_controller"> Hers</p>
-                            </div>
-
-                            <div className={media4? "apple_display_logo":"media_off"}>
-                                <img src={appleTV} id="svg_gray"  alt="" />
-                                <p className="user_title_controller"> House </p>
-                            </div>
-
-                            <div className={media5? "dtv_header_logo":"media_off"}>
-                                <img src={direcTv}  id="svg_gray"  alt="" />
-                                <p className="user_title_controller">  His</p>
-                            </div>
-
-                            <div className={media6? "dtv_header_logo":"media_off"}>
-                                <img src={direcTv}  id="svg_gray" alt="" />
-                                <p className="user_title_controller">  Hers</p>
-                            </div>
-
-                            <div className={media7? "roku_logo":"media_off"}>
-                                <img src={roku} id="svg_gray"   alt="" />
-                            </div>
-
-                            <div className={media8? "dtv_header_logo":"media_off"}>
-                              
-                                <p className="user_title_controller">   </p>
-                            </div>
-
-
-                
-                        </div>
-
                         <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
                             <p> REBOOT </p>
                         </button>

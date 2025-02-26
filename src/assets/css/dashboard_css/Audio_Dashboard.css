@@ -8,8 +8,34 @@
 }
 
 .audio_back_button{
-    display: none;
+    grid-column: 1/2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    z-index: 10;
 }
+    .audio_back{
+        width: 4.25rem;
+    height: 3rem;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 100%;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: inset 2px 5px 6px #bebebe, inset -5px -5px 6px #ffffff;
+    border: none;
+
+}
+    .audio_back img{
+        height: 75%;    
+    }
    
 
 
@@ -270,11 +296,14 @@
         }
 
         .search_buttons{
-            width: 50%;
+            width: 70%;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
             padding-top: 2rem ;
+            gap: 5%;
+
+
         }
             .search_button{
                 height: 4rem;
@@ -364,8 +393,10 @@
     grid-column: 9/10;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-direction: column-reverse;
+
 }
     .volume_controls .transport_button{
         background-color: rgb(85, 83, 83);
@@ -401,7 +432,7 @@
     */
     .off_button_menu {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         flex-direction: row;
         width: 100%;
@@ -590,6 +621,7 @@
 
         .search_overlay{
             grid-row: 2/10;
+            grid-column: 1/10;
         }
         .streaming_service_logo{
             grid-row: 1/2;
@@ -640,6 +672,7 @@
              grid-column:1/2;
              grid-row:9; 
     }
+    
 
     .menu_mobile{
         display: none;
@@ -673,11 +706,11 @@
             top: 27px;
             left: 20px;
             z-index: 20;
-            overflow:scroll;
         }
             .menu_mobile .back_button{
                 display: block;
                 height: 2.25rem;
+                width: 100%;
 
             }
 
@@ -744,6 +777,8 @@
 
         grid-column: 2/9;
         grid-row: 6/7;
+        display: flex;
+        gap: 10%;
     }
         .album_info_title{
             font-size: 1.25rem;
@@ -929,12 +964,27 @@
             bottom: 0px;
         }
 
+
+        .volume_controls{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+    
+        }
       
         .volume_controls .btn_circle{
-            width: 4.5rem;
             height: 2.25rem;
+            width:  4.75rem;
             border-radius: 30px;
+  
         }
+       
+     
+
+
        
         .volume_controls .transport_button_active{
             width: 4.5rem;
@@ -1030,4 +1080,8 @@
            
           
           }
-          
+          @media only screen and (min-width: 776px) and (orientation: portrait){
+            .menu_tablet{
+                grid-row: 10/11;
+            }
+        }

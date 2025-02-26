@@ -1,6 +1,6 @@
 import './assets/css/Index.css'
 import 'animate.css';
-import {useMemo } from 'react';
+import {useMemo, useState} from 'react';
 import useWebXPanel from './hooks/useWebXPanel';
 
 import {createHashRouter, RouterProvider} from 'react-router-dom'
@@ -34,7 +34,7 @@ import Office from './structure/page/office';
 
 //lights only 
 import Backyard from './structure/page/backyard';
-import DinningRoom from './structure/page/dinningroom';
+import DiningRoom from './structure/page/diningroom';
 import Foyer from './structure/page/foyer';
 import KidsRoom from './structure/page/kidsroom';
 import LivingRoom from './structure/page/livingroom';
@@ -45,15 +45,17 @@ import ScreenSize from './structure/tools/ScreenSize';
        
      import imageBackground from "../src/assets/images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg"
         
-        
+     
+
    
 
 function App() {
+  const [mute, setMute] = useState<string>("False");
 
   const router = createHashRouter ([
   {
     path: '/',
-    element: <Home />
+    element: <Home   />
   },
 
   // ------------------------------------ Dashboards
@@ -63,7 +65,7 @@ function App() {
   },
   {
     path: '/AudioDashboard',
-    element: <AudioDashboard />
+    element: <AudioDashboard  mute={mute} setMute={setMute} />
   },
   {
     path: '/LightDashboard',
@@ -104,8 +106,8 @@ function App() {
     element: <Bar />
   },
   {
-    path: '/dinningroom',
-    element: <DinningRoom />
+    path: '/diningroom',
+    element: <DiningRoom />
   },
   {
     path: '/foyer',
@@ -166,7 +168,7 @@ function App() {
 
   useWebXPanel(webXPanelConfig);
 
-  
+  console.log(mute)
 
   
   return (

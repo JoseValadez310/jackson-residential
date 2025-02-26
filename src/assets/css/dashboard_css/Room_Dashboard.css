@@ -325,3 +325,16 @@
  
     }
 }
+
+
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+    .rooms_dashboard{
+    grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+    }
+
+    .room_selection_options{
+        grid-column: 1/13;
+        grid-row: 2/8;
+    }
+  }

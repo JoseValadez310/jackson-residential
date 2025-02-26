@@ -765,7 +765,7 @@ if(media1){
         <div className="generic_room">
 
 <div className="room_back_corner" >
-                <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
+                <Link to={"/RoomsDashboard"} state ={{previousLocation:"Down Stairs"}} onClick={() => closeOutPowerOption} > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>

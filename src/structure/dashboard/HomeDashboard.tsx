@@ -1,6 +1,6 @@
 
 // React 
-import { useState, useCallback } from "react"
+import { useState } from "react"
 
 // React Router DOM
 import { Link } from "react-router-dom"
@@ -17,11 +17,6 @@ import Clock       from "../../components/Clock"
 import Rooms   from "../../assets/images/icons/icons8-room.svg"
 import Audio   from "../../assets/images/icons/icons8-music.svg"
 import Light   from "../../assets/images/icons/noun-light-bulb-2216273.svg"
-import Climate from "../../assets/images/icons/icons8-winter.svg"
-import Pool    from "../../assets/images/icons8-swimming-pool.svg"
-import Security from "../../assets/images/icons8-smart-home-shield.svg"
-import mute from "../../assets/images/icons/icons8-no-audio.svg"
-
 
 
 
@@ -32,7 +27,7 @@ import power from "../../assets/images/icons/icons8-power.svg"
 
 const HomeDashboard = () => {
 
-    const url = "http://10.10.10.46";
+   
     const [tvPowerMenu, setTvPowerMenu] = useState(false)      //  TV Power Menu    
     const [count,setCount] = useState(1)
     const [viewportViewer,setViewportViewer ] = useState(false)
@@ -77,21 +72,7 @@ const HomeDashboard = () => {
       };
 
 
-      const doScriptCommand = useCallback(async (scriptName: string) => {
-        const endpoint = `${url}/api/Script/${scriptName}/`;
-        console.log("[doScriptCommand] Fetching:", endpoint);
-        try {
-          await fetch(endpoint);
-        } catch (error) {
-          console.log("[doScriptCommand] Error with fetch command:", error);
-        }
-      }, [url]);
-
-      const muteVolume = () => {
-        console.log("[muteVolume] Toggling mute");
-        doScriptCommand("Mute%20Toggle");
-      };
-      
+ 
 
     return (
 
@@ -125,12 +106,7 @@ const HomeDashboard = () => {
                 </button>
             </div>
 
-        <div className="home_power_container" id="home_mute">
-            <button  onClick={muteVolume} className='home_button'>
-                <img className ="btn_image"src={mute} style={{filter:"invert(0)"}}/>
-            </button>
-        </div>
-                    
+    
 
           
                 <div className="time_date_info">
@@ -162,21 +138,7 @@ const HomeDashboard = () => {
                         <img className="card_image" src={Light}/>
                         <p className="card_title"> Lights </p>
                     </Link> 
-                
-                    <Link  className="card_container" to='/Climate' style={{textDecoration:"none"}}> 
-                        <img className="card_image" src={Climate}/>
-                        <p className="card_title"> Climate </p>
-                    </Link> 
-
-                    <Link  className="card_container" to='/Security' style={{textDecoration:"none"}}> 
-                        <img className="card_image" src={Security}/>
-                        <p className="card_title"> Security </p>
-                    </Link> 
-                
-                    <Link  className="card_container" to='/PoolSpa' style={{textDecoration:"none"}}> 
-                        <img className="card_image" src={Pool}/>
-                        <p className="card_title"> Pool - Spa </p>
-                    </Link> 
+             
                 </div>
 
 

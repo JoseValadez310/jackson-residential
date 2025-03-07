@@ -15,3084 +15,1623 @@ import "../../assets/css/dashboard_css/light_dashboard.css"
 
 //icons
 import menu_button from "../../assets/images/icons/icons8-arrow.svg"
+import close from "../../assets/images/icons/icons8-x.svg"
 import lightOff from "../../assets/images/icons/icons8-light-off.svg"
 import lightOn from "../../assets/images/icons/icons8-light-on.svg"
 
 
-import entry from "../../assets/images/icons/icons8-open-door.svg"
-import goodnight from "../../assets/images/icons/icons8-moon-and-stars.svg"
-import stairs from "../../assets/images/icons/icons8-stairs.svg"
-import floodLights from "../../assets/images/icons/icons8-floodlight.svg"
-import downS from "../../assets/images/icons/icons8-stairs-down.svg"
-import mainIcon from "../../assets/images/icons/icons8-studio-floor-plan.svg"
-import upS from "../../assets/images/icons/icons8-stairs-up.svg"
-import driveSconce from "../../assets/images/icons/noun-half-moon-wall-light-4939443.svg"
-import welcome from "../../assets/images/icons/icons8-doormat.svg"
-import vac from "../../assets/images/icons/icons8-holiday.svg"
-
 import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
+import floor1 from "../../assets/images/backgrounds/Steve Jackson House Map 1st Floor V2.0 3-3-25.svg"
+import floor2 from "../../assets/images/backgrounds/Steve Jackson House Map 2nd Floor 3-3-25.svg"
 
 
- 
+
+
+
+
+const LightDashboard = () => {
+    const [lightMenuDisplay, setLightMenuDisplay] = useState("light_menu_closed")
+    const [lightMenuDisplay2, setLightMenuDisplay2] = useState("light_menu_closed")
+    const [map1,setMap1] = useState("map_layout_1")
+    const [map2,setMap2] = useState("map_layout_2")
+    const [upStairs, setUpStairs]     = useState(false)
+    const [main, setMain]             = useState(true)
+    const [outDoors, setOutDoors]     = useState(false)
+
+    const [zone_1,setZone_1] = useState(false)
+    const [zone_2,setZone_2] = useState(false)
+    const [zone_3,setZone_3] = useState(false)
+    const [zone_4,setZone_4] = useState(false)
+    const [zone_5,setZone_5] = useState(false)
+    const [zone_6,setZone_6] = useState(false)
+    const [zone_7,setZone_7] = useState(false)
+    const [zone_8,setZone_8] = useState(false)
+    const [zone_9,setZone_9] = useState(false)
+    const [zone_10,setZone_10] = useState(false)
+    const [zone_11,setZone_11] = useState(false)
+    const [zone_12,setZone_12] = useState(false)
+    const [zone_13,setZone_13] = useState(false)
+    const [zone_14,setZone_14] = useState(false)
+    const [zone_15,setZone_15] = useState(false)
   
 
 
 
-const LightDashboard = () =>{
+    
+
+
+
+    // BAR
+    const [light_1_fb_BAR, setLight_1_fb_BAR] = useState(false);
+    const light_1_join_BAR = "250";
+    const light_1_title_BAR = "Ceiling";
+    
+    const [light_2_fb_BAR, setLight_2_fb_BAR] = useState(false);
+    const light_2_join_BAR = "251";
+    const light_2_title_BAR = "Lights";
+    
+    const [light_3_fb_BAR, setLight_3_fb_BAR] = useState(false);
+    const light_3_join_BAR = "252";
+    const light_3_title_BAR = "Accent";
+    
+    // BILLIARD ROOM
+    const [light_1_fb_BILLIARD_ROOM, setLight_1_fb_BILLIARD_ROOM] = useState(false);
+    const light_1_join_BILLIARD_ROOM = "254";
+    const light_1_title_BILLIARD_ROOM = "Pendant";
+    
+    const [light_2_fb_BILLIARD_ROOM, setLight_2_fb_BILLIARD_ROOM] = useState(false);
+    const light_2_join_BILLIARD_ROOM = "255";
+    const light_2_title_BILLIARD_ROOM = "Path";
+    
+    const [light_3_fb_BILLIARD_ROOM, setLight_3_fb_BILLIARD_ROOM] = useState(false);
+    const light_3_join_BILLIARD_ROOM = "256";
+    const light_3_title_BILLIARD_ROOM = "Sconces";
+    
+    const [light_4_fb_BILLIARD_ROOM, setLight_4_fb_BILLIARD_ROOM] = useState(false);
+    const light_4_join_BILLIARD_ROOM = "257";
+    const light_4_title_BILLIARD_ROOM = "Ceiling";
+    
+    // BREAKFAST
+    const [light_1_fb_BREAKFAST, setLight_1_fb_BREAKFAST] = useState(false);
+    const light_1_join_BREAKFAST = "259";
+    const light_1_title_BREAKFAST = "Window";
+    
+    const [light_2_fb_BREAKFAST, setLight_2_fb_BREAKFAST] = useState(false);
+    const light_2_join_BREAKFAST = "260";
+    const light_2_title_BREAKFAST = "Ceiling";
+    
+    const [light_3_fb_BREAKFAST, setLight_3_fb_BREAKFAST] = useState(false);
+    const light_3_join_BREAKFAST = "261";
+    const light_3_title_BREAKFAST = "Accent";
+    
+    const [light_4_fb_BREAKFAST, setLight_4_fb_BREAKFAST] = useState(false);
+    const light_4_join_BREAKFAST = "262";
+    const light_4_title_BREAKFAST = "Pendant";
+    
+    // BUTLER PANTRY
+    const [light_1_fb_BUTLER_PANTRY, setLight_1_fb_BUTLER_PANTRY] = useState(false);
+    const light_1_join_BUTLER_PANTRY = "264";
+    const light_1_title_BUTLER_PANTRY = "Butler hall";
+    
+    // DINING ROOM
+    const [light_1_fb_DINING_ROOM, setLight_1_fb_DINING_ROOM] = useState(false);
+    const light_1_join_DINING_ROOM = "266";
+    const light_1_title_DINING_ROOM = "Chand";
+    
+    const [light_2_fb_DINING_ROOM, setLight_2_fb_DINING_ROOM] = useState(false);
+    const light_2_join_DINING_ROOM = "267";
+    const light_2_title_DINING_ROOM = "Accent";
+    
+    const [light_3_fb_DINING_ROOM, setLight_3_fb_DINING_ROOM] = useState(false);
+    const light_3_join_DINING_ROOM = "268";
+    const light_3_title_DINING_ROOM = "Window";
+    
+    const [light_4_fb_DINING_ROOM, setLight_4_fb_DINING_ROOM] = useState(false);
+    const light_4_join_DINING_ROOM = "269";
+    const light_4_title_DINING_ROOM = "Ceiling";
+    
+    // ELEVATOR HALL
+    const [light_1_fb_ELEVATOR_HALL, setLight_1_fb_ELEVATOR_HALL] = useState(false);
+    const light_1_join_ELEVATOR_HALL = "271";
+    const light_1_title_ELEVATOR_HALL = "Night lights";
+    
+    const [light_2_fb_ELEVATOR_HALL, setLight_2_fb_ELEVATOR_HALL] = useState(false);
+    const light_2_join_ELEVATOR_HALL = "272";
+    const light_2_title_ELEVATOR_HALL = "Stair hall";
+    
+    const [light_3_fb_ELEVATOR_HALL, setLight_3_fb_ELEVATOR_HALL] = useState(false);
+    const light_3_join_ELEVATOR_HALL = "273";
+    const light_3_title_ELEVATOR_HALL = "Elevator hall";
+    
+    // FAMILY ROOM
+    const [light_1_fb_FAMILY_ROOM, setLight_1_fb_FAMILY_ROOM] = useState(false);
+    const light_1_join_FAMILY_ROOM = "275";
+    const light_1_title_FAMILY_ROOM = "Sconces";
+    
+    const [light_2_fb_FAMILY_ROOM, setLight_2_fb_FAMILY_ROOM] = useState(false);
+    const light_2_join_FAMILY_ROOM = "276";
+    const light_2_title_FAMILY_ROOM = "Accent";
+    
+    const [light_3_fb_FAMILY_ROOM, setLight_3_fb_FAMILY_ROOM] = useState(false);
+    const light_3_join_FAMILY_ROOM = "277";
+    const light_3_title_FAMILY_ROOM = "Window";
+    
+    const [light_4_fb_FAMILY_ROOM, setLight_4_fb_FAMILY_ROOM] = useState(false);
+    const light_4_join_FAMILY_ROOM = "278";
+    const light_4_title_FAMILY_ROOM = "Ceiling";
+    
+    // FOYER
+    const [light_1_fb_FOYER, setLight_1_fb_FOYER] = useState(false);
+    const light_1_join_FOYER = "280";
+    const light_1_title_FOYER = "Ceiling";
+    
+    const [light_2_fb_FOYER, setLight_2_fb_FOYER] = useState(false);
+    const light_2_join_FOYER = "281";
+    const light_2_title_FOYER = "Entry";
+    
+    const [light_3_fb_FOYER, setLight_3_fb_FOYER] = useState(false);
+    const light_3_join_FOYER = "282";
+    const light_3_title_FOYER = "Chand";
+    
+    // KITCHEN
+    const [light_1_fb_KITCHEN, setLight_1_fb_KITCHEN] = useState(false);
+    const light_1_join_KITCHEN = "284";
+    const light_1_title_KITCHEN = "Under cab";
+    
+    const [light_2_fb_KITCHEN, setLight_2_fb_KITCHEN] = useState(false);
+    const light_2_join_KITCHEN = "285";
+    const light_2_title_KITCHEN = "Island";
+    
+    const [light_3_fb_KITCHEN, setLight_3_fb_KITCHEN] = useState(false);
+    const light_3_join_KITCHEN = "286";
+    const light_3_title_KITCHEN = "Ceiling";
+    
+    const [light_4_fb_KITCHEN, setLight_4_fb_KITCHEN] = useState(false);
+    const light_4_join_KITCHEN = "287";
+    const light_4_title_KITCHEN = "Kitchen hall";
+    
+    // LIVING ROOM
+    const [light_1_fb_LIVING_ROOM, setLight_1_fb_LIVING_ROOM] = useState(false);
+    const light_1_join_LIVING_ROOM = "289";
+    const light_1_title_LIVING_ROOM = "Cove";
+    
+    const [light_2_fb_LIVING_ROOM, setLight_2_fb_LIVING_ROOM] = useState(false);
+    const light_2_join_LIVING_ROOM = "290";
+    const light_2_title_LIVING_ROOM = "Ceiling";
+    
+    const [light_3_fb_LIVING_ROOM, setLight_3_fb_LIVING_ROOM] = useState(false);
+    const light_3_join_LIVING_ROOM = "291";
+    const light_3_title_LIVING_ROOM = "Accent";
+    
+    const [light_4_fb_LIVING_ROOM, setLight_4_fb_LIVING_ROOM] = useState(false);
+    const light_4_join_LIVING_ROOM = "292";
+    const light_4_title_LIVING_ROOM = "Mantle";
+    
+    const [light_5_fb_LIVING_ROOM, setLight_5_fb_LIVING_ROOM] = useState(false);
+    const light_5_join_LIVING_ROOM = "293";
+    const light_5_title_LIVING_ROOM = "Window";
+    
+    const [light_6_fb_LIVING_ROOM, setLight_6_fb_LIVING_ROOM] = useState(false);
+    const light_6_join_LIVING_ROOM = "294";
+    const light_6_title_LIVING_ROOM = "Piano";
+    
+    // OFFICE POWDER
+    const [light_1_fb_OFFICE_POWDER, setLight_1_fb_OFFICE_POWDER] = useState(false);
+    const light_1_join_OFFICE_POWDER = "296";
+    const light_1_title_OFFICE_POWDER = "Vanity";
+    
+    const [light_2_fb_OFFICE_POWDER, setLight_2_fb_OFFICE_POWDER] = useState(false);
+    const light_2_join_OFFICE_POWDER = "297";
+    const light_2_title_OFFICE_POWDER = "Ceiling";
+    
+    // STEVE'S OFFICE
+    const [light_1_fb_STEVE_S_OFFICE, setLight_1_fb_STEVE_S_OFFICE] = useState(false);
+    const light_1_join_STEVE_S_OFFICE = "299";
+    const light_1_title_STEVE_S_OFFICE = "Window";
+    
+    const [light_2_fb_STEVE_S_OFFICE, setLight_2_fb_STEVE_S_OFFICE] = useState(false);
+    const light_2_join_STEVE_S_OFFICE = "300";
+    const light_2_title_STEVE_S_OFFICE = "Ceiling";
+    
+    // HALL
+    const [light_1_fb_HALL, setLight_1_fb_HALL] = useState(false);
+    const light_1_join_HALL = "302";
+    const light_1_title_HALL = "Master night light";
+    
+    const [light_2_fb_HALL, setLight_2_fb_HALL] = useState(false);
+    const light_2_join_HALL = "303";
+    const light_2_title_HALL = "2nd fl hall night lights";
+    
+    const [light_3_fb_HALL, setLight_3_fb_HALL] = useState(false);
+    const light_3_join_HALL = "304";
+    const light_3_title_HALL = "N hall";
+    
+    const [light_4_fb_HALL, setLight_4_fb_HALL] = useState(false);
+    const light_4_join_HALL = "305";
+    const light_4_title_HALL = "Main stair hall";
+    
+    const [light_5_fb_HALL, setLight_5_fb_HALL] = useState(false);
+    const light_5_join_HALL = "306";
+    const light_5_title_HALL = "South hall";
+    
+    const [light_6_fb_HALL, setLight_6_fb_HALL] = useState(false);
+    const light_6_join_HALL = "307";
+    const light_6_title_HALL = "Master hall";
+    
+    // MEDIA ROOM
+    const [light_1_fb_MEDIA_ROOM, setLight_1_fb_MEDIA_ROOM] = useState(false);
+    const light_1_join_MEDIA_ROOM = "309";
+    const light_1_title_MEDIA_ROOM = "Ceiling";
+    
+    const [light_2_fb_MEDIA_ROOM, setLight_2_fb_MEDIA_ROOM] = useState(false);
+    const light_2_join_MEDIA_ROOM = "310";
+    const light_2_title_MEDIA_ROOM = "Game table";
+    
+    const [light_3_fb_MEDIA_ROOM, setLight_3_fb_MEDIA_ROOM] = useState(false);
+    const light_3_join_MEDIA_ROOM = "311";
+    const light_3_title_MEDIA_ROOM = "Bar";
+    
+    const [light_4_fb_MEDIA_ROOM, setLight_4_fb_MEDIA_ROOM] = useState(false);
+    const light_4_join_MEDIA_ROOM = "312";
+    const light_4_title_MEDIA_ROOM = "Art";
+    
+    const [light_5_fb_MEDIA_ROOM, setLight_5_fb_MEDIA_ROOM] = useState(false);
+    const light_5_join_MEDIA_ROOM = "313";
+    const light_5_title_MEDIA_ROOM = "Cabinet";
+    
+    // SOUTH STAIRS
+    const [light_1_fb_SOUTH_STAIRS, setLight_1_fb_SOUTH_STAIRS] = useState(false);
+    const light_1_join_SOUTH_STAIRS = "315";
+    const light_1_title_SOUTH_STAIRS = "South stairs";
+    
+    // FRONT
+    const [light_1_fb_FRONT, setLight_1_fb_FRONT] = useState(false);
+    const light_1_join_FRONT = "317";
+    const light_1_title_FRONT = "Front columns";
+    
+    const [light_2_fb_FRONT, setLight_2_fb_FRONT] = useState(false);
+    const light_2_join_FRONT = "318";
+    const light_2_title_FRONT = "Front trees";
+    
+    const [light_3_fb_FRONT, setLight_3_fb_FRONT] = useState(false);
+    const light_3_join_FRONT = "319";
+    const light_3_title_FRONT = "Outside entry";
+    
+    const [light_4_fb_FRONT, setLight_4_fb_FRONT] = useState(false);
+    const light_4_join_FRONT = "320";
+    const light_4_title_FRONT = "Outside garage";
+    
+    const [light_5_fb_FRONT, setLight_5_fb_FRONT] = useState(false);
+    const light_5_join_FRONT = "321";
+    const light_5_title_FRONT = "Outside entry";
+    
+    // LANDSCAPE
+    const [light_1_fb_LANDSCAPE, setLight_1_fb_LANDSCAPE] = useState(false);
+    const light_1_join_LANDSCAPE = "323";
+    const light_1_title_LANDSCAPE = "Front yard";
+    
+    const [light_2_fb_LANDSCAPE, setLight_2_fb_LANDSCAPE] = useState(false);
+    const light_2_join_LANDSCAPE = "324";
+    const light_2_title_LANDSCAPE = "Back yard";
+    
+    const [light_3_fb_LANDSCAPE, setLight_3_fb_LANDSCAPE] = useState(false);
+    const light_3_join_LANDSCAPE = "325";
+    const light_3_title_LANDSCAPE = "Tennis sconces";
+    
+    const [light_4_fb_LANDSCAPE, setLight_4_fb_LANDSCAPE] = useState(false);
+    const light_4_join_LANDSCAPE = "326";
+    const light_4_title_LANDSCAPE = "Breezeway";
+    
+    const [light_5_fb_LANDSCAPE, setLight_5_fb_LANDSCAPE] = useState(false);
+    const light_5_join_LANDSCAPE = "327";
+    const light_5_title_LANDSCAPE = "Step lights";
+    
+    const [light_6_fb_LANDSCAPE, setLight_6_fb_LANDSCAPE] = useState(false);
+    const light_6_join_LANDSCAPE = "328";
+    const light_6_title_LANDSCAPE = "Fountain";
+    
+    const [light_7_fb_LANDSCAPE, setLight_7_fb_LANDSCAPE] = useState(false);
+    const light_7_join_LANDSCAPE = "329";
+    const light_7_title_LANDSCAPE = "North exterior";
+    
+    const [light_8_fb_LANDSCAPE, setLight_8_fb_LANDSCAPE] = useState(false);
+    const light_8_join_LANDSCAPE = "330";
+    const light_8_title_LANDSCAPE = "Fountain lawn";
+    
+    const [light_9_fb_LANDSCAPE, setLight_9_fb_LANDSCAPE] = useState(false);
+    const light_9_join_LANDSCAPE = "331";
+    const light_9_title_LANDSCAPE = "Pool hill";
+    
+    // REAR
+    const [light_1_fb_REAR, setLight_1_fb_REAR] = useState(false);
+    const light_1_join_REAR = "333";
+    const light_1_title_REAR = "Trellis";
+    
+    const [light_2_fb_REAR, setLight_2_fb_REAR] = useState(false);
+    const light_2_join_REAR = "334";
+    const light_2_title_REAR = "Dog run";
+    
+    const [light_3_fb_REAR, setLight_3_fb_REAR] = useState(false);
+    const light_3_join_REAR = "335";
+    const light_3_title_REAR = "Pool patio";
+    
+    const [light_4_fb_REAR, setLight_4_fb_REAR] = useState(false);
+    const light_4_join_REAR = "336";
+    const light_4_title_REAR = "Pool sconces";
+    
+    const [light_5_fb_REAR, setLight_5_fb_REAR] = useState(false);
+    const light_5_join_REAR = "337";
+    const light_5_title_REAR = "Brkfst patio in";
+    
+    const [light_6_fb_REAR, setLight_6_fb_REAR] = useState(false);
+    const light_6_join_REAR = "338";
+    const light_6_title_REAR = "Brkfst patio out";
+    
+    const [light_7_fb_REAR, setLight_7_fb_REAR] = useState(false);
+    const light_7_join_REAR = "339";
+    const light_7_title_REAR = "Kitchen patio";
+    
+    const [light_8_fb_REAR, setLight_8_fb_REAR] = useState(false);
+    const light_8_join_REAR = "340";
+    const light_8_title_REAR = "Outside family";
+    
+    const [light_9_fb_REAR, setLight_9_fb_REAR] = useState(false);
+    const light_9_join_REAR = "341";
+    const light_9_title_REAR = "Garage back";
+    
+
+    useEffect(() => {
+        // BAR
+        const sub_light_1_BAR = window.CrComLib.subscribeState("b", light_1_join_BAR, (value:boolean) => setLight_1_fb_BAR(value));
+        const sub_light_2_BAR = window.CrComLib.subscribeState("b", light_2_join_BAR, (value:boolean) => setLight_2_fb_BAR(value));
+        const sub_light_3_BAR = window.CrComLib.subscribeState("b", light_3_join_BAR, (value:boolean) => setLight_3_fb_BAR(value));
+      
+        // BILLIARD ROOM
+        const sub_light_1_BILLIARD_ROOM = window.CrComLib.subscribeState("b", light_1_join_BILLIARD_ROOM, (value:boolean) => setLight_1_fb_BILLIARD_ROOM(value));
+        const sub_light_2_BILLIARD_ROOM = window.CrComLib.subscribeState("b", light_2_join_BILLIARD_ROOM, (value:boolean) => setLight_2_fb_BILLIARD_ROOM(value));
+        const sub_light_3_BILLIARD_ROOM = window.CrComLib.subscribeState("b", light_3_join_BILLIARD_ROOM, (value:boolean) => setLight_3_fb_BILLIARD_ROOM(value));
+        const sub_light_4_BILLIARD_ROOM = window.CrComLib.subscribeState("b", light_4_join_BILLIARD_ROOM, (value:boolean) => setLight_4_fb_BILLIARD_ROOM(value));
+      
+        // BREAKFAST
+        const sub_light_1_BREAKFAST = window.CrComLib.subscribeState("b", light_1_join_BREAKFAST, (value:boolean) => setLight_1_fb_BREAKFAST(value));
+        const sub_light_2_BREAKFAST = window.CrComLib.subscribeState("b", light_2_join_BREAKFAST, (value:boolean) => setLight_2_fb_BREAKFAST(value));
+        const sub_light_3_BREAKFAST = window.CrComLib.subscribeState("b", light_3_join_BREAKFAST, (value:boolean) => setLight_3_fb_BREAKFAST(value));
+        const sub_light_4_BREAKFAST = window.CrComLib.subscribeState("b", light_4_join_BREAKFAST, (value:boolean) => setLight_4_fb_BREAKFAST(value));
+      
+        // BUTLER PANTRY
+        const sub_light_1_BUTLER_PANTRY = window.CrComLib.subscribeState("b", light_1_join_BUTLER_PANTRY, (value:boolean) => setLight_1_fb_BUTLER_PANTRY(value));
+      
+        // DINING ROOM
+        const sub_light_1_DINING_ROOM = window.CrComLib.subscribeState("b", light_1_join_DINING_ROOM, (value:boolean) => setLight_1_fb_DINING_ROOM(value));
+        const sub_light_2_DINING_ROOM = window.CrComLib.subscribeState("b", light_2_join_DINING_ROOM, (value:boolean) => setLight_2_fb_DINING_ROOM(value));
+        const sub_light_3_DINING_ROOM = window.CrComLib.subscribeState("b", light_3_join_DINING_ROOM, (value:boolean) => setLight_3_fb_DINING_ROOM(value));
+        const sub_light_4_DINING_ROOM = window.CrComLib.subscribeState("b", light_4_join_DINING_ROOM, (value:boolean) => setLight_4_fb_DINING_ROOM(value));
+      
+        // ELEVATOR HALL
+        const sub_light_1_ELEVATOR_HALL = window.CrComLib.subscribeState("b", light_1_join_ELEVATOR_HALL, (value:boolean) => setLight_1_fb_ELEVATOR_HALL(value));
+        const sub_light_2_ELEVATOR_HALL = window.CrComLib.subscribeState("b", light_2_join_ELEVATOR_HALL, (value:boolean) => setLight_2_fb_ELEVATOR_HALL(value));
+        const sub_light_3_ELEVATOR_HALL = window.CrComLib.subscribeState("b", light_3_join_ELEVATOR_HALL, (value:boolean) => setLight_3_fb_ELEVATOR_HALL(value));
+      
+        // FAMILY ROOM
+        const sub_light_1_FAMILY_ROOM = window.CrComLib.subscribeState("b", light_1_join_FAMILY_ROOM, (value:boolean) => setLight_1_fb_FAMILY_ROOM(value));
+        const sub_light_2_FAMILY_ROOM = window.CrComLib.subscribeState("b", light_2_join_FAMILY_ROOM, (value:boolean) => setLight_2_fb_FAMILY_ROOM(value));
+        const sub_light_3_FAMILY_ROOM = window.CrComLib.subscribeState("b", light_3_join_FAMILY_ROOM, (value:boolean) => setLight_3_fb_FAMILY_ROOM(value));
+        const sub_light_4_FAMILY_ROOM = window.CrComLib.subscribeState("b", light_4_join_FAMILY_ROOM, (value:boolean) => setLight_4_fb_FAMILY_ROOM(value));
+      
+        // FOYER
+        const sub_light_1_FOYER = window.CrComLib.subscribeState("b", light_1_join_FOYER, (value:boolean) => setLight_1_fb_FOYER(value));
+        const sub_light_2_FOYER = window.CrComLib.subscribeState("b", light_2_join_FOYER, (value:boolean) => setLight_2_fb_FOYER(value));
+        const sub_light_3_FOYER = window.CrComLib.subscribeState("b", light_3_join_FOYER, (value:boolean) => setLight_3_fb_FOYER(value));
+      
+        // KITCHEN
+        const sub_light_1_KITCHEN = window.CrComLib.subscribeState("b", light_1_join_KITCHEN, (value:boolean) => setLight_1_fb_KITCHEN(value));
+        const sub_light_2_KITCHEN = window.CrComLib.subscribeState("b", light_2_join_KITCHEN, (value:boolean) => setLight_2_fb_KITCHEN(value));
+        const sub_light_3_KITCHEN = window.CrComLib.subscribeState("b", light_3_join_KITCHEN, (value:boolean) => setLight_3_fb_KITCHEN(value));
+        const sub_light_4_KITCHEN = window.CrComLib.subscribeState("b", light_4_join_KITCHEN, (value:boolean) => setLight_4_fb_KITCHEN(value));
+      
+        // LIVING ROOM
+        const sub_light_1_LIVING_ROOM = window.CrComLib.subscribeState("b", light_1_join_LIVING_ROOM, (value:boolean) => setLight_1_fb_LIVING_ROOM(value));
+        const sub_light_2_LIVING_ROOM = window.CrComLib.subscribeState("b", light_2_join_LIVING_ROOM, (value:boolean) => setLight_2_fb_LIVING_ROOM(value));
+        const sub_light_3_LIVING_ROOM = window.CrComLib.subscribeState("b", light_3_join_LIVING_ROOM, (value:boolean) => setLight_3_fb_LIVING_ROOM(value));
+        const sub_light_4_LIVING_ROOM = window.CrComLib.subscribeState("b", light_4_join_LIVING_ROOM, (value:boolean) => setLight_4_fb_LIVING_ROOM(value));
+        const sub_light_5_LIVING_ROOM = window.CrComLib.subscribeState("b", light_5_join_LIVING_ROOM, (value:boolean) => setLight_5_fb_LIVING_ROOM(value));
+        const sub_light_6_LIVING_ROOM = window.CrComLib.subscribeState("b", light_6_join_LIVING_ROOM, (value:boolean) => setLight_6_fb_LIVING_ROOM(value));
+      
+        // OFFICE POWDER
+        const sub_light_1_OFFICE_POWDER = window.CrComLib.subscribeState("b", light_1_join_OFFICE_POWDER, (value:boolean) => setLight_1_fb_OFFICE_POWDER(value));
+        const sub_light_2_OFFICE_POWDER = window.CrComLib.subscribeState("b", light_2_join_OFFICE_POWDER, (value:boolean) => setLight_2_fb_OFFICE_POWDER(value));
+      
+        // STEVE'S OFFICE
+        const sub_light_1_STEVE_S_OFFICE = window.CrComLib.subscribeState("b", light_1_join_STEVE_S_OFFICE, (value:boolean) => setLight_1_fb_STEVE_S_OFFICE(value));
+        const sub_light_2_STEVE_S_OFFICE = window.CrComLib.subscribeState("b", light_2_join_STEVE_S_OFFICE, (value:boolean) => setLight_2_fb_STEVE_S_OFFICE(value));
+      
+        // HALL
+        const sub_light_1_HALL = window.CrComLib.subscribeState("b", light_1_join_HALL, (value:boolean) => setLight_1_fb_HALL(value));
+        const sub_light_2_HALL = window.CrComLib.subscribeState("b", light_2_join_HALL, (value:boolean) => setLight_2_fb_HALL(value));
+        const sub_light_3_HALL = window.CrComLib.subscribeState("b", light_3_join_HALL, (value:boolean) => setLight_3_fb_HALL(value));
+        const sub_light_4_HALL = window.CrComLib.subscribeState("b", light_4_join_HALL, (value:boolean) => setLight_4_fb_HALL(value));
+        const sub_light_5_HALL = window.CrComLib.subscribeState("b", light_5_join_HALL, (value:boolean) => setLight_5_fb_HALL(value));
+        const sub_light_6_HALL = window.CrComLib.subscribeState("b", light_6_join_HALL, (value:boolean) => setLight_6_fb_HALL(value));
+      
+        // MEDIA ROOM
+        const sub_light_1_MEDIA_ROOM = window.CrComLib.subscribeState("b", light_1_join_MEDIA_ROOM, (value:boolean) => setLight_1_fb_MEDIA_ROOM(value));
+        const sub_light_2_MEDIA_ROOM = window.CrComLib.subscribeState("b", light_2_join_MEDIA_ROOM, (value:boolean) => setLight_2_fb_MEDIA_ROOM(value));
+        const sub_light_3_MEDIA_ROOM = window.CrComLib.subscribeState("b", light_3_join_MEDIA_ROOM, (value:boolean) => setLight_3_fb_MEDIA_ROOM(value));
+        const sub_light_4_MEDIA_ROOM = window.CrComLib.subscribeState("b", light_4_join_MEDIA_ROOM, (value:boolean) => setLight_4_fb_MEDIA_ROOM(value));
+        const sub_light_5_MEDIA_ROOM = window.CrComLib.subscribeState("b", light_5_join_MEDIA_ROOM, (value:boolean) => setLight_5_fb_MEDIA_ROOM(value));
+      
+        // SOUTH STAIRS
+        const sub_light_1_SOUTH_STAIRS = window.CrComLib.subscribeState("b", light_1_join_SOUTH_STAIRS, (value:boolean) => setLight_1_fb_SOUTH_STAIRS(value));
+      
+        // FRONT
+        const sub_light_1_FRONT = window.CrComLib.subscribeState("b", light_1_join_FRONT, (value:boolean) => setLight_1_fb_FRONT(value));
+        const sub_light_2_FRONT = window.CrComLib.subscribeState("b", light_2_join_FRONT, (value:boolean) => setLight_2_fb_FRONT(value));
+        const sub_light_3_FRONT = window.CrComLib.subscribeState("b", light_3_join_FRONT, (value:boolean) => setLight_3_fb_FRONT(value));
+        const sub_light_4_FRONT = window.CrComLib.subscribeState("b", light_4_join_FRONT, (value:boolean) => setLight_4_fb_FRONT(value));
+        const sub_light_5_FRONT = window.CrComLib.subscribeState("b", light_5_join_FRONT, (value:boolean) => setLight_5_fb_FRONT(value));
+      
+        // LANDSCAPE
+        const sub_light_1_LANDSCAPE = window.CrComLib.subscribeState("b", light_1_join_LANDSCAPE, (value:boolean) => setLight_1_fb_LANDSCAPE(value));
+        const sub_light_2_LANDSCAPE = window.CrComLib.subscribeState("b", light_2_join_LANDSCAPE, (value:boolean) => setLight_2_fb_LANDSCAPE(value));
+        const sub_light_3_LANDSCAPE = window.CrComLib.subscribeState("b", light_3_join_LANDSCAPE, (value:boolean) => setLight_3_fb_LANDSCAPE(value));
+        const sub_light_4_LANDSCAPE = window.CrComLib.subscribeState("b", light_4_join_LANDSCAPE, (value:boolean) => setLight_4_fb_LANDSCAPE(value));
+        const sub_light_5_LANDSCAPE = window.CrComLib.subscribeState("b", light_5_join_LANDSCAPE, (value:boolean) => setLight_5_fb_LANDSCAPE(value));
+        const sub_light_6_LANDSCAPE = window.CrComLib.subscribeState("b", light_6_join_LANDSCAPE, (value:boolean) => setLight_6_fb_LANDSCAPE(value));
+        const sub_light_7_LANDSCAPE = window.CrComLib.subscribeState("b", light_7_join_LANDSCAPE, (value:boolean) => setLight_7_fb_LANDSCAPE(value));
+        const sub_light_8_LANDSCAPE = window.CrComLib.subscribeState("b", light_8_join_LANDSCAPE, (value:boolean) => setLight_8_fb_LANDSCAPE(value));
+        const sub_light_9_LANDSCAPE = window.CrComLib.subscribeState("b", light_9_join_LANDSCAPE, (value:boolean) => setLight_9_fb_LANDSCAPE(value));
+      
+        // REAR
+        const sub_light_1_REAR = window.CrComLib.subscribeState("b", light_1_join_REAR, (value:boolean) => setLight_1_fb_REAR(value));
+        const sub_light_2_REAR = window.CrComLib.subscribeState("b", light_2_join_REAR, (value:boolean) => setLight_2_fb_REAR(value));
+        const sub_light_3_REAR = window.CrComLib.subscribeState("b", light_3_join_REAR, (value:boolean) => setLight_3_fb_REAR(value));
+        const sub_light_4_REAR = window.CrComLib.subscribeState("b", light_4_join_REAR, (value:boolean) => setLight_4_fb_REAR(value));
+        const sub_light_5_REAR = window.CrComLib.subscribeState("b", light_5_join_REAR, (value:boolean) => setLight_5_fb_REAR(value));
+        const sub_light_6_REAR = window.CrComLib.subscribeState("b", light_6_join_REAR, (value:boolean) => setLight_6_fb_REAR(value));
+        const sub_light_7_REAR = window.CrComLib.subscribeState("b", light_7_join_REAR, (value:boolean) => setLight_7_fb_REAR(value));
+        const sub_light_8_REAR = window.CrComLib.subscribeState("b", light_8_join_REAR, (value:boolean) => setLight_8_fb_REAR(value));
+        const sub_light_9_REAR = window.CrComLib.subscribeState("b", light_9_join_REAR, (value:boolean) => setLight_9_fb_REAR(value));
+      
+        return () => {
+          // BAR
+          window.CrComLib.unsubscribeState("b", light_1_join_BAR, sub_light_1_BAR);
+          window.CrComLib.unsubscribeState("b", light_2_join_BAR, sub_light_2_BAR);
+          window.CrComLib.unsubscribeState("b", light_3_join_BAR, sub_light_3_BAR);
+          // BILLIARD ROOM
+          window.CrComLib.unsubscribeState("b", light_1_join_BILLIARD_ROOM, sub_light_1_BILLIARD_ROOM);
+          window.CrComLib.unsubscribeState("b", light_2_join_BILLIARD_ROOM, sub_light_2_BILLIARD_ROOM);
+          window.CrComLib.unsubscribeState("b", light_3_join_BILLIARD_ROOM, sub_light_3_BILLIARD_ROOM);
+          window.CrComLib.unsubscribeState("b", light_4_join_BILLIARD_ROOM, sub_light_4_BILLIARD_ROOM);
+          // BREAKFAST
+          window.CrComLib.unsubscribeState("b", light_1_join_BREAKFAST, sub_light_1_BREAKFAST);
+          window.CrComLib.unsubscribeState("b", light_2_join_BREAKFAST, sub_light_2_BREAKFAST);
+          window.CrComLib.unsubscribeState("b", light_3_join_BREAKFAST, sub_light_3_BREAKFAST);
+          window.CrComLib.unsubscribeState("b", light_4_join_BREAKFAST, sub_light_4_BREAKFAST);
+          // BUTLER PANTRY
+          window.CrComLib.unsubscribeState("b", light_1_join_BUTLER_PANTRY, sub_light_1_BUTLER_PANTRY);
+          // DINING ROOM
+          window.CrComLib.unsubscribeState("b", light_1_join_DINING_ROOM, sub_light_1_DINING_ROOM);
+          window.CrComLib.unsubscribeState("b", light_2_join_DINING_ROOM, sub_light_2_DINING_ROOM);
+          window.CrComLib.unsubscribeState("b", light_3_join_DINING_ROOM, sub_light_3_DINING_ROOM);
+          window.CrComLib.unsubscribeState("b", light_4_join_DINING_ROOM, sub_light_4_DINING_ROOM);
+          // ELEVATOR HALL
+          window.CrComLib.unsubscribeState("b", light_1_join_ELEVATOR_HALL, sub_light_1_ELEVATOR_HALL);
+          window.CrComLib.unsubscribeState("b", light_2_join_ELEVATOR_HALL, sub_light_2_ELEVATOR_HALL);
+          window.CrComLib.unsubscribeState("b", light_3_join_ELEVATOR_HALL, sub_light_3_ELEVATOR_HALL);
+          // FAMILY ROOM
+          window.CrComLib.unsubscribeState("b", light_1_join_FAMILY_ROOM, sub_light_1_FAMILY_ROOM);
+          window.CrComLib.unsubscribeState("b", light_2_join_FAMILY_ROOM, sub_light_2_FAMILY_ROOM);
+          window.CrComLib.unsubscribeState("b", light_3_join_FAMILY_ROOM, sub_light_3_FAMILY_ROOM);
+          window.CrComLib.unsubscribeState("b", light_4_join_FAMILY_ROOM, sub_light_4_FAMILY_ROOM);
+          // FOYER
+          window.CrComLib.unsubscribeState("b", light_1_join_FOYER, sub_light_1_FOYER);
+          window.CrComLib.unsubscribeState("b", light_2_join_FOYER, sub_light_2_FOYER);
+          window.CrComLib.unsubscribeState("b", light_3_join_FOYER, sub_light_3_FOYER);
+          // KITCHEN
+          window.CrComLib.unsubscribeState("b", light_1_join_KITCHEN, sub_light_1_KITCHEN);
+          window.CrComLib.unsubscribeState("b", light_2_join_KITCHEN, sub_light_2_KITCHEN);
+          window.CrComLib.unsubscribeState("b", light_3_join_KITCHEN, sub_light_3_KITCHEN);
+          window.CrComLib.unsubscribeState("b", light_4_join_KITCHEN, sub_light_4_KITCHEN);
+          // LIVING ROOM
+          window.CrComLib.unsubscribeState("b", light_1_join_LIVING_ROOM, sub_light_1_LIVING_ROOM);
+          window.CrComLib.unsubscribeState("b", light_2_join_LIVING_ROOM, sub_light_2_LIVING_ROOM);
+          window.CrComLib.unsubscribeState("b", light_3_join_LIVING_ROOM, sub_light_3_LIVING_ROOM);
+          window.CrComLib.unsubscribeState("b", light_4_join_LIVING_ROOM, sub_light_4_LIVING_ROOM);
+          window.CrComLib.unsubscribeState("b", light_5_join_LIVING_ROOM, sub_light_5_LIVING_ROOM);
+          window.CrComLib.unsubscribeState("b", light_6_join_LIVING_ROOM, sub_light_6_LIVING_ROOM);
+          // OFFICE POWDER
+          window.CrComLib.unsubscribeState("b", light_1_join_OFFICE_POWDER, sub_light_1_OFFICE_POWDER);
+          window.CrComLib.unsubscribeState("b", light_2_join_OFFICE_POWDER, sub_light_2_OFFICE_POWDER);
+          // STEVE'S OFFICE
+          window.CrComLib.unsubscribeState("b", light_1_join_STEVE_S_OFFICE, sub_light_1_STEVE_S_OFFICE);
+          window.CrComLib.unsubscribeState("b", light_2_join_STEVE_S_OFFICE, sub_light_2_STEVE_S_OFFICE);
+          // HALL
+          window.CrComLib.unsubscribeState("b", light_1_join_HALL, sub_light_1_HALL);
+          window.CrComLib.unsubscribeState("b", light_2_join_HALL, sub_light_2_HALL);
+          window.CrComLib.unsubscribeState("b", light_3_join_HALL, sub_light_3_HALL);
+          window.CrComLib.unsubscribeState("b", light_4_join_HALL, sub_light_4_HALL);
+          window.CrComLib.unsubscribeState("b", light_5_join_HALL, sub_light_5_HALL);
+          window.CrComLib.unsubscribeState("b", light_6_join_HALL, sub_light_6_HALL);
+          // MEDIA ROOM
+          window.CrComLib.unsubscribeState("b", light_1_join_MEDIA_ROOM, sub_light_1_MEDIA_ROOM);
+          window.CrComLib.unsubscribeState("b", light_2_join_MEDIA_ROOM, sub_light_2_MEDIA_ROOM);
+          window.CrComLib.unsubscribeState("b", light_3_join_MEDIA_ROOM, sub_light_3_MEDIA_ROOM);
+          window.CrComLib.unsubscribeState("b", light_4_join_MEDIA_ROOM, sub_light_4_MEDIA_ROOM);
+          window.CrComLib.unsubscribeState("b", light_5_join_MEDIA_ROOM, sub_light_5_MEDIA_ROOM);
+          // SOUTH STAIRS
+          window.CrComLib.unsubscribeState("b", light_1_join_SOUTH_STAIRS, sub_light_1_SOUTH_STAIRS);
+          // FRONT
+          window.CrComLib.unsubscribeState("b", light_1_join_FRONT, sub_light_1_FRONT);
+          window.CrComLib.unsubscribeState("b", light_2_join_FRONT, sub_light_2_FRONT);
+          window.CrComLib.unsubscribeState("b", light_3_join_FRONT, sub_light_3_FRONT);
+          window.CrComLib.unsubscribeState("b", light_4_join_FRONT, sub_light_4_FRONT);
+          window.CrComLib.unsubscribeState("b", light_5_join_FRONT, sub_light_5_FRONT);
+          // LANDSCAPE
+          window.CrComLib.unsubscribeState("b", light_1_join_LANDSCAPE, sub_light_1_LANDSCAPE);
+          window.CrComLib.unsubscribeState("b", light_2_join_LANDSCAPE, sub_light_2_LANDSCAPE);
+          window.CrComLib.unsubscribeState("b", light_3_join_LANDSCAPE, sub_light_3_LANDSCAPE);
+          window.CrComLib.unsubscribeState("b", light_4_join_LANDSCAPE, sub_light_4_LANDSCAPE);
+          window.CrComLib.unsubscribeState("b", light_5_join_LANDSCAPE, sub_light_5_LANDSCAPE);
+          window.CrComLib.unsubscribeState("b", light_6_join_LANDSCAPE, sub_light_6_LANDSCAPE);
+          window.CrComLib.unsubscribeState("b", light_7_join_LANDSCAPE, sub_light_7_LANDSCAPE);
+          window.CrComLib.unsubscribeState("b", light_8_join_LANDSCAPE, sub_light_8_LANDSCAPE);
+          window.CrComLib.unsubscribeState("b", light_9_join_LANDSCAPE, sub_light_9_LANDSCAPE);
+          // REAR
+          window.CrComLib.unsubscribeState("b", light_1_join_REAR, sub_light_1_REAR);
+          window.CrComLib.unsubscribeState("b", light_2_join_REAR, sub_light_2_REAR);
+          window.CrComLib.unsubscribeState("b", light_3_join_REAR, sub_light_3_REAR);
+          window.CrComLib.unsubscribeState("b", light_4_join_REAR, sub_light_4_REAR);
+          window.CrComLib.unsubscribeState("b", light_5_join_REAR, sub_light_5_REAR);
+          window.CrComLib.unsubscribeState("b", light_6_join_REAR, sub_light_6_REAR);
+          window.CrComLib.unsubscribeState("b", light_7_join_REAR, sub_light_7_REAR);
+          window.CrComLib.unsubscribeState("b", light_8_join_REAR, sub_light_8_REAR);
+          window.CrComLib.unsubscribeState("b", light_9_join_REAR, sub_light_9_REAR);
+        };
+      }, []);
+      
+        
+ 
 
     //--------------------------------------------------------------------------------------------------------------------------------------- Current Floor section 
 
-        const [upStairs, setUpStairs]     = useState(false)
-        const [main, setMain]             = useState(false)
-        const [downStairs, setDownStairs] = useState(false)
-        const [outSide, setOutSide]       = useState(false)
-        const [globalScenes, setGlobalScenes]       = useState(true)
+      
 
-        // local 
+ // Zone: Bar
+ const lightZone_BAR = (
+    <>
+      <h2 className="light_menu_title">Bar</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_BAR, true);
+          window.CrComLib.publishEvent("b", light_1_join_BAR, false);
+          console.log(`Triggered join [${light_1_join_BAR}] coming from [${light_1_title_BAR}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_BAR ? lightOn : lightOff} alt={light_1_title_BAR} />
+          <p>{light_1_title_BAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_BAR, true);
+          window.CrComLib.publishEvent("b", light_2_join_BAR, false);
+          console.log(`Triggered join [${light_2_join_BAR}] coming from [${light_2_title_BAR}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_BAR ? lightOn : lightOff} alt={light_2_title_BAR} />
+          <p>{light_2_title_BAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_BAR, true);
+          window.CrComLib.publishEvent("b", light_3_join_BAR, false);
+          console.log(`Triggered join [${light_3_join_BAR}] coming from [${light_3_title_BAR}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_BAR ? lightOn : lightOff} alt={light_3_title_BAR} />
+          <p>{light_3_title_BAR}</p>
+        </button>
+      </div>
+    </>
+  );
 
+  // Zone: Billiard Room
+  const lightZone_BILLIARD_ROOM = (
+    <>
+      <h2 className="light_menu_title">Billiard Room</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_BILLIARD_ROOM, true);
+          window.CrComLib.publishEvent("b", light_1_join_BILLIARD_ROOM, false);
+          console.log(`Triggered join [${light_1_join_BILLIARD_ROOM}] coming from [${light_1_title_BILLIARD_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_BILLIARD_ROOM ? lightOn : lightOff} alt={light_1_title_BILLIARD_ROOM} />
+          <p>{light_1_title_BILLIARD_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_BILLIARD_ROOM, true);
+          window.CrComLib.publishEvent("b", light_2_join_BILLIARD_ROOM, false);
+          console.log(`Triggered join [${light_2_join_BILLIARD_ROOM}] coming from [${light_2_title_BILLIARD_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_BILLIARD_ROOM ? lightOn : lightOff} alt={light_2_title_BILLIARD_ROOM} />
+          <p>{light_2_title_BILLIARD_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_BILLIARD_ROOM, true);
+          window.CrComLib.publishEvent("b", light_3_join_BILLIARD_ROOM, false);
+          console.log(`Triggered join [${light_3_join_BILLIARD_ROOM}] coming from [${light_3_title_BILLIARD_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_BILLIARD_ROOM ? lightOn : lightOff} alt={light_3_title_BILLIARD_ROOM} />
+          <p>{light_3_title_BILLIARD_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_BILLIARD_ROOM, true);
+          window.CrComLib.publishEvent("b", light_4_join_BILLIARD_ROOM, false);
+          console.log(`Triggered join [${light_4_join_BILLIARD_ROOM}] coming from [${light_4_title_BILLIARD_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_BILLIARD_ROOM ? lightOn : lightOff} alt={light_4_title_BILLIARD_ROOM} />
+          <p>{light_4_title_BILLIARD_ROOM}</p>
+        </button>
+      </div>
+    </>
+  );
 
-    //--------------------------------------------------------------------------------------------------------------------------------------- all lights
+  // Zone: Breakfast
+  const lightZone_BREAKFAST = (
+    <>
+      <h2 className="light_menu_title">Breakfast</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_BREAKFAST, true);
+          window.CrComLib.publishEvent("b", light_1_join_BREAKFAST, false);
+          console.log(`Triggered join [${light_1_join_BREAKFAST}] coming from [${light_1_title_BREAKFAST}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_BREAKFAST ? lightOn : lightOff} alt={light_1_title_BREAKFAST} />
+          <p>{light_1_title_BREAKFAST}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_BREAKFAST, true);
+          window.CrComLib.publishEvent("b", light_2_join_BREAKFAST, false);
+          console.log(`Triggered join [${light_2_join_BREAKFAST}] coming from [${light_2_title_BREAKFAST}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_BREAKFAST ? lightOn : lightOff} alt={light_2_title_BREAKFAST} />
+          <p>{light_2_title_BREAKFAST}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_BREAKFAST, true);
+          window.CrComLib.publishEvent("b", light_3_join_BREAKFAST, false);
+          console.log(`Triggered join [${light_3_join_BREAKFAST}] coming from [${light_3_title_BREAKFAST}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_BREAKFAST ? lightOn : lightOff} alt={light_3_title_BREAKFAST} />
+          <p>{light_3_title_BREAKFAST}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_BREAKFAST, true);
+          window.CrComLib.publishEvent("b", light_4_join_BREAKFAST, false);
+          console.log(`Triggered join [${light_4_join_BREAKFAST}] coming from [${light_4_title_BREAKFAST}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_BREAKFAST ? lightOn : lightOff} alt={light_4_title_BREAKFAST} />
+          <p>{light_4_title_BREAKFAST}</p>
+        </button>
+      </div>
+    </>
+  );
 
-        const [light_1, setLight_1] = useState(false)
-        const [light_2, setLight_2] = useState(false)
-        const [light_3, setLight_3] = useState(false)
-        const [light_4, setLight_4] = useState(false)
-        const [light_5, setLight_5] = useState(false)
-        const [light_6, setLight_6] = useState(false)
-        const [light_7, setLight_7] = useState(false)
-        const [light_8, setLight_8] = useState(false)
-        const [light_9, setLight_9] = useState(false)
-        const [light_10, setLight_10] = useState(false)
+  // Zone: Butler Pantry
+  const lightZone_BUTLER_PANTRY = (
+    <>
+      <h2 className="light_menu_title">Butler Pantry</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_BUTLER_PANTRY, true);
+          window.CrComLib.publishEvent("b", light_1_join_BUTLER_PANTRY, false);
+          console.log(`Triggered join [${light_1_join_BUTLER_PANTRY}] coming from [${light_1_title_BUTLER_PANTRY}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_BUTLER_PANTRY ? lightOn : lightOff} alt={light_1_title_BUTLER_PANTRY} />
+          <p>{light_1_title_BUTLER_PANTRY}</p>
+        </button>
+      </div>
+    </>
+  );
 
-        const [light_11, setLight_11] = useState(false)
-        const [light_12, setLight_12] = useState(false)
-        const [light_13, setLight_13] = useState(false)
-        const [light_14, setLight_14] = useState(false)
-        const [light_15, setLight_15] = useState(false)
-        const [light_16, setLight_16] = useState(false)
-        const [light_17, setLight_17] = useState(false)
-        const [light_18, setLight_18] = useState(false)
-        const [light_19, setLight_19] = useState(false)
-        const [light_20, setLight_20] = useState(false)
+  // Zone: Dining Room
+  const lightZone_DINING_ROOM = (
+    <>
+      <h2 className="light_menu_title">Dining Room</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_DINING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_1_join_DINING_ROOM, false);
+          console.log(`Triggered join [${light_1_join_DINING_ROOM}] coming from [${light_1_title_DINING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_DINING_ROOM ? lightOn : lightOff} alt={light_1_title_DINING_ROOM} />
+          <p>{light_1_title_DINING_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_DINING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_2_join_DINING_ROOM, false);
+          console.log(`Triggered join [${light_2_join_DINING_ROOM}] coming from [${light_2_title_DINING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_DINING_ROOM ? lightOn : lightOff} alt={light_2_title_DINING_ROOM} />
+          <p>{light_2_title_DINING_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_DINING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_3_join_DINING_ROOM, false);
+          console.log(`Triggered join [${light_3_join_DINING_ROOM}] coming from [${light_3_title_DINING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_DINING_ROOM ? lightOn : lightOff} alt={light_3_title_DINING_ROOM} />
+          <p>{light_3_title_DINING_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_DINING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_4_join_DINING_ROOM, false);
+          console.log(`Triggered join [${light_4_join_DINING_ROOM}] coming from [${light_4_title_DINING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_DINING_ROOM ? lightOn : lightOff} alt={light_4_title_DINING_ROOM} />
+          <p>{light_4_title_DINING_ROOM}</p>
+        </button>
+      </div>
+    </>
+  );
 
-        const [light_21, setLight_21] = useState(false)
-        const [light_22, setLight_22] = useState(false)
-        const [light_23, setLight_23] = useState(false)
-        const [light_24, setLight_24] = useState(false)
-        const [light_25, setLight_25] = useState(false)
-        const [light_26, setLight_26] = useState(false)
-        const [light_27, setLight_27] = useState(false)
-        const [light_28, setLight_28] = useState(false)
-        const [light_29, setLight_29] = useState(false)
-        const [light_30, setLight_30] = useState(false)
+  // Zone: Elevator Hall
+  const lightZone_ELEVATOR_HALL = (
+    <>
+      <h2 className="light_menu_title">Elevator Hall</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_ELEVATOR_HALL, true);
+          window.CrComLib.publishEvent("b", light_1_join_ELEVATOR_HALL, false);
+          console.log(`Triggered join [${light_1_join_ELEVATOR_HALL}] coming from [${light_1_title_ELEVATOR_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_ELEVATOR_HALL ? lightOn : lightOff} alt={light_1_title_ELEVATOR_HALL} />
+          <p>{light_1_title_ELEVATOR_HALL}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_ELEVATOR_HALL, true);
+          window.CrComLib.publishEvent("b", light_2_join_ELEVATOR_HALL, false);
+          console.log(`Triggered join [${light_2_join_ELEVATOR_HALL}] coming from [${light_2_title_ELEVATOR_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_ELEVATOR_HALL ? lightOn : lightOff} alt={light_2_title_ELEVATOR_HALL} />
+          <p>{light_2_title_ELEVATOR_HALL}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_ELEVATOR_HALL, true);
+          window.CrComLib.publishEvent("b", light_3_join_ELEVATOR_HALL, false);
+          console.log(`Triggered join [${light_3_join_ELEVATOR_HALL}] coming from [${light_3_title_ELEVATOR_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_ELEVATOR_HALL ? lightOn : lightOff} alt={light_3_title_ELEVATOR_HALL} />
+          <p>{light_3_title_ELEVATOR_HALL}</p>
+        </button>
+      </div>
+    </>
+  );
 
-        const [light_31, setLight_31] = useState(false)
-        const [light_32, setLight_32] = useState(false)
-        const [light_33, setLight_33] = useState(false)
-        const [light_34, setLight_34] = useState(false)
-        const [light_35, setLight_35] = useState(false)
-        const [light_36, setLight_36] = useState(false)
-        const [light_37, setLight_37] = useState(false)
-        const [light_38, setLight_38] = useState(false)
-        const [light_39, setLight_39] = useState(false)
-        const [light_40, setLight_40] = useState(false)
+  // Zone: Family Room
+  const lightZone_FAMILY_ROOM = (
+    <>
+      <h2 className="light_menu_title">Family Room</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_FAMILY_ROOM, true);
+          window.CrComLib.publishEvent("b", light_1_join_FAMILY_ROOM, false);
+          console.log(`Triggered join [${light_1_join_FAMILY_ROOM}] coming from [${light_1_title_FAMILY_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_FAMILY_ROOM ? lightOn : lightOff} alt={light_1_title_FAMILY_ROOM} />
+          <p>{light_1_title_FAMILY_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_FAMILY_ROOM, true);
+          window.CrComLib.publishEvent("b", light_2_join_FAMILY_ROOM, false);
+          console.log(`Triggered join [${light_2_join_FAMILY_ROOM}] coming from [${light_2_title_FAMILY_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_FAMILY_ROOM ? lightOn : lightOff} alt={light_2_title_FAMILY_ROOM} />
+          <p>{light_2_title_FAMILY_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_FAMILY_ROOM, true);
+          window.CrComLib.publishEvent("b", light_3_join_FAMILY_ROOM, false);
+          console.log(`Triggered join [${light_3_join_FAMILY_ROOM}] coming from [${light_3_title_FAMILY_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_FAMILY_ROOM ? lightOn : lightOff} alt={light_3_title_FAMILY_ROOM} />
+          <p>{light_3_title_FAMILY_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_FAMILY_ROOM, true);
+          window.CrComLib.publishEvent("b", light_4_join_FAMILY_ROOM, false);
+          console.log(`Triggered join [${light_4_join_FAMILY_ROOM}] coming from [${light_4_title_FAMILY_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_FAMILY_ROOM ? lightOn : lightOff} alt={light_4_title_FAMILY_ROOM} />
+          <p>{light_4_title_FAMILY_ROOM}</p>
+        </button>
+      </div>
+    </>
+  );
 
-        const [light_41, setLight_41] = useState(false)
-        const [light_42, setLight_42] = useState(false)
-        const [light_43, setLight_43] = useState(false)
-        const [light_44, setLight_44] = useState(false)
-        const [light_45, setLight_45] = useState(false)
-        const [light_46, setLight_46] = useState(false)
-        const [light_47, setLight_47] = useState(false)
-        const [light_48, setLight_48] = useState(false)
-        const [light_49, setLight_49] = useState(false)
-        const [light_50, setLight_50] = useState(false)
+  // Zone: Foyer
+  const lightZone_FOYER = (
+    <>
+      <h2 className="light_menu_title">Foyer</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_FOYER, true);
+          window.CrComLib.publishEvent("b", light_1_join_FOYER, false);
+          console.log(`Triggered join [${light_1_join_FOYER}] coming from [${light_1_title_FOYER}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_FOYER ? lightOn : lightOff} alt={light_1_title_FOYER} />
+          <p>{light_1_title_FOYER}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_FOYER, true);
+          window.CrComLib.publishEvent("b", light_2_join_FOYER, false);
+          console.log(`Triggered join [${light_2_join_FOYER}] coming from [${light_2_title_FOYER}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_FOYER ? lightOn : lightOff} alt={light_2_title_FOYER} />
+          <p>{light_2_title_FOYER}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_FOYER, true);
+          window.CrComLib.publishEvent("b", light_3_join_FOYER, false);
+          console.log(`Triggered join [${light_3_join_FOYER}] coming from [${light_3_title_FOYER}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_FOYER ? lightOn : lightOff} alt={light_3_title_FOYER} />
+          <p>{light_3_title_FOYER}</p>
+        </button>
+      </div>
+    </>
+  );
 
-        const [light_51, setLight_51] = useState(false)
-        const [light_52, setLight_52] = useState(false)
-        const [light_53, setLight_53] = useState(false)
-        const [light_54, setLight_54] = useState(false)
-        const [light_55, setLight_55] = useState(false)
-        const [light_56, setLight_56] = useState(false)
-        const [light_57, setLight_57] = useState(false)
-        const [light_58, setLight_58] = useState(false)
-        const [light_59, setLight_59] = useState(false)
-        const [light_60, setLight_60] = useState(false)
+  // Zone: Kitchen
+  const lightZone_KITCHEN = (
+    <>
+      <h2 className="light_menu_title">Kitchen</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_KITCHEN, true);
+          window.CrComLib.publishEvent("b", light_1_join_KITCHEN, false);
+          console.log(`Triggered join [${light_1_join_KITCHEN}] coming from [${light_1_title_KITCHEN}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_KITCHEN ? lightOn : lightOff} alt={light_1_title_KITCHEN} />
+          <p>{light_1_title_KITCHEN}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_KITCHEN, true);
+          window.CrComLib.publishEvent("b", light_2_join_KITCHEN, false);
+          console.log(`Triggered join [${light_2_join_KITCHEN}] coming from [${light_2_title_KITCHEN}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_KITCHEN ? lightOn : lightOff} alt={light_2_title_KITCHEN} />
+          <p>{light_2_title_KITCHEN}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_KITCHEN, true);
+          window.CrComLib.publishEvent("b", light_3_join_KITCHEN, false);
+          console.log(`Triggered join [${light_3_join_KITCHEN}] coming from [${light_3_title_KITCHEN}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_KITCHEN ? lightOn : lightOff} alt={light_3_title_KITCHEN} />
+          <p>{light_3_title_KITCHEN}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_KITCHEN, true);
+          window.CrComLib.publishEvent("b", light_4_join_KITCHEN, false);
+          console.log(`Triggered join [${light_4_join_KITCHEN}] coming from [${light_4_title_KITCHEN}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_KITCHEN ? lightOn : lightOff} alt={light_4_title_KITCHEN} />
+          <p>{light_4_title_KITCHEN}</p>
+        </button>
+      </div>
+    </>
+  );
 
-        const [light_61, setLight_61] = useState(false)
-        const [light_62, setLight_62] = useState(false)
-        const [light_63, setLight_63] = useState(false)
-        const [light_64, setLight_64] = useState(false)
+  // Zone: Living Room
+  const lightZone_LIVING_ROOM = (
+    <>
+      <h2 className="light_menu_title">Living Room</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_LIVING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_1_join_LIVING_ROOM, false);
+          console.log(`Triggered join [${light_1_join_LIVING_ROOM}] coming from [${light_1_title_LIVING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_1_title_LIVING_ROOM} />
+          <p>{light_1_title_LIVING_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_LIVING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_2_join_LIVING_ROOM, false);
+          console.log(`Triggered join [${light_2_join_LIVING_ROOM}] coming from [${light_2_title_LIVING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_2_title_LIVING_ROOM} />
+          <p>{light_2_title_LIVING_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_LIVING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_3_join_LIVING_ROOM, false);
+          console.log(`Triggered join [${light_3_join_LIVING_ROOM}] coming from [${light_3_title_LIVING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_3_title_LIVING_ROOM} />
+          <p>{light_3_title_LIVING_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_LIVING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_4_join_LIVING_ROOM, false);
+          console.log(`Triggered join [${light_4_join_LIVING_ROOM}] coming from [${light_4_title_LIVING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_4_title_LIVING_ROOM} />
+          <p>{light_4_title_LIVING_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_5_join_LIVING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_5_join_LIVING_ROOM, false);
+          console.log(`Triggered join [${light_5_join_LIVING_ROOM}] coming from [${light_5_title_LIVING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_5_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_5_title_LIVING_ROOM} />
+          <p>{light_5_title_LIVING_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_6_join_LIVING_ROOM, true);
+          window.CrComLib.publishEvent("b", light_6_join_LIVING_ROOM, false);
+          console.log(`Triggered join [${light_6_join_LIVING_ROOM}] coming from [${light_6_title_LIVING_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_6_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_6_title_LIVING_ROOM} />
+          <p>{light_6_title_LIVING_ROOM}</p>
+        </button>
+      </div>
+    </>
+  );
 
-        const [global_1, setGlobal_1] = useState(false)
-        const [global_2, setGlobal_2] = useState(false)
-        const [global_3, setGlobal_3] = useState(false)
-        const [global_4, setGlobal_4] = useState(false)
-        const [global_5, setGlobal_5] = useState(false)
-        const [global_6, setGlobal_6] = useState(false)
-        const [global_7, setGlobal_7] = useState(false)
-        const [global_8, setGlobal_8] = useState(false)
-        const [global_9, setGlobal_9] = useState(false)
-        const [global_10, setGlobal_10] = useState(false)
-        const [global_11, setGlobal_11] = useState(false)
-        const [global_12, setGlobal_12] = useState(false)
+  // Zone: Office Powder
+  const lightZone_OFFICE_POWDER = (
+    <>
+      <h2 className="light_menu_title">Office Powder</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_OFFICE_POWDER, true);
+          window.CrComLib.publishEvent("b", light_1_join_OFFICE_POWDER, false);
+          console.log(`Triggered join [${light_1_join_OFFICE_POWDER}] coming from [${light_1_title_OFFICE_POWDER}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_OFFICE_POWDER ? lightOn : lightOff} alt={light_1_title_OFFICE_POWDER} />
+          <p>{light_1_title_OFFICE_POWDER}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_OFFICE_POWDER, true);
+          window.CrComLib.publishEvent("b", light_2_join_OFFICE_POWDER, false);
+          console.log(`Triggered join [${light_2_join_OFFICE_POWDER}] coming from [${light_2_title_OFFICE_POWDER}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_OFFICE_POWDER ? lightOn : lightOff} alt={light_2_title_OFFICE_POWDER} />
+          <p>{light_2_title_OFFICE_POWDER}</p>
+        </button>
+      </div>
+    </>
+  );
 
+  // Zone: Steve's Office
+  const lightZone_STEVE_S_OFFICE = (
+    <>
+      <h2 className="light_menu_title">Steve's Office</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_STEVE_S_OFFICE, true);
+          window.CrComLib.publishEvent("b", light_1_join_STEVE_S_OFFICE, false);
+          console.log(`Triggered join [${light_1_join_STEVE_S_OFFICE}] coming from [${light_1_title_STEVE_S_OFFICE}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_STEVE_S_OFFICE ? lightOn : lightOff} alt={light_1_title_STEVE_S_OFFICE} />
+          <p>{light_1_title_STEVE_S_OFFICE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_STEVE_S_OFFICE, true);
+          window.CrComLib.publishEvent("b", light_2_join_STEVE_S_OFFICE, false);
+          console.log(`Triggered join [${light_2_join_STEVE_S_OFFICE}] coming from [${light_2_title_STEVE_S_OFFICE}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_STEVE_S_OFFICE ? lightOn : lightOff} alt={light_2_title_STEVE_S_OFFICE} />
+          <p>{light_2_title_STEVE_S_OFFICE}</p>
+        </button>
+      </div>
+    </>
+  );
 
+  // Zone: Hall
 
-        useEffect(() => {
+  const lightZone_HALL = (
+    <>
+      <h2 className="light_menu_title">Hall</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_HALL, true);
+          window.CrComLib.publishEvent("b", light_1_join_HALL, false);
+          console.log(`Triggered join [${light_1_join_HALL}] coming from [${light_1_title_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_HALL ? lightOn : lightOff} alt={light_1_title_HALL} />
+          <p>{light_1_title_HALL}</p>
+        </button>
         
-            //Global
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_HALL, true);
+          window.CrComLib.publishEvent("b", light_2_join_HALL, false);
+          console.log(`Triggered join [${light_2_join_HALL}] coming from [${light_2_title_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_HALL ? lightOn : lightOff} alt={light_2_title_HALL} />
+          <p>{light_2_title_HALL}</p>
+        </button>
+        
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_HALL, true);
+          window.CrComLib.publishEvent("b", light_3_join_HALL, false);
+          console.log(`Triggered join [${light_3_join_HALL}] coming from [${light_3_title_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_HALL ? lightOn : lightOff} alt={light_3_title_HALL} />
+          <p>{light_3_title_HALL}</p>
+        </button>
+        
 
-            const global_1 =  window.CrComLib.subscribeState("b","348",(value: boolean) => {setGlobal_1(value);});
-            const global_2 =  window.CrComLib.subscribeState("b","349",(value: boolean) => {setGlobal_2(value);});
-            const global_3 =  window.CrComLib.subscribeState("b","350",(value: boolean) => {setGlobal_3(value);});
-            const global_4 =  window.CrComLib.subscribeState("b","351",(value: boolean) => {setGlobal_4(value);});
-            const global_5 =  window.CrComLib.subscribeState("b","352",(value: boolean) => {setGlobal_5(value);});
-            const global_6 =  window.CrComLib.subscribeState("b","353",(value: boolean) => {setGlobal_6(value);});
-            const global_7 =  window.CrComLib.subscribeState("b","354",(value: boolean) => {setGlobal_7(value);});
-            const global_8 =  window.CrComLib.subscribeState("b","355",(value: boolean) => {setGlobal_8(value);});
-            const global_9 =  window.CrComLib.subscribeState("b","356",(value: boolean) => {setGlobal_9(value);});
-            const global_10 =  window.CrComLib.subscribeState("b","357",(value: boolean) => {setGlobal_10(value);});
-            const global_11 =  window.CrComLib.subscribeState("b","358",(value: boolean) => {setGlobal_11(value);});
-            const global_12 =  window.CrComLib.subscribeState("b","359",(value: boolean) => {setGlobal_12(value);});
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_HALL, true);
+          window.CrComLib.publishEvent("b", light_4_join_HALL, false);
+          console.log(`Triggered join [${light_4_join_HALL}] coming from [${light_4_title_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_HALL ? lightOn : lightOff} alt={light_4_title_HALL} />
+          <p>{light_4_title_HALL}</p>
+        </button>
+        
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_5_join_HALL, true);
+          window.CrComLib.publishEvent("b", light_5_join_HALL, false);
+          console.log(`Triggered join [${light_5_join_HALL}] coming from [${light_5_title_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_5_fb_HALL ? lightOn : lightOff} alt={light_5_title_HALL} />
+          <p>{light_5_title_HALL}</p>
+        </button>
+        
 
-          
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_6_join_HALL, true);
+          window.CrComLib.publishEvent("b", light_6_join_HALL, false);
+          console.log(`Triggered join [${light_6_join_HALL}] coming from [${light_6_title_HALL}]`);
+        }}>
+          <img className="btn_image" src={light_6_fb_HALL ? lightOn : lightOff} alt={light_6_title_HALL} />
+          <p>{light_6_title_HALL}</p>
+        </button>
 
-            // Lights
+      </div>
+    </>
+  );
 
+  // Zone: Media Room
+  const lightZone_MEDIA_ROOM = (
+    <>
+      <h2 className="light_menu_title">Media Room</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_MEDIA_ROOM, true);
+          window.CrComLib.publishEvent("b", light_1_join_MEDIA_ROOM, false);
+          console.log(`Triggered join [${light_1_join_MEDIA_ROOM}] coming from [${light_1_title_MEDIA_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_1_title_MEDIA_ROOM} />
+          <p>{light_1_title_MEDIA_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_MEDIA_ROOM, true);
+          window.CrComLib.publishEvent("b", light_2_join_MEDIA_ROOM, false);
+          console.log(`Triggered join [${light_2_join_MEDIA_ROOM}] coming from [${light_2_title_MEDIA_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_2_title_MEDIA_ROOM} />
+          <p>{light_2_title_MEDIA_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_MEDIA_ROOM, true);
+          window.CrComLib.publishEvent("b", light_3_join_MEDIA_ROOM, false);
+          console.log(`Triggered join [${light_3_join_MEDIA_ROOM}] coming from [${light_3_title_MEDIA_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_3_title_MEDIA_ROOM} />
+          <p>{light_3_title_MEDIA_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_MEDIA_ROOM, true);
+          window.CrComLib.publishEvent("b", light_4_join_MEDIA_ROOM, false);
+          console.log(`Triggered join [${light_4_join_MEDIA_ROOM}] coming from [${light_4_title_MEDIA_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_4_title_MEDIA_ROOM} />
+          <p>{light_4_title_MEDIA_ROOM}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_5_join_MEDIA_ROOM, true);
+          window.CrComLib.publishEvent("b", light_5_join_MEDIA_ROOM, false);
+          console.log(`Triggered join [${light_5_join_MEDIA_ROOM}] coming from [${light_5_title_MEDIA_ROOM}]`);
+        }}>
+          <img className="btn_image" src={light_5_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_5_title_MEDIA_ROOM} />
+          <p>{light_5_title_MEDIA_ROOM}</p>
+        </button>
+      </div>
+    </>
+  );
 
-            const light_1 =  window.CrComLib.subscribeState("b","250",(value: boolean) => {setLight_1(value);});
-            const light_2 =  window.CrComLib.subscribeState("b","251",(value: boolean) => {setLight_2(value);});
-            const light_3 =  window.CrComLib.subscribeState("b","252",(value: boolean) => {setLight_3(value);});
-            const light_4 =  window.CrComLib.subscribeState("b","252",(value: boolean) => {setLight_4(value);});
-            const light_5 =  window.CrComLib.subscribeState("b","254",(value: boolean) => {setLight_5(value);});
+  // Zone: South Stairs
+  const lightZone_SOUTH_STAIRS = (
+    <>
+      <h2 className="light_menu_title">South Stairs</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_SOUTH_STAIRS, true);
+          window.CrComLib.publishEvent("b", light_1_join_SOUTH_STAIRS, false);
+          console.log(`Triggered join [${light_1_join_SOUTH_STAIRS}] coming from [${light_1_title_SOUTH_STAIRS}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_SOUTH_STAIRS ? lightOn : lightOff} alt={light_1_title_SOUTH_STAIRS} />
+          <p>{light_1_title_SOUTH_STAIRS}</p>
+        </button>
+      </div>
+    </>
+  );
 
-            const light_6 =  window.CrComLib.subscribeState("b","257",(value: boolean) => {setLight_6(value);});
-            const light_7 =  window.CrComLib.subscribeState("b","258",(value: boolean) => {setLight_7(value);});
-            const light_8 =  window.CrComLib.subscribeState("b","259",(value: boolean) => {setLight_8(value);});
-            const light_9 =  window.CrComLib.subscribeState("b","260",(value: boolean) => {setLight_9(value);});
-            const light_10 = window.CrComLib.subscribeState("b","261",(value: boolean) => {setLight_10(value);});
+  // Zone: Front
+  const lightZone_FRONT = (
+    <>
+      <h2 className="light_menu_title">Front</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_FRONT, true);
+          window.CrComLib.publishEvent("b", light_1_join_FRONT, false);
+          console.log(`Triggered join [${light_1_join_FRONT}] coming from [${light_1_title_FRONT}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_FRONT ? lightOn : lightOff} alt={light_1_title_FRONT} />
+          <p>{light_1_title_FRONT}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_FRONT, true);
+          window.CrComLib.publishEvent("b", light_2_join_FRONT, false);
+          console.log(`Triggered join [${light_2_join_FRONT}] coming from [${light_2_title_FRONT}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_FRONT ? lightOn : lightOff} alt={light_2_title_FRONT} />
+          <p>{light_2_title_FRONT}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_FRONT, true);
+          window.CrComLib.publishEvent("b", light_3_join_FRONT, false);
+          console.log(`Triggered join [${light_3_join_FRONT}] coming from [${light_3_title_FRONT}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_FRONT ? lightOn : lightOff} alt={light_3_title_FRONT} />
+          <p>{light_3_title_FRONT}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_FRONT, true);
+          window.CrComLib.publishEvent("b", light_4_join_FRONT, false);
+          console.log(`Triggered join [${light_4_join_FRONT}] coming from [${light_4_title_FRONT}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_FRONT ? lightOn : lightOff} alt={light_4_title_FRONT} />
+          <p>{light_4_title_FRONT}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_5_join_FRONT, true);
+          window.CrComLib.publishEvent("b", light_5_join_FRONT, false);
+          console.log(`Triggered join [${light_5_join_FRONT}] coming from [${light_5_title_FRONT}]`);
+        }}>
+          <img className="btn_image" src={light_5_fb_FRONT ? lightOn : lightOff} alt={light_5_title_FRONT} />
+          <p>{light_5_title_FRONT}</p>
+        </button>
+      </div>
+    </>
+  );
 
-            const light_11 = window.CrComLib.subscribeState("b","264",(value: boolean) => {setLight_11(value);});
-            const light_12 = window.CrComLib.subscribeState("b","265",(value: boolean) => {setLight_12(value);});
-            const light_13 = window.CrComLib.subscribeState("b","266",(value: boolean) => {setLight_13(value);});
-            const light_14 = window.CrComLib.subscribeState("b","267",(value: boolean) => {setLight_14(value);});
+  // Zone: Landscape
+  const lightZone_LANDSCAPE = (
+    <>
+      <h2 className="light_menu_title">Landscape</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_1_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_1_join_LANDSCAPE}] coming from [${light_1_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_LANDSCAPE ? lightOn : lightOff} alt={light_1_title_LANDSCAPE} />
+          <p>{light_1_title_LANDSCAPE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_2_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_2_join_LANDSCAPE}] coming from [${light_2_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_LANDSCAPE ? lightOn : lightOff} alt={light_2_title_LANDSCAPE} />
+          <p>{light_2_title_LANDSCAPE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_3_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_3_join_LANDSCAPE}] coming from [${light_3_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_LANDSCAPE ? lightOn : lightOff} alt={light_3_title_LANDSCAPE} />
+          <p>{light_3_title_LANDSCAPE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_4_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_4_join_LANDSCAPE}] coming from [${light_4_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_LANDSCAPE ? lightOn : lightOff} alt={light_4_title_LANDSCAPE} />
+          <p>{light_4_title_LANDSCAPE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_5_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_5_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_5_join_LANDSCAPE}] coming from [${light_5_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_5_fb_LANDSCAPE ? lightOn : lightOff} alt={light_5_title_LANDSCAPE} />
+          <p>{light_5_title_LANDSCAPE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_6_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_6_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_6_join_LANDSCAPE}] coming from [${light_6_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_6_fb_LANDSCAPE ? lightOn : lightOff} alt={light_6_title_LANDSCAPE} />
+          <p>{light_6_title_LANDSCAPE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_7_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_7_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_7_join_LANDSCAPE}] coming from [${light_7_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_7_fb_LANDSCAPE ? lightOn : lightOff} alt={light_7_title_LANDSCAPE} />
+          <p>{light_7_title_LANDSCAPE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_8_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_8_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_8_join_LANDSCAPE}] coming from [${light_8_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_8_fb_LANDSCAPE ? lightOn : lightOff} alt={light_8_title_LANDSCAPE} />
+          <p>{light_8_title_LANDSCAPE}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_9_join_LANDSCAPE, true);
+          window.CrComLib.publishEvent("b", light_9_join_LANDSCAPE, false);
+          console.log(`Triggered join [${light_9_join_LANDSCAPE}] coming from [${light_9_title_LANDSCAPE}]`);
+        }}>
+          <img className="btn_image" src={light_9_fb_LANDSCAPE ? lightOn : lightOff} alt={light_9_title_LANDSCAPE} />
+          <p>{light_9_title_LANDSCAPE}</p>
+        </button>
+      </div>
+    </>
+  );
 
-            const light_15 = window.CrComLib.subscribeState("b","342",(value: boolean) => {setLight_15(value);});
-            const light_16 = window.CrComLib.subscribeState("b","271",(value: boolean) => {setLight_16(value);});
-            const light_17 = window.CrComLib.subscribeState("b","272",(value: boolean) => {setLight_17(value);});
-            const light_18 = window.CrComLib.subscribeState("b","273",(value: boolean) => {setLight_18(value);});
-            const light_19 = window.CrComLib.subscribeState("b","274",(value: boolean) => {setLight_19(value);});
-            const light_20 = window.CrComLib.subscribeState("b","275",(value: boolean) => {setLight_20(value);});
-
-            const light_21 = window.CrComLib.subscribeState("b","278",(value: boolean) => {setLight_21(value);});
-            const light_22 = window.CrComLib.subscribeState("b","279",(value: boolean) => {setLight_22(value);});
-            const light_23 = window.CrComLib.subscribeState("b","280",(value: boolean) => {setLight_23(value);});
-            const light_24 = window.CrComLib.subscribeState("b","281",(value: boolean) => {setLight_24(value);});
-            const light_25 = window.CrComLib.subscribeState("b","282",(value: boolean) => {setLight_25(value);});
-
-            const light_26 = window.CrComLib.subscribeState("b","285",(value: boolean) => {setLight_26(value);});
-            const light_27 = window.CrComLib.subscribeState("b","286",(value: boolean) => {setLight_27(value);});
-            const light_28 = window.CrComLib.subscribeState("b","287",(value: boolean) => {setLight_28(value);});
-            const light_29 = window.CrComLib.subscribeState("b","288",(value: boolean) => {setLight_29(value);});
-            const light_30 = window.CrComLib.subscribeState("b","289",(value: boolean) => {setLight_30(value);});
-
-            const light_31 = window.CrComLib.subscribeState("b","292",(value: boolean) => {setLight_31(value);});
-            const light_32 = window.CrComLib.subscribeState("b","293",(value: boolean) => {setLight_32(value);});
-            const light_33 = window.CrComLib.subscribeState("b","294",(value: boolean) => {setLight_33(value);});
-            const light_34 = window.CrComLib.subscribeState("b","295",(value: boolean) => {setLight_34(value);});
-            const light_35 = window.CrComLib.subscribeState("b","296",(value: boolean) => {setLight_35(value);});
-
-            const light_36 = window.CrComLib.subscribeState("b","299",(value: boolean) => {setLight_36(value);});
-            const light_37 = window.CrComLib.subscribeState("b","300",(value: boolean) => {setLight_37(value);});
-            const light_38 = window.CrComLib.subscribeState("b","301",(value: boolean) => {setLight_38(value);});
-            const light_39 = window.CrComLib.subscribeState("b","302",(value: boolean) => {setLight_39(value);});
-            const light_40 = window.CrComLib.subscribeState("b","303",(value: boolean) => {setLight_40(value);});
-
-            const light_41 = window.CrComLib.subscribeState("b","308",(value: boolean) => {setLight_41(value);});
-            const light_42 = window.CrComLib.subscribeState("b","309",(value: boolean) => {setLight_42(value);});
-            const light_43 = window.CrComLib.subscribeState("b","310",(value: boolean) => {setLight_43(value);});
-            const light_44 = window.CrComLib.subscribeState("b","311",(value: boolean) => {setLight_44(value);});
-            const light_45 = window.CrComLib.subscribeState("b","312",(value: boolean) => {setLight_45(value);});
-
-            const light_46 = window.CrComLib.subscribeState("b","315",(value: boolean) => {setLight_46(value);});
-            const light_47 = window.CrComLib.subscribeState("b","316",(value: boolean) => {setLight_47(value);});
-            const light_48 = window.CrComLib.subscribeState("b","317",(value: boolean) => {setLight_48(value);});
-            const light_49 = window.CrComLib.subscribeState("b","318",(value: boolean) => {setLight_49(value);});
-            const light_50 = window.CrComLib.subscribeState("b","319",(value: boolean) => {setLight_50(value);});
-
-            const light_51 = window.CrComLib.subscribeState("b","322",(value: boolean) => {setLight_51(value);});
-            const light_52 = window.CrComLib.subscribeState("b","323",(value: boolean) => {setLight_52(value);});
-            const light_53 = window.CrComLib.subscribeState("b","324",(value: boolean) => {setLight_53(value);});
-            const light_54 = window.CrComLib.subscribeState("b","325",(value: boolean) => {setLight_54(value);});
-            const light_55 = window.CrComLib.subscribeState("b","326",(value: boolean) => {setLight_55(value);});
-
-            const light_56 = window.CrComLib.subscribeState("b","330",(value: boolean) => {setLight_56(value);});
-            const light_57 = window.CrComLib.subscribeState("b","331",(value: boolean) => {setLight_57(value);});
-            const light_58 = window.CrComLib.subscribeState("b","332",(value: boolean) => {setLight_58(value);});
-            const light_59 = window.CrComLib.subscribeState("b","333",(value: boolean) => {setLight_59(value);});
-            const light_60 = window.CrComLib.subscribeState("b","334",(value: boolean) => {setLight_60(value);});
-
-            const light_61 = window.CrComLib.subscribeState("b","338",(value: boolean) => {setLight_61(value);});
-            const light_62 = window.CrComLib.subscribeState("b","339",(value: boolean) => {setLight_62(value);});
-            const light_63 = window.CrComLib.subscribeState("b","340",(value: boolean) => {setLight_63(value);});
-            const light_64 = window.CrComLib.subscribeState("b","341",(value: boolean) => {setLight_64(value);});
-            
-
-          
-    
-            
-      
-    
-            return () => {
-                window.CrComLib.unsubscribeState("b","348",global_1);
-                window.CrComLib.unsubscribeState("b","349",global_2);
-                window.CrComLib.unsubscribeState("b","350",global_3);
-                window.CrComLib.unsubscribeState("b","351",global_4);
-                window.CrComLib.unsubscribeState("b","352",global_5);
-                window.CrComLib.unsubscribeState("b","353",global_6);
-                window.CrComLib.unsubscribeState("b","354",global_7);
-                window.CrComLib.unsubscribeState("b","355",global_8);
-                window.CrComLib.unsubscribeState("b","356",global_9);
-                window.CrComLib.unsubscribeState("b","357",global_10);
-                window.CrComLib.unsubscribeState("b","358",global_11);
-                window.CrComLib.unsubscribeState("b","359",global_12);
-
-
-    
-                
-    
-                // lights 
-    
-      
-             
-            
-                window.CrComLib.unsubscribeState("b","250",light_1);
-                window.CrComLib.unsubscribeState("b","251",light_2);
-                window.CrComLib.unsubscribeState("b","252",light_3);
-                window.CrComLib.unsubscribeState("b","252",light_4);
-                window.CrComLib.unsubscribeState("b","254",light_5);
-    
-                window.CrComLib.unsubscribeState("b","257",light_6);
-                window.CrComLib.unsubscribeState("b","258",light_7);
-                window.CrComLib.unsubscribeState("b","259",light_8);
-                window.CrComLib.unsubscribeState("b","260",light_9);
-                window.CrComLib.unsubscribeState("b","261",light_10);
-    
-                window.CrComLib.unsubscribeState("b","264",light_11);
-                window.CrComLib.unsubscribeState("b","265",light_12);
-                window.CrComLib.unsubscribeState("b","266",light_13);
-                window.CrComLib.unsubscribeState("b","267",light_14);
-    
-                window.CrComLib.unsubscribeState("b","342",light_15);
-                window.CrComLib.unsubscribeState("b","271",light_16);
-                window.CrComLib.unsubscribeState("b","272",light_17);
-                window.CrComLib.unsubscribeState("b","273",light_18);
-                window.CrComLib.unsubscribeState("b","274",light_19);
-                window.CrComLib.unsubscribeState("b","275",light_20);
-    
-                window.CrComLib.unsubscribeState("b","278",light_21);
-                window.CrComLib.unsubscribeState("b","279",light_22);
-                window.CrComLib.unsubscribeState("b","280",light_23);
-                window.CrComLib.unsubscribeState("b","281",light_24);
-                window.CrComLib.unsubscribeState("b","282",light_25);
-    
-                window.CrComLib.unsubscribeState("b","285",light_26);
-                window.CrComLib.unsubscribeState("b","286",light_27);
-                window.CrComLib.unsubscribeState("b","287",light_28);
-                window.CrComLib.unsubscribeState("b","288",light_29);
-                window.CrComLib.unsubscribeState("b","289",light_30);
-    
-                window.CrComLib.unsubscribeState("b","292",light_31);
-                window.CrComLib.unsubscribeState("b","293",light_32);
-                window.CrComLib.unsubscribeState("b","294",light_33);
-                window.CrComLib.unsubscribeState("b","295",light_34);
-                window.CrComLib.unsubscribeState("b","296",light_35);
-    
-                window.CrComLib.unsubscribeState("b","299",light_36);
-                window.CrComLib.unsubscribeState("b","300",light_37);
-                window.CrComLib.unsubscribeState("b","301",light_38);
-                window.CrComLib.unsubscribeState("b","302",light_39);
-                window.CrComLib.unsubscribeState("b","303",light_40);
-    
-                window.CrComLib.unsubscribeState("b","308",light_41);
-                window.CrComLib.unsubscribeState("b","309",light_42);
-                window.CrComLib.unsubscribeState("b","310",light_43);
-                window.CrComLib.unsubscribeState("b","311",light_44);
-                window.CrComLib.unsubscribeState("b","312",light_45);
-    
-                window.CrComLib.unsubscribeState("b","315",light_46);
-                window.CrComLib.unsubscribeState("b","316",light_47);
-                window.CrComLib.unsubscribeState("b","317",light_48);
-                window.CrComLib.unsubscribeState("b","318",light_49);
-                window.CrComLib.unsubscribeState("b","319",light_50);
-    
-                window.CrComLib.unsubscribeState("b","322",light_51);
-                window.CrComLib.unsubscribeState("b","323",light_52);
-                window.CrComLib.unsubscribeState("b","324",light_53);
-                window.CrComLib.unsubscribeState("b","325",light_54);
-                window.CrComLib.unsubscribeState("b","326",light_55);
-    
-                window.CrComLib.unsubscribeState("b","330",light_56);
-                window.CrComLib.unsubscribeState("b","331",light_57);
-                window.CrComLib.unsubscribeState("b","332",light_58);
-                window.CrComLib.unsubscribeState("b","333",light_59);
-                window.CrComLib.unsubscribeState("b","334",light_60);
-    
-                window.CrComLib.unsubscribeState("b","338",light_61);
-                window.CrComLib.unsubscribeState("b","339",light_62);
-                window.CrComLib.unsubscribeState("b","340",light_63);
-                window.CrComLib.unsubscribeState("b","341",light_64);
-                
-    
-    
-    
-                
-              
-                
-            }
-          }, []);
-    
-
-
-
-
-        const zone_1 =
-                {
-                    title: "Backyard",
-                    light1: ["Hanging","250",light_1],
-                    light2: ["Sconces","251",light_2],
-                    light3: ["Flood lights","252",light_3],
-                    light4: ["Side lights","253",light_4],
-                    light5: ["Planter","254",light_5]
-                }
-
-        const zone_2 =
-                {
-                    title: "Basement",
-                    light1: ["Media","257",light_6],
-                    light2: ["Playroom","258",light_7],
-                    light3: ["Gym","259",light_8],
-                    light4: ["Hall","260",light_9],
-                    light5: ["Stairs","261",light_10]
-                }
-
+  // Zone: Rear
+  const lightZone_REAR = (
+    <>
+      <h2 className="light_menu_title">Rear</h2>
+      <div className="button_list">
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_1_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_1_join_REAR, false);
+          console.log(`Triggered join [${light_1_join_REAR}] coming from [${light_1_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_1_fb_REAR ? lightOn : lightOff} alt={light_1_title_REAR} />
+          <p>{light_1_title_REAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_2_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_2_join_REAR, false);
+          console.log(`Triggered join [${light_2_join_REAR}] coming from [${light_2_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_2_fb_REAR ? lightOn : lightOff} alt={light_2_title_REAR} />
+          <p>{light_2_title_REAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_3_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_3_join_REAR, false);
+          console.log(`Triggered join [${light_3_join_REAR}] coming from [${light_3_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_3_fb_REAR ? lightOn : lightOff} alt={light_3_title_REAR} />
+          <p>{light_3_title_REAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_4_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_4_join_REAR, false);
+          console.log(`Triggered join [${light_4_join_REAR}] coming from [${light_4_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_4_fb_REAR ? lightOn : lightOff} alt={light_4_title_REAR} />
+          <p>{light_4_title_REAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_5_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_5_join_REAR, false);
+          console.log(`Triggered join [${light_5_join_REAR}] coming from [${light_5_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_5_fb_REAR ? lightOn : lightOff} alt={light_5_title_REAR} />
+          <p>{light_5_title_REAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_6_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_6_join_REAR, false);
+          console.log(`Triggered join [${light_6_join_REAR}] coming from [${light_6_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_6_fb_REAR ? lightOn : lightOff} alt={light_6_title_REAR} />
+          <p>{light_6_title_REAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_7_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_7_join_REAR, false);
+          console.log(`Triggered join [${light_7_join_REAR}] coming from [${light_7_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_7_fb_REAR ? lightOn : lightOff} alt={light_7_title_REAR} />
+          <p>{light_7_title_REAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_8_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_8_join_REAR, false);
+          console.log(`Triggered join [${light_8_join_REAR}] coming from [${light_8_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_8_fb_REAR ? lightOn : lightOff} alt={light_8_title_REAR} />
+          <p>{light_8_title_REAR}</p>
+        </button>
+        <button className="btn_square" onClick={() => {
+          window.CrComLib.publishEvent("b", light_9_join_REAR, true);
+          window.CrComLib.publishEvent("b", light_9_join_REAR, false);
+          console.log(`Triggered join [${light_9_join_REAR}] coming from [${light_9_title_REAR}]`);
+        }}>
+          <img className="btn_image" src={light_9_fb_REAR ? lightOn : lightOff} alt={light_9_title_REAR} />
+          <p>{light_9_title_REAR}</p>
+        </button>
+      </div>
+    </>
        
-        const zone_3 =
-                {
-                    title: "Breakfast",
-                    light1: ["Breakfast","264",light_11],
-                    light2: ["Chandelier","265",light_12],
-                    light3: ["Cove","266",light_13],
-                    light4: ["Down Lights","267",light_14],
-                }
+    )
 
-        const zone_4 =
-                {
-                    title: "Bar and Library",
-                    light1: ["Bar Downs","271",light_16],
-                    light2: ["Cove Cabinet","272",light_17],
-                    light3: ["Library Down","273",light_18],
-                    light4: ["Library sconce","274",light_19],
-                    light5: ["Hallway","275",light_20]
-                }
-
-        const zone_5 =
-                {
-                    title: "Dining Room",
-                    light1: ["Down Lights ","278",light_21],
-                    light2: ["Chandelier","279",light_22],
-                    light3: ["Cabinet","280",light_23],
-                    light4: ["Butler Sink","281",light_24],
-                    light5: ["Dine Hall","282",light_25]
-                }
-
-        const zone_6 =
-                {
-                    title: "Family Room",
-                    light1: ["Down Lights","285",light_26],
-                    light2: ["Center","286",light_27],
-                    light3: ["Cabinet","287",light_28],
-                    light4: ["Library Hall","288",light_29],
-                    light5: ["Vaulted Hall","289",light_30]
-                }
-
-        const zone_7 =
-                {
-                    title: "Foyer",
-                    light1: ["Front Sconces ","292",light_31],
-                    light2: ["Front Chandelier","293",light_32],
-                    light3: ["Interior Chandelier","294",light_33],
-                    light4: ["Party","295",light_34],
-                    light5: ["Nitch","296",light_35]
-                }
-
-        const zone_8 =
-                {
-                    title: "kids Room",
-                    light1: ["Madison","299",light_36],
-                    light2: ["logan","300",light_37],
-                    light3: ["Hudson","301",light_38],
-                    light4: ["Top Hall","302",light_39],
-                    light5: ["Kids Hall","303",light_40]
-                }
-
-        const zone_9 =
-                {
-                    title: "Kitchen",
-                    light1: ["Down Lights","308",light_41],
-                    light2: ["Sink","309",light_42],
-                    light3: ["Under Cab","310",light_43],
-                    light4: ["Desk","311",light_44],
-                    light5: ["Chandelier","312",light_45]
-                }
-
-        const zone_10 =
-                {
-                    title: "Living Room",
-                    light1: ["living","315",light_46],
-                    light2: ["Perimiter","316",light_47],
-                    light3: ["Chandelier","317",light_48],
-                    light4: ["Down lights","318",light_49],
-                    light5: ["Sconces","319",light_50]
-                }
-
-        const zone_11 =
-                {
-                    title: "Master Bathroom",
-                    light1: ["Center","322",light_51],
-                    light2: ["Shower","323",light_52],
-                    light3: ["Vanities","324",light_53],
-                    light4: ["Chandelier","325",light_54],
-                    light5: ["Bath Hall","326",light_55]
-                }
-
-                
-        const zone_12 =
-                {
-                    title: "Master Bedroom",
-                    light1: ["Center","330",light_56],
-                    light2: ["Perimiter","331",light_57],
-                    light3: ["Balcony","332",light_58],
-                    light4: ["Kids Hall","333",light_59],
-                    light5: ["Top Hall","334",light_60]
-                }
-
-        const zone_13 =
-                {
-                    title: "Office and Game Room",
-                    light1: ["Office","338",light_61],
-                    light2: ["Game Downs","339",light_62],
-                    light3: ["Game Balcony","340",light_63],
-                    light4: ["Top Hall","341",light_64],
-                    light5: ["Kids Hall","342",light_15],
-                
-
-        }
-
-
-
-
-        
-        const lightingGroup_1 = (
-            <>
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_12.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_12.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_12.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_12.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_12.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_12.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_12.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_12.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_12.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_12.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_12.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_12.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_12.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_12.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_12.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_12.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_12.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_12.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_12.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_12.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_12.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_12.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_12.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_12.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_12.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_12.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_12.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_11.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_11.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_11.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_11.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_11.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_11.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_11.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_11.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_11.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_11.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_11.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_11.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_11.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_11.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_11.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_11.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_11.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_11.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_11.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_11.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_11.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_11.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_11.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_11.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_11.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_11.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_11.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_8.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_8.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_8.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_8.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_8.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_8.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_8.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_8.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_8.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_8.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_8.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_8.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_8.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_8.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_8.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_8.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_8.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_8.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_8.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_8.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_8.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_8.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_8.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_8.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_8.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_8.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_8.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_13.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_13.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_13.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_13.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_13.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_13.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_13.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_13.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_13.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_13.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_13.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_13.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_13.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_13.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_13.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_13.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_13.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_13.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_13.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_13.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_13.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_13.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_13.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_13.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_13.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_13.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_13.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          );
-          
-          const lightingGroup_2 = (
-            <>
-              <div className="zone_section">
-                <h1 className="zone_title">
-                  {" "}
-                  {zone_3.title} & {zone_9.title}{" "}
-                </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_3.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_3.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_3.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_3.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_3.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_3.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_3.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_3.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_3.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_3.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_3.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_3.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_3.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_3.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_3.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_3.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_3.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_3.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_3.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_3.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_3.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_3.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_3.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_3.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_3.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_3.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_3.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_3.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_9.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_9.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_9.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_9.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_9.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_9.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_9.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_9.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_9.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_9.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_9.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_9.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_9.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_9.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_9.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_9.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_9.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_9.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_9.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_9.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_9.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_9.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_9.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_9.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{" "}
-                      </p>
-                      <p className="light_name">{zone_9.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_9.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_6.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_6.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_6.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_6.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_6.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_6.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_6.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_6.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_6.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_6.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_6.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_6.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_6.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_6.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_6.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_6.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_6.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_6.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_6.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_6.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_6.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_6.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_6.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_6.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_6.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_6.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_6.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_4.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_4.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_4.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_4.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_4.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_4.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_4.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_4.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_4.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_4.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_4.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_4.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_4.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_4.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_4.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_4.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_4.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_4.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_4.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_4.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_4.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_4.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_4.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_4.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_4.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_4.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_4.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_5.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_5.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_5.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_5.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_5.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_5.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_5.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_5.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_5.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_5.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_5.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_5.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_5.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_5.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_5.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_5.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_5.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_5.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_5.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_5.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_5.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_5.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_5.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_5.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_5.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_5.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_5.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_10.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_10.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_10.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_10.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_10.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_10.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_10.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_10.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_10.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_10.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_10.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_10.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_10.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_10.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_10.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_10.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_10.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_10.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_10.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_10.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_10.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_10.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_10.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_10.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_10.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_10.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_10.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_7.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_7.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_7.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_7.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_7.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_7.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_7.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_7.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_7.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_7.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_7.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_7.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_7.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_7.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_7.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_7.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_7.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_7.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_7.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_7.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_7.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_7.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_7.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_7.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_7.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_7.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_7.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          );
-          
-          const lightingGroup_3 = (
-            <>
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_2.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_2.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_2.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_2.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_2.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_2.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_2.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_2.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_2.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_2.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_2.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_2.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_2.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_2.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_2.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_2.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_2.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_2.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_2.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_2.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_2.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_2.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_2.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_2.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_2.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_2.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_2.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          );
-          
-          const lightingGroup_4 = (
-            <>
-              <div className="zone_section">
-                <h1 className="zone_title"> {zone_1.title} </h1>
-                <div className="light_wrapper">
-                  <div
-                    className="light_tile"
-                    id={zone_1.light1[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_1.light1[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_1.light1[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_1.light1[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_1.light1[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light1[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light1[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_1.light2[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_1.light2[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_1.light2[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_1.light2[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_1.light2[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light2[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light2[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_1.light3[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_1.light3[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_1.light3[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_1.light3[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_1.light3[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light3[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light3[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_1.light4[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_1.light4[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_1.light4[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_1.light4[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_1.light4[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light4[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light4[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-          
-                  <div
-                    className="light_tile"
-                    id={zone_1.light5[2] ? '' : ''}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", `${zone_1.light5[1]}`, true),
-                       window.CrComLib.publishEvent("b", `${zone_1.light5[1]}`, false))
-                    }
-                  >
-                    <div className="light_info">
-                      <p className="display_none">
-                        {zone_1.light5[2] ? (
-                          <span className="sub_text">On</span>
-                        ) : (
-                          <span className="sub_text">Off</span>
-                        )}{' '}
-                      </p>
-                      <p className="light_name">{zone_1.light5[0]}</p>
-                    </div>
-          
-                    <div className="light_controls">
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light5[2] ? "display_none" : "display_none"}
-                      >
-                        <img className="btn_image" src={lightOff} />
-                      </button>
-          
-                      <button
-                        className="btn_circle"
-                        id={zone_1.light5[2] ? "light_btn_on" : ""}
-                      >
-                        <img className="btn_image" src={lightOn} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          );
-          
-          const lightingGroup_5 = (
-            <>
-              <div className="zone_section" id="global_lighting">
-                <h1 className="zone_title"> Global Scenes </h1>
-                <div className="light_wrapper">
-                  <button
-                    className="btn_square_wide"
-                    id={global_1 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "348", true),
-                       window.CrComLib.publishEvent("b", "348", false))
-                    }
-                  >
-
-                    <img className="btn_image" src={entry} />
-                    <p> Entry </p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_2 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "349", true),
-                       window.CrComLib.publishEvent("b", "349", false))
-                    }
-                  >
-                       <img className="btn_image" src={goodnight} />
-                    <p>Goodnight</p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_3 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "350", true),
-                       window.CrComLib.publishEvent("b", "350", false))
-                    }
-                  >
-                      <img className="btn_image" src={stairs} />
-                    <p>Stairs</p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_4 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "351", true),
-                       window.CrComLib.publishEvent("b", "351", false))
-                    }
-                  >
-                      <img className="btn_image" src={floodLights} />
-                    <p>Flood Lights</p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_5 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "352", true),
-                       window.CrComLib.publishEvent("b", "352", false))
-                    }
-                  >
-                      <img className="btn_image" src={downS} />
-                    <p> Downstairs Off </p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_6 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "353", true),
-                       window.CrComLib.publishEvent("b", "353", false))
-                    }
-                  >
-                      <img className="btn_image" src={mainIcon} />
-                    <p> Main Off </p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_7 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "354", true),
-                       window.CrComLib.publishEvent("b", "354", false))
-                    }
-                  >
-                      <img className="btn_image" src={upS} />
-                    <p> Up Stairs Off </p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_8 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "355", true),
-                       window.CrComLib.publishEvent("b", "355", false))
-                    }
-                  >
-                      <img className="btn_image" src={driveSconce} style ={{transform:"scaleY(-1)", position:"relative", bottom:"5px"}} />
-                    <p> Drive Sconce </p>
-                  </button>
-          
-            
-                  <button
-                    className="btn_square_wide"
-                    id={global_11 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "358", true),
-                       window.CrComLib.publishEvent("b", "358", false))
-                    }
-                  >
-                      <img className="btn_image" src={welcome} />
-                    <p> Welcome</p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_12 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "359", true),
-                       window.CrComLib.publishEvent("b", "359", false))
-                    }
-                  >
-                      <img className="btn_image" src={vac} />
-                    <p> Away/Vacation</p>
-                  </button>
-
-                  <button
-                    className="btn_square_wide"
-                    id={global_9 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "356", true),
-                       window.CrComLib.publishEvent("b", "356", false))
-                    }
-                  >
-                    <p> All On</p>
-                  </button>
-          
-                  <button
-                    className="btn_square_wide"
-                    id={global_10 ? "active_global" : ""}
-                    onClick={() =>
-                      (window.CrComLib.publishEvent("b", "357", true),
-                       window.CrComLib.publishEvent("b", "357", false))
-                    }
-                  >
-                    <p> All off</p>
-                  </button>
-          
-                </div>
-              </div>
-            </>
-          );
-          
-
-    
-
-    
-
-
-        
 
         const currentFloor = (id:string) => {
-            if(id === "up"){
-                setUpStairs(true)
-                setMain(false)
-                setDownStairs(false)
-                setOutSide(false)
-                setGlobalScenes(false)
-            } else if (id === "main"){
+            if (id === "main"){
                 setUpStairs(false)
                 setMain(true)
-                setDownStairs(false)
-                setOutSide(false)
-                setGlobalScenes(false)
+                setOutDoors(false)
+              } 
 
-            } else if (id === "down"){
-                setUpStairs(false)
+            else if (id === "up"){
+                setUpStairs(true)
                 setMain(false)
-                setDownStairs(true)
-                setOutSide(false)
-                setGlobalScenes(false)
+                setOutDoors(false)
+            }   
+
+            else if (id === "out"){
+              setUpStairs(false)
+              setMain(false)
+              setOutDoors(true)
+            }   
+        }
+
+
+  
+        
+        
 
         
-            } else if (id === "out"){
-                setUpStairs(false)
-                setMain(false)
-                setDownStairs(false)
-                setOutSide(true)
-                setGlobalScenes(false)
-
-            }
-             else if (id === "global"){
-                setUpStairs(false)
-                setMain(false)
-                setDownStairs(false)
-                setOutSide(false)
-                setGlobalScenes(true)
-
-
-             }
-        }
  
     
 
-
+      
    
    
 
+        const lightMenu = (id: string) => {
+            if (id === "openMap1") {
+              setMap1("map_layout_1_active");
+              setLightMenuDisplay("light_menu_open");
+            } 
+            
+            
+            else if (id === "closeMap1") {
+             
+              setMap1("map_layout_1_closing");
+              setLightMenuDisplay("light_menu_closing")
+            
+              const intervalId = setInterval(() => {
+                setMap1("map_layout_1");
+                setLightMenuDisplay("light_menu_closed")
+                clearInterval(intervalId); 
+              }, 1000);
+            }
 
-   
 
 
 
 
 
+            else if (id === "openMap2") {
+              setMap2("map_layout_2_active");
+              setLightMenuDisplay2("light_menu_open");
+            } 
+            
+            
+            else if (id === "closeMap2") {
+             
+              setMap2("map_layout_2_closing");
+              setLightMenuDisplay2("light_menu_closing")
+            
+              const intervalId2 = setInterval(() => {
+                setMap2("map_layout_2");
+                setLightMenuDisplay2("light_menu_closed")
+                clearInterval(intervalId2); 
+              }, 1000);
+            }
+        };
+
+
+
+
+      
+
+
+
+        
+
+
+          const lightZone = (id:string) =>{
+              if(id === "zone_1"){
+                setZone_1(true)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              } else if (id === "zone_2"){
+                setZone_1(false)
+                setZone_2(true)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              } else if (id === "zone_3"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(true)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              }else if (id === "zone_4"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(true)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              }else if (id === "zone_5"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(true)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              }else if (id === "zone_6"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(true)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              }else if (id === "zone_7"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(true)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              }else if (id === "zone_8"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(true)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              }else if (id === "zone_9"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(true)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(false)
+              }else if (id === "zone_10"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(true)
+                setZone_11(false)
+                setZone_12(false)
+              }else if (id === "zone_11"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(true)
+                setZone_12(false)
+              }else if (id === "zone_12"){
+                setZone_1(false)
+                setZone_2(false)
+                setZone_3(false)
+                setZone_4(false)
+                setZone_5(false)
+                setZone_6(false)
+                setZone_7(false)
+                setZone_8(false)
+                setZone_9(false)
+                setZone_10(false)
+                setZone_11(false)
+                setZone_12(true)
+              }else if (id === "zone_13"){
+          
+
+                setZone_13(true)
+                setZone_14(false)
+                setZone_15(false)
+              }else if (id === "zone_14"){
+               
+
+                setZone_13(false)
+                setZone_14(true)
+                setZone_15(false)
+              }else if (id === "zone_15"){
+
+                setZone_13(false)
+                setZone_14(false)
+                setZone_15(true)
+              }
+            
+          }
       
 
 
@@ -3117,42 +1656,131 @@ const LightDashboard = () =>{
 
 
         <div className="nav_container">
-            
-
-                <div className="nav">
-                    <button onClick={() => currentFloor("global")}    className={globalScenes?   "btn_selected" : "btn_not_selected"}>      <p> Global</p>     </button>
-                    <button onClick={() => currentFloor("up")}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> Up Stairs</p>     </button>
-                    <button onClick={() => currentFloor("main")}  className={main? "btn_selected" : "btn_not_selected"}>            <p> Main </p>         </button>
-                    <button onClick={() => currentFloor("down")}  className={downStairs?   "btn_selected" : "btn_not_selected"}>    <p> Down Stairs</p>   </button>
-                    <button onClick={() => currentFloor("out")}   className={outSide? "btn_selected" : "btn_not_selected"}>         <p> Out Doors</p>     </button>
-                </div>
+            <div className="nav">
+                <button onClick={() => ( currentFloor("up"))}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> 2nd Floor</p>     </button>
+                <button onClick={() => (currentFloor("main"))}  className={main? "btn_selected" : "btn_not_selected"}>            <p> 1st Floor </p>         </button>
+                <button onClick={() => (currentFloor("out"))}  className={outDoors? "btn_selected" : "btn_not_selected"}>            <p> Out Door </p>         </button>
+            </div>
         </div>
 
 
-        <div className="mobile_nav">
-            <button onClick={() => currentFloor("global")}    className={globalScenes?   "btn_selected" : "btn_not_selected"}>      <p> Global</p>     </button>
-            <button onClick={() => currentFloor("up")}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> Up Stairs</p>     </button>
-            <button onClick={() => currentFloor("main")}  className={main? "btn_selected" : "btn_not_selected"}>            <p> Main </p>         </button>
-            <button onClick={() => currentFloor("down")}  className={downStairs?   "btn_selected" : "btn_not_selected"}>    <p> Down Stairs</p>   </button>
-            <button onClick={() => currentFloor("out")}   className={outSide? "btn_selected" : "btn_not_selected"}>         <p> Out Doors</p>     </button>
-        </div>
-
+      
         
-       
+    
 
 
-            <h1 className="title_info"> Light Dashboard</h1>
-                <div className={globalScenes? "display_none":"light_container"}>
-                        {upStairs? lightingGroup_1 : <> </>}
-                        {main? lightingGroup_2 : <> </>}
-                        {downStairs? lightingGroup_3 : <> </>}
-                        {outSide? lightingGroup_4 : <> </>}
-                       
+            <h1 className="title_info" id ="display_none"> Light Dashboard</h1>
+                
+                
+                
+                <div className="light_map_container">
+                    
+                
+                   {main?    
+                    <>
+                        <div className={map1}> 
+                            <img className="floor_1_img" src={floor1}/>
+                            <button className="btn_location_1" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_1"))}>  Z1  </button>
+                            <button className="btn_location_2" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_2"))}>  Z2  </button>
+                            <button className="btn_location_3" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_3"))}>  Z3  </button>
+                            <button className="btn_location_4" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_4"))}>  Z4  </button>
+                            <button className="btn_location_5" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_5"))}>  Z5  </button>
+                            <button className="btn_location_6" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_6"))}>  Z6  </button>
+                            <button className="btn_location_7" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_7"))}>  Z7  </button>
+                            <button className="btn_location_8" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_8"))}>  Z8  </button>
+                            <button className="btn_location_9" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_9"))}>  Z9  </button>
+                            <button className="btn_location_10" onClick={()=>(lightMenu("openMap1"), lightZone("zone_10"))}> Z10 </button>
+                            <button className="btn_location_11" onClick={()=>(lightMenu("openMap1"), lightZone("zone_11"))}> Z11 </button>
+                            <button className="btn_location_12" onClick={()=>(lightMenu("openMap1"), lightZone("zone_12"))}> Z12 </button>
+                          
+                        </div> 
+
+                        <div className={lightMenuDisplay}>
+
+                            <div className="close_menu_btn">
+                                <img className="btn_image" onClick={()=>lightMenu("closeMap1")} src={close}/>
+                            </div>
+                            
+
+
+
+                            {zone_1? lightZone_BAR : <></>}
+                            {zone_2? lightZone_BILLIARD_ROOM: <></>}
+                            {zone_3? lightZone_BREAKFAST : <></>}
+                            {zone_4? lightZone_BUTLER_PANTRY : <></>}
+                            {zone_5? lightZone_DINING_ROOM : <></>}
+                            {zone_6? lightZone_ELEVATOR_HALL : <></>}
+                            {zone_7? lightZone_FAMILY_ROOM : <></>}
+                            {zone_8? lightZone_FOYER : <></>}
+                            {zone_9? lightZone_KITCHEN : <></>}
+                            {zone_10? lightZone_LIVING_ROOM : <></>}
+                            {zone_11? lightZone_OFFICE_POWDER : <></>}
+                            {zone_12? lightZone_STEVE_S_OFFICE : <></>}
+                          
+
+
+
+
+
+
+
+
+                        </div>
+
+                        
+                        
+                    </>
+                    : <></>}
+
+                   {upStairs?     
+                    <>
+                            <div className={map2}> 
+                                <img className="floor_2_img" src={floor2}/>
+                                <button className="btn_location_13" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_13"))}>  Z13  </button>
+                                <button className="btn_location_14" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_14"))}>  Z14  </button>
+                                <button className="btn_location_15" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_15"))}>  Z14  </button>
+
+                               
+                              
+                            </div> 
+
+                            <div className={lightMenuDisplay2}>
+
+                                <div className="close_menu_btn">
+                                    <img className="btn_image" onClick={()=>lightMenu("closeMap2")} src={close}/>
+                                </div>
+                                
+
+
+
+                                {zone_13? lightZone_HALL : <></>}
+                                {zone_14? lightZone_MEDIA_ROOM: <></>}
+                                {zone_15? lightZone_SOUTH_STAIRS : <></>}
+                           
+                              
+                            </div>
+
+                           
+                            
+                    </>
+                    :<></>
+                   }
+
+                   {outDoors?
+                   <>
+
+                    <div className="out_door_lighting">
+                        <div className="out_door_1"> {lightZone_REAR}       </div>
+                        <div className="out_door_2"> {lightZone_LANDSCAPE}  </div>
+                        <div className="out_door_3"> {lightZone_FRONT}      </div>
+                    </div>
+
+                   </>:<></>}
+                    
+             
                 </div>
 
-                <div className="light_container_global">
-                  {globalScenes? lightingGroup_5 : <> </>}
-                </div>
+          
 
 
 

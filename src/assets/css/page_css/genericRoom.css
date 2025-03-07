@@ -128,10 +128,32 @@
     justify-content: center;
     align-items: center;
 }
-    .source_card img{
-        height: 100%;
-    }
+   
 
+
+.media_3_img,
+.media_4_img,
+.media_5_img,
+.media_6_img,
+.media_7_img,
+.media_8_img{
+    height: 75%;
+}
+
+.media_1_img{
+    height: 50%;
+}
+.media_2_img{
+    height: 100%;
+    position: relative;
+    top: 15px;
+}
+
+.media_6_img,
+.media_7_img,
+.media_8_img{
+    filter: invert(1);
+}
     
 
 /*
@@ -151,6 +173,26 @@
     text-align: center;
 }
 
+
+.media_1_img_display img{
+    height: 60px;
+} 
+.media_2_img_display{
+    position: relative;
+    bottom: 10px;
+}
+    .media_2_img_display img{
+        position: relative;
+        top: 20px;
+    }
+
+.media_3_img_display img{height: 4.5rem;}
+.media_4_img_display img{height: 4.5rem;}
+.media_5_img_display img{height: 4.5rem;}
+
+.media_6_img_display img{ filter: invert(1);}
+.media_7_img_display img{ filter: invert(1);}
+.media_8_img_display img{ filter: invert(1);}
 
 
 .controller_layout{
@@ -960,10 +1002,10 @@
         
     .mobile_controller_nav{
         width: 80%;
-        height: 105%;
+        height: 100%;
 
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         padding-bottom: 10px;
         border-bottom: solid 1px white;
@@ -1206,6 +1248,34 @@
     
 
 
+    .media_1_img_display img{
+        height: 50px;
+    }
+    .media_1_img_display p{
+      display: none;
+    }
+
+    .media_3_img_display img{
+        height: 2.5rem;
+    }
+        .media_4_img_display img{
+            height: 2.5rem;        
+        }   
+            .media_5_img_display img{
+                height: 2.5rem;           
+            }
+                .media_6_img_display img{
+                    height: 2.5rem;
+                }
+                    .media_7_img_display img{
+                        height: 2.5rem;
+                    }
+                        .media_8_img_display img{
+                            height: 2.5rem;
+                        }
+
+
+
 
 
 
@@ -1234,6 +1304,24 @@
         #mobile_display_none{
             display: none;
         }
+
+        .media_3_img,
+.media_4_img,
+.media_5_img,
+.media_6_img,
+.media_7_img,
+.media_8_img{
+    height: 60%;
+}
+
+.media_1_img{
+    height: 45%;
+}
+.media_2_img{
+    height: 90%;
+    position: relative;
+    top: 12px;
+}
     }
 
 

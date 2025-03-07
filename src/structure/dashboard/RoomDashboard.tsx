@@ -69,7 +69,6 @@ const RoomsDashboard = () => {
    
 
     
-
     const [zone, setZone] = useState<{
         location_1: LocationType;
         location_2: LocationType;
@@ -86,11 +85,17 @@ const RoomsDashboard = () => {
             active: false,
             title:"Up Stairs",
             rooms:[
-                {"Master Bathroom":["media","music","light"]},
-                {"Master Bedroom":["media","music","light"]},
-                {"Game Room":["media","music","light"]},
-                {"Office":["media","music","light"]},
-                {"Kids Room":["light"]},
+                {"Master Bedroom":["media","music"]},
+                {"Guest Bedroom":["media","music"]},
+                {"Guest Bathroom":["media","music"]},
+
+                {"Steves Bath":["media","music"]},
+                {"Ellens Office":["media","music"]},
+                {"Ellens Bath":["media","music"]}, 
+                {"Ellens Exercise":["media","music"]}, 
+
+                
+                {"Media Room":["media","music","light"]},
             ]
         },
         location_2: {
@@ -98,22 +103,24 @@ const RoomsDashboard = () => {
             title:"Main",
             rooms:[
                 {"Family Room":["media","music","light"]},
+                {"Dinning Room":["media","music","light"]}, 
 
-                {"Breakfast Nook":["media","music","light"]},
-                {"Bar":["media","music","light"]},    
+                {"Breakfast":["media","music","light"]},
 
-                {"Dining Room":["light"]}, 
-                {"Living Room":["light"]}, 
-                {"Foyer":["light"]}, 
+                {"Game Room":["media","music","light"]},   
+
+                
+               
             ]
         },
         location_3: {
             active: false,
             title:"Down Stairs",
             rooms:[
-                {'Media Room':["media","music","light"]}, 
-                {'Gym':["media","music","light"]},
-                {"Backyard":["light"]}
+             
+                {'Arcade':["media","music"]},
+                {'Basketball Court':["media","music"]}
+
             ]
         },
         location_4: {
@@ -143,6 +150,9 @@ const RoomsDashboard = () => {
             rooms:[]
         },
     })
+
+
+
 
 
     const activeLocations = Object.values(zone).filter(location => location.active);

@@ -1,6 +1,6 @@
 import './assets/css/Index.css'
 import 'animate.css';
-import {useMemo, useState} from 'react';
+import {useMemo} from 'react';
 import useWebXPanel from './hooks/useWebXPanel';
 
 import {createHashRouter, RouterProvider} from 'react-router-dom'
@@ -18,27 +18,31 @@ import Climate  from './structure/dashboard/ClimateDashboard';
 import Security from './structure/dashboard/SecurityDashboard'
 import PoolSpa from './structure/dashboard/PoolSpaDashboard';
 
-// Pages
+// Pages -------------------------------------------------------------------------
 
-import Mediaroom from './structure/page/mediaroom';
-import Gym from './structure/page/gym';
+// upStairs
+import MasterBedroom from './structure/page/upStairs/masterbedroom';
+import GuestBedroom from './structure/page/upStairs/guestbedroom';
+import GuestBathroom from "./structure/page/upStairs/guestbathroom"
+import StevesBath from './structure/page/upStairs/stevesbath';
+import EllensOffice from './structure/page/upStairs/ellensoffice';
+import EllensBath from './structure/page/upStairs/ellensbath';
+import EllensExcercise from './structure/page/upStairs/ellensexcercise';
+import Mediaroom from './structure/page/upStairs/mediaroom';
 
-import BreakfastNook from './structure/page/breakfastnook';
-import FamilyRoom from './structure/page/FamilyRoom';
-import Bar from './structure/page/bar'
 
-import GameRoom from './structure/page/gameroom';
-import MasterBedroom from './structure/page/masterbedroom';
-import MasterBathroom from './structure/page/masterbathroom'
-import Office from './structure/page/office';
+// main
+import Breakfast from './structure/page/main/breakfast';
+import DinningRoom from './structure/page/main/dinningroom';
+import FamilyRoom from "./structure/page/main/FamilyRoom"
+import GameRoom from './structure/page/main/gameroom';
 
-//lights only 
-import Backyard from './structure/page/backyard';
-import DiningRoom from './structure/page/diningroom';
-import Foyer from './structure/page/foyer';
-import KidsRoom from './structure/page/kidsroom';
-import LivingRoom from './structure/page/livingroom';
-      
+// down stairs
+import Arcade from './structure/page/downStairs/arcade';
+
+
+
+
 // Tools
 import ScreenSize from './structure/tools/ScreenSize';
 
@@ -50,113 +54,135 @@ import ScreenSize from './structure/tools/ScreenSize';
    
 
 function App() {
-  const [mute, setMute] = useState<string>("False");
 
   const router = createHashRouter ([
-  {
-    path: '/',
-    element: <Home   />
-  },
-
-  // ------------------------------------ Dashboards
-  {
-    path: '/roomsDashboard',
-    element: <RoomsDashboard />
-  },
-  {
-    path: '/AudioDashboard',
-    element: <AudioDashboard  mute={mute} setMute={setMute} />
-  },
-  {
-    path: '/LightDashboard',
-    element: <LightDashboard />
-  },
-  {
-    path: '/Climate',
-    element: <Climate />
-  },
-  {
-    path: '/Security',
-    element: <Security />
-  },
-  {
-    path: '/PoolSpa',
-    element: <PoolSpa />
-  },
-   //------------------------------------ Basement Floor
-  {
-    path: '/mediaroom',
-    element: <Mediaroom />
-  },
-  {
-    path: '/gym',
-    element: <Gym />
-  },
-   //------------------------------------ Main Floor
-  {
-    path: '/breakfastnook',
-    element: <BreakfastNook />
-  },
-  {
-    path: '/familyroom',
-    element: <FamilyRoom />
-  },
-  {
-    path: '/bar',
-    element: <Bar />
-  },
-  {
-    path: '/diningroom',
-    element: <DiningRoom />
-  },
-  {
-    path: '/foyer',
-    element: <Foyer />
-  }, {
-    path: '/livingroom',
-    element: <LivingRoom />
-  },
-
-  //------------------------------------ Second Floor
-  {
-    path: '/gameroom',
-    element: <GameRoom />
-  },
-  {
-    path: '/masterbedroom',
-    element: <MasterBedroom />
-  },
-  {
-    path: '/masterbathroom',
-    element: <MasterBathroom />
-  },
-  {
-    path: '/office',
-    element: <Office />
-  },
-  {
-    path: '/kidsroom',
-    element: <KidsRoom />
-  },
-
-  //-------------------------------------- outdoors
-
     {
-      path:'/backyard',
-      element: <Backyard />
+      path: '/',
+      element: <Home />
     },
-
-
-  //------------------------------------ Tools
-
-
-  {
-    path: '/ScreenSize',
-    element: <ScreenSize />
-  },
-
-])
-
+  
+    // ------------------------------------ Dashboards
+    {
+      path: '/roomsDashboard',
+      element: <RoomsDashboard />
+    },
+    {
+      path: '/AudioDashboard',
+      element: <AudioDashboard />
+    },
+    {
+      path: '/LightDashboard',
+      element: <LightDashboard />
+    },
+    {
+      path: '/Climate',
+      element: <Climate />
+    },
+    {
+      path: '/Security',
+      element: <Security />
+    },
+    {
+      path: '/PoolSpa',
+      element: <PoolSpa />
+    },
+    
+    //------------------------------------ Second Floor
+  
+    {
+      path: '/masterbedroom',
+      element: <MasterBedroom />
+    },
+  
+    {
+      path: '/guestbedroom',
+      element: <GuestBedroom />
+    },
+  
+    {
+      path: '/guestbathroom',
+      element: <GuestBathroom />
+    },
+  
+    {
+      path: '/stevesbath',
+      element: <StevesBath />
+    },
+  
+    {
+      path: '/ellensoffice',
+      element: <EllensOffice />
+    },
+  
+    {
+      path: '/ellensbath',
+      element: <EllensBath />
+    },
+  
+    {
+      path: '/ellensexcercise',
+      element: <EllensExcercise />
+    },
+  
+    {
+      path: '/mediaroom',
+      element: <Mediaroom />
+    },
+  
+  
+     //------------------------------------ Main Floor
+    {
+      path: '/breakfast',
+      element: <Breakfast/>
+    },
+    {
+      path: '/familyroom',
+      element: <FamilyRoom />
+    },
+   
+    {
+      path: '/dinningroom',
+      element: <DinningRoom />
+    },
+   
+  
+    {
+      path: '/gameroom',
+      element: <GameRoom />
+    },
+   
+    
+     //------------------------------------ Main Floor
+     {
+      path: '/arcade',
+      element: <Arcade/>
+      },
+  
+  
+  
+  
+  
+  
+  //---------------------------------------------
+  
+    
+   
+   
+  
+    //-------------------------------------- outdoors
+  
+    
+  
+    //------------------------------------ Tools
+  
+  
+    {
+      path: '/ScreenSize',
+      element: <ScreenSize />
+    },
+  
+  ])
+  
 
   
   const webXPanelConfig = useMemo(() => ({
@@ -168,7 +194,6 @@ function App() {
 
   useWebXPanel(webXPanelConfig);
 
-  console.log(mute)
 
   
   return (

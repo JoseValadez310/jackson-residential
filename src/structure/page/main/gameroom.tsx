@@ -6,51 +6,51 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 //Controller
-import AppleTv from "../../components/controllers/AppleTv"
-import DirecTv from "../../components/controllers/DirecTv"
-import BluRay from "../../components/controllers/BluRay"
-import Roku from "../../components/controllers/Roku"
-
+import AppleTv from "../../../components/controllers/AppleTv"
+import DirecTv from "../../../components/controllers/DirecTv"
+import BluRay from "../../../components/controllers/BluRay"
+// import Roku from "../../../components/controllers/Roku"
 // Music Page import 
 
 //CSS for Controllers
 
-import "../../assets/css/page_css/genericRoom.css"
+import "../../../assets/css/page_css/genericRoom.css"
+
+
 
 // Componenets 
 
 //import DateDisplay from "../../components/DateDisplay"
 // Logos
 
-import appleTV      from "../../assets/images/logos/Apple_TV_(logo).svg"
-import small_dtv     from "../../assets/images/logos/DTV_logo.svg"
-import direcTv      from "../../assets/images/logos//DIRECTV_2021_logo.svg"
-import roku from "../../assets/images/logos/Roku_logo.svg"
-//import kscape       from "../../assets/images/logos/Kaleidescape_(logo).svg"
-import bluRay       from '../../assets/images/logos/blu-ray-disc.svg'
-//import vhs          from "../../assets/images/logos/VHS_logo.svg"
+import appleTV      from "../../../assets/images/logos/Apple_TV_(logo).svg"
+import small_dtv    from "../../../assets/images/logos/DTV_logo.svg"
+//import roku         from "../../../assets/images/logos/Roku_logo.svg"
+import kscape       from "../../../assets/images/logos/Kaleidescape_(logo).svg"
+import bluRay       from '../../../assets/images/logos/blu-ray-disc.svg'
 
 // General Icons
-import TV          from "../../assets/images/icons/icons8-tv.svg"
-import lights      from "../../assets/images/icons/noun-light-bulb-2216273.svg"
-import music       from "../../assets/images/icons/icons8-music.svg"
-import home_button from "../../assets/images/icons/icons8-exterior.svg"
-import menu_button from "../../assets/images/icons/icons8-arrow.svg"
-import mute        from "../../assets/images/icons/icons8-no-audio.svg"
-import power       from "../../assets/images/icons/icons8-power.svg"
-import arrow       from "../../assets/images/icons/icons8-triangle-arrow.svg"
-import portraitMode from "../../assets/images/icons/icons8-iphone-16-pro.svg"
+import TV          from "../../../assets/images/icons/icons8-tv.svg"
+import lights      from "../../../assets/images/icons/noun-light-bulb-2216273.svg"
+import music       from "../../../assets/images/icons/icons8-music.svg"
+import home_button from "../../../assets/images/icons/icons8-exterior.svg"
+import menu_button from "../../../assets/images/icons/icons8-arrow.svg"
+import mute        from "../../../assets/images/icons/icons8-no-audio.svg"
+import power       from "../../../assets/images/icons/icons8-power.svg"
+import arrow       from "../../../assets/images/icons/icons8-triangle-arrow.svg"
+import portraitMode from "../../../assets/images/icons/icons8-iphone-16-pro.svg"
 
 
 // Light SVGs
-import lightOn from "../../assets/images/icons/icons8-light-on.svg"
-import lightOff from "../../assets/images/icons/icons8-light-off.svg"
+import lightOn from "../../../assets/images/icons/icons8-light-on.svg"
+import lightOff from "../../../assets/images/icons/icons8-light-off.svg"
+import Kaleidescape from "../../../components/controllers/Kaleidescape"
 
-const MasterBedroom = () =>{
+const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Basic information regarding the page
 */
-    const roomName = "Master Bedroom"
+    const roomName = "Game Room"
 /*
 ---------------------------------------------------------------------------- Room dashboard apps 
 */
@@ -82,39 +82,83 @@ const MasterBedroom = () =>{
     let media_7:string
     let media_8:string
 
-    const roomLocation:string = "4"
+    const roomLocation:string = ""
+
+    const sub_title_1 = "BluRay"
+    const sub_title_2 = "Kaleidescape"
+    const sub_title_3 = "DTV House 1"
+    const sub_title_4 = "DTV House 2"
+    const sub_title_5 = "DTV Steve"
+    const sub_title_6 = "ATV House 1"
+    const sub_title_7 = "ATV House 2"
+    const sub_title_8 = "ATV Steve"
+
+    const media_1_img = bluRay
+    const media_2_img = kscape
+    const media_3_img = small_dtv
+    const media_4_img = small_dtv
+    const media_5_img = small_dtv
+    const media_6_img = appleTV
+    const media_7_img = appleTV
+    const media_8_img = appleTV
+
+    const controller_styles_1 = "bluRay_controller"
+    const controller_styles_2 = "kaleidescape_controller"
+    const controller_styles_3 = "direct_controller"
+    const controller_styles_4 = "direct_controller"
+    const controller_styles_5 = "direct_controller"
+    const controller_styles_6 = "apple_tv_controller"
+    const controller_styles_7 = "apple_tv_controller"
+    const controller_styles_8 = "apple_tv_controller"
+
+    const controller_1 = <BluRay />
+    const controller_2 = <Kaleidescape />
+    const controller_3 = <DirecTv />
+    const controller_4 = <DirecTv />
+    const controller_5 = <DirecTv />
+    const controller_6 = <AppleTv />
+    const controller_7 = <AppleTv />
+    const controller_8 = <AppleTv />
 /*
 ---------------------------------------------------------------------------- Room Vol / Mute status
 */
-    //change this per room
     const [roomVolume,setRoomVolume]  = useState(0)
     const [roomMute, setRoomMute]     = useState(false)
+    
+    const audio_volume_join   = ""
+    const audio_mute_join     = ""
+    const audio_increase_join = ""
+    const audio_decrease_join = ""
+
+
 /*
 ---------------------------------------------------------------------------- Modals for Apple Tv Reboot or Room shutdown
 */
     const [displayReboot, setDisplayReboot] = useState(false) // Apple TV reboot menu 
     const [tvPowerMenu, setTvPowerMenu] = useState(false)      //  TV Power Menu    
+
+    const room_off_join = ""
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
-    const light_1_join = "330"
-    const light_2_join = "331"
-    const light_3_join = "332"
-    const light_4_join = "333"
-    const light_5_join = "334"
-    const light_6_join = ""
-    const light_7_join = ""
-    const light_8_join = ""
+    const light_1_join = "250"
+    const light_2_join = "251"
+    const light_3_join = "252"
+    const light_4_join = "254"
+    const light_5_join = "255"
+    const light_6_join = "256"
+    const light_7_join = "257"
+    const light_8_join = "null"
 
 
-    const light_1_name:string = "Center"
-    const light_2_name:string = "Perimeter"
-    const light_3_name:string = "Balcony"
-    const light_4_name:string = "Kids Hall"
-    const light_5_name:string = "Top Hall"
-    const light_6_name:string = "null"
-    
-    const light_7_name:string = "null"
+    const light_1_name:string = "Bar Ceiling"
+    const light_2_name:string = "Bar Lights"
+    const light_3_name:string = "Bar Accent"
+
+    const light_4_name:string = "Billiard Pendant"
+    const light_5_name:string = "Billiard Path"
+    const light_6_name:string = "Billiard Sconces"
+    const light_7_name:string = "Billiard Ceiling"
     const light_8_name:string = "null"
    
     const [light_1, setLight_1] = useState(false)
@@ -122,7 +166,6 @@ const MasterBedroom = () =>{
     const [light_3, setLight_3] = useState(false)
     const [light_4, setLight_4] = useState(false)
     const [light_5, setLight_5] = useState(false)
-
     const [light_6, setLight_6] = useState(false)
     const [light_7, setLight_7] = useState(false)
     const [light_8, setLight_8] = useState(false)
@@ -142,21 +185,18 @@ const MasterBedroom = () =>{
 
     useEffect(() => {
         // TV Soucres
-        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  
-        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // ATV 1 his
-        const media3 = window.CrComLib.subscribeState("b","3",(value: boolean) => {setMedia3(value);});  // ATV 2 hers
-        const media4 = window.CrComLib.subscribeState("b","4",(value: boolean) => {setMedia4(value);});  // Camera
-        const media5 = window.CrComLib.subscribeState("b","5",(value: boolean) => {setMedia5(value);});  // DTV 1 his
-        const media6 = window.CrComLib.subscribeState("b","6",(value: boolean) => {setMedia6(value);});  // DTV 2 hers
-        const media7 = window.CrComLib.subscribeState("b","7",(value: boolean) => {setMedia7(value);});  // Roku
-
-
-
-        const media8 = window.CrComLib.subscribeState("b","-",(value: boolean) => {setMedia8(value);});  
+        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  // 
+        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // 
+        const media3 = window.CrComLib.subscribeState("b","3",(value: boolean) => {setMedia3(value);});  // 
+        const media4 = window.CrComLib.subscribeState("b","4",(value: boolean) => {setMedia4(value);});  // 
+        const media5 = window.CrComLib.subscribeState("b","5",(value: boolean) => {setMedia5(value);});  // 
+        const media6 = window.CrComLib.subscribeState("b","6",(value: boolean) => {setMedia6(value);});  // 
+        const media7 = window.CrComLib.subscribeState("b","7",(value: boolean) => {setMedia7(value);});  // 
+        const media8 = window.CrComLib.subscribeState("b","8",(value: boolean) => {setMedia8(value);});  
        
         // TV audio controls
-        const roomVolume     = window.CrComLib.subscribeState("n","107",(value: number) => {setRoomVolume(value);});
-        const roomMute    = window.CrComLib.subscribeState("b","529",(value: boolean) => {setRoomMute(value);});
+        const roomVolume     = window.CrComLib.subscribeState("n",audio_volume_join,(value: number) => {setRoomVolume(value);});
+        const roomMute    = window.CrComLib.subscribeState("b",audio_mute_join,(value: boolean) => {setRoomMute(value);});
 
         // Lights
 
@@ -165,6 +205,9 @@ const MasterBedroom = () =>{
         const light_3 = window.CrComLib.subscribeState("b",`${light_3_join}`,(value: boolean) => {setLight_3(value);});
         const light_4 = window.CrComLib.subscribeState("b",`${light_4_join}`,(value: boolean) => {setLight_4(value);});
         const light_5 = window.CrComLib.subscribeState("b",`${light_5_join}`,(value: boolean) => {setLight_5(value);});
+        const light_6 = window.CrComLib.subscribeState("b",`${light_6_join}`,(value: boolean) => {setLight_6(value);});
+        const light_7 = window.CrComLib.subscribeState("b",`${light_7_join}`,(value: boolean) => {setLight_7(value);});
+        const light_8 = window.CrComLib.subscribeState("b",`${light_8_join}`,(value: boolean) => {setLight_8(value);});
   
 
         return () => {
@@ -177,11 +220,11 @@ const MasterBedroom = () =>{
             window.CrComLib.unsubscribeState("b","5",media5)
             window.CrComLib.unsubscribeState("b","6",media6)
             window.CrComLib.unsubscribeState("b","7",media7)
-            window.CrComLib.unsubscribeState("b","--",media8)
+            window.CrComLib.unsubscribeState("b","8",media8)
          
             // TV audio controls
-            window.CrComLib.unsubscribeState("n","107",roomVolume)
-            window.CrComLib.unsubscribeState("b","529",roomMute)
+            window.CrComLib.unsubscribeState("n",audio_volume_join,roomVolume)
+            window.CrComLib.unsubscribeState("b",audio_mute_join,roomMute)
 
             // lights 
 
@@ -190,6 +233,9 @@ const MasterBedroom = () =>{
             window.CrComLib.unsubscribeState("b",`${light_3_join}`,light_3)
             window.CrComLib.unsubscribeState("b",`${light_4_join}`,light_4)
             window.CrComLib.unsubscribeState("b",`${light_5_join}`,light_5)
+            window.CrComLib.unsubscribeState("b",`${light_6_join}`,light_6)
+            window.CrComLib.unsubscribeState("b",`${light_7_join}`,light_7)
+            window.CrComLib.unsubscribeState("b",`${light_8_join}`,light_8)
 
 
             
@@ -209,15 +255,6 @@ const sliderValue = (value: boolean, id: string) => {
 
      if(id === "light_1"){
 
-        // not needed during deployment
-        if(light_1){
-            setLight_1(false);
-        } else {
-            setLight_1(true);
-
-        }
-
-            
         // some crestron commands
         window.CrComLib.publishEvent("b",`${light_1_join}`,true)
         window.CrComLib.publishEvent("b",`${light_1_join}`,false)
@@ -225,85 +262,54 @@ const sliderValue = (value: boolean, id: string) => {
         console.log("sending join", light_1_join)
       
      } else if (id === "light_2"){
-           // not needed during deployment
-           if(light_2){
-            setLight_2(false);
-        } else {
-            setLight_2(true);
-
-        }
-
-            
+    
         // some crestron commands
         window.CrComLib.publishEvent("b",`${light_2_join}`,true)
         window.CrComLib.publishEvent("b",`${light_2_join}`,false)
 
         console.log("sending join", light_2_join)
      } else if (id === "light_3"){
-             // not needed during deployment
-            light_3? setLight_3(false) : setLight_3(true)
-    
-                
-            // some crestron commands
-            window.CrComLib.publishEvent("b",`${light_3_join}`,true)
-            window.CrComLib.publishEvent("b",`${light_3_join}`,false)
-    
-            console.log("sending join", light_3_join)
+         
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_3_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_3_join}`,false)
+
+        console.log("sending join", light_3_join)
      } else if (id === "light_4"){
-             // not needed during deployment
-             light_4? setLight_4(false) : setLight_4(true)
-    
-    
-                
-            // some crestron commands
-            window.CrComLib.publishEvent("b",`${light_4_join}`,true)
-            window.CrComLib.publishEvent("b",`${light_4_join}`,false)
-    
-            console.log("sending join", light_4_join)
+        
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_4_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_4_join}`,false)
+
+        console.log("sending join", light_4_join)
      } else if (id === "light_5"){
-             // not needed during deployment
-             light_5? setLight_5(false) : setLight_5(true)
-    
             
-    
-                
-            // some crestron commands
-            window.CrComLib.publishEvent("b",`${light_5_join}`,true)
-            window.CrComLib.publishEvent("b",`${light_5_join}`,false)
-    
-            console.log("sending join", light_5_join)
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_5_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_5_join}`,false)
+
+        console.log("sending join", light_5_join)
      } else if (id === "light_6"){
-            // not needed during deployment
-            light_6? setLight_6(false) : setLight_6(true)
-    
-    
-                
-            // some crestron commands
-            window.CrComLib.publishEvent("b",`${light_6_join}`,true)
-            window.CrComLib.publishEvent("b",`${light_6_join}`,false)
-    
-            console.log("sending join", light_6_join)
+         
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_6_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_6_join}`,false)
+
+        console.log("sending join", light_6_join)
      } else if (id === "light_7"){
-              // not needed during deployment
-              light_7? setLight_7(false) : setLight_7(true)
-    
-    
-                
-            // some crestron commands
-            window.CrComLib.publishEvent("b",`${light_7_join}`,true)
-            window.CrComLib.publishEvent("b",`${light_7_join}`,false)
-    
-            console.log("sending join", light_7_join)
+            
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_7_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_7_join}`,false)
+
+        console.log("sending join", light_7_join)
      } else if (id === "light_8"){
-              // not needed during deployment
-              light_8? setLight_8(false) : setLight_8(true)
-    
-    
-            // some crestron commands
-            window.CrComLib.publishEvent("b",`${light_8_join}`,true)
-            window.CrComLib.publishEvent("b",`${light_8_join}`,false)
-    
-            console.log("sending join", light_8_join)
+              
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_8_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_8_join}`,false)
+
+        console.log("sending join", light_8_join)
      }
     }
 
@@ -311,6 +317,7 @@ const sliderValue = (value: boolean, id: string) => {
 /*
 ---------------------------------------------------------------------------- Checks to see if any media sources are currently on
 */
+
 if(media1){
     //display controller and hide source selection
        active_media = true
@@ -431,6 +438,7 @@ if(media1){
         media_8 = "media_off"  
     }
    
+
 
 
 
@@ -610,24 +618,23 @@ if(media1){
         const tvVolState = (id:string) =>{
 
         if(id === "up"){
-            console.log('vol up join', 530)
+            console.log('vol up join',audio_increase_join)
             
-            window.CrComLib.publishEvent("b","530",true)
-            window.CrComLib.publishEvent("b","530",false)
+            window.CrComLib.publishEvent("b",audio_increase_join,true)
+            window.CrComLib.publishEvent("b",audio_increase_join,false)
         } 
         
         else if(id === "down"){
-            console.log('vol down join', 528)
+            console.log('vol down join', audio_decrease_join)
             
-            window.CrComLib.publishEvent("b","528",true)
-            window.CrComLib.publishEvent("b","528",false)
+            window.CrComLib.publishEvent("b",audio_decrease_join,true)
+            window.CrComLib.publishEvent("b",audio_decrease_join,false)
         } 
         
         else if(id === "mute"){
-            console.log('vol mute join',529 )
-            
-            window.CrComLib.publishEvent("b","529",true)
-            window.CrComLib.publishEvent("b","529",false)
+            console.log('vol mute join', audio_mute_join)
+            window.CrComLib.publishEvent("b",audio_mute_join,true)
+            window.CrComLib.publishEvent("b",audio_mute_join,false)
         }
 
             }
@@ -645,10 +652,10 @@ if(media1){
             } 
             
             else if(id==="menu_off"){
-                console.log("Turning off room join", 28)
+                console.log("Turning off room join",room_off_join)
                 setTvPowerMenu(!tvPowerMenu)
-                window.CrComLib.publishEvent("b","28",true)
-                window.CrComLib.publishEvent("b","28",false)
+                window.CrComLib.publishEvent("b",room_off_join,true)
+                window.CrComLib.publishEvent("b",room_off_join,false)
 
             }
             }
@@ -761,8 +768,12 @@ if(media1){
 
         <div className="generic_room">
 
-<div className="room_back_corner" >
-                <Link to={"/RoomsDashboard"}state ={{previousLocation:"Up Stairs"}} onClick={() => closeOutPowerOption} > 
+
+          
+
+
+            <div className="room_back_corner" >
+                <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>
@@ -798,124 +809,136 @@ if(media1){
             }
 
 
-        <h1 className="title_info"> {roomName} </h1>
 
-        <div className={tvPowerMenu? "power_menu_overlay" : "hide_power_menu_overlay"} >
-            <div className="power_menu">
-                <p className="power_menu_text" style={{margin:"1rem"}}> 
-                    Would you like to turn off the {roomName}?
-                </p>
 
-                <div className="power_menu_button">
-                    <Link className="yes_reboot" to={"/"}> 
-                        <button className="yes_reboot" onClick={()=> powerMenu("menu_off")}> 
-                            <p>YES</p> 
-                        </button> 
-                    </Link>
-                    
-                    <button className="no_reboot" onClick={()=> powerMenu("menu")}> 
-                        <p>NO</p> 
-                    </button>
-                </div>
-            </div>
-        </div>
 
-        <div className={displayReboot? "power_menu_overlay": "hide_reboot_menu"} onClick={()=> appleTvRebootMenu("menu")}>
-            <div className="power_menu" onClick={()=> appleTvRebootMenu("menu")}>
-                <p className="power_menu_text">
-                    Would you like to Reboot the {roomName}'s Apple TV?
-                </p>
-
-                <div className="power_menu_button">
-                    <button className="yes_reboot" onClick={() => appleTvRebootMenu("reboot")}> 
-                        <p>YES</p> 
-                    </button> 
-                    
-                    <button className="no_reboot"  onClick={()=> appleTvRebootMenu("menu")}> 
-                        <p>NO</p> 
-                    </button>
-                </div>
-            </div>
-        </div>
 
        
-        <div className={roomApps? "generic_room_dashboard" : "media_off"}>
-            <div className="generic_room_card" onClick={() => roomApp("TV")}>
-                <img src={TV}/>
-                <p> TV </p>
-            </div>   
+            <h1 className="title_info"> {roomName} </h1>
 
-            <Link to={'/AudioDashboard'} className="generic_room_card" style={{textDecoration:"none"}}>
-                <img src={music}/>
-                <p> Music </p>
-            </Link>
-            
-            <div className="generic_room_card" onClick={() => roomApp("Lights")}>
-                <img src={lights}/>
-                <p> Lights </p>
-            </div>  
+            <div className={tvPowerMenu? "power_menu_overlay" : "hide_power_menu_overlay"} >
+                <div className="power_menu">
+                    <p className="power_menu_text" style={{margin:"1rem"}}> 
+                        Would you like to turn off the {roomName}?
+                    </p>
 
-        </div>
-               
+                    <div className="power_menu_button">
+                        <Link className="yes_reboot" to={"/"}> 
+                            <button className="yes_reboot" onClick={()=> powerMenu("menu_off")}> 
+                                <p>YES</p> 
+                            </button> 
+                        </Link>
+                        
+                        <button className="no_reboot" onClick={()=> powerMenu("menu")}> 
+                            <p>NO</p> 
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div className={displayReboot? "power_menu_overlay": "hide_reboot_menu"} onClick={()=> appleTvRebootMenu("menu")}>
+                <div className="power_menu" onClick={()=> appleTvRebootMenu("menu")}>
+                    <p className="power_menu_text">
+                        Would you like to Reboot the {roomName}'s Apple TV?
+                    </p>
+
+                    <div className="power_menu_button">
+                        <button className="yes_reboot" onClick={() => appleTvRebootMenu("reboot")}> 
+                            <p>YES</p> 
+                        </button> 
+                        
+                        <button className="no_reboot"  onClick={()=> appleTvRebootMenu("menu")}> 
+                            <p>NO</p> 
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div className={roomApps? "generic_room_dashboard" : "media_off"}>
+                <div className="generic_room_card" onClick={() => roomApp("TV")}>
+                    <img src={TV}/>  
+                </div>   
+
+                <Link to={'/AudioDashboard'} className="generic_room_card" style={{textDecoration:"none"}}>
+                    <img src={music}/>
+                 
+                </Link>
+                
+                <div className="generic_room_card" onClick={() => roomApp("Lights")}>
+                    <img src={lights}/>
+                    
+                </div>  
+
+            </div>
+                   
 
 
-                <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
+            <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
                     <div className={active_media? "media_off":"room_sources_container"}>
                             
-                            <div className="source_card" id= { media1? 'active_source' : 'not_active' } onClick={()=>playSource('media1')}>
+                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource('media1')}>
                                 <div className="img_container">
-                                    <img src={bluRay} style={{height:"45%"}}/>
+                                    <img className="media_1_img" src={media_1_img}/>
                                 </div>
                             
-                                <p></p>
+                                <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active' } onClick={()=>playSource('media2')}>
+                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource('media2')}>
                                 <div className="img_container">
-                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                    <img className="media_2_img" src={media_2_img}/>
                                 </div>
 
-                                <p>His 4k</p>
+                                <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= { media3? 'active_source' : 'not_active' } onClick={()=>playSource('media3')}>
+                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onClick={()=>playSource('media3')}>
                                 <div className="img_container">
-                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                    <img className="media_3_img" src={media_3_img}/>
+                                </div>
+                                <p>{sub_title_3}</p>
+                            </div>
+
+                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onClick={()=>playSource('media4')}>
+                                <div className="img_container">
+                                    <img className="media_4_img" src={media_4_img}/>
                                 </div>
 
-                                <p>Her 4k</p>
+                                <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="source_card" id= { media4? 'active_source' : 'not_active' } onClick={()=>playSource('media4')}>
+                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource('media5')}>
                                 <div className="img_container">
-                                    <img src={appleTV} id="svg_gray" style={{height:"50%"}}/>
+                                    <img className="media_5_img" src={media_5_img}/>
                                 </div>
 
-                                <p>1080p</p>
+                                <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= { media5? 'active_source' : 'not_active' } onClick={()=>playSource('media5')}>
+                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onClick={()=>playSource('media6')}>
                                 <div className="img_container">
-                                    <img src={small_dtv} style={{height:"65%"}}  />
-                                </div>
-
-                                <p>4k</p>
-                            </div>
-
-                            <div className="source_card" id= { media6? 'active_source' : 'not_active' } onClick={()=>playSource('media6')}>
-                                <div className="img_container">
-                                    <img src={small_dtv} style={{height:"65%"}}  />
-                                </div>
-                            
-                                <p>1080p</p>
-                            </div>
-
-                            <div className="source_card" id ={ media7? 'active_source' : 'not_active' }onClick={()=>playSource('media7')}>
-                                <div className="img_container">
-                                    <img src={roku} id="svg_white"style={{height:"35%"}}/>
+                                    <img className="media_6_img" src={media_6_img}/>
                                 </div>
                             
-                                <p></p>
+                                <p>{sub_title_6}</p>
+                            </div>
+
+                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource('media7')}>
+                                <div className="img_container">
+                                    <img className="media_7_img" src={media_7_img}/>
+                                </div>
+                            
+                                <p>{sub_title_7}</p>
+                            </div>
+
+                            
+                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource('media8')}>
+                                <div className="img_container">
+                                    <img className="media_8_img"  src={media_8_img}/>
+                                </div>
+                            
+                                <p>{sub_title_8}</p>
                             </div>
                             
                         </div>
@@ -925,49 +948,47 @@ if(media1){
                             <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
                         </button>
 
-       
+                
                         <div className="logo_display">
-                        <div className={media1? "bluRay_logo":"media_off"}>
-                                <img src={bluRay} alt="" />
-                                <p className="user_title_controller">4k</p>
+                            <div className={media1? "media_1_img_display":"media_off"}>
+                                <img src={media_1_img}/>
+                                <p>{sub_title_1}</p>
+                            </div>
+
+                            <div className={media2? "media_2_img_display":"media_off"}>
+                              <img src={media_2_img}/>
+                              <p>{sub_title_2}</p>
+                            </div>
+
+                            <div className={media3? "media_3_img_display":"media_off"}>
+                                <img src={media_3_img}/>
+                                <p>{sub_title_3}</p>
+                            </div>
+
+                            <div className={media4? "media_4_img_display":"media_off"}>
+                                <img src={media_4_img}/>
+                                <p>{sub_title_4}</p> 
+                            </div>
+
+                            <div className={media5? "media_5_img_display":"media_off"}>
+                                <img src={media_5_img}/>
+                                <p>{sub_title_5}</p>
+                            </div>
+
+                            <div className={media6? "media_6_img_display":"media_off"}>
+                                <img src={media_6_img}/>
+                                <p>{sub_title_6}</p>
+                            </div>
+
+                            <div className={media7? "media_7_img_display":"media_off"}>
+                                <img src={media_7_img}/>
+                                <p>{sub_title_7}</p>
 
                             </div>
 
-                            <div className={media2? "apple_display_logo":"media_off"}>
-                              <img src={appleTV} id="svg_gray"  alt="" />
-                              <p className="user_title_controller"> His 4k</p>
-                            </div>
-
-                            <div className={media3? "apple_display_logo":"media_off"}>
-                           
-                            <img src={appleTV} id="svg_gray"  alt="" />
-                            <p className="user_title_controller"> Her 4k</p>
-                            </div>
-
-                            <div className={media4? "apple_display_logo":"media_off"}>
-                                <img src={appleTV} id="svg_gray"  alt="" />
-                                <p className="user_title_controller"> 1080p </p>
-                            </div>
-
-                            <div className={media5? "dtv_header_logo":"media_off"}>
-                                <img src={direcTv}  id="svg_gray"  alt="" />
-                                <p className="user_title_controller">  4k</p>
-                            </div>
-
-                            <div className={media6? "dtv_header_logo":"media_off"}>
-                                <img src={direcTv}  id="svg_gray" alt="" />
-                                <p className="user_title_controller">1080p</p>
-                            </div>
-
-                            <div className={media7? "roku_logo":"media_off"}>
-                                <img src={roku} id="svg_gray"   alt="" />
-                                <p className="user_title_controller">4k</p>
-
-                            </div>
-
-                            <div className={media8? "dtv_header_logo":"media_off"}>
-                              
-                                <p className="user_title_controller">   </p>
+                            <div className={media8? "media_8_img_display":"media_off"}>
+                                <img src={media_8_img}/>
+                                <p>{sub_title_8}</p>
                             </div>
 
 
@@ -980,36 +1001,39 @@ if(media1){
 
                         <div className="controller_grid">
 
-                            <div className={media_1} id="bluRay_controller">
-                               < BluRay />
+
+                         
+
+                            <div className={media_1} id={controller_styles_1}>
+                                {controller_1}
                             </div>
 
-                            <div className={media_2} id="apple_tv_controller">
-                                < AppleTv />
+                            <div className={media_2} id={controller_styles_2}>
+                                {controller_2}
                             </div>
                                
-                            <div className={media_3} id="apple_tv_controller">
-                                < AppleTv />
+                            <div className={media_3} id={controller_styles_3}>
+                                {controller_3}
                             </div>
 
-                            <div className={media_4} id="apple_tv_controller">
-                                < AppleTv />
+                            <div className={media_4} id={controller_styles_4}>
+                                {controller_4}
                             </div>
 
-                            <div className={media_5} id="direct_controller">
-                                < DirecTv />
+                            <div className={media_5} id={controller_styles_5}>
+                                {controller_5}
                             </div>
 
-                            <div className={media_6} id="direct_controller">
-                                < DirecTv />
+                            <div className={media_6} id={controller_styles_6}>
+                                {controller_6}
                             </div>
 
-                            <div className={media_7} id="roku_controller" >
-                               < Roku />
+                            <div className={media_7} id={controller_styles_7}>
+                                {controller_7}
                             </div>
 
-                            <div className={media_8} id="apple_tv_controller">
-                           
+                            <div className={media_8} id={controller_styles_8}>
+                                {controller_8}
                             </div>
                             
 
@@ -1050,114 +1074,87 @@ if(media1){
                     </div>
                 </div>
 
-
-
                     <div className={musicOption? "music_app" : "media_off"} >
                     </div>
 
-                    <div className={lightsOption? "lights_app" : "media_off"} >
+                    <div className={lightsOption? "lights_app" : "display_none"} >
 
                         <div className="light_container">
                             
                             
                             
                             
-                            <div className="light_tile" id={light_1? 'card_glow':''}>
+                            <div className="light_tile" onClick={() => sliderValue(true,"light_1")}>
                                 <div className="light_info">
-                                    <p className="display_none">{light_1? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_1_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_1? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_1")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_1")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_1 ? lightOn : lightOff}/>
+                                </button>
                             </div>
 
-                            <div className="light_tile" id={light_2? 'card_glow':''}>
+
+                            <div className="light_tile" onClick={() => sliderValue(true,"light_2")}>
                                 <div className="light_info">
-                                    <p className="display_none">{light_2? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_2_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_2? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_2")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_2")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_2 ? lightOn : lightOff}/>
+                                </button>
                             </div>
 
-                            <div className="light_tile" id={light_3? 'card_glow':''}>
+                            <div className="light_tile" onClick={() => sliderValue(true,"light_3")}>
                                 <div className="light_info">
-                                    <p className="display_none">{light_3? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_3_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_3? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_3")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_3")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_3 ? lightOn : lightOff}/>
+                                </button>
                             </div>
 
-                            <div className="light_tile" id={light_4? 'card_glow':''}>
+                            <div className="light_tile" onClick={() => sliderValue(true,"light_4")}>
                                 <div className="light_info">
-                                    <p className="display_none">{light_4? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_4_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_4? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_4")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_4")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_4 ? lightOn : lightOff}/>
+                                </button>
                             </div>
 
-                            <div className="light_tile" id={light_5? 'card_glow':''}>
+                            <div className="light_tile" onClick={() => sliderValue(true,"light_5")}>
                                 <div className="light_info">
-                                    <p className="display_none">{light_5? <span className="sub_text">On</span>: <span className="sub_text">Off</span>} </p>
                                     <p className="light_name">{light_5_name}</p>
                                 </div>
-                                                
-                                <div className="light_controls">
-                                    <button className="btn_circle"  id={light_5? "display_none" : "display_none"}  onClick={() => sliderValue(true,"light_5")}>
-                                        <img className="btn_image" src={lightOff} />
-                                    </button>
-                                       
-                                    <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
-                                        <img className="btn_image" src={lightOn} onClick={() => sliderValue(true,"light_5")}/>
-                                    </button>
 
-                                </div>
+                                <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
+                                </button>
                             </div>
 
-                        
+                            <div className="light_tile" onClick={() => sliderValue(true,"light_6")}>
+                                <div className="light_info">
+                                    <p className="light_name">{light_6_name}</p>
+                                </div>
 
-                           
-                          
+                                <button className="btn_circle" id={light_6 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_6 ? lightOn : lightOff}/>
+                                </button>
+                            </div>
 
-                          
+                            <div className="light_tile" onClick={() => sliderValue(true,"light_7")}>
+                                <div className="light_info">
+                                    <p className="light_name">{light_7_name}</p>
+                                </div>
+
+                                <button className="btn_circle" id={light_7 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_7 ? lightOn : lightOff}/>
+                                </button>
+                            </div>
+
                         </div>
 
                       
@@ -1170,10 +1167,12 @@ if(media1){
                     </div>
 
 
-                    <div className="landscape_warning">
+                    
+                <div className="landscape_warning">
                     <h1> Please rotate your device back to portrait mode. </h1>
                     <img src={portraitMode}  />
                  </div>
+
             
         </div>
 
@@ -1183,4 +1182,4 @@ if(media1){
 
 
 
-export default MasterBedroom
+export default FamilyRoom

@@ -102,7 +102,7 @@ body {
   
     h1, h2, h3, h4, h5, h6 {
         font-style: 100;
-        color:rgba(255, 255, 255);
+        color:rgb(255, 255, 255);
         font-family: 'Chillax-Medium';
       }
         p {  
@@ -218,7 +218,7 @@ body {
     border: none;
     outline: none;
     background-color: #c7c3c0;
-    box-shadow: rgba(0, 0, 0, 0.377) 10px 10px 8px;
+    box-shadow: rgb(97, 93, 93) 6px 8px 8px;
     cursor: pointer;
     font-family: Montserrat;
     transition: 0.1s ease-in-out;
@@ -229,7 +229,7 @@ body {
   }
 
   .btn_square:active{
-      box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+      box-shadow: rgb(0, 0, 0) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
       #c7c3c0 -3.2px -3.2px 8px 0px inset;
   }
 
@@ -251,14 +251,14 @@ body {
   
   
   .btn_square_wide:active{
-    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
     #c7c3c0 -3.2px -3.2px 8px 0px inset;
     background-color: rgb(94, 198, 233);
   } 
 
 
   .btn_square:active{
-    box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
     #c7c3c0 -3.2px -3.2px 8px 0px inset;
     background-color: rgb(94, 198, 233);
   } 
@@ -281,8 +281,7 @@ body {
     border: none;
     outline: none;
     background-color: #3f3c3c;
-    box-shadow: rgba(0, 0, 0, 0.377) 5px 10px 15px,
-      #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -1.5px -1.5px 2px 0px inset;
+    box-shadow: rgb(27, 26, 26) 5px 10px 15px,rgb(255, 255, 255) 1.5px 1.5px 2px 0px inset, rgb(199, 195, 192) -1.5px -1.5px 2px 0px inset;
     cursor: pointer;
     transition: 0.1s ease-in-out;
 
@@ -299,8 +298,7 @@ body {
     border: none;
     outline: none;
     background-color: #b9b9b9;
-    box-shadow: rgba(0, 0, 0, 0.377) 5px 10px 15px,
-      #ffffff 1.5px 1.5px 2px 0px inset, #c7c3c0 -1.5px -1.5px 2px 0px inset;
+    box-shadow: rgb(27, 26, 26) 5px 10px 15px,rgb(255, 255, 255) 1.5px 1.5px 2px 0px inset, rgb(199, 195, 192) -1.5px -1.5px 2px 0px inset;;
     cursor: pointer;
     transition: 0.1s ease-in-out;
 
@@ -367,8 +365,7 @@ body {
     border-radius: 100%;
     border: solid 1px black;
     background-color: #3f3c3c;
-    box-shadow: rgba(0, 0, 0, 0.377) 5px 10px 15px,
-      #ffffff .75px .75px .5px 0px inset, #c7c3c0 -.75px -.75px .75px 0px inset;
+    box-shadow: rgb(27, 26, 26) 5px 10px 15px,rgb(255, 255, 255) 1.5px 1.5px 2px 0px inset, rgb(199, 195, 192) -1.5px -1.5px 2px 0px inset;
     cursor: pointer;
     transition: 0.1s ease-in-out;
 
@@ -378,8 +375,8 @@ body {
     z-index: 1;
   }  
     .small_btn_circle:active{
-      box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
-      #c7c3c0 -3.2px -3.2px 8px 0px inset;
+      box-shadow: rgb(27, 26, 26) 5px 10px 15px,rgb(255, 255, 255) 1.5px 1.5px 2px 0px inset, rgb(199, 195, 192) -1.5px -1.5px 2px 0px inset;
+     
     }
 
 
@@ -546,7 +543,7 @@ body {
           0%{
        
     
-            box-shadow: inset 0px 0px 3px 2px rgba(255, 255, 255, 0.25), -5px -5px 15px #5a5656, 5px 5px 15px #ffffff8f;
+            box-shadow: inset 0px 0px 3px 2px rgb(255, 255, 255), -5px -5px 15px #5a5656, 5px 5px 15px #ffffff8f;
            
           } 
           
@@ -556,7 +553,7 @@ body {
           
           
           100% {
-            box-shadow:inset 0px 0px 3px 2px rgba(255, 255, 255, 0.25), -5px -5px 15px #5a5656, 5px 5px 15px #ffffff8f;    }
+            box-shadow:inset 0px 0px 3px 2px rgb(255, 255, 255), -5px -5px 15px #5a5656, 5px 5px 15px #ffffff8f;    }
           
           
           }
@@ -587,14 +584,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(70, 70, 70, .85);
+    background-color: rgb(70, 70, 70);
     border: none;
     height: 4.5rem;
     width: 4.5rem;
     border-radius: 100%;
     animation: glow 5s infinite linear;
     font-size: large;
-
   }
     .btn_selected img{
       height: 50%;
@@ -621,7 +617,7 @@ body {
     @keyframes glow-out {
       0%{
         background-color: rgb(70, 70, 70, .5);
-        box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.25);
+        box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);
        
       } 
       
@@ -633,7 +629,7 @@ body {
       
       100% {
         background-color: rgb(70, 70, 70, .5);
-        box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.25);    }
+        box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);    }
       
       
       }
@@ -709,7 +705,7 @@ body {
         @keyframes glow {
           0%{
             background-color: rgba(70, 70, 70, .95);
-            box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.25);
+            box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);
            
           } 
           
@@ -721,7 +717,7 @@ body {
           
           100% {
             background-color: rgba(70, 70, 70, .95);
-            box-shadow: 0px 0px 3px 2px rgba(255, 255, 255, 0.25);    }
+            box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);    }
           
           
           }
@@ -743,16 +739,16 @@ body {
     @keyframes light-glow {
       0%{
       
-          box-shadow: inset 1px 1px 3px 1px  rgba(252, 234, 187, 0.3), inset -1px -1px 3px 1px rgba(252, 234, 187, 0.3), 4px 4px 15px 2px rgb(0, 0, 0, 0.25) , -4px -4px 15px 2px rgba(0, 0, 0, .25);        
+          box-shadow: inset 1px 1px 3px 1px  rgba(252, 234, 187, 0.3), inset -1px -1px 3px 1px rgba(252, 234, 187, 0.3), 4px 4px 15px 2px rgb(0, 0, 0) , -4px -4px 15px 2px rgba(0, 0, 0, .25);        
       } 
       
       50% {
-        box-shadow: inset 3px 3px 5px 2px  rgba(252, 234, 187, 0.4), inset -3px -3px 5px 2px  rgba(252, 234, 187, 0.4), 4px 4px 15px 2px rgb(0, 0, 0, 0.25) , -4px -4px 15px 2px rgba(0, 0, 0, .25);   
+        box-shadow: inset 3px 3px 5px 2px  rgba(252, 234, 187, 0.4), inset -3px -3px 5px 2px  rgba(252, 234, 187, 0.4), 4px 4px 15px 2px rgb(0, 0, 0) , -4px -4px 15px 2px rgba(0, 0, 0, .25);   
       }
       
       
       100% {
-          box-shadow: inset 1px 1px 2px 1px  rgba(252, 234, 187, 0.3), inset -1px -1px 3px 1px  rgba(252, 234, 187, 0.3), 4px 4px 15px 2px rgb(0, 0, 0, 0.25) , -4px -4px 15px 2px rgba(0, 0, 0, .25);         
+          box-shadow: inset 1px 1px 2px 1px  rgba(252, 234, 187, 0.3), inset -1px -1px 3px 1px  rgba(252, 234, 187, 0.3), 4px 4px 15px 2px rgb(0, 0, 0) , -4px -4px 15px 2px rgba(0, 0, 0, .25);         
       }        
       
       }

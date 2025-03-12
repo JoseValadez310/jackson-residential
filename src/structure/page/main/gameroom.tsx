@@ -82,7 +82,7 @@ const FamilyRoom = () =>{
     let media_7:string
     let media_8:string
 
-    const roomLocation:string = ""
+    const roomLocation:string = "15"
 
     const sub_title_1 = "BluRay"
     const sub_title_2 = "Kaleidescape"
@@ -184,16 +184,16 @@ const FamilyRoom = () =>{
 */
 
     useEffect(() => {
+        console.log(roomLocation)
         // TV Soucres
-        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  // 
-        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // 
-        const media3 = window.CrComLib.subscribeState("b","3",(value: boolean) => {setMedia3(value);});  // 
-        const media4 = window.CrComLib.subscribeState("b","4",(value: boolean) => {setMedia4(value);});  // 
-        const media5 = window.CrComLib.subscribeState("b","5",(value: boolean) => {setMedia5(value);});  // 
-        const media6 = window.CrComLib.subscribeState("b","6",(value: boolean) => {setMedia6(value);});  // 
-        const media7 = window.CrComLib.subscribeState("b","7",(value: boolean) => {setMedia7(value);});  // 
-        const media8 = window.CrComLib.subscribeState("b","8",(value: boolean) => {setMedia8(value);});  
-       
+        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  // bluRay
+        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // Kescape
+        const media3 = window.CrComLib.subscribeState("b","5",(value: boolean) => {setMedia3(value);});  // DTV3
+        const media4 = window.CrComLib.subscribeState("b","6",(value: boolean) => {setMedia4(value);});  // DTV4
+        const media5 = window.CrComLib.subscribeState("b","7",(value: boolean) => {setMedia5(value);});  // DTV5
+        const media6 = window.CrComLib.subscribeState("b","8",(value: boolean) => {setMedia6(value);});  // ATV1
+        const media7 = window.CrComLib.subscribeState("b","9",(value: boolean) => {setMedia7(value);});  // ATV2
+        const media8 = window.CrComLib.subscribeState("b","10",(value: boolean) => {setMedia8(value);}); // ATV3
         // TV audio controls
         const roomVolume     = window.CrComLib.subscribeState("n",audio_volume_join,(value: number) => {setRoomVolume(value);});
         const roomMute    = window.CrComLib.subscribeState("b",audio_mute_join,(value: boolean) => {setRoomMute(value);});
@@ -215,12 +215,12 @@ const FamilyRoom = () =>{
             // TV Soucres
             window.CrComLib.unsubscribeState("b","1",media1)
             window.CrComLib.unsubscribeState("b","2",media2)
-            window.CrComLib.unsubscribeState("b","3",media3)
-            window.CrComLib.unsubscribeState("b","4",media4)
-            window.CrComLib.unsubscribeState("b","5",media5)
-            window.CrComLib.unsubscribeState("b","6",media6)
-            window.CrComLib.unsubscribeState("b","7",media7)
-            window.CrComLib.unsubscribeState("b","8",media8)
+            window.CrComLib.unsubscribeState("b","5",media3)
+            window.CrComLib.unsubscribeState("b","6",media4)
+            window.CrComLib.unsubscribeState("b","7",media5)
+            window.CrComLib.unsubscribeState("b","8",media6)
+            window.CrComLib.unsubscribeState("b","9",media7)
+            window.CrComLib.unsubscribeState("b","10",media8)
          
             // TV audio controls
             window.CrComLib.unsubscribeState("n",audio_volume_join,roomVolume)
@@ -443,176 +443,166 @@ if(media1){
 
 
     // Tile click, function calls to set local values and crestron values
-        const playSource = (id:string) =>{
-            if(id === "media1"){
-                // Send command to Crestron         
-                setMedia1(true)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
-                
-                
-
-                // Signal Name 
-                window.CrComLib.publishEvent("b","1",true)
-                window.CrComLib.publishEvent("b","1",false)
-
-                console.log("BluRay join", 1)
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,1)
-            } 
-            else if (id === "media2"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(true)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
-                
-                
-
-                window.CrComLib.publishEvent("b","2",true)
-                window.CrComLib.publishEvent("b","2",false)
-
-                console.log("Kaleidescape join", 2)
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,2)
-            } 
-            else if (id === "media3"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(true)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
+    const playSource = (id:string) =>{
+        if(id === "media1"){
+            // Send command to Crestron         
+            setMedia1(true)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
             
-                
+            
 
-                // Signal Name 
-                window.CrComLib.publishEvent("b","3",true)
-                window.CrComLib.publishEvent("b","3",false)
 
-                console.log("DTV 3 House 1 join", 3)
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,3)
-            } 
-            else if (id === "media4"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(true)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
-                
-                
+            window.CrComLib.publishEvent("b","1",true)
+            window.CrComLib.publishEvent("b","1",false)
 
-                // Signal Name 
-                window.CrComLib.publishEvent("b","4",true)
-                window.CrComLib.publishEvent("b","4",false)
+            console.log("BluRay join", 1)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation}`,1)
+        } 
+        else if (id === "media2"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(true)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            window.CrComLib.publishEvent("b","2",true)
+            window.CrComLib.publishEvent("b","2",false)
 
-                console.log("DTV 4 House 2 join", 4)
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,4)
-            } 
-            else if (id === "media5"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(true)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
-                
-                
 
-                // Signal Name 
-                window.CrComLib.publishEvent("b","5",true)
-                window.CrComLib.publishEvent("b","5",false)
-    
-                console.log("DTV 5 Steve join", 5)
+            console.log("Kaleidescape join", 2)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation}`,2)
+        } 
+        else if (id === "media3"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(true)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+        
+            
+            window.CrComLib.publishEvent("b","5",true)
+            window.CrComLib.publishEvent("b","5",false)
 
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,5)
-            } 
-            else if (id === "media6"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(true)
-                setMedia7(false)
-                setMedia8(false)
+          
 
-                
+            console.log("DTV 3 House 1 join", 5)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation}`,5)
+        } 
+        else if (id === "media4"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(true)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            
 
-            // Signal Name 
             window.CrComLib.publishEvent("b","6",true)
             window.CrComLib.publishEvent("b","6",false)
 
-            console.log("ATV 1 House 1 join", 6)
+            console.log("DTV 4 House 2 join", 6)
             //Sending Crestron Media ID
             window.CrComLib.publishEvent("n",`${roomLocation}`,6)
-            } 
-            else if (id === "media7"){
-                // c
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(true)
-                setMedia8(false)
+        } 
+        else if (id === "media5"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(true)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            
 
-                
-
-                // Signal Name 
             window.CrComLib.publishEvent("b","7",true)
             window.CrComLib.publishEvent("b","7",false)
+            console.log("DTV 5 Steve join", 7)
 
-            console.log("ATV 2 House 2 join", 7)
             //Sending Crestron Media ID
             window.CrComLib.publishEvent("n",`${roomLocation}`,7)
-            } 
-            else if (id === "media8"){
-                // c
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(true)
-                
-                
+        } 
+        else if (id === "media6"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(true)
+            setMedia7(false)
+            setMedia8(false)
 
-            // Signal Name 
+            
             window.CrComLib.publishEvent("b","8",true)
             window.CrComLib.publishEvent("b","8",false)
+        console.log("ATV 1 House 1 join", 8)
+        //Sending Crestron Media ID
+        window.CrComLib.publishEvent("n",`${roomLocation}`,8)
+        } 
+        else if (id === "media7"){
+            // c
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(true)
+            setMedia8(false)
 
-            console.log("ATV 3 Steve join", 8)
+            
+
+         
+            window.CrComLib.publishEvent("b","9",true)
+            window.CrComLib.publishEvent("b","9",false)
+        console.log("ATV 2 House 2 join", 9)
+        //Sending Crestron Media ID
+        window.CrComLib.publishEvent("n",`${roomLocation}`,9)
+        } 
+        else if (id === "media8"){
+            // c
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(true)
+
+            window.CrComLib.publishEvent("b","10",true)
+            window.CrComLib.publishEvent("b","10",false)
+            
+
+            console.log("ATV 3 Steve join", 10)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation}`,8)
-            } 
-            }
+            window.CrComLib.publishEvent("n",`${roomLocation}`,10)
+        } 
+        }
 
     // Volume control for current room
         const tvVolState = (id:string) =>{

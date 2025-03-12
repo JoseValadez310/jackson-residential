@@ -508,3 +508,220 @@
    
      }
 }
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+    .light_dashboard{
+        grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+        }
+
+    .light_map_container{
+        grid-row: 2/8;
+        grid-column: 1/13;
+        
+    }
+
+    .floor_1_img{
+        height: 55%;
+    }
+
+
+    /*
+    --- light map 1
+    */
+
+    
+    
+    .floor_1_img{
+        
+        height: 75%;
+        z-index: 0;
+    }
+
+    .map_layout_1{
+        grid-column: 1/10;
+        grid-row: 2/8;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        position: relative;  
+    }   
+        .map_layout_1_active{
+            grid-column: 1/10;
+            grid-row: 1/7;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            position: relative;    
+            
+            animation: light_map_shift_up 1s;
+        }
+            .map_layout_1_closing{  
+                grid-column: 1/10;
+                grid-row: 2/8;
+                display: flex;
+                justify-content: center;
+                align-items: center;  
+                position: relative;   
+                animation: light_map_shift_down 1s;
+            }
+    
+
+
+    /*
+    --- light map 2
+    */
+
+    
+    
+    .floor_2_img{
+        grid-row: 3/7;
+        height: 75%;
+    }
+
+    .map_layout_2{
+        grid-column: 1/10;
+        grid-row: 2/8;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        position: relative;     
+    }   
+        .map_layout_2_active{
+            grid-column: 1/10;
+            grid-row: 1/7;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            position: relative;      
+            animation: light_map_shift_up 1s;
+        }
+            .map_layout_2_closing{  
+                grid-column: 1/10;
+                grid-row: 2/8;
+                display: flex;
+                justify-content: center;
+                align-items: center;  
+                position: relative;    
+                animation: light_map_shift_down 1s;
+            }
+
+
+/*
+    ------ light menu 
+    */
+
+    .light_menu_open{
+        grid-column: 1/10;
+        grid-row: 7/10;
+        height: 100%;
+        width: 90%;
+        z-index: 100;
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(9,1fr);
+        animation: light_menu_open_bottom_top 1s;
+    }
+    .light_menu_closing{
+        grid-column: 1/10;
+        grid-row: 7/10;
+        height: 100%;
+        width: 90%;
+        z-index: 100;
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(9,1fr);
+        animation: light_menu_close_bottom_top 1s;
+
+    }
+
+    .button_list{
+        height: 100%;
+        width: 100%;
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        grid-column: 1/9;
+        grid-row: 2/10;
+    }
+
+    .button_list .btn_square{
+        height: 4.5rem;
+        width: 50%;
+    }
+    .button_list .btn_square img{
+        height: 100%;
+    }
+    .button_list .btn_square p{
+        height: 100%;
+    }
+
+
+    
+
+    
+    
+    
+      
+.close_menu_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .close_menu_btn img {
+        top: 0;
+        left: 0;
+        height: 75%;
+    }
+    
+
+    
+}
+
+
+@keyframes light_map_shift_up{
+    0%{
+        transform: translateY(15%);
+   
+     }
+ 
+     100%{
+         transform: translateY(0%);
+   
+     }
+}
+
+@keyframes light_map_shift_down{
+    0%{
+        transform: translateY(-15%);
+     }
+ 
+     100%{
+         transform: translateY(0);
+   
+     }
+}
+
+
+@keyframes light_menu_open_bottom_top {
+    0%{
+        transform: translateY(100%);
+     }
+ 
+     100%{
+         transform: translateY(0);
+   
+     }
+}
+
+@keyframes light_menu_close_bottom_top {
+    0%{
+        transform: translateY(0%);
+     }
+ 
+     100%{
+         transform: translateY(100%);
+   
+     }
+}

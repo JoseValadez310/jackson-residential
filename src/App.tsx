@@ -24,7 +24,6 @@ import PoolSpa from './structure/dashboard/PoolSpaDashboard';
 import MasterBedroom from './structure/page/upStairs/masterbedroom';
 import GuestBedroom from './structure/page/upStairs/guestbedroom';
 import GuestBathroom from "./structure/page/upStairs/guestbathroom"
-import StevesBath from './structure/page/upStairs/stevesbath';
 import EllensOffice from './structure/page/upStairs/ellensoffice';
 import EllensBath from './structure/page/upStairs/ellensbath';
 import EllensExcercise from './structure/page/upStairs/ellensexcercise';
@@ -40,7 +39,8 @@ import GameRoom from './structure/page/main/gameroom';
 // down stairs
 import Arcade from './structure/page/downStairs/arcade';
 
-
+// out Doors
+import PoolPatio from "./structure/page/outDoors/poolpatio"
 
 
 // Tools
@@ -104,10 +104,7 @@ function App() {
       element: <GuestBathroom />
     },
   
-    {
-      path: '/stevesbath',
-      element: <StevesBath />
-    },
+ 
   
     {
       path: '/ellensoffice',
@@ -120,7 +117,7 @@ function App() {
     },
   
     {
-      path: '/ellensexcercise',
+      path: '/ellensexercise',
       element: <EllensExcercise />
     },
   
@@ -170,7 +167,10 @@ function App() {
    
   
     //-------------------------------------- outdoors
-  
+    {
+      path: '/poolpatio',
+      element: <PoolPatio/>
+      },
     
   
     //------------------------------------ Tools

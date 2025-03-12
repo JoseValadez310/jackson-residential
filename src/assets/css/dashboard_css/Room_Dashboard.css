@@ -352,4 +352,14 @@
         grid-column: 1/13;
         grid-row: 2/8;
     }
+
+  
+        .title_info{
+          
+            font-size: xx-large;
+            grid-column: 3/11;
+            text-align: center;
+        
+        
+        }
   }

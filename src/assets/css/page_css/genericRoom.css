@@ -223,9 +223,10 @@
 
 
 .source_card .img_container {
-    height: 9rem;
-    width: 9em;
-    
+
+   
+    width: 8.25rem;
+
     aspect-ratio: 1;
     border-radius: 5px;
     background-color: transparent;   
@@ -249,14 +250,14 @@
 .media_6_img,
 .media_7_img,
 .media_8_img{
-    height: 75%;
+    height: 50%;
 }
 
 .media_1_img{
-    height: 50%;
+    height: 3rem;
 }
 .media_2_img{
-    height: 100%;
+    height: 75%;
     position: relative;
     top: 15px;
 }
@@ -929,531 +930,497 @@
 
 
 
-@media only screen and (max-width: 550px) and (orientation: portrait){
-    #mobile_power{
-        display: block;
-    }
-    .generic_room{
-        grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
-
-    }
-    .generic_room .title_info{
-      
-        font-size: x-large;
-        grid-column: 3/11;
-        text-align: center;
-    
-    
-    }
-
-
-    /*
-    ------------------------------------------- Power menu 
-    */
-    
-    .power_menu{
-    
-        background-color: rgb(2, 2, 2);
-        position: relative;
-        z-index: 100;
-    
-
-        height: 50%;
-        width: 90%;
-
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: column;
-
-        border-radius: 20px;
-
-        animation: power-menu-load 1000ms;
-        overflow: hidden;
-    }
-
-    .power_menu_overlay {
-        grid-column: 1 / 13;
-        grid-row: 1 / 9;
-        height: 120%;
-        width: 110%;
-        z-index: 200;
-        position: relative;
-        right: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .power_menu_overlay::before {
-        content: " ";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        backdrop-filter: blur(20px);
-    }
-       
-        .power_menu_text{
-            width: 75%;
-            font-size: 2.25rem;
-            text-align: center;
-        }
-  
-        /*
-        ---------------------------------------------------------------------------------------------------------- Nav
-        */   
-    .nav_container{
-        grid-column: 1/13;
-        grid-row: 8;
-    
-        display: flex;
-        height: 100%;
-
-   
-    }
-    
-    .nav_clock{
-        display: none;
-    }
-    
-    .nav{
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    
-    
-    /*
-    ------------------------------------------------------------------------------------------------------------- Cards
-    */
-    .generic_media_container{
-        grid-column: 1/13;
-        grid-row: 2/8;
-    }
-    .room_sources_container{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        position: relative;
-        top: 5px;
-        overflow: visible;
-        width: 90%;
-        height: 90%;
-     
-    }
-        .source_card{
-            height:100%;
-            width: 100%;
-        }
-            .source_card .img_container {
-                height: 70%;
-            }
-    
-    
-
-
-
-
-    /*
-    ---------------------------------------------------------------------------------------------------------- light_container
-    */        
-    
-    .lights_app{
-        grid-column: 1 / 13;
-        grid-row: 2 / 8;
-        height: 100%;
-        width: 100%;
-        grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
-
-   
-        border-radius: 15px;
-    }
-
-        .light_container{
-            grid-row: 2/8;
-            grid-column: 1/10;
-            width: 90%;
-            height: 90%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-
-            top: 5px;
-            overflow: visible;
-        }
-
-        #breakfast_nook.light_container{
-            grid-row: 1/9;
-            height: 100%;
-            grid-template-rows: repeat(4,1fr);
-        }
-            .light_tile{
-                height: 100%;
-                width: 100%;
-                gap: 0;
-                justify-content: space-evenly;
-            }
-            .light_tile .light_info p {
-                font-size: larger;
-            }
-                .light_tile .light_info{
-                    width:95%
-                }
-
-                .light_controls{
-                    width: 100%;
-                    justify-content: space-evenly;
-                }
-                    .light_controls .btn_circle{
-                        height: 3.5rem;
-                        width: 3.5rem;
-                    }
-               
-    /*
-    ----------------------------------------------------------------------------------------------------- Controller layout 
-    
-    */  
-
-    .generic_media_container{
-        grid-row: 2/8;
-    }
-        .controller_layout{
-            grid-row: 1/8;
-            width: 100%;
-            height: 95%;
-            position: relative;
-            bottom: 1.2rem;
-         
-        }
-
+    @media only screen and (max-width: 550px) and (orientation: portrait){
 
         
-    .mobile_controller_nav{
-        width: 80%;
-        height: 100%;
-
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding-bottom: 10px;
-        border-bottom: solid 1px white;
-
- }
-       
-
-    .currentViewing{
-        height: 100%;
-        width: 100%;
-     
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-
-
-    .mobile_controller_nav.btn_circle{
-        height: 3.5rem;
-        width: 3.5rem;
-    }
-    .mobile_controller_nav .btn_circle_active{
-        height: 3.5rem;
-        width: 3.5rem;
-    }
-    .mobile_controller_nav .btn_circle_active img{
-        filter: invert(0);
-    }
-
-
-    /*
-    ---------------------------------------------------------------------------------------------------------- Controller specific
-    */
-
-   
-
-        .controller{
-            width:100%;
-            height: 100%;
+        .source_card .img_container {
+            width: 6.75rem;
         }
 
-       
-
-        .control-icon.top {
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+        .media_1_img{
+            height: 2.5rem;
         }
-
-        .control-icon.left {
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
+        .media_2_img{
+            top: 10px;
+            height: 5rem;
         }
-
-        .control-icon.right {
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
+        #mobile_power{
+            display: block;
         }
-            
-        .control-icon.bottom {
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+        .generic_room{
+            grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+    
         }
-
-
-
-
-        .bottom_row_1_controller{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 100%;
+        .generic_room .title_info{
           
+            font-size: x-large;
+            grid-column: 3/11;
+            text-align: center;
+        
+        
         }
     
-        .bottom_row_2_controller{
+    
+        /*
+        ------------------------------------------- Power menu 
+        */
+        
+        .power_menu{
+        
+            background-color: rgb(2, 2, 2);
+            position: relative;
+            z-index: 100;
+        
+    
+            height: 50%;
+            width: 90%;
+    
             display: flex;
             justify-content: space-evenly;
             align-items: center;
+            flex-direction: column;
+    
+            border-radius: 20px;
+    
+            animation: power-menu-load 1000ms;
+            overflow: hidden;
+        }
+    
+        .power_menu_overlay {
+            grid-column: 1 / 13;
+            grid-row: 1 / 9;
+            height: 120%;
+            width: 110%;
+            z-index: 200;
+            position: relative;
+            right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .power_menu_overlay::before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            bottom: 0;
             width: 100%;
-        
-        }
-    
-
-
-    /*
-    ------------------- Bulray
-    */
-    .bluRay_controller_movement .btn_circle{
-        height: 4.5rem;
-        width: 4.5rem;
-    }
-    
-        .bluRay_controller_controls_2 .btn_circle{
-            height: 4.75rem;
-            width: 4.75rem;
-        }
-
-   
-      
-
-    /*
-    ------------------- apple Tv 
-    */
-
-    
-    .apple_tv_controller_movement .btn_circle{
-        height: 4.5rem;
-        width: 4.5rem;
-    }
-    
-        #reboot_button{
-            grid-column: 12/15;    
-        }
-
-    /*
-    ------------------- DTV
-    */
-
-    .dtv_controller_movement .container .btn_circle{
-        height: 4.25rem;
-        width: 4.25rem;
-    }
-
-    .dtv_controller_controls .btn_circle{
-        height: 4.5rem;
-        width: 4.5rem;
-    }
-
-   
-
-    
-    /*
-    ------------------- Roku
-    */
-
-    .roku_controller_movement .btn_circle{
-        height: 4.25rem;
-        width: 4.25rem;
-    }
-
-    
-
-
-
-
-    
-
-    .bottom_row_1_controller .btn_circle{
-        height: 3rem;
-        width: 5rem;
-        border-radius: 30px;
-    }
-
-    .bottom_row_2_controller .btn_circle{
-        height: 3rem;
-        width: 5rem;
-        border-radius: 30px;
-    }
-
-  
-        
-/*
--------------------------------------------------------------------------------------------------------- reboot, arrow back, home and power off 
-*/
-        #controller_layout_back_button{
-            grid-column: 1 / 4;
-            height: 70%;
-            
-        }
-
-        .mobile_back_btn{
-            display: contents; 
+            height: 100%;
+            z-index: 0;
+            backdrop-filter: blur(20px);
         }
            
-        
-        #reboot_button{
-            height: 70%;
-        }
-        #mobile_home_btn, #mobile_power_btn{
-            display: contents;
-            
-        }
-
-
-           .room_home_corner {
-                grid-column: 11/13;
-                width: 100%;
-                height: 2rem;
-                z-index: 100;
-
+            .power_menu_text{
+                width: 75%;
+                font-size: 2.25rem;
+                text-align: center;
             }
-               .room_home_corner .home_button{
+      
+            /*
+            ---------------------------------------------------------------------------------------------------------- Nav
+            */   
+        .nav_container{
+            grid-column: 1/13;
+            grid-row: 8;
+        
+            display: flex;
+            height: 100%;
+    
+       
+        }
+        
+        .nav_clock{
+            display: none;
+        }
+        
+        .nav{
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        
+        
+        /*
+        ------------------------------------------------------------------------------------------------------------- Cards
+        */
+        .generic_media_container{
+            grid-column: 1/13;
+            grid-row: 2/8;
+        }
+        .room_sources_container{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            position: relative;
+            top: 5px;
+            overflow: visible;
+            width: 90%;
+            height: 90%;
+         
+        }
+            .source_card{
+                height:100%;
+                width: 100%;
+            }
+                .source_card .img_container {
+                    height: 70%;
+                }
+        
+        
+    
+    
+    
+    
+        /*
+        ---------------------------------------------------------------------------------------------------------- light_container
+        */        
+        
+        .lights_app{
+            grid-column: 1 / 13;
+            grid-row: 2 / 8;
+            height: 100%;
+            width: 100%;
+            grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+    
+       
+            border-radius: 15px;
+        }
+    
+            .light_container{
+                grid-row: 2/8;
+                grid-column: 1/10;
+                width: 90%;
+                height: 90%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+    
+                top: 5px;
+                overflow: visible;
+            }
+    
+            #breakfast_nook.light_container{
+                grid-row: 1/9;
+                height: 100%;
+                grid-template-rows: repeat(4,1fr);
+            }
+                .light_tile{
+                    height: 100%;
+                    width: 100%;
+                    gap: 0;
+                    justify-content: space-evenly;
+                }
+                .light_tile .light_info p {
+                    font-size: larger;
+                }
+                    .light_tile .light_info{
+                        width:95%
+                    }
+    
+                    .light_controls{
+                        width: 100%;
+                        justify-content: space-evenly;
+                    }
+                        .light_controls .btn_circle{
+                            height: 3.5rem;
+                            width: 3.5rem;
+                        }
+                   
+        /*
+        ----------------------------------------------------------------------------------------------------- Controller layout 
+        
+        */  
+    
+        .generic_media_container{
+            grid-row: 2/8;
+        }
+            .controller_layout{
+                grid-row: 1/8;
+                width: 100%;
+                height: 95%;
+                position: relative;
+                bottom: 1.2rem;
+             
+            }
+    
+    
+            
+        .mobile_controller_nav{
+            width: 80%;
+            height: 105%;
+    
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: solid 1px white;
+    
+     }
+           
+    
+        .currentViewing{
+            height: 100%;
+            width: 100%;
+         
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+    
+    
+        .mobile_controller_nav.btn_circle{
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+        .mobile_controller_nav .btn_circle_active{
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+        .mobile_controller_nav .btn_circle_active img{
+            filter: invert(0);
+        }
+    
+    
+        /*
+        ---------------------------------------------------------------------------------------------------------- Controller specific
+        */
+    
+       
+    
+            .controller{
+                width:100%;
+                height: 100%;
+            }
+    
+           
+    
+            .control-icon.top {
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+    
+            .control-icon.left {
+                top: 50%;
+                left: 20px;
+                transform: translateY(-50%);
+            }
+    
+            .control-icon.right {
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+            }
+                
+            .control-icon.bottom {
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+    
+    
+    
+    
+            .bottom_row_1_controller{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;
+              
+            }
+        
+            .bottom_row_2_controller{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;
+            
+            }
+        
+    
+    
+        /*
+        ------------------- Bulray
+        */
+        .bluRay_controller_movement .btn_circle{
+            height: 4.5rem;
+            width: 4.5rem;
+        }
+        
+            .bluRay_controller_controls_2 .btn_circle{
+                height: 4.75rem;
+                width: 4.75rem;
+            }
+    
+       
+          
+    
+        /*
+        ------------------- apple Tv 
+        */
+    
+        
+        .apple_tv_controller_movement .btn_circle{
+            height: 4.5rem;
+            width: 4.5rem;
+        }
+        
+            #reboot_button{
+                grid-column: 12/15;    
+            }
+    
+        /*
+        ------------------- DTV
+        */
+    
+        .dtv_controller_movement .container .btn_circle{
+            height: 4.25rem;
+            width: 4.25rem;
+        }
+    
+        .dtv_controller_controls .btn_circle{
+            height: 4.5rem;
+            width: 4.5rem;
+        }
+    
+       
+    
+        
+        /*
+        ------------------- Roku
+        */
+    
+        .roku_controller_movement .btn_circle{
+            height: 4.25rem;
+            width: 4.25rem;
+        }
+    
+        
+    
+    
+    
+    
+        
+    
+        .bottom_row_1_controller .btn_circle{
+            height: 3rem;
+            width: 5rem;
+            border-radius: 30px;
+        }
+    
+        .bottom_row_2_controller .btn_circle{
+            height: 3rem;
+            width: 5rem;
+            border-radius: 30px;
+        }
+    
+      
+            
+    /*
+    -------------------------------------------------------------------------------------------------------- reboot, arrow back, home and power off 
+    */
+            #controller_layout_back_button{
+                grid-column: 1 / 4;
+                height: 70%;
+                
+            }
+    
+            .mobile_back_btn{
+                display: contents; 
+            }
+               
+            
+            #reboot_button{
+                height: 70%;
+            }
+            #mobile_home_btn, #mobile_power_btn{
+                display: contents;
+                
+            }
+    
+    
+               .room_home_corner {
+                    grid-column: 11/13;
+                    width: 100%;
+                    height: 2rem;
+                    z-index: 100;
+    
+                }
+                   .room_home_corner .home_button{
+                        width: 100%;
+                        height: 2rem;
+                    }
+               .room_back_corner {
+                    grid-column: 1/3;
+                    width: 100%;
+                    height: 2rem;
+                    z-index: 100;
+    
+                }
+                .room_back_corner a{
                     width: 100%;
                     height: 2rem;
                 }
-           .room_back_corner {
-                grid-column: 1/3;
-                width: 100%;
-                height: 2rem;
-                z-index: 100;
-
-            }
-            .room_back_corner a{
-                width: 100%;
-                height: 2rem;
-            }
-            .room_back_corner .back_button{
-                width: 100%;
-                height: 2rem;
-                z-index: 100;
-            }
-
-           
-/*
------------------------------------------------------------------------------------------------------------------ display_logo
-*/
-.generic_media_container .logo_display{
-    grid-row: 1 / 1;
-    height: 100%;
-    animation: logo-load 1s;
-}
-
-
-.logo_display .roku_logo img{
-    height: 2rem;
-    }
-    .logo_display .dtv_header_logo img{
-        height:1.5rem;
-    }
-
-    .logo_display .bluRay_logo img{
-        height: 2.5rem;
-    }
-
-    
-
-
-    .media_1_img_display img{
-        height: 50px;
-    }
-    .media_1_img_display p{
-      display: none;
-    }
-
-    .media_3_img_display img{
-        height: 2.5rem;
-    }
-        .media_4_img_display img{
-            height: 2.5rem;        
-        }   
-            .media_5_img_display img{
-                height: 2.5rem;           
-            }
-                .media_6_img_display img{
-                    height: 2.5rem;
+                .room_back_corner .back_button{
+                    width: 100%;
+                    height: 2rem;
+                    z-index: 100;
                 }
-                    .media_7_img_display img{
-                        height: 2.5rem;
-                    }
-                        .media_8_img_display img{
-                            height: 2.5rem;
-                        }
-
-
-
-
-
-
-
-
-
-/*
------------------------------------------------------------------------------------------------------------------ volume container
-*/
-
-        .volume_container .nav_container{
-            display: none;
-        }
-      
-
-        .volume_container{
-            background-color: transparent;
-            grid-column: 1/10;
-            height: 90%;
-            position: relative;
-            top: 4rem;
-          
-          
-        }
-
-        #mobile_display_none{
-            display: none;
-        }
-
-        .media_3_img,
-.media_4_img,
-.media_5_img,
-.media_6_img,
-.media_7_img,
-.media_8_img{
-    height: 60%;
-}
-
-.media_1_img{
-    height: 45%;
-}
-.media_2_img{
-    height: 90%;
-    position: relative;
-    top: 12px;
-}
+    
+               
+    /*
+    ----------------------------------------------------------------------------------------------------------------- display_logo
+    */
+    .generic_media_container .logo_display{
+        grid-row: 1 / 1;
+        height: 100%;
+        animation: logo-load 1s;
     }
-
+    
+    
+    .logo_display .roku_logo img{
+        height: 2rem;
+        }
+        .logo_display .dtv_header_logo img{
+            height:1.5rem;
+        }
+    
+        .logo_display .bluRay_logo img{
+            height: 2.5rem;
+        }
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+    ----------------------------------------------------------------------------------------------------------------- volume container
+    */
+    
+            .volume_container .nav_container{
+                display: none;
+            }
+          
+    
+            .volume_container{
+                background-color: transparent;
+                grid-column: 1/10;
+                height: 90%;
+                position: relative;
+                top: 4rem;
+              
+              
+            }
+    
+            #mobile_display_none{
+                display: none;
+            }
+        }
 
 
     @media only screen and (min-width: 776px) and (orientation: portrait){
@@ -1466,7 +1433,7 @@
         }
         .generic_room .title_info{
           
-            font-size: x-large;
+            font-size: xx-large;
             grid-column: 3/11;
             text-align: center;
         
@@ -1560,22 +1527,35 @@
         .generic_media_container{
             grid-column: 1/13;
             grid-row: 2/8;
+            justify-items: center;
+            align-items: center;
         }
         .room_sources_container{
             display: grid;
             grid-template-columns: repeat(2,1fr);
-            grid-auto-rows: 1fr;
+            grid-auto-rows: 25%;
             position: relative;
             top: 5px;
             overflow: visible;
-            width: 75%;
-            height: 90%;
+            width: 100%;
+            height: 100%;
          
         }
-            .source_card{
-                height:100%;
-                width: 100%;
-            }
+        .source_card{
+            height: 100%;
+            width: 100%;
+        }
+        .room_sources_container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            position: relative;
+            top: 5px;
+            overflow: visible;
+            width: 80%;
+            height: 90%;
+        }
+    
+           
                 .source_card .img_container {
                     height: 70%;
                 }
@@ -1590,7 +1570,7 @@
         */        
         
         .lights_app{
-            grid-column: 1 / 13;
+            grid-column: 2 / 12;
             grid-row: 2 / 8;
             height: 100%;
             width: 100%;
@@ -1602,15 +1582,14 @@
     
             .light_container{
                 grid-row: 2/8;
-                grid-column: 1/10;
-                width: 90%;
-                height: 90%;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-    
+                grid-auto-rows: 30%;
+                position: relative;
                 top: 5px;
                 overflow: visible;
+                width: 95%;
+                height: 90%;
             }
     
             #breakfast_nook.light_container{
@@ -1625,7 +1604,7 @@
                     justify-content: space-evenly;
                 }
                 .light_tile .light_info p {
-                    font-size: larger;
+                    font-size: xx-large;
                 }
                     .light_tile .light_info{
                         width:95%

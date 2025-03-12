@@ -61,16 +61,13 @@ interface BrowseItem {
   action?: string;
 }
 
-interface AudioDashboardProps {
-  mute: string;
-  setMute: (mute: string) => void;
-}
 
 
 
 
 
-const MediaServerWebSocket: React.FC<AudioDashboardProps>  = ({ mute, setMute }) => {
+
+const MediaServerWebSocket: React.FC  = () => {
 
   //change these based on information 
   const serverUrl = 'ws://192.168.1.151:5004'; 
@@ -332,7 +329,7 @@ const filteredItems = items.filter(item => {
     });
 
     setCanGoBack(backAvailable);
-    setMute(newMute);
+    
 
     if (parsedData['TrackTime']) {
       setSeekPosition(parseInt(parsedData['TrackTime']));
@@ -754,8 +751,6 @@ const zone_increase_18 = "570"; // zone_increase
 const zone_name_18    = "Media Room";
 
 
-const [houseMute, setHouseMute] = useState(false)
-const [houseVol, setHouseVol] = useState(0)
 
 
 
@@ -764,8 +759,7 @@ const [houseVol, setHouseVol] = useState(0)
 
     useEffect(() => {
 
-      const houseVol   = window.CrComLib.subscribeState("n", "118",  (value: number) => { setHouseVol(value); });
-      const houseMute  = window.CrComLib.subscribeState("b", "581",  (value: boolean) => { setHouseMute(value); });
+    
    
       const zone_1  = window.CrComLib.subscribeState("b", zone_mute_1,  (value: boolean) => { setZone1_mute(value); });
       const zone_2  = window.CrComLib.subscribeState("b", zone_mute_2,  (value: boolean) => { setZone2_mute(value); });
@@ -834,8 +828,7 @@ const [houseVol, setHouseVol] = useState(0)
 
       return () => {
 
-        window.CrComLib.unsubscribeState("b", "581",houseMute);
-        window.CrComLib.unsubscribeState("n", "118",houseVol);
+      
 
         window.CrComLib.unsubscribeState("b", zone_mute_1,  zone_1);
         window.CrComLib.unsubscribeState("b", zone_mute_2,  zone_2);
@@ -1892,11 +1885,7 @@ const [houseVol, setHouseVol] = useState(0)
 
 
 
-
-          <button className='display_none' id='house_vol_down' onClick={()=> (window.CrComLib.publishEvent("b","580",true),window.CrComLib.publishEvent("b","580",false), console.log("house vol down"))}> <img className='btn_image' src={arrow} /></button>
-          <button className='display_none' id='house_vol_mute' onClick={()=> (window.CrComLib.publishEvent("b","581",true),window.CrComLib.publishEvent("b","581",false), console.log("house vol mute"))}> {houseMute? <img className='btn_image' src={mute}/> : <p>{((houseVol/65535) * 100).toFixed(0)}</p> } </button>
-          <button className='display_none' id='house_vol_up'   onClick={()=> (window.CrComLib.publishEvent("b","582",true),window.CrComLib.publishEvent("b","582",false), console.log("house vol up"))}  > <img className='btn_image' src={arrow} id='flip' /></button>
-        </div>
+ </div>
 
         {showSearchBox && (
           <div className='search_overlay'>

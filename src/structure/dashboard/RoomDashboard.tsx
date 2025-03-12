@@ -88,13 +88,9 @@ const RoomsDashboard = () => {
                 {"Master Bedroom":["media","music"]},
                 {"Guest Bedroom":["media","music"]},
                 {"Guest Bathroom":["media","music"]},
-
-                {"Steves Bath":["media","music"]},
                 {"Ellens Office":["media","music"]},
                 {"Ellens Bath":["media","music"]}, 
-                {"Ellens Exercise":["media","music"]}, 
-
-                
+                {"Ellens Exercise":["media","music"]},             
                 {"Media Room":["media","music","light"]},
             ]
         },
@@ -104,29 +100,24 @@ const RoomsDashboard = () => {
             rooms:[
                 {"Family Room":["media","music","light"]},
                 {"Dinning Room":["media","music","light"]}, 
-
                 {"Breakfast":["media","music","light"]},
-
                 {"Game Room":["media","music","light"]},   
-
-                
-               
             ]
         },
         location_3: {
             active: false,
             title:"Down Stairs",
             rooms:[
-             
                 {'Arcade':["media","music"]},
                 {'Basketball Court':["media","music"]}
-
             ]
         },
         location_4: {
             active: false,
-            title:"null",
-            rooms:[]
+            title:"Out Doors",
+            rooms:[
+                {'Pool Patio':["media","music"]},
+            ]
         },
         
         location_5: {
@@ -153,7 +144,7 @@ const RoomsDashboard = () => {
 
 
 
-
+    
 
     const activeLocations = Object.values(zone).filter(location => location.active);
 

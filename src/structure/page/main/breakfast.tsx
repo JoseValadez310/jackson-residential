@@ -15,6 +15,8 @@ import BluRay from "../../../components/controllers/BluRay"
 //CSS for Controllers
 
 import "../../../assets/css/page_css/genericRoom.css"
+import "../../../assets/css/page_css/multiTvs.css"
+
 
 
 
@@ -82,7 +84,8 @@ const FamilyRoom = () =>{
     let media_7:string
     let media_8:string
 
-    const roomLocation:string = ""
+    const roomLocation:string = "1"    // East 
+    const roomLocation_tv_2:string = "2" // West
 
     const sub_title_1 = "BluRay"
     const sub_title_2 = "Kaleidescape"
@@ -125,10 +128,10 @@ const FamilyRoom = () =>{
     const [roomVolume,setRoomVolume]  = useState(0)
     const [roomMute, setRoomMute]     = useState(false)
     
-    const audio_volume_join   = ""
-    const audio_mute_join     = ""
-    const audio_increase_join = ""
-    const audio_decrease_join = ""
+    const audio_volume_join   = "100"
+    const audio_mute_join     = "502"
+    const audio_increase_join = "501"
+    const audio_decrease_join = "500"
 
 
 /*
@@ -137,7 +140,9 @@ const FamilyRoom = () =>{
     const [displayReboot, setDisplayReboot] = useState(false) // Apple TV reboot menu 
     const [tvPowerMenu, setTvPowerMenu] = useState(false)      //  TV Power Menu    
 
-    const room_off_join = ""
+    const room_off_join = "21"
+    const room_off_join_2 = "22"
+
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
@@ -177,6 +182,53 @@ const FamilyRoom = () =>{
 
 // console.log 
 
+const [drop_down_1, setDrop_down_1] = useState('drop_down_closed')
+const [drop_down_2, setDrop_down_2] = useState('drop_down_closed')
+
+
+const dropDowns =(id:string)=>{
+    if(id === "openDrop1"){
+        setDrop_down_1("drop_down_open")
+    }
+    else if(id === "openDrop2"){
+        setDrop_down_2("drop_down_open")
+    }
+    
+    
+
+
+    else if(id === "closeDrop1"){
+        setDrop_down_1("drop_down_closing")
+
+        const drop1Interval =  setInterval(() => {
+            setDrop_down_1("drop_down_closed")
+           
+           
+            clearInterval(drop1Interval); 
+          }, 1000);
+        
+    }
+    else if(id === "closeDrop2"){
+        setDrop_down_2("drop_down_closing")
+
+        const drop2Tnterval =  setInterval(() => {
+           
+            setDrop_down_2("drop_down_closed")
+           
+            clearInterval(drop2Tnterval); 
+          }, 1000);
+    
+   
+        
+    }
+   
+        
+    
+
+
+
+
+}
 
 
 /*
@@ -184,16 +236,16 @@ const FamilyRoom = () =>{
 */
 
     useEffect(() => {
+        console.log(roomLocation)
         // TV Soucres
-        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  // 
-        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // 
-        const media3 = window.CrComLib.subscribeState("b","3",(value: boolean) => {setMedia3(value);});  // 
-        const media4 = window.CrComLib.subscribeState("b","4",(value: boolean) => {setMedia4(value);});  // 
-        const media5 = window.CrComLib.subscribeState("b","5",(value: boolean) => {setMedia5(value);});  // 
-        const media6 = window.CrComLib.subscribeState("b","6",(value: boolean) => {setMedia6(value);});  // 
-        const media7 = window.CrComLib.subscribeState("b","7",(value: boolean) => {setMedia7(value);});  // 
-        const media8 = window.CrComLib.subscribeState("b","8",(value: boolean) => {setMedia8(value);});  
-       
+        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  // bluRay
+        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // Kescape
+        const media3 = window.CrComLib.subscribeState("b","5",(value: boolean) => {setMedia3(value);});  // DTV3
+        const media4 = window.CrComLib.subscribeState("b","6",(value: boolean) => {setMedia4(value);});  // DTV4
+        const media5 = window.CrComLib.subscribeState("b","7",(value: boolean) => {setMedia5(value);});  // DTV5
+        const media6 = window.CrComLib.subscribeState("b","8",(value: boolean) => {setMedia6(value);});  // ATV1
+        const media7 = window.CrComLib.subscribeState("b","9",(value: boolean) => {setMedia7(value);});  // ATV2
+        const media8 = window.CrComLib.subscribeState("b","10",(value: boolean) => {setMedia8(value);}); // ATV3
         // TV audio controls
         const roomVolume     = window.CrComLib.subscribeState("n",audio_volume_join,(value: number) => {setRoomVolume(value);});
         const roomMute    = window.CrComLib.subscribeState("b",audio_mute_join,(value: boolean) => {setRoomMute(value);});
@@ -215,12 +267,12 @@ const FamilyRoom = () =>{
             // TV Soucres
             window.CrComLib.unsubscribeState("b","1",media1)
             window.CrComLib.unsubscribeState("b","2",media2)
-            window.CrComLib.unsubscribeState("b","3",media3)
-            window.CrComLib.unsubscribeState("b","4",media4)
-            window.CrComLib.unsubscribeState("b","5",media5)
-            window.CrComLib.unsubscribeState("b","6",media6)
-            window.CrComLib.unsubscribeState("b","7",media7)
-            window.CrComLib.unsubscribeState("b","8",media8)
+            window.CrComLib.unsubscribeState("b","5",media3)
+            window.CrComLib.unsubscribeState("b","6",media4)
+            window.CrComLib.unsubscribeState("b","7",media5)
+            window.CrComLib.unsubscribeState("b","8",media6)
+            window.CrComLib.unsubscribeState("b","9",media7)
+            window.CrComLib.unsubscribeState("b","10",media8)
          
             // TV audio controls
             window.CrComLib.unsubscribeState("n",audio_volume_join,roomVolume)
@@ -443,177 +495,328 @@ if(media1){
 
 
     // Tile click, function calls to set local values and crestron values
-        const playSource = (id:string) =>{
-            if(id === "media1"){
-                // Send command to Crestron         
-                setMedia1(true)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
-                
-                
-
-                // Signal Name 
-                window.CrComLib.publishEvent("b","1",true)
-                window.CrComLib.publishEvent("b","1",false)
-
-                console.log("BluRay join", 1)
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,1)
-            } 
-            else if (id === "media2"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(true)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
-                
-                
-
-                window.CrComLib.publishEvent("b","2",true)
-                window.CrComLib.publishEvent("b","2",false)
-
-                console.log("Kaleidescape join", 2)
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,2)
-            } 
-            else if (id === "media3"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(true)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
+    const playSource = (id:string) =>{
+        if(id === "media1"){
+            // Send command to Crestron         
+            setMedia1(true)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
             
-                
+            
 
-                // Signal Name 
-                window.CrComLib.publishEvent("b","3",true)
-                window.CrComLib.publishEvent("b","3",false)
 
-                console.log("DTV 3 House 1 join", 3)
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,3)
-            } 
-            else if (id === "media4"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(true)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
-                
-                
+            window.CrComLib.publishEvent("b","1",true)
+            window.CrComLib.publishEvent("b","1",false)
 
-                // Signal Name 
-                window.CrComLib.publishEvent("b","4",true)
-                window.CrComLib.publishEvent("b","4",false)
+            console.log("BluRay join", 1)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation}`,1)
+        } 
+        else if (id === "media2"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(true)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            window.CrComLib.publishEvent("b","2",true)
+            window.CrComLib.publishEvent("b","2",false)
 
-                console.log("DTV 4 House 2 join", 4)
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,4)
-            } 
-            else if (id === "media5"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(true)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(false)
-                
-                
 
-                // Signal Name 
-                window.CrComLib.publishEvent("b","5",true)
-                window.CrComLib.publishEvent("b","5",false)
-    
-                console.log("DTV 5 Steve join", 5)
+            console.log("Kaleidescape join", 2)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation}`,2)
+        } 
+        else if (id === "media3"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(true)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+        
+            
+            window.CrComLib.publishEvent("b","5",true)
+            window.CrComLib.publishEvent("b","5",false)
 
-                //Sending Crestron Media ID
-                window.CrComLib.publishEvent("n",`${roomLocation}`,5)
-            } 
-            else if (id === "media6"){
-                // Send command to Crestron 
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(true)
-                setMedia7(false)
-                setMedia8(false)
+          
 
-                
+            console.log("DTV 3 House 1 join", 5)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation}`,5)
+        } 
+        else if (id === "media4"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(true)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            
 
-            // Signal Name 
             window.CrComLib.publishEvent("b","6",true)
             window.CrComLib.publishEvent("b","6",false)
 
-            console.log("ATV 1 House 1 join", 6)
+            console.log("DTV 4 House 2 join", 6)
             //Sending Crestron Media ID
             window.CrComLib.publishEvent("n",`${roomLocation}`,6)
-            } 
-            else if (id === "media7"){
-                // c
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(true)
-                setMedia8(false)
+        } 
+        else if (id === "media5"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(true)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            
 
-                
-
-                // Signal Name 
             window.CrComLib.publishEvent("b","7",true)
             window.CrComLib.publishEvent("b","7",false)
+            console.log("DTV 5 Steve join", 7)
 
-            console.log("ATV 2 House 2 join", 7)
             //Sending Crestron Media ID
             window.CrComLib.publishEvent("n",`${roomLocation}`,7)
-            } 
-            else if (id === "media8"){
-                // c
-                setMedia1(false)
-                setMedia2(false)
-                setMedia3(false)
-                setMedia4(false)
-                setMedia5(false)
-                setMedia6(false)
-                setMedia7(false)
-                setMedia8(true)
-                
-                
+        } 
+        else if (id === "media6"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(true)
+            setMedia7(false)
+            setMedia8(false)
 
-            // Signal Name 
+            
             window.CrComLib.publishEvent("b","8",true)
             window.CrComLib.publishEvent("b","8",false)
+        console.log("ATV 1 House 1 join", 8)
+        //Sending Crestron Media ID
+        window.CrComLib.publishEvent("n",`${roomLocation}`,8)
+        } 
+        else if (id === "media7"){
+            // c
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(true)
+            setMedia8(false)
 
-            console.log("ATV 3 Steve join", 8)
+            
+
+         
+            window.CrComLib.publishEvent("b","9",true)
+            window.CrComLib.publishEvent("b","9",false)
+        console.log("ATV 2 House 2 join", 9)
+        //Sending Crestron Media ID
+        window.CrComLib.publishEvent("n",`${roomLocation}`,9)
+        } 
+        else if (id === "media8"){
+            // c
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(true)
+
+            window.CrComLib.publishEvent("b","10",true)
+            window.CrComLib.publishEvent("b","10",false)
+            
+
+            console.log("ATV 3 Steve join", 10)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation}`,8)
-            } 
-            }
+            window.CrComLib.publishEvent("n",`${roomLocation}`,10)
+        } 
+        }
 
+    const playSource_2 = (id:string) =>{
+        if(id === "media1"){
+            // Send command to Crestron         
+            setMedia1(true)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            
+
+
+            window.CrComLib.publishEvent("b","1",true)
+            window.CrComLib.publishEvent("b","1",false)
+
+            console.log("BluRay join", 1)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,1)
+        } 
+        else if (id === "media2"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(true)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            window.CrComLib.publishEvent("b","2",true)
+            window.CrComLib.publishEvent("b","2",false)
+
+
+            console.log("Kaleidescape join", 2)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,2)
+        } 
+        else if (id === "media3"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(true)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+        
+            
+            window.CrComLib.publishEvent("b","5",true)
+            window.CrComLib.publishEvent("b","5",false)
+
+            
+
+            console.log("DTV 3 House 1 join", 5)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,5)
+        } 
+        else if (id === "media4"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(true)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            
+
+            window.CrComLib.publishEvent("b","6",true)
+            window.CrComLib.publishEvent("b","6",false)
+
+            console.log("DTV 4 House 2 join", 6)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,6)
+        } 
+        else if (id === "media5"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(true)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            
+            
+
+            window.CrComLib.publishEvent("b","7",true)
+            window.CrComLib.publishEvent("b","7",false)
+            console.log("DTV 5 Steve join", 7)
+
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,7)
+        } 
+        else if (id === "media6"){
+            // Send command to Crestron 
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(true)
+            setMedia7(false)
+            setMedia8(false)
+
+            
+            window.CrComLib.publishEvent("b","8",true)
+            window.CrComLib.publishEvent("b","8",false)
+        console.log("ATV 1 House 1 join", 8)
+        //Sending Crestron Media ID
+        window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,8)
+        } 
+        else if (id === "media7"){
+            // c
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(true)
+            setMedia8(false)
+
+            
+
+            
+            window.CrComLib.publishEvent("b","9",true)
+            window.CrComLib.publishEvent("b","9",false)
+        console.log("ATV 2 House 2 join", 9)
+        //Sending Crestron Media ID
+        window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,9)
+        } 
+        else if (id === "media8"){
+            // c
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(true)
+
+            window.CrComLib.publishEvent("b","10",true)
+            window.CrComLib.publishEvent("b","10",false)
+            
+
+            console.log("ATV 3 Steve join", 10)
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,10)
+        } 
+        }
+    
     // Volume control for current room
         const tvVolState = (id:string) =>{
 
@@ -659,7 +862,18 @@ if(media1){
 
             }
             }
-    
+        const multiZoneOff = (id:string) =>{
+
+            if(id === "zone1"){
+                window.CrComLib.publishEvent("b",room_off_join,true)
+                window.CrComLib.publishEvent("b",room_off_join,false)
+            } else if (id === "zone2"){
+                window.CrComLib.publishEvent("b",room_off_join_2,true)
+                window.CrComLib.publishEvent("b",room_off_join_2,false)
+            }
+           
+        }
+         
     // Back button calls this function 
         const display_tile = () => {   
         //display controller
@@ -795,6 +1009,73 @@ if(media1){
             </div>
 
             {active_media?
+                <div className="room_home_corner" id="display_none">
+                    <button className="home_button" onClick={()=>powerMenu("menu")}>
+                        <img src={power}  />
+                    </button> 
+                </div>
+                :
+                <div className="room_home_corner" id="display_none">
+                    <Link to={"/"} className="home_button">
+                        <img src={home_button}/>
+                    </Link>
+                </div>
+            }
+
+
+
+
+
+
+       
+             
+<div className="title_info_breakfast" > 
+                <h1 className="arcade_title"> {roomName}  </h1>
+                
+                <div className="tv_section_1_div"> 
+                    <button className="btn_square" onClick={()=> {drop_down_1 === "drop_down_closed"? dropDowns("openDrop1"):dropDowns("closeDrop1")}} ><p>TV #1</p></button>
+
+                    <div className={drop_down_1}>
+                        <button className="btn_square" onClick={()=> playSource('media1')}> <p> BluRay </p></button>
+                        <button className="btn_square" onClick={()=> playSource('media2')}> <p> Kescape</p></button>
+                        <button className="btn_square" onClick={()=> playSource('media3')}> <p> DTV House 1</p></button>
+                        <button className="btn_square" onClick={()=> playSource('media4')}> <p> DTV House 2</p></button>
+                        <button className="btn_square" onClick={()=> playSource('media5')}> <p> DTV Steve </p></button>
+                        <button className="btn_square" onClick={()=> playSource('media6')}> <p> ATV House 1</p></button>
+                        <button className="btn_square" onClick={()=> playSource('media7')}> <p> ATV House 2</p></button>
+                        <button className="btn_square" onClick={()=> playSource('media8')}> <p> ATV Steve</p></button>
+                        <button className="btn_square" onClick={()=> multiZoneOff("zone1")}> <p> TV Off</p></button>
+
+                    </div>    
+                    
+                </div>
+
+
+                <div className="tv_section_2_div"> 
+                    <button className="btn_square" onClick={()=> {drop_down_2 === "drop_down_closed"? dropDowns("openDrop2"):dropDowns("closeDrop2")}} ><p>TV #2</p></button>
+
+                    <div className={drop_down_2}>
+                        <button className="btn_square" onClick={()=> playSource_2('media1')}> <p> BluRay </p></button>
+                        <button className="btn_square" onClick={()=> playSource_2('media2')}> <p> Kescape</p></button>
+                        <button className="btn_square" onClick={()=> playSource_2('media3')}> <p> DTV House 1</p></button>
+                        <button className="btn_square" onClick={()=> playSource_2('media4')}> <p> DTV House 2</p></button>
+                        <button className="btn_square" onClick={()=> playSource_2('media5')}> <p> DTV Steve </p></button>
+                        <button className="btn_square" onClick={()=> playSource_2('media6')}> <p> ATV House 1</p></button>
+                        <button className="btn_square" onClick={()=> playSource_2('media7')}> <p> ATV House 2</p></button>
+                        <button className="btn_square" onClick={()=> playSource_2('media8')}> <p> ATV Steve</p></button>
+                        <button className="btn_square" onClick={()=> multiZoneOff("zone2")}> <p> TV Off</p></button>
+
+                    </div>    
+                    
+                </div>
+
+               
+
+              
+
+
+
+                {active_media?
                 <div className="room_home_corner">
                     <button className="home_button" onClick={()=>powerMenu("menu")}>
                         <img src={power}  />
@@ -808,13 +1089,10 @@ if(media1){
                 </div>
             }
 
-
-
-
-
-
-       
-            <h1 className="title_info"> {roomName} </h1>
+            </div>
+            
+            
+            
 
             <div className={tvPowerMenu? "power_menu_overlay" : "hide_power_menu_overlay"} >
                 <div className="power_menu">
@@ -877,7 +1155,7 @@ if(media1){
             <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
                     <div className={active_media? "media_off":"room_sources_container"}>
                             
-                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource('media1')}>
+                            <div className="display_none" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
@@ -885,7 +1163,7 @@ if(media1){
                                 <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource('media2')}>
+                            <div className="display_none" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
@@ -893,14 +1171,14 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onClick={()=>playSource('media3')}>
+                            <div className="display_none" id= { media3? 'active_source' : 'not_active'} onClick={()=>playSource('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
                             </div>
 
-                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onClick={()=>playSource('media4')}>
+                            <div className="display_none" id= { media4? 'active_source' : 'not_active'} onClick={()=>playSource('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
@@ -908,7 +1186,7 @@ if(media1){
                                 <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource('media5')}>
+                            <div className="display_none" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
@@ -916,7 +1194,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onClick={()=>playSource('media6')}>
+                            <div className="display_none" id= { media6? 'active_source' : 'not_active'} onClick={()=>playSource('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -924,7 +1202,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource('media7')}>
+                            <div className="display_none" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -933,7 +1211,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource('media8')}>
+                            <div className="display_none" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>
@@ -1074,77 +1352,77 @@ if(media1){
                     </div>
                 </div>
 
-                    <div className={musicOption? "music_app" : "media_off"} >
-                    </div>
+            <div className={musicOption? "music_app" : "media_off"} >
+            </div>
 
-                    <div className={lightsOption? "lights_app" : "display_none"} >
+            <div className={lightsOption? "lights_app" : "display_none"} >
 
-                        <div className="light_container">
-                            
-                            
-                            
-                            
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_1")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_1_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_1 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_2")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_2_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_2 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_3")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_3_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_3 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_4")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_4_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_4 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_5")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_5_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
+                <div className="light_container">
+                    
+                    
+                    
+                    
+                    <div className="light_tile" onClick={() => sliderValue(true,"light_1")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_1_name}</p>
                         </div>
 
-                      
-                      
-    
-
-                       
-
-                            
+                        <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_1 ? lightOn : lightOff}/>
+                        </button>
                     </div>
+
+
+                    <div className="light_tile" onClick={() => sliderValue(true,"light_2")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_2_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_2 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onClick={() => sliderValue(true,"light_3")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_3_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_3 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onClick={() => sliderValue(true,"light_4")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_4_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_4 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onClick={() => sliderValue(true,"light_5")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_5_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                </div>
+
+                
+                
+
+
+                
+
+                    
+            </div>
 
 
                     

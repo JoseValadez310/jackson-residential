@@ -137,7 +137,7 @@ const FamilyRoom = () =>{
     const [displayReboot, setDisplayReboot] = useState(false) // Apple TV reboot menu 
     const [tvPowerMenu, setTvPowerMenu] = useState(false)      //  TV Power Menu    
 
-    const room_off_join = ""
+ 
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
@@ -643,10 +643,9 @@ if(media1){
             } 
             
             else if(id==="menu_off"){
-                console.log("Turning off room join",room_off_join)
+                console.log("Turning off room join", roomLocation)
                 setTvPowerMenu(!tvPowerMenu)
-                window.CrComLib.publishEvent("b",room_off_join,true)
-                window.CrComLib.publishEvent("b",room_off_join,false)
+                window.CrComLib.publishEvent("n",roomLocation,0)
 
             }
             }

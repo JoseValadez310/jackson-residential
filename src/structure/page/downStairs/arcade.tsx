@@ -28,7 +28,9 @@ import kscape       from "../../../assets/images/logos/Kaleidescape_(logo).svg"
 import bluRay       from '../../../assets/images/logos/blu-ray-disc.svg'
 
 // General Icons
-import TV          from "../../../assets/images/icons/icons8-tv.svg"
+import TV          from "../../../assets/images/icons/icons8-tv-1.svg"
+import TV1          from "../../../assets/images/icons/icons8-tv-2.svg"
+import TV2         from "../../../assets/images/icons/icons8-tv-3.svg"
 import lights      from "../../../assets/images/icons/noun-light-bulb-2216273.svg"
 import music       from "../../../assets/images/icons/icons8-music.svg"
 import home_button from "../../../assets/images/icons/icons8-exterior.svg"
@@ -81,8 +83,8 @@ const FamilyRoom = () =>{
     let media_8:string
 
     const roomLocation:string = "11"      //Arcade 1
-    //const roomLocation_tv_2:string = "12" //Arcade 2
-    //const roomLocation_tv_3:string = "13" //Arcade 3
+    const roomLocation_tv_2:string = "12" //Arcade 2
+    const roomLocation_tv_3:string = "13" //Arcade 3
 
     const sub_title_1 = "BluRay"
     const sub_title_2 = "Kaleidescape"
@@ -137,7 +139,7 @@ const FamilyRoom = () =>{
     const [displayReboot, setDisplayReboot] = useState(false) // Apple TV reboot menu 
     const [tvPowerMenu, setTvPowerMenu] = useState(false)      //  TV Power Menu    
 
-    const room_off_join = ""
+    
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
@@ -176,8 +178,50 @@ const FamilyRoom = () =>{
 
 
 // console.log 
+const [currentTVSource, setCourrentTVSource] = useState("1")
+const [sourceSelectionOne, setSourceSelectionOne] = useState(true)
+const [sourceSelectionTwo, setSourceSelectionTwo] = useState(false)
+const [sourceSelectionThree, setSourceSelectionThree] = useState(false)
 
 
+const sourceDisplay = (tvSelection:string) =>{
+    if(tvSelection === "tv1"){
+        setSourceSelectionOne(true)
+        setSourceSelectionTwo(false)
+        setSourceSelectionThree(false)
+
+        setCourrentTVSource("1")
+    } else if (tvSelection === "tv2"){
+        setSourceSelectionOne(false)
+        setSourceSelectionTwo(true)  
+        setSourceSelectionThree(false)
+
+        setCourrentTVSource("2")
+
+    } else if (tvSelection === "tv3"){
+        setSourceSelectionOne(false)
+        setSourceSelectionTwo(false)  
+        setSourceSelectionThree(true)
+
+        setCourrentTVSource("3")
+
+    } 
+ }
+
+
+ const multiZoneOff = (id:string) =>{
+    console.log(id)
+
+    if(id === "zone1"){
+        window.CrComLib.publishEvent("n",roomLocation,0)
+    } else if (id === "zone2"){
+        window.CrComLib.publishEvent("n",roomLocation_tv_2,0)
+    } else if (id === "zone3"){
+        window.CrComLib.publishEvent("n",roomLocation_tv_3,0)
+
+    }
+   
+}
 
 /*
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -603,7 +647,7 @@ if(media1){
             window.CrComLib.publishEvent("n",`${roomLocation}`,10)
         } 
         }
- /*
+ 
     const playSource_2 = (id:string) =>{
         if(id === "media1"){
             // Send command to Crestron         
@@ -926,167 +970,8 @@ if(media1){
         } 
         }
 
-    const playSource_all = (id:string) =>{
-        if(id === "media1"){
-            // Send command to Crestron         
-            setMedia1(true)
-            setMedia2(false)
-            setMedia3(false)
-            setMedia4(false)
-            setMedia5(false)
-            setMedia6(false)
-            setMedia7(false)
-            setMedia8(false)
-            
-            
+    
 
-
-            window.CrComLib.publishEvent("b","1",true)
-            window.CrComLib.publishEvent("b","1",false)
-
-            console.log("BluRay join", 1)
-            //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,1)
-        } 
-        else if (id === "media2"){
-            // Send command to Crestron 
-            setMedia1(false)
-            setMedia2(true)
-            setMedia3(false)
-            setMedia4(false)
-            setMedia5(false)
-            setMedia6(false)
-            setMedia7(false)
-            setMedia8(false)
-            
-            window.CrComLib.publishEvent("b","2",true)
-            window.CrComLib.publishEvent("b","2",false)
-
-
-            console.log("Kaleidescape join", 2)
-            //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,2)
-        } 
-        else if (id === "media3"){
-            // Send command to Crestron 
-            setMedia1(false)
-            setMedia2(false)
-            setMedia3(true)
-            setMedia4(false)
-            setMedia5(false)
-            setMedia6(false)
-            setMedia7(false)
-            setMedia8(false)
-        
-            
-            window.CrComLib.publishEvent("b","5",true)
-            window.CrComLib.publishEvent("b","5",false)
-
-            
-
-            console.log("DTV 3 House 1 join", 5)
-            //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,5)
-        } 
-        else if (id === "media4"){
-            // Send command to Crestron 
-            setMedia1(false)
-            setMedia2(false)
-            setMedia3(false)
-            setMedia4(true)
-            setMedia5(false)
-            setMedia6(false)
-            setMedia7(false)
-            setMedia8(false)
-            
-            
-
-            window.CrComLib.publishEvent("b","6",true)
-            window.CrComLib.publishEvent("b","6",false)
-
-            console.log("DTV 4 House 2 join", 6)
-            //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,6)
-        } 
-        else if (id === "media5"){
-            // Send command to Crestron 
-            setMedia1(false)
-            setMedia2(false)
-            setMedia3(false)
-            setMedia4(false)
-            setMedia5(true)
-            setMedia6(false)
-            setMedia7(false)
-            setMedia8(false)
-            
-            
-
-            window.CrComLib.publishEvent("b","7",true)
-            window.CrComLib.publishEvent("b","7",false)
-            console.log("DTV 5 Steve join", 7)
-
-            //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,7)
-        } 
-        else if (id === "media6"){
-            // Send command to Crestron 
-            setMedia1(false)
-            setMedia2(false)
-            setMedia3(false)
-            setMedia4(false)
-            setMedia5(false)
-            setMedia6(true)
-            setMedia7(false)
-            setMedia8(false)
-
-            
-            window.CrComLib.publishEvent("b","8",true)
-            window.CrComLib.publishEvent("b","8",false)
-        console.log("ATV 1 House 1 join", 8)
-        //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,8)
-        } 
-        else if (id === "media7"){
-            // c
-            setMedia1(false)
-            setMedia2(false)
-            setMedia3(false)
-            setMedia4(false)
-            setMedia5(false)
-            setMedia6(false)
-            setMedia7(true)
-            setMedia8(false)
-
-            
-
-            
-            window.CrComLib.publishEvent("b","9",true)
-            window.CrComLib.publishEvent("b","9",false)
-        console.log("ATV 2 House 2 join", 9)
-        //Sending Crestron Media ID
-        window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,9)
-        } 
-        else if (id === "media8"){
-            // c
-            setMedia1(false)
-            setMedia2(false)
-            setMedia3(false)
-            setMedia4(false)
-            setMedia5(false)
-            setMedia6(false)
-            setMedia7(false)
-            setMedia8(true)
-
-            window.CrComLib.publishEvent("b","10",true)
-            window.CrComLib.publishEvent("b","10",false)
-            
-
-            console.log("ATV 3 Steve join", 10)
-            //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,10)
-        } 
-        }
-*/
     // Volume control for current room
     const tvVolState = (id:string) =>{
 
@@ -1124,13 +1009,7 @@ if(media1){
                 }
         } 
         
-        else if(id==="menu_off"){
-            console.log("Turning off room join",room_off_join)
-            setTvPowerMenu(!tvPowerMenu)
-            window.CrComLib.publishEvent("b",room_off_join,true)
-            window.CrComLib.publishEvent("b",room_off_join,false)
-
-        }
+     
     }
     
     // Back button calls this function 
@@ -1233,91 +1112,10 @@ if(media1){
     }
 
 
-    const [drop_down_1, setDrop_down_1] = useState('drop_down_closed')
-    const [drop_down_2, setDrop_down_2] = useState('drop_down_closed')
-    const [drop_down_3, setDrop_down_3] = useState('drop_down_closed')
-    const [drop_down_4, setDrop_down_4] = useState('drop_down_closed')
-
-
-    const dropDowns =(id:string)=>{
-        if(id === "openDrop1"){
-            setDrop_down_1("drop_down_open")
-        }
-        else if(id === "openDrop2"){
-            setDrop_down_2("drop_down_open")
-        }
-        else if(id === "openDrop3"){
-            setDrop_down_3("drop_down_open")
-        }
-        else if(id === "openDrop4"){
-            setDrop_down_4("drop_down_open")
-        }
-
-
-        else if(id === "closeDrop1"){
-            setDrop_down_1("drop_down_closing")
-
-            const drop1Interval =  setInterval(() => {
-                setDrop_down_1("drop_down_closed")
-               
-               
-                clearInterval(drop1Interval); 
-              }, 1000);
-            
-        }
-        else if(id === "closeDrop2"){
-            setDrop_down_2("drop_down_closing")
-
-            const drop2Tnterval =  setInterval(() => {
-               
-                setDrop_down_2("drop_down_closed")
-               
-                clearInterval(drop2Tnterval); 
-              }, 1000);
-            
-        }
-        else if(id === "closeDrop3"){
-            setDrop_down_3("drop_down_closing")
-
-            const drop3Interval =  setInterval(() => {
-                setDrop_down_3("drop_down_closed")
-               
-                clearInterval(drop3Interval); 
-              }, 1000);
-            
-        }
-        else if(id === "closeDrop4"){
-            setDrop_down_4("drop_down_closing")
-
-            const drop4Interval =  setInterval(() => {
-               
-                setDrop_down_4("drop_down_closed")
-               
-                clearInterval(drop4Interval); 
-              }, 1000);
-            }
-        
+    
 
 
 
-
-    }
-
-
-
-
-    const tvOne = (id:string) =>{
-        console.log(id,"TV One")
-    }
-    const tvTwo = (id:string) =>{
-        console.log(id,"TV Two")
-    }
-    const tvThree = (id:string) =>{
-        console.log(id,"TV Three")
-    }  
-    const tvAll = (id:string) =>{
-        console.log(id,"TV All")
-    }
        
        
 
@@ -1343,10 +1141,14 @@ if(media1){
             <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
 
             
-                <div className="nav">
-                        <button onClick={() => roomApp("TV")}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
+            <div className="nav">
+                        <button onClick={() => (roomApp("TV"), sourceDisplay("tv1"), display_tile())}     className={tvOptions && sourceSelectionOne?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}   style={{height:"60%"}}  /> </button>
+                        <button onClick={() => (roomApp("TV"), sourceDisplay("tv2"), display_tile())}     className={tvOptions && sourceSelectionTwo?   "btn_selected" : "btn_not_selected"}   >  <img src={TV1}  style={{height:"60%"}}   /> </button>
+                        <button onClick={() => (roomApp("TV"), sourceDisplay("tv3"), display_tile())}     className={tvOptions && sourceSelectionThree?   "btn_selected" : "btn_not_selected"}   >  <img src={TV2}  style={{height:"60%"}}   /> </button>
+
+
                         <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
-                        <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "display_none"}   >  <img src={lights}  /> </button>
+                        <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
                 </div>
                 
               
@@ -1360,91 +1162,36 @@ if(media1){
 
 
        
-            <div className="title_info_arcade" > 
-                <h1 className="arcade_title"> {roomName}  </h1>
+            <h1 className="title_info"> {roomName}  </h1>
+                <h1 className="currentViewingTitle"> Controlling TV #{currentTVSource}  </h1>
                 
-                <div className="tv_section_1_div"> 
-                    <button className="btn_square" onClick={()=> {drop_down_1 === "drop_down_closed"? dropDowns("openDrop1"):dropDowns("closeDrop1")}} ><p>TV #1</p></button>
-
-                    <div className={drop_down_1}>
-                        <button className="btn_square" onClick={()=> tvOne("DTV1")}> <p> DTV 1</p></button>
-                        <button className="btn_square" onClick={()=> tvOne("DTV2")}> <p> DTV 2</p></button>
-                        <button className="btn_square" onClick={()=> tvOne("ATVHouse")}> <p> ATV House</p></button>
-                        <button className="btn_square" onClick={()=> tvOne("TVOff")}> <p> TV Off</p></button>
-                    </div>    
-                    
-                </div>
-
-
-                <div className="tv_section_2_div"> 
-                    <button className="btn_square" onClick={()=> {drop_down_2 === "drop_down_closed"? dropDowns("openDrop2"):dropDowns("closeDrop2")}} ><p>TV #2</p></button>
-
-                    <div className={drop_down_2}>
-                        <button className="btn_square" onClick={()=> tvTwo("DTV1")}> <p> DTV 1</p></button>
-                        <button className="btn_square" onClick={()=> tvTwo("DTV2")}> <p> DTV 2</p></button>
-                        <button className="btn_square" onClick={()=> tvTwo("ATVHouse")}> <p> ATV House</p></button>
-                        <button className="btn_square" onClick={()=> tvTwo("TVOff")}> <p> TV Off</p></button>
-                    </div>    
-                    
-                </div>
-
-                <div className="tv_section_3_div"> 
-                    <button className="btn_square" onClick={()=> {drop_down_3 === "drop_down_closed"? dropDowns("openDrop3"):dropDowns("closeDrop3")}} ><p>TV #3</p></button>
-
-                    <div className={drop_down_3}>
-                        <button className="btn_square" onClick={()=> tvThree("DTV1")}> <p> DTV 1</p></button>
-                        <button className="btn_square" onClick={()=> tvThree("DTV2")}> <p> DTV 2</p></button>
-                        <button className="btn_square" onClick={()=> tvThree("ATVHouse")}> <p> ATV House</p></button>
-                        <button className="btn_square" onClick={()=> tvThree("TVOff")}> <p> TV Off</p></button>
-                    </div>    
-                    
-                </div>
-
-                <div className="tv_section_4_div"> 
-                    <button className="btn_square" onClick={()=> {drop_down_4 === "drop_down_closed"? dropDowns("openDrop4"):dropDowns("closeDrop4")}} ><p>ALL TV</p></button>
-
-                    <div className={drop_down_4}>
-                        <button className="btn_square" onClick={()=> tvAll("DTV1")}> <p> DTV 1</p></button>
-                        <button className="btn_square" onClick={()=> tvAll("DTV2")}> <p> DTV 2</p></button>
-                        <button className="btn_square" onClick={()=> tvAll("ATVHouse")}> <p> ATV House</p></button>
-                        <button className="btn_square" onClick={()=> tvAll("TVOff")}> <p> TV Off</p></button>
-                    </div>    
-                    
-                </div>
-
-
-
-                {active_media?
-                <div className="room_home_corner">
-                    <button className="home_button" onClick={()=>powerMenu("menu")}>
-                        <img src={power}  />
-                    </button> 
-                </div>
-                :
-                <div className="room_home_corner">
-                    <Link to={"/"} className="home_button">
-                        <img src={home_button}/>
-                    </Link>
-                </div>
-            }
-
-            </div>
 
             <div className={tvPowerMenu? "power_menu_overlay" : "hide_power_menu_overlay"} >
                 <div className="power_menu">
                     <p className="power_menu_text" style={{margin:"1rem"}}> 
-                        Would you like to turn off the {roomName}?
+                        Which TV in the {roomName} would you like to turn off?
                     </p>
 
                     <div className="power_menu_button">
-                        <Link className="yes_reboot" to={"/"}> 
-                            <button className="yes_reboot" onClick={()=> powerMenu("menu_off")}> 
-                                <p>YES</p> 
+
+                        <div style={{width:"30%",height:"4rem",  display:"flex", justifyContent:"center", flexDirection:"column",gap:"10px"}}>
+                    
+                            <button style ={{width:"100%", height:"100%"}}className="yes_reboot" onClick={()=> (multiZoneOff("zone1") , display_tile())}> 
+                                <p style={{width:"100%"}}>TV #1</p> 
                             </button> 
-                        </Link>
-                        
+
+                            <button style={{width:"100%", height:"100%"}} className="yes_reboot" onClick={()=> (multiZoneOff("zone2") , display_tile())}>  
+                            <p style={{width:"100%"}}>TV #2 </p> 
+                            </button> 
+
+                            <button style={{width:"100%", height:"100%"}} className="yes_reboot" onClick={()=> (multiZoneOff("zone3") , display_tile())}> 
+                            <p style={{width:"100%"}}> TV #3</p> 
+                            </button> 
+                   
+                        </div>
+
                         <button className="no_reboot" onClick={()=> powerMenu("menu")}> 
-                            <p>NO</p> 
+                            <p>Close Menu</p> 
                         </button>
                     </div>
                 </div>
@@ -1468,6 +1215,20 @@ if(media1){
                 </div>
             </div>
 
+            {active_media?
+                <div className="room_home_corner">
+                    <button className="home_button" onClick={()=>powerMenu("menu")}>
+                        <img src={power}  />
+                    </button> 
+                </div>
+                :
+                <div className="room_home_corner">
+                    <Link to={"/"} className="home_button">
+                        <img src={home_button}/>
+                    </Link>
+                </div>
+            }
+
            
             <div className={roomApps? "generic_room_dashboard" : "media_off"}>
                 <div className="generic_room_card" onClick={() => roomApp("TV")}>
@@ -1489,9 +1250,9 @@ if(media1){
 
 
             <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
-                    <div className={active_media? "media_off":"room_sources_container"}>
+                    <div className={active_media? "media_off":"room_sources_container"} id={sourceSelectionOne? "":"display_none"}>
                             
-                            <div className="display_none" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource('media1')}>
+                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
@@ -1499,7 +1260,7 @@ if(media1){
                                 <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="display_none" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource('media2')}>
+                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
@@ -1522,7 +1283,7 @@ if(media1){
                                 <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="display_none" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource('media5')}>
+                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
@@ -1538,7 +1299,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="display_none" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource('media7')}>
+                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -1547,7 +1308,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="display_none" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource('media8')}>
+                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>
@@ -1555,7 +1316,145 @@ if(media1){
                                 <p>{sub_title_8}</p>
                             </div>
                             
-                        </div>
+                    </div>
+
+                    <div className={active_media? "media_off":"room_sources_container"} id={sourceSelectionTwo? "":"display_none"}>
+                            
+                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource_2('media1')}>
+                                <div className="img_container">
+                                    <img className="media_1_img" src={media_1_img}/>
+                                </div>
+                            
+                                <p>{sub_title_1}</p>
+                            </div>
+
+                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource_2('media2')}>
+                                <div className="img_container">
+                                    <img className="media_2_img" src={media_2_img}/>
+                                </div>
+
+                                <p>{sub_title_2}</p>
+                            </div>
+
+                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onClick={()=>playSource_2('media3')}>
+                                <div className="img_container">
+                                    <img className="media_3_img" src={media_3_img}/>
+                                </div>
+                                <p>{sub_title_3}</p>
+                            </div>
+
+                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onClick={()=>playSource_2('media4')}>
+                                <div className="img_container">
+                                    <img className="media_4_img" src={media_4_img}/>
+                                </div>
+
+                                <p>{sub_title_4}</p>
+                            </div>
+
+                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource_2('media5')}>
+                                <div className="img_container">
+                                    <img className="media_5_img" src={media_5_img}/>
+                                </div>
+
+                                <p>{sub_title_5}</p>
+                            </div>
+
+                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onClick={()=>playSource_2('media6')}>
+                                <div className="img_container">
+                                    <img className="media_6_img" src={media_6_img}/>
+                                </div>
+                            
+                                <p>{sub_title_6}</p>
+                            </div>
+
+                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource_2('media7')}>
+                                <div className="img_container">
+                                    <img className="media_7_img" src={media_7_img}/>
+                                </div>
+                            
+                                <p>{sub_title_7}</p>
+                            </div>
+
+                            
+                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource_2('media8')}>
+                                <div className="img_container">
+                                    <img className="media_8_img"  src={media_8_img}/>
+                                </div>
+                            
+                                <p>{sub_title_8}</p>
+                            </div>
+                            
+                    </div>
+
+                    <div className={active_media? "media_off":"room_sources_container"} id={sourceSelectionThree? "":"display_none"}>
+                            
+                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource_3('media1')}>
+                                <div className="img_container">
+                                    <img className="media_1_img" src={media_1_img}/>
+                                </div>
+                            
+                                <p>{sub_title_1}</p>
+                            </div>
+
+                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource_3('media2')}>
+                                <div className="img_container">
+                                    <img className="media_2_img" src={media_2_img}/>
+                                </div>
+
+                                <p>{sub_title_2}</p>
+                            </div>
+
+                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onClick={()=>playSource_3('media3')}>
+                                <div className="img_container">
+                                    <img className="media_3_img" src={media_3_img}/>
+                                </div>
+                                <p>{sub_title_3}</p>
+                            </div>
+
+                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onClick={()=>playSource_3('media4')}>
+                                <div className="img_container">
+                                    <img className="media_4_img" src={media_4_img}/>
+                                </div>
+
+                                <p>{sub_title_4}</p>
+                            </div>
+
+                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource_3('media5')}>
+                                <div className="img_container">
+                                    <img className="media_5_img" src={media_5_img}/>
+                                </div>
+
+                                <p>{sub_title_5}</p>
+                            </div>
+
+                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onClick={()=>playSource_3('media6')}>
+                                <div className="img_container">
+                                    <img className="media_6_img" src={media_6_img}/>
+                                </div>
+                            
+                                <p>{sub_title_6}</p>
+                            </div>
+
+                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource_3('media7')}>
+                                <div className="img_container">
+                                    <img className="media_7_img" src={media_7_img}/>
+                                </div>
+                            
+                                <p>{sub_title_7}</p>
+                            </div>
+
+                            
+                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource_3('media8')}>
+                                <div className="img_container">
+                                    <img className="media_8_img"  src={media_8_img}/>
+                                </div>
+                            
+                                <p>{sub_title_8}</p>
+                            </div>
+                            
+                    </div>
+
+                    
                     <div className={active_media? "controller_layout": "media_off"}>
 
                         <button id="controller_layout_back_button"  onClick = {display_tile}>

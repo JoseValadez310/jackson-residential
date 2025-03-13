@@ -72,6 +72,10 @@ const FamilyRoom = () =>{
     const [media6, setMedia6]   = useState(false)
     const [media7, setMedia7]   = useState(false)
     const [media8, setMedia8]   = useState(false)
+
+    const [trigger1, setTrigger1] = useState(false)
+    const [trigger2, setTrigger2] = useState(false)
+
 /*
 ---------------------------------------------------------------------------- selects the correct controller to display based on the media# state
 */
@@ -360,12 +364,12 @@ const sliderValue = (value: boolean, id: string) => {
      }
     }
 
-    
+
 /*
 ---------------------------------------------------------------------------- Checks to see if any media sources are currently on
 */
 
-if(media1){
+if(media1 ){
     //display controller and hide source selection
        active_media = true
     //displaying the correct controller and hiding the rest
@@ -977,6 +981,225 @@ if(media1){
             active_media = false
         }
 
+
+
+        
+
+   
+    useEffect(()=>{
+        switch (activeSource2) {
+            case 1:
+                setMedia1(true)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 2:
+                setMedia1(false)
+                setMedia2(true)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 5:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(true)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 6:   
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(true)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 7:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(true)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 8:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(true)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 9:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(true)
+                setMedia8(false)
+                break;
+
+            case 10:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(true)
+                break;
+        
+            default:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+        }
+
+    },[activeSource2, trigger2])
+
+    
+    useEffect(()=>{
+        switch (activeSource) {
+            case 1:
+                setMedia1(true)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 2:
+                setMedia1(false)
+                setMedia2(true)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 5:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(true)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 6:   
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(true)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 7:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(true)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 8:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(true)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+
+            case 9:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(true)
+                setMedia8(false)
+                break;
+
+            case 10:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(true)
+                break;
+        
+            default:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+        }
+
+    },[activeSource, trigger1])
+
+
        
 
       
@@ -1002,8 +1225,8 @@ if(media1){
 
             
                 <div className="nav">
-                        <button onClick={() => (roomApp("TV"), sourceDisplay("tv1"), display_tile())}     className={tvOptions && sourceSelectionOne?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}   style={{height:"60%"}}  /> </button>
-                        <button onClick={() => (roomApp("TV"), sourceDisplay("tv2"), display_tile())}     className={tvOptions && sourceSelectionTwo?   "btn_selected" : "btn_not_selected"}   >  <img src={TV1}  style={{height:"60%"}}   /> </button>
+                        <button onClick={() => (roomApp("TV"), sourceDisplay("tv1"),setTrigger1(!trigger1))}     className={tvOptions && sourceSelectionOne?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}   style={{height:"60%"}}  /> </button>
+                        <button onClick={() => (roomApp("TV"), sourceDisplay("tv2"),setTrigger2(!trigger2))}     className={tvOptions && sourceSelectionTwo?   "btn_selected" : "btn_not_selected"}   >  <img src={TV1}  style={{height:"60%"}}   /> </button>
 
                         <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
                         <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
@@ -1014,13 +1237,13 @@ if(media1){
             </div>
 
             {active_media?
-                <div className="room_home_corner" id="display_none">
+                <div className="room_home_corner" >
                     <button className="home_button" onClick={()=>powerMenu("menu")}>
                         <img src={power}  />
                     </button> 
                 </div>
                 :
-                <div className="room_home_corner" id="display_none">
+                <div className="room_home_corner" >
                     <Link to={"/"} className="home_button">
                         <img src={home_button}/>
                     </Link>
@@ -1036,7 +1259,7 @@ if(media1){
              
  
                 <h1 className="title_info" > {roomName}  </h1>
-                <h1 className="currentViewingTitle"> Controlling TV #{currentTVSource} --TV 1 S {activeSource} --TV 1 S {activeSource2} </h1>
+                <h1 className="currentViewingTitle"> Controlling TV #{currentTVSource === "1"}</h1>
                 
               
                
@@ -1127,7 +1350,7 @@ if(media1){
 
                     <div className={active_media? "media_off":"room_sources_container"} id={sourceSelectionOne? "":"display_none"}>
                             
-                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource('media1')}>
+                            <div className="source_card" id= { activeSource === 1 ? 'active_source' : 'not_active'} onClick={()=>playSource('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
@@ -1135,7 +1358,7 @@ if(media1){
                                 <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource('media2')}>
+                            <div className="source_card" id= {  activeSource === 2  ? 'active_source' : 'not_active'} onClick={()=>playSource('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
@@ -1143,14 +1366,14 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onClick={()=>playSource('media3')}>
+                            <div className="source_card" id= {  activeSource === 5 ? 'active_source' : 'not_active'} onClick={()=>playSource('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
                             </div>
 
-                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onClick={()=>playSource('media4')}>
+                            <div className="source_card" id= {  activeSource === 6 ? 'active_source' : 'not_active'} onClick={()=>playSource('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
@@ -1158,7 +1381,7 @@ if(media1){
                                 <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource('media5')}>
+                            <div className="source_card" id= {  activeSource === 7? 'active_source' : 'not_active'} onClick={()=>playSource('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
@@ -1166,7 +1389,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onClick={()=>playSource('media6')}>
+                            <div className="source_card" id= {  activeSource === 8 ? 'active_source' : 'not_active'} onClick={()=>playSource('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -1174,7 +1397,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource('media7')}>
+                            <div className="source_card" id ={  activeSource === 9? 'active_source' : 'not_active'} onClick={()=>playSource('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -1183,7 +1406,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource('media8')}>
+                            <div className="source_card" id ={  activeSource === 10? 'active_source' : 'not_active'} onClick={()=>playSource('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>
@@ -1195,7 +1418,7 @@ if(media1){
 
                     <div className={active_media? "media_off":"room_sources_container"} id={sourceSelectionTwo? "":"display_none"}>
                             
-                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onClick={()=>playSource_2('media1')}>
+                            <div className="source_card" id= { activeSource2 === 1? 'active_source' : 'not_active'} onClick={()=>playSource_2('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
@@ -1203,7 +1426,7 @@ if(media1){
                                 <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onClick={()=>playSource_2('media2')}>
+                            <div className="source_card" id= { activeSource2 === 2 ? 'active_source' : 'not_active'} onClick={()=>playSource_2('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
@@ -1211,14 +1434,14 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onClick={()=>playSource_2('media3')}>
+                            <div className="source_card" id= { activeSource2 === 5? 'active_source' : 'not_active'} onClick={()=>playSource_2('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
                             </div>
 
-                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onClick={()=>playSource_2('media4')}>
+                            <div className="source_card" id= { activeSource2 === 6? 'active_source' : 'not_active'} onClick={()=>playSource_2('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
@@ -1226,7 +1449,7 @@ if(media1){
                                 <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onClick={()=>playSource_2('media5')}>
+                            <div className="source_card" id= { activeSource2 === 7? 'active_source' : 'not_active'} onClick={()=>playSource_2('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
@@ -1234,7 +1457,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onClick={()=>playSource_2('media6')}>
+                            <div className="source_card" id= { activeSource2 === 8? 'active_source' : 'not_active'} onClick={()=>playSource_2('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -1242,7 +1465,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onClick={()=>playSource_2('media7')}>
+                            <div className="source_card" id ={ activeSource2 === 9? 'active_source' : 'not_active'} onClick={()=>playSource_2('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -1251,7 +1474,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onClick={()=>playSource_2('media8')}>
+                            <div className="source_card" id ={ activeSource2 === 10? 'active_source' : 'not_active'} onClick={()=>playSource_2('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>

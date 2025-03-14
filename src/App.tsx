@@ -37,6 +37,7 @@ import GameRoom from './structure/page/main/gameroom';
 
 // down stairs
 import Arcade from './structure/page/downStairs/arcade';
+import BasketBall from './structure/page/downStairs/basketBall'
 
 // out Doors
 import PoolPatio from "./structure/page/outDoors/poolpatio"
@@ -149,6 +150,11 @@ function App() {
       path: '/arcade',
       element: <Arcade/>
       },
+
+      {
+        path: '/basketballcourt',
+        element: <BasketBall/>
+        },
   
   
   

@@ -70,8 +70,8 @@ interface BrowseItem {
 const MediaServerWebSocket: React.FC  = () => {
 
   //change these based on information 
-  const serverUrl = 'ws://192.168.1.151:5004'; 
-  const url = "http://192.168.1.151";
+  const serverUrl = 'ws://192.168.14.114:5004'; 
+  const url = "http://192.168.14.114";
 
   const socketRef = useRef<WebSocket | null>(null);
   const [isConnected, setIsConnected] = useState<boolean>(false);
@@ -96,6 +96,11 @@ const MediaServerWebSocket: React.FC  = () => {
   // Question prompt states for UI=MessageBox questions
   const [questionMessage, setQuestionMessage] = useState<string>('');
   const [questionGuid, setQuestionGuid] = useState<string | null>(null);
+
+
+
+
+
   
   // 1) UseCallback for a stable WebSocket connect function
   const connectWebSocket = useCallback(() => {
@@ -550,80 +555,116 @@ const filteredItems = items.filter(item => {
 
 
 
-    const [openZones, setOpenZones] = useState(false)
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+const [openZones, setOpenZones] = useState(false)
    
 // Zone 1
 const [zone1_vol, setZone1_vol] = useState(0);
 const [zone1_mute, setZone1_mute] = useState(false);
 const [zone_music_1_state, setZone_music_1_state] = useState(false);
-const zone_music_1    = "503"; // zone_1_music
-const zone_off_1      = "21";  // Zone1_off_fb
-const zone_decrease_1 = "500"; // zone_1_decrease
-const zone_mute_1     = "501"; // zone_1_mute
-const zone_increase_1 = "502"; // zone_1_increase
-const zone_name_1     = "Living Room";
+const zone_music_1    = "--"; // zone_1_music
+const zone_off_1      = "--";  // Zone1_off_fb
+const zone_decrease_1 = "--"; // zone_1_decrease
+const zone_mute_1     = "--"; // zone_1_mute
+const zone_increase_1 = "--"; // zone_1_increase
+const zone_name_1     = "Breakfast East Skip";
 
 // Zone 2
 const [zone2_vol, setZone2_vol] = useState(0);
 const [zone2_mute, setZone2_mute] = useState(false);
-const [zone_music_2_state, setZone_music_2_state] = useState(false);
-const zone_music_2    = "507"; // zone_2_music
-const zone_off_2      = "22";  // Zone2_off_fb
+
+const zone_2_location = '2'                                       // Go by Excel AV and Audio only zoon 
+const [zone_active_2_steve,setZone_active_2_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+const [zone_active_2_ellen,setZone_active_2_ellen] = useState(0) //
+const zone_music_2_steve   = 11; // zone_2_music for steve
+//const zone_music_2_ellen  = "12"; // zone_2_music for steve
+
+const zone_off_2      =  0;  // Zone2_off_fb
 const zone_decrease_2 = "504"; // zone_2_decrease
 const zone_mute_2     = "505"; // zone_2_mute
 const zone_increase_2 = "506"; // zone_2_increase
-const zone_name_2     = "Dinning Room";
+const zone_name_2     = "Breakfast";
 
 // Zone 3
 const [zone3_vol, setZone3_vol] = useState(0);
 const [zone3_mute, setZone3_mute] = useState(false);
-const [zone_music_3_state, setZone_music_3_state] = useState(false);
-const zone_music_3    = "511"; // zone_3_music
-const zone_off_3      = "23";  // Zone3_off_fb
+
+const zone_3_location = '3'                                       // Go by Excel AV and Audio only zoon 
+const [zone_active_3_steve,setZone_active_3_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+const [zone_active_3_ellen,setZone_active_3_ellen] = useState(0) //
+const zone_music_3_steve   = 11; // zone_2_music for steve
+//const zone_music_3_ellen  = "12"; // zone_2_music for steve
+
+const zone_off_3      = 0;  // Zone3_off_fb
 const zone_decrease_3 = "508"; // zone_3_decrease
 const zone_mute_3     = "509"; // zone_3_mute
 const zone_increase_3 = "510"; // zone_3_increase
-const zone_name_3     = "Kitchen";
+const zone_name_3     = "Dining";
 
 // Zone 4
 const [zone4_vol, setZone4_vol] = useState(0);
 const [zone4_mute, setZone4_mute] = useState(false);
-const [zone_music_4_state, setZone_music_4_state] = useState(false);
-const zone_music_4    = "515"; // zone_4_music
-const zone_off_4      = "24";  // Zone4_off_fb
+
+const zone_4_location = '4'                                       // Go by Excel AV and Audio only zoon 
+const [zone_active_4_steve,setZone_active_4_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+const [zone_active_4_ellen,setZone_active_4_ellen] = useState(0) //
+const zone_music_4_steve   = 11; // zone_2_music for steve
+//const zone_music_4_ellen  = "12"; // zone_2_music for steve
+
+
+const zone_off_4      = 0;  // Zone4_off_fb
 const zone_decrease_4 = "512"; // zone_4_decrease
 const zone_mute_4     = "513"; // zone_4_mute
 const zone_increase_4 = "514"; // zone_4_increase
-const zone_name_4     = "Breakfast";
+const zone_name_4     = "Ellen's Exercise";
 
 // Zone 5
 const [zone5_vol, setZone5_vol] = useState(0);
 const [zone5_mute, setZone5_mute] = useState(false);
-const [zone_music_5_state, setZone_music_5_state] = useState(false);
-const zone_music_5    = "519"; // zone_5_music
-const zone_off_5      = "25";  // Zone5_off_fb
+
+const zone_5_location = '5'                                       // Go by Excel AV and Audio only zoon 
+const [zone_active_5_steve,setZone_active_5_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+const [zone_active_5_ellen,setZone_active_5_ellen] = useState(0) //
+const zone_music_5_steve   = 11; // zone_2_music for steve
+//const zone_music_5_ellen  = "12"; // zone_2_music for steve
+
+const zone_off_5      = 0;  // Zone5_off_fb
 const zone_decrease_5 = "516"; // zone_5_decrease
 const zone_mute_5     = "517"; // zone_5_mute
 const zone_increase_5 = "518"; // zone_5_increase
-const zone_name_5     = "Library";
+const zone_name_5     = "Ellen's Office";
 
 // Zone 6
 const [zone6_vol, setZone6_vol] = useState(0);
 const [zone6_mute, setZone6_mute] = useState(false);
-const [zone_music_6_state, setZone_music_6_state] = useState(false);
-const zone_music_6    = "523"; // zone_music (from table)
-const zone_off_6      = "26";  // Zone6_off_fb
+
+const zone_6_location = '6'                                       // Go by Excel AV and Audio only zoon 
+const [zone_active_6_steve,setZone_active_6_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+const [zone_active_6_ellen,setZone_active_6_ellen] = useState(0) //
+const zone_music_6_steve   = 11; // zone_2_music for steve
+//const zone_music_6_ellen  = "12"; // zone_2_music for steve
+
+const zone_off_6      = 0;  // Zone6_off_fb
 const zone_decrease_6 = "520"; // zone_decrease
 const zone_mute_6     = "521"; // zone_mute
 const zone_increase_6 = "522"; // zone_increase
-const zone_name_6     = "Bar";
+const zone_name_6     = "Ellen's Bath";
 
 // Zone 7
 const [zone7_vol, setZone7_vol] = useState(0);
 const [zone7_mute, setZone7_mute] = useState(false);
-const [zone_music_7_state, setZone_music_7_state] = useState(false);
-const zone_music_7    = "527"; // zone_music
-const zone_off_7      = "27";  // Zone7_off_fb
+
+const zone_7_location = '7'                                       // Go by Excel AV and Audio only zoon 
+const [zone_active_7_steve,setZone_active_7_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+const [zone_active_7_ellen,setZone_active_7_ellen] = useState(0) //
+const zone_music_7_steve   = 11; // zone_7_music for steve
+//const zone_music_7_ellen  = "12"; // zone_7_music for ellen
+
+
+const zone_off_7      = 0;  // Zone7_off_fb
 const zone_decrease_7 = "524"; // zone_decrease
 const zone_mute_7     = "525"; // zone_mute
 const zone_increase_7 = "526"; // zone_increase
@@ -632,13 +673,23 @@ const zone_name_7     = "Patio";
 // Zone 8
 const [zone8_vol, setZone8_vol] = useState(0);
 const [zone8_mute, setZone8_mute] = useState(false);
-const [zone_music_8_state, setZone_music_8_state] = useState(false);
-const zone_music_8    = "531"; // zone_music
-const zone_off_8      = "28";  // Zone8_off_fb
-const zone_decrease_8 = "528"; // zone_decrease
+
+
+//const zone_off_8      = "28";  // Zone8_off_fb
+//const zone_decrease_8 = "528"; // zone_decrease
 const zone_mute_8     = "529"; // zone_mute
-const zone_increase_8 = "530"; // zone_increase
-const zone_name_8     = "Master bed";
+//const zone_increase_8 = "530"; // zone_increase
+//const zone_name_8     = "Master bed";
+
+console.log(zone8_vol)
+console.log(zone8_mute)
+console.log(zone_active_2_ellen)
+console.log(zone_active_3_ellen)
+console.log(zone_active_4_ellen)
+console.log(zone_active_5_ellen)
+console.log(zone_active_6_ellen)
+console.log(zone_active_7_ellen)
+
 
 // Zone 9
 const [zone9_vol, setZone9_vol] = useState(0);
@@ -734,9 +785,9 @@ const [zone17_mute, setZone17_mute] = useState(false);
 const [zone_music_17_state, setZone_music_17_state] = useState(false);
 const zone_music_17   = "567"; // zone_music
 const zone_off_17     = "37";  // Zone17_off_fb
-const zone_decrease_17 = "564"; // zone_decrease
-const zone_mute_17    = "565"; // zone_mute
-const zone_increase_17 = "566"; // zone_increase
+const zone_decrease_17 = "504"; // zone_decrease
+const zone_mute_17    = "505"; // zone_mute
+const zone_increase_17 = "506"; // zone_increase
 const zone_name_17    = "Family Room";
 
 // Zone 18
@@ -759,14 +810,33 @@ const zone_name_18    = "Media Room";
 
     useEffect(() => {
 
+
+    // Steve's Audio Feedback
+
+    const zone_2_active_fb_steve = window.CrComLib.subscribeState("n",zone_2_location,(value: number)=> setZone_active_2_steve(value))
+    const zone_3_active_fb_steve = window.CrComLib.subscribeState("n",zone_3_location,(value: number)=> setZone_active_3_steve(value))
+    const zone_4_active_fb_steve = window.CrComLib.subscribeState("n",zone_4_location,(value: number)=> setZone_active_4_steve(value))
+    const zone_5_active_fb_steve = window.CrComLib.subscribeState("n",zone_5_location,(value: number)=> setZone_active_5_steve(value))
+    const zone_6_active_fb_steve = window.CrComLib.subscribeState("n",zone_6_location,(value: number)=> setZone_active_6_steve(value))
+    const zone_7_active_fb_steve = window.CrComLib.subscribeState("n",zone_7_location,(value: number)=> setZone_active_7_steve(value))
+
+
+    const zone_2_active_fb_ellen = window.CrComLib.subscribeState("n",zone_2_location,(value: number)=> setZone_active_2_ellen(value))
+    const zone_3_active_fb_ellen = window.CrComLib.subscribeState("n",zone_3_location,(value: number)=> setZone_active_3_ellen(value))
+    const zone_4_active_fb_ellen = window.CrComLib.subscribeState("n",zone_4_location,(value: number)=> setZone_active_4_ellen(value))
+    const zone_5_active_fb_ellen = window.CrComLib.subscribeState("n",zone_5_location,(value: number)=> setZone_active_5_ellen(value))
+    const zone_6_active_fb_ellen = window.CrComLib.subscribeState("n",zone_6_location,(value: number)=> setZone_active_6_ellen(value))
+    const zone_7_active_fb_ellen = window.CrComLib.subscribeState("n",zone_7_location,(value: number)=> setZone_active_7_ellen(value))
     
-   
-      const zone_1  = window.CrComLib.subscribeState("b", zone_mute_1,  (value: boolean) => { setZone1_mute(value); });
-      const zone_2  = window.CrComLib.subscribeState("b", zone_mute_2,  (value: boolean) => { setZone2_mute(value); });
-      const zone_3  = window.CrComLib.subscribeState("b", zone_mute_3,  (value: boolean) => { setZone3_mute(value); });
-      const zone_4  = window.CrComLib.subscribeState("b", zone_mute_4,  (value: boolean) => { setZone4_mute(value); });
-      const zone_5  = window.CrComLib.subscribeState("b", zone_mute_5,  (value: boolean) => { setZone5_mute(value); });
-      const zone_6  = window.CrComLib.subscribeState("b", zone_mute_6,  (value: boolean) => { setZone6_mute(value); });
+     // Mute Feedback
+      const zone_1_mute  = window.CrComLib.subscribeState("b", zone_mute_1,  (value: boolean) => { setZone1_mute(value); }); // Breakfast East --Skip--
+      const zone_2_mute  = window.CrComLib.subscribeState("b", zone_mute_2,  (value: boolean) => { setZone2_mute(value); }); // Breakfast West 
+      const zone_3_mute  = window.CrComLib.subscribeState("b", zone_mute_3,  (value: boolean) => { setZone3_mute(value); }); // Dining Room
+      const zone_4_mute  = window.CrComLib.subscribeState("b", zone_mute_4,  (value: boolean) => { setZone4_mute(value); }); // Ellen's Exercise 
+      const zone_5_mute  = window.CrComLib.subscribeState("b", zone_mute_5,  (value: boolean) => { setZone5_mute(value); }); // Ellen's Office
+      const zone_6_mute  = window.CrComLib.subscribeState("b", zone_mute_6,  (value: boolean) => { setZone6_mute(value); }); // Ellen's Bath
+
+
       const zone_7  = window.CrComLib.subscribeState("b", zone_mute_7,  (value: boolean) => { setZone7_mute(value); });
       const zone_8  = window.CrComLib.subscribeState("b", zone_mute_8,  (value: boolean) => { setZone8_mute(value); });
       const zone_9  = window.CrComLib.subscribeState("b", zone_mute_9,  (value: boolean) => { setZone9_mute(value); });
@@ -802,13 +872,6 @@ const zone_name_18    = "Media Room";
 
 
       const zone_music_state_1  = window.CrComLib.subscribeState("b", zone_music_1,  (value: boolean) => { setZone_music_1_state(value); });
-      const zone_music_state_2  = window.CrComLib.subscribeState("b", zone_music_2,  (value: boolean) => { setZone_music_2_state(value); });
-      const zone_music_state_3  = window.CrComLib.subscribeState("b", zone_music_3,  (value: boolean) => { setZone_music_3_state(value); });
-      const zone_music_state_4  = window.CrComLib.subscribeState("b", zone_music_4,  (value: boolean) => { setZone_music_4_state(value); });
-      const zone_music_state_5  = window.CrComLib.subscribeState("b", zone_music_5,  (value: boolean) => { setZone_music_5_state(value); });
-      const zone_music_state_6  = window.CrComLib.subscribeState("b", zone_music_6,  (value: boolean) => { setZone_music_6_state(value); });
-      const zone_music_state_7  = window.CrComLib.subscribeState("b", zone_music_7,  (value: boolean) => { setZone_music_7_state(value); });
-      const zone_music_state_8  = window.CrComLib.subscribeState("b", zone_music_8,  (value: boolean) => { setZone_music_8_state(value); });
       const zone_music_state_9  = window.CrComLib.subscribeState("b", zone_music_9,  (value: boolean) => { setZone_music_9_state(value); });
       const zone_music_state_10 = window.CrComLib.subscribeState("b", zone_music_10, (value: boolean) => { setZone_music_10_state(value); });
       const zone_music_state_11 = window.CrComLib.subscribeState("b", zone_music_11, (value: boolean) => { setZone_music_11_state(value); });
@@ -828,14 +891,33 @@ const zone_name_18    = "Media Room";
 
       return () => {
 
+
+        //Steve Feedbaack zones 
+
+        window.CrComLib.unsubscribeState("n",zone_2_location,zone_2_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_3_location,zone_3_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_4_location,zone_4_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_5_location,zone_5_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_6_location,zone_6_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_7_location,zone_7_active_fb_steve)
+
+        //Ellen feedback zones
+        window.CrComLib.unsubscribeState("n",zone_2_location,zone_2_active_fb_ellen)
+        window.CrComLib.unsubscribeState("n",zone_3_location,zone_3_active_fb_ellen)
+        window.CrComLib.unsubscribeState("n",zone_4_location,zone_4_active_fb_ellen)
+        window.CrComLib.unsubscribeState("n",zone_5_location,zone_5_active_fb_ellen)
+        window.CrComLib.unsubscribeState("n",zone_6_location,zone_6_active_fb_ellen)
+        window.CrComLib.unsubscribeState("n",zone_7_location,zone_7_active_fb_ellen)
+
+
       
 
-        window.CrComLib.unsubscribeState("b", zone_mute_1,  zone_1);
-        window.CrComLib.unsubscribeState("b", zone_mute_2,  zone_2);
-        window.CrComLib.unsubscribeState("b", zone_mute_3,  zone_3);
-        window.CrComLib.unsubscribeState("b", zone_mute_4,  zone_4);
-        window.CrComLib.unsubscribeState("b", zone_mute_5,  zone_5);
-        window.CrComLib.unsubscribeState("b", zone_mute_6,  zone_6);
+        window.CrComLib.unsubscribeState("b", zone_mute_1,  zone_1_mute);
+        window.CrComLib.unsubscribeState("b", zone_mute_2,  zone_2_mute);
+        window.CrComLib.unsubscribeState("b", zone_mute_3,  zone_3_mute);
+        window.CrComLib.unsubscribeState("b", zone_mute_4,  zone_4_mute);
+        window.CrComLib.unsubscribeState("b", zone_mute_5,  zone_5_mute);
+        window.CrComLib.unsubscribeState("b", zone_mute_6,  zone_6_mute);
         window.CrComLib.unsubscribeState("b", zone_mute_7,  zone_7);
         window.CrComLib.unsubscribeState("b", zone_mute_8,  zone_8);
         window.CrComLib.unsubscribeState("b", zone_mute_9,  zone_9);
@@ -869,13 +951,6 @@ const zone_name_18    = "Media Room";
         window.CrComLib.unsubscribeState("n", "117", zone_vol_18);
 
         window.CrComLib.unsubscribeState("b", zone_music_1,  zone_music_state_1);
-        window.CrComLib.unsubscribeState("b", zone_music_2,  zone_music_state_2);
-        window.CrComLib.unsubscribeState("b", zone_music_3,  zone_music_state_3);
-        window.CrComLib.unsubscribeState("b", zone_music_4,  zone_music_state_4);
-        window.CrComLib.unsubscribeState("b", zone_music_5,  zone_music_state_5);
-        window.CrComLib.unsubscribeState("b", zone_music_6,  zone_music_state_6);
-        window.CrComLib.unsubscribeState("b", zone_music_7,  zone_music_state_7);
-        window.CrComLib.unsubscribeState("b", zone_music_8,  zone_music_state_8);
         window.CrComLib.unsubscribeState("b", zone_music_9,  zone_music_state_9);
         window.CrComLib.unsubscribeState("b", zone_music_10, zone_music_state_10);
         window.CrComLib.unsubscribeState("b", zone_music_11, zone_music_state_11);
@@ -948,42 +1023,7 @@ const zone_name_18    = "Media Room";
     const zoneGroup1 = (
       <>
       
-            <div className='zone_container'>
-              <div className='power_on_off'>
-                <button className={zone_music_8_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_8, true), window.CrComLib.publishEvent("b", zone_music_8, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_8_state ? "power_off" : "display_none"} onClick={() => (window.CrComLib.publishEvent("b", zone_off_8, true), window.CrComLib.publishEvent("b", zone_off_8, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
-              </div>
-
-              <p className='zone_title'>{zone_name_8}</p>
-
-              <div className='zone_controls'>
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_8, true), window.CrComLib.publishEvent("b", zone_decrease_8, false), console.log(zone_decrease_8))}>
-                  <img className="btn_image" src={arrow} />
-                </button>
-
-                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_8, true), window.CrComLib.publishEvent("b", zone_mute_8, false), console.log(zone_mute_8))}>
-                  {zone8_mute ? (
-                    <>
-                      <img src={MuteIcon} className="volume_mute_btn" />
-                      <p className="mute_btn_txt">Click to Unmute</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="volume_txt">{ ((zone8_vol/65535) * 100).toFixed(0)}</p>
-                      <p className="mute_btn_txt">Click to Mute</p>
-                    </>
-                  )}
-                </button>
-
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_8, true), window.CrComLib.publishEvent("b", zone_increase_8, false), console.log(zone_increase_8))}>
-                  <img className="btn_image" src={arrow} id="flip" />
-                </button>
-              </div>
-            </div>
+         
 
             <div className='zone_container'>
               <div className='power_on_off'>
@@ -1059,13 +1099,7 @@ const zone_name_18    = "Media Room";
               </div>
             </div>
 
-      </>
-    )
-
-    const zoneGroup2 = (
-
-      <>
-            <div className='zone_container'>
+            <div className='display_none'>
               <div className='power_on_off'>
                 <button className={zone_music_17_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_17, true), window.CrComLib.publishEvent("b", zone_music_17, false), console.log("turning off"))}>
                   <p>Power On</p>
@@ -1102,7 +1136,134 @@ const zone_name_18    = "Media Room";
               </div>
             </div>
 
-            <div className='zone_container'>
+            <div id="zone-4" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_4_steve === 0? 
+                    <button className="power_on" onClick={() => (window.CrComLib.publishEvent("n",zone_4_location, zone_music_4_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onClick={() => (window.CrComLib.publishEvent("n",zone_4_location, zone_off_4), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_4} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_4, true), window.CrComLib.publishEvent("b", zone_decrease_4, false), console.log(zone_decrease_4))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_4, true), window.CrComLib.publishEvent("b", zone_mute_4, false), console.log(zone_mute_4))}>
+                  {zone4_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone4_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_4, true), window.CrComLib.publishEvent("b", zone_increase_4, false), console.log(zone_increase_4))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+            <div id="zone-5" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_5_steve === 0? 
+                    <button className="power_on" onClick={() => (window.CrComLib.publishEvent("n",zone_5_location, zone_music_5_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onClick={() => (window.CrComLib.publishEvent("n",zone_5_location, zone_off_5), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_5} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_5, true), window.CrComLib.publishEvent("b", zone_decrease_5, false), console.log(zone_decrease_5))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_5, true), window.CrComLib.publishEvent("b", zone_mute_5, false), console.log(zone_mute_5))}>
+                  {zone5_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone5_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_5, true), window.CrComLib.publishEvent("b", zone_increase_5, false), console.log(zone_increase_5))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+            <div id="zone-6" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_6_steve === 0? 
+                    <button className="power_on" onClick={() => (window.CrComLib.publishEvent("n",zone_6_location, zone_music_6_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onClick={() => (window.CrComLib.publishEvent("n",zone_6_location, zone_off_6), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_6} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_6, true), window.CrComLib.publishEvent("b", zone_decrease_6, false), console.log(zone_decrease_6))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_6, true), window.CrComLib.publishEvent("b", zone_mute_6, false), console.log(zone_mute_6))}>
+                  {zone6_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone6_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_6, true), window.CrComLib.publishEvent("b", zone_increase_6, false), console.log(zone_increase_6))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+      </>
+    )
+
+    const zoneGroup2 = (
+
+      <>
+          
+            <div id="zone-1" className='display_none'>
               <div className='power_on_off'>
                 <button className={zone_music_1_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_1, true), window.CrComLib.publishEvent("b", zone_music_1, false), console.log("turning off"))}>
                   <p>Power On</p>
@@ -1138,24 +1299,27 @@ const zone_name_18    = "Media Room";
               </button>
             </div>
             </div>
-        
-            <div className='zone_container'>
+
+            <div id='zone-2' className='zone_container'>
               <div className='power_on_off'>
-                <button className={zone_music_2_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_2, true), window.CrComLib.publishEvent("b", zone_music_2, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_2_state ? "power_off" : "display_none"} onClick={() => (window.CrComLib.publishEvent("b", zone_off_2, true), window.CrComLib.publishEvent("b", zone_off_2, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
+                  {zone_active_2_steve === 0? 
+                    <button className="power_on" onClick={() => (window.CrComLib.publishEvent("n",zone_2_location, zone_music_2_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onClick={() => (window.CrComLib.publishEvent("n",zone_2_location, zone_off_2), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
               </div>
 
-              <p className='zone_title'>{zone_name_2}</p>
+              <p className='zone_title'>{zone_name_2} </p>
 
               <div className='zone_controls'>
                 <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_2, true), window.CrComLib.publishEvent("b", zone_decrease_2, false), console.log(zone_decrease_2))}>
                   <img className="btn_image" src={arrow} />
                 </button>
-                
+
                 <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_2, true), window.CrComLib.publishEvent("b", zone_mute_2, false), console.log(zone_mute_2))}>
                   {zone2_mute ? (
                     <>
@@ -1176,17 +1340,20 @@ const zone_name_18    = "Media Room";
               </div>
             </div>
 
-            <div className='zone_container'>
+            <div id="zone-3" className='zone_container'>
               <div className='power_on_off'>
-                <button className={zone_music_3_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_3, true), window.CrComLib.publishEvent("b", zone_music_3, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_3_state ? "power_off" : "display_none"} onClick={() => (window.CrComLib.publishEvent("b", zone_off_3, true), window.CrComLib.publishEvent("b", zone_off_3, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
+                  {zone_active_3_steve === 0? 
+                    <button className="power_on" onClick={() => (window.CrComLib.publishEvent("n",zone_3_location, zone_music_3_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onClick={() => (window.CrComLib.publishEvent("n",zone_3_location, zone_off_3), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
               </div>
 
-              <p className='zone_title'>{zone_name_3}</p>
+              <p className='zone_title'>{zone_name_3} </p>
 
               <div className='zone_controls'>
                 <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_3, true), window.CrComLib.publishEvent("b", zone_decrease_3, false), console.log(zone_decrease_3))}>
@@ -1213,116 +1380,56 @@ const zone_name_18    = "Media Room";
               </div>
             </div>
 
-            <div className='zone_container'>
+            <div id="zone-7" className='zone_container'>
               <div className='power_on_off'>
-                <button className={zone_music_4_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_4, true), window.CrComLib.publishEvent("b", zone_music_4, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_4_state ? "power_off" : "display_none"} onClick={() => (window.CrComLib.publishEvent("b", zone_off_4, true), window.CrComLib.publishEvent("b", zone_off_4, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
+                  {zone_active_7_steve === 0? 
+                    <button className="power_on" onClick={() => (window.CrComLib.publishEvent("n",zone_7_location, zone_music_7_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onClick={() => (window.CrComLib.publishEvent("n",zone_7_location, zone_off_7), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
               </div>
 
-              <p className='zone_title'>{zone_name_4}</p>
+              <p className='zone_title'>{zone_name_7} </p>
 
               <div className='zone_controls'>
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_4, true), window.CrComLib.publishEvent("b", zone_decrease_4, false), console.log(zone_decrease_4))}>
+                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_7, true), window.CrComLib.publishEvent("b", zone_decrease_7, false), console.log(zone_decrease_7))}>
                   <img className="btn_image" src={arrow} />
                 </button>
 
-                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_4, true), window.CrComLib.publishEvent("b", zone_mute_4, false), console.log(zone_mute_4))}>
-                  {zone4_mute ? (
+                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_7, true), window.CrComLib.publishEvent("b", zone_mute_7, false), console.log(zone_mute_7))}>
+                  {zone7_mute ? (
                     <>
                       <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{ ((zone4_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="volume_txt">{ ((zone7_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
                 </button>
 
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_4, true), window.CrComLib.publishEvent("b", zone_increase_4, false), console.log(zone_increase_4))}>
+                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_7, true), window.CrComLib.publishEvent("b", zone_increase_7, false), console.log(zone_increase_7))}>
                   <img className="btn_image" src={arrow} id="flip" />
                 </button>
               </div>
             </div>
 
-            <div className='zone_container'>
-              <div className='power_on_off'>
-                <button className={zone_music_5_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_5, true), window.CrComLib.publishEvent("b", zone_music_5, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_5_state ? "power_off" : "display_none"} onClick={() => (window.CrComLib.publishEvent("b", zone_off_5, true), window.CrComLib.publishEvent("b", zone_off_5, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
-              </div>
+          
+        
+         
+            
 
-              <p className='zone_title'>{zone_name_5}</p>
+          
 
-              <div className='zone_controls'>
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_5, true), window.CrComLib.publishEvent("b", zone_decrease_5, false), console.log(zone_decrease_5))}>
-                  <img className="btn_image" src={arrow} />
-                </button>
+          
 
-                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_5, true), window.CrComLib.publishEvent("b", zone_mute_5, false), console.log(zone_mute_5))}>
-                  {zone5_mute ? (
-                    <>
-                      <img src={MuteIcon} className="volume_mute_btn" />
-                      <p className="mute_btn_txt">Click to Unmute</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="volume_txt">{ ((zone5_vol/65535) * 100).toFixed(0)}</p>
-                      <p className="mute_btn_txt">Click to Mute</p>
-                    </>
-                  )}
-                </button>
-
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_5, true), window.CrComLib.publishEvent("b", zone_increase_5, false), console.log(zone_increase_5))}>
-                  <img className="btn_image" src={arrow} id="flip" />
-                </button>
-              </div>
-            </div>
-
-            <div className='zone_container'>
-              <div className='power_on_off'>
-                <button className={zone_music_6_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_6, true), window.CrComLib.publishEvent("b", zone_music_6, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_6_state ? "power_off" : "display_none"} onClick={() => (window.CrComLib.publishEvent("b", zone_off_6, true), window.CrComLib.publishEvent("b", zone_off_6, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
-              </div>
-
-              <p className='zone_title'>{zone_name_6}</p>
-
-              <div className='zone_controls'>
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_6, true), window.CrComLib.publishEvent("b", zone_decrease_6, false), console.log(zone_decrease_6))}>
-                  <img className="btn_image" src={arrow} />
-                </button>
-
-                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_6, true), window.CrComLib.publishEvent("b", zone_mute_6, false), console.log(zone_mute_6))}>
-                  {zone6_mute ? (
-                    <>
-                      <img src={MuteIcon} className="volume_mute_btn" />
-                      <p className="mute_btn_txt">Click to Unmute</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="volume_txt">{ ((zone6_vol/65535) * 100).toFixed(0)}</p>
-                      <p className="mute_btn_txt">Click to Mute</p>
-                    </>
-                  )}
-                </button>
-
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_6, true), window.CrComLib.publishEvent("b", zone_increase_6, false), console.log(zone_increase_6))}>
-                  <img className="btn_image" src={arrow} id="flip" />
-                </button>
-              </div>
-            </div>
+           
       
       </>
     )
@@ -1485,42 +1592,7 @@ const zone_name_18    = "Media Room";
     const zoneGroup4 = (
       <>
       
-            <div className='zone_container'>
-              <div className='power_on_off'>
-                <button className={zone_music_7_state ? "display_none" : "power_on"} onClick={() => (window.CrComLib.publishEvent("b", zone_music_7, true), window.CrComLib.publishEvent("b", zone_music_7, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_7_state ? "power_off" : "display_none"} onClick={() => (window.CrComLib.publishEvent("b", zone_off_7, true), window.CrComLib.publishEvent("b", zone_off_7, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
-              </div>
-
-              <p className='zone_title'>{zone_name_7}</p>
-
-              <div className='zone_controls'>
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_decrease_7, true), window.CrComLib.publishEvent("b", zone_decrease_7, false), console.log(zone_decrease_7))}>
-                  <img className="btn_image" src={arrow} />
-                </button>
-
-                <button className="btn_square_wide" onClick={() => (window.CrComLib.publishEvent("b", zone_mute_7, true), window.CrComLib.publishEvent("b", zone_mute_7, false), console.log(zone_mute_7))}>
-                  {zone7_mute ? (
-                    <>
-                      <img src={MuteIcon} className="volume_mute_btn" />
-                      <p className="mute_btn_txt">Click to Unmute</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="volume_txt">{ ((zone7_vol/65535) * 100).toFixed(0)}</p>
-                      <p className="mute_btn_txt">Click to Mute</p>
-                    </>
-                  )}
-                </button>
-
-                <button className="btn_circle" onClick={() => (window.CrComLib.publishEvent("b", zone_increase_7, true), window.CrComLib.publishEvent("b", zone_increase_7, false), console.log(zone_increase_7))}>
-                  <img className="btn_image" src={arrow} id="flip" />
-                </button>
-              </div>
-            </div>
+            
 
                 
             <div className='zone_container'>
@@ -1673,7 +1745,7 @@ const zone_name_18    = "Media Room";
             <div className='off_button_menu' style={{background:"none"}}>
          
 
-              <button className='btn_square_wide' id={zoneGroup_1? "audio_zone_nav_active": "audio_zone_nav"} onClick={() => zoneMenu("zone1")} >
+              <button className='btn_square_wide' id={zoneGroup_1? "audio_zone_nav_active": "display_none"} onClick={() => zoneMenu("zone1")} >
               <p> Up Stairs</p>
               </button>
 
@@ -1681,11 +1753,11 @@ const zone_name_18    = "Media Room";
               <p> Main </p>
               </button>
 
-              <button className='btn_square_wide'  id={zoneGroup_3? "audio_zone_nav_active": "audio_zone_nav"} onClick={() => zoneMenu("zone3")} >
+              <button className='btn_square_wide'  id={zoneGroup_3? "audio_zone_nav_active": "display_none"} onClick={() => zoneMenu("zone3")} >
               <p> Down Stairs </p> 
               </button>
 
-              <button className='btn_square_wide'  id={zoneGroup_4? "audio_zone_nav_active": "audio_zone_nav"} onClick={() => zoneMenu("zone4")} >
+              <button className='btn_square_wide'  id={zoneGroup_4? "audio_zone_nav_active": "display_none"} onClick={() => zoneMenu("zone4")} >
               <p> Out Doors </p> 
               </button>
 

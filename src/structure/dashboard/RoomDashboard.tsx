@@ -85,7 +85,7 @@ const RoomsDashboard = () => {
             active: false,
             title:"Up Stairs",
             rooms:[
-                {"Master Bedroom":["media","music"]},
+                {"Master Bedroom":["media","music",]},
                 {"Guest Bedroom":["media","music"]},
                 {"Guest Bathroom":["media","music"]},
                 {"Ellens Office":["media","music"]},

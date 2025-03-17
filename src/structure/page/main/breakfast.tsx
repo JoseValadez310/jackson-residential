@@ -136,7 +136,7 @@ const FamilyRoom = () =>{
     const [roomVolume,setRoomVolume]  = useState(0)
     const [roomMute, setRoomMute]     = useState(false)
     
-    const audio_volume_join   = "101"
+    const audio_volume_join   = "101" // West 
     const audio_mute_join     = "505"
     const audio_increase_join = "506"
     const audio_decrease_join = "504"
@@ -1259,7 +1259,7 @@ if(media1 ){
              
  
                 <h1 className="title_info" > {roomName}  </h1>
-                <h1 className="currentViewingTitle"> Controlling TV #{currentTVSource === "1"}</h1>
+                <h1 className="currentViewingTitle"> Controlling TV #{currentTVSource}</h1>
                 
               
                
@@ -1543,7 +1543,7 @@ if(media1 ){
                 
                         </div>
 
-                        <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
+                        <button className={media6 ||media7 || media8? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
                             <p> REBOOT </p>
                         </button>
 

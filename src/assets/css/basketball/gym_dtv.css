@@ -6,13 +6,14 @@
     grid-row: 1;
     position: absolute;
 
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
     
+    grid-column: 1/11;
+    grid-row: 1/11;
 
-    grid-column: 1/12;
-    grid-row: 1/12;
     height: 100vh;
     width: 100%;
     display: grid;
@@ -24,6 +25,7 @@
     max-height: 100vh;
     max-width: 100vw;
     box-sizing: border-box;
+
 }
 
 .room_title {
@@ -299,6 +301,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 1;
 }
 
 .volume_level {
@@ -309,7 +312,8 @@
 .vol_state_container .volume_level_mute{
     margin: 0%;
     font-size: 1.25rem;
-    color: black;
+    color: rgb(0, 0, 0);
+    z-index: 1;
 
 }
 
@@ -347,7 +351,6 @@
 }
 
 .current_tv_selection .current_label {
-    background-color: #ffffff80;
     /*height:2.5rem; */
     width: 10rem;
     border-bottom-left-radius: 10px;
@@ -357,11 +360,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #000
+    color: rgb(0, 0, 0);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.current_label::before{
+
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    z-index: 0;
+
 }
 
+
 .dtv_controlling_div .dtv_controlling_btn {
-    background-color: #292929a6;
+    background-color: transparent;
     width: 70%;
     height: 60%;
     border-radius: 10px;
@@ -369,9 +389,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff
+    color: #fff;
+    position:relative;
+    overflow: hidden;
 }
-
+.dtv_controlling_btn::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(41, 41, 41);
+    opacity: 0.65;
+    z-index: 0;
+}
+.dtv_controlling_btn p{
+    z-index: 1;
+}
 .input_selection {
     grid-column: 2/11;
     grid-row: 1/3;
@@ -440,7 +475,7 @@
 }
 
 .tv_dropdown_list {
-    background-color: #292929bf;
+    background-color: rgb(61, 61, 61);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     animation: dropdown .4s;
@@ -456,7 +491,7 @@
 }
 
 .tv_dropdown_list_controller{
-    background-color: #292929bf;
+    background-color: #292929;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     animation: dropdown .4s;
@@ -562,7 +597,7 @@
 }
 
 .tv_active,.dtv_active {
-    background-color: #552583;
+    background-color: rgb(85, 37, 131);
     height:2.5rem;
     width: 10rem;
     display: flex;
@@ -576,7 +611,7 @@
 }
 
 .tv_off,.dtv_off {
-    background-color: #29292980;
+
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     height:2.5rem;
@@ -587,8 +622,42 @@
     border: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    z-index: 10
+    z-index: 10;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
 }
+.dtv_off::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(41, 41, 41);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.tv_off::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(41, 41, 41);
+    opacity: 0.5;
+    z-index: 0;
+}
+.tv_off p{
+    z-index: 1;
+}
+.dtv_off p{
+    z-index: 1;
+}
+
+
 
 .tv_off:active {
     animation: press 1.25s ease-out forwards,fade 1.5s ease-out forwards
@@ -604,7 +673,8 @@
 .dtv_controlling_div {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    height:4rem;
 }
 
 .controller_bb {
@@ -614,7 +684,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 45px
+    bottom: 55px;
+    left: 5px;
 }
 
 .container_bb {
@@ -926,6 +997,16 @@
         border-radius: 10px;
     }
 
+    #chan_up_bb.transport_button::before{
+        border-radius: 10px;
+    }
+    #chan_down_bb.transport_button::before{
+        border-radius: 10px;
+    }
+    #chan_title_bb.transport_button::before{
+        border-radius: 10px;
+    }
+
     #chan_title_bb{
        
             grid-column: 3/4;
@@ -1037,23 +1118,44 @@
 }
 
 .transport_button {
+    z-index: 10;
+    position: relative;
     border-radius: 50%;
     height: 5.75rem;
     width: 5.75rem;
-    background-color: #ffffff80;
+    background-color: transparent;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: #0006 0 2px 4px,#0000004d 0 7px 13px -3px,#0003 0 -3px inset
+    box-shadow: rgb(0, 0, 0) 0 2px 4px,rgb(0, 0, 0) 0 7px 13px -3px,rgb(0, 0, 0) 0 -3px inset
+}
+.transport_button::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    z-index: 0;
+    border-radius: 50%;
+}
+.transport_button p{
+    z-index: 1;    
+}
+.transport_button h2{
+    z-index: 1;    
 }
 
 .transport_button:active {
-    animation: ripple 1.25s ease-out forwards,fade 1.5s ease-out forwards
+    background-color: rgb(10, 155, 222);
 }
 
 .transport_button img {
-    height: 30px
+    height: 30px;
+    z-index: 1;
 }
 
 #transport_hide {
@@ -1209,15 +1311,46 @@
     width: 27rem;
     height: 5.5rem;
     border-radius: 15px;
-    background-color: #29292980
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.volume_control:before{
+   
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(41, 41,41);
+        opacity: 0.5;
+        z-index: 0;
 }
 
+
 .volume_control button {
-    background-color: #ffffffd9;
+    background-color: transparent;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     height: 4rem;
     width: 4rem;
+    z-index: 1;
+    backdrop-filter: blur(20px);
+}
+
+
+.volume_control button:before {
+opacity: .9;
+}
+.volume_control .transport_button::before{
+    border-radius:10px ;
+}
+.volume_control .transport_button img{
+    z-index: 1;
+}
+.volume_control .transport_button p{
+    z-index: 1;
 }
 
 .short_cut_menu p {
@@ -1232,16 +1365,36 @@
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    background-color: #29292980;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    border-radius: 15px
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: transparent;
 }
+.cards_in_dtv::before{
+ 
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(41, 41, 41);
+        opacity: 0.5;
+        z-index: 0;
+    
+    }
 
+    .dtv_audio_card_title{
+        z-index:1;
+    }
 .cards_in_dtv .tile_name {
     padding: 0%;
-    color: #fff;
-    font-size: 1rem
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    z-index: 10;
 }
 
 .cards_in_dtv .tile_image_div {
@@ -1252,17 +1405,6 @@
     animation: press .5s ease-out forwards,fade .5s ease-out forwards
 }
 
-@keyframes ripple {
-    0% {
-        background-color: #fdc526;
-        transform: scale(1)
-    }
-
-    to {
-        background-color: #fdc526;
-        transform: scale(.25)
-    }
-}
 
 @keyframes rgyb {
     0% {
@@ -1276,27 +1418,8 @@
     }
 }
 
-@keyframes press {
-    0% {
-        transform: scale(1)
-    }
 
-    to {
-        transform: scale(.75)
-    }
-}
 
-@keyframes highlight_background_controller_bb {
-    0% {
-        background-color: #fff9;
-        transform: scale(1)
-    }
-
-    to {
-        background-color: #f1f1f1;
-        transform: scale(.5)
-    }
-}
 
 @keyframes app-load {
     0% {
@@ -1322,12 +1445,7 @@
     }
 }
 
-@media (orientation: landscape){
-    .clock_location{
 
-    }
-
-}
 
 @media (orientation: portrait){
 

@@ -98,7 +98,7 @@ const HomeDashboard = () => {
             </div>
         </div>
 
-            <div className="home_power_container">
+            <div className="home_power_container" id="display_none">
                 <button className="home_button" onClick={()=>powerMenu("menu")}>
                     
 

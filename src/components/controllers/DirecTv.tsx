@@ -195,7 +195,7 @@ const DirecTv = () =>{
 
     const section_two   = (<> 
             <div className="dtv_controller_movement">
-    <div className="controller">
+                <div className="controller">
                 <div className="container">
                     <div className="circle-menu">
                         
@@ -230,7 +230,7 @@ const DirecTv = () =>{
                         </div>
                     </div>
                 </div>
-            </div>   
+                </div>   
             </div>
 
     </>)

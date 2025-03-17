@@ -7,28 +7,37 @@ main{
     justify-items: center;
     align-items: center;
     display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
     position: absolute;
     z-index: 10;
     overflow: hidden;
 }
 
 .background_image_bb{
-    grid-column: 1/12;
-    grid-row: 1/12;
+    grid-column: 1/11;
+    grid-row: 1/11;
     z-index: 0;
-    width: 100%;
+    display: grid;
+    justify-items:center;
+    align-items: center; 
+
     
-    z-index: 0;
+}
+
+.bbcourtimg{
+    width: 100%;
 }
 
 
 
 
     @media (orientation: portrait) {
-     .background_image_bb{
-        position: absolute;
-        z-index: 0;
-        width: 135%;
-    
-    }   
+        .bbcourtimg{
+            width: 160%;
+            position: relative;
+            left: -5px;
+            top: 16px;
+        }   
     }

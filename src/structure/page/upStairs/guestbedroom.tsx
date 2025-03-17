@@ -128,10 +128,10 @@ const FamilyRoom = () =>{
     const [roomVolume,setRoomVolume]  = useState(0)
     const [roomMute, setRoomMute]     = useState(false)
     
-    const audio_volume_join   = ""
-    const audio_mute_join     = ""
-    const audio_increase_join = ""
-    const audio_decrease_join = ""
+    const audio_volume_join   = "107"
+    const audio_mute_join     = "530"
+    const audio_increase_join = "529"
+    const audio_decrease_join = "528"
 
 
 /*
@@ -922,12 +922,11 @@ if(media1){
                     </p>
 
                     <div className="power_menu_button">
-                        <Link className="yes_reboot" to={"/"}> 
+                        <div className="yes_reboot" > 
                             <button className="yes_reboot" onClick={()=> powerMenu("menu_off")}> 
                                 <p>YES</p> 
                             </button> 
-                        </Link>
-                        
+                        </div>
                         <button className="no_reboot" onClick={()=> powerMenu("menu")}> 
                             <p>NO</p> 
                         </button>
@@ -1094,7 +1093,7 @@ if(media1){
                 
                         </div>
 
-                        <button className={media2 ||media3 || media4? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
+                        <button className={media6 ||media7 || media8? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
                             <p> REBOOT </p>
                         </button>
 

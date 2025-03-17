@@ -14,7 +14,7 @@ import { Link } from "react-router-dom"
     import audio from "../../../assets/images/icons/tile/icons8-guitar-amp.svg"
     import controller from "../../../assets/images/icons/tile/icons8-remote-control.svg"
 // General Icons
-    //import back_button from "../../../assets/images/icons/icons8-arrow.svg"
+    import back_button from "../../../assets/images/icons/icons8-arrow.svg"
     import basketball from "../../../assets/images/backgrounds/bball.png"
     import power_button from "../../../assets/images/icons/general/icons8-power.svg"
     import mute from "../../../assets/images/icons/audio/icons8-no-audio.svg"
@@ -1377,9 +1377,11 @@ const Main_1 = () => {
 
                 
 
+                <Link className="back_button" to={"/"}>
+                    <img src={back_button} />
+                </Link>
         
-        
-                <button  className="power_button"  onClick ={()=> console.log("power off")}>
+                <button  className="home_button" style={{borderRadius:"30px", width:"5rem", gridColumn:"11/12"}} onClick ={()=> console.log("power off")}>
                         
 
                             <img onClick={toggleModal} src={power_button}   />      
@@ -1395,7 +1397,7 @@ const Main_1 = () => {
                                     <p>TV 1</p>    
                                 </button>
 
-                                <p className = {tvBoxOption1? "hide_current_label": "current_label" }> {tv_1_label} </p>
+                                <div className = {tvBoxOption1? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_1_label} </p></div>
                                 <div className={tvBoxOption1? "tv_dropdown_list":"hide_tv_dropdown_list" }>
                                 
                                     <button className={dtv_1_a? "selected":"not_selected"} id="first_button" onClick ={()=> tv_one_video_output("TV_1_Box_1")}>    <p>DTV 1 Audio</p>  </button>
@@ -1413,7 +1415,7 @@ const Main_1 = () => {
                                 <button className={tv2? "tv_active" : "tv_off"} onClick={()=> dropdown("dropdown_2")}> 
                                     <p>TV 2</p>    
                                 </button>
-                                <p className = {tvBoxOption2? "hide_current_label": "current_label" }> {tv_2_label} </p>
+                                <div className = {tvBoxOption2? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_2_label} </p></div>
                                 
 
                                 <div className={tvBoxOption2? "tv_dropdown_list":"hide_tv_dropdown_list" }>
@@ -1431,7 +1433,8 @@ const Main_1 = () => {
                                     <p>TV 3</p>    
                                 </button>
 
-                                <p className = {tvBoxOption3? "hide_current_label": "current_label" }> {tv_3_label} </p>
+                                <div className = {tvBoxOption3? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_3_label} </p></div>
+
 
                                 <div className={tvBoxOption3? "tv_dropdown_list":"hide_tv_dropdown_list" }>
                                     <button className={dtv_3_a? "selected":"not_selected"} id="first_button"  onClick ={()=> tv_three_video_output("TV_3_Box_1")}>    <p>DTV 1 Audio</p>  </button>
@@ -1447,7 +1450,7 @@ const Main_1 = () => {
                                     <p>TV 4</p>      
                                 </button>
 
-                                <p className = {tvBoxOption4? "hide_current_label": "current_label" }> {tv_4_label} </p>
+                                <div className = {tvBoxOption4? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_4_label} </p></div>
 
                                 <div className={tvBoxOption4? "tv_dropdown_list":"hide_tv_dropdown_list" }>
                                     <button className={dtv_4_a? "selected":"not_selected"} id="first_button"  onClick ={()=> tv_four_video_output("TV_4_Box_1")}>    <p>DTV 1 Audio</p>  </button>
@@ -1654,7 +1657,7 @@ const Main_1 = () => {
                     
 
                     <div className="dtv_controlling_div" onClick={()=> dropdown("dropdown_5")}>
-                            <p className="dtv_controlling_btn">  {controlling_dtv} </p>
+                            <div className="dtv_controlling_btn">  <p> {controlling_dtv} </p> </div>
 
                             <div className={tvBoxOption5? "tv_dropdown_list_controller":"hide_tv_dropdown_list" }>
                                 
@@ -1901,9 +1904,7 @@ const Main_1 = () => {
 
 
             <div className="background_image_bb" >
-            <img  src={BB}  />
-
-
+             <img className="bbcourtimg"src={BB}  />
             </div>
 
         </main>

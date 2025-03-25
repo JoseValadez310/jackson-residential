@@ -601,7 +601,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Bar</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_BAR, true);
           window.CrComLib.publishEvent("b", light_1_join_BAR, false);
           console.log(`Triggered join [${light_1_join_BAR}] coming from [${light_1_title_BAR}]`);
@@ -609,7 +609,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_BAR ? lightOn : lightOff} alt={light_1_title_BAR} />
           <p>{light_1_title_BAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_BAR, true);
           window.CrComLib.publishEvent("b", light_2_join_BAR, false);
           console.log(`Triggered join [${light_2_join_BAR}] coming from [${light_2_title_BAR}]`);
@@ -617,7 +617,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_BAR ? lightOn : lightOff} alt={light_2_title_BAR} />
           <p>{light_2_title_BAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_BAR, true);
           window.CrComLib.publishEvent("b", light_3_join_BAR, false);
           console.log(`Triggered join [${light_3_join_BAR}] coming from [${light_3_title_BAR}]`);
@@ -631,7 +631,7 @@ const LightDashboard = () => {
 
           <h2>Billiards </h2>
       
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_BILLIARD_ROOM, true);
           window.CrComLib.publishEvent("b", light_1_join_BILLIARD_ROOM, false);
           console.log(`Triggered join [${light_1_join_BILLIARD_ROOM}] coming from [${light_1_title_BILLIARD_ROOM}]`);
@@ -639,7 +639,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_BILLIARD_ROOM ? lightOn : lightOff} alt={light_1_title_BILLIARD_ROOM} />
           <p>{light_1_title_BILLIARD_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_BILLIARD_ROOM, true);
           window.CrComLib.publishEvent("b", light_2_join_BILLIARD_ROOM, false);
           console.log(`Triggered join [${light_2_join_BILLIARD_ROOM}] coming from [${light_2_title_BILLIARD_ROOM}]`);
@@ -647,7 +647,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_BILLIARD_ROOM ? lightOn : lightOff} alt={light_2_title_BILLIARD_ROOM} />
           <p>{light_2_title_BILLIARD_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_BILLIARD_ROOM, true);
           window.CrComLib.publishEvent("b", light_3_join_BILLIARD_ROOM, false);
           console.log(`Triggered join [${light_3_join_BILLIARD_ROOM}] coming from [${light_3_title_BILLIARD_ROOM}]`);
@@ -655,7 +655,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_BILLIARD_ROOM ? lightOn : lightOff} alt={light_3_title_BILLIARD_ROOM} />
           <p>{light_3_title_BILLIARD_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_BILLIARD_ROOM, true);
           window.CrComLib.publishEvent("b", light_4_join_BILLIARD_ROOM, false);
           console.log(`Triggered join [${light_4_join_BILLIARD_ROOM}] coming from [${light_4_title_BILLIARD_ROOM}]`);
@@ -672,7 +672,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Breakfast</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_BREAKFAST, true);
           window.CrComLib.publishEvent("b", light_1_join_BREAKFAST, false);
           console.log(`Triggered join [${light_1_join_BREAKFAST}] coming from [${light_1_title_BREAKFAST}]`);
@@ -680,7 +680,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_BREAKFAST ? lightOn : lightOff} alt={light_1_title_BREAKFAST} />
           <p>{light_1_title_BREAKFAST}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_BREAKFAST, true);
           window.CrComLib.publishEvent("b", light_2_join_BREAKFAST, false);
           console.log(`Triggered join [${light_2_join_BREAKFAST}] coming from [${light_2_title_BREAKFAST}]`);
@@ -688,7 +688,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_BREAKFAST ? lightOn : lightOff} alt={light_2_title_BREAKFAST} />
           <p>{light_2_title_BREAKFAST}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_BREAKFAST, true);
           window.CrComLib.publishEvent("b", light_3_join_BREAKFAST, false);
           console.log(`Triggered join [${light_3_join_BREAKFAST}] coming from [${light_3_title_BREAKFAST}]`);
@@ -696,7 +696,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_BREAKFAST ? lightOn : lightOff} alt={light_3_title_BREAKFAST} />
           <p>{light_3_title_BREAKFAST}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_BREAKFAST, true);
           window.CrComLib.publishEvent("b", light_4_join_BREAKFAST, false);
           console.log(`Triggered join [${light_4_join_BREAKFAST}] coming from [${light_4_title_BREAKFAST}]`);
@@ -713,7 +713,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Butler Pantry</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_BUTLER_PANTRY, true);
           window.CrComLib.publishEvent("b", light_1_join_BUTLER_PANTRY, false);
           console.log(`Triggered join [${light_1_join_BUTLER_PANTRY}] coming from [${light_1_title_BUTLER_PANTRY}]`);
@@ -730,7 +730,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Dining Room</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_DINING_ROOM, true);
           window.CrComLib.publishEvent("b", light_1_join_DINING_ROOM, false);
           console.log(`Triggered join [${light_1_join_DINING_ROOM}] coming from [${light_1_title_DINING_ROOM}]`);
@@ -738,7 +738,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_DINING_ROOM ? lightOn : lightOff} alt={light_1_title_DINING_ROOM} />
           <p>{light_1_title_DINING_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_DINING_ROOM, true);
           window.CrComLib.publishEvent("b", light_2_join_DINING_ROOM, false);
           console.log(`Triggered join [${light_2_join_DINING_ROOM}] coming from [${light_2_title_DINING_ROOM}]`);
@@ -746,7 +746,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_DINING_ROOM ? lightOn : lightOff} alt={light_2_title_DINING_ROOM} />
           <p>{light_2_title_DINING_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_DINING_ROOM, true);
           window.CrComLib.publishEvent("b", light_3_join_DINING_ROOM, false);
           console.log(`Triggered join [${light_3_join_DINING_ROOM}] coming from [${light_3_title_DINING_ROOM}]`);
@@ -754,7 +754,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_DINING_ROOM ? lightOn : lightOff} alt={light_3_title_DINING_ROOM} />
           <p>{light_3_title_DINING_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_DINING_ROOM, true);
           window.CrComLib.publishEvent("b", light_4_join_DINING_ROOM, false);
           console.log(`Triggered join [${light_4_join_DINING_ROOM}] coming from [${light_4_title_DINING_ROOM}]`);
@@ -771,7 +771,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Elevator Hall</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_ELEVATOR_HALL, true);
           window.CrComLib.publishEvent("b", light_1_join_ELEVATOR_HALL, false);
           console.log(`Triggered join [${light_1_join_ELEVATOR_HALL}] coming from [${light_1_title_ELEVATOR_HALL}]`);
@@ -779,7 +779,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_ELEVATOR_HALL ? lightOn : lightOff} alt={light_1_title_ELEVATOR_HALL} />
           <p>{light_1_title_ELEVATOR_HALL}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_ELEVATOR_HALL, true);
           window.CrComLib.publishEvent("b", light_2_join_ELEVATOR_HALL, false);
           console.log(`Triggered join [${light_2_join_ELEVATOR_HALL}] coming from [${light_2_title_ELEVATOR_HALL}]`);
@@ -787,7 +787,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_ELEVATOR_HALL ? lightOn : lightOff} alt={light_2_title_ELEVATOR_HALL} />
           <p>{light_2_title_ELEVATOR_HALL}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_ELEVATOR_HALL, true);
           window.CrComLib.publishEvent("b", light_3_join_ELEVATOR_HALL, false);
           console.log(`Triggered join [${light_3_join_ELEVATOR_HALL}] coming from [${light_3_title_ELEVATOR_HALL}]`);
@@ -804,7 +804,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Family Room</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_FAMILY_ROOM, true);
           window.CrComLib.publishEvent("b", light_1_join_FAMILY_ROOM, false);
           console.log(`Triggered join [${light_1_join_FAMILY_ROOM}] coming from [${light_1_title_FAMILY_ROOM}]`);
@@ -812,7 +812,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_FAMILY_ROOM ? lightOn : lightOff} alt={light_1_title_FAMILY_ROOM} />
           <p>{light_1_title_FAMILY_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_FAMILY_ROOM, true);
           window.CrComLib.publishEvent("b", light_2_join_FAMILY_ROOM, false);
           console.log(`Triggered join [${light_2_join_FAMILY_ROOM}] coming from [${light_2_title_FAMILY_ROOM}]`);
@@ -820,7 +820,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_FAMILY_ROOM ? lightOn : lightOff} alt={light_2_title_FAMILY_ROOM} />
           <p>{light_2_title_FAMILY_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_FAMILY_ROOM, true);
           window.CrComLib.publishEvent("b", light_3_join_FAMILY_ROOM, false);
           console.log(`Triggered join [${light_3_join_FAMILY_ROOM}] coming from [${light_3_title_FAMILY_ROOM}]`);
@@ -828,7 +828,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_FAMILY_ROOM ? lightOn : lightOff} alt={light_3_title_FAMILY_ROOM} />
           <p>{light_3_title_FAMILY_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_FAMILY_ROOM, true);
           window.CrComLib.publishEvent("b", light_4_join_FAMILY_ROOM, false);
           console.log(`Triggered join [${light_4_join_FAMILY_ROOM}] coming from [${light_4_title_FAMILY_ROOM}]`);
@@ -845,7 +845,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Foyer</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_FOYER, true);
           window.CrComLib.publishEvent("b", light_1_join_FOYER, false);
           console.log(`Triggered join [${light_1_join_FOYER}] coming from [${light_1_title_FOYER}]`);
@@ -853,7 +853,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_FOYER ? lightOn : lightOff} alt={light_1_title_FOYER} />
           <p>{light_1_title_FOYER}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_FOYER, true);
           window.CrComLib.publishEvent("b", light_2_join_FOYER, false);
           console.log(`Triggered join [${light_2_join_FOYER}] coming from [${light_2_title_FOYER}]`);
@@ -861,7 +861,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_FOYER ? lightOn : lightOff} alt={light_2_title_FOYER} />
           <p>{light_2_title_FOYER}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_FOYER, true);
           window.CrComLib.publishEvent("b", light_3_join_FOYER, false);
           console.log(`Triggered join [${light_3_join_FOYER}] coming from [${light_3_title_FOYER}]`);
@@ -878,7 +878,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Kitchen</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_KITCHEN, true);
           window.CrComLib.publishEvent("b", light_1_join_KITCHEN, false);
           console.log(`Triggered join [${light_1_join_KITCHEN}] coming from [${light_1_title_KITCHEN}]`);
@@ -886,7 +886,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_KITCHEN ? lightOn : lightOff} alt={light_1_title_KITCHEN} />
           <p>{light_1_title_KITCHEN}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_KITCHEN, true);
           window.CrComLib.publishEvent("b", light_2_join_KITCHEN, false);
           console.log(`Triggered join [${light_2_join_KITCHEN}] coming from [${light_2_title_KITCHEN}]`);
@@ -894,7 +894,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_KITCHEN ? lightOn : lightOff} alt={light_2_title_KITCHEN} />
           <p>{light_2_title_KITCHEN}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_KITCHEN, true);
           window.CrComLib.publishEvent("b", light_3_join_KITCHEN, false);
           console.log(`Triggered join [${light_3_join_KITCHEN}] coming from [${light_3_title_KITCHEN}]`);
@@ -902,7 +902,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_KITCHEN ? lightOn : lightOff} alt={light_3_title_KITCHEN} />
           <p>{light_3_title_KITCHEN}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_KITCHEN, true);
           window.CrComLib.publishEvent("b", light_4_join_KITCHEN, false);
           console.log(`Triggered join [${light_4_join_KITCHEN}] coming from [${light_4_title_KITCHEN}]`);
@@ -919,7 +919,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Living Room</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_LIVING_ROOM, true);
           window.CrComLib.publishEvent("b", light_1_join_LIVING_ROOM, false);
           console.log(`Triggered join [${light_1_join_LIVING_ROOM}] coming from [${light_1_title_LIVING_ROOM}]`);
@@ -927,7 +927,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_1_title_LIVING_ROOM} />
           <p>{light_1_title_LIVING_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_LIVING_ROOM, true);
           window.CrComLib.publishEvent("b", light_2_join_LIVING_ROOM, false);
           console.log(`Triggered join [${light_2_join_LIVING_ROOM}] coming from [${light_2_title_LIVING_ROOM}]`);
@@ -935,7 +935,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_2_title_LIVING_ROOM} />
           <p>{light_2_title_LIVING_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_LIVING_ROOM, true);
           window.CrComLib.publishEvent("b", light_3_join_LIVING_ROOM, false);
           console.log(`Triggered join [${light_3_join_LIVING_ROOM}] coming from [${light_3_title_LIVING_ROOM}]`);
@@ -943,7 +943,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_3_title_LIVING_ROOM} />
           <p>{light_3_title_LIVING_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_LIVING_ROOM, true);
           window.CrComLib.publishEvent("b", light_4_join_LIVING_ROOM, false);
           console.log(`Triggered join [${light_4_join_LIVING_ROOM}] coming from [${light_4_title_LIVING_ROOM}]`);
@@ -951,7 +951,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_4_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_4_title_LIVING_ROOM} />
           <p>{light_4_title_LIVING_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_5_join_LIVING_ROOM, true);
           window.CrComLib.publishEvent("b", light_5_join_LIVING_ROOM, false);
           console.log(`Triggered join [${light_5_join_LIVING_ROOM}] coming from [${light_5_title_LIVING_ROOM}]`);
@@ -959,7 +959,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_5_fb_LIVING_ROOM ? lightOn : lightOff} alt={light_5_title_LIVING_ROOM} />
           <p>{light_5_title_LIVING_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_6_join_LIVING_ROOM, true);
           window.CrComLib.publishEvent("b", light_6_join_LIVING_ROOM, false);
           console.log(`Triggered join [${light_6_join_LIVING_ROOM}] coming from [${light_6_title_LIVING_ROOM}]`);
@@ -976,7 +976,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Office Powder</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_OFFICE_POWDER, true);
           window.CrComLib.publishEvent("b", light_1_join_OFFICE_POWDER, false);
           console.log(`Triggered join [${light_1_join_OFFICE_POWDER}] coming from [${light_1_title_OFFICE_POWDER}]`);
@@ -984,7 +984,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_OFFICE_POWDER ? lightOn : lightOff} alt={light_1_title_OFFICE_POWDER} />
           <p>{light_1_title_OFFICE_POWDER}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_OFFICE_POWDER, true);
           window.CrComLib.publishEvent("b", light_2_join_OFFICE_POWDER, false);
           console.log(`Triggered join [${light_2_join_OFFICE_POWDER}] coming from [${light_2_title_OFFICE_POWDER}]`);
@@ -1001,7 +1001,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Steve's Office</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_STEVE_S_OFFICE, true);
           window.CrComLib.publishEvent("b", light_1_join_STEVE_S_OFFICE, false);
           console.log(`Triggered join [${light_1_join_STEVE_S_OFFICE}] coming from [${light_1_title_STEVE_S_OFFICE}]`);
@@ -1009,7 +1009,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_STEVE_S_OFFICE ? lightOn : lightOff} alt={light_1_title_STEVE_S_OFFICE} />
           <p>{light_1_title_STEVE_S_OFFICE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_STEVE_S_OFFICE, true);
           window.CrComLib.publishEvent("b", light_2_join_STEVE_S_OFFICE, false);
           console.log(`Triggered join [${light_2_join_STEVE_S_OFFICE}] coming from [${light_2_title_STEVE_S_OFFICE}]`);
@@ -1027,7 +1027,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Hall</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_HALL, true);
           window.CrComLib.publishEvent("b", light_1_join_HALL, false);
           console.log(`Triggered join [${light_1_join_HALL}] coming from [${light_1_title_HALL}]`);
@@ -1036,7 +1036,7 @@ const LightDashboard = () => {
           <p>{light_1_title_HALL}</p>
         </button>
         
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_HALL, true);
           window.CrComLib.publishEvent("b", light_2_join_HALL, false);
           console.log(`Triggered join [${light_2_join_HALL}] coming from [${light_2_title_HALL}]`);
@@ -1045,7 +1045,7 @@ const LightDashboard = () => {
           <p>{light_2_title_HALL}</p>
         </button>
         
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_HALL, true);
           window.CrComLib.publishEvent("b", light_3_join_HALL, false);
           console.log(`Triggered join [${light_3_join_HALL}] coming from [${light_3_title_HALL}]`);
@@ -1055,7 +1055,7 @@ const LightDashboard = () => {
         </button>
         
 
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_HALL, true);
           window.CrComLib.publishEvent("b", light_4_join_HALL, false);
           console.log(`Triggered join [${light_4_join_HALL}] coming from [${light_4_title_HALL}]`);
@@ -1064,7 +1064,7 @@ const LightDashboard = () => {
           <p>{light_4_title_HALL}</p>
         </button>
         
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_5_join_HALL, true);
           window.CrComLib.publishEvent("b", light_5_join_HALL, false);
           console.log(`Triggered join [${light_5_join_HALL}] coming from [${light_5_title_HALL}]`);
@@ -1074,7 +1074,7 @@ const LightDashboard = () => {
         </button>
         
 
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_6_join_HALL, true);
           window.CrComLib.publishEvent("b", light_6_join_HALL, false);
           console.log(`Triggered join [${light_6_join_HALL}] coming from [${light_6_title_HALL}]`);
@@ -1092,7 +1092,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Media Room</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_MEDIA_ROOM, true);
           window.CrComLib.publishEvent("b", light_1_join_MEDIA_ROOM, false);
           console.log(`Triggered join [${light_1_join_MEDIA_ROOM}] coming from [${light_1_title_MEDIA_ROOM}]`);
@@ -1100,7 +1100,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_1_title_MEDIA_ROOM} />
           <p>{light_1_title_MEDIA_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_MEDIA_ROOM, true);
           window.CrComLib.publishEvent("b", light_2_join_MEDIA_ROOM, false);
           console.log(`Triggered join [${light_2_join_MEDIA_ROOM}] coming from [${light_2_title_MEDIA_ROOM}]`);
@@ -1108,7 +1108,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_2_title_MEDIA_ROOM} />
           <p>{light_2_title_MEDIA_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_MEDIA_ROOM, true);
           window.CrComLib.publishEvent("b", light_3_join_MEDIA_ROOM, false);
           console.log(`Triggered join [${light_3_join_MEDIA_ROOM}] coming from [${light_3_title_MEDIA_ROOM}]`);
@@ -1116,7 +1116,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_3_title_MEDIA_ROOM} />
           <p>{light_3_title_MEDIA_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_MEDIA_ROOM, true);
           window.CrComLib.publishEvent("b", light_4_join_MEDIA_ROOM, false);
           console.log(`Triggered join [${light_4_join_MEDIA_ROOM}] coming from [${light_4_title_MEDIA_ROOM}]`);
@@ -1124,7 +1124,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_4_fb_MEDIA_ROOM ? lightOn : lightOff} alt={light_4_title_MEDIA_ROOM} />
           <p>{light_4_title_MEDIA_ROOM}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_5_join_MEDIA_ROOM, true);
           window.CrComLib.publishEvent("b", light_5_join_MEDIA_ROOM, false);
           console.log(`Triggered join [${light_5_join_MEDIA_ROOM}] coming from [${light_5_title_MEDIA_ROOM}]`);
@@ -1141,7 +1141,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">South Stairs</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_SOUTH_STAIRS, true);
           window.CrComLib.publishEvent("b", light_1_join_SOUTH_STAIRS, false);
           console.log(`Triggered join [${light_1_join_SOUTH_STAIRS}] coming from [${light_1_title_SOUTH_STAIRS}]`);
@@ -1158,7 +1158,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Front</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_FRONT, true);
           window.CrComLib.publishEvent("b", light_1_join_FRONT, false);
           console.log(`Triggered join [${light_1_join_FRONT}] coming from [${light_1_title_FRONT}]`);
@@ -1166,7 +1166,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_FRONT ? lightOn : lightOff} alt={light_1_title_FRONT} />
           <p>{light_1_title_FRONT}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_FRONT, true);
           window.CrComLib.publishEvent("b", light_2_join_FRONT, false);
           console.log(`Triggered join [${light_2_join_FRONT}] coming from [${light_2_title_FRONT}]`);
@@ -1174,7 +1174,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_FRONT ? lightOn : lightOff} alt={light_2_title_FRONT} />
           <p>{light_2_title_FRONT}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_FRONT, true);
           window.CrComLib.publishEvent("b", light_3_join_FRONT, false);
           console.log(`Triggered join [${light_3_join_FRONT}] coming from [${light_3_title_FRONT}]`);
@@ -1182,7 +1182,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_FRONT ? lightOn : lightOff} alt={light_3_title_FRONT} />
           <p>{light_3_title_FRONT}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_FRONT, true);
           window.CrComLib.publishEvent("b", light_4_join_FRONT, false);
           console.log(`Triggered join [${light_4_join_FRONT}] coming from [${light_4_title_FRONT}]`);
@@ -1190,7 +1190,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_4_fb_FRONT ? lightOn : lightOff} alt={light_4_title_FRONT} />
           <p>{light_4_title_FRONT}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_5_join_FRONT, true);
           window.CrComLib.publishEvent("b", light_5_join_FRONT, false);
           console.log(`Triggered join [${light_5_join_FRONT}] coming from [${light_5_title_FRONT}]`);
@@ -1207,7 +1207,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Landscape</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_1_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_1_join_LANDSCAPE}] coming from [${light_1_title_LANDSCAPE}]`);
@@ -1215,7 +1215,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_LANDSCAPE ? lightOn : lightOff} alt={light_1_title_LANDSCAPE} />
           <p>{light_1_title_LANDSCAPE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_2_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_2_join_LANDSCAPE}] coming from [${light_2_title_LANDSCAPE}]`);
@@ -1223,7 +1223,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_LANDSCAPE ? lightOn : lightOff} alt={light_2_title_LANDSCAPE} />
           <p>{light_2_title_LANDSCAPE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_3_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_3_join_LANDSCAPE}] coming from [${light_3_title_LANDSCAPE}]`);
@@ -1231,7 +1231,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_LANDSCAPE ? lightOn : lightOff} alt={light_3_title_LANDSCAPE} />
           <p>{light_3_title_LANDSCAPE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_4_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_4_join_LANDSCAPE}] coming from [${light_4_title_LANDSCAPE}]`);
@@ -1239,7 +1239,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_4_fb_LANDSCAPE ? lightOn : lightOff} alt={light_4_title_LANDSCAPE} />
           <p>{light_4_title_LANDSCAPE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_5_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_5_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_5_join_LANDSCAPE}] coming from [${light_5_title_LANDSCAPE}]`);
@@ -1247,7 +1247,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_5_fb_LANDSCAPE ? lightOn : lightOff} alt={light_5_title_LANDSCAPE} />
           <p>{light_5_title_LANDSCAPE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_6_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_6_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_6_join_LANDSCAPE}] coming from [${light_6_title_LANDSCAPE}]`);
@@ -1255,7 +1255,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_6_fb_LANDSCAPE ? lightOn : lightOff} alt={light_6_title_LANDSCAPE} />
           <p>{light_6_title_LANDSCAPE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_7_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_7_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_7_join_LANDSCAPE}] coming from [${light_7_title_LANDSCAPE}]`);
@@ -1263,7 +1263,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_7_fb_LANDSCAPE ? lightOn : lightOff} alt={light_7_title_LANDSCAPE} />
           <p>{light_7_title_LANDSCAPE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_8_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_8_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_8_join_LANDSCAPE}] coming from [${light_8_title_LANDSCAPE}]`);
@@ -1271,7 +1271,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_8_fb_LANDSCAPE ? lightOn : lightOff} alt={light_8_title_LANDSCAPE} />
           <p>{light_8_title_LANDSCAPE}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_9_join_LANDSCAPE, true);
           window.CrComLib.publishEvent("b", light_9_join_LANDSCAPE, false);
           console.log(`Triggered join [${light_9_join_LANDSCAPE}] coming from [${light_9_title_LANDSCAPE}]`);
@@ -1288,7 +1288,7 @@ const LightDashboard = () => {
     <>
       <h2 className="light_menu_title">Rear</h2>
       <div className="button_list">
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_1_join_REAR, true);
           window.CrComLib.publishEvent("b", light_1_join_REAR, false);
           console.log(`Triggered join [${light_1_join_REAR}] coming from [${light_1_title_REAR}]`);
@@ -1296,7 +1296,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_1_fb_REAR ? lightOn : lightOff} alt={light_1_title_REAR} />
           <p>{light_1_title_REAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_2_join_REAR, true);
           window.CrComLib.publishEvent("b", light_2_join_REAR, false);
           console.log(`Triggered join [${light_2_join_REAR}] coming from [${light_2_title_REAR}]`);
@@ -1304,7 +1304,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_2_fb_REAR ? lightOn : lightOff} alt={light_2_title_REAR} />
           <p>{light_2_title_REAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_3_join_REAR, true);
           window.CrComLib.publishEvent("b", light_3_join_REAR, false);
           console.log(`Triggered join [${light_3_join_REAR}] coming from [${light_3_title_REAR}]`);
@@ -1312,7 +1312,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_REAR ? lightOn : lightOff} alt={light_3_title_REAR} />
           <p>{light_3_title_REAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_4_join_REAR, true);
           window.CrComLib.publishEvent("b", light_4_join_REAR, false);
           console.log(`Triggered join [${light_4_join_REAR}] coming from [${light_4_title_REAR}]`);
@@ -1320,7 +1320,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_4_fb_REAR ? lightOn : lightOff} alt={light_4_title_REAR} />
           <p>{light_4_title_REAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_5_join_REAR, true);
           window.CrComLib.publishEvent("b", light_5_join_REAR, false);
           console.log(`Triggered join [${light_5_join_REAR}] coming from [${light_5_title_REAR}]`);
@@ -1328,7 +1328,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_5_fb_REAR ? lightOn : lightOff} alt={light_5_title_REAR} />
           <p>{light_5_title_REAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_6_join_REAR, true);
           window.CrComLib.publishEvent("b", light_6_join_REAR, false);
           console.log(`Triggered join [${light_6_join_REAR}] coming from [${light_6_title_REAR}]`);
@@ -1336,7 +1336,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_6_fb_REAR ? lightOn : lightOff} alt={light_6_title_REAR} />
           <p>{light_6_title_REAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_7_join_REAR, true);
           window.CrComLib.publishEvent("b", light_7_join_REAR, false);
           console.log(`Triggered join [${light_7_join_REAR}] coming from [${light_7_title_REAR}]`);
@@ -1344,7 +1344,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_7_fb_REAR ? lightOn : lightOff} alt={light_7_title_REAR} />
           <p>{light_7_title_REAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_8_join_REAR, true);
           window.CrComLib.publishEvent("b", light_8_join_REAR, false);
           console.log(`Triggered join [${light_8_join_REAR}] coming from [${light_8_title_REAR}]`);
@@ -1352,7 +1352,7 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_8_fb_REAR ? lightOn : lightOff} alt={light_8_title_REAR} />
           <p>{light_8_title_REAR}</p>
         </button>
-        <button className="btn_square" onClick={() => {
+        <button className="btn_square" onTouchEnd={() => {
           window.CrComLib.publishEvent("b", light_9_join_REAR, true);
           window.CrComLib.publishEvent("b", light_9_join_REAR, false);
           console.log(`Triggered join [${light_9_join_REAR}] coming from [${light_9_title_REAR}]`);
@@ -1654,9 +1654,9 @@ const LightDashboard = () => {
 
         <div className="nav_container">
             <div className="nav">
-                <button onClick={() => ( currentFloor("up"))}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> 2nd Floor</p>     </button>
-                <button onClick={() => (currentFloor("main"))}  className={main? "btn_selected" : "btn_not_selected"}>            <p> 1st Floor </p>         </button>
-                <button onClick={() => (currentFloor("out"))}  className={outDoors? "btn_selected" : "btn_not_selected"}>            <p> Out Door </p>         </button>
+                <button onTouchEnd={() => ( currentFloor("up"))}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> 2nd Floor</p>     </button>
+                <button onTouchEnd={() => (currentFloor("main"))}  className={main? "btn_selected" : "btn_not_selected"}>            <p> 1st Floor </p>         </button>
+                <button onTouchEnd={() => (currentFloor("out"))}  className={outDoors? "btn_selected" : "btn_not_selected"}>            <p> Out Door </p>         </button>
             </div>
         </div>
 
@@ -1678,7 +1678,7 @@ const LightDashboard = () => {
                         <div className={map1}> 
                             <img className="floor_1_img" src={floor1}/>
 
-                            <button className="btn_location_1" onClick={()=>(lightMenu("openMap1"),lightZone("zone_1"))}>
+                            <button className="btn_location_1" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_1"))}>
                                 {light_1_fb_BAR || light_2_fb_BAR || light_3_fb_BAR || light_1_fb_BILLIARD_ROOM || light_2_fb_BILLIARD_ROOM || light_3_fb_BILLIARD_ROOM || light_4_fb_BILLIARD_ROOM? 
                                 <img className="light_icon_z1" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1686,9 +1686,9 @@ const LightDashboard = () => {
                                 }
                             </button>
 
-                            <button className="btn_location_2" onClick={()=>(lightMenu("openMap1"),lightZone("zone_2"))}></button>
+                            <button className="btn_location_2" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_2"))}></button>
 
-                            <button className="btn_location_3" onClick={()=>(lightMenu("openMap1"),lightZone("zone_3"))}>  
+                            <button className="btn_location_3" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_3"))}>  
                                 {light_1_fb_BREAKFAST || light_2_fb_BREAKFAST || light_3_fb_BREAKFAST  || light_4_fb_BREAKFAST ? 
                                 <img className="light_icon_z3" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1696,7 +1696,7 @@ const LightDashboard = () => {
                                 } 
                              </button>
 
-                            <button className="btn_location_4" onClick={()=>(lightMenu("openMap1"),lightZone("zone_4"))}>  
+                            <button className="btn_location_4" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_4"))}>  
                                 {light_1_fb_BUTLER_PANTRY ? 
                                 <img className="light_icon_z4" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1705,7 +1705,7 @@ const LightDashboard = () => {
                             </button>
 
 
-                            <button className="btn_location_5" onClick={()=>(lightMenu("openMap1"),lightZone("zone_5"))}>  
+                            <button className="btn_location_5" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_5"))}>  
                                 {light_1_fb_DINING_ROOM || light_2_fb_DINING_ROOM || light_3_fb_DINING_ROOM   || light_4_fb_DINING_ROOM  ? 
                                 <img className="light_icon_z5" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1713,7 +1713,7 @@ const LightDashboard = () => {
                                 } 
                             </button>
 
-                            <button className="btn_location_6" onClick={()=>(lightMenu("openMap1"),lightZone("zone_6"))}>
+                            <button className="btn_location_6" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_6"))}>
                               {light_1_fb_ELEVATOR_HALL|| light_2_fb_ELEVATOR_HALL|| light_3_fb_ELEVATOR_HALL  ? 
                                 <img className="light_icon_z6" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1722,7 +1722,7 @@ const LightDashboard = () => {
                             </button>
 
 
-                            <button className="btn_location_7" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_7"))}>    
+                            <button className="btn_location_7" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_7"))}>    
                                 {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM   ? 
                                 <img className="light_icon_z7" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1730,7 +1730,7 @@ const LightDashboard = () => {
                                 } 
                             </button>
 
-                            <button className="btn_location_8" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_8"))}>   
+                            <button className="btn_location_8" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_8"))}>   
                                 {light_1_fb_FOYER|| light_2_fb_FOYER || light_3_fb_FOYER ? 
                                 <img className="light_icon_z8" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1738,7 +1738,7 @@ const LightDashboard = () => {
                                 } 
                             </button>
 
-                            <button className="btn_location_9" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_9"))}> 
+                            <button className="btn_location_9" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_9"))}> 
                                 {light_1_fb_KITCHEN|| light_2_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN ? 
                                 <img className="light_icon_z9" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1747,7 +1747,7 @@ const LightDashboard = () => {
                             </button>
 
 
-                            <button className="btn_location_10" onClick={()=>(lightMenu("openMap1"), lightZone("zone_10"))}> 
+                            <button className="btn_location_10" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_10"))}> 
                                 {light_1_fb_LIVING_ROOM|| light_2_fb_LIVING_ROOM || light_3_fb_LIVING_ROOM || light_4_fb_LIVING_ROOM|| light_5_fb_LIVING_ROOM || light_6_fb_LIVING_ROOM? 
                                 <img className="light_icon_z10" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1756,7 +1756,7 @@ const LightDashboard = () => {
                             </button>
 
 
-                            <button className="btn_location_11" onClick={()=>(lightMenu("openMap1"), lightZone("zone_11"))}> 
+                            <button className="btn_location_11" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_11"))}> 
                                 {light_1_fb_OFFICE_POWDER || light_2_fb_OFFICE_POWDER  ? 
                                 <img className="light_icon_z11" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1764,7 +1764,7 @@ const LightDashboard = () => {
                                 } 
                             </button>
 
-                            <button className="btn_location_12" onClick={()=>(lightMenu("openMap1"), lightZone("zone_12"))}> 
+                            <button className="btn_location_12" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_12"))}> 
                                 {light_1_fb_STEVE_S_OFFICE|| light_2_fb_STEVE_S_OFFICE  ? 
                                 <img className="light_icon_z12" id="lightZoneActive" src={lightOn} />  
                                 :
@@ -1777,7 +1777,7 @@ const LightDashboard = () => {
                         <div className={lightMenuDisplay}>
 
                             <div className="close_menu_btn">
-                                <img className="btn_image" onClick={()=>lightMenu("closeMap1")} src={close}/>
+                                <img className="btn_image" onTouchEnd={()=>lightMenu("closeMap1")} src={close}/>
                             </div>
                             
 
@@ -1816,7 +1816,7 @@ const LightDashboard = () => {
                             <div className={map2}> 
                                 <img className="floor_2_img" src={floor2}/>
 
-                                <button className="btn_location_13" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_13"))}>  
+                                <button className="btn_location_13" onTouchEnd={()=>(lightMenu("openMap2"),  lightZone("zone_13"))}>  
                                   {light_1_fb_BAR || light_2_fb_HALL || light_3_fb_HALL || light_4_fb_HALL || light_5_fb_HALL|| light_6_fb_HALL? 
                                   <img className="light_icon_z13" id="lightZoneActive" src={lightOn} />  
                                   :
@@ -1824,14 +1824,14 @@ const LightDashboard = () => {
                                   }
                                 </button>
 
-                                <button className="btn_location_14" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_14"))}>  
+                                <button className="btn_location_14" onTouchEnd={()=>(lightMenu("openMap2"),  lightZone("zone_14"))}>  
                                   {light_1_fb_MEDIA_ROOM || light_2_fb_MEDIA_ROOM || light_3_fb_MEDIA_ROOM || light_4_fb_MEDIA_ROOM || light_5_fb_MEDIA_ROOM? 
                                   <img className="light_icon_z14" id="lightZoneActive" src={lightOn} />  
                                   :
                                   <img className="light_icon_z14" src={lightOff} />  
                                   }
                                 </button>
-                                <button className="btn_location_15" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_15"))}>  Z14  </button>
+                                <button className="btn_location_15" onTouchEnd={()=>(lightMenu("openMap2"),  lightZone("zone_15"))}>  Z14  </button>
 
                                
                               
@@ -1840,7 +1840,7 @@ const LightDashboard = () => {
                             <div className={lightMenuDisplay2}>
 
                                 <div className="close_menu_btn">
-                                    <img className="btn_image" onClick={()=>lightMenu("closeMap2")} src={close}/>
+                                    <img className="btn_image" onTouchEnd={()=>lightMenu("closeMap2")} src={close}/>
                                 </div>
                                 
 

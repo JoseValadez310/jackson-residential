@@ -1262,22 +1262,22 @@ console.log(green, yellow, red)
                     
                     </div>
                     <div className="keypad">
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","650",true),window.CrComLib.publishEvent("b","650",false), console.log("key 1 650") }}><p className="num">1</p></button>
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","651",true),window.CrComLib.publishEvent("b","651",false), console.log("key 2 651") }}><p className="num">2</p></button>
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","652",true),window.CrComLib.publishEvent("b","652",false), console.log("key 3 652") }}><p className="num">3</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","650",true),window.CrComLib.publishEvent("b","650",false), console.log("key 1 650") }}><p className="num">1</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","651",true),window.CrComLib.publishEvent("b","651",false), console.log("key 2 651") }}><p className="num">2</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","652",true),window.CrComLib.publishEvent("b","652",false), console.log("key 3 652") }}><p className="num">3</p></button>
 
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","653",true),window.CrComLib.publishEvent("b","653",false), console.log("key 4 653") }}><p className="num">4</p></button>
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","654",true),window.CrComLib.publishEvent("b","654",false), console.log("key 5 654") }}><p className="num">5</p></button>
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","655",true),window.CrComLib.publishEvent("b","655",false), console.log("key 6 655") }}><p className="num">6</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","653",true),window.CrComLib.publishEvent("b","653",false), console.log("key 4 653") }}><p className="num">4</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","654",true),window.CrComLib.publishEvent("b","654",false), console.log("key 5 654") }}><p className="num">5</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","655",true),window.CrComLib.publishEvent("b","655",false), console.log("key 6 655") }}><p className="num">6</p></button>
 
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","656",true),window.CrComLib.publishEvent("b","656",false), console.log("key 7 656") }}><p className="num">7</p></button>
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","657",true),window.CrComLib.publishEvent("b","657",false), console.log("key 8 657") }}><p className="num">8</p></button>
-                            <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","658",true),window.CrComLib.publishEvent("b","658",false), console.log("key 9 658") }}><p className="num">9</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","656",true),window.CrComLib.publishEvent("b","656",false), console.log("key 7 656") }}><p className="num">7</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","657",true),window.CrComLib.publishEvent("b","657",false), console.log("key 8 657") }}><p className="num">8</p></button>
+                            <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","658",true),window.CrComLib.publishEvent("b","658",false), console.log("key 9 658") }}><p className="num">9</p></button>
 
 
-                            <button className="btn_circle" id="btn_active_red" onClick={() => {window.CrComLib.publishEvent("b","660",true),window.CrComLib.publishEvent("b","660",false), console.log("key clear 660") }}> <img className="btn_image" src={clear} style={{height:"60%"}}/></button>
-                            <button className="btn_circle"  onClick={() => {window.CrComLib.publishEvent("b","659",true),window.CrComLib.publishEvent("b","659",false), console.log("key 0 659") }}><p className="num" >0</p></button>
-                            <button className="btn_circle" id="btn_active_red" onClick={() => {window.CrComLib.publishEvent("b","661",true),window.CrComLib.publishEvent("b","661",false), console.log("key backspace 661") }}> <img className="btn_image" src={backspace} style={{height:"68%"}}/></button>
+                            <button className="btn_circle" id="btn_active_red" onTouchEnd={() => {window.CrComLib.publishEvent("b","660",true),window.CrComLib.publishEvent("b","660",false), console.log("key clear 660") }}> <img className="btn_image" src={clear} style={{height:"60%"}}/></button>
+                            <button className="btn_circle"  onTouchEnd={() => {window.CrComLib.publishEvent("b","659",true),window.CrComLib.publishEvent("b","659",false), console.log("key 0 659") }}><p className="num" >0</p></button>
+                            <button className="btn_circle" id="btn_active_red" onTouchEnd={() => {window.CrComLib.publishEvent("b","661",true),window.CrComLib.publishEvent("b","661",false), console.log("key backspace 661") }}> <img className="btn_image" src={backspace} style={{height:"68%"}}/></button>
 
                           
                     </div>
@@ -1287,10 +1287,10 @@ console.log(green, yellow, red)
             </div>
 
             <div className=" control_container">
-                    <button className="btn_circle" id={optionStay? "active_btn_sec":""} onClick={() => {window.CrComLib.publishEvent("b","663",true),window.CrComLib.publishEvent("b","663",false), console.log("stay 663") }}><p>Stay</p></button>
-                    <button className="btn_circle" id={optionAway? "active_btn_sec":""} onClick={() => {window.CrComLib.publishEvent("b","664",true),window.CrComLib.publishEvent("b","664",false), console.log("away 664") }}><p>Away</p></button>
-                    <button className="btn_circle" id={optionDisarm? "active_btn_sec":""} onClick={() => {window.CrComLib.publishEvent("b","665",true),window.CrComLib.publishEvent("b","665",false), console.log("disarm 665") }}><p>Disarm</p></button>
-                    <button className="btn_circle" id={optionBypassAll? "active_btn_sec":""} onClick={() => {window.CrComLib.publishEvent("b","666",true),window.CrComLib.publishEvent("b","666",false), console.log("Bypass all 666") }}><p>Bypass All</p></button>
+                    <button className="btn_circle" id={optionStay? "active_btn_sec":""} onTouchEnd={() => {window.CrComLib.publishEvent("b","663",true),window.CrComLib.publishEvent("b","663",false), console.log("stay 663") }}><p>Stay</p></button>
+                    <button className="btn_circle" id={optionAway? "active_btn_sec":""} onTouchEnd={() => {window.CrComLib.publishEvent("b","664",true),window.CrComLib.publishEvent("b","664",false), console.log("away 664") }}><p>Away</p></button>
+                    <button className="btn_circle" id={optionDisarm? "active_btn_sec":""} onTouchEnd={() => {window.CrComLib.publishEvent("b","665",true),window.CrComLib.publishEvent("b","665",false), console.log("disarm 665") }}><p>Disarm</p></button>
+                    <button className="btn_circle" id={optionBypassAll? "active_btn_sec":""} onTouchEnd={() => {window.CrComLib.publishEvent("b","666",true),window.CrComLib.publishEvent("b","666",false), console.log("Bypass all 666") }}><p>Bypass All</p></button>
             </div>
 
             <div className=" light_indicator">

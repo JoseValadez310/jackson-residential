@@ -60,15 +60,15 @@ const DirecTv = () =>{
             <div className="dtv_controller_controls">
                 <div className="controller_nav">
 
-                    <button onClick={()=>changedtvOptions("dtv_1")} className = {dtv_option_1? "controller_nav_1_selected" : "controller_nav_1"}>
+                    <button onTouchEnd={()=>changedtvOptions("dtv_1")} className = {dtv_option_1? "controller_nav_1_selected" : "controller_nav_1"}>
                         <img className="btn_image" src={keypad}/>
                     </button>
 
-                    <button onClick={()=>changedtvOptions("dtv_2")}  className = {dtv_option_2? "controller_nav_2_selected" : "controller_nav_2"}>
+                    <button onTouchEnd={()=>changedtvOptions("dtv_2")}  className = {dtv_option_2? "controller_nav_2_selected" : "controller_nav_2"}>
                         <img className="btn_image" src={DVR} id ="dvr_img"/>
                     </button>
 
-                    <button onClick={()=>changedtvOptions("dtv_3")} className = {dtv_option_3? "display_none" : "display_none"} id="favorite_hide">
+                    <button onTouchEnd={()=>changedtvOptions("dtv_3")} className = {dtv_option_3? "display_none" : "display_none"} id="favorite_hide">
                         <img className="btn_image" src={favorite}/>
                     </button>
 
@@ -76,51 +76,51 @@ const DirecTv = () =>{
                 
                 <div className={dtv_option_1?"show_option_1":"none_option"}>
 
-                        <button className="btn_circle" onClick={()=> dtvTransports("key1")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key1")}>
                             <p className="key_num">1</p>
                         </button>
                         
-                        <button className="btn_circle" onClick={()=> dtvTransports("key2")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key2")}>
                             <p className="key_num">2</p>
                         </button>
 
-                        <button className="btn_circle" onClick={()=> dtvTransports("key3")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key3")}>
                             <p className="key_num">3</p>
                         </button>
 
-                        <button className="btn_circle" onClick={()=> dtvTransports("key4")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key4")}>
                             <p className="key_num">4</p>
                         </button>
                         
-                        <button className="btn_circle" onClick={()=> dtvTransports("key5")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key5")}>
                             <p className="key_num">5</p>
                         </button>
 
-                        <button className="btn_circle" onClick={()=> dtvTransports("key6")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key6")}>
                             <p className="key_num">6</p>
                         </button>
                 
-                        <button className="btn_circle" onClick={()=> dtvTransports("key7")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key7")}>
                             <p className="key_num">7</p>
                         </button>
                         
-                        <button className="btn_circle" onClick={()=> dtvTransports("key8")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key8")}>
                             <p className="key_num">8</p>
                         </button>
 
-                        <button className="btn_circle" onClick={()=> dtvTransports("key9")}>
+                        <button className="btn_circle" onTouchEnd={()=> dtvTransports("key9")}>
                             <p className="key_num">9</p>
                         </button>
                 
-                        <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("dash_key")}>
+                        <button className="btn_circle" id="small_text" onTouchEnd={()=> dtvTransports("dash_key")}>
                             <p>DASH</p>
                         </button>
                         
-                        <button className="btn_circle"  onClick={()=> dtvTransports("key0")}>
+                        <button className="btn_circle"  onTouchEnd={()=> dtvTransports("key0")}>
                             <p className="key_num">0</p>
                         </button>
 
-                        <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("enter")}>
+                        <button className="btn_circle" id="small_text" onTouchEnd={()=> dtvTransports("enter")}>
                             <p>ENTER</p>
                         </button>
                     
@@ -132,55 +132,55 @@ const DirecTv = () =>{
              
 
 
-                <button className="btn_circle" onClick={()=>dtvTransports("stop")}>
+                <button className="btn_circle" onTouchEnd={()=>dtvTransports("stop")}>
                         <img className="btn_image" src={stop} alt="stop btn" />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("play")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("play")}>
                         <img className="btn_image" src={play} />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("pause")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("pause")}>
                         <img className="btn_image" src={pause} />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("skip-")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("skip-")}>
                         <img className="btn_image" src={skip} style={{transform:"rotate(180deg)"}}/>
                     </button>
 
-                    <button className="display_none" onClick={()=>dtvTransports("rewind")}>
+                    <button className="display_none" onTouchEnd={()=>dtvTransports("rewind")}>
                         <img className="btn_image" src={rewind} />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("skip+")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("skip+")}>
                         <img className="btn_image" src={skip} />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("back")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("back")}>
                         <img className="btn_image" src={returnArrow} />
                     </button>
 
-                    <button className="btn_circle" id="transport_hide"onClick={()=>dtvTransports("DVR")}></button>
+                    <button className="btn_circle" id="transport_hide"onTouchEnd={()=>dtvTransports("DVR")}></button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("record")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("record")}>
                         <img className="btn_image" src={record} />
                     </button>
 
 
                     <div className="rgyb">
-                        <button className="small_btn_circle" id="button_red"    onClick={() => dtvTransports("red")}>  
+                        <button className="small_btn_circle" id="button_red"    onTouchEnd={() => dtvTransports("red")}>  
                             <p style={{color:"black"}}>R</p>  
                         </button>
 
-                        <button className="small_btn_circle" id="button_green"  onClick={() => dtvTransports("green")}> 
+                        <button className="small_btn_circle" id="button_green"  onTouchEnd={() => dtvTransports("green")}> 
                             <p style={{color:"black"}}>G</p>
                         </button>
 
-                        <button className="small_btn_circle" id="button_yellow" onClick={() => dtvTransports("yellow")}> 
+                        <button className="small_btn_circle" id="button_yellow" onTouchEnd={() => dtvTransports("yellow")}> 
                             <p style={{color:"black"}}>Y</p>
                         </button>
 
-                        <button className="small_btn_circle" id="button_blue"   onClick={() => dtvTransports("blue")}> 
+                        <button className="small_btn_circle" id="button_blue"   onTouchEnd={() => dtvTransports("blue")}> 
                             <p style={{color:"black"}}>B</p>
                         </button>
                     </div>
@@ -200,31 +200,31 @@ const DirecTv = () =>{
                     <div className="circle-menu">
                         
                         <div className="circle ok-outer">
-                            <button className="btn_circle" style={{height:"5.75rem", width:"5.75rem"}} onClick={() => controllerClick("center")}>
+                            <button className="btn_circle" style={{height:"5.75rem", width:"5.75rem"}} onTouchEnd={() => controllerClick("center")}>
                                 <img src={center} style={{height:"85%"}} className="center"/>
                             </button>
                         </div>
 
                         <div className="control-icon right" >
-                            <button className="btn_circle" onClick={() => controllerClick("right")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("right")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
                             </button> 
                         </div>
 
                         <div className="control-icon bottom">
-                            <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("bottom")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
                             </button>
                         </div>
 
                         <div className="control-icon left">
-                            <button className="btn_circle" onClick={() => controllerClick("left")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("left")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
                             </button>
                         </div>
 
                         <div className="control-icon top">
-                            <button className="btn_circle" onClick={() => controllerClick("top")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("top")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
                             </button>
                         </div>
@@ -244,7 +244,7 @@ const DirecTv = () =>{
     <div className="show_option_1">
 
         <div className="channel_container">
-            <button onClick={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down">
+            <button onTouchEnd={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down">
                     <img className="btn_image" src={increment} alt="chan down" />
             </button>
 
@@ -252,36 +252,36 @@ const DirecTv = () =>{
                 <h2> CH </h2>
             </button>
 
-            <button className="btn_circle"  id="chan_up" onClick={()=> dtvTransports("channel+")}>
+            <button className="btn_circle"  id="chan_up" onTouchEnd={()=> dtvTransports("channel+")}>
                 <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
             </button>
         </div>
 
 
 
-        <button className="btn_circle"id="guide" onClick={()=> dtvTransports("guide")}>
+        <button className="btn_circle"id="guide" onTouchEnd={()=> dtvTransports("guide")}>
             <p> GUIDE </p>
         </button>
 
-        <button className="btn_circle" id="menu" onClick={()=> dtvTransports("menu")}>
+        <button className="btn_circle" id="menu" onTouchEnd={()=> dtvTransports("menu")}>
             <p> MENU </p>
         </button>
 
-        <button className="btn_circle" id="list" onClick={()=> dtvTransports("list")}>
+        <button className="btn_circle" id="list" onTouchEnd={()=> dtvTransports("list")}>
             <p> LIST </p>
         </button>
 
-        <button className="btn_circle" id="exit" onClick={()=> dtvTransports("exit")}>
+        <button className="btn_circle" id="exit" onTouchEnd={()=> dtvTransports("exit")}>
             <p> EXIT </p>
         </button>
 
 
-        <button className="btn_circle" id="info" onClick={()=> dtvTransports("info")}>
+        <button className="btn_circle" id="info" onTouchEnd={()=> dtvTransports("info")}>
             <p className="id"> INFO </p>
         </button>
 
 
-        <button className="btn_circle" id="prev" onClick={()=> dtvTransports("prev")}>
+        <button className="btn_circle" id="prev" onTouchEnd={()=> dtvTransports("prev")}>
         <p> PREV </p>
         </button>
 
@@ -312,31 +312,31 @@ const DirecTv = () =>{
                             <div className="circle-menu">
                                 
                                 <div className="circle ok-outer">
-                                    <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onClick={() => controllerClick("center")}>
+                                    <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onTouchEnd={() => controllerClick("center")}>
                                         <img src={center} style={{height:"90%"}} className="center"/>
                                     </button>
                                 </div>
 
                                 <div className="control-icon right" >
-                                    <button className="btn_circle" onClick={() => controllerClick("right")}>
+                                    <button className="btn_circle" onTouchEnd={() => controllerClick("right")}>
                                         <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"85%"}}/>
                                     </button> 
                                 </div>
 
                                 <div className="control-icon bottom">
-                                    <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                                    <button className="btn_circle" onTouchEnd={() => controllerClick("bottom")}>
                                         <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"85%"}}/>
                                     </button>
                                 </div>
 
                                 <div className="control-icon left">
-                                    <button className="btn_circle" onClick={() => controllerClick("left")}>
+                                    <button className="btn_circle" onTouchEnd={() => controllerClick("left")}>
                                         <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"85%"}}/>
                                     </button>
                                 </div>
 
                                 <div className="control-icon top">
-                                    <button className="btn_circle" onClick={() => controllerClick("top")}>
+                                    <button className="btn_circle" onTouchEnd={() => controllerClick("top")}>
                                         <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"85%"}}/>
                                     </button>
                                 </div>
@@ -344,7 +344,7 @@ const DirecTv = () =>{
                         </div>
 
                         <div className="channel_container">
-                            <button onClick={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down">
+                            <button onTouchEnd={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down">
                                     <img className="btn_image" src={increment} alt="chan down" />
                             </button>
 
@@ -352,7 +352,7 @@ const DirecTv = () =>{
                                 <h2> CH </h2>
                             </button>
 
-                            <button className="btn_circle"  id="chan_up" onClick={()=> dtvTransports("channel+")}>
+                            <button className="btn_circle"  id="chan_up" onTouchEnd={()=> dtvTransports("channel+")}>
                                 <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
                             </button>
                     </div>
@@ -362,15 +362,15 @@ const DirecTv = () =>{
                   
 
                     <div className="bottom_row_1_controller">
-                            <button className="btn_circle"id="guide" onClick={()=> dtvTransports("guide")}>
+                            <button className="btn_circle"id="guide" onTouchEnd={()=> dtvTransports("guide")}>
                                 <p> GUIDE </p>
                             </button>
 
-                            <button className="btn_circle" id="menu" onClick={()=> dtvTransports("menu")}>
+                            <button className="btn_circle" id="menu" onTouchEnd={()=> dtvTransports("menu")}>
                                 <p> MENU </p>
                             </button>
 
-                            <button className="btn_circle" id="list" onClick={()=> dtvTransports("list")}>
+                            <button className="btn_circle" id="list" onTouchEnd={()=> dtvTransports("list")}>
                                 <p> LIST </p>
                             </button>
 
@@ -380,17 +380,17 @@ const DirecTv = () =>{
                     <div className="bottom_row_2_controller">
                            
 
-                            <button className="btn_circle" id="exit" onClick={()=> dtvTransports("exit")}>
+                            <button className="btn_circle" id="exit" onTouchEnd={()=> dtvTransports("exit")}>
                                 <p> EXIT </p>
                             </button>
 
 
-                            <button className="btn_circle" id="info" onClick={()=> dtvTransports("info")}>
+                            <button className="btn_circle" id="info" onTouchEnd={()=> dtvTransports("info")}>
                                 <p className="id"> INFO </p>
                             </button>
 
 
-                            <button className="btn_circle" id="prev" onClick={()=> dtvTransports("prev")}>
+                            <button className="btn_circle" id="prev" onTouchEnd={()=> dtvTransports("prev")}>
                             <p> PREV </p>
                             </button>
 
@@ -411,55 +411,55 @@ const DirecTv = () =>{
         const mobile_section_two =(
             <>
           <div className="show_option_2">
-                    <button className="btn_circle" onClick={()=>dtvTransports("stop")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("stop")}>
                         <img className="btn_image" src={stop} alt="stop btn" />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("play")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("play")}>
                         <img className="btn_image" src={play} />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("pause")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("pause")}>
                         <img className="btn_image" src={pause} />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("skip-")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("skip-")}>
                         <img className="btn_image" src={skip} style={{transform:"rotate(180deg)"}}/>
                     </button>
 
-                    <button className="display_none" onClick={()=>dtvTransports("rewind")}>
+                    <button className="display_none" onTouchEnd={()=>dtvTransports("rewind")}>
                         <img className="btn_image" src={rewind} />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("skip+")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("skip+")}>
                         <img className="btn_image" src={skip} />
                     </button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("back")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("back")}>
                         <img className="btn_image" src={returnArrow} />
                     </button>
 
-                    <button className="btn_circle" id="transport_hide"onClick={()=>dtvTransports("DVR")}></button>
+                    <button className="btn_circle" id="transport_hide"onTouchEnd={()=>dtvTransports("DVR")}></button>
 
-                    <button className="btn_circle" onClick={()=>dtvTransports("record")}>
+                    <button className="btn_circle" onTouchEnd={()=>dtvTransports("record")}>
                         <img className="btn_image" src={record} />
                     </button>
 
 
                     <div className="rgyb">
-                        <button className="small_btn_circle" id="button_red"    onClick={() => dtvTransports("red")}>  
+                        <button className="small_btn_circle" id="button_red"    onTouchEnd={() => dtvTransports("red")}>  
                             <p style={{color:"black"}}>R</p>  
                         </button>
 
-                        <button className="small_btn_circle" id="button_green"  onClick={() => dtvTransports("green")}> 
+                        <button className="small_btn_circle" id="button_green"  onTouchEnd={() => dtvTransports("green")}> 
                             <p style={{color:"black"}}>G</p>
                         </button>
 
-                        <button className="small_btn_circle" id="button_yellow" onClick={() => dtvTransports("yellow")}> 
+                        <button className="small_btn_circle" id="button_yellow" onTouchEnd={() => dtvTransports("yellow")}> 
                             <p style={{color:"black"}}>Y</p>
                         </button>
 
-                        <button className="small_btn_circle" id="button_blue"   onClick={() => dtvTransports("blue")}> 
+                        <button className="small_btn_circle" id="button_blue"   onTouchEnd={() => dtvTransports("blue")}> 
                             <p style={{color:"black"}}>B</p>
                         </button>
                     </div>
@@ -472,51 +472,51 @@ const DirecTv = () =>{
             <>
                 <div className="show_option_1">
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key1")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key1")}>
                     <p className="key_num">1</p>
                     </button>
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key2")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key2")}>
                     <p className="key_num">2</p>
                     </button>
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key3")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key3")}>
                     <p className="key_num">3</p>
                     </button>
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key4")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key4")}>
                     <p className="key_num">4</p>
                     </button>
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key5")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key5")}>
                     <p className="key_num">5</p>
                     </button>
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key6")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key6")}>
                     <p className="key_num">6</p>
                     </button>
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key7")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key7")}>
                     <p className="key_num">7</p>
                     </button>
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key8")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key8")}>
                     <p className="key_num">8</p>
                     </button>
 
-                    <button className="btn_circle" onClick={()=> dtvTransports("key9")}>
+                    <button className="btn_circle" onTouchEnd={()=> dtvTransports("key9")}>
                     <p className="key_num">9</p>
                     </button>
 
-                    <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("dash_key")}>
+                    <button className="btn_circle" id="small_text" onTouchEnd={()=> dtvTransports("dash_key")}>
                     <p>DASH</p>
                     </button>
 
-                    <button className="btn_circle"  onClick={()=> dtvTransports("key0")}>
+                    <button className="btn_circle"  onTouchEnd={()=> dtvTransports("key0")}>
                     <p className="key_num">0</p>
                     </button>
 
-                    <button className="btn_circle" id="small_text" onClick={()=> dtvTransports("enter")}>
+                    <button className="btn_circle" id="small_text" onTouchEnd={()=> dtvTransports("enter")}>
                     <p>ENTER</p>
                     </button>
                 
@@ -560,10 +560,10 @@ const DirecTv = () =>{
             <>
     
                 <div className="mobile_controller_nav">
-                        <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(1)}> <img className="btn_image" src={controller}/></button>
-                        <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(2)}> <img className="btn_image" style={{position:"relative",bottom:"3px"}} src={DVR}/></button>
-                        <button className={currentTab === 3? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(3)}> <img className="btn_image" src={keypad}/></button>
-                        <button className={currentTab === 4? "display_none" : "display_none"} onClick={() => coontrollerNav(4)}> <img className="btn_image" src={favorite}/></button>
+                        <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(1)}> <img className="btn_image" src={controller}/></button>
+                        <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(2)}> <img className="btn_image" style={{position:"relative",bottom:"3px"}} src={DVR}/></button>
+                        <button className={currentTab === 3? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(3)}> <img className="btn_image" src={keypad}/></button>
+                        <button className={currentTab === 4? "display_none" : "display_none"} onTouchEnd={() => coontrollerNav(4)}> <img className="btn_image" src={favorite}/></button>
 
 
                 </div>

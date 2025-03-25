@@ -53,31 +53,31 @@ const BluRay = () => {
                     <div className="circle-menu">
                         
                         <div className="circle ok-outer">
-                            <button className="btn_circle" id="center_button" onClick={() => controllerClick("center")}>
+                            <button className="btn_circle" id="center_button" onTouchEnd={() => controllerClick("center")}>
                                 <img src={center} style={{height:"85%"}} className="center"/>
                             </button>
                         </div>
 
                         <div className="control-icon right" >
-                            <button className="btn_circle" onClick={() => controllerClick("right")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("right")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
                             </button> 
                         </div>
 
                         <div className="control-icon bottom">
-                            <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("bottom")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
                             </button>
                         </div>
 
                         <div className="control-icon left">
-                            <button className="btn_circle" onClick={() => controllerClick("left")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("left")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
                             </button>
                         </div>
 
                         <div className="control-icon top">
-                            <button className="btn_circle" onClick={() => controllerClick("top")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("top")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
                             </button>
                         </div>
@@ -90,39 +90,39 @@ const BluRay = () => {
     const section_two   = (<> 
         <div className="bluRay_controller_controls">
 
-            <button className="btn_circle" onClick={() => bluRayTransports("scan-")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("scan-")}>
                 <img className="btn_image" id="flip" src={scan} alt="" />
             </button>
 
-            <button className="btn_circle"  onClick={() => bluRayTransports("stop")}>
+            <button className="btn_circle"  onTouchEnd={() => bluRayTransports("stop")}>
                 <img className="btn_image" src={stop} alt="" />
             </button>
 
-            <button className="btn_circle"  onClick={() => bluRayTransports("scan+")}>
+            <button className="btn_circle"  onTouchEnd={() => bluRayTransports("scan+")}>
                 <img className="btn_image" src={scan} alt="" />
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("skip-")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip-")}>
                 <img className="btn_image"  id="flip"  src={skip} alt="" />
             </button>
 
-            <button className="btn_circle"  onClick={() => bluRayTransports("play")}>
+            <button className="btn_circle"  onTouchEnd={() => bluRayTransports("play")}>
                 <img className="btn_image" src={play} alt="" />
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("skip+")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip+")}>
                 <img className="btn_image" src={skip} alt="" />
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("audio")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("audio")}>
                 <p> Audio </p>
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("pause")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("pause")}>
                 <img className="btn_image" src={pause} alt="" />
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("subtitle")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("subtitle")}>
                 <p> Subtitle </p>
             </button>
 
@@ -134,15 +134,15 @@ const BluRay = () => {
     const section_three = (<> 
         <div className="bluRay_controller_controls_2">
 
-            <button className="btn_circle" onClick={() => bluRayTransports("home")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("home")}>
                 <p> Home </p>
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("popup_menu")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("popup_menu")}>
                 <p> PopUp Menu </p>
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("top_menu")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("top_menu")}>
                 <p> Top Menu </p>
             </button>
 
@@ -150,25 +150,25 @@ const BluRay = () => {
 
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("return")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("return")}>
                 <p> Return </p>
             </button>
 
             <div className="RGYB_button"> 
 
-            <button className="small_btn_circle" id="button_red"    onClick={() => bluRayTransports("small_red")}>  
+            <button className="small_btn_circle" id="button_red"    onTouchEnd={() => bluRayTransports("small_red")}>  
             R  
             </button>
 
-            <button className="small_btn_circle" id="button_green"  onClick={() => bluRayTransports("small_green")}> 
+            <button className="small_btn_circle" id="button_green"  onTouchEnd={() => bluRayTransports("small_green")}> 
             G
             </button>
 
-            <button className="small_btn_circle" id="button_yellow" onClick={() => bluRayTransports("small_yellow")}> 
+            <button className="small_btn_circle" id="button_yellow" onTouchEnd={() => bluRayTransports("small_yellow")}> 
             Y
             </button>
 
-            <button className="small_btn_circle" id="button_blue"   onClick={() => bluRayTransports("small_blue")}> 
+            <button className="small_btn_circle" id="button_blue"   onTouchEnd={() => bluRayTransports("small_blue")}> 
             B
             </button>
 
@@ -185,31 +185,31 @@ const BluRay = () => {
                         <div className="circle-menu">
                             
                             <div className="circle ok-outer">
-                            <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onClick={() => controllerClick("center")}>
+                            <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onTouchEnd={() => controllerClick("center")}>
                                         <img src={center} style={{height:"90%"}} className="center"/>
                                     </button>
                             </div>
 
                             <div className="control-icon right" >
-                                <button className="btn_circle" onClick={() => controllerClick("right")}>
+                                <button className="btn_circle" onTouchEnd={() => controllerClick("right")}>
                                     <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"85%"}}/>
                                 </button> 
                             </div>
 
                             <div className="control-icon bottom">
-                                <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                                <button className="btn_circle" onTouchEnd={() => controllerClick("bottom")}>
                                     <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"85%"}}/>
                                 </button>
                             </div>
 
                             <div className="control-icon left">
-                                <button className="btn_circle" onClick={() => controllerClick("left")}>
+                                <button className="btn_circle" onTouchEnd={() => controllerClick("left")}>
                                     <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"85%"}}/>
                                 </button>
                             </div>
 
                             <div className="control-icon top">
-                                <button className="btn_circle" onClick={() => controllerClick("top")}>
+                                <button className="btn_circle" onTouchEnd={() => controllerClick("top")}>
                                     <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"85%"}}/>
                                 </button>
                             </div>
@@ -220,19 +220,19 @@ const BluRay = () => {
 
                 <div className="bottom_row_1_controller"> 
 
-                    <button className="btn_circle" onClick={() => bluRayTransports("scan-")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("scan-")}>
                         <img className="btn_image" id="flip" src={scan} alt="" />
                     </button>
 
-                    <button className="btn_circle" onClick={() => bluRayTransports("skip-")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip-")}>
                         <img className="btn_image"  id="flip"  src={skip} alt="" />
                     </button>
 
-                    <button className="btn_circle" onClick={() => bluRayTransports("skip+")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip+")}>
                         <img className="btn_image" src={skip} alt="" />
                     </button>
 
-                    <button className="btn_circle"  onClick={() => bluRayTransports("scan+")}>
+                    <button className="btn_circle"  onTouchEnd={() => bluRayTransports("scan+")}>
                         <img className="btn_image" src={scan} alt="" />
                     </button>
 
@@ -243,19 +243,19 @@ const BluRay = () => {
               
                 <div className="bottom_row_2_controller"> 
 
-                    <button className="btn_circle" onClick={() => bluRayTransports("audio")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("audio")}>
                         <p> Audio </p>
                     </button>
 
-                    <button className="btn_circle" onClick={() => bluRayTransports("pause")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("pause")}>
                         <img className="btn_image" src={pause} alt="" />
                     </button>
 
-                    <button className="btn_circle"  onClick={() => bluRayTransports("play")}>
+                    <button className="btn_circle"  onTouchEnd={() => bluRayTransports("play")}>
                         <img className="btn_image" src={play} alt="" />
                     </button>
 
-                    <button className="btn_circle" onClick={() => bluRayTransports("subtitle")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("subtitle")}>
                         <p> Subtitle </p>
                     </button>
 
@@ -272,44 +272,44 @@ const BluRay = () => {
         <>
             <div className="bluRay_controller_controls_2">
 
-            <button className="btn_circle" onClick={() => bluRayTransports("home")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("home")}>
                 <p> Home </p>
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("popup_menu")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("popup_menu")}>
                 <p> PopUp Menu </p>
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("top_menu")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("top_menu")}>
                 <p> Top Menu </p>
             </button>
 
-            <button className="btn_circle"  onClick={() => bluRayTransports("stop")}>
+            <button className="btn_circle"  onTouchEnd={() => bluRayTransports("stop")}>
                 <img className="btn_image" src={stop} alt="" />
             </button>
 
             <button className="btn_circle" id="transport_hide">
             </button>
 
-            <button className="btn_circle" onClick={() => bluRayTransports("return")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("return")}>
                 <p> Return </p>
             </button>
 
                 <div className="RGYB_button"> 
 
-                <button className="small_btn_circle" id="button_red"    onClick={() => bluRayTransports("small_red")}>  
+                <button className="small_btn_circle" id="button_red"    onTouchEnd={() => bluRayTransports("small_red")}>  
                 R  
                 </button>
 
-                <button className="small_btn_circle" id="button_green"  onClick={() => bluRayTransports("small_green")}> 
+                <button className="small_btn_circle" id="button_green"  onTouchEnd={() => bluRayTransports("small_green")}> 
                 G
                 </button>
 
-                <button className="small_btn_circle" id="button_yellow" onClick={() => bluRayTransports("small_yellow")}> 
+                <button className="small_btn_circle" id="button_yellow" onTouchEnd={() => bluRayTransports("small_yellow")}> 
                 Y
                 </button>
 
-                <button className="small_btn_circle" id="button_blue"   onClick={() => bluRayTransports("small_blue")}> 
+                <button className="small_btn_circle" id="button_blue"   onTouchEnd={() => bluRayTransports("small_blue")}> 
                 B
                 </button>
 
@@ -514,8 +514,8 @@ const BluRay = () => {
 
        
         <div className="mobile_controller_nav">
-                <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(2)}> <img className="btn_image" src={controller}/></button>
-                <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(1)}> <img className="btn_image" style={{position:"relative",bottom:"3px"}} src={dvr}/></button>
+                <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(2)}> <img className="btn_image" src={controller}/></button>
+                <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(1)}> <img className="btn_image" style={{position:"relative",bottom:"3px"}} src={dvr}/></button>
 
         </div>
 

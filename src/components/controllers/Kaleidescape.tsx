@@ -228,31 +228,31 @@ const Kaleidescape = () =>{
                     <div className="circle-menu">
                         
                         <div className="circle ok-outer">
-                            <button className="btn_circle" style={{height:"5.75rem", width:"5.75rem"}} onClick={() => controllerClick("center")}>
+                            <button className="btn_circle" style={{height:"5.75rem", width:"5.75rem"}} onTouchEnd={() => controllerClick("center")}>
                                 <img src={center} style={{height:"85%"}} className="center"/>
                             </button>
                         </div>
 
                         <div className="control-icon right" >
-                            <button className="btn_circle" onClick={() => controllerClick("right")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("right")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"75%"}}/>
                             </button> 
                         </div>
 
                         <div className="control-icon bottom">
-                            <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("bottom")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"75%"}}/>
                             </button>
                         </div>
 
                         <div className="control-icon left">
-                            <button className="btn_circle" onClick={() => controllerClick("left")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("left")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"75%"}}/>
                             </button>
                         </div>
 
                         <div className="control-icon top">
-                            <button className="btn_circle" onClick={() => controllerClick("top")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("top")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"75%"}}/>
                             </button>
                         </div>
@@ -310,7 +310,7 @@ const Kaleidescape = () =>{
 
                 
             <div className="channel_container">
-                <button onClick={()=> kaleidescapeTransports("page-")} className="btn_circle" id="chan_down">
+                <button onTouchEnd={()=> kaleidescapeTransports("page-")} className="btn_circle" id="chan_down">
                         <img className="btn_image" src={increment} alt="chan down" />
                 </button>
 
@@ -318,7 +318,7 @@ const Kaleidescape = () =>{
                     <h2> CH </h2>
                 </button>
 
-                <button className="btn_circle"  id="chan_up" onClick={()=> kaleidescapeTransports("page+")}>
+                <button className="btn_circle"  id="chan_up" onTouchEnd={()=> kaleidescapeTransports("page+")}>
                     <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
                 </button>
             </div>
@@ -361,31 +361,31 @@ const mobile_section_one = (
                     <div className="circle-menu">
                         
                         <div className="circle ok-outer">
-                        <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onClick={() => controllerClick("center")}>
+                        <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onTouchEnd={() => controllerClick("center")}>
                                     <img src={center} style={{height:"90%"}} className="center"/>
                                 </button>
                         </div>
 
                         <div className="control-icon right" >
-                            <button className="btn_circle" onClick={() => controllerClick("right")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("right")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"85%"}}/>
                             </button> 
                         </div>
 
                         <div className="control-icon bottom">
-                            <button className="btn_circle" onClick={() => controllerClick("bottom")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("bottom")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"85%"}}/>
                             </button>
                         </div>
 
                         <div className="control-icon left">
-                            <button className="btn_circle" onClick={() => controllerClick("left")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("left")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"85%"}}/>
                             </button>
                         </div>
 
                         <div className="control-icon top">
-                            <button className="btn_circle" onClick={() => controllerClick("top")}>
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("top")}>
                                 <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"85%"}}/>
                             </button>
                         </div>
@@ -450,7 +450,7 @@ const mobile_section_two = (
 
                 
 <div className="channel_container">
-    <button onClick={()=> kaleidescapeTransports("page-")} className="btn_circle" id="chan_down">
+    <button onTouchEnd={()=> kaleidescapeTransports("page-")} className="btn_circle" id="chan_down">
             <img className="btn_image" src={increment} alt="chan down" />
     </button>
 
@@ -458,7 +458,7 @@ const mobile_section_two = (
         <h2> CH </h2>
     </button>
 
-    <button className="btn_circle"  id="chan_up" onClick={()=> kaleidescapeTransports("page+")}>
+    <button className="btn_circle"  id="chan_up" onTouchEnd={()=> kaleidescapeTransports("page+")}>
         <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
     </button>
 </div>
@@ -548,8 +548,8 @@ const mobile_section_two = (
         
                 <div className="mobile_controller_nav">
 
-                        <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(2)}> <img className="btn_image" src={controller}/></button>
-                        <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onClick={() => coontrollerNav(1)}> <img className="btn_image" style={{height:"75%"}} src={play}/></button>
+                        <button className={currentTab === 2? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(2)}> <img className="btn_image" src={controller}/></button>
+                        <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(1)}> <img className="btn_image" style={{height:"75%"}} src={play}/></button>
 
                 </div>
         

@@ -878,7 +878,7 @@ if(media1){
 
 
             <div className="room_back_corner" >
-                <Link to={"/RoomsDashboard"} onClick={() => closeOutPowerOption} > 
+                <Link to={"/RoomsDashboard"} onTouchEnd={() => closeOutPowerOption} > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>
@@ -890,9 +890,9 @@ if(media1){
 
             
                 <div className="nav">
-                        <button onClick={() => (roomApp("TV"), setTrigger1(!trigger1))}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
+                        <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
                         <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
-                        <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
+                        <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
                 </div>
                 
               
@@ -901,7 +901,7 @@ if(media1){
 
             {active_media?
                 <div className="room_home_corner">
-                    <button className="home_button" onClick={()=>powerMenu("menu")}>
+                    <button className="home_button" onTouchEnd={()=>powerMenu("menu")}>
                         <img src={power}  />
                     </button> 
                 </div>
@@ -929,30 +929,30 @@ if(media1){
 
                     <div className="power_menu_button">
                         <div className="yes_reboot" > 
-                            <button className="yes_reboot" onClick={()=> powerMenu("menu_off")}> 
+                            <button className="yes_reboot" onTouchEnd={()=> powerMenu("menu_off")}> 
                                 <p>YES</p> 
                             </button> 
                         </div>
                         
-                        <button className="no_reboot" onClick={()=> powerMenu("menu")}> 
+                        <button className="no_reboot" onTouchEnd={()=> powerMenu("menu")}> 
                             <p>NO</p> 
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className={displayReboot? "power_menu_overlay": "hide_reboot_menu"} onClick={()=> appleTvRebootMenu("menu")}>
-                <div className="power_menu" onClick={()=> appleTvRebootMenu("menu")}>
+            <div className={displayReboot? "power_menu_overlay": "hide_reboot_menu"} onTouchEnd={()=> appleTvRebootMenu("menu")}>
+                <div className="power_menu" onTouchEnd={()=> appleTvRebootMenu("menu")}>
                     <p className="power_menu_text">
                         Would you like to Reboot the {roomName}'s Apple TV?
                     </p>
 
                     <div className="power_menu_button">
-                        <button className="yes_reboot" onClick={() => appleTvRebootMenu("reboot")}> 
+                        <button className="yes_reboot" onTouchEnd={() => appleTvRebootMenu("reboot")}> 
                             <p>YES</p> 
                         </button> 
                         
-                        <button className="no_reboot"  onClick={()=> appleTvRebootMenu("menu")}> 
+                        <button className="no_reboot"  onTouchEnd={()=> appleTvRebootMenu("menu")}> 
                             <p>NO</p> 
                         </button>
                     </div>
@@ -961,7 +961,7 @@ if(media1){
 
            
             <div className={roomApps? "generic_room_dashboard" : "media_off"}>
-                <div className="generic_room_card" onClick={() => roomApp("TV")}>
+                <div className="generic_room_card" onTouchEnd={() => roomApp("TV")}>
                     <img src={TV}/>  
                 </div>   
 
@@ -970,7 +970,7 @@ if(media1){
                  
                 </Link>
                 
-                <div className="generic_room_card" onClick={() => roomApp("Lights")}>
+                <div className="generic_room_card" onTouchEnd={() => roomApp("Lights")}>
                     <img src={lights}/>
                     
                 </div>  
@@ -982,7 +982,7 @@ if(media1){
             <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
                     <div className={active_media? "media_off":"room_sources_container"}>
                             
-                            <div className="source_card" id= {activeSource === 1 ? 'active_source' : 'not_active'} onClick={()=>playSource('media1')}>
+                            <div className="source_card" id= {activeSource === 1 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
@@ -990,7 +990,7 @@ if(media1){
                                 <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="source_card" id= { activeSource === 2 ? 'active_source' : 'not_active'} onClick={()=>playSource('media2')}>
+                            <div className="source_card" id= { activeSource === 2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
@@ -998,14 +998,14 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= {activeSource === 5 ? 'active_source' : 'not_active'} onClick={()=>playSource('media3')}>
+                            <div className="source_card" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
                             </div>
 
-                            <div className="source_card" id= {activeSource === 6 ? 'active_source' : 'not_active'} onClick={()=>playSource('media4')}>
+                            <div className="source_card" id= {activeSource === 6 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
@@ -1013,7 +1013,7 @@ if(media1){
                                 <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="source_card" id= {activeSource === 7 ? 'active_source' : 'not_active'} onClick={()=>playSource('media5')}>
+                            <div className="source_card" id= {activeSource === 7 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
@@ -1021,7 +1021,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= {activeSource === 8 ? 'active_source' : 'not_active'} onClick={()=>playSource('media6')}>
+                            <div className="source_card" id= {activeSource === 8 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -1029,7 +1029,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="source_card" id ={activeSource === 9 ? 'active_source' : 'not_active'} onClick={()=>playSource('media7')}>
+                            <div className="source_card" id ={activeSource === 9 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -1038,7 +1038,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="source_card" id ={activeSource === 10 ? 'active_source' : 'not_active'} onClick={()=>playSource('media8')}>
+                            <div className="source_card" id ={activeSource === 10 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>
@@ -1049,7 +1049,7 @@ if(media1){
                         </div>
                     <div className={active_media? "controller_layout": "media_off"}>
 
-                        <button id="controller_layout_back_button"  onClick = {display_tile}>
+                        <button id="controller_layout_back_button"  onTouchEnd = {display_tile}>
                             <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
                         </button>
 
@@ -1100,7 +1100,7 @@ if(media1){
                 
                         </div>
 
-                        <button className={media6 ||media7 || media8? "btn_circle": "media_off"} id="reboot_button" onClick={()=>appleTvRebootMenu("menu")}> 
+                        <button className={media6 ||media7 || media8? "btn_circle": "media_off"} id="reboot_button" onTouchEnd={()=>appleTvRebootMenu("menu")}> 
                             <p> REBOOT </p>
                         </button>
 
@@ -1151,12 +1151,12 @@ if(media1){
            
                       
                             <button className="btn_square">
-                                <img className="btn_image"src={arrow} onClick={()=> tvVolState("down")}/>
+                                <img className="btn_image"src={arrow} onTouchEnd={()=> tvVolState("down")}/>
                             </button>
                             
                            
 
-                            <button className="btn_square_wide" onClick={()=> tvVolState("mute")}>
+                            <button className="btn_square_wide" onTouchEnd={()=> tvVolState("mute")}>
                                 {roomMute? 
                                 <>
                                  <img src={mute} className="volume_mute_btn" />
@@ -1171,7 +1171,7 @@ if(media1){
                             }
                             </button>
 
-                            <button className="btn_square" onClick={()=> tvVolState("up")}>
+                            <button className="btn_square" onTouchEnd={()=> tvVolState("up")}>
                                 <img className="btn_image"src={arrow} id="flip"/>
                             </button>
 
@@ -1189,7 +1189,7 @@ if(media1){
                             
                             
                             
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_1")}>
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_1")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_1_name}</p>
                                 </div>
@@ -1200,7 +1200,7 @@ if(media1){
                             </div>
 
 
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_2")}>
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_2")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_2_name}</p>
                                 </div>
@@ -1210,7 +1210,7 @@ if(media1){
                                 </button>
                             </div>
 
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_3")}>
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_3")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_3_name}</p>
                                 </div>
@@ -1220,7 +1220,7 @@ if(media1){
                                 </button>
                             </div>
 
-                            <div className="light_tile" onClick={() => sliderValue(true,"light_4")}>
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_4")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_4_name}</p>
                                 </div>
@@ -1230,7 +1230,7 @@ if(media1){
                                 </button>
                             </div>
 
-                            <div className="display_none" onClick={() => sliderValue(true,"light_5")}>
+                            <div className="display_none" onTouchEnd={() => sliderValue(true,"light_5")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_5_name}</p>
                                 </div>

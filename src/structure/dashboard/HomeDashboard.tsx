@@ -86,7 +86,7 @@ const HomeDashboard = () => {
 
                 <div className="power_menu_button">
                     <Link to={"/"} className="yes_reboot"> 
-                        <button className="yes_reboot" onClick={()=> powerMenu("menu_off")}> 
+                        <button className="yes_reboot" onTouchEnd={()=> powerMenu("menu_off")}> 
                             <p>YES</p> 
                         </button> 
                     </Link>

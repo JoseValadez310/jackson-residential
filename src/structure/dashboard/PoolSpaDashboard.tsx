@@ -164,7 +164,7 @@ const PoolSpa = () =>{
 
             <div className="current_temp_wrapper">
 
-                <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","609",true),window.CrComLib.publishEvent("b","609",false), console.log("pool down 609")}}>
+                <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","609",true),window.CrComLib.publishEvent("b","609",false), console.log("pool down 609")}}>
                     <img className="btn_image" src={arrow} />
                 </button>
 
@@ -173,15 +173,15 @@ const PoolSpa = () =>{
                         <p> Pool Set Point </p>
                    </div>
 
-                <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","608",true),window.CrComLib.publishEvent("b","608",false), console.log("pool up 608")}}>
+                <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","608",true),window.CrComLib.publishEvent("b","608",false), console.log("pool up 608")}}>
                     <img className="btn_image" id="flip" src={arrow}  />
                 </button>
 
            </div>
 
            <div className="pool_control_button">
-            <button className="btn_square_wide" id = {poolHeat?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","606",true),window.CrComLib.publishEvent("b","606",false), console.log("pool heat 606")}}> <p>Pool Heat </p></button>
-            <button className="btn_square_wide" id = {poolMode?"active_btn": ""}  onClick={() => {window.CrComLib.publishEvent("b","607",true),window.CrComLib.publishEvent("b","607",false), console.log("pool mode 607")}}> <p>Pool Mode  </p></button>
+            <button className="btn_square_wide" id = {poolHeat?"active_btn": ""} onTouchEnd={() => {window.CrComLib.publishEvent("b","606",true),window.CrComLib.publishEvent("b","606",false), console.log("pool heat 606")}}> <p>Pool Heat </p></button>
+            <button className="btn_square_wide" id = {poolMode?"active_btn": ""}  onTouchEnd={() => {window.CrComLib.publishEvent("b","607",true),window.CrComLib.publishEvent("b","607",false), console.log("pool mode 607")}}> <p>Pool Mode  </p></button>
            </div>
 
 
@@ -193,11 +193,11 @@ const PoolSpa = () =>{
 
             <div className="air_temp_wrapper"><p>{airTemp}</p> <p>Air Temp.</p></div>
 
-            <button className="btn_square_wide" id = {filter?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","600",true),window.CrComLib.publishEvent("b","600",false), console.log("Filter 600")}}> <p>Filter          </p></button>
-            <button className="btn_square_wide" id = {solarHeat?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","601",true),window.CrComLib.publishEvent("b","601",false), console.log("Solar heat 601")}}> <p>Solar Heat      </p></button>
-            <button className="btn_square_wide" id = {solarHeatPref?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","602",true),window.CrComLib.publishEvent("b","602",false), console.log("solar heat pref 602")}}> <p>Solar Heat Pref </p></button>
-            <button className="btn_square_wide" id = {spaJets?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","603",true),window.CrComLib.publishEvent("b","603",false), console.log("spa jet 603")}}> <p>Spa Jets        </p></button>
-            <button className="btn_square_wide" id = {poolLight?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","604",true),window.CrComLib.publishEvent("b","604",false), console.log("pool light 604")}}> <p>Pool Lights     </p></button>
+            <button className="btn_square_wide" id = {filter?"active_btn": ""} onTouchEnd={() => {window.CrComLib.publishEvent("b","600",true),window.CrComLib.publishEvent("b","600",false), console.log("Filter 600")}}> <p>Filter          </p></button>
+            <button className="btn_square_wide" id = {solarHeat?"active_btn": ""} onTouchEnd={() => {window.CrComLib.publishEvent("b","601",true),window.CrComLib.publishEvent("b","601",false), console.log("Solar heat 601")}}> <p>Solar Heat      </p></button>
+            <button className="btn_square_wide" id = {solarHeatPref?"active_btn": ""} onTouchEnd={() => {window.CrComLib.publishEvent("b","602",true),window.CrComLib.publishEvent("b","602",false), console.log("solar heat pref 602")}}> <p>Solar Heat Pref </p></button>
+            <button className="btn_square_wide" id = {spaJets?"active_btn": ""} onTouchEnd={() => {window.CrComLib.publishEvent("b","603",true),window.CrComLib.publishEvent("b","603",false), console.log("spa jet 603")}}> <p>Spa Jets        </p></button>
+            <button className="btn_square_wide" id = {poolLight?"active_btn": ""} onTouchEnd={() => {window.CrComLib.publishEvent("b","604",true),window.CrComLib.publishEvent("b","604",false), console.log("pool light 604")}}> <p>Pool Lights     </p></button>
         </div>
 
         <div className="spa_container">
@@ -215,7 +215,7 @@ const PoolSpa = () =>{
 
             <div className="current_temp_wrapper">
 
-                    <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","614",true),window.CrComLib.publishEvent("b","614",false), console.log("spa temp decrease 614")}}>
+                    <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","614",true),window.CrComLib.publishEvent("b","614",false), console.log("spa temp decrease 614")}}>
                         <img className="btn_image" src={arrow} />
                     </button>
 
@@ -224,15 +224,15 @@ const PoolSpa = () =>{
                             <p> Pool Set Point </p>
                     </div>
 
-                    <button className="btn_circle" onClick={() => {window.CrComLib.publishEvent("b","613",true),window.CrComLib.publishEvent("b","613",false), console.log("spa temp increase 613")}}>
+                    <button className="btn_circle" onTouchEnd={() => {window.CrComLib.publishEvent("b","613",true),window.CrComLib.publishEvent("b","613",false), console.log("spa temp increase 613")}}>
                         <img className="btn_image" id="flip" src={arrow} />
                     </button>
 
             </div>
 
             <div className="pool_control_button">
-                <button className="btn_square_wide" id = {spaHeat?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","611",true),window.CrComLib.publishEvent("b","611",false), console.log("spa heat 611")}}> <p>Spa Heat   </p></button>
-                <button className="btn_square_wide" id = {spaMode?"active_btn": ""} onClick={() => {window.CrComLib.publishEvent("b","612",true),window.CrComLib.publishEvent("b","612",false), console.log("spa mode 612")}}> <p>Spa Mode   </p></button>
+                <button className="btn_square_wide" id = {spaHeat?"active_btn": ""} onTouchEnd={() => {window.CrComLib.publishEvent("b","611",true),window.CrComLib.publishEvent("b","611",false), console.log("spa heat 611")}}> <p>Spa Heat   </p></button>
+                <button className="btn_square_wide" id = {spaMode?"active_btn": ""} onTouchEnd={() => {window.CrComLib.publishEvent("b","612",true),window.CrComLib.publishEvent("b","612",false), console.log("spa mode 612")}}> <p>Spa Mode   </p></button>
             </div>
 
 

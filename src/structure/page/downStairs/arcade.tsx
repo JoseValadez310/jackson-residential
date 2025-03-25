@@ -1148,7 +1148,7 @@ if(media1){
 
 
                         <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
-                        <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
+                        <button onClick={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "display_none"}   >  <img src={lights}  /> </button>
                 </div>
                 
               

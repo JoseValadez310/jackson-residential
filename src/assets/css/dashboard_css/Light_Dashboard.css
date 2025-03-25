@@ -88,133 +88,237 @@
 }
 
 .btn_location_1{
-    height: 4rem;
-    width: 5rem;
+    height: 8.7rem;
+    width: 7.75rem;
     position: absolute;
-    left: 480px;
-    top: 518px;
+    left: 450px;
+    top: 315px;
     border-radius: 10px;
     border: none;
-    background-color: red;
+    background-color: transparent;
+    
 }
+    .light_icon_z1{
+
+        background-color: rgb(243, 84, 84);;        
+        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+
+    }
     
 .btn_location_2{
+    display: none;
+ }
+
+ .btn_location_3{
+    background-color: transparent;
+    height: 4.5rem;
+    width: 5rem;
+    position: absolute;
+    left: 700px;
+    top: 430px;
+    border-radius: 10px;
+    border: none;
+
+ }
+    .light_icon_z3{ 
+        background-color: rgb(243, 84, 84);;
+        position: relative;
+        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        top: 32px;
+        backdrop-filter: blur(25px);
+    }
+
+ .btn_location_4{
+    height: 5rem;
+    width: 6.5rem;
+    position: absolute;
+    left: 790px;
+    top: 370px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+ }
+    .light_icon_z4{ 
+        background-color: rgb(243, 84, 84);;
+        position: relative;
+        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        bottom: 20px;
+        backdrop-filter: blur(25px);
+        
+    }
+    
+
+ .btn_location_5{
     height: 5.5rem;
-    width: 4rem;
+    width: 6rem;
     position: absolute;
     left: 621px;
     top: 545px;
     border-radius: 10px;
     border: none;
-    background-color: blue;
+    background-color: transparent;
  }
-
- .btn_location_3{
-    height: 5.5rem;
-    width: 5.5rem;
-    position: absolute;
-    left: 0px;
-    top: 100px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(41, 46, 42);
- }
-
- .btn_location_4{
-    height: 5.5rem;
-    width: 5.5rem;
-    position: absolute;
-    left: 0px;
-    top: 200px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(192, 190, 50);
- }
-
- .btn_location_5{
-    height: 5.5rem;
-    width: 5.5rem;
-    position: absolute;
-    left: 0px;
-    top: 300px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(185, 156, 113);
- }
+    .light_icon_z5{ 
+        background-color: rgb(243, 84, 84);;
+        
+        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+        position: relative;
+        right: 15px;
+        top: 55px;
+    }
 
  .btn_location_6{
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 5rem;
+    width: 6.5rem;
     position: absolute;
-    left: 100px;
-    top: 500px;
+    left: 790px;
+    top: 460px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(7, 53, 121);
+    background-color: transparent;
+    
  }
+    .light_icon_z6{
+        background-color: rgb(243, 84, 84);;        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+        position: relative;
+        left: 75px;
+        bottom: 26px;
+    }
 
  .btn_location_7{
     height: 5.5rem;
-    width: 5.5rem;
+    width: 6.1rem;
     position: absolute;
-    left: 0px;
-    top: 400px;
+    left: 575px;
+    top: 360px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(9, 22, 65);;
+    background-color: transparent
  }
+    .light_icon_z7{
+
+background-color: rgb(243, 84, 84);;        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+        position: relative;
+        left: 30px;
+    }
 
  .btn_location_8{
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 8.5rem;
+    width: 3rem;
     position: absolute;
-    left: 0px;
+    left: 570px;
     top: 500px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(43, 153, 49);
+    background-color: transparent;
  }
+    .light_icon_z8{
+
+background-color: rgb(243, 84, 84);;        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+        position: relative;
+        top: 25px; 
+    }
 
  .btn_location_9{
     height: 5.5rem;
-    width: 5.5rem;
+    width: 4.75rem;
     position: absolute;
-    left: 100px;
-    top: 100px;
+    left: 620px;
+    top: 450px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(192, 134, 25);
+    background-color: transparent;
  }
+    .light_icon_z9{
+
+background-color: rgb(243, 84, 84);;        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+        position: relative;
+        bottom:15px; 
+    }
  .btn_location_10{
     height: 5.5rem;
-    width: 5.5rem;
+    width: 6rem;
     position: absolute;
-    left: 100px;
-    top: 200px;
+    left: 470px;
+    top: 510px;
     border-radius: 10px;
-    border: none;
-    background-color: rgb(53, 52, 52);
+    border: none; 
+    background-color: transparent;
  }
+    .light_icon_z10{
+        background-color: rgb(243, 84, 84);;
+        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+        position: relative;
+        top:45px;
+        left: 5px; 
+    }
  .btn_location_11{
     height: 5.5rem;
     width: 5.5rem;
     position: absolute;
-    left: 100px;
-    top: 300px;
+    left: 365px;
+    top: 470px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(189, 15, 122);
+    background-color: transparent;
  }
+    .light_icon_z11{
+        background-color: rgb(243, 84, 84);;
+        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+        position: relative;
+        top:2px;
+        right: 45px; 
+    }
  .btn_location_12{
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 3.25rem;
+    width: 6.5rem;
     position: absolute;
-    left: 100px;
-    top: 400px;
+    left: 470px;
+    top: 455px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(30, 73, 136);
+    background-color: transparent;
+    
  }
+ .light_icon_z12{
+    background-color: rgb(243, 84, 84);;
+    height: 2.5rem;
+    box-shadow: 0px 0px 10px;
+    border-radius: 100%;
+    backdrop-filter: blur(25px);
+    position: relative;
+    top:7px;
+    right: 40px; 
+}
+    
 
 
 
@@ -223,26 +327,53 @@
     height: 5.5rem;
     width: 5.5rem;
     position: absolute;
-    left: 100px;
-    top: 100px;
+    left: 350px;
+    top: 320px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(30, 73, 136);
+    background-color: transparent;
+    
  }
+    .light_icon_z13{
+        background-color: rgb(243, 84, 84);;
+        height: 2.5rem;
+        box-shadow: 0px 0px 10px;
+        border-radius: 100%;
+        backdrop-filter: blur(25px);
+        position: relative;
+        bottom: 15px;
+        right: 14px;
+      
+    }
+        
 
  .btn_location_14{
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 12rem;
+    width: 14rem;
     position: absolute;
-    left: 100px;
-    top: 200px;
+    left: 615px;
+    top: 450px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(30, 73, 136);
+    background-color: transparent;
+    
  }
+ .light_icon_z14{
+    background-color: rgb(243, 84, 84);
+    height: 2.5rem;
+    box-shadow: 0px 0px 10px;
+    border-radius: 100%;
+    backdrop-filter: blur(25px);
+    position: relative;
+    top:15px;
+    right: 0px;
+  
+}
+    
  
 
  .btn_location_15{
+    display: none;
     height: 5.5rem;
     width: 5.5rem;
     position: absolute;
@@ -250,11 +381,19 @@
     top: 300px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(30, 73, 136);
+  
  }
  
  
  
+
+ #lightZoneActive{
+    background-color: rgb(209, 209, 117);
+    box-sizing: border-box;
+    padding: 3px;
+    animation: light_on 3s infinite ;
+ }
+
 
 
 /*
@@ -724,4 +863,23 @@
          transform: translateY(100%);
    
      }
+}
+
+
+
+@keyframes light_on{
+    0%{
+        box-shadow: 0px 0px 25px rgb(250, 204, 1);    
+    }
+
+
+    50%{
+        box-shadow: 0px 0px 15px rgb(250, 204, 1);   
+    }
+
+
+    100%{
+        box-shadow: 0px 0px 25px rgb(250, 204, 1);   
+    }
+
 }

@@ -651,6 +651,7 @@ if(media1){
                 console.log("Turning off room join", roomLocation)
                 setTvPowerMenu(!tvPowerMenu)
                 window.CrComLib.publishEvent("n",roomLocation,0)
+                setTrigger1(!trigger1)
 
             }
             }

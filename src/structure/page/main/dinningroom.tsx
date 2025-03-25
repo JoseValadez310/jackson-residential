@@ -129,8 +129,8 @@ const FamilyRoom = () =>{
     const [roomMute, setRoomMute]     = useState(false)
     
     const audio_volume_join   = "102" // dining room
-    const audio_mute_join     = "510"
-    const audio_increase_join = "509"
+    const audio_mute_join     = "509"
+    const audio_increase_join = "510"
     const audio_decrease_join = "508"
 
 
@@ -652,6 +652,7 @@ if(media1){
                 console.log("Turning off room join", roomLocation)
                 setTvPowerMenu(!tvPowerMenu)
                 window.CrComLib.publishEvent("n",roomLocation,0)
+                setTrigger1(!trigger1)
 
             }
             }

@@ -625,15 +625,12 @@ const LightDashboard = () => {
           <img className="btn_image" src={light_3_fb_BAR ? lightOn : lightOff} alt={light_3_title_BAR} />
           <p>{light_3_title_BAR}</p>
         </button>
-      </div>
-    </>
-  );
+     
+  
 
-  // Zone: Billiard Room
-  const lightZone_BILLIARD_ROOM = (
-    <>
-      <h2 className="light_menu_title">Billiard Room</h2>
-      <div className="button_list">
+
+          <h2>Billiards </h2>
+      
         <button className="btn_square" onClick={() => {
           window.CrComLib.publishEvent("b", light_1_join_BILLIARD_ROOM, true);
           window.CrComLib.publishEvent("b", light_1_join_BILLIARD_ROOM, false);
@@ -1680,18 +1677,100 @@ const LightDashboard = () => {
                     <>
                         <div className={map1}> 
                             <img className="floor_1_img" src={floor1}/>
-                            <button className="btn_location_1" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_1"))}>  Z1  </button>
-                            <button className="btn_location_2" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_2"))}>  Z2  </button>
-                            <button className="btn_location_3" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_3"))}>  Z3  </button>
-                            <button className="btn_location_4" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_4"))}>  Z4  </button>
-                            <button className="btn_location_5" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_5"))}>  Z5  </button>
-                            <button className="btn_location_6" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_6"))}>  Z6  </button>
-                            <button className="btn_location_7" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_7"))}>  Z7  </button>
-                            <button className="btn_location_8" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_8"))}>  Z8  </button>
-                            <button className="btn_location_9" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_9"))}>  Z9  </button>
-                            <button className="btn_location_10" onClick={()=>(lightMenu("openMap1"), lightZone("zone_10"))}> Z10 </button>
-                            <button className="btn_location_11" onClick={()=>(lightMenu("openMap1"), lightZone("zone_11"))}> Z11 </button>
-                            <button className="btn_location_12" onClick={()=>(lightMenu("openMap1"), lightZone("zone_12"))}> Z12 </button>
+
+                            <button className="btn_location_1" onClick={()=>(lightMenu("openMap1"),lightZone("zone_1"))}>
+                                {light_1_fb_BAR || light_2_fb_BAR || light_3_fb_BAR || light_1_fb_BILLIARD_ROOM || light_2_fb_BILLIARD_ROOM || light_3_fb_BILLIARD_ROOM || light_4_fb_BILLIARD_ROOM? 
+                                <img className="light_icon_z1" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z1" src={lightOff} />  
+                                }
+                            </button>
+
+                            <button className="btn_location_2" onClick={()=>(lightMenu("openMap1"),lightZone("zone_2"))}></button>
+
+                            <button className="btn_location_3" onClick={()=>(lightMenu("openMap1"),lightZone("zone_3"))}>  
+                                {light_1_fb_BREAKFAST || light_2_fb_BREAKFAST || light_3_fb_BREAKFAST  || light_4_fb_BREAKFAST ? 
+                                <img className="light_icon_z3" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z3" src={lightOff} />  
+                                } 
+                             </button>
+
+                            <button className="btn_location_4" onClick={()=>(lightMenu("openMap1"),lightZone("zone_4"))}>  
+                                {light_1_fb_BUTLER_PANTRY ? 
+                                <img className="light_icon_z4" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z4" src={lightOff} />  
+                                } 
+                            </button>
+
+
+                            <button className="btn_location_5" onClick={()=>(lightMenu("openMap1"),lightZone("zone_5"))}>  
+                                {light_1_fb_DINING_ROOM || light_2_fb_DINING_ROOM || light_3_fb_DINING_ROOM   || light_4_fb_DINING_ROOM  ? 
+                                <img className="light_icon_z5" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z5" src={lightOff} />  
+                                } 
+                            </button>
+
+                            <button className="btn_location_6" onClick={()=>(lightMenu("openMap1"),lightZone("zone_6"))}>
+                              {light_1_fb_ELEVATOR_HALL|| light_2_fb_ELEVATOR_HALL|| light_3_fb_ELEVATOR_HALL  ? 
+                                <img className="light_icon_z6" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z6" src={lightOff} />  
+                                } 
+                            </button>
+
+
+                            <button className="btn_location_7" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_7"))}>    
+                                {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM   ? 
+                                <img className="light_icon_z7" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z7" src={lightOff} />  
+                                } 
+                            </button>
+
+                            <button className="btn_location_8" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_8"))}>   
+                                {light_1_fb_FOYER|| light_2_fb_FOYER || light_3_fb_FOYER ? 
+                                <img className="light_icon_z8" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z8" src={lightOff} />  
+                                } 
+                            </button>
+
+                            <button className="btn_location_9" onClick={()=>(lightMenu("openMap1"),  lightZone("zone_9"))}> 
+                                {light_1_fb_KITCHEN|| light_2_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN ? 
+                                <img className="light_icon_z9" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z9" src={lightOff} />  
+                                } 
+                            </button>
+
+
+                            <button className="btn_location_10" onClick={()=>(lightMenu("openMap1"), lightZone("zone_10"))}> 
+                                {light_1_fb_LIVING_ROOM|| light_2_fb_LIVING_ROOM || light_3_fb_LIVING_ROOM || light_4_fb_LIVING_ROOM|| light_5_fb_LIVING_ROOM || light_6_fb_LIVING_ROOM? 
+                                <img className="light_icon_z10" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z10" src={lightOff} />  
+                                }  
+                            </button>
+
+
+                            <button className="btn_location_11" onClick={()=>(lightMenu("openMap1"), lightZone("zone_11"))}> 
+                                {light_1_fb_OFFICE_POWDER || light_2_fb_OFFICE_POWDER  ? 
+                                <img className="light_icon_z11" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z11" src={lightOff} />  
+                                } 
+                            </button>
+
+                            <button className="btn_location_12" onClick={()=>(lightMenu("openMap1"), lightZone("zone_12"))}> 
+                                {light_1_fb_STEVE_S_OFFICE|| light_2_fb_STEVE_S_OFFICE  ? 
+                                <img className="light_icon_z12" id="lightZoneActive" src={lightOn} />  
+                                :
+                                <img className="light_icon_z12" src={lightOff} />  
+                                } 
+                            </button>
                           
                         </div> 
 
@@ -1705,7 +1784,7 @@ const LightDashboard = () => {
 
 
                             {zone_1? lightZone_BAR : <></>}
-                            {zone_2? lightZone_BILLIARD_ROOM: <></>}
+                            {zone_2? lightZone_BAR: <></>}
                             {zone_3? lightZone_BREAKFAST : <></>}
                             {zone_4? lightZone_BUTLER_PANTRY : <></>}
                             {zone_5? lightZone_DINING_ROOM : <></>}
@@ -1736,8 +1815,22 @@ const LightDashboard = () => {
                     <>
                             <div className={map2}> 
                                 <img className="floor_2_img" src={floor2}/>
-                                <button className="btn_location_13" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_13"))}>  Z13  </button>
-                                <button className="btn_location_14" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_14"))}>  Z14  </button>
+
+                                <button className="btn_location_13" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_13"))}>  
+                                  {light_1_fb_BAR || light_2_fb_HALL || light_3_fb_HALL || light_4_fb_HALL || light_5_fb_HALL|| light_6_fb_HALL? 
+                                  <img className="light_icon_z13" id="lightZoneActive" src={lightOn} />  
+                                  :
+                                  <img className="light_icon_z13" src={lightOff} />  
+                                  }
+                                </button>
+
+                                <button className="btn_location_14" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_14"))}>  
+                                  {light_1_fb_MEDIA_ROOM || light_2_fb_MEDIA_ROOM || light_3_fb_MEDIA_ROOM || light_4_fb_MEDIA_ROOM || light_5_fb_MEDIA_ROOM? 
+                                  <img className="light_icon_z14" id="lightZoneActive" src={lightOn} />  
+                                  :
+                                  <img className="light_icon_z14" src={lightOff} />  
+                                  }
+                                </button>
                                 <button className="btn_location_15" onClick={()=>(lightMenu("openMap2"),  lightZone("zone_15"))}>  Z14  </button>
 
                                

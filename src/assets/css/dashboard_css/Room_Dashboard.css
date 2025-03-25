@@ -59,15 +59,13 @@
 }
 
 
-.room_card{
+.room_card, .room_card_active{
     animation: room_selection 1000ms;
     height: 15rem;
     width: 15rem;
-
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
-
     justify-items: center;
     align-items: center;
     background-color: transparent;
@@ -77,21 +75,65 @@
     box-shadow: -3px -3px 5px rgb(68, 67, 67), 1px 1px 5px rgb(0, 0, 0);
     position: relative;
     z-index: 1;
- 
   }
 
-  .room_card::before{
-    content: " ";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(70, 70, 70);
-    opacity: 0.75;
-    z-index: 0;
-    border-radius: 5px;
-}
+    .room_card::before{
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(59, 59, 59);
+        opacity: 0.6;
+        z-index: 0;
+        border-radius: 5px;
+    }
+
+    .room_card_active::before{
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        z-index: 0;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: 300% 300%;
+        background-image: linear-gradient(-45deg,  rgb(8, 5, 83)0%,rgb(8, 5, 83) 5%, rgb(0, 195, 255) 25%, rgb(0, 195, 255) 51%, rgb(8, 5, 83) 100%);
+        -webkit-animation: AnimateBG 6s ease infinite;
+                animation: AnimateBG 6s ease infinite;
+      }
+      
+      @-webkit-keyframes AnimateBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      
+      @keyframes AnimateBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+
     .test{
         grid-column: 1/4;
         grid-row: 1/4;
@@ -113,6 +155,19 @@
         border-bottom:solid 1px gray ;
         font-size: 1.25rem;
     }
+
+    .room_card_active p{
+        font-size: 2rem;
+        grid-column: 1/4;
+        grid-row: 2/3;
+        font-size: 1rem;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        width: 80%;
+        border-bottom:solid 1px gray ;
+        font-size: 1.25rem;
+    }
+
 
     .icon_preview{
         grid-column: 1/4;

@@ -240,14 +240,15 @@
         border-radius: 0;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        
+        width: 75%
+
 
     }
 
     #chan_title{
         grid-column: 3;
         grid-row: 2;
-
+        width: 75%;
         border-radius: 0%;
     
     }
@@ -264,8 +265,18 @@
         border-radius: 0;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        width: 75%
     }
 
+    #chan_down img{
+        padding: 10px;
+        height: 50%;
+    }
+
+    #chan_up img{
+        padding: 10px;
+        height: 50%;
+    }
 
 
 

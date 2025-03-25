@@ -790,10 +790,14 @@
                         .power_menu_button button p{
                           font-size: 1.5rem;
                         }
+                        .yes_reboot button{
+                            height: 100%;
+                            width: 100%;   
+                        }
 
                         .power_menu_overlay .yes_reboot  p {
-                            height: 60%;
-                            width: 30%;
+                            height: 100%;
+                            width: 100%;
                             border-radius: 15px;
                             border: none;
                             z-index: 999;

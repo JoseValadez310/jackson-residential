@@ -1528,7 +1528,7 @@ const Main_1 = () => {
                                 </button>
 
                                 <button className="transport_button" onClick={()=> dtvTransports("key9")}>
-                                    <p>9</p>
+                                    <p style={{color:"black"}}>9</p>
                                 </button>
                         
                                 <button className="transport_button" id="small_text_bb" onClick={()=> dtvTransports("exit_key")}>
@@ -1570,81 +1570,81 @@ const Main_1 = () => {
                         
 
                             <button className="transport_button" onClick={() => favChannel("206")}>
-                                <img src={chan206} alt="" />
+                                <img style={{height:"1.5rem"}} src={chan206} alt="" />
                             </button>
 
                             <button className="transport_button" onClick={() => favChannel("209")}>
-                                <img src={chan209} alt="" />
+                                <img style={{height:"1.5rem"}} src={chan209} alt="" />
                             </button>
 
                             <button className="transport_button" id ="NFL_chan" onClick={() => favChannel("9552")}>
                                 <img src={NFL} alt="" />
-                                <p>9552</p>
+                                <p style={{color:"black"}}>9552</p>
                             </button>
                             
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9553")}>
                             <img src={NFL} alt="" />
-                                <p>9553</p>
+                                <p style={{color:"black"}}>9553</p>
                             </button>
 
                             <button className="transport_button" id ="NFL_chan" onClick={() => favChannel("9554")}>
                             <img src={NFL} alt="" />
-                                <p>9554</p>
+                                <p style={{color:"black"}}>9554</p>
                             </button>
 
                             <button className="transport_button" id ="NFL_chan" onClick={() => favChannel("9555")}>
                             <img src={NFL} alt="" />
-                                <p>9555</p>
+                                <p style={{color:"black"}}>9555</p>
                             </button>
 
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9556")}>
                             <img src={NFL} alt="" />
-                                <p>9556</p>
+                                <p style={{color:"black"}}>9556</p>
                             </button>
 
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9557")}>
                             <img src={NFL} alt="" />
-                                <p>9557</p>
+                                <p style={{color:"black"}}>9557</p>
                             </button>
 
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9558")}>
                             <img src={NFL} alt="" />
-                                <p>9558</p>
+                                <p style={{color:"black"}}>9558</p>
                             </button>
 
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9559")}>
                             <img src={NFL} alt="" />
-                                <p>9559</p>
+                                <p style={{color:"black"}}>9559</p>
                             </button>
 
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9560")}>
                             <img src={NFL} alt="" />
-                                <p>9560</p>
+                                <p style={{color:"black"}}>9560</p>
                             </button>
 
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9561")}>
                             <img src={NFL} alt="" />
-                                <p>9561</p>
+                                <p style={{color:"black"}}>9561</p>
                             </button>
 
                             <button className="transport_button" id ="NFL_chan" onClick={() => favChannel("9562")}>
                             <img src={NFL} alt="" />
-                                <p>9562</p>
+                                <p style={{color:"black"}}>9562</p>
                             </button>
 
                             <button className="transport_button" id ="NFL_chan" onClick={() => favChannel("9563")}>
                             <img src={NFL} alt="" />
-                                <p>9563</p>
+                                <p style={{color:"black"}}>9563</p>
                             </button>
                             
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9564")}>
                             <img src={NFL} alt="" />
-                                <p>9564</p>
+                                <p style={{color:"black"}}>9564</p>
                             </button>
 
                             <button className="transport_button"  id ="NFL_chan"onClick={() => favChannel("9565")}>
                             <img src={NFL} alt="" />
-                                <p>9565</p>
+                                <p style={{color:"black"}}>9565</p>
                             </button>
                         
                             

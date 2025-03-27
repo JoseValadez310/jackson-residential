@@ -300,7 +300,7 @@ const sourceDisplay = (tvSelection:string) =>{
 ---------------------------------------------------------------------------- Light section  
 */
 
-const sliderValue = (value: boolean, id: string) => {
+    const sliderValue = (value: boolean, id: string) => {
     console.log(value)
 
 
@@ -362,7 +362,7 @@ const sliderValue = (value: boolean, id: string) => {
 
         console.log("sending join", light_8_join)
      }
-    }
+        }
 
 
 /*
@@ -997,6 +997,11 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","1",true)
+                window.CrComLib.publishEvent("b","1",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,1)
+
+                
                 break;
 
             case 2:
@@ -1008,6 +1013,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","2",true)
+                window.CrComLib.publishEvent("b","2",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,2)
                 break;
 
             case 5:
@@ -1019,6 +1027,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","5",true)
+                window.CrComLib.publishEvent("b","5",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,5)
                 break;
 
             case 6:   
@@ -1030,6 +1041,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","6",true)
+                window.CrComLib.publishEvent("b","6",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,6)
                 break;
 
             case 7:
@@ -1042,6 +1056,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","7",true)
+                window.CrComLib.publishEvent("b","7",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,7)
                 break;
 
             case 8:
@@ -1054,6 +1071,9 @@ if(media1 ){
                 setMedia6(true)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","8",true)
+                window.CrComLib.publishEvent("b","8",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,8)
                 break;
 
             case 9:
@@ -1065,6 +1085,10 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(true)
                 setMedia8(false)
+
+                window.CrComLib.publishEvent("b","9",true)
+                window.CrComLib.publishEvent("b","9",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,9)
                 break;
 
             case 10:
@@ -1076,6 +1100,11 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(true)
+
+                window.CrComLib.publishEvent("b","10",true)
+                window.CrComLib.publishEvent("b","10",false)
+
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,10)
                 break;
         
             default:
@@ -1104,6 +1133,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","1",true)
+                window.CrComLib.publishEvent("b","1",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,1)
                 break;
 
             case 2:
@@ -1115,6 +1147,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","2",true)
+                window.CrComLib.publishEvent("b","2",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,2)
                 break;
 
             case 5:
@@ -1126,6 +1161,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","5",true)
+                window.CrComLib.publishEvent("b","5",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,5)
                 break;
 
             case 6:   
@@ -1137,6 +1175,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","6",true)
+                window.CrComLib.publishEvent("b","6",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,6)
                 break;
 
             case 7:
@@ -1149,6 +1190,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","7",true)
+                window.CrComLib.publishEvent("b","7",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,7)
                 break;
 
             case 8:
@@ -1161,6 +1205,9 @@ if(media1 ){
                 setMedia6(true)
                 setMedia7(false)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","8",true)
+                window.CrComLib.publishEvent("b","8",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,8)
                 break;
 
             case 9:
@@ -1172,6 +1219,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(true)
                 setMedia8(false)
+                window.CrComLib.publishEvent("b","9",true)
+                window.CrComLib.publishEvent("b","9",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,9)
                 break;
 
             case 10:
@@ -1183,6 +1233,9 @@ if(media1 ){
                 setMedia6(false)
                 setMedia7(false)
                 setMedia8(true)
+                window.CrComLib.publishEvent("b","10",true)
+                window.CrComLib.publishEvent("b","10",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,10)
                 break;
         
             default:

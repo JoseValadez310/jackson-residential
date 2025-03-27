@@ -50,7 +50,7 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Basic information regarding the page
 */
-    const roomName = "Game Room"
+    const roomName = "Guest Bathroom"
 /*
 ---------------------------------------------------------------------------- Room dashboard apps 
 */
@@ -85,7 +85,7 @@ const FamilyRoom = () =>{
     let media_7:string
     let media_8:string
 
-    const roomLocation:string = "15"
+    const roomLocation:string = "" // needs location
 
     const sub_title_1 = "BluRay"
     const sub_title_2 = "Kaleidescape"
@@ -128,10 +128,10 @@ const FamilyRoom = () =>{
     const [roomVolume,setRoomVolume]  = useState(0)
     const [roomMute, setRoomMute]     = useState(false)
     
-    const audio_volume_join   = "114"
-    const audio_increase_join = "558"
-    const audio_mute_join     = "557"
-    const audio_decrease_join = "556"
+    const audio_volume_join   = "" // needs
+    const audio_mute_join     = "" //
+    const audio_increase_join = "" //
+    const audio_decrease_join = "" //
 
 
 /*
@@ -144,24 +144,24 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
-    const light_1_join = "250"
-    const light_2_join = "251"
-    const light_3_join = "252"
-    const light_4_join = "254"
-    const light_5_join = "255"
-    const light_6_join = "256"
-    const light_7_join = "257"
-    const light_8_join = "null"
+    const light_1_join = ""
+    const light_2_join = ""
+    const light_3_join = ""
+    const light_4_join = ""
+    const light_5_join = ""
+    const light_6_join = ""
+    const light_7_join = ""
+    const light_8_join = ""
 
 
-    const light_1_name:string = "Bar Ceiling"
-    const light_2_name:string = "Bar Lights"
-    const light_3_name:string = "Bar Accent"
+    const light_1_name:string = "TBD"
+    const light_2_name:string = "TBD"
+    const light_3_name:string = "TBD"
+    const light_4_name:string = "TBD"
+    const light_5_name:string = "TBD"
 
-    const light_4_name:string = "Billiard Pendant"
-    const light_5_name:string = "Billiard Path"
-    const light_6_name:string = "Billiard Sconces"
-    const light_7_name:string = "Billiard Ceiling"
+    const light_6_name:string = "null"
+    const light_7_name:string = "null"
     const light_8_name:string = "null"
    
     const [light_1, setLight_1] = useState(false)
@@ -212,6 +212,7 @@ const FamilyRoom = () =>{
         const light_7 = window.CrComLib.subscribeState("b",`${light_7_join}`,(value: boolean) => {setLight_7(value);});
         const light_8 = window.CrComLib.subscribeState("b",`${light_8_join}`,(value: boolean) => {setLight_8(value);});
   
+
         const activeSource = window.CrComLib.subscribeState("n",roomLocation,(value: number) => {setActiveSource(value);});
         return () => {
 
@@ -608,7 +609,6 @@ if(media1){
             window.CrComLib.publishEvent("n",`${roomLocation}`,10)
         } 
         }
-
     // Volume control for current room
         const tvVolState = (id:string) =>{
 
@@ -651,7 +651,6 @@ if(media1){
                 setTvPowerMenu(!tvPowerMenu)
                 window.CrComLib.publishEvent("n",roomLocation,0)
                 setTrigger1(!trigger1)
-
             }
             }
     
@@ -756,7 +755,6 @@ if(media1){
         }
 
        
-
 
         useEffect(()=>{
             switch (activeSource) {
@@ -887,9 +885,9 @@ if(media1){
 
             
                 <div className="nav">
-                <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}     className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
+                <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}      className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
                         <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
-                        <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
+                        <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "display_none"}   >  <img src={lights}  /> </button>
                 </div>
                 
               
@@ -930,7 +928,6 @@ if(media1){
                                 <p>YES</p> 
                             </button> 
                         </div>
-                        
                         <button className="no_reboot" onTouchEnd={()=> powerMenu("menu")}> 
                             <p>NO</p> 
                         </button>
@@ -977,7 +974,7 @@ if(media1){
 
 
             <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
-                    <div className={active_media? "media_off":"room_sources_container"}>
+            <div className={active_media? "media_off":"room_sources_container"}>
                             
                             <div className="source_card" id= {activeSource === 1 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media1')}>
                                 <div className="img_container">
@@ -995,14 +992,14 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
+                            <div className="display_none" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
                             </div>
 
-                            <div className="source_card" id= {activeSource === 6 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media4')}>
+                            <div className="display_none" id= {activeSource === 6 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
@@ -1018,7 +1015,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= {activeSource === 8 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
+                            <div className="display_none" id= {activeSource === 8 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -1026,7 +1023,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="source_card" id ={activeSource === 9 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media7')}>
+                            <div className="display_none" id ={activeSource === 9 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -1234,26 +1231,6 @@ if(media1){
 
                                 <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
                                     <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_6")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_6_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_6 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_6 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_7")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_7_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_7 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_7 ? lightOn : lightOff}/>
                                 </button>
                             </div>
 

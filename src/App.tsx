@@ -23,6 +23,7 @@ import PoolSpa from './structure/dashboard/PoolSpaDashboard';
 // upStairs
 import MasterBedroom from './structure/page/upStairs/masterbedroom';
 import GuestBedroom from './structure/page/upStairs/guestbedroom';
+import GuestBathroom from "./structure/page/upStairs/guestbathroom"
 import EllensOffice from './structure/page/upStairs/ellensoffice';
 import EllensBath from './structure/page/upStairs/ellensbath';
 import EllensExcercise from './structure/page/upStairs/ellensexcercise';
@@ -98,9 +99,11 @@ function App() {
       path: '/guestbedroom',
       element: <GuestBedroom />
     },
-  
-  
- 
+
+    {
+      path: '/guestbathroom',
+      element: <GuestBathroom />
+    },
   
     {
       path: '/ellensoffice',

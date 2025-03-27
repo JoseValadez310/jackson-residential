@@ -129,10 +129,9 @@ const FamilyRoom = () =>{
     const [roomMute, setRoomMute]     = useState(false)
     
     const audio_volume_join   = "107"
-    const audio_mute_join     = "530"
-    const audio_increase_join = "529"
+    const audio_increase_join = "530"
+    const audio_mute_join     = "529"
     const audio_decrease_join = "528"
-
 
 /*
 ---------------------------------------------------------------------------- Modals for Apple Tv Reboot or Room shutdown

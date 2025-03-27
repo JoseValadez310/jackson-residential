@@ -26,7 +26,7 @@
 
 
 .light_map_container{
-    backdrop-filter: blur(25px);
+    
     grid-column: 2/13;
     grid-row: 1/9;
     width: 100%;
@@ -39,6 +39,7 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+    backdrop-filter: blur(20px);
 }
     .light_map_container::before{
         content: " ";
@@ -51,6 +52,7 @@
         opacity: 0.65;
         z-index: 0;
         border-radius: 20px;
+    
     }
 /*
 ------------------------------------------------------------------------------------------------------------------------------------ Map one
@@ -104,7 +106,7 @@
         height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
 
     }
     
@@ -130,7 +132,7 @@
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
         top: 32px;
-        backdrop-filter: blur(25px);
+        
     }
 
  .btn_location_4{
@@ -150,7 +152,7 @@
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
         bottom: 20px;
-        backdrop-filter: blur(25px);
+        
         
     }
     
@@ -171,7 +173,7 @@
         height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
         position: relative;
         right: 15px;
         top: 55px;
@@ -192,7 +194,7 @@
         background-color: rgb(243, 84, 84);;        height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
         position: relative;
         left: 75px;
         bottom: 26px;
@@ -213,9 +215,9 @@
 background-color: rgb(243, 84, 84);;        height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
         position: relative;
-        left: 30px;
+        left: 45px;
     }
 
  .btn_location_8{
@@ -233,7 +235,7 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
 background-color: rgb(243, 84, 84);;        height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
         position: relative;
         top: 25px; 
     }
@@ -253,7 +255,7 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
 background-color: rgb(243, 84, 84);;        height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
         position: relative;
         bottom:15px; 
     }
@@ -272,7 +274,7 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
         height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
         position: relative;
         top:45px;
         left: 5px; 
@@ -292,7 +294,7 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
         height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
         position: relative;
         top:2px;
         right: 45px; 
@@ -313,7 +315,7 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
     height: 2.5rem;
     box-shadow: 0px 0px 10px;
     border-radius: 100%;
-    backdrop-filter: blur(25px);
+    
     position: relative;
     top:7px;
     right: 40px; 
@@ -339,7 +341,7 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
         height: 2.5rem;
         box-shadow: 0px 0px 10px;
         border-radius: 100%;
-        backdrop-filter: blur(25px);
+        
         position: relative;
         bottom: 15px;
         right: 14px;
@@ -363,7 +365,7 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
     height: 2.5rem;
     box-shadow: 0px 0px 10px;
     border-radius: 100%;
-    backdrop-filter: blur(25px);
+    
     position: relative;
     top:15px;
     right: 0px;

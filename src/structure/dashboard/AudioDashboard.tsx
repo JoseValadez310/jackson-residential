@@ -200,11 +200,12 @@ const filteredItems = items.filter(item => {
       item.name !== "iHeartRadio" &&
       item.name !== "LiveOne" &&
       item.name !== "Murfie" &&
-      item.name !== "Pandora Internet Radio" &&
+      item.name !== "Spotify" &&
       item.name !== "SoundMachine" &&
       item.name !== "TIDAL" &&
       item.name !== "TuneIn Radio" &&
       item.name !== "Napster" &&
+      item.name !== "Amazon Music" &&
       item.name !== "Create a Pandora station..." &&
       item.name !== "Now Playing Queue"
     );
@@ -809,40 +810,125 @@ const zone_name_15    = "Game Room";
 // Zone 16
 const [zone16_vol, setZone16_vol] = useState(0);
 const [zone16_mute, setZone16_mute] = useState(false);
-const [zone_music_16_state, setZone_music_16_state] = useState(false);
-const zone_music_16   = "563"; // zone_music
-const zone_off_16     = "36";  // Zone16_off_fb
+
+const zone_16_location = '16' 
+const [zone_active_16_steve,setZone_active_16_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_16_steve   = 11; // zone_9_music for steve
+const zone_off_16      = 0;  // Zone9_off_fb
+
 const zone_decrease_16 = "560"; // zone_decrease
 const zone_mute_16    = "561"; // zone_mute
 const zone_increase_16 = "562"; // zone_increase
-const zone_name_16    = "n/a";
+const zone_name_16    = "Guest Bathroom";
 
 // Zone 17
 const [zone17_vol, setZone17_vol] = useState(0);
 const [zone17_mute, setZone17_mute] = useState(false);
-const [zone_music_17_state, setZone_music_17_state] = useState(false);
-const zone_music_17   = "567"; // zone_music
-const zone_off_17     = "37";  // Zone17_off_fb
-const zone_decrease_17 = "504"; // zone_decrease
-const zone_mute_17    = "505"; // zone_mute
-const zone_increase_17 = "506"; // zone_increase
-const zone_name_17    = "n/a";
+
+const zone_17_location = '17' 
+const [zone_active_17_steve,setZone_active_17_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_17_steve   = 11; // zone_9_music for steve
+const zone_off_17      = 0;  // Zone9_off_fb
+
+const zone_decrease_17 = "564"; // zone_decrease
+const zone_mute_17    = "565"; // zone_mute
+const zone_increase_17 = "566"; // zone_increase
+const zone_name_17    = "Steve's Office";
 
 // Zone 18
 const [zone18_vol, setZone18_vol] = useState(0);
 const [zone18_mute, setZone18_mute] = useState(false);
-const [zone_music_18_state, setZone_music_18_state] = useState(false);
-const zone_music_18   = "571"; // zone_music
-const zone_off_18     = "38";  // Zone18_off_fb
+
+const zone_18_location = '18' 
+const [zone_active_18_steve,setZone_active_18_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_18_steve   = 11; // zone_9_music for steve
+const zone_off_18      = 0;  // Zone9_off_fb
+
 const zone_decrease_18 = "568"; // zone_decrease
 const zone_mute_18    = "569"; // zone_mute
 const zone_increase_18 = "570"; // zone_increase
-const zone_name_18    = "n/a";
+const zone_name_18    = "Living Room";
+
+// Zone 19
+const [zone19_vol, setZone19_vol] = useState(0);
+const [zone19_mute, setZone19_mute] = useState(false);
+
+const zone_19_location = '19' 
+const [zone_active_19_steve,setZone_active_19_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_19_steve   = 11; // zone_9_music for steve
+const zone_off_19      = 0;  // Zone9_off_fb
+
+const zone_decrease_19 = "572"; // zone_decrease
+const zone_mute_19    = "573"; // zone_mute
+const zone_increase_19 = "574"; // zone_increase
+const zone_name_19    = "Kitchen";
 
 
 
+// Zone 20
+const [zone20_vol, setZone20_vol] = useState(0);
+const [zone20_mute, setZone20_mute] = useState(false);
+
+const zone_20_location = '20' 
+const [zone_active_20_steve,setZone_active_20_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_20_steve   = 11; // zone_9_music for steve
+const zone_off_20      = 0;  // Zone9_off_fb
+
+const zone_decrease_20 = "576"; // zone_decrease
+const zone_mute_20    = "577"; // zone_mute
+const zone_increase_20 = "578"; // zone_increase
+const zone_name_20    = "Pool Area";
+
+// Zone 21
+const [zone21_vol, setZone21_vol] = useState(0);
+const [zone21_mute, setZone21_mute] = useState(false);
+
+const zone_21_location = '21' 
+const [zone_active_21_steve,setZone_active_21_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_21_steve   = 11; // zone_9_music for steve
+const zone_off_21      = 0;  // Zone9_off_fb
+
+const zone_decrease_21 = "580"; // zone_decrease
+const zone_mute_21    = "581"; // zone_mute
+const zone_increase_21 = "582"; // zone_increase
+const zone_name_21    = "Gym";
 
 
+// Zone 22
+const [zone22_vol, setZone22_vol] = useState(0);
+const [zone22_mute, setZone22_mute] = useState(false);
+
+const zone_22_location = '22' 
+const [zone_active_22_steve,setZone_active_22_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_22_steve   = 11; // zone_9_music for steve
+const zone_off_22      = 0;  // Zone9_off_fb
+
+const zone_decrease_22 = "584"; // zone_decrease
+const zone_mute_22    = "585"; // zone_mute
+const zone_increase_22 = "586"; // zone_increase
+const zone_name_22    = "Breeze Way";
+
+// Zone 23
+const [zone23_vol, setZone23_vol] = useState(0);
+const [zone23_mute, setZone23_mute] = useState(false);
+
+const zone_23_location = '23' 
+const [zone_active_23_steve,setZone_active_23_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_23_steve   = 11; // zone_9_music for steve
+const zone_off_23      = 0;  // Zone9_off_fb
+
+const zone_decrease_23 = "588"; // zone_decrease
+const zone_mute_23    = "589"; // zone_mute
+const zone_increase_23 = "590"; // zone_increase
+const zone_name_23    = "Upper Pool Deck";
 
 
 
@@ -850,7 +936,7 @@ const zone_name_18    = "n/a";
 
 
     // Steve's Audio Feedback
-
+    // AV Zones
     const zone_2_active_fb_steve = window.CrComLib.subscribeState("n",zone_2_location,(value: number)=> setZone_active_2_steve(value))
     const zone_3_active_fb_steve = window.CrComLib.subscribeState("n",zone_3_location,(value: number)=> setZone_active_3_steve(value))
     const zone_4_active_fb_steve = window.CrComLib.subscribeState("n",zone_4_location,(value: number)=> setZone_active_4_steve(value))
@@ -865,24 +951,35 @@ const zone_name_18    = "n/a";
     const zone_13_active_fb_steve = window.CrComLib.subscribeState("n",zone_13_location,(value: number)=> setZone_active_13_steve(value))
     const zone_14_active_fb_steve = window.CrComLib.subscribeState("n",zone_14_location,(value: number)=> setZone_active_14_steve(value))
     const zone_15_active_fb_steve = window.CrComLib.subscribeState("n",zone_15_location,(value: number)=> setZone_active_15_steve(value))
+    const zone_16_active_fb_steve = window.CrComLib.subscribeState("n",zone_16_location,(value: number)=> setZone_active_16_steve(value))
+        // audio only zones
+    const zone_17_active_fb_steve = window.CrComLib.subscribeState("n",zone_17_location,(value: number)=> setZone_active_17_steve(value))
+    const zone_18_active_fb_steve = window.CrComLib.subscribeState("n",zone_18_location,(value: number)=> setZone_active_18_steve(value))
+    const zone_19_active_fb_steve = window.CrComLib.subscribeState("n",zone_19_location,(value: number)=> setZone_active_19_steve(value))
+    const zone_20_active_fb_steve = window.CrComLib.subscribeState("n",zone_20_location,(value: number)=> setZone_active_20_steve(value))
+    const zone_21_active_fb_steve = window.CrComLib.subscribeState("n",zone_21_location,(value: number)=> setZone_active_21_steve(value))
+    const zone_22_active_fb_steve = window.CrComLib.subscribeState("n",zone_22_location,(value: number)=> setZone_active_22_steve(value))
+    const zone_23_active_fb_steve = window.CrComLib.subscribeState("n",zone_23_location,(value: number)=> setZone_active_23_steve(value))
 
-
+// Ellens dont worry about these just yet 
+//---------------------------------------------------------------------------------------------------------------------------------------------
     const zone_2_active_fb_ellen = window.CrComLib.subscribeState("n",zone_2_location,(value: number)=> setZone_active_2_ellen(value))
     const zone_3_active_fb_ellen = window.CrComLib.subscribeState("n",zone_3_location,(value: number)=> setZone_active_3_ellen(value))
     const zone_4_active_fb_ellen = window.CrComLib.subscribeState("n",zone_4_location,(value: number)=> setZone_active_4_ellen(value))
     const zone_5_active_fb_ellen = window.CrComLib.subscribeState("n",zone_5_location,(value: number)=> setZone_active_5_ellen(value))
     const zone_6_active_fb_ellen = window.CrComLib.subscribeState("n",zone_6_location,(value: number)=> setZone_active_6_ellen(value))
     const zone_7_active_fb_ellen = window.CrComLib.subscribeState("n",zone_7_location,(value: number)=> setZone_active_7_ellen(value))
-    
-     // Mute Feedback
-      const zone_1_mute  = window.CrComLib.subscribeState("b", zone_mute_1,  (value: boolean) => { setZone1_mute(value); }); // Breakfast East --Skip--
-      const zone_2_mute  = window.CrComLib.subscribeState("b", zone_mute_2,  (value: boolean) => { setZone2_mute(value); }); // Breakfast West 
-      const zone_3_mute  = window.CrComLib.subscribeState("b", zone_mute_3,  (value: boolean) => { setZone3_mute(value); }); // Dining Room
-      const zone_4_mute  = window.CrComLib.subscribeState("b", zone_mute_4,  (value: boolean) => { setZone4_mute(value); }); // Ellen's Exercise 
-      const zone_5_mute  = window.CrComLib.subscribeState("b", zone_mute_5,  (value: boolean) => { setZone5_mute(value); }); // Ellen's Office
-      const zone_6_mute  = window.CrComLib.subscribeState("b", zone_mute_6,  (value: boolean) => { setZone6_mute(value); }); // Ellen's Bath
-
-
+ //---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+     // Mute Feedback for all Zones 
+          // AV Zones
+      const zone_1  = window.CrComLib.subscribeState("b", zone_mute_1,  (value: boolean) => { setZone1_mute(value); }); // Breakfast East --Skip--
+      const zone_2  = window.CrComLib.subscribeState("b", zone_mute_2,  (value: boolean) => { setZone2_mute(value); }); // Breakfast West 
+      const zone_3  = window.CrComLib.subscribeState("b", zone_mute_3,  (value: boolean) => { setZone3_mute(value); }); // Dining Room
+      const zone_4  = window.CrComLib.subscribeState("b", zone_mute_4,  (value: boolean) => { setZone4_mute(value); }); // Ellen's Exercise 
+      const zone_5  = window.CrComLib.subscribeState("b", zone_mute_5,  (value: boolean) => { setZone5_mute(value); }); // Ellen's Office
+      const zone_6  = window.CrComLib.subscribeState("b", zone_mute_6,  (value: boolean) => { setZone6_mute(value); }); // Ellen's Bath
       const zone_7  = window.CrComLib.subscribeState("b", zone_mute_7,  (value: boolean) => { setZone7_mute(value); });
       const zone_8  = window.CrComLib.subscribeState("b", zone_mute_8,  (value: boolean) => { setZone8_mute(value); });
       const zone_9  = window.CrComLib.subscribeState("b", zone_mute_9,  (value: boolean) => { setZone9_mute(value); });
@@ -895,9 +992,16 @@ const zone_name_18    = "n/a";
       const zone_16 = window.CrComLib.subscribeState("b", zone_mute_16, (value: boolean) => { setZone16_mute(value); });
       const zone_17 = window.CrComLib.subscribeState("b", zone_mute_17, (value: boolean) => { setZone17_mute(value); });
       const zone_18 = window.CrComLib.subscribeState("b", zone_mute_18, (value: boolean) => { setZone18_mute(value); });
+          // audio only mute
+      const zone_19 = window.CrComLib.subscribeState("b", zone_mute_19, (value: boolean) => { setZone19_mute(value); });
+      const zone_20 = window.CrComLib.subscribeState("b", zone_mute_20, (value: boolean) => { setZone20_mute(value); });
+      const zone_21 = window.CrComLib.subscribeState("b", zone_mute_21, (value: boolean) => { setZone21_mute(value); });
+      const zone_22 = window.CrComLib.subscribeState("b", zone_mute_22, (value: boolean) => { setZone22_mute(value); });
+      const zone_23 = window.CrComLib.subscribeState("b", zone_mute_23, (value: boolean) => { setZone23_mute(value); });
 
-// --- Subscribe to Volume States for Zones 1-18 ---
-      const zone_vol_1  = window.CrComLib.subscribeState("n", "100", (value: number) => { setZone1_vol(value); });
+// --- Subscribe to Volume States for Zones 1-23 ---
+      const zone_vol_1  = window.CrComLib.subscribeState("n", "100", (value: number) => { setZone1_vol(value); }); // skip
+      
       const zone_vol_2  = window.CrComLib.subscribeState("n", "101", (value: number) => { setZone2_vol(value); });
       const zone_vol_3  = window.CrComLib.subscribeState("n", "102", (value: number) => { setZone3_vol(value); });
       const zone_vol_4  = window.CrComLib.subscribeState("n", "103", (value: number) => { setZone4_vol(value); });
@@ -912,23 +1016,22 @@ const zone_name_18    = "n/a";
       const zone_vol_13 = window.CrComLib.subscribeState("n", "112", (value: number) => { setZone13_vol(value); });
       const zone_vol_14 = window.CrComLib.subscribeState("n", "113", (value: number) => { setZone14_vol(value); });
       const zone_vol_15 = window.CrComLib.subscribeState("n", "114", (value: number) => { setZone15_vol(value); });
-      const zone_vol_16 = window.CrComLib.subscribeState("n", "115", (value: number) => { setZone16_vol(value); });
+
+      const zone_vol_16 = window.CrComLib.subscribeState("n", "---", (value: number) => { setZone16_vol(value); });
+
       const zone_vol_17 = window.CrComLib.subscribeState("n", "116", (value: number) => { setZone17_vol(value); });
       const zone_vol_18 = window.CrComLib.subscribeState("n", "117", (value: number) => { setZone18_vol(value); });
+      const zone_vol_19 = window.CrComLib.subscribeState("n", "118", (value: number) => { setZone19_vol(value); });
+      const zone_vol_20 = window.CrComLib.subscribeState("n", "119", (value: number) => { setZone20_vol(value); });
+      const zone_vol_21 = window.CrComLib.subscribeState("n", "120", (value: number) => { setZone21_vol(value); });
+      const zone_vol_22 = window.CrComLib.subscribeState("n", "121", (value: number) => { setZone22_vol(value); });
+      const zone_vol_23 = window.CrComLib.subscribeState("n", "122", (value: number) => { setZone23_vol(value); });
 
 
       const zone_music_state_1  = window.CrComLib.subscribeState("b", zone_music_1,  (value: boolean) => { setZone_music_1_state(value); });
      
       
-      const zone_music_state_16 = window.CrComLib.subscribeState("b", zone_music_16, (value: boolean) => { setZone_music_16_state(value); });
-      const zone_music_state_17 = window.CrComLib.subscribeState("b", zone_music_17, (value: boolean) => { setZone_music_17_state(value); });
-      const zone_music_state_18 = window.CrComLib.subscribeState("b", zone_music_18, (value: boolean) => { setZone_music_18_state(value); });
-
-
-
-
-    
-   
+  
 
       return () => {
 
@@ -950,6 +1053,16 @@ const zone_name_18    = "n/a";
         window.CrComLib.unsubscribeState("n",zone_14_location,zone_14_active_fb_steve)
         window.CrComLib.unsubscribeState("n",zone_15_location,zone_15_active_fb_steve)
 
+        //audio only 
+        window.CrComLib.unsubscribeState("n",zone_16_location,zone_16_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_17_location,zone_17_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_18_location,zone_18_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_19_location,zone_19_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_20_location,zone_20_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_21_location,zone_21_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_22_location,zone_22_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_23_location,zone_23_active_fb_steve)
+
         //Ellen feedback zones
         window.CrComLib.unsubscribeState("n",zone_2_location,zone_2_active_fb_ellen)
         window.CrComLib.unsubscribeState("n",zone_3_location,zone_3_active_fb_ellen)
@@ -960,13 +1073,13 @@ const zone_name_18    = "n/a";
 
 
       
-
-        window.CrComLib.unsubscribeState("b", zone_mute_1,  zone_1_mute);
-        window.CrComLib.unsubscribeState("b", zone_mute_2,  zone_2_mute);
-        window.CrComLib.unsubscribeState("b", zone_mute_3,  zone_3_mute);
-        window.CrComLib.unsubscribeState("b", zone_mute_4,  zone_4_mute);
-        window.CrComLib.unsubscribeState("b", zone_mute_5,  zone_5_mute);
-        window.CrComLib.unsubscribeState("b", zone_mute_6,  zone_6_mute);
+        // Zone FB for Zones 
+        window.CrComLib.unsubscribeState("b", zone_mute_1,  zone_1);
+        window.CrComLib.unsubscribeState("b", zone_mute_2,  zone_2);
+        window.CrComLib.unsubscribeState("b", zone_mute_3,  zone_3);
+        window.CrComLib.unsubscribeState("b", zone_mute_4,  zone_4);
+        window.CrComLib.unsubscribeState("b", zone_mute_5,  zone_5);
+        window.CrComLib.unsubscribeState("b", zone_mute_6,  zone_6);
         window.CrComLib.unsubscribeState("b", zone_mute_7,  zone_7);
         window.CrComLib.unsubscribeState("b", zone_mute_8,  zone_8);
         window.CrComLib.unsubscribeState("b", zone_mute_9,  zone_9);
@@ -979,6 +1092,11 @@ const zone_name_18    = "n/a";
         window.CrComLib.unsubscribeState("b", zone_mute_16, zone_16);
         window.CrComLib.unsubscribeState("b", zone_mute_17, zone_17);
         window.CrComLib.unsubscribeState("b", zone_mute_18, zone_18);
+        window.CrComLib.unsubscribeState("b", zone_mute_19, zone_19);
+        window.CrComLib.unsubscribeState("b", zone_mute_20, zone_20);
+        window.CrComLib.unsubscribeState("b", zone_mute_21, zone_21);
+        window.CrComLib.unsubscribeState("b", zone_mute_22, zone_22);
+        window.CrComLib.unsubscribeState("b", zone_mute_23, zone_23);
       
         window.CrComLib.unsubscribeState("n", "100", zone_vol_1);
         window.CrComLib.unsubscribeState("n", "101", zone_vol_2);
@@ -995,15 +1113,20 @@ const zone_name_18    = "n/a";
         window.CrComLib.unsubscribeState("n", "112", zone_vol_13);
         window.CrComLib.unsubscribeState("n", "113", zone_vol_14);
         window.CrComLib.unsubscribeState("n", "114", zone_vol_15);
-        window.CrComLib.unsubscribeState("n", "115", zone_vol_16);
-        window.CrComLib.unsubscribeState("n", "116", zone_vol_17);
-        window.CrComLib.unsubscribeState("n", "117", zone_vol_18);
+
+        window.CrComLib.unsubscribeState("n", "---", zone_vol_16); // Guest Bathroom skip
+
+        window.CrComLib.unsubscribeState("n", "116", zone_vol_17); // Steve's Office
+        window.CrComLib.unsubscribeState("n", "117", zone_vol_18); // Living Room 
+        window.CrComLib.unsubscribeState("n", "118", zone_vol_19); // Kitchen
+        window.CrComLib.unsubscribeState("n", "119", zone_vol_20); // Pool Area
+        window.CrComLib.unsubscribeState("n", "120", zone_vol_21); // Gym
+        window.CrComLib.unsubscribeState("n", "121", zone_vol_22); // Breeze Way
+        window.CrComLib.unsubscribeState("n", "122", zone_vol_23); // upper pool deck
+  
 
         window.CrComLib.unsubscribeState("b", zone_music_1,  zone_music_state_1);
-        window.CrComLib.unsubscribeState("b", zone_music_16, zone_music_state_16);
-        window.CrComLib.unsubscribeState("b", zone_music_17, zone_music_state_17);
-        window.CrComLib.unsubscribeState("b", zone_music_18, zone_music_state_18);
-      
+    
 
 
 
@@ -1064,48 +1187,6 @@ const zone_name_18    = "n/a";
 
     const zoneGroup1 = (
       <>
-      
-         
-
-          
-          
-
-            <div className='display_none'>
-              <div className='power_on_off'>
-                <button className={zone_music_17_state ? "display_none" : "power_on"} onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_music_17, true), window.CrComLib.publishEvent("b", zone_music_17, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_17_state ? "power_off" : "display_none"} onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_off_17, true), window.CrComLib.publishEvent("b", zone_off_17, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
-              </div>
-
-              <p className='zone_title'>{zone_name_17} </p>
-
-              <div className='zone_controls'>
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_17, true), window.CrComLib.publishEvent("b", zone_decrease_17, false), console.log(zone_decrease_17))}>
-                  <img className="btn_image" src={arrow} />
-                </button>
-
-                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_17, true), window.CrComLib.publishEvent("b", zone_mute_17, false), console.log(zone_mute_17))}>
-                  {zone17_mute ? (
-                    <>
-                      <img src={MuteIcon} className="volume_mute_btn" />
-                      <p className="mute_btn_txt">Click to Unmute</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="volume_txt">{ ((zone17_vol/65535) * 100).toFixed(0)}</p>
-                      <p className="mute_btn_txt">Click to Mute</p>
-                    </>
-                  )}
-                </button>
-
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_17, true), window.CrComLib.publishEvent("b", zone_increase_17, false), console.log(zone_increase_17))}>
-                  <img className="btn_image" src={arrow} id="flip" />
-                </button>
-              </div>
-            </div>
 
             <div id="zone-4" className='zone_container'>
               <div className='power_on_off'>
@@ -1226,6 +1307,168 @@ const zone_name_18    = "n/a";
                 </button>
               </div>
             </div>
+
+            <div id="zone-16" className='display_none'>
+              <div className='power_on_off'>
+                  {zone_active_16_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_16_location, zone_music_16_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_16_location, zone_off_16), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_16} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_16, true), window.CrComLib.publishEvent("b", zone_decrease_16, false), console.log(zone_decrease_16))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_16, true), window.CrComLib.publishEvent("b", zone_mute_16, false), console.log(zone_mute_16))}>
+                  {zone16_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone16_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_16, true), window.CrComLib.publishEvent("b", zone_increase_16, false), console.log(zone_increase_16))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+            
+            <div id="zone-8" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_8_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_8_location, zone_music_8_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_8_location, zone_off_8), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_8} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_8, true), window.CrComLib.publishEvent("b", zone_decrease_8, false), console.log(zone_decrease_8))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_8, true), window.CrComLib.publishEvent("b", zone_mute_8, false), console.log(zone_mute_8))}>
+                  {zone8_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone8_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_8, true), window.CrComLib.publishEvent("b", zone_increase_8, false), console.log(zone_increase_8))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+            <div id="zone-9" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_9_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_9_location, zone_music_9_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_9_location, zone_off_9), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_9} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_9, true), window.CrComLib.publishEvent("b", zone_decrease_9, false), console.log(zone_decrease_9))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_9, true), window.CrComLib.publishEvent("b", zone_mute_9, false), console.log(zone_mute_9))}>
+                  {zone9_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone9_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_9, true), window.CrComLib.publishEvent("b", zone_increase_9, false), console.log(zone_increase_9))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+            <div id="zone-10" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_10_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_10_location, zone_music_10_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_10_location, zone_off_10), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_10} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_10, true), window.CrComLib.publishEvent("b", zone_decrease_10, false), console.log(zone_decrease_10))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_10, true), window.CrComLib.publishEvent("b", zone_mute_10, false), console.log(zone_mute_10))}>
+                  {zone10_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone10_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_10, true), window.CrComLib.publishEvent("b", zone_increase_10, false), console.log(zone_increase_10))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
 
       </>
     )
@@ -1391,125 +1634,6 @@ const zone_name_18    = "n/a";
               </div>
             </div>
 
-            <div id="zone-8" className='zone_container'>
-              <div className='power_on_off'>
-                  {zone_active_8_steve!= 11? 
-                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_8_location, zone_music_8_steve), console.log("turning off"))}>
-                      <p>Power On</p>
-                    </button>
-                  :
-                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_8_location, zone_off_8), console.log("turning off"))}>
-                      <p>Power Off</p>
-                    </button>
-                  } 
-              </div>
-
-              <p className='zone_title'>{zone_name_8} </p>
-
-              <div className='zone_controls'>
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_8, true), window.CrComLib.publishEvent("b", zone_decrease_8, false), console.log(zone_decrease_8))}>
-                  <img className="btn_image" src={arrow} />
-                </button>
-
-                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_8, true), window.CrComLib.publishEvent("b", zone_mute_8, false), console.log(zone_mute_8))}>
-                  {zone8_mute ? (
-                    <>
-                      <img src={MuteIcon} className="volume_mute_btn" />
-                      <p className="mute_btn_txt">Click to Unmute</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="volume_txt">{ ((zone8_vol/65535) * 100).toFixed(0)}</p>
-                      <p className="mute_btn_txt">Click to Mute</p>
-                    </>
-                  )}
-                </button>
-
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_8, true), window.CrComLib.publishEvent("b", zone_increase_8, false), console.log(zone_increase_8))}>
-                  <img className="btn_image" src={arrow} id="flip" />
-                </button>
-              </div>
-            </div>
-
-            <div id="zone-9" className='zone_container'>
-              <div className='power_on_off'>
-                  {zone_active_9_steve!= 11? 
-                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_9_location, zone_music_9_steve), console.log("turning off"))}>
-                      <p>Power On</p>
-                    </button>
-                  :
-                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_9_location, zone_off_9), console.log("turning off"))}>
-                      <p>Power Off</p>
-                    </button>
-                  } 
-              </div>
-
-              <p className='zone_title'>{zone_name_9} </p>
-
-              <div className='zone_controls'>
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_9, true), window.CrComLib.publishEvent("b", zone_decrease_9, false), console.log(zone_decrease_9))}>
-                  <img className="btn_image" src={arrow} />
-                </button>
-
-                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_9, true), window.CrComLib.publishEvent("b", zone_mute_9, false), console.log(zone_mute_9))}>
-                  {zone9_mute ? (
-                    <>
-                      <img src={MuteIcon} className="volume_mute_btn" />
-                      <p className="mute_btn_txt">Click to Unmute</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="volume_txt">{ ((zone9_vol/65535) * 100).toFixed(0)}</p>
-                      <p className="mute_btn_txt">Click to Mute</p>
-                    </>
-                  )}
-                </button>
-
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_9, true), window.CrComLib.publishEvent("b", zone_increase_9, false), console.log(zone_increase_9))}>
-                  <img className="btn_image" src={arrow} id="flip" />
-                </button>
-              </div>
-            </div>
-
-            <div id="zone-10" className='zone_container'>
-              <div className='power_on_off'>
-                  {zone_active_10_steve!= 11? 
-                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_10_location, zone_music_10_steve), console.log("turning off"))}>
-                      <p>Power On</p>
-                    </button>
-                  :
-                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_10_location, zone_off_10), console.log("turning off"))}>
-                      <p>Power Off</p>
-                    </button>
-                  } 
-              </div>
-
-              <p className='zone_title'>{zone_name_10} </p>
-
-              <div className='zone_controls'>
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_10, true), window.CrComLib.publishEvent("b", zone_decrease_10, false), console.log(zone_decrease_10))}>
-                  <img className="btn_image" src={arrow} />
-                </button>
-
-                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_10, true), window.CrComLib.publishEvent("b", zone_mute_10, false), console.log(zone_mute_10))}>
-                  {zone10_mute ? (
-                    <>
-                      <img src={MuteIcon} className="volume_mute_btn" />
-                      <p className="mute_btn_txt">Click to Unmute</p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="volume_txt">{ ((zone10_vol/65535) * 100).toFixed(0)}</p>
-                      <p className="mute_btn_txt">Click to Mute</p>
-                    </>
-                  )}
-                </button>
-
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_10, true), window.CrComLib.publishEvent("b", zone_increase_10, false), console.log(zone_increase_10))}>
-                  <img className="btn_image" src={arrow} id="flip" />
-                </button>
-              </div>
-            </div>
 
             <div id="zone-15" className='zone_container'>
               <div className='power_on_off'>
@@ -1551,35 +1675,62 @@ const zone_name_18    = "n/a";
               </div>
             </div>
 
-         
-          
-        
-         
-            
 
-          
-
-          
-
-           
-      
-      </>
-    )
-
-    const zoneGroup3 = (
-      <>
-
-<div className='display_none'>
+            <div id="zone-17" className='zone_container'>
               <div className='power_on_off'>
-                <button className={zone_music_18_state ? "display_none" : "power_on"} onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_music_18, true), window.CrComLib.publishEvent("b", zone_music_18, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_18_state ? "power_off" : "display_none"} onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_off_18, true), window.CrComLib.publishEvent("b", zone_off_18, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
+                  {zone_active_17_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_17_location, zone_music_17_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_17_location, zone_off_17), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
               </div>
 
-              <p className='zone_title'>{zone_name_18}</p>
+              <p className='zone_title'>{zone_name_17} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_17, true), window.CrComLib.publishEvent("b", zone_decrease_17, false), console.log(zone_decrease_17))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_17, true), window.CrComLib.publishEvent("b", zone_mute_17, false), console.log(zone_mute_17))}>
+                  {zone17_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone17_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_17, true), window.CrComLib.publishEvent("b", zone_increase_17, false), console.log(zone_increase_17))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+
+            <div id="zone-18" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_18_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_18_location, zone_music_18_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_18_location, zone_off_18), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_18} </p>
 
               <div className='zone_controls'>
                 <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_18, true), window.CrComLib.publishEvent("b", zone_decrease_18, false), console.log(zone_decrease_18))}>
@@ -1605,6 +1756,65 @@ const zone_name_18    = "n/a";
                 </button>
               </div>
             </div>
+
+            <div id="zone-19" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_19_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_19_location, zone_music_19_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_19_location, zone_off_19), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_19} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_19, true), window.CrComLib.publishEvent("b", zone_decrease_19, false), console.log(zone_decrease_18))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_19, true), window.CrComLib.publishEvent("b", zone_mute_19, false), console.log(zone_mute_18))}>
+                  {zone19_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone19_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_19, true), window.CrComLib.publishEvent("b", zone_increase_19, false), console.log(zone_increase_18))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+         
+          
+        
+         
+            
+
+          
+
+          
+
+           
+      
+      </>
+    )
+
+    const zoneGroup3 = (
+      <>
+
 
 
             <div id="zone-11" className='zone_container'>
@@ -1647,7 +1857,7 @@ const zone_name_18    = "n/a";
               </div>
             </div>
 
-            <div id="zone-12" className='zone_container'>
+            <div id="zone-12" className='display_none'>
               <div className='power_on_off'>
                   {zone_active_12_steve!= 11? 
                     <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_12_location, zone_music_12_steve), console.log("turning off"))}>
@@ -1687,7 +1897,7 @@ const zone_name_18    = "n/a";
               </div>
             </div>
 
-            <div id="zone-13" className='zone_container'>
+            <div id="zone-13" className='display_none'>
               <div className='power_on_off'>
                   {zone_active_13_steve!= 11? 
                     <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_13_location, zone_music_13_steve), console.log("turning off"))}>
@@ -1727,6 +1937,85 @@ const zone_name_18    = "n/a";
               </div>
             </div>
 
+            <div id="zone-21" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_21_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_21_location, zone_music_21_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_21_location, zone_off_21), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_21} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_21, true), window.CrComLib.publishEvent("b", zone_decrease_21, false), console.log(zone_decrease_18))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_21, true), window.CrComLib.publishEvent("b", zone_mute_21, false), console.log(zone_mute_18))}>
+                  {zone21_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone21_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_21, true), window.CrComLib.publishEvent("b", zone_increase_21, false), console.log(zone_increase_18))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+            <div id="zone-22" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_22_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_22_location, zone_music_22_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_22_location, zone_off_22), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_22} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_22, true), window.CrComLib.publishEvent("b", zone_decrease_22, false), console.log(zone_decrease_18))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_22, true), window.CrComLib.publishEvent("b", zone_mute_22, false), console.log(zone_mute_18))}>
+                  {zone22_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone22_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_22, true), window.CrComLib.publishEvent("b", zone_increase_22, false), console.log(zone_increase_18))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
 
           
 
@@ -1738,7 +2027,7 @@ const zone_name_18    = "n/a";
       <>
       
             
-      <div id="zone-14" className='zone_container'>
+            <div id="zone-14" className='zone_container'>
               <div className='power_on_off'>
                   {zone_active_14_steve!= 11? 
                     <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_14_location, zone_music_14_steve), console.log("turning off"))}>
@@ -1778,46 +2067,91 @@ const zone_name_18    = "n/a";
               </div>
             </div>
 
-          
-
-         
-
-            <div className='display_none'>
+            <div id="zone-20" className='zone_container'>
               <div className='power_on_off'>
-                <button className={zone_music_16_state ? "display_none" : "power_on"} onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_music_16, true), window.CrComLib.publishEvent("b", zone_music_16, false), console.log("turning off"))}>
-                  <p>Power On</p>
-                </button>
-                <button className={zone_music_16_state ? "power_off" : "display_none"} onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_off_16, true), window.CrComLib.publishEvent("b", zone_off_16, false), console.log("turning off"))}>
-                  <p>Power Off</p>
-                </button>
+                  {zone_active_20_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_20_location, zone_music_20_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_20_location, zone_off_20), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
               </div>
 
-              <p className='zone_title'>{zone_name_16}</p>
+              <p className='zone_title'>{zone_name_20} </p>
 
               <div className='zone_controls'>
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_16, true), window.CrComLib.publishEvent("b", zone_decrease_16, false), console.log(zone_decrease_16))}>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_20, true), window.CrComLib.publishEvent("b", zone_decrease_20, false), console.log(zone_decrease_18))}>
                   <img className="btn_image" src={arrow} />
                 </button>
 
-                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_16, true), window.CrComLib.publishEvent("b", zone_mute_16, false), console.log(zone_mute_16))}>
-                  {zone16_mute ? (
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_20, true), window.CrComLib.publishEvent("b", zone_mute_20, false), console.log(zone_mute_18))}>
+                  {zone20_mute ? (
                     <>
                       <img src={MuteIcon} className="volume_mute_btn" />
                       <p className="mute_btn_txt">Click to Unmute</p>
                     </>
                   ) : (
                     <>
-                      <p className="volume_txt">{ ((zone16_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="volume_txt">{ ((zone20_vol/65535) * 100).toFixed(0)}</p>
                       <p className="mute_btn_txt">Click to Mute</p>
                     </>
                   )}
                 </button>
 
-                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_16, true), window.CrComLib.publishEvent("b", zone_increase_16, false), console.log(zone_increase_16))}>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_20, true), window.CrComLib.publishEvent("b", zone_increase_20, false), console.log(zone_increase_18))}>
                   <img className="btn_image" src={arrow} id="flip" />
                 </button>
               </div>
             </div>
+
+            <div id="zone-23" className='zone_container'>
+              <div className='power_on_off'>
+                  {zone_active_23_steve!= 11? 
+                    <button className="power_on" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_23_location, zone_music_23_steve), console.log("turning off"))}>
+                      <p>Power On</p>
+                    </button>
+                  :
+                    <button className="power_off" onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_23_location, zone_off_23), console.log("turning off"))}>
+                      <p>Power Off</p>
+                    </button>
+                  } 
+              </div>
+
+              <p className='zone_title'>{zone_name_23} </p>
+
+              <div className='zone_controls'>
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_23, true), window.CrComLib.publishEvent("b", zone_decrease_23, false), console.log(zone_decrease_18))}>
+                  <img className="btn_image" src={arrow} />
+                </button>
+
+                <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_23, true), window.CrComLib.publishEvent("b", zone_mute_23, false), console.log(zone_mute_18))}>
+                  {zone23_mute ? (
+                    <>
+                      <img src={MuteIcon} className="volume_mute_btn" />
+                      <p className="mute_btn_txt">Click to Unmute</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="volume_txt">{ ((zone23_vol/65535) * 100).toFixed(0)}</p>
+                      <p className="mute_btn_txt">Click to Mute</p>
+                    </>
+                  )}
+                </button>
+
+                <button className="btn_circle" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_23, true), window.CrComLib.publishEvent("b", zone_increase_23, false), console.log(zone_increase_18))}>
+                  <img className="btn_image" src={arrow} id="flip" />
+                </button>
+              </div>
+            </div>
+
+          
+
+         
+
+          
       </>
     )
 

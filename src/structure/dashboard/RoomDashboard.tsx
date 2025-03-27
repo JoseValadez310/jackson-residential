@@ -19,7 +19,7 @@ import Audio   from "../../assets/images/icons/icons8-music.svg"
 import Light   from "../../assets/images/icons/noun-light-bulb-2216273.svg"
 import Climate from "../../assets/images/icons/icons8-winter.svg"
 import TV          from "../../assets/images/icons/icons8-tv.svg"
-
+import power       from "../../assets/images/icons/icons8-power.svg"
 
 
 
@@ -113,8 +113,25 @@ const RoomsDashboard = () => {
 
 
 
-    
+    const [tvPowerMenu, setTvPowerMenu] = useState(false)      
 
+
+// Power menu for current room
+    const powerMenu = (id:string) =>{
+        if(id==="menu"){
+            console.log("into power menu")
+            setTvPowerMenu(!tvPowerMenu)
+
+    } 
+    
+        else if(id==="menu_off"){
+            //console.log("Turning off room join", roomLocation)
+            setTvPowerMenu(!tvPowerMenu)
+           // window.CrComLib.publishEvent("n",roomLocation,0)
+        
+
+        }
+    }
 
 
 
@@ -375,15 +392,47 @@ const RoomsDashboard = () => {
         <div className="rooms_dashboard">
 
  
-<div className="room_back_corner" >
+            <div className="room_back_corner" >
                 <Link to={"/"}  > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>
                 </Link>  
             </div>
+
+
+            <div className={
+                room1Active>0|| room2Active>0 || room3Active>0 || room4Active>0 || room5Active>0 || room6Active>0 || room7Active>0 || room8Active>0 ||
+                room9Active>0 ||  room10Active>0 ||  room11Active>0 ||  room12Active>0 ||  room13Active>0 ||  room13Active>0 ||  room14Active>0 ||  room15Active>0 ?
+                "room_home_corner":"display_none"}>
+                <button className="home_button" onTouchEnd={()=>powerMenu("menu")}>
+                    <img src={power}  />
+                </button> 
+            </div>
            
 
+            <div className={tvPowerMenu? "room_selection_power_menu" : "display_none"} >
+                <div className="power_menu_title">
+                    <p>These rooms are currently active. Which would you like to turn off?</p>
+                </div>
+
+                <div className="active_zone_menu">
+                    <div className={room1Active>0 || room2Active>0 ?"active_zone_card":"display_none"}> <p>Breakfast</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room3Active>0? "active_zone_card":"display_none"}> <p>Dining Room</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room4Active>0? "active_zone_card":"display_none"}> <p>Ellen's Exercise</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room5Active>0? "active_zone_card":"display_none"}> <p>Ellen's Office</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room6Active>0? "active_zone_card":"display_none"}> <p>Ellen's Bath</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room7Active>0? "active_zone_card":"display_none"}> <p>Family Room</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room8Active>0? "active_zone_card":"display_none"}> <p>Guest Bedroom</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room9Active>0? "active_zone_card":"display_none"}> <p>Master Bedroom</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room10Active>0? "active_zone_card":"display_none"}> <p> Media Room</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room11Active>0 || room12Active>0 || room13Active>0?  "active_zone_card":"display_none"}> <p>Aracde</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room14Active>0? "active_zone_card":"display_none"}> <p>Pool Patio</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room15Active>0? "active_zone_card":"display_none"}> <p>Game Room</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                   
+                </div>
+                <button className="btn_square" onClick={()=>setTvPowerMenu(!tvPowerMenu)}> <p>Close Menu</p></button>
+            </div>
        
         <div className="nav_container">
 

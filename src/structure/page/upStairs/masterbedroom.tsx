@@ -129,8 +129,8 @@ const FamilyRoom = () =>{
     const [roomMute, setRoomMute]     = useState(false)
     
     const audio_volume_join   = "108"
-    const audio_mute_join     = "534"
-    const audio_increase_join = "533"
+    const audio_increase_join = "534"
+    const audio_mute_join     = "533"
     const audio_decrease_join = "532"
 
 

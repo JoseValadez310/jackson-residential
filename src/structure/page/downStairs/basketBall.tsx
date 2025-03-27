@@ -108,70 +108,70 @@ const Main_1 = () => {
     useEffect(() => {
 
 
-        const dtv_audio   = window.CrComLib.subscribeState("b","70",(value: boolean) => setDtv_audio(value))
-        const music_audio = window.CrComLib.subscribeState("b","71",(value: boolean) => setMusic_audio(value))
-        const audio_mute  = window.CrComLib.subscribeState("b","72",(value: boolean) => setAudio_mute(value))
-        const volume_level  = window.CrComLib.subscribeState("n","75",(value: number) => setVolume_level(value))
+        const dtv_audio   = window.CrComLib.subscribeState("b","1070",(value: boolean) => setDtv_audio(value))
+        const music_audio = window.CrComLib.subscribeState("b","1071",(value: boolean) => setMusic_audio(value))
+        const audio_mute  = window.CrComLib.subscribeState("b","1072",(value: boolean) => setAudio_mute(value))
+        const volume_level  = window.CrComLib.subscribeState("n","1075",(value: number) => setVolume_level(value))
 
-        const Tv_One    = window.CrComLib.subscribeState("b","39",(value: boolean) => setTv1(value))
-        const Tv_Two    = window.CrComLib.subscribeState("b","45",(value: boolean) => setTv2(value))
-        const Tv_Three  = window.CrComLib.subscribeState("b","51",(value: boolean) => setTv3(value))
-        const Tv_Four   = window.CrComLib.subscribeState("b","57",(value: boolean) => setTv4(value))
+        const Tv_One    = window.CrComLib.subscribeState("b","1039",(value: boolean) => setTv1(value))
+        const Tv_Two    = window.CrComLib.subscribeState("b","1045",(value: boolean) => setTv2(value))
+        const Tv_Three  = window.CrComLib.subscribeState("b","1051",(value: boolean) => setTv3(value))
+        const Tv_Four   = window.CrComLib.subscribeState("b","1057",(value: boolean) => setTv4(value))
 
-            const dtv_1_a    = window.CrComLib.subscribeState("b","40",(value: boolean) => setDtv_1_a(value))
-            const dtv_1_b    = window.CrComLib.subscribeState("b","41",(value: boolean) => setDtv_1_b(value))
-            const dtv_1_c    = window.CrComLib.subscribeState("b","42",(value: boolean) => setDtv_1_c(value))
-            const dtv_1_d    = window.CrComLib.subscribeState("b","43",(value: boolean) => setDtv_1_d(value))
+            const dtv_1_a    = window.CrComLib.subscribeState("b","1040",(value: boolean) => setDtv_1_a(value))
+            const dtv_1_b    = window.CrComLib.subscribeState("b","1041",(value: boolean) => setDtv_1_b(value))
+            const dtv_1_c    = window.CrComLib.subscribeState("b","1042",(value: boolean) => setDtv_1_c(value))
+            const dtv_1_d    = window.CrComLib.subscribeState("b","1043",(value: boolean) => setDtv_1_d(value))
     
-            const dtv_2_a    = window.CrComLib.subscribeState("b","46",(value: boolean) => setDtv_2_a(value))
-            const dtv_2_b    = window.CrComLib.subscribeState("b","47",(value: boolean) => setDtv_2_b(value))
-            const dtv_2_c    = window.CrComLib.subscribeState("b","48",(value: boolean) => setDtv_2_c(value))
-            const dtv_2_d    = window.CrComLib.subscribeState("b","49",(value: boolean) => setDtv_2_d(value))
+            const dtv_2_a    = window.CrComLib.subscribeState("b","1046",(value: boolean) => setDtv_2_a(value))
+            const dtv_2_b    = window.CrComLib.subscribeState("b","1047",(value: boolean) => setDtv_2_b(value))
+            const dtv_2_c    = window.CrComLib.subscribeState("b","1048",(value: boolean) => setDtv_2_c(value))
+            const dtv_2_d    = window.CrComLib.subscribeState("b","1049",(value: boolean) => setDtv_2_d(value))
 
-            const dtv_3_a    = window.CrComLib.subscribeState("b","52",(value: boolean) => setDtv_3_a(value))
-            const dtv_3_b    = window.CrComLib.subscribeState("b","53",(value: boolean) => setDtv_3_b(value))
-            const dtv_3_c    = window.CrComLib.subscribeState("b","54",(value: boolean) => setDtv_3_c(value))
-            const dtv_3_d    = window.CrComLib.subscribeState("b","55",(value: boolean) => setDtv_3_d(value))
+            const dtv_3_a    = window.CrComLib.subscribeState("b","1052",(value: boolean) => setDtv_3_a(value))
+            const dtv_3_b    = window.CrComLib.subscribeState("b","1053",(value: boolean) => setDtv_3_b(value))
+            const dtv_3_c    = window.CrComLib.subscribeState("b","1054",(value: boolean) => setDtv_3_c(value))
+            const dtv_3_d    = window.CrComLib.subscribeState("b","1055",(value: boolean) => setDtv_3_d(value))
 
-            const dtv_4_a    = window.CrComLib.subscribeState("b","58",(value: boolean) => setDtv_4_a(value))
-            const dtv_4_b    = window.CrComLib.subscribeState("b","59",(value: boolean) => setDtv_4_b(value))
-            const dtv_4_c    = window.CrComLib.subscribeState("b","60",(value: boolean) => setDtv_4_c(value))
-            const dtv_4_d    = window.CrComLib.subscribeState("b","61",(value: boolean) => setDtv_4_d(value))
+            const dtv_4_a    = window.CrComLib.subscribeState("b","1058",(value: boolean) => setDtv_4_a(value))
+            const dtv_4_b    = window.CrComLib.subscribeState("b","1059",(value: boolean) => setDtv_4_b(value))
+            const dtv_4_c    = window.CrComLib.subscribeState("b","1060",(value: boolean) => setDtv_4_c(value))
+            const dtv_4_d    = window.CrComLib.subscribeState("b","1061",(value: boolean) => setDtv_4_d(value))
 
    
 
         return () => {
             quickCheck()
 
-            window.CrComLib.unsubscribeState("b","39",Tv_One)
-            window.CrComLib.unsubscribeState("b","45",Tv_Two)
-            window.CrComLib.unsubscribeState("b","51",Tv_Three)
-            window.CrComLib.unsubscribeState("b","57",Tv_Four)
+            window.CrComLib.unsubscribeState("b","1039",Tv_One)
+            window.CrComLib.unsubscribeState("b","1045",Tv_Two)
+            window.CrComLib.unsubscribeState("b","1051",Tv_Three)
+            window.CrComLib.unsubscribeState("b","1057",Tv_Four)
 
-                window.CrComLib.unsubscribeState("b","40",dtv_1_a)
-                window.CrComLib.unsubscribeState("b","41",dtv_1_b)
-                window.CrComLib.unsubscribeState("b","42",dtv_1_c)
-                window.CrComLib.unsubscribeState("b","43",dtv_1_d)
+                window.CrComLib.unsubscribeState("b","1040",dtv_1_a)
+                window.CrComLib.unsubscribeState("b","1041",dtv_1_b)
+                window.CrComLib.unsubscribeState("b","1042",dtv_1_c)
+                window.CrComLib.unsubscribeState("b","1043",dtv_1_d)
 
-                window.CrComLib.unsubscribeState("b","46",dtv_2_a)
-                window.CrComLib.unsubscribeState("b","47",dtv_2_b)
-                window.CrComLib.unsubscribeState("b","48",dtv_2_c)
-                window.CrComLib.unsubscribeState("b","49",dtv_2_d)
+                window.CrComLib.unsubscribeState("b","1046",dtv_2_a)
+                window.CrComLib.unsubscribeState("b","1047",dtv_2_b)
+                window.CrComLib.unsubscribeState("b","1048",dtv_2_c)
+                window.CrComLib.unsubscribeState("b","1049",dtv_2_d)
 
-                window.CrComLib.unsubscribeState("b","52",dtv_3_a)
-                window.CrComLib.unsubscribeState("b","53",dtv_3_b)
-                window.CrComLib.unsubscribeState("b","54",dtv_3_c)
-                window.CrComLib.unsubscribeState("b","55",dtv_3_d)
+                window.CrComLib.unsubscribeState("b","1052",dtv_3_a)
+                window.CrComLib.unsubscribeState("b","1053",dtv_3_b)
+                window.CrComLib.unsubscribeState("b","1054",dtv_3_c)
+                window.CrComLib.unsubscribeState("b","1055",dtv_3_d)
 
-                window.CrComLib.unsubscribeState("b","58",dtv_4_a)
-                window.CrComLib.unsubscribeState("b","59",dtv_4_b)
-                window.CrComLib.unsubscribeState("b","60",dtv_4_c)
-                window.CrComLib.unsubscribeState("b","61",dtv_4_d)
+                window.CrComLib.unsubscribeState("b","1058",dtv_4_a)
+                window.CrComLib.unsubscribeState("b","1059",dtv_4_b)
+                window.CrComLib.unsubscribeState("b","1060",dtv_4_c)
+                window.CrComLib.unsubscribeState("b","1061",dtv_4_d)
 
-                window.CrComLib.unsubscribeState("b","70",dtv_audio)
-                window.CrComLib.unsubscribeState("b","71",music_audio)
-                window.CrComLib.unsubscribeState("b","72",audio_mute)
-                window.CrComLib.unsubscribeState("n","75",volume_level)
+                window.CrComLib.unsubscribeState("b","1070",dtv_audio)
+                window.CrComLib.unsubscribeState("b","1071",music_audio)
+                window.CrComLib.unsubscribeState("b","1072",audio_mute)
+                window.CrComLib.unsubscribeState("n","1075",volume_level)
        
      
         };
@@ -420,29 +420,29 @@ const Main_1 = () => {
     const dropdown = ( id:string) => {
         if(id === "dropdown_1"){
 
-            window.CrComLib.publishEvent("b","39",true)
-            window.CrComLib.publishEvent("b","39",false)
+            window.CrComLib.publishEvent("b","1039",true)
+            window.CrComLib.publishEvent("b","1039",false)
                 console.log("TV 1 On - Singal name 39")
 
             setTvBoxOption1(!tvBoxOption1)
         } else if (id === "dropdown_2"){
 
-            window.CrComLib.publishEvent("b","45",true)
-            window.CrComLib.publishEvent("b","45",false)
+            window.CrComLib.publishEvent("b","1045",true)
+            window.CrComLib.publishEvent("b","1045",false)
                 console.log("TV 2 On - Singal name 45")
 
             setTvBoxOption2(!tvBoxOption2)
         } else if (id === "dropdown_3"){
 
-            window.CrComLib.publishEvent("b","51",true)
-            window.CrComLib.publishEvent("b","51",false)
+            window.CrComLib.publishEvent("b","1051",true)
+            window.CrComLib.publishEvent("b","1051",false)
                 console.log("TV 3 On - Singal name 51")
 
             setTvBoxOption3(!tvBoxOption3)
         } else if (id === "dropdown_4"){
 
-            window.CrComLib.publishEvent("b","57",true)
-            window.CrComLib.publishEvent("b","57",false)
+            window.CrComLib.publishEvent("b","1057",true)
+            window.CrComLib.publishEvent("b","1057",false)
                 console.log("TV 4 On - Singal name 57")
 
             setTvBoxOption4(!tvBoxOption4)
@@ -454,32 +454,32 @@ const Main_1 = () => {
         
         else if(id === "close_dropdown_1"){
 
-            window.CrComLib.publishEvent("b","44",true)
-            window.CrComLib.publishEvent("b","44",false)
+            window.CrComLib.publishEvent("b","1044",true)
+            window.CrComLib.publishEvent("b","1044",false)
                 console.log("TV 1 Off - Singal name 44")
                 
                 setTv_1_label("")
                 setTvBoxOption1(!tvBoxOption1)
         } else if (id === "close_dropdown_2"){
 
-            window.CrComLib.publishEvent("b","50",true)
-            window.CrComLib.publishEvent("b","50",false)
+            window.CrComLib.publishEvent("b","1050",true)
+            window.CrComLib.publishEvent("b","1050",false)
                 console.log("TV 2 Off - Singal name 50")
                 
                 setTv_2_label("")
                 setTvBoxOption2(!tvBoxOption2)
         } else if (id === "close_dropdown_3"){
 
-            window.CrComLib.publishEvent("b","56",true)
-            window.CrComLib.publishEvent("b","56",false)
+            window.CrComLib.publishEvent("b","1056",true)
+            window.CrComLib.publishEvent("b","1056",false)
                 console.log("TV 3 Off - Singal name 56")
                 
                 setTv_3_label("")
                 setTvBoxOption3(!tvBoxOption3)
         } else if (id === "close_dropdown_4"){
 
-            window.CrComLib.publishEvent("b","62",true)
-            window.CrComLib.publishEvent("b","62",false)
+            window.CrComLib.publishEvent("b","1062",true)
+            window.CrComLib.publishEvent("b","1062",false)
                 console.log("TV 4 Off - Singal name 62")
                 
                 setTv_4_label("")
@@ -489,8 +489,12 @@ const Main_1 = () => {
     const controlling_DTV = (id:string) =>{
         if(id === "DTV_1"){
 
-            window.CrComLib.publishEvent("b","64",true)
-            window.CrComLib.publishEvent("b","64",false)
+            window.CrComLib.publishEvent("b","1064",true)
+            window.CrComLib.publishEvent("b","1064",false)
+
+            window.CrComLib.publishEvent("b","11",true)
+            window.CrComLib.publishEvent("b","11",false)
+
                 console.log(id,"signal name 64")
               
                 setControlling_dtv("DTV 1")
@@ -499,8 +503,12 @@ const Main_1 = () => {
 
         } else if(id === "DTV_2"){
 
-            window.CrComLib.publishEvent("b","65",true)
-            window.CrComLib.publishEvent("b","65",false)
+            window.CrComLib.publishEvent("b","1065",true)
+            window.CrComLib.publishEvent("b","1065",false)
+
+            window.CrComLib.publishEvent("b","12",true)
+            window.CrComLib.publishEvent("b","12",false)
+
                 console.log(id,"signal name 65")
                 
                 setControlling_dtv("DTV 2")
@@ -509,8 +517,12 @@ const Main_1 = () => {
 
         } else if(id === "DTV_3"){
 
-            window.CrComLib.publishEvent("b","66",true)
-            window.CrComLib.publishEvent("b","66",false)
+            window.CrComLib.publishEvent("b","1066",true)
+            window.CrComLib.publishEvent("b","1066",false)
+
+            window.CrComLib.publishEvent("b","13",true)
+            window.CrComLib.publishEvent("b","13",false)
+
                 console.log(id,"signal name 66")
                
                 setControlling_dtv("DTV 3")
@@ -519,8 +531,11 @@ const Main_1 = () => {
 
         } else if(id === "DTV_4"){
 
-            window.CrComLib.publishEvent("b","67",true)
-            window.CrComLib.publishEvent("b","67",false)
+            window.CrComLib.publishEvent("b","1067",true)
+            window.CrComLib.publishEvent("b","1067",false)
+            window.CrComLib.publishEvent("b","14",true)
+            window.CrComLib.publishEvent("b","14",false)
+
                 console.log(id,"signal name 67")
                
                 setTvBoxOption5(!tvBoxOption1)
@@ -531,8 +546,13 @@ const Main_1 = () => {
     const tv_one_video_output = (id:string) => {      
             if(id === "TV_1_Box_1"){
 
-                window.CrComLib.publishEvent("b","40",true)
-                window.CrComLib.publishEvent("b","40",false)
+                window.CrComLib.publishEvent("b","1040",true)
+                window.CrComLib.publishEvent("b","1040",false)
+
+                window.CrComLib.publishEvent("b","11",true)
+                window.CrComLib.publishEvent("b","11",false)
+
+             
                     console.log(id,"signal name 40")
                     setTvBoxOption1(!tvBoxOption1)
                     setControlling_dtv("DTV 1")
@@ -540,8 +560,12 @@ const Main_1 = () => {
                     setTv_1_label("DTV 1")
             } else if(id === "TV_1_Box_2"){
 
-                window.CrComLib.publishEvent("b","41",true)
-                window.CrComLib.publishEvent("b","41",false)
+                window.CrComLib.publishEvent("b","1041",true)
+                window.CrComLib.publishEvent("b","1041",false)
+
+                window.CrComLib.publishEvent("b","12",true)
+                window.CrComLib.publishEvent("b","12",false)
+
                     console.log(id,"signal name 41")
                     setTvBoxOption1(!tvBoxOption1)
                     setControlling_dtv("DTV 2")
@@ -550,8 +574,12 @@ const Main_1 = () => {
 
             } else if(id === "TV_1_Box_3"){
 
-                window.CrComLib.publishEvent("b","42",true)
-                window.CrComLib.publishEvent("b","42",false)
+                window.CrComLib.publishEvent("b","1042",true)
+                window.CrComLib.publishEvent("b","1042",false)
+
+                window.CrComLib.publishEvent("b","13",true)
+                window.CrComLib.publishEvent("b","13",false)
+
                     console.log(id,"signal name 42")
                     setTvBoxOption1(!tvBoxOption1)
                     setControlling_dtv("DTV 3")
@@ -559,8 +587,12 @@ const Main_1 = () => {
                     setTv_1_label("DTV 3")
             } else if(id === "TV_1_Box_4"){
 
-                window.CrComLib.publishEvent("b","43",true)
-                window.CrComLib.publishEvent("b","43",false)
+                window.CrComLib.publishEvent("b","1043",true)
+                window.CrComLib.publishEvent("b","1043",false)
+
+                window.CrComLib.publishEvent("b","14",true)
+                window.CrComLib.publishEvent("b","14",false)
+
                     console.log(id,"signal name 43")
                     setTvBoxOption1(!tvBoxOption1)
                     setControlling_dtv("DTV 4")
@@ -573,9 +605,13 @@ const Main_1 = () => {
       
             if(id === "TV_2_Box_1"){
 
-                window.CrComLib.publishEvent("b","46",true)
-                window.CrComLib.publishEvent("b","46",false)
-                    console.log(id,"signal name 46")
+                window.CrComLib.publishEvent("b","1046",true)
+                window.CrComLib.publishEvent("b","1046",false)
+
+                window.CrComLib.publishEvent("b","11",true)
+                window.CrComLib.publishEvent("b","11",false)
+
+                    console.log(id,"signal name 1046")
                     
                     setTvBoxOption2(!tvBoxOption2)
                     setControlling_dtv("DTV 1")
@@ -585,9 +621,13 @@ const Main_1 = () => {
     
            } else if(id === "TV_2_Box_2"){
     
-                window.CrComLib.publishEvent("b","47",true)
-                window.CrComLib.publishEvent("b","47",false)
-                    console.log(id,"signal name 47")
+                window.CrComLib.publishEvent("b","1047",true)
+                window.CrComLib.publishEvent("b","1047",false)
+
+                window.CrComLib.publishEvent("b","12",true)
+                window.CrComLib.publishEvent("b","12",false)
+
+                    console.log(id,"signal name 1047")
                     
                     setTvBoxOption2(!tvBoxOption2)
                     setControlling_dtv("DTV 2")
@@ -595,8 +635,12 @@ const Main_1 = () => {
 
            } else if(id === "TV_2_Box_3"){
     
-                window.CrComLib.publishEvent("b","48",true)
-                window.CrComLib.publishEvent("b","48",false)
+                window.CrComLib.publishEvent("b","1048",true)
+                window.CrComLib.publishEvent("b","1048",false)
+
+                window.CrComLib.publishEvent("b","13",true)
+                window.CrComLib.publishEvent("b","13",false)
+
                     console.log(id,"signal name 48")
                     
                     setTvBoxOption2(!tvBoxOption2)
@@ -605,9 +649,13 @@ const Main_1 = () => {
 
            } else if(id === "TV_2_Box_4"){
     
-                window.CrComLib.publishEvent("b","49",true)
-                window.CrComLib.publishEvent("b","49",false)
-                    console.log(id,"signal name 49")
+                window.CrComLib.publishEvent("b","1049",true)
+                window.CrComLib.publishEvent("b","1049",false)
+
+                window.CrComLib.publishEvent("b","14",true)
+                window.CrComLib.publishEvent("b","14",false)
+
+                    console.log(id,"signal name 1049")
                     
                     setTvBoxOption2(!tvBoxOption2)
                     setControlling_dtv("DTV 4")
@@ -620,8 +668,11 @@ const Main_1 = () => {
       
             if(id === "TV_3_Box_1"){
 
-                window.CrComLib.publishEvent("b","52",true)
-                window.CrComLib.publishEvent("b","52",false)
+                window.CrComLib.publishEvent("b","1052",true)
+                window.CrComLib.publishEvent("b","1052",false)
+                window.CrComLib.publishEvent("b","11",true)
+                window.CrComLib.publishEvent("b","11",false)
+
                     console.log(id,"signal name 52")
                     setTvBoxOption3(!tvBoxOption3)
                     setControlling_dtv("DTV 1")
@@ -631,8 +682,11 @@ const Main_1 = () => {
     
            } else if(id === "TV_3_Box_2"){
     
-                window.CrComLib.publishEvent("b","53",true)
-                window.CrComLib.publishEvent("b","53",false)
+                window.CrComLib.publishEvent("b","1053",true)
+                window.CrComLib.publishEvent("b","1053",false)
+                window.CrComLib.publishEvent("b","12",true)
+                window.CrComLib.publishEvent("b","12",false)
+
                     console.log(id,"signal name 53")
                     setTvBoxOption3(!tvBoxOption3)
                     setControlling_dtv("DTV 2")
@@ -641,8 +695,11 @@ const Main_1 = () => {
     
            } else if(id === "TV_3_Box_3"){
     
-                window.CrComLib.publishEvent("b","54",true)
-                window.CrComLib.publishEvent("b","54",false)
+                window.CrComLib.publishEvent("b","1054",true)
+                window.CrComLib.publishEvent("b","1054",false)
+                window.CrComLib.publishEvent("b","13",true)
+                window.CrComLib.publishEvent("b","13",false)
+
                     console.log(id,"signal name 54")
                     setTvBoxOption3(!tvBoxOption3)
                     setControlling_dtv("DTV 3")
@@ -651,8 +708,11 @@ const Main_1 = () => {
     
            } else if(id === "TV_3_Box_4"){
     
-                window.CrComLib.publishEvent("b","55",true)
-                window.CrComLib.publishEvent("b","55",false)
+                window.CrComLib.publishEvent("b","1055",true)
+                window.CrComLib.publishEvent("b","1055",false)
+                window.CrComLib.publishEvent("b","14",true)
+                window.CrComLib.publishEvent("b","14",false)
+
                     console.log(id,"signal name 55")
                     setTvBoxOption3(!tvBoxOption3)
                     setControlling_dtv("DTV 4")
@@ -665,8 +725,11 @@ const Main_1 = () => {
       
             if(id === "TV_4_Box_1"){
 
-                window.CrComLib.publishEvent("b","58",true)
-                window.CrComLib.publishEvent("b","58",false)
+                window.CrComLib.publishEvent("b","1058",true)
+                window.CrComLib.publishEvent("b","1058",false)
+                window.CrComLib.publishEvent("b","11",true)
+                window.CrComLib.publishEvent("b","11",false)
+
                     console.log(id,"signal name 58")
                     setTvBoxOption4(!tvBoxOption4)
                     setControlling_dtv("DTV 1")
@@ -677,8 +740,11 @@ const Main_1 = () => {
     
            } else if(id === "TV_4_Box_2"){
     
-                window.CrComLib.publishEvent("b","59",true)
-                window.CrComLib.publishEvent("b","59",false)
+                window.CrComLib.publishEvent("b","1059",true)
+                window.CrComLib.publishEvent("b","1059",false)
+                window.CrComLib.publishEvent("b","12",true)
+                window.CrComLib.publishEvent("b","12",false)
+
                     console.log(id,"signal name 59")
                     setTvBoxOption4(!tvBoxOption4)
                     setControlling_dtv("DTV 2")
@@ -688,8 +754,11 @@ const Main_1 = () => {
     
            } else if(id === "TV_4_Box_3"){
     
-                window.CrComLib.publishEvent("b","60",true)
-                window.CrComLib.publishEvent("b","60",false)
+                window.CrComLib.publishEvent("b","1060",true)
+                window.CrComLib.publishEvent("b","1060",false)
+                window.CrComLib.publishEvent("b","13",true)
+                window.CrComLib.publishEvent("b","13",false)
+
                     console.log(id,"signal name 60")
                     setTvBoxOption4(!tvBoxOption4)
                     setControlling_dtv("DTV 3")
@@ -699,8 +768,11 @@ const Main_1 = () => {
     
            } else if(id === "TV_4_Box_4"){
     
-                window.CrComLib.publishEvent("b","61",true)
-                window.CrComLib.publishEvent("b","61",false)
+                window.CrComLib.publishEvent("b","1061",true)
+                window.CrComLib.publishEvent("b","1061",false)
+                window.CrComLib.publishEvent("b","14",true)
+                window.CrComLib.publishEvent("b","14",false)
+
                     console.log(id,"signal name 61")
                     setTvBoxOption4(!tvBoxOption4)
                     setControlling_dtv("DTV 4")
@@ -713,33 +785,34 @@ const Main_1 = () => {
     }
     const all_on = () =>{
 
+        window.CrComLib.publishEvent("b","11",true)
+        window.CrComLib.publishEvent("b","11",false)
 
-
-        window.CrComLib.publishEvent("b","40",true)
-        window.CrComLib.publishEvent("b","40",false)
+        window.CrComLib.publishEvent("b","1040",true)
+        window.CrComLib.publishEvent("b","1040",false)
             
-            window.CrComLib.publishEvent("b","39",true)
-            window.CrComLib.publishEvent("b","39",false)
+            window.CrComLib.publishEvent("b","1039",true)
+            window.CrComLib.publishEvent("b","1039",false)
                 console.log("Signal name 40 for box_1_a and 39 for TV 1")
             
 
-        window.CrComLib.publishEvent("b","46",true)
-        window.CrComLib.publishEvent("b","46",false)
+        window.CrComLib.publishEvent("b","1046",true)
+        window.CrComLib.publishEvent("b","1046",false)
            
-            window.CrComLib.publishEvent("b","45",true)
-            window.CrComLib.publishEvent("b","45",false)
+            window.CrComLib.publishEvent("b","1045",true)
+            window.CrComLib.publishEvent("b","1045",false)
                 console.log("Signal name 46 for box_2_a and 45 for TV 2")
 
         
-        window.CrComLib.publishEvent("b","52",true)
-        window.CrComLib.publishEvent("b","52",false)
+        window.CrComLib.publishEvent("b","1052",true)
+        window.CrComLib.publishEvent("b","1052",false)
            
-            window.CrComLib.publishEvent("b","51",true)
-            window.CrComLib.publishEvent("b","51",false)
+            window.CrComLib.publishEvent("b","1051",true)
+            window.CrComLib.publishEvent("b","1051",false)
                 console.log("Signal name 52 for box_3_a and 51 for TV 3")
 
-        window.CrComLib.publishEvent("b","58",true)
-        window.CrComLib.publishEvent("b","58",false)
+        window.CrComLib.publishEvent("b","1058",true)
+        window.CrComLib.publishEvent("b","1058",false)
            
             window.CrComLib.publishEvent("b","57",true)
             window.CrComLib.publishEvent("b","57",false)
@@ -757,25 +830,25 @@ const Main_1 = () => {
     const switchAudio = (id:string) => {
 
             if(id === "dtv"){
-                window.CrComLib.publishEvent("b","70",true)
-                window.CrComLib.publishEvent("b","70",false)
+                window.CrComLib.publishEvent("b","1070",true)
+                window.CrComLib.publishEvent("b","1070",false)
                     console.log(id,"signal name 70")
 
             } else if( id === "music" ){
-                window.CrComLib.publishEvent("b","71",true)
-                window.CrComLib.publishEvent("b","71",false)
+                window.CrComLib.publishEvent("b","1071",true)
+                window.CrComLib.publishEvent("b","1071",false)
                     console.log(id,"signal name 71")
             } else if ( id === "mute"){
-                window.CrComLib.publishEvent("b","72",true)
-                window.CrComLib.publishEvent("b","72",false)
+                window.CrComLib.publishEvent("b","1072",true)
+                window.CrComLib.publishEvent("b","1072",false)
                     console.log(id,"signal name 72")
             } else if ( id === "volume_down"){
-                window.CrComLib.publishEvent("b","73",true)
-                window.CrComLib.publishEvent("b","73",false)
+                window.CrComLib.publishEvent("b","1073",true)
+                window.CrComLib.publishEvent("b","1073",false)
                     console.log(id,"signal name 73")
             } else if ( id === "volume_up"){
-                window.CrComLib.publishEvent("b","74",true)
-                window.CrComLib.publishEvent("b","74",false)
+                window.CrComLib.publishEvent("b","1074",true)
+                window.CrComLib.publishEvent("b","1074",false)
                     console.log(id,"signal name 74")
             }
 
@@ -784,30 +857,30 @@ const Main_1 = () => {
     const modalTurnOff = (id:string) =>{
 
         if (id === 'wholeRoom'){
-            window.CrComLib.publishEvent("b","30",true)
-            window.CrComLib.publishEvent("b","30",false)
-                console.log("room off, signal name of 30")
+            window.CrComLib.publishEvent("b","1030",true)
+            window.CrComLib.publishEvent("b","1030",false)
+                console.log("room off, signal name of 1030")
 
         } else if (id === 'allTvs'){
-            window.CrComLib.publishEvent("b","44",true)
-            window.CrComLib.publishEvent("b","44",false)
-                console.log("tv 1, signal name 44")
+            window.CrComLib.publishEvent("b","1044",true)
+            window.CrComLib.publishEvent("b","1044",false)
+                console.log("tv 1, signal name 1044")
 
-                window.CrComLib.publishEvent("b","50",true)
-                window.CrComLib.publishEvent("b","50",false)
-                    console.log("tv 2, signal name 50")
+                window.CrComLib.publishEvent("b","1050",true)
+                window.CrComLib.publishEvent("b","1050",false)
+                    console.log("tv 2, signal name 1050")
 
-                    window.CrComLib.publishEvent("b","56",true)
-                    window.CrComLib.publishEvent("b","56",false)
-                        console.log("tv 3, signal name 56")
+                    window.CrComLib.publishEvent("b","1056",true)
+                    window.CrComLib.publishEvent("b","1056",false)
+                        console.log("tv 3, signal name 1056")
 
-                        window.CrComLib.publishEvent("b","62",true)
-                        window.CrComLib.publishEvent("b","62",false)
-                            console.log("tv 4, signal name 62")
+                        window.CrComLib.publishEvent("b","1062",true)
+                        window.CrComLib.publishEvent("b","1062",false)
+                            console.log("tv 4, signal name 1062")
         } else if ( id === 'music'){
-            window.CrComLib.publishEvent("b","31",true)
-            window.CrComLib.publishEvent("b","31",false)
-                console.log("music off signal name 31")
+            window.CrComLib.publishEvent("b","1031",true)
+            window.CrComLib.publishEvent("b","1031",false)
+                console.log("music off signal name 1031")
         }
         
 

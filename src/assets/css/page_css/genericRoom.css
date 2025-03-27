@@ -132,10 +132,75 @@
     }
 
 
-    #active_source{
-        background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(9, 99, 235) 100%);
-        backdrop-filter: blur(0px);
-    }
+    .source_card#active_source::before{
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        z-index: 0;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: 300% 300%;
+        background-image: linear-gradient(-45deg,  rgb(8, 5, 83)0%,rgb(8, 5, 83) 5%, rgb(0, 195, 255) 25%, rgb(0, 195, 255) 51%, rgb(8, 5, 83) 100%);
+        -webkit-animation: AnimateBG 6s ease infinite;
+                animation: AnimateBG 6s ease infinite;
+      }
+      
+      @-webkit-keyframes AnimateBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      
+      @keyframes AnimateBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+/*
+---------------------------------------------------- mkaing image white when id of active source is on 
+*/
+      /*bluRay*/
+      .source_card#active_source .media_1_img{
+        filter: brightness(0) invert(1);
+      }
+      /*kaleidescape*/
+      .source_card#active_source .media_2_img{
+        filter: brightness(0) invert(1);
+      }
+        /*DTV 1 2 3*/
+      .source_card#active_source .media_3_img{
+        filter: brightness(0) invert(1);
+      }
+      .source_card#active_source .media_4_img{
+        filter: brightness(0) invert(1);
+      }
+      .source_card#active_source .media_5_img{
+        filter: brightness(0) invert(1);
+      }
+
+      .source_card#active_source p {
+        font-size: large;
+      }
+       
        
 
 
@@ -357,6 +422,10 @@
         }
         .volume_container img{
             filter: invert(0);
+        }
+
+        .volume_container .btn_square_wide img{
+            filter: brightness(0) saturate(100%) invert(16%) sepia(88%) saturate(7466%) hue-rotate(358deg) brightness(97%) contrast(127%);
         }
 
     .mute_btn_txt{

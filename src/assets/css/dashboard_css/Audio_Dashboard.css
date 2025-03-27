@@ -534,7 +534,6 @@
 
 
         border-radius: 10px;
-        backdrop-filter: blur(20px);
         background-color: rgb(70, 70, 70);
         border: solid 2px rgb(170, 170, 170);
         box-shadow: 5px 5px 10px black;

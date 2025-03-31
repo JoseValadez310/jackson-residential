@@ -144,20 +144,20 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
-    const light_1_join = "266"
-    const light_2_join = "267"
-    const light_3_join = "268"
-    const light_4_join = "269"
+    const light_1_join = "287"
+    const light_2_join = "288"
+    const light_3_join = "289"
+    const light_4_join = "290"
     const light_5_join = ""
     const light_6_join = ""
     const light_7_join = ""
     const light_8_join = ""
 
 
-    const light_1_name:string = "Chandelier"
-    const light_2_name:string = "Accent"
-    const light_3_name:string = "Window"
-    const light_4_name:string = "Ceiling"
+    const light_1_name:string = "Normal"
+    const light_2_name:string = "Chandalier"
+    const light_3_name:string = "Accent"
+    const light_4_name:string = "Window"
     const light_5_name:string = "null"
 
     const light_6_name:string = "null"

@@ -291,7 +291,7 @@ const RoomsDashboard = () => {
 
                 <div className="icon_preview">
                     <img src={TV} style={{ height: "1.25rem" }} />
-                    <img src={Light} style={{ height: "1.25rem" }} />
+                    <img className='display_none' src={Light} style={{ height: "1.25rem" }} />
                     <img src={Audio} style={{ height: "1.25rem" }} />
                     <img id="display_none" src={Climate} style={{ height: "1.25rem" }} />
                 </div>
@@ -417,18 +417,18 @@ const RoomsDashboard = () => {
                 </div>
 
                 <div className="active_zone_menu">
-                    <div className={room1Active>0 || room2Active>0 ?"active_zone_card":"display_none"}> <p>Breakfast</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room3Active>0? "active_zone_card":"display_none"}> <p>Dining Room</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room4Active>0? "active_zone_card":"display_none"}> <p>Ellen's Exercise</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room5Active>0? "active_zone_card":"display_none"}> <p>Ellen's Office</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room6Active>0? "active_zone_card":"display_none"}> <p>Ellen's Bath</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room7Active>0? "active_zone_card":"display_none"}> <p>Family Room</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room8Active>0? "active_zone_card":"display_none"}> <p>Guest Bedroom</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room9Active>0? "active_zone_card":"display_none"}> <p>Master Bedroom</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room10Active>0? "active_zone_card":"display_none"}> <p> Media Room</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room11Active>0 || room12Active>0 || room13Active>0?  "active_zone_card":"display_none"}> <p>Aracde</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room14Active>0? "active_zone_card":"display_none"}> <p>Pool Patio</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
-                    <div className={room15Active>0? "active_zone_card":"display_none"}> <p>Game Room</p> <button className="btn_circle"><img className="btn_image" src={power} /></button></div>
+                    <div className={room1Active>0 || room2Active>0 ?"active_zone_card":"display_none"}>                         <p>Breakfast</p>        <button className="btn_circle" onTouchEnd={()=> (window.CrComLib.publishEvent("n",room1,0),window.CrComLib.publishEvent("n",room2,0))}><img className="btn_image" src={power} /></button></div>
+                    <div className={room3Active>0? "active_zone_card":"display_none"}>                                          <p>Dining Room</p>      <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room3,0)}><img className="btn_image" src={power} /></button></div>
+                <div className={room4Active>0? "active_zone_card":"display_none"}>                                              <p>Ellen's Exercise</p> <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room4,0)}><img className="btn_image" src={power} /></button></div>
+                <div className={room5Active>0? "active_zone_card":"display_none"}>                                              <p>Ellen's Office</p>   <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room5,0)}><img className="btn_image" src={power} /></button></div>
+                    <div className={room6Active>0? "active_zone_card":"display_none"}>                                          <p>Ellen's Bath</p>     <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room6,0)}><img className="btn_image" src={power} /></button></div>
+                    <div className={room7Active>0? "active_zone_card":"display_none"}>                                          <p>Family Room</p>      <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room7,0)}><img className="btn_image" src={power} /></button></div>
+                    <div className={room8Active>0? "active_zone_card":"display_none"}>                                          <p>Guest Bedroom</p>    <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room8,0)}><img className="btn_image" src={power} /></button></div>
+                <div className={room9Active>0? "active_zone_card":"display_none"}>                                              <p>Master Bedroom</p>   <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room9,0)}><img className="btn_image" src={power} /></button></div>
+                    <div className={room10Active>0? "active_zone_card":"display_none"}>                                         <p> Media Room</p>      <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room10,0)}><img className="btn_image" src={power} /></button></div>
+                    <div className={room11Active>0 || room12Active>0 || room13Active>0?  "active_zone_card":"display_none"}>    <p>Aracde</p>           <button className="btn_circle" onTouchEnd={()=> (window.CrComLib.publishEvent("n",room11,0),window.CrComLib.publishEvent("n",room12,0),window.CrComLib.publishEvent("n",room13,0))}><img className="btn_image" src={power} /></button></div>
+                    <div className={room14Active>0? "active_zone_card":"display_none"}>                                         <p>Pool Patio</p>       <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room14,0)}><img className="btn_image" src={power} /></button></div>
+                    <div className={room15Active>0? "active_zone_card":"display_none"}>                                         <p>Game Room</p>        <button className="btn_circle" onTouchEnd={()=> window.CrComLib.publishEvent("n",room15,0)}><img className="btn_image" src={power} /></button></div>
                    
                 </div>
                 <button className="btn_square" onClick={()=>setTvPowerMenu(!tvPowerMenu)}> <p>Close Menu</p></button>

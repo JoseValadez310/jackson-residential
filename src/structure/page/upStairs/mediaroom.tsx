@@ -144,23 +144,23 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
-    const light_1_join = "309"
-    const light_2_join = "310"
-    const light_3_join = "311"
-    const light_4_join = "312"
+    const light_1_join = "349"
+    const light_2_join = "350"
+    const light_3_join = "351"
+    const light_4_join = "352"
     const light_5_join = "313"
-    const light_6_join = ""
-    const light_7_join = ""
+    const light_6_join = "354"
+    const light_7_join = "355"
     const light_8_join = ""
 
 
-    const light_1_name:string = "Ceiling"
-    const light_2_name:string = "Game Table"
-    const light_3_name:string = "Bar"
-    const light_4_name:string = "Art"
-    const light_5_name:string = "Cabinet"
+    const light_1_name:string = "Normal"
+    const light_2_name:string = "Bar"
+    const light_3_name:string = "Down Lights"
+    const light_4_name:string = "Accent"
+    const light_5_name:string = "Game Table"
 
-    const light_6_name:string = "null"
+    const light_6_name:string = "Stairs"
     const light_7_name:string = "null"
     const light_8_name:string = "null"
    
@@ -1237,6 +1237,16 @@ if(media1){
 
                                 <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
                                     <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
+                                </button>
+                            </div>
+
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_6")}>
+                                <div className="light_info">
+                                    <p className="light_name">{light_6_name}</p>
+                                </div>
+
+                                <button className="btn_circle" id={light_6 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_6 ? lightOn : lightOff}/>
                                 </button>
                             </div>
 

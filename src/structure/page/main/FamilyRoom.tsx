@@ -144,25 +144,29 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
-    const light_1_join = "275"
-    const light_2_join = "276"
-    const light_3_join = "277"
-    const light_4_join = "278"
-    const light_5_join = ""
-    const light_6_join = ""
-    const light_7_join = ""
-    const light_8_join = ""
 
 
-    const light_1_name:string = "Sconces"
-    const light_2_name:string = "Accent"
-    const light_3_name:string = "Window"
-    const light_4_name:string = "Ceiling"
-    const light_5_name:string = "Null"
 
-    const light_6_name:string = "null"
-    const light_7_name:string = "null"
-    const light_8_name:string = "null"
+    const light_1_join:string = "297"
+    const light_2_join:string = "298"
+    const light_3_join:string = "299"
+    const light_4_join:string = "300"
+    const light_5_join:string = "302"
+    const light_6_join:string = "303"
+    const light_7_join:string = "304"
+    const light_8_join:string = "305"
+    const light_9_join:string = "307"
+
+    const light_1_name:string = "Normal";
+    const light_2_name:string = "Down lights";
+    const light_3_name:string = "Accent";
+    const light_4_name:string = "Sconces";
+    const light_5_name:string = "Bar";
+    const light_6_name:string = "Pathway";
+    const light_7_name:string = "Bar Sitting";
+    const light_8_name:string = "Bar Sitting Off";
+    const light_9_name:string = "Outside";
+
    
     const [light_1, setLight_1] = useState(false)
     const [light_2, setLight_2] = useState(false)
@@ -172,6 +176,7 @@ const FamilyRoom = () =>{
     const [light_6, setLight_6] = useState(false)
     const [light_7, setLight_7] = useState(false)
     const [light_8, setLight_8] = useState(false)
+    const [light_9, setLight_9] = useState(false)
 
 
 
@@ -211,6 +216,7 @@ const FamilyRoom = () =>{
         const light_6 = window.CrComLib.subscribeState("b",`${light_6_join}`,(value: boolean) => {setLight_6(value);});
         const light_7 = window.CrComLib.subscribeState("b",`${light_7_join}`,(value: boolean) => {setLight_7(value);});
         const light_8 = window.CrComLib.subscribeState("b",`${light_8_join}`,(value: boolean) => {setLight_8(value);});
+        const light_9 = window.CrComLib.subscribeState("b",`${light_9_join}`,(value: boolean) => {setLight_9(value);});
   
 
         const activeSource = window.CrComLib.subscribeState("n",roomLocation,(value: number) => {setActiveSource(value);});
@@ -243,6 +249,8 @@ const FamilyRoom = () =>{
             window.CrComLib.unsubscribeState("b",`${light_6_join}`,light_6)
             window.CrComLib.unsubscribeState("b",`${light_7_join}`,light_7)
             window.CrComLib.unsubscribeState("b",`${light_8_join}`,light_8)
+            window.CrComLib.unsubscribeState("b",`${light_9_join}`,light_9)
+
 
 
             
@@ -317,6 +325,13 @@ const sliderValue = (value: boolean, id: string) => {
         window.CrComLib.publishEvent("b",`${light_8_join}`,false)
 
         console.log("sending join", light_8_join)
+     } else if (id === "light_9"){
+              
+        // some crestron commands
+        window.CrComLib.publishEvent("b",`${light_9_join}`,true)
+        window.CrComLib.publishEvent("b",`${light_9_join}`,false)
+
+        console.log("sending join", light_9_join)
      }
     }
 
@@ -1197,7 +1212,6 @@ if(media1){
                                 </button>
                             </div>
 
-
                             <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_2")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_2_name}</p>
@@ -1228,7 +1242,7 @@ if(media1){
                                 </button>
                             </div>
 
-                            <div className="display_none" onTouchEnd={() => sliderValue(true,"light_5")}>
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_5")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_5_name}</p>
                                 </div>
@@ -1237,6 +1251,52 @@ if(media1){
                                     <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
                                 </button>
                             </div>
+
+                            
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_6")}>
+                                <div className="light_info">
+                                    <p className="light_name">{light_6_name}</p>
+                                </div>
+
+                                <button className="btn_circle" id={light_6 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_6 ? lightOn : lightOff}/>
+                                </button>
+                            </div>
+
+                            
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_7")}>
+                                <div className="light_info">
+                                    <p className="light_name">{light_7_name}</p>
+                                </div>
+
+                                <button className="btn_circle" id={light_7 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_7 ? lightOn : lightOff}/>
+                                </button>
+                            </div>
+
+
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_8")}>
+                                <div className="light_info">
+                                    <p className="light_name">{light_8_name}</p>
+                                </div>
+
+                                <button className="btn_circle" id={light_8 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_8 ? lightOn : lightOff}/>
+                                </button>
+                            </div>
+
+                            
+                            <div className="display_none" onTouchEnd={() => sliderValue(true,"light_9")}>
+                                <div className="light_info">
+                                    <p className="light_name">{light_9_name}</p>
+                                </div>
+
+                                <button className="btn_circle" id={light_9 ? "light_btn_on" : ""}>
+                                    <img className="btn_image" src={light_9 ? lightOn : lightOff}/>
+                                </button>
+                            </div>
+
+
 
                         </div>
 

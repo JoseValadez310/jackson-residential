@@ -129,6 +129,13 @@
             -webkit-animation: AnimateBG 10s ease infinite;
                     animation: AnimateBG 10s ease infinite;
         }
+
+        #active_btn{
+            background-size: 300% 300%;
+            background-image: linear-gradient(-45deg,rgb(20, 72, 133)25%,rgb(42, 123, 160) 50%,rgb(33, 98, 172) 100%);
+            -webkit-animation: AnimateBG 3s ease infinite;
+                    animation: AnimateBG 3s ease infinite;
+        }
             .active_zone_card p{
                 grid-column: 2/6;
                 width: 100%;

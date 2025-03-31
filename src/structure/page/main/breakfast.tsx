@@ -156,25 +156,25 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
-    const light_1_join = "259"
-    const light_2_join = "260"
-    const light_3_join = "261"
-    const light_4_join = "262"
-    const light_5_join = "264"
-    const light_6_join = ""
-    const light_7_join = ""
-    const light_8_join = ""
+    const light_1_join = "267"
+    const light_2_join = "268"
+    const light_3_join = "269"
+    const light_4_join = "270"
+    const light_5_join = "272"
+    const light_6_join = "273"
+    const light_7_join = "274"
+    const light_8_join = "275"
 
 
-    const light_1_name:string = "Window"
-    const light_2_name:string = "Ceiling"
+    const light_1_name:string = "Normal"
+    const light_2_name:string = "Pendant"
     const light_3_name:string = "Accent"
-    const light_4_name:string = "Pendant"
-    const light_5_name:string = "Butler Hall"
+    const light_4_name:string = "Down Lights"
+    const light_5_name:string = "Inner Patio"
 
-    const light_6_name:string = "null"
-    const light_7_name:string = "null"
-    const light_8_name:string = "null"
+    const light_6_name:string = "Outer Patio"
+    const light_7_name:string = "Kitchen"
+    const light_8_name:string = "Outside"
    
     const [light_1, setLight_1] = useState(false)
     const [light_2, setLight_2] = useState(false)
@@ -1694,7 +1694,6 @@ if(media1 ){
                         </button>
                     </div>
 
-
                     <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_2")}>
                         <div className="light_info">
                             <p className="light_name">{light_2_name}</p>
@@ -1732,6 +1731,36 @@ if(media1 ){
 
                         <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
                             <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_6")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_6_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_6 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_6 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_7")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_7_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_7 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_7 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_8")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_8_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_8 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_8 ? lightOn : lightOff}/>
                         </button>
                     </div>
 

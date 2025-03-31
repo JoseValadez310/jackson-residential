@@ -873,7 +873,7 @@ if(media1){
 
 
             <div className="room_back_corner" >
-                <Link to={"/RoomsDashboard"} onTouchEnd={() => closeOutPowerOption} > 
+                <Link to={"/RoomsDashboard2"} onTouchEnd={() => closeOutPowerOption} > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>
@@ -960,7 +960,7 @@ if(media1){
                     <img src={TV}/>  
                 </div>   
 
-                <Link to={'/AudioDashboard'} className="generic_room_card" style={{textDecoration:"none"}}>
+                <Link to={'/AudioDashboard2'} className="generic_room_card" style={{textDecoration:"none"}}>
                     <img src={music}/>
                  
                 </Link>

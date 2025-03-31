@@ -887,7 +887,7 @@ if(media1){
             
                 <div className="nav">
                 <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}    className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
-                        <Link to={"/AudioDashboard"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+                        <Link to={"/AudioDashboard2"}              className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
                         <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "display_none"}   >  <img src={lights}  /> </button>
                 </div>
                 
@@ -961,7 +961,7 @@ if(media1){
                     <img src={TV}/>  
                 </div>   
 
-                <Link to={'/AudioDashboard'} className="generic_room_card" style={{textDecoration:"none"}}>
+                <Link to={'/AudioDashboard2'} className="generic_room_card" style={{textDecoration:"none"}}>
                     <img src={music}/>
                  
                 </Link>

@@ -12,7 +12,9 @@ import "../src/assets/css/index.css"
 // Dashboard
 import Home from './structure/dashboard/HomeDashboard';
 import RoomsDashboard from './structure/dashboard/RoomDashboard';
+
 import AudioDashboard from './structure/dashboard/AudioDashboard'
+
 import LightDashboard from './structure/dashboard/LightDashboard'
 import Climate  from './structure/dashboard/ClimateDashboard';
 import Security from './structure/dashboard/SecurityDashboard'
@@ -67,10 +69,15 @@ function App() {
       path: '/roomsDashboard',
       element: <RoomsDashboard />
     },
+
+   
+    
     {
       path: '/AudioDashboard',
       element: <AudioDashboard />
     },
+
+   
     {
       path: '/LightDashboard',
       element: <LightDashboard />

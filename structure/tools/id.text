@@ -1,0 +1,48 @@
+  import CryptoJS from "crypto-js"
+
+  
+  
+  
+  
+  const httpMethod = "GET";
+  const httpUri = "wss://192.168.1.198/subscriptionmgr";
+  const clientID = "bb473582-371c-437a-8e9b-59850ab181db";
+  const clientSecret = "DJQgiW5GWHmfX3hdmP+wo13LlN0TS8dKNts24Ci/7fc=";
+  
+  function getSignature(clientId: string, timeStamp: number, nonce: string): string {
+    // Create the signature string by concatenating values
+    const signatureString = clientId + httpMethod + httpUri + timeStamp + nonce;
+    
+    // Parse the clientSecret from base64 into a CryptoJS word array
+    const secret = CryptoJS.enc.Base64.parse(clientSecret);
+    
+    // Generate HMAC using SHA256 and convert it back to a base64 encoded string
+    const hmac = CryptoJS.HmacSHA256(signatureString, secret);
+    const hmacBase64 = CryptoJS.enc.Base64.stringify(hmac);
+    
+    return hmacBase64;
+  }
+  
+  function getAuthHeader(): string {
+    // Generate a nonce using the browser's crypto API (supported in modern browsers)
+    const nonce = window.crypto.randomUUID();
+    
+    // Get the current timestamp (in seconds)
+    const timeStamp = Math.floor(Date.now() / 1000);
+    
+    // Generate the signature using the provided parameters
+    const signature = getSignature(clientID, timeStamp, nonce);
+    
+    // Create the client info string and encode it in base64 using btoa
+    const clientInfo = `${clientID}:${signature}:${nonce}:${timeStamp}`;
+    const crestronAuth = `CrestronAuth-SHA256 ${btoa(clientInfo)}`;
+    
+    console.log("Authorization:", crestronAuth);
+    return crestronAuth;
+  }
+  
+
+    useEffect(() => {
+      // Call the function on component mount
+      getAuthHeader();
+    }, []);

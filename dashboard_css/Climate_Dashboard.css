@@ -1,0 +1,245 @@
+
+
+.climate_page{
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    justify-items: start;
+    align-items: center;
+    gap: 10px;
+
+    overflow: hidden;
+    max-height: 100vh; 
+    max-width: 100vw;  
+    box-sizing: border-box; 
+    padding: 1rem;
+
+    z-index: 10;
+  
+}
+
+    .climate_page .title_info{
+        grid-row: 1;
+        grid-column: 2/12;
+        margin: 0%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        font-size: 3.75rem;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        animation: room_selection 1000ms;
+    }
+        .climate_page .btn_selected{
+            width: 4.75rem;
+            height: 4.75rem;
+        }
+
+    /*
+    ----------------------------------------------------------------------------------- Area where climate is being displayed
+     display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+    */  
+    
+    .climate_dashboard_container{
+        grid-column: 1/13;
+        grid-row: 2/9;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .5rem;
+        animation: controller-load 1500ms;
+
+        overflow-y: scroll;
+    }
+        .container_thermo{    
+           height: 35rem;
+           width: 27rem;
+        }
+            .climate_label{
+                position: relative;
+                top: 2.5rem;
+                left: 1rem;
+                z-index: 9;
+               
+                font-size: 1.15rem;
+            }
+
+
+    
+       
+    
+
+    /*
+        ------------------------------- short nav 
+    */
+
+    .climate_page .nav_container{
+        grid-row: 1/2;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        backdrop-filter: blur(0px);
+    }
+
+    .climate_page .nav_container:before{
+        background-color: transparent;
+    }
+
+
+
+
+
+
+
+
+
+    @media only screen and (max-device-width: 430px)  and (orientation: portrait){
+        .climate_page{
+            grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+
+        }
+       
+        .climate_page .nav_container{
+            display: none;
+        }
+
+        .climate_page .title_info{
+            font-size: x-large;
+            grid-column: 2/13;
+
+            font-weight: 100;
+        }
+        
+        .climate_dashboard_container{
+            overflow-y: scroll;
+            width: 100%;
+            grid-column: 1/13;
+            justify-content: center;
+        }
+
+        
+    
+     .climate_label{
+        position: relative;
+        top: 30px;
+        width: 10rem;
+     }
+        .container_thermo{
+            position: relative;
+            bottom: 10px;
+            width: 100%;
+        }
+
+
+        .climate_page .title_info{
+            font-size: 1.75rem;
+            grid-column: 2/13;
+
+            font-weight: 100;
+        }
+        
+
+
+    
+    
+    
+    
+    
+    }
+
+    
+    @media only screen and (max-device-width: 390px)  and (orientation: portrait){
+        .climate_page{
+            grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+
+        }
+       
+        .climate_page .nav_container{
+            display: none;
+        }
+
+        .climate_page .title_info{
+            font-size: 1.5rem;
+            grid-column: 2/13;
+
+            font-weight: 100;
+        }
+
+      
+        .climate_dashboard_container{
+            grid-column: 1/13;
+            overflow-y: scroll;
+            width: 100%;
+        }
+
+        
+    
+     .climate_label{
+        position: relative;
+        top: 30px;
+     }
+        .container_thermo{
+            position: relative;
+            bottom: 10px;
+            width: 100%;
+        }
+
+
+    
+    
+    
+    
+    
+    }
+
+
+
+    
+@media only screen and (max-height: 550px) and (orientation: landscape){
+
+  .climate_page .title_info{
+    text-align: center;
+    font-weight: 100;
+    font-size: xx-large;
+  }
+  
+
+    .climate_page .landscape_warning{
+        grid-column: 2/12;
+        grid-row: 2/9;
+        z-index: 10;
+ 
+    }
+
+    .climate_dashboard_container{
+        display: none;
+    }
+
+}
+
+
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+    .climate_dashboard_container{
+        justify-content: center
+    }
+    .container_thermo{
+        width: 45%;
+
+    }
+    .climate_page .title_info{
+        font-size: 3.15rem;
+    }
+
+
+  }

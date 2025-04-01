@@ -48,15 +48,16 @@ import PoolPatio from "./structure/page/outDoors/poolpatio"
 
 // Tools
 import ScreenSize from './structure/tools/ScreenSize';
-
        
-     import imageBackground from "../src/assets/images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg"
+import imageBackground from "../src/assets/images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg"
         
      
 
    
 
 function App() {
+
+ 
 
   const router = createHashRouter ([
     {

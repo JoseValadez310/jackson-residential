@@ -655,7 +655,6 @@ if(media1 ){
             window.CrComLib.publishEvent("n",`${roomLocation}`,10)
         } 
         }
-
     const playSource_2 = (id:string) =>{
         console.log(`play source on TV ${currentTVSource}`)
         if(id === "media1"){
@@ -844,7 +843,6 @@ if(media1 ){
         }
 
             }
-
     // Power menu for current room
         const powerMenu = (id:string) =>{
             if(id==="menu"){
@@ -871,7 +869,7 @@ if(media1 ){
 
             }
            
-        }
+            }
          
     // Back button calls this function 
         const display_tile = () => {   
@@ -1266,7 +1264,7 @@ if(media1 ){
 
 
             <div className="room_back_corner" >
-                <Link to={"/RoomsDashboard"} onTouchEnd={() => closeOutPowerOption} > 
+                <Link to={"/RoomsDashboard"} state ={{previousLocation:"2"}} onTouchEnd={() => closeOutPowerOption} > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>

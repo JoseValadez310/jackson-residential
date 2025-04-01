@@ -182,7 +182,7 @@ const Main_1 = () => {
 
 // Place this next to the title once we have more locations. 
 
-<Link to={"/room_dashboard"}>  
+<Link to={"/room_dashboard"}state ={{previousLocation:"3"}}>  
   <button> Back to room select</button>
 </Link>
 

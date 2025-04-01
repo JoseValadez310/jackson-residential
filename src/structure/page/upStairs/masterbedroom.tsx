@@ -873,7 +873,7 @@ if(media1){
 
 
             <div className="room_back_corner" >
-                <Link to={"/RoomsDashboard2"} onTouchEnd={() => closeOutPowerOption} > 
+                <Link to={"/RoomsDashboard"}  state ={{previousLocation:"1"}} onTouchEnd={() => closeOutPowerOption} > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>

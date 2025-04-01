@@ -87,7 +87,7 @@ const LightDashboard = () => {
     // BILLIARD ROOM section updated 
     const [light_1_fb_BILLIARD_ROOM, setLight_1_fb_BILLIARD_ROOM] = useState(false);
     const light_1_join_BILLIARD_ROOM = "255";
-    const light_1_title_BILLIARD_ROOM = "Fmaily Room";
+    const light_1_title_BILLIARD_ROOM = "Family Room";
     
     const [light_2_fb_BILLIARD_ROOM, setLight_2_fb_BILLIARD_ROOM] = useState(false);
     const light_2_join_BILLIARD_ROOM = "256";

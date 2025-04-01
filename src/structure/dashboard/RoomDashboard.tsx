@@ -2,9 +2,8 @@
 import { useState, useEffect} from "react"
 
 
-
 // React Router 
-import { Link  } from "react-router-dom"
+import { Link,useLocation  } from "react-router-dom"
 // CSS 
 import "../../assets/css/dashboard_css/Room_Dashboard.css"
 import "../../assets/css/index.css"
@@ -26,6 +25,35 @@ import power       from "../../assets/images/icons/icons8-power.svg"
 
 
 const RoomsDashboard = () => {
+
+    const location = useLocation();
+    const previousLocation = location.state?.previousLocation || "Unknown";
+
+    useEffect(()=>{
+
+        if(previousLocation === "1"){
+            setLocation1(true)
+            setLocation2(false)
+            setLocation3(false)
+            setLocation4(false)
+        } else if (previousLocation === "2"){
+            setLocation1(false)
+            setLocation2(true)
+            setLocation3(false)
+            setLocation4(false)
+        } else if (previousLocation === "3"){
+            setLocation1(false)
+            setLocation2(false)
+            setLocation3(true)
+            setLocation4(false)
+        }  else if (previousLocation === "4"){
+            setLocation1(false)
+            setLocation2(false)
+            setLocation3(false)
+            setLocation4(true)
+        } 
+
+    },[previousLocation])
 
    
 

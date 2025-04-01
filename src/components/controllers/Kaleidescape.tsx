@@ -265,7 +265,7 @@ const Kaleidescape = () =>{
     const section_two   = (<> 
         <div className="kaleidescape_controller_controls">
 
-                <button className="btn_circle" id="scan1" onTouchStart={() => kaleidescapeTransports("scan-")}>
+                <button className="btn_circle" id="scan1" onTouchStart={() => kaleidescapeTransports("skip-")}>
                 <img className="btn_image"src={scan} id="flip"/>
                 </button>
 
@@ -273,11 +273,11 @@ const Kaleidescape = () =>{
                 <img className="btn_image"src={stop} alt="" />
                 </button>
 
-                <button className="btn_circle" id="scan2" onTouchStart={() => kaleidescapeTransports("scan+")}>
+                <button className="btn_circle" id="scan2" onTouchStart={() => kaleidescapeTransports("skip+")}>
                 <img className="btn_image"src={scan} alt="" />
                 </button>
 
-                <button className="btn_circle" id="skip1" onTouchStart={() => kaleidescapeTransports("skip-")}>
+                <button className="btn_circle" id="skip1" onTouchStart={() => kaleidescapeTransports("scan-")}>
                 <img className="btn_image"src={skip}  id="flip" />
                 </button>
 
@@ -285,7 +285,7 @@ const Kaleidescape = () =>{
                 <img className="btn_image"src={play} alt="" />
                 </button>
 
-                <button className="btn_circle" id="skip2" onTouchStart={() => kaleidescapeTransports("skip+")}>
+                <button className="btn_circle" id="skip2" onTouchStart={() => kaleidescapeTransports("scan+")}>
                 <img className="btn_image"src={skip} alt="" />
                 </button>
 
@@ -397,25 +397,21 @@ const mobile_section_one = (
 
         <div className="bottom_row_1_controller"> 
 
-                <button className="btn_circle" id="scan1" onTouchStart={() => kaleidescapeTransports("scan-")}>
-                <img className="btn_image"src={scan} id="flip"/>
+                <button className="btn_circle" id="scan1" onTouchStart={() => kaleidescapeTransports("skip-")}>
+                    <img className="btn_image"src={scan} id="flip"/>
                 </button>
 
-               
-                
-                <button className="btn_circle" id="skip1" onTouchStart={() => kaleidescapeTransports("skip-")}>
-                <img className="btn_image"src={skip}  id="flip" />
-                </button>
-                <button className="btn_circle" id="skip2" onTouchStart={() => kaleidescapeTransports("skip+")}>
-                <img className="btn_image"src={skip} alt="" />
+                <button className="btn_circle" id="skip1" onTouchStart={() => kaleidescapeTransports("scan-")}>
+                    <img className="btn_image"src={skip}  id="flip" />
                 </button>
 
-                <button className="btn_circle" id="scan2" onTouchStart={() => kaleidescapeTransports("scan+")}>
-                <img className="btn_image"src={scan} alt="" />
+                <button className="btn_circle" id="skip2" onTouchStart={() => kaleidescapeTransports("scan+")}>
+                    <img className="btn_image"src={skip} alt="" />
                 </button>
 
-
-
+                <button className="btn_circle" id="scan2" onTouchStart={() => kaleidescapeTransports("skip+")}>
+                    <img className="btn_image"src={scan} alt="" />
+                </button>
 
         </div>
 

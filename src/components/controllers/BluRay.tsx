@@ -90,7 +90,7 @@ const BluRay = () => {
     const section_two   = (<> 
         <div className="bluRay_controller_controls">
 
-            <button className="btn_circle" onTouchEnd={() => bluRayTransports("scan-")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip-")}>
                 <img className="btn_image" id="flip" src={scan} alt="" />
             </button>
 
@@ -98,11 +98,11 @@ const BluRay = () => {
                 <img className="btn_image" src={stop} alt="" />
             </button>
 
-            <button className="btn_circle"  onTouchEnd={() => bluRayTransports("scan+")}>
+            <button className="btn_circle"  onTouchEnd={() => bluRayTransports("skip+")}>
                 <img className="btn_image" src={scan} alt="" />
             </button>
 
-            <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip-")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("scan-")}>
                 <img className="btn_image"  id="flip"  src={skip} alt="" />
             </button>
 
@@ -110,7 +110,7 @@ const BluRay = () => {
                 <img className="btn_image" src={play} alt="" />
             </button>
 
-            <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip+")}>
+            <button className="btn_circle" onTouchEnd={() => bluRayTransports("scan+")}>
                 <img className="btn_image" src={skip} alt="" />
             </button>
 
@@ -220,19 +220,19 @@ const BluRay = () => {
 
                 <div className="bottom_row_1_controller"> 
 
-                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("scan-")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip-")}>
                         <img className="btn_image" id="flip" src={scan} alt="" />
                     </button>
 
-                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip-")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("scan-")}>
                         <img className="btn_image"  id="flip"  src={skip} alt="" />
                     </button>
 
-                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("skip+")}>
+                    <button className="btn_circle" onTouchEnd={() => bluRayTransports("scan+")}>
                         <img className="btn_image" src={skip} alt="" />
                     </button>
 
-                    <button className="btn_circle"  onTouchEnd={() => bluRayTransports("scan+")}>
+                    <button className="btn_circle"  onTouchEnd={() => bluRayTransports("skip+")}>
                         <img className="btn_image" src={scan} alt="" />
                     </button>
 

@@ -766,6 +766,15 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
+
+
+                    
+            window.CrComLib.publishEvent("b","1",true)
+            window.CrComLib.publishEvent("b","1",false)
+
+            window.CrComLib.publishEvent("n",`${roomLocation}`,1)
+
+
                     break;
     
                 case 2:
@@ -777,6 +786,13 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
+
+                    
+            window.CrComLib.publishEvent("b","2",true)
+            window.CrComLib.publishEvent("b","2",false)
+
+            //Sending Crestron Media ID
+            window.CrComLib.publishEvent("n",`${roomLocation}`,2)
                     break;
     
                 case 5:
@@ -788,6 +804,11 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
+
+                    
+                    window.CrComLib.publishEvent("b","5",true)
+                    window.CrComLib.publishEvent("b","5",false)
+                    window.CrComLib.publishEvent("n",`${roomLocation}`,5)
                     break;
     
                 case 6:   
@@ -799,6 +820,9 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
+                    window.CrComLib.publishEvent("b","6",true)
+                    window.CrComLib.publishEvent("b","6",false)
+                    window.CrComLib.publishEvent("n",`${roomLocation}`,6)
                     break;
     
                 case 7:
@@ -811,6 +835,9 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
+                    window.CrComLib.publishEvent("b","7",true)
+                    window.CrComLib.publishEvent("b","7",false)
+                    window.CrComLib.publishEvent("n",`${roomLocation}`,7)
                     break;
     
                 case 8:
@@ -823,6 +850,9 @@ if(media1){
                     setMedia6(true)
                     setMedia7(false)
                     setMedia8(false)
+                    window.CrComLib.publishEvent("b","8",true)
+                    window.CrComLib.publishEvent("b","8",false)
+                    window.CrComLib.publishEvent("n",`${roomLocation}`,8)
                     break;
     
                 case 9:
@@ -834,6 +864,9 @@ if(media1){
                     setMedia6(false)
                     setMedia7(true)
                     setMedia8(false)
+                    window.CrComLib.publishEvent("b","9",true)
+                    window.CrComLib.publishEvent("b","9",false)
+                    window.CrComLib.publishEvent("n",`${roomLocation}`,9)
                     break;
     
                 case 10:
@@ -845,6 +878,10 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(true)
+
+                    window.CrComLib.publishEvent("b","10",true)
+                    window.CrComLib.publishEvent("b","10",false)
+                    window.CrComLib.publishEvent("n",`${roomLocation}`,10)
                     break;
             
                 default:
@@ -872,7 +909,7 @@ if(media1){
 
 
             <div className="room_back_corner" >
-                <Link to={"/RoomsDashboard"} onTouchEnd={() => closeOutPowerOption} > 
+                <Link to={"/RoomsDashboard"}  state ={{previousLocation:"1"}} onTouchEnd={() => closeOutPowerOption} > 
                     <button className="back_button" >
                         <img src={menu_button}/>
                     </button>

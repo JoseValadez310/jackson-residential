@@ -1,0 +1,27 @@
+<div className="light">
+    <div className="light_info">
+        <p className="light_value">{Math.round(light_1/655.35) === 0? <span style={{fontSize:"x-large"}}>Off</span>: Math.round(light_1/655.35)}</p>
+        <p className="light_name">{light_1_name}</p>
+    </div>
+                    
+    <div className="light_controls">
+        <button className="btn_circle"  id={light_1 == 0? "light_btn_off" : "btn_off"}  onClick={() => sliderValue("0","light_1")}>
+            <img className="btn_image" src={lightOff} />
+        </button>
+            <input
+                    min="0"
+                    max="65535"
+                    value={light_1}
+                    onChange={(e) => sliderValue(e.target.value, e.target.id)}
+                    id='light_1'
+                    className="lightSlider"
+                    type="range"
+                    style={{background: `linear-gradient(90deg, rgb(252 , 234, 187) ${light_1 / 655.35}%, rgb(255, 255, 255) ${light_1 / 655.35}%)`,}
+                
+                }
+                />
+        <button className="btn_circle" id={light_1 > 1? "light_btn_on" : ""}>
+            <img className="btn_image" src={lightOn} onClick={() => sliderValue("65535","light_1")}/>
+        </button>
+    </div>
+</div>

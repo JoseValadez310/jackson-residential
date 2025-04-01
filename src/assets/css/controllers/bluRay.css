@@ -1,0 +1,296 @@
+/***** iF media_off is active, the controller should not display  *******/
+
+.media_off#bluRay_controller{
+    display: none;
+}
+
+
+/***** Start of controller CSS *******/
+#bluRay_controller{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,1fr);
+
+    justify-items:center;
+    align-items: center;
+}
+
+ .bluRay_controller_movement{
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+/********* Controller related CSS**********/
+
+ .bluRay_controller_controls{
+    box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;    
+    border-radius: 15px;
+    grid-column: 1;
+    grid-row: 1;
+    width: 90%;
+    height: 80%;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    align-items:center ;
+}
+    .bluRay_controller_controls .transport_button p {
+        font-size: 1.35rem;
+    }
+
+
+
+.bluRay_controller_controls_2{
+    box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;    
+    border-radius: 15px;
+    grid-column: 3;
+    grid-row: 1;
+
+    width: 90%;
+    height: 80%;
+
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    align-items:center ;
+}
+
+    .bluRay_controller_controls_2 .transport_button p {
+        font-size: 1.35rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+--------------------------------------------------------------------------------- mobile controller
+*/
+
+
+
+
+
+
+
+
+@media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+
+
+ 
+
+
+    #bluRay_controller {
+        height: 100%;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 10% 85%;
+       
+        position: relative;   
+      
+    }
+
+
+   .bluRay_controller_movement{
+       height: 100%;
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       position: relative; 
+       top: 15px;
+   
+       gap: 1rem;
+    }
+
+   
+    .bluRay_controller_controls_2{
+        height: 90%;
+    }
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/*
+@media only screen and (width: 776px) and (orientation: portrait){
+    #bluRay_controller{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 5% 1fr 1fr 1fr 5%;
+        grid-template-rows: repeat(3,1fr);
+    
+        justify-items:center;
+        align-items: center;
+    }
+
+
+    .bluRay_controller_controls_2{
+        grid-row: 1;
+        grid-column: 2/5;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        box-shadow: 0px 10px 20px 1px rgb(75, 74, 74);
+    }
+
+    .bluRay_controller_movement{
+        grid-row: 2;
+        grid-column: 2/5;
+    }
+
+    .bluRay_controller_controls{
+        grid-row: 3;
+        grid-column: 2/5;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        box-shadow: 0px -10px 20px 1px rgb(199, 199, 199);
+
+    }
+        .bluRay_controller_controls .btn_circle{
+            margin-inline: 30px;
+        }
+
+        .bluRay_controller_controls_2 .btn_circle{
+            margin-inline: 30px;
+        }
+    #transport_hide{
+        display: none;
+    }
+
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.RGYB_button{
+    grid-column: 1/4;
+    grid-row: 3;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+}
+
+.small_transport_button{
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+#button_red{
+    background-color: red;
+    border: none;
+}
+#button_green{
+    background-color: green;
+    border: none;
+}
+#button_yellow{
+    background-color: yellow;
+    border: none;
+}
+#button_blue{
+    background-color:blue;
+    border: none;
+}
+
+
+
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+
+    .bluRay_controller_controls{
+     
+        width: 100%;
+        height: 75%;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 1fr;
+        box-shadow: 0px 10px 20px 1px rgb(75, 74, 74);
+    }
+
+    .bluRay_controller_controls_2{
+     
+        width: 100%;
+        height: 75%;
+        grid-template-columns: repeat(2,1fr);
+        box-shadow: 0px 10px 20px 1px rgb(75, 74, 74);
+    }
+
+    .RGYB_button{
+    
+    
+       grid-column: 1/3;
+    }
+
+    #transport_hide{
+        display: none;    
+    }
+}
+
+
+

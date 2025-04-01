@@ -1,0 +1,43 @@
+
+main{
+  
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(255,193,24);
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.background_image_bb{
+    grid-column: 1/11;
+    grid-row: 1/11;
+    z-index: 0;
+    display: grid;
+    justify-items:center;
+    align-items: center; 
+
+    
+}
+
+.bbcourtimg{
+    width: 100%;
+}
+
+
+
+
+    @media (orientation: portrait) {
+        .bbcourtimg{
+            width: 160%;
+            position: relative;
+            left: -5px;
+            top: 16px;
+        }   
+    }

@@ -1,0 +1,566 @@
+/***** iF media_off is active, the controller should not display  *******/
+
+.media_off#direct_controller{
+    display: none;
+}
+.mobile_nav{
+    display: none;
+}
+
+
+#direct_controller_mobile{
+    display: none;
+}
+/***** Start of controller CSS *******/
+
+#direct_controller{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+.dtv_controller_controls{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 95%;
+}
+
+    .controller_nav{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+
+        .controller_nav_0,.controller_nav_1,.controller_nav_2,.controller_nav_3 {
+            background-color: transparent;
+            border: none;
+            height: 4rem;
+            width: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .controller_nav_0_selected, .controller_nav_1_selected,.controller_nav_2_selected,.controller_nav_3_selected {
+                background-color: transparent;
+                border: none;
+                height: 4rem;
+                width: 5rem;
+                z-index: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                filter: invert(78%) sepia(56%) saturate(7%) hue-rotate(314deg) brightness(150%) contrast(120%);       
+                border-bottom: solid 4px rgb(0, 0, 0);         
+            }
+    
+                .controller_nav_0 img, 
+                .controller_nav_1 img, 
+                .controller_nav_2 img,
+                .controller_nav_3 img,
+                .controller_nav_0_selected img {
+                    height: 100%;
+                    filter: invert(9%) sepia(84%) saturate(0%) hue-rotate(247deg) brightness(87%) contrast(84%);
+                    z-index: 0; 
+                   
+                }
+                .controller_nav_0 img, 
+                .controller_nav_1 img, 
+                .controller_nav_2 img,
+                .controller_nav_3 img,
+                .controller_nav_1_selected img {
+                    height: 100%;
+                    filter: invert(9%) sepia(84%) saturate(0%) hue-rotate(247deg) brightness(87%) contrast(84%);
+                    z-index: 0; 
+                }
+                    .controller_nav_0 img, 
+                    .controller_nav_1 img, 
+                    .controller_nav_2 img,
+                    .controller_nav_3 img,
+                    .controller_nav_2_selected img {
+                        height: 100%;
+                        filter: invert(9%) sepia(84%) saturate(0%) hue-rotate(247deg) brightness(87%) contrast(84%);
+                        z-index: 0
+                    }
+                         .controller_nav_0 img, 
+                        .controller_nav_1 img, 
+                        .controller_nav_2 img,
+                        .controller_nav_3 img,
+                        .controller_nav_3_selected img {
+                            height: 100%;
+                            filter: invert(9%) sepia(84%) saturate(0%) hue-rotate(247deg) brightness(87%) contrast(84%);
+                            z-index: 0
+                        }
+   
+           
+
+
+        .show_option_1{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            justify-items: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;
+        }
+
+        .show_option_2{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            justify-items: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;
+        } 
+            .show_option_2 .rgyb{
+                grid-row: 4;
+                grid-column: 1/4;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 90%;
+                height: 90%;
+                z-index: 1;
+            }
+                .show_option_2 .rgyb button{
+                    height: 45px;
+                    width: 45px;
+                    border-radius: 100%;
+                    border: none;
+                }
+
+                .show_option_2 .rgyb button:active{
+                    animation: highlight_white_background_controller 100ms;                }
+                    .red{
+                        background-color: #e22e25;
+                    }
+                       
+                    .green{
+                        background-color: #12bd12;
+                    }
+                    .yellow{
+                        background-color: #dada1b;
+                    }
+                    .blue{
+                        background-color: #5bb9c6;
+                    }
+
+        .show_option_3{
+            display: grid;
+            grid-template-columns: 1fr ;
+            grid-template-rows: repeat(12, 1fr);
+            justify-items: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            border-radius: 20px;
+            box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;        }
+
+
+
+
+
+
+.dtv_controller_controls_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 95%;
+}
+
+.dtv_controller_controls_2 .show_option_1{
+    grid-template-rows: repeat(3,1fr);
+}
+    .show_option_1 .transport_button{
+        height: 4.25rem;
+        width: 4.25rem;
+    }
+
+    .show_option_1 .transport_button .key_num{
+        font-size: 1.75rem;
+    }
+    .show_option_1 .transport_button p{
+        font-size: large;
+    }
+
+
+
+    .show_option_2 .transport_button{
+        height: 4.25rem;
+        width: 4.25rem;
+    }
+    .show_option_2 .transport_button img{
+        height: 70%;
+       
+    }
+
+.channel_container{
+    grid-column: 3;
+    grid-row: 1/4;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+    #chan_up{
+        grid-column: 3;
+        grid-row: 1;
+        height: 25%;
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 75%
+
+
+    }
+
+    #chan_title{
+        grid-column: 3;
+        grid-row: 2;
+        width: 75%;
+        border-radius: 0%;
+    
+    }
+        #chan_title:active{
+            animation: none;
+        }
+
+   
+
+    #chan_down{
+        grid-column: 3;
+        grid-row: 3;
+        height: 25%;
+        border-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 75%
+    }
+
+    #chan_down img{
+        padding: 10px;
+        height: 50%;
+    }
+
+    #chan_up img{
+        padding: 10px;
+        height: 50%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #dvr_img{
+        height: 80%;
+        position: relative;
+        bottom: 8px;
+    }
+
+    .transport_button .key_num{
+        font-size: 1.5rem;
+    }
+
+
+.none_option{
+    display: none;
+}
+
+
+
+
+@media screen and (min-height: 1170px) and (orientation: portrait) {
+    .controller_nav img{
+        height: 75%;
+    }
+
+    .controller_layout{
+        width: 95%;
+    }
+    .controller_grid{
+        margin: 0%;
+    }
+
+    .controller_layout_back_button{
+        height: 40%;
+    }
+        .back_button_svg{
+            height: 100%
+        }
+    
+
+        
+    #direct_controller{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        align-items: center;
+    }
+        #direct_controller .transport_button{
+            height: 5rem;
+            width: 5rem;
+        }
+    .kaleidescape_controller_movement{
+        grid-column: 3/5;
+        grid-row:1/3;
+    }
+
+    .dtv_controller_controls{
+        width: 90%;
+        height: 70%;
+    }
+    .dtv_controller_movement .circle-menu{
+        width: 300px;
+    }
+
+    .dtv_controller_controls_2{
+        width: 90%;
+        height: 70%;
+    }
+
+
+  
+}
+
+
+
+
+
+            
+
+  
+            
+            
+         
+            
+               
+
+  #hide_current_source{
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+  @keyframes app-load-reverse {
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+  }
+
+
+
+
+
+  @media only screen and (max-width: 550px) and (orientation: portrait){
+
+    .show_option_2{
+        height: 90%;
+        width: 90%;
+    }
+    .show_option_2 .btn_circle{
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .show_option_1{
+        height: 90%;
+        width: 90%;
+    }
+    .show_option_1 .btn_circle{
+        height: 5rem;
+        width: 5rem;
+    }
+
+    
+
+
+
+ 
+
+
+    #direct_controller {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 10% 90%;
+        position: relative;
+    }
+        #direct_controller .control-icon.right{
+            right: 30px;
+        }
+
+        #direct_controller .control-icon.left{
+            left: 30px;
+        }
+
+        #direct_controller .control-icon.top{
+            top: 30px;
+        }
+
+        #direct_controller .control-icon.bottom{
+            bottom: 30px;
+        }
+
+
+
+    #direct_controller .controller{
+        position: relative;
+        top: 20px;
+    }
+
+    #direct_controller .container{
+        justify-content: flex-start;
+        position: relative;
+        right: 10px;
+
+    }
+
+
+    .channel_container{
+        position: relative;
+        right: 1.2rem;
+    }
+        .channel_container .btn_circle{
+            width: 3.5rem;
+        }
+        .channel_container .btn_circle img{
+            height:40%;
+        }
+
+
+        .dtv_controller_movement{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            gap: 1rem;
+        }
+
+
+
+}
+
+
+
+
+@media only screen and (min-width: 776px) and (orientation: portrait){
+
+ 
+
+    .dtv_controller_controls{
+     
+        width: 100%;
+        height: 90%;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 1fr;
+        box-shadow: 0px 10px 20px 1px rgb(75, 74, 74);
+        border-radius: 20px;
+        position: relative;
+        bottom: 15px;
+
+    }
+        .show_option_1, .show_option_2{
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-rows: 1fr;
+            height: 90%;
+        }
+
+        .dtv_controller_controls_2 .show_option_1 {
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-rows: 1fr;
+            height: 90%;
+        }
+
+        .show_option_2 .rgyb{
+            grid-column: 1/3;
+            grid-row: auto;
+        }
+
+
+    .dtv_controller_controls_2{
+     
+        width: 100%;
+        height: 90%;
+        grid-template-columns: repeat(2,1fr);
+        box-shadow: 0px 10px 20px 1px rgb(75, 74, 74);
+        border-radius: 20px;
+        position: relative;
+        bottom: 15px;
+    }
+
+    .channel_container{
+        grid-column: 2/3;
+       
+        
+    }
+
+    .RGYB_button{
+    
+    
+       grid-column: 1/3;
+    }
+
+    #transport_hide{
+        display: none;    
+    }
+}
+
+

@@ -1,0 +1,846 @@
+/*Gobal Styles*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+@font-face {
+    font-family: 'Chillax-Extralight';
+    src: url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Extralight.woff2') format('woff2'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Extralight.woff') format('woff'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Extralight.ttf') format('truetype');
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Chillax-Light';
+    src: url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Light.woff2') format('woff2'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Light.woff') format('woff'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Chillax-Regular';
+    src: url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Regular.woff2') format('woff2'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Regular.woff') format('woff'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Chillax-Medium';
+    src: url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Medium.woff2') format('woff2'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Medium.woff') format('woff'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Chillax-Semibold';
+    src: url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Semibold.woff2') format('woff2'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Semibold.woff') format('woff'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Chillax-Bold';
+    src: url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Bold.woff2') format('woff2'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Bold.woff') format('woff'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  /**
+  * This is a variable font
+  * You can control variable axes as shown below:
+  * font-variation-settings: wght 700.0;
+  *
+  * available axes:
+  'wght' (range from 200.0 to 700.0
+  */
+  @font-face {
+    font-family: 'Chillax-Variable';
+    src: url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Variable.woff2') format('woff2'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Variable.woff') format('woff'),
+         url('../css/Chillax_Complete//Chillax_Complete/Fonts/WEB/fonts/Chillax-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  
+.project_container{
+  display: grid;
+  overflow: hidden;
+}
+ 
+ .imageApp{
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    position: absolute;
+    object-fit: cover;
+ }
+  
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0%;
+    background-color: black;
+  }
+  
+    h1, h2, h3, h4, h5, h6 {
+        font-style: 100;
+        color:rgb(255, 255, 255);
+        font-family: 'Chillax-Medium';
+      }
+        p {  
+            font-family: 'Chillax-Regular';
+            font-style: normal;
+        }
+
+
+  
+    button {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+
+
+      
+  /*logic redenering*/
+  .display_none{
+    display: none;
+  }
+  #display_none{
+    display: none;
+  }
+
+  /*Card*/
+
+
+
+  /*Common buttons*/
+  /*
+  ------------------------------------------------------------------------------- used for BACK, HOME and POWER buttons 
+  */
+  .back_button{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 4.25rem;
+    height: 3rem;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    background-color: transparent;
+
+    border: none;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: inset 2px 5px 6px #bebebe,
+                inset -5px -5px 6px #ffffff;
+ 
+
+  }
+    .back_button img{
+      height: 75%;
+    }
+
+
+ 
+  .home_button{
+    grid-column: 12/13;
+    grid-row: 1/2;
+    width: 4.25rem;
+    height: 3rem;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    background-color: transparent;
+    border-radius: 100%;
+
+   
+    border-radius: 15px;
+    background: #ffffff;
+  ;
+    box-shadow: inset 2px 5px 6px #bebebe,
+                inset -5px -5px 6px #ffffff;
+    border: none;
+
+  }
+    .home_button img{
+      height: 75%;
+    } 
+
+    .title_info{
+      font-size: x-large;
+      grid-column: 2/13;
+      z-index: 1;
+      font-weight: 100;
+  
+  }
+    
+
+
+
+
+/*
+------------------------------------- nav selection 
+*/
+
+
+  .btn_square_border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 5rem;
+    background-color: #171717;
+    border-radius: 5px;
+  
+  }
+
+  .btn_square , .btn_square_wide{
+    z-index: 1;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #c7c3c0;
+    box-shadow: rgb(97, 93, 93) 6px 8px 8px;
+    cursor: pointer;
+    font-family: Montserrat;
+    transition: 0.1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn_square:active{
+      box-shadow: rgb(0, 0, 0) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+      #c7c3c0 -3.2px -3.2px 8px 0px inset;
+  }
+
+
+
+
+/*
+------------------------------------- used on volume control
+*/
+
+  .btn_square_wide{
+    z-index: 1;
+    width: 7.5rem;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  
+  .btn_square_wide:active{
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+    #c7c3c0 -3.2px -3.2px 8px 0px inset;
+    background-color: rgb(94, 198, 233);
+  } 
+
+
+  .btn_square:active{
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+    #c7c3c0 -3.2px -3.2px 8px 0px inset;
+    background-color: rgb(94, 198, 233);
+  } 
+
+
+
+
+
+  
+
+
+
+  /*
+  ----------------------------------------------------- Used for transport and light btns
+  */
+  .btn_circle {
+    width: 4.25rem;
+    height: 4.25rem;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    background-color: #3f3c3c;
+    box-shadow: rgb(27, 26, 26) 5px 10px 15px,rgb(255, 255, 255) 1.5px 1.5px 2px 0px inset, rgb(199, 195, 192) -1.5px -1.5px 2px 0px inset;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .btn_circle_active{
+    width: 4.25rem;
+    height: 4.25rem;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    background-color: #b9b9b9;
+    box-shadow: rgb(27, 26, 26) 5px 10px 15px,rgb(255, 255, 255) 1.5px 1.5px 2px 0px inset, rgb(199, 195, 192) -1.5px -1.5px 2px 0px inset;;
+    transition: 0.1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+    
+ 
+
+     
+      
+      
+  }
+
+    .btn_circle:active{
+        box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+        #c7c3c0 -3.2px -3.2px 8px 0px inset;
+        background-color: rgb(67, 189, 230);
+    }
+
+    .btn_circle_active:active{
+      box-shadow: rgba(0, 0, 0, 0.377) 0px 0px 0px, inset 0.5px 0.5px 4px #000000,
+      #c7c3c0 -3.2px -3.2px 8px 0px inset;
+      background-color: rgb(67, 189, 230);
+  }
+
+      .btn_circle p{
+        font-size: medium;
+      }
+        .btn_circle .key_num{
+          font-size: 1.75rem;
+        }
+          .btn_image{
+            filter: invert(1);
+            height: 50%;
+          }
+
+
+
+   
+  #light_btn_off{
+    background-color: rgb(204, 80, 80);
+   
+  }     
+    
+  #light_btn_on{
+    background-color: rgb(252 , 234, 187);
+
+   
+  }
+  #light_btn_on img{
+    filter: invert(0);
+  }
+  #light_btn_off img{
+    filter: invert(0);
+    height: 60%;
+  }
+
+ #btn_off img{
+  height: 60%;
+ }
+  /*
+  ------------------------------------------------------------ used on dvr RGYB
+  */
+
+  .small_btn_circle{
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 100%;
+    border: solid 1px black;
+    background-color: #3f3c3c;
+    box-shadow: rgb(27, 26, 26) 5px 10px 15px,rgb(255, 255, 255) 1.5px 1.5px 2px 0px inset, rgb(199, 195, 192) -1.5px -1.5px 2px 0px inset;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }  
+    .small_btn_circle:active{
+      box-shadow: rgb(27, 26, 26) 5px 10px 15px,rgb(255, 255, 255) 1.5px 1.5px 2px 0px inset, rgb(199, 195, 192) -1.5px -1.5px 2px 0px inset;
+     
+    }
+
+
+
+
+
+
+
+#flip{
+  transform: rotate(180deg);
+}
+
+#transport_hide{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;  
+}
+
+
+
+
+
+
+
+
+/*
+-------------------------- CHanging svg color to white 
+
+*/
+
+#svg_white{
+  filter: invert(208%) sepia(56%) saturate(7%) hue-rotate(314deg) brightness(306%) contrast(87%);
+}
+
+#svg_gray{
+  filter: invert(208%) sepia(56%) saturate(7%) hue-rotate(314deg) brightness(306%) contrast(87%);
+
+}
+
+
+/*
+---------------------------------------------------------- nav 
+*/
+.room_back_corner{
+  grid-column: 1/2;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+  .back_button{
+    border-radius: 30px;
+    width: 5rem;
+  }
+
+  .room_home_corner .home_button{
+    border-radius: 30px;
+    width: 5rem;
+  }
+  .room_home_corner{
+    grid-column: 12/13;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+  }
+
+.nav_container{
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  background-color: transparent;
+  grid-row: 2/9;
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+  a{
+    z-index: 1;
+  }
+  .nav{
+      z-index: 1;
+      grid-row: 1/10;
+      height: 100%;
+      width: 85%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;   
+      gap: 1.75rem;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(15px);
+      animation: room_selection 1000ms;
+
+  }
+      .nav .btn_square{
+          height: 5rem;
+          border-radius: 15px;
+          width: 85%;
+          z-index: 1;
+          background-color: transparent;
+          backdrop-filter: blur(90px);
+      }
+          .nav .btn_square p{
+              font-weight: bold;
+              color: rgb(0, 0, 0); 
+              font-size: 1rem;
+              
+          }
+              
+  
+.nav_clock{
+  z-index: 1;
+  grid-row: 9/10;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+}
+  .nav_clock .clock{
+    z-index: 1;
+      font-size: 1rem;
+      padding: 0%;
+      left: 0px;
+      color: black;
+    
+  }
+
+
+  .nav::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.4250;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+
+.btn_not_selected{
+  z-index: 10
+}
+.btn_selected{
+  z-index: 10;
+}
+
+
+        @keyframes glow1 {
+          0%{
+       
+    
+            box-shadow: inset 0px 0px 3px 2px rgb(255, 255, 255), -5px -5px 15px #5a5656, 5px 5px 15px #ffffff8f;
+           
+          } 
+          
+            
+          50% {
+            box-shadow:inset  0px 0px 30px 5px rgb(231, 223, 154), -5px -5px 15px #5a5656, 5px 5px 15px #ffffff8f;     }
+          
+          
+          100% {
+            box-shadow:inset 0px 0px 3px 2px rgb(255, 255, 255), -5px -5px 15px #5a5656, 5px 5px 15px #ffffff8f;    }
+          
+          
+          }
+    
+
+
+
+
+
+/* active selection of floor button*/
+ 
+
+  .btn_not_selected{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      height: 4.5rem;
+      width: 4.5rem;
+      border-radius: 100%;
+      border: none;
+      font-size: large;
+  }
+    .btn_not_selected img{
+      height: 50%;
+    }
+  .btn_selected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(70, 70, 70);
+    border: none;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 100%;
+    animation: glow 5s infinite linear;
+    font-size: large;
+  }
+    .btn_selected img{
+      height: 50%;
+    }
+    .btn_selected p{
+      color: rgb(255, 255, 255);
+      
+    }
+    .btn_not_selected p{
+      color: rgb(0, 0, 0);
+      font-weight: 600;
+
+    }
+
+    .btn_selected img{
+      filter: invert(1);      
+    }
+
+
+
+
+ 
+
+    @keyframes glow-out {
+      0%{
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);
+       
+      } 
+      
+        
+      50% {
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);     }
+      
+      
+      100% {
+        background-color: rgb(70, 70, 70, .5);
+        box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);    }
+      
+      
+      }
+
+
+
+
+
+
+
+    /*
+    --------------------------------------------- mobile 
+    */
+
+    .mobile_back_btn{
+      display: none;
+    }
+    #mobile_power_btn{
+      display: none;
+    }
+    #mobile_home_btn{
+      display: none;
+    }
+   
+   
+   
+   
+   
+   
+    @media only screen and (max-device-width: 430px) and (orientation: portrait){
+      .title_info{
+          font-size: x-large;
+          grid-column: 2/12;
+      
+      }
+
+
+      /*
+      ---------------------------------------------------------------- mobile controls
+      */
+
+      .btn_circle{
+        width: 3.25rem;
+        height: 3.25rem;
+      }
+
+      /*
+      ---------------------------------------------------------------- nav bar highlight
+      */
+      .btn_not_selected{
+        height: 4.25rem;
+        width: 4.25rem;
+        border-radius: 100%;
+   
+
+        
+      }
+
+      .btn_selected{
+        height: 4.25rem;
+        width: 4.25rem;
+        border-radius: 100%;
+        background-color: rgb(70, 70, 70, .95);
+
+        
+      }
+        .btn_selected img{
+          height: 50%;
+        }
+    
+
+
+        @keyframes glow {
+          0%{
+            background-color: rgba(70, 70, 70, .95);
+            box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);
+           
+          } 
+          
+            
+          50% {
+            background-color: rgba(70, 70, 70, .95);
+            box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);     }
+          
+          
+          100% {
+            background-color: rgba(70, 70, 70, .95);
+            box-shadow: 0px 0px 3px 2px rgb(255, 255, 255);    }
+          
+          
+          }
+    
+    
+    
+
+          .title_info{
+            color: black;
+          }
+
+
+        
+
+      
+    }
+
+
+    @keyframes light-glow {
+      0%{
+      
+          box-shadow: inset 1px 1px 3px 1px  rgba(252, 234, 187, 0.3), inset -1px -1px 3px 1px rgba(252, 234, 187, 0.3), 4px 4px 15px 2px rgb(0, 0, 0) , -4px -4px 15px 2px rgba(0, 0, 0, .25);        
+      } 
+      
+      50% {
+        box-shadow: inset 3px 3px 5px 2px  rgba(252, 234, 187, 0.4), inset -3px -3px 5px 2px  rgba(252, 234, 187, 0.4), 4px 4px 15px 2px rgb(0, 0, 0) , -4px -4px 15px 2px rgba(0, 0, 0, .25);   
+      }
+      
+      
+      100% {
+          box-shadow: inset 1px 1px 2px 1px  rgba(252, 234, 187, 0.3), inset -1px -1px 3px 1px  rgba(252, 234, 187, 0.3), 4px 4px 15px 2px rgb(0, 0, 0) , -4px -4px 15px 2px rgba(0, 0, 0, .25);         
+      }        
+      
+      }
+
+
+
+
+      @media only screen and (max-device-width: 375px) and (orientation: portrait){
+        .btn_not_selected{
+          height: 4rem;
+          width: 4rem;
+          border-radius: 100%;
+     
+  
+          
+        }
+  
+        .btn_selected{
+          height: 4rem;
+          width: 4rem;
+          border-radius: 100%;
+          background-color: rgb(70, 70, 70, .95);
+  
+          
+        }
+      }
+
+
+      .landscape_warning{
+        display: none;
+      }
+
+
+
+
+
+      @media only screen and (max-height: 550px) and (orientation: landscape){
+
+        .landscape_warning{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     
+          width: 100%;
+          height: 50%;
+          backdrop-filter: blur(10px);
+          border-radius: 10px;
+          position: relative;
+          z-index: 10;
+          animation: controller-load 1s;
+          padding-inline: 20px;
+        }
+          .landscape_warning::before{
+            content: " ";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(146, 5, 5);
+            opacity: 0.3750;
+            z-index: 0;
+            border-radius: 10px;
+        
+          }
+        .landscape_warning h1 {
+          z-index: inherit;
+          text-align:center;
+          font-size: x-large;
+          font-weight: 100;
+        }
+        .landscape_warning img {
+          z-index: inherit;
+          filter: invert(1);
+          height: 50%;
+        }
+      }
+
+
+
+
+     

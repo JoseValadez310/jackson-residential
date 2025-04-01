@@ -71,15 +71,6 @@ const MediaServerWebSocket: React.FC  = () => {
 
   //change these based on information 
   
-  const location = useLocation();
-  const roomId = location.state?.roomId;
-
-  useEffect(()=>{
-
-    console.log(roomId)
-
-},[roomId])
-
 
 
   const [serverUrl, setServerUrl] = useState('ws://192.168.14.78:5004')
@@ -493,10 +484,10 @@ const filteredItems = items.filter(item => {
     console.log("[skipNext] Skipping to next track");
     doScriptCommand("SkipNext");
   };
-  const muteVolume = () => {
-    console.log("[muteVolume] Toggling mute");
-    doScriptCommand("Mute%20Toggle");
-  };
+  //const muteVolume = () => {
+  //  console.log("[muteVolume] Toggling mute");
+  //  doScriptCommand("Mute%20Toggle");
+  //};
   const toggleShuffle = () => {
     console.log("[toggleShuffle] Toggling shuffle");
     doScriptCommand("Shuffle%20Toggle");
@@ -606,7 +597,6 @@ const [zone2_mute, setZone2_mute] = useState(false);
 
 const zone_2_location = '2'                                       // Go by Excel AV and Audio only zoon 
 const [zone_active_2,setZone_active_2] = useState(0) // souce FB if Zeo then off, otherwise its on
-const [zone_active_2_ellen,setZone_active_2_ellen] = useState(0) //
 const zone_music_2_steve   = 11; // zone_2_music for steve
 //const zone_music_2_ellen  = "12"; // zone_2_music for steve
 const zone_decrease_2 = "504"; // zone_2_decrease
@@ -620,7 +610,6 @@ const [zone3_mute, setZone3_mute] = useState(false);
 
 const zone_3_location = '3'                                       // Go by Excel AV and Audio only zoon 
 const [zone_active_3,setZone_active_3] = useState(0) // souce FB if Zeo then off, otherwise its on
-const [zone_active_3_ellen,setZone_active_3_ellen] = useState(0) //
 const zone_music_3_steve   = 11; // zone_2_music for steve
 //const zone_music_3_ellen  = "12"; // zone_2_music for steve
 
@@ -634,8 +623,7 @@ const [zone4_vol, setZone4_vol] = useState(0);
 const [zone4_mute, setZone4_mute] = useState(false);
 
 const zone_4_location = '4'                                       // Go by Excel AV and Audio only zoon 
-const [zone_active_4,setZone_active_4_stevzone_active_4_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
-const [zone_active_4_ellen,setZone_active_4_stevzone_active_4_ellen] = useState(0) //
+const [zone_active_4,setZone_active_4_steve] = useState(0) // souce FB if Zeo then off, otherwise its on
 const zone_music_4_steve   = 11; // zone_2_music for steve
 //const zone_music_4_ellen  = "12"; // zone_2_music for steve
 
@@ -651,7 +639,6 @@ const [zone5_mute, setZone5_mute] = useState(false);
 
 const zone_5_location = '5'                                       // Go by Excel AV and Audio only zoon 
 const [zone_active_5,setZone_active_5] = useState(0) // souce FB if Zeo then off, otherwise its on
-const [zone_active_5_ellen,setZone_active_5_ellen] = useState(0) //
 const zone_music_5_steve   = 11; // zone_2_music for steve
 //const zone_music_5_ellen  = "12"; // zone_2_music for steve
 
@@ -666,7 +653,6 @@ const [zone6_mute, setZone6_mute] = useState(false);
 
 const zone_6_location = '6'                                       // Go by Excel AV and Audio only zoon 
 const [zone_active_6,setZone_active_6] = useState(0) // souce FB if Zeo then off, otherwise its on
-const [zone_active_6_ellen,setZone_active_6_ellen] = useState(0) //
 const zone_music_6_steve   = 11; // zone_2_music for steve
 //const zone_music_6_ellen  = "12"; // zone_2_music for steve
 
@@ -681,7 +667,6 @@ const [zone7_mute, setZone7_mute] = useState(false);
 
 const zone_7_location = '7'                                       // Go by Excel AV and Audio only zoon 
 const [zone_active_7,setZone_active_7] = useState(0) // souce FB if Zeo then off, otherwise its on
-const [zone_active_7_ellen,setZone_active_7_ellen] = useState(0) //
 const zone_music_7_steve   = 11; // zone_7_music for steve
 //const zone_music_7_ellen  = "12"; // zone_7_music for ellen
 
@@ -707,12 +692,7 @@ const zone_increase_8 = "530"; // zone_increase
 const zone_name_8     = "Guest Bedroom";
 
 
-console.log(zone_active_2_ellen)
-console.log(zone_active_3_ellen)
-console.log(zone_active_4_ellen)
-console.log(zone_active_5_ellen)
-console.log(zone_active_6_ellen)
-console.log(zone_active_7_ellen)
+
 
 
 // Zone 9
@@ -943,7 +923,7 @@ const zone_name_23    = "Upper Pool Deck";
     // AV Zones
     const zone_2_active_fb_steve = window.CrComLib.subscribeState("n",zone_2_location,(value: number)=> setZone_active_2(value))
     const zone_3_active_fb_steve = window.CrComLib.subscribeState("n",zone_3_location,(value: number)=> setZone_active_3(value))
-    const zone_4_active_fb_steve = window.CrComLib.subscribeState("n",zone_4_location,(value: number)=> setZone_active_4_stevzone_active_4_steve(value))
+    const zone_4_active_fb_steve = window.CrComLib.subscribeState("n",zone_4_location,(value: number)=> setZone_active_4_steve(value))
     const zone_5_active_fb_steve = window.CrComLib.subscribeState("n",zone_5_location,(value: number)=> setZone_active_5(value))
     const zone_6_active_fb_steve = window.CrComLib.subscribeState("n",zone_6_location,(value: number)=> setZone_active_6(value))
     const zone_7_active_fb_steve = window.CrComLib.subscribeState("n",zone_7_location,(value: number)=> setZone_active_7(value))
@@ -967,12 +947,7 @@ const zone_name_23    = "Upper Pool Deck";
 
 // Ellens dont worry about these just yet 
 //---------------------------------------------------------------------------------------------------------------------------------------------
-    const zone_2_active_fb_ellen = window.CrComLib.subscribeState("n",zone_2_location,(value: number)=> setZone_active_2_ellen(value))
-    const zone_3_active_fb_ellen = window.CrComLib.subscribeState("n",zone_3_location,(value: number)=> setZone_active_3_ellen(value))
-    const zone_4_active_fb_ellen = window.CrComLib.subscribeState("n",zone_4_location,(value: number)=> setZone_active_4_stevzone_active_4_ellen(value))
-    const zone_5_active_fb_ellen = window.CrComLib.subscribeState("n",zone_5_location,(value: number)=> setZone_active_5_ellen(value))
-    const zone_6_active_fb_ellen = window.CrComLib.subscribeState("n",zone_6_location,(value: number)=> setZone_active_6_ellen(value))
-    const zone_7_active_fb_ellen = window.CrComLib.subscribeState("n",zone_7_location,(value: number)=> setZone_active_7_ellen(value))
+ 
  //---------------------------------------------------------------------------------------------------------------------------------------------
  
  
@@ -1068,12 +1043,7 @@ const zone_name_23    = "Upper Pool Deck";
         window.CrComLib.unsubscribeState("n",zone_23_location,zone_23_active_fb_steve)
 
         //Ellen feedback zones
-        window.CrComLib.unsubscribeState("n",zone_2_location,zone_2_active_fb_ellen)
-        window.CrComLib.unsubscribeState("n",zone_3_location,zone_3_active_fb_ellen)
-        window.CrComLib.unsubscribeState("n",zone_4_location,zone_4_active_fb_ellen)
-        window.CrComLib.unsubscribeState("n",zone_5_location,zone_5_active_fb_ellen)
-        window.CrComLib.unsubscribeState("n",zone_6_location,zone_6_active_fb_ellen)
-        window.CrComLib.unsubscribeState("n",zone_7_location,zone_7_active_fb_ellen)
+     
 
 
       
@@ -2964,6 +2934,577 @@ const zone_name_23    = "Upper Pool Deck";
     )
 
 
+
+    const location = useLocation();
+    const roomId = location.state?.roomId;
+  
+    const [locationTitle, setLocationTitle] = useState("")
+    const [roomLocation, setRoomLocation] = useState(0)
+  
+    const [playerPopUp, setPlayerPopUp] = useState(false)
+
+    const [audioControl, setAudioControl] = useState(false)
+
+    let quickAudioController
+  
+    useEffect(()=>{
+  
+      console.log(roomId)
+  
+      if(roomId === 'breakfast'){
+          setRoomLocation(1)
+          setLocationTitle("Breakfast Room")
+
+          if(zone_active_2 >= 11 ){
+            setPlayerPopUp(false)
+          } else {
+            setPlayerPopUp(true)
+          }
+   
+  
+      } else if(roomId === "dining"){
+          setRoomLocation(3)
+          setLocationTitle("Dining Room")
+
+          if(zone_active_3 >= 11){
+            setPlayerPopUp(false)
+          } else {
+            setPlayerPopUp(true)
+          }
+  
+      } else if(roomId === "game"){
+        setRoomLocation(15)
+        setLocationTitle("Game Room")
+
+        if(zone_active_15 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+      } else if(roomId === "family"){
+        setRoomLocation(7)
+        setLocationTitle("Family Room")
+
+        if(zone_active_7 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+      } else if(roomId === "masterBed"){
+        setRoomLocation(9)
+        setLocationTitle("Master Bedroom")
+
+        if(zone_active_9 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+      } else if(roomId === "guestBed"){
+        setRoomLocation(8)
+        setLocationTitle("Guest Bedroom")
+
+        if(zone_active_8 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+      } else if(roomId === "guestBath"){
+        setRoomLocation(16)
+        setLocationTitle("Guest Bathroom")
+
+        if(zone_active_16 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+      } else if(roomId === "ellensOffice"){
+        setRoomLocation(5)
+        setLocationTitle("Ellen's Office")
+
+        if(zone_active_16 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+      } else if(roomId === "ellensBath"){
+        setRoomLocation(6)
+        setLocationTitle("Ellen's Bath")
+
+        if(zone_active_6 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+      } else if(roomId === "ellensExcercise"){
+        setRoomLocation(4)
+        setLocationTitle("Ellen's Excercise")
+
+        if(zone_active_4 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+  
+      } else if(roomId === "media"){
+        setRoomLocation(10)
+        setLocationTitle("Media Room")
+
+        if(zone_active_10 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+        
+      } else if(roomId === "arcade"){
+        setRoomLocation(11)
+        setLocationTitle("Arcade")
+
+        if(zone_active_11 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+  
+      } else if(roomId === "poolPatio"){
+        setRoomLocation(14)
+        setLocationTitle("Pool Patio")
+
+        if(zone_active_14 >= 11){
+          setPlayerPopUp(false)
+        } else {
+          setPlayerPopUp(true)
+        }
+  
+      }
+  
+  },[roomId])
+
+
+  const showAudioControls = () =>{
+    setAudioControl(!audioControl)
+  }
+
+
+
+    if(roomId === 'breakfast' && audioControl){
+
+      quickAudioController =(
+    
+      
+        <div className='quickAudioControls'>
+          
+          <div className='zone_controls'>
+            <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_2, true), window.CrComLib.publishEvent("b", zone_decrease_2, false), console.log(zone_decrease_2))}>
+              <img className="btn_image" src={arrow} />
+            </button>
+
+            <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_2, true), window.CrComLib.publishEvent("b", zone_mute_2, false), console.log(zone_mute_2))}>
+              {zone2_mute ? (
+                <>
+                  <img src={MuteIcon} className="volume_mute_btn" />
+                  <p className="mute_btn_txt">Click to Unmute</p>
+                </>
+              ) : (
+                <>
+                  <p className="volume_txt">{ ((zone2_vol/65535) * 100).toFixed(0)}</p>
+                  <p className="mute_btn_txt">Click to Mute</p>
+                </>
+              )}
+            </button>
+
+            <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_2, true), window.CrComLib.publishEvent("b", zone_increase_2, false), console.log(zone_increase_2))}>
+              <img className="btn_image" src={arrow} id="flip" />
+            </button>
+          </div>
+
+        </div>
+   
+      )
+   
+  } else if(roomId === "dining" && audioControl){
+
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_3, true), window.CrComLib.publishEvent("b", zone_decrease_3, false), console.log(zone_decrease_2))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_3, true), window.CrComLib.publishEvent("b", zone_mute_3, false), console.log(zone_mute_2))}>
+          {zone3_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone3_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_3, true), window.CrComLib.publishEvent("b", zone_increase_3, false), console.log(zone_increase_3))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+     
+
+  } else if(roomId === "game" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_15, true), window.CrComLib.publishEvent("b", zone_decrease_15, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_15, true), window.CrComLib.publishEvent("b", zone_mute_15, false))}>
+          {zone15_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone15_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_15, true), window.CrComLib.publishEvent("b", zone_increase_15, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+     
+    
+
+  } else if(roomId === "family" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_7, true), window.CrComLib.publishEvent("b", zone_decrease_7, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_7, true), window.CrComLib.publishEvent("b", zone_mute_7, false))}>
+          {zone7_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone7_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_7, true), window.CrComLib.publishEvent("b", zone_increase_7, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+
+  } else if(roomId === "masterBed" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_9, true), window.CrComLib.publishEvent("b", zone_decrease_9, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_9, true), window.CrComLib.publishEvent("b", zone_mute_9, false))}>
+          {zone9_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone9_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_9, true), window.CrComLib.publishEvent("b", zone_increase_9, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+
+  } else if(roomId === "guestBed" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_8, true), window.CrComLib.publishEvent("b", zone_decrease_8, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_8, true), window.CrComLib.publishEvent("b", zone_mute_8, false))}>
+          {zone8_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone8_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_8, true), window.CrComLib.publishEvent("b", zone_increase_8, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+    
+
+  } else if(roomId === "guestBath" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_16, true), window.CrComLib.publishEvent("b", zone_decrease_16, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_16, true), window.CrComLib.publishEvent("b", zone_mute_16, false))}>
+          {zone16_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone16_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_16, true), window.CrComLib.publishEvent("b", zone_increase_16, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+
+  } else if(roomId === "ellensOffice" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_5, true), window.CrComLib.publishEvent("b", zone_decrease_5, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_5, true), window.CrComLib.publishEvent("b", zone_mute_5, false))}>
+          {zone5_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone5_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_5, true), window.CrComLib.publishEvent("b", zone_increase_5, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+
+  } else if(roomId === "ellensBath" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_6, true), window.CrComLib.publishEvent("b", zone_decrease_6, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_6, true), window.CrComLib.publishEvent("b", zone_mute_6, false))}>
+          {zone6_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone6_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_6, true), window.CrComLib.publishEvent("b", zone_increase_6, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+
+  } else if(roomId === "ellensExcercise" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_4, true), window.CrComLib.publishEvent("b", zone_decrease_4, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_4, true), window.CrComLib.publishEvent("b", zone_mute_4, false))}>
+          {zone4_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone4_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_4, true), window.CrComLib.publishEvent("b", zone_increase_4, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+    
+
+
+  } else if(roomId === "media" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_10, true), window.CrComLib.publishEvent("b", zone_decrease_10, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_10, true), window.CrComLib.publishEvent("b", zone_mute_10, false))}>
+          {zone10_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone10_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_10, true), window.CrComLib.publishEvent("b", zone_increase_10, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+
+    
+  } else if(roomId === "arcade" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_11, true), window.CrComLib.publishEvent("b", zone_decrease_11, false))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_11, true), window.CrComLib.publishEvent("b", zone_mute_11, false))}>
+          {zone11_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone11_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_11, true), window.CrComLib.publishEvent("b", zone_increase_11, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+
+  }
+  
+  
+  
+
+
   return (
    
       <div className='audio_dashboard'>
@@ -2984,7 +3525,7 @@ const zone_name_23    = "Upper Pool Deck";
 </div>
 
           
-    <div className="audio_back_button" onTouchEnd={() => navigate(-1)}> 
+    <div className="audio_back_button" onClick={() => navigate(-1)}> 
         <button className="back_button">
             <img src={backbutton}/>
         </button>
@@ -3221,24 +3762,6 @@ const zone_name_23    = "Upper Pool Deck";
           )}
         </div>
 
-        <div className="volume_controls" id='display_none'>
-          <button 
-            onTouchEnd={muteVolume} 
-            className={currentStatus.mute === "True" ? 'transport_button_active' : 'btn_circle'}
-          >
-            <p style={{fontSize:"16px"}}>Mute</p>
-          </button>
-
-
-          <div className='current_audio_control'>
-
-            <button>Up </button>
-            <button> Mute </button>
-            <button> Down </button>
-          </div>
-
-
- </div>
 
         {showSearchBox && (
           <div className='search_overlay'>
@@ -3314,7 +3837,42 @@ const zone_name_23    = "Upper Pool Deck";
                 <h1> Please rotate your device back to portrait mode. </h1>
                 <img src={portraitMode}  />
     </div>
+
+
+
+    <div className={playerPopUp? 'active_message': 'display_none'}>
+
+
+        <div className='active_message_container'>
+          <h1>
+            Would you like to play music in the {locationTitle}?
+          </h1>
+
+
+          <div className='active_message_buttons'>
+              <button className='btn_circle' onTouchEnd={()=> (window.CrComLib.publishEvent("n",`${roomLocation}`,11), switchPlayer("steve"), setPlayerPopUp(false), showAudioControls())} id='pillShape'>
+                <p>Yes, use Steve's Music Player</p>
+              </button>
+
+              <button className='btn_circle' onTouchEnd={()=> (window.CrComLib.publishEvent("n",`${roomLocation}`,12), switchPlayer("ellen"), setPlayerPopUp(false), showAudioControls())} id='pillShape'>
+                <p>Yes, use Ellen's Music Player</p>
+              </button>
+          </div>
+          
+            <button className='btn_circle' id='pillShape' onTouchEnd={()=> setPlayerPopUp(false)}>
+              <p>No, close menu</p>
+            </button>
+        </div>
+
+
+
+    </div>
  
+
+ 
+    <div className="volume_controls">
+         {quickAudioController}
+    </div>
 
  
 

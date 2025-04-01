@@ -346,6 +346,14 @@ body {
 
 
 
+
+      #pillShape{
+        width: 10rem;
+        height: 4rem;
+        border-radius: 60px;
+      }
+
+
    
   #light_btn_off{
     background-color: rgb(204, 80, 80);

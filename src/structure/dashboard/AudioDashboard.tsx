@@ -73,8 +73,8 @@ const MediaServerWebSocket: React.FC  = () => {
   
 
 
-  const [serverUrl, setServerUrl] = useState('ws://192.168.14.78:5004')
-  const [url, setUrl] = useState("http://192.168.14.78")
+  const [serverUrl, setServerUrl] = useState('ws://10.10.10.46:5004')
+  const [url, setUrl] = useState("http://10.10.10.46")
 
 
 
@@ -3508,53 +3508,72 @@ const zone_name_23    = "Upper Pool Deck";
    
       <div className='audio_dashboard'>
 
-<div className='switch_user_div'>
- 
-    <button className='btn_circle' id={url === "http://192.168.14.78"? "active_btn" : ""} onTouchEnd={()=> switchPlayer("steve")} >
-    <p>Steve's Music</p>
-    </button>
+    <div className='switch_user_div'>
+    
+        <button className='btn_circle' id={url === "http://192.168.14.78"? "active_btn" : ""} onTouchEnd={()=> switchPlayer("steve")} >
+        <p>Steve's Music</p>
+        </button>
 
 
-    <button className='btn_circle' id={url === "http://192.168.14.79"? "active_btn" : ""} onTouchEnd={()=> switchPlayer("ellen")} >
-    <p>Ellen's Music</p>
-    </button>
+        <button className='btn_circle' id={url === "http://192.168.14.79"? "active_btn" : ""} onTouchEnd={()=> switchPlayer("ellen")} >
+        <p>Ellen's Music</p>
+        </button>
 
- 
+    
 
-</div>
+    </div>
 
           
     <div className="audio_back_button" onClick={() => navigate(-1)}> 
-        <button className="back_button">
-            <img src={backbutton}/>
+        <button className="pill_shape_audio">
+            <img className="btn_image" src={backbutton}/>
         </button>
     </div> 
         
-    <div className='menu_tablet' onTouchEnd={() => zoneMenu("menuOpen")}>
-      <button className="back_button" style={{zIndex:"10", width:"7rem"}}>
-
-        
+    <div className='audio_control' onTouchEnd={() => zoneMenu("menuOpen")}>
+        <button className="pill_shape_audio">
             <img 
-              className='back_button_image' 
+              className="btn_image" 
               src={menu} 
-              style={{height:"60%", zIndex:"1px"}} 
             />
-
-            <p style={{color:"black"}}> Audio Control</p>
+            <p> Audio Control</p>
           </button>
     </div>
 
-    <div className='menu_mobile' onTouchEnd={() => zoneMenu("menuOpen")}>
-      <button className="back_button" style={{zIndex:"10"}}>
-            <img 
-              className='back_button_image' 
-              src={menu} 
-              style={{height:"60%", zIndex:"1px"}} 
-            />
+    <div className='music_selection'>
+          <button  className="pill_shape_audio" 
+            onTouchEnd={() => {          
+              if (!isBrowseMenuVisible) {
+                browseTopMenu();
+                setIsBrowseMenuVisible(true);
+                setIsAtTopMenu(true);
+                } else {
+                if (!isAtTopMenu) {
+                  browseTopMenu();
+                  setIsAtTopMenu(true);
+                } else {
+                  setIsBrowseMenuVisible(false);
+                  setBrowseItems(null);
+                  setCurrentBrowseCaption('');
+                }
+              }
+            }}
+          >
+
+          {isBrowseMenuVisible 
+            ? (isAtTopMenu 
+                ? <img className="btn_image" src={close}   alt="Close"/> 
+                : <img className="btn_image" src={topmenu} alt="Top Menu"/>
+              )
+            : 
+            <> <img className="btn_image" src={musicIcon}/> <p>Music Selection</p> </>
+          }
           </button>
     </div>
 
-    <div className={openZones? "zone_menu": "display_none"} style={{gridColumn:'1/10', gridRow:'1/10', paddingInline:".2rem"}}>
+   
+
+    <div className={openZones? "zone_menu": "display_none"}>
             <div className='off_button_menu' style={{background:"none"}}>
          
 
@@ -3620,11 +3639,12 @@ const zone_name_23    = "Upper Pool Deck";
           {currentStatus.source === "SoundMachine"  && <img src={soundMachine}   className='soundMachine_logo'/>}
           {currentStatus.source === "Tidal"         && <img src={tidal}          className='tidal_logo'/>}
           {currentStatus.source === "TuneIn"        && <img src={tuneIn}         className='tuneIn_logo'/>}
+          
         </div>
 
-        <div className='background_image'>
-          <img src={currentStatus.albumArtUrl} alt="" />
-        </div>
+
+<div className='music_player'>
+      
 
         <div className='status_info'>
           {isConnected ? (
@@ -3691,54 +3711,35 @@ const zone_name_23    = "Upper Pool Deck";
           />
           <p className='end_postition'>{formatTime(currentStatus.duration)}</p> 
         </div>
+</div>
 
-        <div className='music_button_container'>
-          <button 
-            className="back_button" 
-            style={{width:"7rem"}}
-            onTouchEnd={() => {
-              console.log("[music_button] Toggling browser menu");
-              if (!isBrowseMenuVisible) {
-                browseTopMenu();
-                setIsBrowseMenuVisible(true);
-                setIsAtTopMenu(true);
-              } else {
-                if (!isAtTopMenu) {
-                  browseTopMenu();
-                  setIsAtTopMenu(true);
-                } else {
-                  setIsBrowseMenuVisible(false);
-                  setBrowseItems(null);
-                  setCurrentBrowseCaption('');
-                }
-              }
-            }}
-          >
-            {isBrowseMenuVisible 
-              ? (isAtTopMenu 
-                  ? <img style={{height:"76%"}} src={close} alt="Close"/> 
-                  : <img style={{height:"76%"}} src={topmenu} alt="top menu"/>
-                )
-              : <div style={{display:'flex',justifyContent:"center",alignItems:"center",height:"100%", width:"100%"}}> <img style={{height:"76%"}} src={musicIcon} alt="Music"/> <p style={{color:"black"}}>Music Selection</p> </div>
-            }
-          </button>
-        </div>
+
+
+
+
+       
 
         <div className='browser_container'>
+          
           {isBrowseMenuVisible && browseItems && (
             <div className='browser_menu'>
-              <div>
-                <button 
-                  onTouchEnd={goBackOneLevel} 
-                  className={canGoBack ? "audio_back" : "display_none"}  
-                  style={{ height: "2rem", width:"4rem" }}
-                >
-                  <img style={{height:"75%"}} src={backbutton} alt="" />
-                </button>
+              <div className='broswer_header'>
+                
+                <div className='broswer_button_container'>
+                  <button onTouchEnd={goBackOneLevel} className={canGoBack ? "brower_container_back" : "display_none"}>
+                    <p>Return</p>
+                  </button>
+                </div>
+               
+
+                <h3 className='broswer_title'>
+                  {currentBrowseCaption}
+                </h3>
+
               </div>
 
               <div className='broswer_card_container'>
-                <h3>{currentBrowseCaption}</h3>
+                
                 {browseItems.map((item) => (
                   <div key={item.guid} className='broswer_card_wrapper'>
                     <button 
@@ -3762,72 +3763,72 @@ const zone_name_23    = "Upper Pool Deck";
         </div>
 
 
-        {showSearchBox && (
-          <div className='search_overlay'>
-            <div className='search_box' >
-              <input 
-                className='search_box_input'
-                type="text" 
-                value={searchQuery} 
-                onChange={e => setSearchQuery(e.target.value)}
-                placeholder={inputBoxPrompt}
-              />
-              <div className='search_buttons'>
-                <button 
-                  onTouchEnd={handleSearchSubmit} 
-                  className='search_button'
-                >
-                  <p>Search</p>
-                </button>
-                <button
-                  onTouchEnd={() => {
-                    console.log("[searchOverlay] Canceling search");
-                    if (inputBoxGuid) {
-                      sendCommand(`AckButton ${inputBoxGuid} Cancel`);
-                    }
-                    setShowSearchBox(false);
-                    setInputBoxGuid(null);
-                    setSearchQuery('');
-                  }}
-                  className='search_button'
-                  id='cancel_button'
-                >
-                  <p>Cancel</p>
-                </button>
+          {showSearchBox && (
+            <div className='search_overlay'>
+              <div className='search_box' >
+                <input 
+                  className='search_box_input'
+                  type="text" 
+                  value={searchQuery} 
+                  onChange={e => setSearchQuery(e.target.value)}
+                  placeholder={inputBoxPrompt}
+                />
+                <div className='search_buttons'>
+                  <button 
+                    onTouchEnd={handleSearchSubmit} 
+                    className='search_button'
+                  >
+                    <p>Search</p>
+                  </button>
+                  <button
+                    onTouchEnd={() => {
+                      console.log("[searchOverlay] Canceling search");
+                      if (inputBoxGuid) {
+                        sendCommand(`AckButton ${inputBoxGuid} Cancel`);
+                      }
+                      setShowSearchBox(false);
+                      setInputBoxGuid(null);
+                      setSearchQuery('');
+                    }}
+                    className='search_button'
+                    id='cancel_button'
+                  >
+                    <p>Cancel</p>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {questionMessage && (
-          <div className='search_overlay'>
-            <div className='search_box'>
-              <p>{questionMessage}</p>
-              <div>
-                <button
-                  onTouchEnd={() => handleQuestionAnswer("Artist Name")}
-                  className='btn_circle'
-                >
-                  Artist
-                </button>
-                <button
-                  onTouchEnd={() => handleQuestionAnswer("Song Name")}
-                  className='btn_circle' 
-                  style={{ marginLeft: "1rem" }}
-                >
-                  Song
-                </button>
-                <button
-                  onTouchEnd={() => handleQuestionAnswer("Cancel")}
-                  className='btn_circle' 
-                  style={{ marginLeft: "1rem" }}
-                >
-                  Cancel
-                </button>
+          {questionMessage && (
+            <div className='search_overlay'>
+              <div className='search_box'>
+                <p>{questionMessage}</p>
+                <div>
+                  <button
+                    onTouchEnd={() => handleQuestionAnswer("Artist Name")}
+                    className='btn_circle'
+                  >
+                    Artist
+                  </button>
+                  <button
+                    onTouchEnd={() => handleQuestionAnswer("Song Name")}
+                    className='btn_circle' 
+                    style={{ marginLeft: "1rem" }}
+                  >
+                    Song
+                  </button>
+                  <button
+                    onTouchEnd={() => handleQuestionAnswer("Cancel")}
+                    className='btn_circle' 
+                    style={{ marginLeft: "1rem" }}
+                  >
+                    Cancel
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
 
 
@@ -3873,6 +3874,10 @@ const zone_name_23    = "Upper Pool Deck";
          {quickAudioController}
     </div>
 
+
+    <div className='background_image'>
+          <img src={currentStatus.albumArtUrl} />
+        </div>
  
 
  </div>

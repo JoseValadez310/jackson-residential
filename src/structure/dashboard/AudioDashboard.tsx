@@ -1169,7 +1169,7 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_1'
             id={zone_active_4 === 11 ? 'active_user' : " "}>
             {zone_active_4 === 11 ?  
-              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, 0)}>
+              <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_4_location, 0), showAudioControls(false))}>
                 Turn Off Music
               </p> 
               : 
@@ -1182,7 +1182,7 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_2'
             id={zone_active_4 === 12 ? 'active_user' : " "}>
             {zone_active_4 === 12 ?  
-              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, 0)}>
+              <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_4_location, 0), showAudioControls(false))}>
                 Turn Off Music
               </p> 
               : 
@@ -1237,7 +1237,7 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_1'
               id={zone_active_5 === 11 ? 'active_user' : " "}>
               {zone_active_5 === 11 ?  
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, 0)}>
+                <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_5_location, 0),showAudioControls(false))}>
                   Turn Off Music
                 </p> 
                 : 
@@ -1250,7 +1250,7 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_2'
               id={zone_active_5 === 12 ? 'active_user' : " "}>
               {zone_active_5 === 12 ?  
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, 0)}>
+                <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_5_location, 0),showAudioControls(false))}>
                   Turn Off Music
                 </p> 
                 : 
@@ -1304,7 +1304,7 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_6 === 11 ? 'active_user' : " "}>
           {zone_active_6 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, 0)}>
+          <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_6_location, 0),showAudioControls(false))}>
           Turn Off Music
           </p> 
           : 
@@ -1317,7 +1317,7 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_6 === 12 ? 'active_user' : " "}>
           {zone_active_6 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, 0)}>
+          <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_6_location, 0),showAudioControls(false))}>
           Turn Off Music
           </p> 
           : 
@@ -1457,7 +1457,7 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_8 === 11 ? 'active_user' : " "}>
           {zone_active_8 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, 0)}>
+          <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_8_location, 0),showAudioControls(false))}>
           Turn Off Music
           </p> 
           : 
@@ -1470,7 +1470,7 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_8 === 12 ? 'active_user' : " "}>
           {zone_active_8 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, 0)}>
+          <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_8_location, 0),showAudioControls(false))}>
           Turn Off Music
           </p> 
           : 
@@ -1533,7 +1533,7 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_9 === 11 ? 'active_user' : " "}>
           {zone_active_9 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, 0)}>
+          <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_9_location, 0),showAudioControls(false))}>
           Turn Off Music
           </p> 
           : 
@@ -1546,7 +1546,7 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_9 === 12 ? 'active_user' : " "}>
           {zone_active_9 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, 0)}>
+          <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_9_location, 0),showAudioControls(false))}>
           Turn Off Music
           </p> 
           : 
@@ -1609,7 +1609,7 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_10 === 11 ? 'active_user' : " "}>
           {zone_active_10 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, 0)}>
+          <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_10_location, 0),showAudioControls(false))}>
           Turn Off Music
           </p> 
           : 
@@ -1622,7 +1622,7 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_10 === 12 ? 'active_user' : " "}>
           {zone_active_10 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, 0)}>
+          <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_10_location, 0),showAudioControls(false))}>
           Turn Off Music
           </p> 
           : 
@@ -1733,7 +1733,7 @@ const zone_name_23    = "Upper Pool Deck";
                   id={zone_active_2 === 11? 'active_user':" " }>
                   {zone_active_2 === 11?  
 
-                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, 0)}>
+                    <p onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_2_location, 0), showAudioControls(false))}>
                       Turn Off Music
                     </p> 
                     : 
@@ -1747,7 +1747,7 @@ const zone_name_23    = "Upper Pool Deck";
                   id={zone_active_2 === 12? 'active_user':" " }>
                   {zone_active_2 === 12?  
 
-                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, 0)}>
+                    <p onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_2_location, 0), showAudioControls(false))}>
                       Turn Off Music
                     </p> 
                     : 
@@ -1809,7 +1809,7 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_3 === 11? 'active_user':" " }>
                     {zone_active_3 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, 0)}>
+                  <p onTouchEnd={() =>(window.CrComLib.publishEvent("n",zone_3_location, 0), showAudioControls(false))}>
                         Turn Off Music
                       </p> 
                       : 
@@ -1823,7 +1823,7 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_3 === 12? 'active_user':" " }>
                     {zone_active_3 === 12?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, 0)}>
+                      <p onTouchEnd={() =>(window.CrComLib.publishEvent("n",zone_3_location, 0), showAudioControls(false))}>
                         Turn Off Music
                       </p> 
                       : 
@@ -1884,7 +1884,7 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_7 === 11? 'active_user':" " }>
                     {zone_active_7 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, 0)}>
+                      <p onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_7_location, 0),showAudioControls(false))}>
                         Turn Off Music
                       </p> 
                       : 
@@ -1898,7 +1898,7 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_7 === 12? 'active_user':" " }>
                     {zone_active_7 === 12?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, 0)}>
+                      <p onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_7_location, 0),showAudioControls(false))}>
                         Turn Off Music
                       </p> 
                       : 
@@ -1959,7 +1959,7 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_15 === 11? 'active_user':" " }>
                     {zone_active_15 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_15_location, 0)}>
+                      <p onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_15_location, 0),showAudioControls(false))}>
                         Turn Off Music
                       </p> 
                       : 
@@ -1977,7 +1977,7 @@ const zone_name_23    = "Upper Pool Deck";
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_15_location, 0)}>
+                      <p onTouchEnd={() => (window.CrComLib.publishEvent("n",zone_15_location, 0),showAudioControls(false))}>
                         Ellen
                       </p> 
                     } 
@@ -2278,7 +2278,7 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_1'
               id={zone_active_11 === 11 ? 'active_user' : " "}>
               {zone_active_11 === 11 ?  
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, 0)}>
+                <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_11_location, 0),showAudioControls(false))}>
                   Turn Off Music
                 </p>
                 : 
@@ -2291,7 +2291,7 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_2'
               id={zone_active_11 === 12 ? 'active_user' : " "}>
               {zone_active_11 === 12 ?  
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, 0)}>
+                <p onTouchEnd={() => (window.CrComLib.publishEvent("n", zone_11_location, 0),showAudioControls(false))}>
                   Turn Off Music
                 </p>
                 : 
@@ -2934,6 +2934,7 @@ const zone_name_23    = "Upper Pool Deck";
 
     const location = useLocation();
     const roomId = location.state?.roomId;
+    const currentZoneActivity = location.state?.activity;
   
     const [locationTitle, setLocationTitle] = useState("")
     const [roomLocation, setRoomLocation] = useState("0")
@@ -2949,159 +2950,71 @@ const zone_name_23    = "Upper Pool Deck";
       console.log(roomId)
   
       if(roomId === 'breakfast'){
-          setRoomLocation('2')
-          setLocationTitle("Breakfast Room")
+        setRoomLocation('2')
+        setLocationTitle("Breakfast Room")
 
-          if(zone_active_2 === 11 || zone_active_2 === 12 ){
-            setPlayerPopUp(false)
-            showAudioControls()
-          } else {
-            setPlayerPopUp(true)
-          }
-   
-  
       } else if(roomId === "dining"){
-          setRoomLocation('3')
-          setLocationTitle("Dining Room")
+        setRoomLocation('3')
+        setLocationTitle("Dining Room")
 
-          if(zone_active_3 === 11 || zone_active_3 === 12 ){
-            setPlayerPopUp(false)
-            showAudioControls()
-          } else {
-            setPlayerPopUp(true)
-          }
-  
       } else if(roomId === "game"){
         setRoomLocation('15')
         setLocationTitle("Game Room")
 
-        if(zone_active_15 === 11 || zone_active_15 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
       } else if(roomId === "family"){
         setRoomLocation('7')
-        setLocationTitle("Family Room")
-
-        if(zone_active_4 === 11 || zone_active_4 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
+        setLocationTitle("Family Room")        
   
       } else if(roomId === "masterBed"){
         setRoomLocation('9')
         setLocationTitle("Master Bedroom")
 
-        if(zone_active_9 === 11 || zone_active_9 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
       } else if(roomId === "guestBed"){
         setRoomLocation('8')
         setLocationTitle("Guest Bedroom")
 
-        if(zone_active_8 === 11 || zone_active_8 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
       } else if(roomId === "guestBath"){
         setRoomLocation('16')
         setLocationTitle("Guest Bathroom")
 
-        if(zone_active_16 === 11 || zone_active_16 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
       } else if(roomId === "ellensOffice"){
         setRoomLocation('5')
         setLocationTitle("Ellen's Office")
 
-        if(zone_active_5 === 11 || zone_active_5 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
       } else if(roomId === "ellensBath"){
         setRoomLocation('6')
         setLocationTitle("Ellen's Bath")
 
-        if(zone_active_6 === 11 || zone_active_6 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
       } else if(roomId === "ellensExcercise"){
         setRoomLocation('4')
         setLocationTitle("Ellen's Excercise")
 
-        if(zone_active_4 === 11 || zone_active_4 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
-  
       } else if(roomId === "media"){
         setRoomLocation('10')
         setLocationTitle("Media Room")
 
-        if(zone_active_10 === 11 || zone_active_10 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
-        
       } else if(roomId === "arcade"){
         setRoomLocation('11')
         setLocationTitle("Arcade")
 
-        if(zone_active_11 === 11 || zone_active_11 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
-  
       } else if(roomId === "poolPatio"){
         setRoomLocation('14')
         setLocationTitle("Pool Patio")
+      }
 
-        if(zone_active_14 === 11 || zone_active_14 === 12){
-          setPlayerPopUp(false)
-          showAudioControls()
-        } else {
-          setPlayerPopUp(true)
-        }
-  
+
+      if(currentZoneActivity === 11 || currentZoneActivity === 12 ){
+        setPlayerPopUp(false)
+        showAudioControls(true)
+      } else {
+        setPlayerPopUp(true)
       }
   
-  },[roomId, zone_active_2, zone_active_3,zone_active_4,zone_active_5,zone_active_6,zone_active_7,zone_active_8,zone_active_9,zone_active_10,zone_active_11,zone_active_14,zone_active_15,zone_active_16])
+  },[roomId,currentZoneActivity])
 
 
-  const showAudioControls = () =>{
-    setAudioControl(!audioControl)
+  const showAudioControls = (value:boolean) =>{
+    setAudioControl(value)
   }
 
 
@@ -3638,140 +3551,133 @@ const zone_name_23    = "Upper Pool Deck";
               
     </div>
   
-        <div className='streaming_service_logo'>
-          {currentStatus.source === "Spotify"       && <img src={spotify}        className='Spotify_logo'/>}
-          {currentStatus.source === "AmazonMusic"   && <img src={amazonMusic}    className='AmazonMusic_logo'/>}
-          {currentStatus.source === "Deezer"        && <img src={deezer}         className='Deezer_logo'/>}
-          {currentStatus.source === "iHeartRadio"   && <img src={iheart}         className='iHeartRadio_logo'/>}
-          {currentStatus.source === "LiveOne"       && <img src={liveOne}        className='liveOne_logo'/>}
-          {currentStatus.source === "Murfie"        && <img src={murfie}         className='murfie_logo'/>}
-          {currentStatus.source === "Pandora"       && <img src={pandora}        className='pandora_logo'/>}
-          {currentStatus.source === "Sirius"        && <img src={siriusXM}       className='sirius_logo'/>}
-          {currentStatus.source === "SoundMachine"  && <img src={soundMachine}   className='soundMachine_logo'/>}
-          {currentStatus.source === "Tidal"         && <img src={tidal}          className='tidal_logo'/>}
-          {currentStatus.source === "TuneIn"        && <img src={tuneIn}         className='tuneIn_logo'/>}
-          
-        </div>
-
-
-<div className='music_player'>
+    <div className='streaming_service_logo'>
+      {currentStatus.source === "Spotify"       && <img src={spotify}        className='Spotify_logo'/>}
+      {currentStatus.source === "AmazonMusic"   && <img src={amazonMusic}    className='AmazonMusic_logo'/>}
+      {currentStatus.source === "Deezer"        && <img src={deezer}         className='Deezer_logo'/>}
+      {currentStatus.source === "iHeartRadio"   && <img src={iheart}         className='iHeartRadio_logo'/>}
+      {currentStatus.source === "LiveOne"       && <img src={liveOne}        className='liveOne_logo'/>}
+      {currentStatus.source === "Murfie"        && <img src={murfie}         className='murfie_logo'/>}
+      {currentStatus.source === "Pandora"       && <img src={pandora}        className='pandora_logo'/>}
+      {currentStatus.source === "Sirius"        && <img src={siriusXM}       className='sirius_logo'/>}
+      {currentStatus.source === "SoundMachine"  && <img src={soundMachine}   className='soundMachine_logo'/>}
+      {currentStatus.source === "Tidal"         && <img src={tidal}          className='tidal_logo'/>}
+      {currentStatus.source === "TuneIn"        && <img src={tuneIn}         className='tuneIn_logo'/>}
       
+    </div>
 
-        <div className='status_info'>
-          {isConnected ? (
-            <p className='display_none'>Status: Connected ✅</p>
-          ) : (
-            <p>Status: Disconnected ❌</p>
-          )}
-        </div>
+   
 
-        <div className='album_art'>
-          {currentStatus.albumArtUrl 
-            ? <img src={currentStatus.albumArtUrl} alt="Album Art" /> 
-            : <p>No Album Art</p>}
-        </div>
-
-        <div className='album_info'>
-          <p className='album_info_title'>{currentStatus.title  || 'Unknown'}</p>
-          <p className='album_info_artist'>{currentStatus.artist || 'Unknown'}</p>
-          <p className='album_info_album'>{currentStatus.album  || 'Unknown'}</p>
-        </div>
-
-        <div className='playback_controls'>
-          <button 
-            onTouchEnd={toggleShuffle} 
-            className={currentStatus.shuffle ? 'transport_button_active' : 'btn_circle'}
-          >
-            <img className='btn_image' src={shuffle} alt="shuffle" />
-          </button>
-          <button onTouchEnd={skipPrevious} className='btn_circle'>
-            <img  className='btn_image' src={skip} style={{transform:'rotate(180deg)'}} alt="previous" />
-          </button>
-          <button onTouchEnd={togglePlayPause} className='btn_circle'>
-            <img 
-             className='btn_image'
-              src={currentStatus.playState === 'Playing' ? pasue : play} 
-              alt="play/pause" 
-            />
-          </button>
-          <button onTouchEnd={skipNext} className='btn_circle'>
-            <img className='btn_image' src={skip} alt="next" />
-          </button>
-          <button 
-            onTouchEnd={toggleRepeat} 
-            className={currentStatus.repeat ? 'transport_button_active' : 'btn_circle'}
-          >
-            <img className='btn_image' src={repeat} alt="repeat" style={{transform:"scaleX(-1)"}}/>
-          </button>
-        </div>
-
-        <div className="progress_bar">
-          <p className='current_postition'>{formatTime(currentStatus.position)}</p>
-          <input
-            type="range"
-            min="0"
-            max={currentStatus.duration || 0}
-            value={seekPosition}
-            onChange={handleSliderChange}
-            onMouseUp={handleSliderMouseUp}
-            onTouchEnd={handleSliderMouseUp}
-            style={{
-              borderRadius: '15px',
-              background: `linear-gradient(to right, rgb(85, 83, 83) 0%, rgb(207, 241, 231) ${progress}%, #e0e0e0 ${progress}%, #e0e0e0 100%)`
-            }}
-          />
-          <p className='end_postition'>{formatTime(currentStatus.duration)}</p> 
-        </div>
-</div>
-
-
-
-
-
-       
-
-        <div className='browser_container'>
+    <div className='music_player'>
           
-          {isBrowseMenuVisible && browseItems && (
-            <div className='browser_menu'>
-              <div className='broswer_header'>
-                
-                <div className='broswer_button_container'>
-                  <button onTouchEnd={goBackOneLevel} className={canGoBack ? "brower_container_back" : "display_none"}>
-                    <p>Return</p>
-                  </button>
-                </div>
-               
 
-                <h3 className='broswer_title'>
-                  {currentBrowseCaption}
-                </h3>
-
-              </div>
-
-              <div className='broswer_card_container'>
-                
-                {browseItems.map((item) => (
-                  <div key={item.guid} className='broswer_card_wrapper'>
-                    <button 
-                      className='broswer_card' 
-                      onTouchEnd={() => handleItemClick(item)}
-                    >
-                      <div className='image_title'>
-                        <img 
-                          className='broswer_card_image' 
-                          src={`${url}/getart?guid=${item.guid}`} 
-                          alt="" 
-                        />
-                        <p className='browser_card_title'>{item.name}</p>
-                      </div>
-                    </button>
-                  </div>
-                ))}
-              </div>
+            <div className='status_info'>
+              {isConnected ? (
+                <p className='display_none'>Status: Connected ✅</p>
+              ) : (
+                <p>Status: Disconnected ❌</p>
+              )}
             </div>
-          )}
+
+            <div className='album_art'>
+              {currentStatus.albumArtUrl 
+                ? <img src={currentStatus.albumArtUrl} alt="Album Art" /> 
+                : <p>No Album Art</p>}
+            </div>
+
+            <div className='album_info'>
+              <p className='album_info_title'>{currentStatus.title  || 'Unknown'}</p>
+              <p className='album_info_artist'>{currentStatus.artist || 'Unknown'}</p>
+              <p className='album_info_album'>{currentStatus.album  || 'Unknown'}</p>
+            </div>
+
+            <div className='playback_controls'>
+              <button 
+                onTouchEnd={toggleShuffle} 
+                className={currentStatus.shuffle ? 'transport_button_active' : 'btn_circle'}
+              >
+                <img className='btn_image' src={shuffle} alt="shuffle" />
+              </button>
+              <button onTouchEnd={skipPrevious} className='btn_circle'>
+                <img  className='btn_image' src={skip} style={{transform:'rotate(180deg)'}} alt="previous" />
+              </button>
+              <button onTouchEnd={togglePlayPause} className='btn_circle'>
+                <img 
+                className='btn_image'
+                  src={currentStatus.playState === 'Playing' ? pasue : play} 
+                  alt="play/pause" 
+                />
+              </button>
+              <button onTouchEnd={skipNext} className='btn_circle'>
+                <img className='btn_image' src={skip} alt="next" />
+              </button>
+              <button 
+                onTouchEnd={toggleRepeat} 
+                className={currentStatus.repeat ? 'transport_button_active' : 'btn_circle'}
+              >
+                <img className='btn_image' src={repeat} alt="repeat" style={{transform:"scaleX(-1)"}}/>
+              </button>
+            </div>
+
+            <div className="progress_bar">
+              <p className='current_postition'>{formatTime(currentStatus.position)}</p>
+              <input
+                type="range"
+                min="0"
+                max={currentStatus.duration || 0}
+                value={seekPosition}
+                onChange={handleSliderChange}
+                onMouseUp={handleSliderMouseUp}
+                onTouchEnd={handleSliderMouseUp}
+                style={{
+                  borderRadius: '15px',
+                  background: `linear-gradient(to right, rgb(85, 83, 83) 0%, rgb(207, 241, 231) ${progress}%, #e0e0e0 ${progress}%, #e0e0e0 100%)`
+                }}
+              />
+              <p className='end_postition'>{formatTime(currentStatus.duration)}</p> 
+            </div>
+    </div>
+
+<div className='browser_container'> {isBrowseMenuVisible && browseItems && (
+    <div className='browser_menu'>
+      <div className='broswer_header'>
+        
+        <div className='broswer_button_container'>
+          <button onTouchEnd={goBackOneLevel} className={canGoBack ? "brower_container_back" : "display_none"}>
+            <p>Return</p>
+          </button>
         </div>
+        
+
+        <h3 className='broswer_title'>
+          {currentBrowseCaption}
+        </h3>
+
+      </div>
+
+      <div className='broswer_card_container'>
+        
+        {browseItems.map((item) => (
+          <div key={item.guid} className='broswer_card_wrapper'>
+            <button 
+              className='broswer_card' 
+              onTouchEnd={() => handleItemClick(item)}
+            >
+              <div className='image_title'>
+                <img 
+                  className='broswer_card_image' 
+                  src={`${url}/getart?guid=${item.guid}`} 
+                  alt="" 
+                />
+                <p className='browser_card_title'>{item.name}</p>
+              </div>
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</div>
 
 
           {showSearchBox && (

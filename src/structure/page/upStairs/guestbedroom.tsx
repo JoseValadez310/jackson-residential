@@ -886,7 +886,7 @@ if(media1){
             
                 <div className="nav">
                 <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}    className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
-                        <Link to={"/AudioDashboard"}  state={{roomId:"masterBed"}}                 className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+                        <Link to={"/AudioDashboard"}  state={{roomId:"masterBed", activity: activeSource}}                 className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
                         <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "display_none"}   >  <img src={lights}  /> </button>
                 </div>
                 

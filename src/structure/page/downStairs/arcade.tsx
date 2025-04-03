@@ -61,6 +61,12 @@ const FamilyRoom = () =>{
 /*
 ---------------------------------------------------------------------------- Local and dynamic control of media sources 
 */
+
+    const [activeSource,   setActiveSource] = useState(0) 
+    const [activeSource2, setActiveSource2] = useState(0) 
+    const [activeSource3, setActiveSource3] = useState(0) 
+
+
     const [media1, setMedia1]   = useState(false)
     const [media2, setMedia2]   = useState(false)
     const [media3, setMedia3]   = useState(false)
@@ -69,7 +75,12 @@ const FamilyRoom = () =>{
     const [media6, setMedia6]   = useState(false)
     const [media7, setMedia7]   = useState(false)
     const [media8, setMedia8]   = useState(false)
-/*
+
+    
+    const [trigger1, setTrigger1] = useState(false)
+    const [trigger2, setTrigger2] = useState(false)
+    const [trigger3, setTrigger3] = useState(false)
+    /*
 ---------------------------------------------------------------------------- selects the correct controller to display based on the media# state
 */
     let active_media:boolean  // controls the avaiablity of either source tiles or controller/volume 
@@ -178,7 +189,7 @@ const FamilyRoom = () =>{
 
 
 // console.log 
-const [currentTVSource, setCourrentTVSource] = useState("1")
+const [currentTVSource, setCourrentTVSource] = useState("1 W/Audio")
 const [sourceSelectionOne, setSourceSelectionOne] = useState(true)
 const [sourceSelectionTwo, setSourceSelectionTwo] = useState(false)
 const [sourceSelectionThree, setSourceSelectionThree] = useState(false)
@@ -190,20 +201,20 @@ const sourceDisplay = (tvSelection:string) =>{
         setSourceSelectionTwo(false)
         setSourceSelectionThree(false)
 
-        setCourrentTVSource("1")
+        setCourrentTVSource("1 W/Audio")
     } else if (tvSelection === "tv2"){
         setSourceSelectionOne(false)
         setSourceSelectionTwo(true)  
         setSourceSelectionThree(false)
 
-        setCourrentTVSource("2")
+        setCourrentTVSource("2 W/Out Audio")
 
     } else if (tvSelection === "tv3"){
         setSourceSelectionOne(false)
         setSourceSelectionTwo(false)  
         setSourceSelectionThree(true)
 
-        setCourrentTVSource("3")
+        setCourrentTVSource("3 W/Out Audio")
 
     } 
  }
@@ -229,6 +240,12 @@ const sourceDisplay = (tvSelection:string) =>{
 
     useEffect(() => {
         console.log(roomLocation)
+
+        const activeSource = window.CrComLib.subscribeState("n",roomLocation,(value: number) => {setActiveSource(value);});
+        const activeSource2 = window.CrComLib.subscribeState("n",roomLocation_tv_2,(value: number) => {setActiveSource2(value);});
+        const activeSource3 = window.CrComLib.subscribeState("n",roomLocation_tv_3,(value: number) => {setActiveSource3(value);});
+
+ 
         // TV Soucres
         const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  // bluRay
         const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // Kescape
@@ -255,6 +272,11 @@ const sourceDisplay = (tvSelection:string) =>{
   
 
         return () => {
+
+            window.CrComLib.unsubscribeState("n",roomLocation,activeSource)
+            window.CrComLib.unsubscribeState("n",roomLocation_tv_2,activeSource2)
+            window.CrComLib.unsubscribeState("n",roomLocation_tv_3,activeSource3)
+
 
             // TV Soucres
             window.CrComLib.unsubscribeState("b","1",media1)
@@ -482,6 +504,136 @@ if(media1){
         media_8 = "media_off"  
     }
    
+
+    useEffect(()=>{
+        switch (activeSource) {
+            case 1:
+                setMedia1(true)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","1",true)
+                window.CrComLib.publishEvent("b","1",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,1)
+                break;
+
+            case 2:
+                setMedia1(false)
+                setMedia2(true)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","2",true)
+                window.CrComLib.publishEvent("b","2",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,2)
+                break;
+
+            case 3:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(true)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","3",true)
+                window.CrComLib.publishEvent("b","3",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,3)
+                break;
+
+            case 4:   
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(true)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","4",true)
+                window.CrComLib.publishEvent("b","4",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,4)
+                break;
+
+            case 7:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(true)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","7",true)
+                window.CrComLib.publishEvent("b","7",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,7)
+                break;
+
+            case 8:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(true)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","8",true)
+                window.CrComLib.publishEvent("b","8",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,8)
+                break;
+
+            case 9:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(true)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","9",true)
+                window.CrComLib.publishEvent("b","9",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,9)
+                break;
+
+            case 10:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(true)
+                window.CrComLib.publishEvent("b","10",true)
+                window.CrComLib.publishEvent("b","10",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,10)
+                break;
+        
+            default:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+        }
+
+    },[])
 
 
 
@@ -1112,6 +1264,402 @@ if(media1){
     }
 
 
+
+    
+    useEffect(()=>{
+        switch (activeSource) {
+            case 1:
+                setMedia1(true)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","1",true)
+                window.CrComLib.publishEvent("b","1",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,1)
+                break;
+
+            case 2:
+                setMedia1(false)
+                setMedia2(true)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","2",true)
+                window.CrComLib.publishEvent("b","2",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,2)
+                break;
+
+            case 3:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(true)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","3",true)
+                window.CrComLib.publishEvent("b","3",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,3)
+                break;
+
+            case 4:   
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(true)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","4",true)
+                window.CrComLib.publishEvent("b","4",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,4)
+                break;
+
+            case 7:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(true)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","7",true)
+                window.CrComLib.publishEvent("b","7",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,7)
+                break;
+
+            case 8:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(true)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","8",true)
+                window.CrComLib.publishEvent("b","8",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,8)
+                break;
+
+            case 9:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(true)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","9",true)
+                window.CrComLib.publishEvent("b","9",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,9)
+                break;
+
+            case 10:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(true)
+                window.CrComLib.publishEvent("b","10",true)
+                window.CrComLib.publishEvent("b","10",false)
+                window.CrComLib.publishEvent("n",`${roomLocation}`,10)
+                break;
+        
+            default:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+        }
+    },[trigger1])
+
+
+    useEffect(()=>{
+        switch (activeSource2) {
+            case 1:
+                setMedia1(true)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","1",true)
+                window.CrComLib.publishEvent("b","1",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,1)
+                break;
+
+            case 2:
+                setMedia1(false)
+                setMedia2(true)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","2",true)
+                window.CrComLib.publishEvent("b","2",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,2)
+                break;
+
+            case 3:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(true)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","3",true)
+                window.CrComLib.publishEvent("b","3",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,3)
+                break;
+
+            case 4:   
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(true)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","4",true)
+                window.CrComLib.publishEvent("b","4",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,4)
+                break;
+
+            case 7:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(true)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","7",true)
+                window.CrComLib.publishEvent("b","7",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,7)
+                break;
+
+            case 8:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(true)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","8",true)
+                window.CrComLib.publishEvent("b","8",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,8)
+                break;
+
+            case 9:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(true)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","9",true)
+                window.CrComLib.publishEvent("b","9",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,9)
+                break;
+
+            case 10:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(true)
+                window.CrComLib.publishEvent("b","10",true)
+                window.CrComLib.publishEvent("b","10",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,10)
+                break;
+        
+            default:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+        }
+
+    },[trigger2])
+
+
+    useEffect(()=>{
+        switch (activeSource3) {
+            case 1:
+                setMedia1(true)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","1",true)
+                window.CrComLib.publishEvent("b","1",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,1)
+                break;
+
+            case 2:
+                setMedia1(false)
+                setMedia2(true)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","2",true)
+                window.CrComLib.publishEvent("b","2",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,2)
+                break;
+
+            case 3:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(true)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","3",true)
+                window.CrComLib.publishEvent("b","3",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,3)
+                break;
+
+            case 4:   
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(true)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","4",true)
+                window.CrComLib.publishEvent("b","4",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,4)
+                break;
+
+            case 7:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(true)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","7",true)
+                window.CrComLib.publishEvent("b","7",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,7)
+                break;
+
+            case 8:
+
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(true)
+                setMedia7(false)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","8",true)
+                window.CrComLib.publishEvent("b","8",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,8)
+                break;
+
+            case 9:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(true)
+                setMedia8(false)
+                window.CrComLib.publishEvent("b","9",true)
+                window.CrComLib.publishEvent("b","9",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,9)
+                break;
+
+            case 10:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(true)
+                window.CrComLib.publishEvent("b","10",true)
+                window.CrComLib.publishEvent("b","10",false)
+                window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,10)
+                break;
+        
+            default:
+                setMedia1(false)
+                setMedia2(false)
+                setMedia3(false)
+                setMedia4(false)
+                setMedia5(false)
+                setMedia6(false)
+                setMedia7(false)
+                setMedia8(false)
+                break;
+        }
+
+    },[trigger3])
+
+
+       
+
     
 
 
@@ -1142,9 +1690,9 @@ if(media1){
 
             
             <div className="nav">
-                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv1"), display_tile())}     className={tvOptions && sourceSelectionOne?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}   style={{height:"60%"}}  /> </button>
-                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv2"), display_tile())}     className={tvOptions && sourceSelectionTwo?   "btn_selected" : "btn_not_selected"}   >  <img src={TV1}  style={{height:"60%"}}   /> </button>
-                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv3"), display_tile())}     className={tvOptions && sourceSelectionThree?   "btn_selected" : "btn_not_selected"}   >  <img src={TV2}  style={{height:"60%"}}   /> </button>
+                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv1"), display_tile(), setTrigger1(!trigger1))}     className={tvOptions && sourceSelectionOne?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}   style={{height:"60%"}}  /> </button>
+                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv2"), display_tile(), setTrigger2(!trigger2))}     className={tvOptions && sourceSelectionTwo?   "btn_selected" : "btn_not_selected"}   >  <img src={TV1}  style={{height:"60%"}}   /> </button>
+                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv3"), display_tile(), setTrigger3(!trigger3))}     className={tvOptions && sourceSelectionThree?   "btn_selected" : "btn_not_selected"}   >  <img src={TV2}  style={{height:"60%"}}   /> </button>
 
 
                         <Link to={"/AudioDashboard"}  state={{roomId:"arcade"}}                 className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
@@ -1252,7 +1800,7 @@ if(media1){
             <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
                     <div className={active_media? "media_off":"room_sources_container"} id={sourceSelectionOne? "":"display_none"}>
                             
-                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media1')}>
+                            <div className="source_card" id= {  activeSource === 1? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
@@ -1260,7 +1808,7 @@ if(media1){
                                 <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media2')}>
+                            <div className="source_card" id= { activeSource === 2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
@@ -1268,14 +1816,14 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
+                            <div className="source_card" id= { activeSource === 3? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
                             </div>
 
-                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media4')}>
+                            <div className="source_card" id= { activeSource === 4? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
@@ -1283,7 +1831,7 @@ if(media1){
                                 <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media5')}>
+                            <div className="source_card" id= { activeSource === 7? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
@@ -1291,7 +1839,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
+                            <div className="source_card" id= { activeSource === 8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -1299,7 +1847,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media7')}>
+                            <div className="source_card" id ={ activeSource === 9? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -1308,7 +1856,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media8')}>
+                            <div className="source_card" id ={ activeSource === 10? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>
@@ -1320,7 +1868,7 @@ if(media1){
 
                     <div className={active_media? "media_off":"room_sources_container"} id={sourceSelectionTwo? "":"display_none"}>
                             
-                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media1')}>
+                            <div className="source_card" id= { activeSource2 === 1? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
@@ -1328,7 +1876,7 @@ if(media1){
                                 <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media2')}>
+                            <div className="source_card" id= { activeSource2 === 2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
@@ -1336,14 +1884,14 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media3')}>
+                            <div className="source_card" id= { activeSource2 === 3? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
                             </div>
 
-                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media4')}>
+                            <div className="source_card" id= { activeSource2 === 4? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
@@ -1351,7 +1899,7 @@ if(media1){
                                 <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media5')}>
+                            <div className="source_card" id= { activeSource2 === 7? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
@@ -1359,7 +1907,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media6')}>
+                            <div className="source_card" id= { activeSource2 === 8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -1367,7 +1915,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media7')}>
+                            <div className="source_card" id ={ activeSource2 === 9? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -1376,7 +1924,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media8')}>
+                            <div className="source_card" id ={ activeSource2 === 10? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_2('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>
@@ -1388,7 +1936,7 @@ if(media1){
 
                     <div className={active_media? "media_off":"room_sources_container"} id={sourceSelectionThree? "":"display_none"}>
                             
-                            <div className="source_card" id= { media1? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media1')}>
+                            <div className="source_card" id= { activeSource3 === 1? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
@@ -1396,7 +1944,7 @@ if(media1){
                                 <p>{sub_title_1}</p>
                             </div>
 
-                            <div className="source_card" id= { media2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media2')}>
+                            <div className="source_card" id= { activeSource3 === 2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
@@ -1404,14 +1952,14 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="source_card" id= { media3? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media3')}>
+                            <div className="source_card" id= { activeSource3 === 3? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
                             </div>
 
-                            <div className="source_card" id= { media4? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media4')}>
+                            <div className="source_card" id= { activeSource3 === 4? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
@@ -1419,7 +1967,7 @@ if(media1){
                                 <p>{sub_title_4}</p>
                             </div>
 
-                            <div className="source_card" id= { media5? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media5')}>
+                            <div className="source_card" id= { activeSource3 === 7? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
@@ -1427,7 +1975,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="source_card" id= { media6? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media6')}>
+                            <div className="source_card" id= { activeSource3 === 8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -1435,7 +1983,7 @@ if(media1){
                                 <p>{sub_title_6}</p>
                             </div>
 
-                            <div className="source_card" id ={ media7? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media7')}>
+                            <div className="source_card" id ={ activeSource3 === 9? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
@@ -1444,7 +1992,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="source_card" id ={ media8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media8')}>
+                            <div className="source_card" id ={ activeSource3 === 10? 'active_source' : 'not_active'} onTouchEnd={()=>playSource_3('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>

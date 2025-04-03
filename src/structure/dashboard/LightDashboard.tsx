@@ -2296,7 +2296,7 @@ const LightDashboard = () => {
 
 
                             <button className="btn_location_7" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_7"))}>    
-                                {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM || light_5_fb_FAMILY_ROOM || light_6_fb_FAMILY_ROOM  || light_7_fb_FAMILY_ROOM || light_8_fb_FAMILY_ROOM   ? 
+                                {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM || light_5_fb_FAMILY_ROOM || light_6_fb_FAMILY_ROOM  || light_7_fb_FAMILY_ROOM? 
                                 <img className="light_icon_z7" id="lightZoneActive" src={lightOn} />  
                                 :
                                 <img className="light_icon_z7" src={lightOff} />  
@@ -2312,7 +2312,7 @@ const LightDashboard = () => {
                             </button>
 
                             <button className="btn_location_9" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_9"))}> 
-                                {light_1_fb_KITCHEN|| light_2_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN || light_5_fb_KITCHEN || light_6_fb_KITCHEN ? 
+                                {light_1_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN || light_5_fb_KITCHEN || light_6_fb_KITCHEN ? 
                                 <img className="light_icon_z9" id="lightZoneActive" src={lightOn} />  
                                 :
                                 <img className="light_icon_z9" src={lightOff} />  
@@ -2347,7 +2347,7 @@ const LightDashboard = () => {
 
 
                             <button className="btn_location_15" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_15"))}>   
-                              {light_1_fb_GARAGE|| light_2_fb_GARAGE? 
+                              {light_1_fb_GARAGE? 
                                 <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
                                 :
                                 <img className="light_icon_z15" src={lightOff} />  
@@ -2364,7 +2364,7 @@ const LightDashboard = () => {
                             </button>
 
                             <button className="btn_location_17" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_17"))}>   
-                              {light_1_fb_GARAGE|| light_2_fb_GARAGE? 
+                              {light_9_fb_LANDSCAPE? 
                                 <img className="light_icon_z17" id="lightZoneActive" src={lightOn} />  
                                 :
                                 <img className="light_icon_z17" src={lightOff} />  
@@ -2372,7 +2372,7 @@ const LightDashboard = () => {
                             </button>
 
                             <button className="btn_location_18" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_18"))}>   
-                              {light_1_fb_GARAGE|| light_2_fb_GARAGE? 
+                              {light_7_fb_LANDSCAPE? 
                                 <img className="light_icon_z18" id="lightZoneActive" src={lightOn} />  
                                 :
                                 <img className="light_icon_z18" src={lightOff} />  
@@ -2380,7 +2380,7 @@ const LightDashboard = () => {
                             </button>
 
                             <button className="btn_location_19" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_19"))}>   
-                              {light_1_fb_GARAGE|| light_2_fb_GARAGE? 
+                              {light_8_fb_LANDSCAPE? 
                                 <img className="light_icon_z19" id="lightZoneActive" src={lightOn} />  
                                 :
                                 <img className="light_icon_z19" src={lightOff} />  
@@ -2388,7 +2388,7 @@ const LightDashboard = () => {
                             </button>
 
                             <button className="btn_location_20" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_20"))}>   
-                              {light_1_fb_GARAGE|| light_2_fb_GARAGE? 
+                              {light_2_fb_LANDSCAPE? 
                                 <img className="light_icon_z20" id="lightZoneActive" src={lightOn} />  
                                 :
                                 <img className="light_icon_z20" src={lightOff} />  

@@ -150,9 +150,6 @@ const FamilyRoom = () =>{
   
     
 
-   // const room_off_join   = "21" // tv east
-  // const room_off_join_2 = "22" // tv west
-
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
@@ -191,9 +188,9 @@ const FamilyRoom = () =>{
 
 
 // console.log 
-const [currentTVSource, setCourrentTVSource] = useState("1")
-const [sourceSelectionOne, setSourceSelectionOne] = useState(true)
-const [sourceSelectionTwo, setSourceSelectionTwo] = useState(false)
+const [currentTVSource, setCourrentTVSource] = useState("1 W/Audio")
+const [sourceSelectionOne, setSourceSelectionOne] = useState(false) // Tv without audio now marked as tv 2
+const [sourceSelectionTwo, setSourceSelectionTwo] = useState(true) // tv with aduio and now marked as TV 1
 
 
 //const [sourceSelectionMirror, setSourceSelectionMirror] = useState(false)
@@ -204,12 +201,12 @@ const sourceDisplay = (tvSelection:string) =>{
         setSourceSelectionOne(true)
         setSourceSelectionTwo(false)
 
-        setCourrentTVSource("1")
+        setCourrentTVSource("2 W/Out Audio")
     } else if (tvSelection === "tv2"){
         setSourceSelectionOne(false)
         setSourceSelectionTwo(true)  
 
-        setCourrentTVSource("2")
+        setCourrentTVSource("1 W/Audio")
 
     } 
 }
@@ -230,16 +227,7 @@ const sourceDisplay = (tvSelection:string) =>{
         const activeSource2 = window.CrComLib.subscribeState("n",roomLocation_tv_2,(value: number) => {setActiveSource2(value);});
 
  
-      
-        // TV Soucres
-        const media1 = window.CrComLib.subscribeState("b","1",(value: boolean) => {setMedia1(value);});  // bluRay
-        const media2 = window.CrComLib.subscribeState("b","2",(value: boolean) => {setMedia2(value);});  // Kescape
-        const media3 = window.CrComLib.subscribeState("b","5",(value: boolean) => {setMedia3(value);});  // DTV3
-        const media4 = window.CrComLib.subscribeState("b","6",(value: boolean) => {setMedia4(value);});  // DTV4
-        const media5 = window.CrComLib.subscribeState("b","7",(value: boolean) => {setMedia5(value);});  // DTV5
-        const media6 = window.CrComLib.subscribeState("b","8",(value: boolean) => {setMedia6(value);});  // ATV1
-        const media7 = window.CrComLib.subscribeState("b","9",(value: boolean) => {setMedia7(value);});  // ATV2
-        const media8 = window.CrComLib.subscribeState("b","10",(value: boolean) => {setMedia8(value);}); // ATV3
+
         // TV audio controls
         const roomVolume     = window.CrComLib.subscribeState("n",audio_volume_join,(value: number) => {setRoomVolume(value);});
         const roomMute    = window.CrComLib.subscribeState("b",audio_mute_join,(value: boolean) => {setRoomMute(value);});
@@ -263,15 +251,7 @@ const sourceDisplay = (tvSelection:string) =>{
             window.CrComLib.unsubscribeState("n",roomLocation_tv_2,activeSource2)
 
             
-            // TV Soucres
-            window.CrComLib.unsubscribeState("b","1",media1)
-            window.CrComLib.unsubscribeState("b","2",media2)
-            window.CrComLib.unsubscribeState("b","5",media3)
-            window.CrComLib.unsubscribeState("b","6",media4)
-            window.CrComLib.unsubscribeState("b","7",media5)
-            window.CrComLib.unsubscribeState("b","8",media6)
-            window.CrComLib.unsubscribeState("b","9",media7)
-            window.CrComLib.unsubscribeState("b","10",media8)
+          
          
             // TV audio controls
             window.CrComLib.unsubscribeState("n",audio_volume_join,roomVolume)
@@ -369,7 +349,15 @@ const sourceDisplay = (tvSelection:string) =>{
 ---------------------------------------------------------------------------- Checks to see if any media sources are currently on
 */
 
-if(media1 ){
+
+
+
+
+
+
+
+
+    if(media1 ){
     //display controller and hide source selection
        active_media = true
     //displaying the correct controller and hiding the rest
@@ -487,10 +475,145 @@ if(media1 ){
         media_6 = "media_off"  
         media_7 = "media_off"  
         media_8 = "media_off"  
+    
+}
+
+
+
+useEffect(()=>{
+    switch (activeSource2) {
+        case 1:
+            setMedia1(true)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            window.CrComLib.publishEvent("b","1",true)
+            window.CrComLib.publishEvent("b","1",false)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,1)
+
+            
+            break;
+
+        case 2:
+            setMedia1(false)
+            setMedia2(true)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            window.CrComLib.publishEvent("b","2",true)
+            window.CrComLib.publishEvent("b","2",false)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,2)
+            break;
+
+        case 5:
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(true)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            window.CrComLib.publishEvent("b","5",true)
+            window.CrComLib.publishEvent("b","5",false)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,5)
+            break;
+
+        case 6:   
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(true)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            window.CrComLib.publishEvent("b","6",true)
+            window.CrComLib.publishEvent("b","6",false)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,6)
+            break;
+
+        case 7:
+
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(true)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            window.CrComLib.publishEvent("b","7",true)
+            window.CrComLib.publishEvent("b","7",false)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,7)
+            break;
+
+        case 8:
+
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(true)
+            setMedia7(false)
+            setMedia8(false)
+            window.CrComLib.publishEvent("b","8",true)
+            window.CrComLib.publishEvent("b","8",false)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,8)
+            break;
+
+        case 9:
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(true)
+            setMedia8(false)
+
+            window.CrComLib.publishEvent("b","9",true)
+            window.CrComLib.publishEvent("b","9",false)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,9)
+            break;
+
+        case 10:
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(true)
+
+            window.CrComLib.publishEvent("b","10",true)
+            window.CrComLib.publishEvent("b","10",false)
+
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,10)
+            break;
+    
+        default:
+            setMedia1(false)
+            setMedia2(false)
+            setMedia3(false)
+            setMedia4(false)
+            setMedia5(false)
+            setMedia6(false)
+            setMedia7(false)
+            setMedia8(false)
+            break;
     }
-   
 
-
+},[activeSource2])
 
 
     // Tile click, function calls to set local values and crestron values
@@ -1117,7 +1240,7 @@ if(media1 ){
                 break;
         }
 
-    },[activeSource2, trigger2])
+    },[trigger2])
 
     
     useEffect(()=>{
@@ -1248,7 +1371,7 @@ if(media1 ){
                 break;
         }
 
-    },[activeSource, trigger1])
+    },[trigger1])
 
 
        
@@ -1276,8 +1399,9 @@ if(media1 ){
 
             
                 <div className="nav">
-                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv1"),setTrigger1(!trigger1))}     className={tvOptions && sourceSelectionOne?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}   style={{height:"60%"}}  /> </button>
-                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv2"),setTrigger2(!trigger2))}     className={tvOptions && sourceSelectionTwo?   "btn_selected" : "btn_not_selected"}   >  <img src={TV1}  style={{height:"60%"}}   /> </button>
+                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv2"),setTrigger2(!trigger2))}     className={tvOptions && sourceSelectionTwo?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}  style={{height:"60%"}}   /> </button>
+
+                        <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv1"),setTrigger1(!trigger1))}     className={tvOptions && sourceSelectionOne?   "btn_selected" : "btn_not_selected"}   >  <img src={TV1}   style={{height:"60%"}}  /> </button>
 
                         <Link to={"/AudioDashboard"} state={{roomId:"breakfast"}} className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
                         <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
@@ -1345,13 +1469,15 @@ if(media1 ){
                     </p>
 
                     <div className="power_menu_button">
-                        <div className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone1") , display_tile())}>  
+
+                    <div className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone2") , display_tile())}> 
                             <p style={{width:"100%", fontSize:"x-large"}}>Turn Off TV #1</p> 
+                        </div> 
+                        <div className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone1") , display_tile())}>  
+                            <p style={{width:"100%", fontSize:"x-large"}}>Turn Off TV #2</p> 
                         </div>
 
-                        <div className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone2") , display_tile())}> 
-                            <p style={{width:"100%", fontSize:"x-large"}}>Turn Off TV #2</p> 
-                        </div> 
+                       
                         
                         <button className="no_reboot" onTouchEnd={()=> powerMenu("menu")}> 
                             <p>Close Menu</p> 

@@ -73,8 +73,8 @@ const MediaServerWebSocket: React.FC  = () => {
   
 
 
-  const [serverUrl, setServerUrl] = useState('ws://10.10.10.46:5004')
-  const [url, setUrl] = useState("http://10.10.10.46")
+  const [serverUrl, setServerUrl] = useState('ws://192.168.14.78:5004')
+  const [url, setUrl] = useState("http://192.168.14.78")
 
 
 
@@ -1169,11 +1169,11 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_1'
             id={zone_active_4 === 11 ? 'active_user' : " "}>
             {zone_active_4 === 11 ?  
-              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, zone_music_4_steve)}>
+              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, 0)}>
                 Turn Off Music
               </p> 
               : 
-              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, 0)}>
+              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, zone_music_4_steve)}>
                 Steve
               </p>
             }
@@ -1182,11 +1182,11 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_2'
             id={zone_active_4 === 12 ? 'active_user' : " "}>
             {zone_active_4 === 12 ?  
-              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, 12)}>
+              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, 0)}>
                 Turn Off Music
               </p> 
               : 
-              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, 0)}>
+              <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_4_location, 12)}>
                 Ellen
               </p>
             }
@@ -1237,11 +1237,11 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_1'
               id={zone_active_5 === 11 ? 'active_user' : " "}>
               {zone_active_5 === 11 ?  
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, zone_music_5_steve)}>
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, 0)}>
                   Turn Off Music
                 </p> 
                 : 
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, 0)}>
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, zone_music_5_steve)}>
                   Steve
                 </p>
               }
@@ -1250,11 +1250,11 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_2'
               id={zone_active_5 === 12 ? 'active_user' : " "}>
               {zone_active_5 === 12 ?  
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, 12)}>
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, 0)}>
                   Turn Off Music
                 </p> 
                 : 
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, 0)}>
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_5_location, 12)}>
                   Ellen
                 </p>
               }
@@ -1304,11 +1304,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_6 === 11 ? 'active_user' : " "}>
           {zone_active_6 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, zone_music_6_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, zone_music_6_steve)}>
           Steve
           </p>
           }
@@ -1317,11 +1317,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_6 === 12 ? 'active_user' : " "}>
           {zone_active_6 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_6_location, 12)}>
           Ellen
           </p>
           }
@@ -1381,11 +1381,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_16 === 11 ? 'active_user' : " "}>
           {zone_active_16 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_16_location, zone_music_16_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_16_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_16_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_16_location, zone_music_16_steve)}>
           Steve
           </p>
           }
@@ -1394,11 +1394,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_16 === 12 ? 'active_user' : " "}>
           {zone_active_16 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_16_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_16_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_16_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_16_location, 12)}>
           Ellen
           </p>
           }
@@ -1457,11 +1457,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_8 === 11 ? 'active_user' : " "}>
           {zone_active_8 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, zone_music_8_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, zone_music_8_steve)}>
           Steve
           </p>
           }
@@ -1470,11 +1470,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_8 === 12 ? 'active_user' : " "}>
           {zone_active_8 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_8_location, 12)}>
           Ellen
           </p>
           }
@@ -1533,11 +1533,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_9 === 11 ? 'active_user' : " "}>
           {zone_active_9 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, zone_music_9_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, zone_music_9_steve)}>
           Steve
           </p>
           }
@@ -1546,11 +1546,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_9 === 12 ? 'active_user' : " "}>
           {zone_active_9 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_9_location, 12)}>
           Ellen
           </p>
           }
@@ -1609,11 +1609,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_10 === 11 ? 'active_user' : " "}>
           {zone_active_10 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, zone_music_10_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, zone_music_10_steve)}>
           Steve
           </p>
           }
@@ -1622,11 +1622,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_10 === 12 ? 'active_user' : " "}>
           {zone_active_10 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, 0)}>
           Turn Off Music
           </p> 
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_10_location, 12)}>
           Ellen
           </p>
           }
@@ -1733,11 +1733,11 @@ const zone_name_23    = "Upper Pool Deck";
                   id={zone_active_2 === 11? 'active_user':" " }>
                   {zone_active_2 === 11?  
 
-                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, zone_music_2_steve)}>
+                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, 0)}>
                       Turn Off Music
                     </p> 
                     : 
-                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, 0)}>
+                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, zone_music_2_steve)}>
                       Steve
                     </p> 
                   } 
@@ -1747,11 +1747,11 @@ const zone_name_23    = "Upper Pool Deck";
                   id={zone_active_2 === 12? 'active_user':" " }>
                   {zone_active_2 === 12?  
 
-                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, 12)}>
+                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, 0)}>
                       Turn Off Music
                     </p> 
                     : 
-                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, 0)}>
+                    <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_2_location, 12)}>
                       Ellen
                     </p> 
                   } 
@@ -1809,11 +1809,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_3 === 11? 'active_user':" " }>
                     {zone_active_3 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, zone_music_3_steve)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, zone_music_3_steve)}>
                         Steve
                       </p> 
                     } 
@@ -1823,11 +1823,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_3 === 12? 'active_user':" " }>
                     {zone_active_3 === 12?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, 12)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_3_location, 12)}>
                         Ellen
                       </p> 
                     } 
@@ -1884,11 +1884,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_7 === 11? 'active_user':" " }>
                     {zone_active_7 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, zone_music_7_steve)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, zone_music_7_steve)}>
                         Steve
                       </p> 
                     } 
@@ -1898,11 +1898,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_7 === 12? 'active_user':" " }>
                     {zone_active_7 === 12?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, 12)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_7_location, 12)}>
                         Ellen
                       </p> 
                     } 
@@ -1959,11 +1959,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_15 === 11? 'active_user':" " }>
                     {zone_active_15 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_15_location, zone_music_15_steve)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_15_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_15_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_15_location, zone_music_15_steve)}>
                         Steve
                       </p> 
                     } 
@@ -2034,11 +2034,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_17 === 11? 'active_user':" " }>
                     {zone_active_17 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_17_location, zone_music_17_steve)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_17_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_17_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_17_location, zone_music_17_steve)}>
                         Steve
                       </p> 
                     } 
@@ -2048,11 +2048,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_17 === 12? 'active_user':" " }>
                     {zone_active_17 === 12?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_17_location, 12)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_17_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_17_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_17_location, 12)}>
                         Ellen
                       </p> 
                     } 
@@ -2109,11 +2109,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_18 === 11? 'active_user':" " }>
                     {zone_active_18 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_18_location, zone_music_18_steve)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_18_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_18_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_18_location, zone_music_18_steve)}>
                         Steve
                       </p> 
                     } 
@@ -2123,11 +2123,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_18 === 12? 'active_user':" " }>
                     {zone_active_18 === 12?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_18_location, 12)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_18_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_18_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_18_location, 12)}>
                         Ellen
                       </p> 
                     } 
@@ -2184,11 +2184,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_19 === 11? 'active_user':" " }>
                     {zone_active_19 === 11?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_19_location, zone_music_19_steve)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_19_location,0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_19_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_19_location, zone_music_19_steve)}>
                         Steve
                       </p> 
                     } 
@@ -2198,11 +2198,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_19 === 12? 'active_user':" " }>
                     {zone_active_19 === 12?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_19_location, 12)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_19_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_19_location, 0)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_19_location, 12)}>
                         Ellen
                       </p> 
                     } 
@@ -2278,11 +2278,11 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_1'
               id={zone_active_11 === 11 ? 'active_user' : " "}>
               {zone_active_11 === 11 ?  
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, zone_music_11_steve)}>
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, 0)}>
                   Turn Off Music
                 </p>
                 : 
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, 0)}>
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, zone_music_11_steve)}>
                   Steve
                 </p>
               }
@@ -2291,11 +2291,11 @@ const zone_name_23    = "Upper Pool Deck";
             <button className='zone_container_user_2'
               id={zone_active_11 === 12 ? 'active_user' : " "}>
               {zone_active_11 === 12 ?  
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, 12)}>
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, 0)}>
                   Turn Off Music
                 </p>
                 : 
-                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, 0)}>
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_11_location, 12)}>
                   Ellen
                 </p>
               }
@@ -2527,11 +2527,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_21 === 11 ? 'active_user' : " "}>
           {zone_active_21 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_21_location, zone_music_21_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_21_location, 0)}>
           Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_21_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_21_location, zone_music_21_steve)}>
           Steve
           </p>
           }
@@ -2540,11 +2540,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_21 === 12 ? 'active_user' : " "}>
           {zone_active_21 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_21_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_21_location, 0)}>
           Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_21_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_21_location, 12)}>
           Ellen
           </p>
           }
@@ -2602,32 +2602,30 @@ const zone_name_23    = "Upper Pool Deck";
           </div>
           </div>
 
-          <div id={zone_active_22 > 0 ? "active_btn" : "zone-22"} className='zone_container'>
-          <div className='zone_title'>
-          <p>{zone_name_22}</p>
-          </div>
+          <div id={zone_active_22 > 0 ? "active_btn" : "zone-22"} className='display_none'>
+            <div className='zone_title'>
+              <p>{zone_name_22}</p>
+            </div>
 
-          <button className='zone_container_user_1'
-          id={zone_active_22 === 11 ? 'active_user' : " "}>
-          {zone_active_22 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_22_location, zone_music_22_steve)}>
-          Turn Off Music
-          </p>
-          : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_22_location, 0)}>
-          Steve
-          </p>
-          }
+          <button className='zone_container_user_1' id={zone_active_22 === 11 ? 'active_user' : " "}>
+              {zone_active_22 === 11 ?  
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_22_location, 0)}>
+                Turn Off Music
+                </p>
+              : 
+                <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_22_location, zone_music_22_steve)}>
+                Steve
+                </p>
+              }
           </button>
 
-          <button className='zone_container_user_2'
-          id={zone_active_22 === 12 ? 'active_user' : " "}>
+          <button className='zone_container_user_2'id={zone_active_22 === 12 ? 'active_user' : " "}>
           {zone_active_22 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_22_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_22_location, 0)}>
           Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_22_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_22_location, 12)}>
           Ellen
           </p>
           }
@@ -2703,11 +2701,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_14 === 11 ? 'active_user' : " "}>
           {zone_active_14 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_14_location, zone_music_14_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_14_location, 0)}>
             Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_14_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_14_location, zone_music_14_steve)}>
             Steve
           </p>
           }
@@ -2716,11 +2714,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_14 === 12 ? 'active_user' : " "}>
           {zone_active_14 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_14_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_14_location,0)}>
             Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_14_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_14_location, 12)}>
             Ellen
           </p>
           }
@@ -2779,11 +2777,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_20 === 11 ? 'active_user' : " "}>
           {zone_active_20 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_20_location, zone_music_20_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_20_location,0 )}>
           Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_20_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_20_location, zone_music_20_steve)}>
           Steve
           </p>
           }
@@ -2792,11 +2790,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_20 === 12 ? 'active_user' : " "}>
           {zone_active_20 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_20_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_20_location, 0)}>
           Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_20_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_20_location, 12)}>
           Ellen
           </p>
           }
@@ -2855,11 +2853,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_1'
           id={zone_active_23 === 11 ? 'active_user' : " "}>
           {zone_active_23 === 11 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_23_location, zone_music_23_steve)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_23_location, 0)}>
           Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_23_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_23_location, zone_music_23_steve)}>
           Steve
           </p>
           }
@@ -2868,11 +2866,11 @@ const zone_name_23    = "Upper Pool Deck";
           <button className='zone_container_user_2'
           id={zone_active_23 === 12 ? 'active_user' : " "}>
           {zone_active_23 === 12 ?  
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_23_location, 12)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_23_location, 0)}>
           Turn Off Music
           </p>
           : 
-          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_23_location, 0)}>
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_23_location, 12)}>
           Ellen
           </p>
           }
@@ -2938,7 +2936,7 @@ const zone_name_23    = "Upper Pool Deck";
     const roomId = location.state?.roomId;
   
     const [locationTitle, setLocationTitle] = useState("")
-    const [roomLocation, setRoomLocation] = useState(0)
+    const [roomLocation, setRoomLocation] = useState("0")
   
     const [playerPopUp, setPlayerPopUp] = useState(false)
 
@@ -2951,142 +2949,155 @@ const zone_name_23    = "Upper Pool Deck";
       console.log(roomId)
   
       if(roomId === 'breakfast'){
-          setRoomLocation(1)
+          setRoomLocation('2')
           setLocationTitle("Breakfast Room")
 
-          if(zone_active_2 >= 11 ){
+          if(zone_active_2 === 11 || zone_active_2 === 12 ){
             setPlayerPopUp(false)
+            showAudioControls()
           } else {
             setPlayerPopUp(true)
           }
    
   
       } else if(roomId === "dining"){
-          setRoomLocation(3)
+          setRoomLocation('3')
           setLocationTitle("Dining Room")
 
-          if(zone_active_3 >= 11){
+          if(zone_active_3 === 11 || zone_active_3 === 12 ){
             setPlayerPopUp(false)
+            showAudioControls()
           } else {
             setPlayerPopUp(true)
           }
   
       } else if(roomId === "game"){
-        setRoomLocation(15)
+        setRoomLocation('15')
         setLocationTitle("Game Room")
 
-        if(zone_active_15 >= 11){
+        if(zone_active_15 === 11 || zone_active_15 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
       } else if(roomId === "family"){
-        setRoomLocation(7)
+        setRoomLocation('7')
         setLocationTitle("Family Room")
 
-        if(zone_active_7 >= 11){
+        if(zone_active_4 === 11 || zone_active_4 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
       } else if(roomId === "masterBed"){
-        setRoomLocation(9)
+        setRoomLocation('9')
         setLocationTitle("Master Bedroom")
 
-        if(zone_active_9 >= 11){
+        if(zone_active_9 === 11 || zone_active_9 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
       } else if(roomId === "guestBed"){
-        setRoomLocation(8)
+        setRoomLocation('8')
         setLocationTitle("Guest Bedroom")
 
-        if(zone_active_8 >= 11){
+        if(zone_active_8 === 11 || zone_active_8 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
       } else if(roomId === "guestBath"){
-        setRoomLocation(16)
+        setRoomLocation('16')
         setLocationTitle("Guest Bathroom")
 
-        if(zone_active_16 >= 11){
+        if(zone_active_16 === 11 || zone_active_16 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
       } else if(roomId === "ellensOffice"){
-        setRoomLocation(5)
+        setRoomLocation('5')
         setLocationTitle("Ellen's Office")
 
-        if(zone_active_16 >= 11){
+        if(zone_active_5 === 11 || zone_active_5 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
       } else if(roomId === "ellensBath"){
-        setRoomLocation(6)
+        setRoomLocation('6')
         setLocationTitle("Ellen's Bath")
 
-        if(zone_active_6 >= 11){
+        if(zone_active_6 === 11 || zone_active_6 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
       } else if(roomId === "ellensExcercise"){
-        setRoomLocation(4)
+        setRoomLocation('4')
         setLocationTitle("Ellen's Excercise")
 
-        if(zone_active_4 >= 11){
+        if(zone_active_4 === 11 || zone_active_4 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
   
       } else if(roomId === "media"){
-        setRoomLocation(10)
+        setRoomLocation('10')
         setLocationTitle("Media Room")
 
-        if(zone_active_10 >= 11){
+        if(zone_active_10 === 11 || zone_active_10 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
         
       } else if(roomId === "arcade"){
-        setRoomLocation(11)
+        setRoomLocation('11')
         setLocationTitle("Arcade")
 
-        if(zone_active_11 >= 11){
+        if(zone_active_11 === 11 || zone_active_11 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
   
       } else if(roomId === "poolPatio"){
-        setRoomLocation(14)
+        setRoomLocation('14')
         setLocationTitle("Pool Patio")
 
-        if(zone_active_14 >= 11){
+        if(zone_active_14 === 11 || zone_active_14 === 12){
           setPlayerPopUp(false)
+          showAudioControls()
         } else {
           setPlayerPopUp(true)
         }
   
       }
   
-  },[roomId])
+  },[roomId, zone_active_2, zone_active_3,zone_active_4,zone_active_5,zone_active_6,zone_active_7,zone_active_8,zone_active_9,zone_active_10,zone_active_11,zone_active_14,zone_active_15,zone_active_16])
 
 
   const showAudioControls = () =>{
@@ -3850,11 +3861,11 @@ const zone_name_23    = "Upper Pool Deck";
 
 
           <div className='active_message_buttons'>
-              <button className='btn_circle' onTouchEnd={()=> (window.CrComLib.publishEvent("n",`${roomLocation}`,11), switchPlayer("steve"), setPlayerPopUp(false), showAudioControls())} id='pillShape'>
-                <p>Yes, use Steve's Music Player</p>
+              <button className='btn_circle' onTouchEnd={()=> (window.CrComLib.publishEvent("n",roomLocation,11), switchPlayer("steve"), setPlayerPopUp(false))} id='pillShape'>
+                <p>Yes, use Steve's Music Player - room loc {roomLocation} current value of breakfast {zone_active_11}</p>
               </button>
 
-              <button className='btn_circle' onTouchEnd={()=> (window.CrComLib.publishEvent("n",`${roomLocation}`,12), switchPlayer("ellen"), setPlayerPopUp(false), showAudioControls())} id='pillShape'>
+              <button className='btn_circle' onTouchEnd={()=> (window.CrComLib.publishEvent("n",roomLocation,12), switchPlayer("ellen"), setPlayerPopUp(false))} id='pillShape'>
                 <p>Yes, use Ellen's Music Player</p>
               </button>
           </div>

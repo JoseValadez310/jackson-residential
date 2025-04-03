@@ -85,7 +85,7 @@ const FamilyRoom = () =>{
     let media_7:string
     let media_8:string
 
-    const roomLocation:string = "9"
+    const roomLocation:string = "8"
 
     const sub_title_1 = "BluRay"
     const sub_title_2 = "Kaleidescape"
@@ -133,13 +133,14 @@ const FamilyRoom = () =>{
     const audio_mute_join     = "529"
     const audio_decrease_join = "528"
 
+
 /*
 ---------------------------------------------------------------------------- Modals for Apple Tv Reboot or Room shutdown
 */
     const [displayReboot, setDisplayReboot] = useState(false) // Apple TV reboot menu 
     const [tvPowerMenu, setTvPowerMenu] = useState(false)      //  TV Power Menu    
 
-
+   
 /*
 ---------------------------------------------------------------------------- Lighting info
 */
@@ -754,7 +755,6 @@ if(media1){
         }
 
        
-
         useEffect(()=>{
             switch (activeSource) {
                 case 1:
@@ -766,15 +766,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
-
-
-                    
-            window.CrComLib.publishEvent("b","1",true)
-            window.CrComLib.publishEvent("b","1",false)
-
-            window.CrComLib.publishEvent("n",`${roomLocation}`,1)
-
-
                     break;
     
                 case 2:
@@ -786,13 +777,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
-
-                    
-            window.CrComLib.publishEvent("b","2",true)
-            window.CrComLib.publishEvent("b","2",false)
-
-            //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation}`,2)
                     break;
     
                 case 5:
@@ -804,11 +788,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
-
-                    
-                    window.CrComLib.publishEvent("b","5",true)
-                    window.CrComLib.publishEvent("b","5",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,5)
                     break;
     
                 case 6:   
@@ -820,9 +799,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","6",true)
-                    window.CrComLib.publishEvent("b","6",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,6)
                     break;
     
                 case 7:
@@ -835,9 +811,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","7",true)
-                    window.CrComLib.publishEvent("b","7",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,7)
                     break;
     
                 case 8:
@@ -850,9 +823,6 @@ if(media1){
                     setMedia6(true)
                     setMedia7(false)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","8",true)
-                    window.CrComLib.publishEvent("b","8",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,8)
                     break;
     
                 case 9:
@@ -864,9 +834,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(true)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","9",true)
-                    window.CrComLib.publishEvent("b","9",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,9)
                     break;
     
                 case 10:
@@ -878,10 +845,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(true)
-
-                    window.CrComLib.publishEvent("b","10",true)
-                    window.CrComLib.publishEvent("b","10",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,10)
                     break;
             
                 default:
@@ -898,6 +861,7 @@ if(media1){
     
         },[activeSource, trigger1])
     
+
       
        
     return (
@@ -921,8 +885,8 @@ if(media1){
 
             
                 <div className="nav">
-                <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}      className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
-                        <Link to={"/AudioDashboard"}       state={{roomId:"guestBed"}}          className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+                <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}    className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
+                        <Link to={"/AudioDashboard"}  state={{roomId:"masterBed"}}                 className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
                         <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "display_none"}   >  <img src={lights}  /> </button>
                 </div>
                 
@@ -964,6 +928,7 @@ if(media1){
                                 <p>YES</p> 
                             </button> 
                         </div>
+                        
                         <button className="no_reboot" onTouchEnd={()=> powerMenu("menu")}> 
                             <p>NO</p> 
                         </button>
@@ -995,7 +960,7 @@ if(media1){
                     <img src={TV}/>  
                 </div>   
 
-                <Link to={'/AudioDashboard'} className="generic_room_card" style={{textDecoration:"none"}}>
+                <Link to={'/AudioDashboard2'} className="generic_room_card" style={{textDecoration:"none"}}>
                     <img src={music}/>
                  
                 </Link>
@@ -1010,7 +975,7 @@ if(media1){
 
 
             <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
-            <div className={active_media? "media_off":"room_sources_container"}>
+                    <div className={active_media? "media_off":"room_sources_container"}>
                             
                             <div className="source_card" id= {activeSource === 1 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media1')}>
                                 <div className="img_container">
@@ -1051,7 +1016,7 @@ if(media1){
                                 <p>{sub_title_5}</p>
                             </div>
 
-                            <div className="display_none" id= {activeSource === 8 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
+                            <div className="display_none" id= {activeSource === 8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
@@ -1129,7 +1094,6 @@ if(media1){
 
                 
                         </div>
-
                         <button className={media6 ||media7 || media8? "btn_circle": "media_off"} id="reboot_button" onTouchEnd={()=>appleTvRebootMenu("menu")}> 
                             <p> REBOOT </p>
                         </button>

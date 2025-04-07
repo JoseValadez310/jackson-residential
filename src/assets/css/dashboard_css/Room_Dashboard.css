@@ -66,7 +66,7 @@
             width: 100%;
             height: 100%;
             background-color: rgb(0, 0, 0);
-            opacity: 0.3;
+            opacity: 0.5;
             z-index: 0;
             border-radius: 15px;
         }
@@ -111,10 +111,11 @@
         align-items: center;
         overflow-y: scroll;
         gap: 1rem;
+
     
     }
         .active_zone_card{
-            width: 80%;
+            width: 100%;
             height: 100%;
             grid-column: 1/6;
             background-color: black;
@@ -124,11 +125,11 @@
             grid-template-rows: repeat(2,1fr);
             justify-items: center;
             align-items: center;
-            border: solid 3px white;
-
+            
+            box-shadow:  0px 0px 13px 5px rgb(0, 0, 0);
 
             background-size: 300% 300%;
-            background-image: linear-gradient(-45deg,rgb(60, 60, 60)25%,rgb(37, 43, 37) 50%,rgb(82, 86, 91) 100%);
+            background-image: linear-gradient(-45deg,rgb(70, 70, 70)25% ,rgb(40, 40, 40)50%, rgb(70, 70, 70) 100%);
             -webkit-animation: AnimateBG 10s ease infinite;
                     animation: AnimateBG 10s ease infinite;
         }
@@ -163,7 +164,7 @@
                 box-sizing: border-box;
                 padding: 10px;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
             }
             .active_zone_card .btn_circle{
@@ -171,8 +172,10 @@
                 grid-row: 1/3;
                 height: 5.5rem;
                 width: 5.5rem;
-                border: solid 1px white;
                 background-color: rgb(195, 36, 36);
+                border: none;
+                box-shadow: 0px 0px 10px rgb(64, 1, 1), inset 0px 0px 5px 1px black;
+                
             }
             .active_zone_card .btn_circle img{
                 height: 70%;    
@@ -523,6 +526,76 @@
         font-size: large;
     }
 
+    .room_selection_power_menu{
+        padding: .25rem;   
+        justify-items: center;
+        align-items: center; 
+    }
+    
+    
+    .power_menu_title{
+        grid-column: 1/11;
+        grid-row: 1/2;
+        width: 90%;
+    }
+        .power_menu_title p{
+            font-size: large;
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            text-shadow: 0px 0px 10px rgb(87, 87, 87);
+            border-bottom: solid 1px rgb(250, 250, 250);  
+            padding-bottom: 10px;
+        }
+.room_selection_power_menu{
+    border-radius: 10px;
+}
+.room_selection_power_menu:before{
+    border-radius: 10px;
+}
+    .active_zone_menu{
+        grid-column: 1/11;
+        grid-row: 2/11;
+       
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-auto-rows: 35%;
+        box-sizing: border-box;
+        padding: 1rem;
+        justify-items: center;
+        align-items: center;
+        overflow-y: scroll;
+        gap: 1rem;
+    }
+
+    .active_zone_card{
+        height: 100%;
+        width: 100%;
+        border-radius: 0%;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        
+        border-radius: 20px;
+    }
+
+    .active_zone_card .active_zone_title{        
+        padding: 0px;
+        height: 20%;
+        width: 70%;
+        border-bottom: solid rgb(176, 176, 176) 2px;
+        font-size: x-large;
+    }
+        
+.active_zone_card .btn_circle{
+    width: 50%;
+    height: 2.5rem;
+    border-radius: 30px;
+}
 
 
 }
@@ -615,4 +688,47 @@
         
         
         }
+
+
+    
+        .room_selection_power_menu{
+            padding: .25rem;   
+            justify-items: center;
+            align-items: center; 
+        }
+        
+        
+        .power_menu_title{
+            grid-column: 1/11;
+            grid-row: 1/2;
+            width: 90%;
+        }
+            .power_menu_title p{
+                font-size: xx-large;
+                font-weight: 600;
+                color: rgb(255, 255, 255);
+                text-shadow: 0px 0px 10px rgb(87, 87, 87);
+                border-bottom: solid 1px rgb(250, 250, 250);  
+                padding-bottom: 10px;
+            }
+    
+        .active_zone_menu{
+            grid-column: 1/11;
+            grid-row: 2/11;
+           
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            grid-auto-rows: 10%;
+            box-sizing: border-box;
+            padding: 1rem;
+            justify-items: center;
+            align-items: center;
+            overflow-y: scroll;
+            gap: 1rem;
+        }
+            
+           
   }

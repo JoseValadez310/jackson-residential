@@ -285,6 +285,8 @@
 .media_3_img_display img{height: 4.5rem;}
 .media_4_img_display img{height: 4.5rem;}
 .media_5_img_display img{height: 4.5rem;}
+.media_9_img_display img{height: 4.5rem;}
+.media_10_img_display img{height: 4.5rem;}
 
 .media_6_img_display img{ filter: invert(1);}
 .media_7_img_display img{ filter: invert(1);}
@@ -844,6 +846,41 @@
                         z-index: 999;
                         box-shadow: 2px 6px 10px black;
                     }
+
+                    .multi_button_menu{
+                        width: 100%;
+                        height: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+
+                    .multiple_off_button{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 1rem;
+
+                    }
+                    .multiple_off_button button{
+                        height: 5rem;
+                        width: 8rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .multiple_off_button .no_reboot {
+                        height: 5rem;
+                        width: 8rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 15px;
+                    }
+
 
                      .yes_reboot {
                         height: 60%;
@@ -1433,6 +1470,12 @@
                 height: 3rem;
             }
             .media_5_img_display img{
+                height: 3rem;
+            }
+            .media_9_img_display img{
+                height: 3rem;
+            }
+            .media_10_img_display img{
                 height: 3rem;
             }
         }

@@ -692,14 +692,14 @@ if(media1){
             setMedia8(false)
         
             
-            window.CrComLib.publishEvent("b","5",true)
-            window.CrComLib.publishEvent("b","5",false)
+            window.CrComLib.publishEvent("b","3",true)
+            window.CrComLib.publishEvent("b","3",false)
 
           
 
-            console.log("DTV 3 House 1 join", 5)
+            console.log("DTV 3 House 1 join", 3)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation}`,5)
+            window.CrComLib.publishEvent("n",`${roomLocation}`,3)
         } 
         else if (id === "media4"){
             // Send command to Crestron 
@@ -714,12 +714,12 @@ if(media1){
             
             
 
-            window.CrComLib.publishEvent("b","6",true)
-            window.CrComLib.publishEvent("b","6",false)
+            window.CrComLib.publishEvent("b","4",true)
+            window.CrComLib.publishEvent("b","4",false)
 
-            console.log("DTV 4 House 2 join", 6)
+            console.log("DTV 4 House 2 join", 4)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation}`,6)
+            window.CrComLib.publishEvent("n",`${roomLocation}`,4)
         } 
         else if (id === "media5"){
             // Send command to Crestron 
@@ -852,15 +852,15 @@ if(media1){
             setMedia7(false)
             setMedia8(false)
         
-            
-            window.CrComLib.publishEvent("b","5",true)
-            window.CrComLib.publishEvent("b","5",false)
+        
+            window.CrComLib.publishEvent("b","3",true)
+            window.CrComLib.publishEvent("b","3",false)
 
             
 
-            console.log("DTV 3 House 1 join", 5)
+            console.log("DTV 3 House 1 join", 3)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,5)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,3)
         } 
         else if (id === "media4"){
             // Send command to Crestron 
@@ -875,12 +875,12 @@ if(media1){
             
             
 
-            window.CrComLib.publishEvent("b","6",true)
-            window.CrComLib.publishEvent("b","6",false)
+            window.CrComLib.publishEvent("b","4",true)
+            window.CrComLib.publishEvent("b","4",false)
 
-            console.log("DTV 4 House 2 join", 6)
+            console.log("DTV 4 House 2 join", 4)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,6)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_2}`,4)
         } 
         else if (id === "media5"){
             // Send command to Crestron 
@@ -1014,14 +1014,14 @@ if(media1){
             setMedia8(false)
         
             
-            window.CrComLib.publishEvent("b","5",true)
-            window.CrComLib.publishEvent("b","5",false)
+            window.CrComLib.publishEvent("b","3",true)
+            window.CrComLib.publishEvent("b","3",false)
 
             
 
-            console.log("DTV 3 House 1 join", 5)
+            console.log("DTV 3 House 1 join", 3)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,5)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,3)
         } 
         else if (id === "media4"){
             // Send command to Crestron 
@@ -1036,12 +1036,12 @@ if(media1){
             
             
 
-            window.CrComLib.publishEvent("b","6",true)
-            window.CrComLib.publishEvent("b","6",false)
+            window.CrComLib.publishEvent("b","4",true)
+            window.CrComLib.publishEvent("b","4",false)
 
-            console.log("DTV 4 House 2 join", 6)
+            console.log("DTV 4 House 2 join", 4)
             //Sending Crestron Media ID
-            window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,6)
+            window.CrComLib.publishEvent("n",`${roomLocation_tv_3}`,4)
         } 
         else if (id === "media5"){
             // Send command to Crestron 

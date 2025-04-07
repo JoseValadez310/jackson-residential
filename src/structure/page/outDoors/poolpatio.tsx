@@ -995,7 +995,7 @@ if(media1){
                                 <p>{sub_title_2}</p>
                             </div>
 
-                            <div className="display_none" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
+                            <div className="source_card" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>

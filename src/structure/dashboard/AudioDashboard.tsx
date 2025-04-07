@@ -77,8 +77,9 @@ const MediaServerWebSocket: React.FC  = () => {
   const [url, setUrl] = useState("http://192.168.14.78")
 
 
-
   const switchPlayer = (id:string) =>{
+    
+
 
     if(id === "steve"){
       setServerUrl('ws://192.168.14.78:5004')
@@ -90,6 +91,12 @@ const MediaServerWebSocket: React.FC  = () => {
     }
 
   }
+
+
+ 
+
+
+  
 
   const socketRef = useRef<WebSocket | null>(null);
   const [isConnected, setIsConnected] = useState<boolean>(false);
@@ -122,7 +129,11 @@ const MediaServerWebSocket: React.FC  = () => {
   
   // 1) UseCallback for a stable WebSocket connect function
   const connectWebSocket = useCallback(() => {
-    console.log("[WebSocket] Attempting connection to:", serverUrl);
+
+    
+  
+
+    console.log("[WebSocket] Attempting connection to this current IP address:", serverUrl);
     socketRef.current = new WebSocket(serverUrl);
 
     socketRef.current.onopen = () => {
@@ -144,8 +155,10 @@ const MediaServerWebSocket: React.FC  = () => {
     socketRef.current.onclose = () => {
       console.log("[WebSocket] Connection closed");
       setIsConnected(false);
-      // Try to reconnect after 500ms:
-      setTimeout(() => connectWebSocket(), 500);
+
+      console.log("connection closed - this my current ip ",{serverUrl})
+      // Try to reconnect after 100ms:
+      setTimeout(() => connectWebSocket(), 100);
     };
 
     socketRef.current.onerror = (error) => {
@@ -155,7 +168,7 @@ const MediaServerWebSocket: React.FC  = () => {
 
   // 2) sendCommand with useCallback
   const sendCommand = useCallback((command: string) => {
-    console.log("[sendCommand] Attempting to send:", command);
+    console.log("[sendCommand] Attempting to send -------:", command);
     if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
       socketRef.current.send(command + '\r\n');
     } else {
@@ -3003,9 +3016,13 @@ const zone_name_23    = "Upper Pool Deck";
       }
 
 
+
+
       if(currentZoneActivity === 11 || currentZoneActivity === 12 ){
         setPlayerPopUp(false)
         showAudioControls(true)
+      } else if( currentZoneActivity === -1) {
+        setPlayerPopUp(false)
       } else {
         setPlayerPopUp(true)
       }
@@ -3425,6 +3442,14 @@ const zone_name_23    = "Upper Pool Deck";
   }
   
   
+
+
+
+ const quickLaunch =()=>{
+    sendCommand("BrowseTopMenu")
+    sendCommand("BrowseTopMenu itemGuid={fbbcedb1-af64-4c3f-bfe5-000000000010}")
+    sendCommand("AckPickItem {d00322f3-6bec-0d80-fb35-5a62c2b0b26a}")
+ }
   
 
 
@@ -3434,12 +3459,12 @@ const zone_name_23    = "Upper Pool Deck";
 
     <div className='switch_user_div'>
     
-        <button className='btn_circle' id={url === "http://192.168.14.78"? "active_btn" : ""} onTouchEnd={()=> switchPlayer("steve")} >
+        <button className='btn_circle' id={url === "http://192.168.14.78"? "active_btn" : ""} onClick={()=> switchPlayer("steve")} >
         <p>Steve's Music</p>
         </button>
 
 
-        <button className='btn_circle' id={url === "http://192.168.14.79"? "active_btn" : ""} onTouchEnd={()=> switchPlayer("ellen")} >
+        <button className='btn_circle' id={url === "http://192.168.14.79"? "active_btn" : ""} onClick={()=> switchPlayer("ellen")} >
         <p>Ellen's Music</p>
         </button>
 
@@ -3572,10 +3597,11 @@ const zone_name_23    = "Upper Pool Deck";
           
 
             <div className='status_info'>
+      
               {isConnected ? (
                 <p className='display_none'>Status: Connected ✅</p>
               ) : (
-                <p>Status: Disconnected ❌</p>
+                <p>Status: Disconnected ❌ </p>
               )}
             </div>
 
@@ -3767,16 +3793,16 @@ const zone_name_23    = "Upper Pool Deck";
 
 
           <div className='active_message_buttons'>
-              <button className='btn_circle' onTouchEnd={()=> (window.CrComLib.publishEvent("n",roomLocation,11), switchPlayer("steve"), setPlayerPopUp(false))} id='pillShape'>
-                <p>Yes, use Steve's Music Player - room loc {roomLocation} current value of breakfast {zone_active_11}</p>
+              <button className='btn_circle' onClick={()=> (window.CrComLib.publishEvent("n",roomLocation,11), switchPlayer("steve"), setPlayerPopUp(false), showAudioControls(true))} id='pillShape'>
+                <p>Yes, use Steve's Music Player</p>
               </button>
 
-              <button className='btn_circle' onTouchEnd={()=> (window.CrComLib.publishEvent("n",roomLocation,12), switchPlayer("ellen"), setPlayerPopUp(false))} id='pillShape'>
+              <button className='btn_circle' onClick={()=> (window.CrComLib.publishEvent("n",roomLocation,12), switchPlayer("ellen"), setPlayerPopUp(false),showAudioControls(true))} id='pillShape'>
                 <p>Yes, use Ellen's Music Player</p>
               </button>
           </div>
           
-            <button className='btn_circle' id='pillShape' onTouchEnd={()=> setPlayerPopUp(false)}>
+            <button className='btn_circle' id='pillShape' onClick={()=> setPlayerPopUp(false)}>
               <p>No, close menu</p>
             </button>
         </div>
@@ -3796,6 +3822,8 @@ const zone_name_23    = "Upper Pool Deck";
           <img src={currentStatus.albumArtUrl} />
         </div>
  
+
+ <button className='display_none' style={{zIndex:"1"}} onClick={() =>quickLaunch()}> Quick Launch </button>
 
  </div>
   );

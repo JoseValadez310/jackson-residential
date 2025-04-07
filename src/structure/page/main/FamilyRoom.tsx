@@ -1197,12 +1197,12 @@ if(media1){
 
                     <div className={lightsOption? "lights_app" : "display_none"} >
 
-                        <div className="light_container">
+                        <div className="light_container" id="lights-9">
                             
                             
                             
                             
-                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_1")}>
+                            <div className={light_1? "active_light_tile": "light_tile"} onTouchEnd={() => sliderValue(true,"light_1")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_1_name}</p>
                                 </div>
@@ -1286,7 +1286,7 @@ if(media1){
                             </div>
 
                             
-                            <div className="display_none" onTouchEnd={() => sliderValue(true,"light_9")}>
+                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_9")}>
                                 <div className="light_info">
                                     <p className="light_name">{light_9_name}</p>
                                 </div>

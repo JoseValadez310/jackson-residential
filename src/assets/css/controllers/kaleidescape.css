@@ -119,7 +119,7 @@
 /**********************  Ipad Screen specs *********************************/
 
 
-@media only screen and (min-width: 776px) and (orientation: portrait){
+@media only screen and (min-width: 720px) and (orientation: portrait){
 
    #kaleidescape_controller{
         display: grid;

@@ -357,16 +357,19 @@ body {
    
   #light_btn_off{
     background-color: rgb(204, 80, 80);
-   
+    box-shadow: 0px 0px 11px 2px rgb(0, 0, 0);
   }     
     
   #light_btn_on{
-    background-color: rgb(252 , 234, 187);
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);
 
    
   }
   #light_btn_on img{
     filter: invert(0);
+    height: 60%;
   }
   #light_btn_off img{
     filter: invert(0);

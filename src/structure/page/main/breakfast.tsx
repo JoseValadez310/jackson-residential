@@ -1803,7 +1803,7 @@ useEffect(()=>{
 
             <div className={lightsOption? "lights_app" : "display_none"} >
 
-                <div className="light_container">
+                <div className="light_container" id="lights-9">
                     
                     
                     

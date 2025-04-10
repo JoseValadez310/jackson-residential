@@ -2232,7 +2232,7 @@ const LightDashboard = () => {
     
 
 
-            <h1 className="title_info" id ="display_none"> Light Dashboard</h1>
+            <h1 className="title_info"> Light Dashboard</h1>
                 
                 
                 

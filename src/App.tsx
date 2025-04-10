@@ -1,6 +1,6 @@
 import './assets/css/Index.css'
 import 'animate.css';
-import {useMemo} from 'react';
+import {useMemo, useState, useEffect} from 'react';
 import useWebXPanel from './hooks/useWebXPanel';
 
 import {createHashRouter, RouterProvider} from 'react-router-dom'
@@ -56,6 +56,24 @@ import imageBackground from "../src/assets/images/backgrounds/the-cleveland-muse
    
 
 function App() {
+
+
+  
+          const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+          
+          const updateScreenSize = () => {
+              setScreenSize({
+              width: window.innerWidth,
+              height: window.innerHeight,
+              });
+          };
+            
+          useEffect(() => {
+              window.addEventListener('resize', updateScreenSize);
+              return () => window.removeEventListener('resize', updateScreenSize);
+          }, []);
+  
+  
 
  
 
@@ -209,7 +227,7 @@ function App() {
 
   
   return (
-    <div className='project_container'>
+    <div className='project_container' id={screenSize.width > 1500? "xPanel":""}>
       <RouterProvider router={router} />
       <img className="imageApp" src={imageBackground} />
     </div>

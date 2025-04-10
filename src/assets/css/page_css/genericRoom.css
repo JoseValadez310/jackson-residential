@@ -694,10 +694,14 @@
         }
         #lights-9 .active_light_tile .light_info p{
             font-size: x-large;
+            padding: 0%;
+            padding-left: 1rem;
         
          }
          #lights-9 .light_tile .light_info p{
             font-size: x-large;
+            padding: 0%;
+            padding-left: 1rem;
          }
         .sub_text{
             font-size: medium;
@@ -732,6 +736,8 @@
         }
         .light_name{
             font-size: medium;
+            padding: 0%;
+            margin: 0%;
         }
 
         .light_info p{

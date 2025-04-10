@@ -406,7 +406,8 @@
 
 
 
-  @media only screen and (max-width: 550px) and (orientation: portrait){
+
+  @media only screen and (max-width: 500px) and  (orientation: portrait){
 
     .show_option_2{
         height: 90%;

@@ -541,7 +541,7 @@ const BluRay = () => {
 
     return(
         <>
-            {screenSize.width <= 430? mobileController :tabletController }
+            {screenSize.width <= 500? mobileController :tabletController }
         </>
     )
 }

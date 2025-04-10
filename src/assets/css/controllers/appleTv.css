@@ -363,43 +363,43 @@
 
 
 
-                            @media only screen and (max-device-width: 430px) and (max-device-width: 837px) and (orientation: portrait){
+@media only screen and (max-width: 500px)  and (orientation: portrait){
 
 
- 
 
 
-                                #apple_tv_controller{
-                                    height: 90%;
-                                    width: 100%;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
 
-                                }
+    #apple_tv_controller{
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-                
-                            
+    }
 
-                                .apple_tv_controller_movement{
-                                    height: 100%;
-                                    width: 100%;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    flex-direction: column;
-                                    gap: 1rem;
-                                }
-                                .controller{
-                                    position: relative;
-                                    top: 0rem;
-                                }
 
-                            
-                            
-                            
-                            
-                            }
+
+
+    .apple_tv_controller_movement{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .controller{
+        position: relative;
+        top: 0rem;
+    }
+
+
+
+
+
+}
 
 
 

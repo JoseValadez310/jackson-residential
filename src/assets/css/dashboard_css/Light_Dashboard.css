@@ -1021,3 +1021,251 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-device-width: 550px)  and (orientation: portrait){
+    .light_dashboard{
+        grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 6%;
+
+    }
+   
+ 
+
+    .light_dashboard .title_info{
+        font-size: xx-large;
+        grid-column: 2/13;
+
+        font-weight: 100;
+    }
+    
+
+
+    .light_map_panel{
+        position: relative;
+        z-index: 10;
+           grid-row: 2/8;
+           grid-column: 1/13;
+           height: 100%;
+           width: 100%;
+
+           display: flex;
+           justify-content: center;
+           align-items: flex-start;
+
+           overflow: scroll;
+    }
+ 
+
+    .light_panel{
+    
+        width: 100%;
+        height: 100%;
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-row: auto;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .light_panel .btn_square{
+        width: 95%;
+        height: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(70, 70, 70);
+    }
+
+    .light_panel .btn_square p{
+        height: 100%;
+        width: 100%;
+       font-size: 1rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-right: 1px;
+
+    }
+    .light_panel .btn_square .light_icon_z1, .light_icon_z2 , .light_icon_z3, .light_icon_z4, .light_icon_z5, .light_icon_z6, .light_icon_z7,
+     .light_icon_z8, .light_icon_z9, .light_icon_z10, .light_icon_z11, .light_icon_z12, .light_icon_z13, .light_icon_z14, .light_icon_z15{
+        top: 0;
+        left: 0;
+        right: 0;
+        left: 0;
+    }
+
+
+    .light_panel_overlay{
+        position: absolute;
+        z-index: 100;
+        grid-row: 2/8;
+        grid-column: 1/13;
+        height: 100%;
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: 10% 90%;
+
+
+   
+        overflow: hidden;
+        backdrop-filter: blur(50px);
+        border-radius: 10px;
+    }
+
+        .light_panel_overlay::before{
+            content: " ";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(40, 40, 40);
+            opacity: 0.45;
+            z-index: 0;
+            border-radius: 20px;
+        }
+
+        #light_panel_overlay_close{
+            grid-column: 6/7;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(207, 50, 50);
+            flex-direction: column;
+            z-index: 2;
+        }
+
+        .panel_title{
+            grid-column: 2/6;
+            grid-row: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            text-align: center;
+            width: 100%;
+            height: 100%;
+
+            z-index: 1;
+        }
+        .panel_title p{
+            font-size: xx-large;
+            font-weight: 500;
+        }
+
+
+        .panel_light_display{
+            grid-column: 1/7;
+            grid-row: 2/3;
+            overflow: scroll;
+        }
+
+        .light_menu_title{
+          display: none;
+            font-size: xx-large;
+            z-index: 1;
+            color: white;
+        }
+        .button_list{
+            height: fit-content;
+        }
+        .button_list .btn_square{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+
+        .button_list .btn_square .btn_image{
+            height: 100%;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            top: -4px;
+          
+        }
+
+        .button_list .btn_square p {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            font-size: x-large;
+        }
+
+
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-height: 550px) and (orientation: landscape){
+
+    .light_dashboard .title_info{
+      text-align: center;
+      font-weight: 100;
+      font-size: xx-large;
+    }
+    
+  
+      .light_dashboard .landscape_warning{
+          grid-column: 2/12;
+          grid-row: 2/9;
+          z-index: 10;
+   
+      }
+  
+      .climate_dashboard_container{
+          display: none;
+      }
+  
+  }
+  

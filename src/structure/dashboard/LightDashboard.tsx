@@ -59,6 +59,25 @@ const LightDashboard = () => {
     const [zone_18,setZone_18] = useState(false)
     const [zone_19,setZone_19] = useState(false)
     const [zone_20,setZone_20] = useState(false)
+
+
+
+
+    const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+        
+    const updateScreenSize = () => {
+        setScreenSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        });
+    };
+      
+    useEffect(() => {
+        window.addEventListener('resize', updateScreenSize);
+        return () => window.removeEventListener('resize', updateScreenSize);
+    }, []);
+
+
   
 
 
@@ -2198,6 +2217,541 @@ const LightDashboard = () => {
       
 
 
+  const lightMap = (
+    <div className="light_map_container">
+                    
+                
+    {main?    
+     <>
+         <div className={map1}> 
+             <img className="floor_1_img" src={floor1}/>
+
+             <button className="btn_location_1" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_1"))}>
+                 {light_1_fb_BAR || light_2_fb_BAR || light_3_fb_BAR ? 
+                 <img className="light_icon_z1" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z1" src={lightOff} />  
+                 }
+             </button>
+
+             <button className="btn_location_2" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_2"))}>
+                {light_1_fb_BILLIARD_ROOM || light_2_fb_BILLIARD_ROOM || light_3_fb_BILLIARD_ROOM || light_4_fb_BILLIARD_ROOM || light_5_fb_BILLIARD_ROOM || light_6_fb_BILLIARD_ROOM || light_7_fb_BILLIARD_ROOM || light_8_fb_BILLIARD_ROOM || light_9_fb_BILLIARD_ROOM?  
+                 <img className="light_icon_z2" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z2" src={lightOff} />  
+                 }
+
+             </button>
+
+             <button className="btn_location_3" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_3"))}>  
+                 {light_1_fb_BREAKFAST || light_2_fb_BREAKFAST || light_3_fb_BREAKFAST  || light_4_fb_BREAKFAST || light_5_fb_BREAKFAST || light_6_fb_BREAKFAST || light_7_fb_BREAKFAST  || light_8_fb_BREAKFAST  ? 
+                 <img className="light_icon_z3" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z3" src={lightOff} />  
+                 } 
+              </button>
+
+             <button className="btn_location_4" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_4"))}>  
+                 {light_1_fb_BUTLER_PANTRY||light_2_fb_BUTLER_PANTRY||light_3_fb_BUTLER_PANTRY||light_4_fb_BUTLER_PANTRY||light_5_fb_BUTLER_PANTRY||light_6_fb_BUTLER_PANTRY||light_7_fb_BUTLER_PANTRY ? 
+                 <img className="light_icon_z4" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z4" src={lightOff} />  
+                 } 
+             </button>
+
+
+             <button className="btn_location_5" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_5"))}>  
+                 {light_1_fb_DINING_ROOM || light_2_fb_DINING_ROOM || light_3_fb_DINING_ROOM   || light_4_fb_DINING_ROOM  ? 
+                 <img className="light_icon_z5" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z5" src={lightOff} />  
+                 } 
+             </button>
+
+             <button className="btn_location_6" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_6"))}>
+               {light_1_fb_ELEVATOR_HALL|| light_2_fb_ELEVATOR_HALL|| light_3_fb_ELEVATOR_HALL || light_4_fb_ELEVATOR_HALL  ? 
+                 <img className="light_icon_z6" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z6" src={lightOff} />  
+                 } 
+             </button>
+
+
+             <button className="btn_location_7" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_7"))}>    
+                 {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM || light_5_fb_FAMILY_ROOM || light_6_fb_FAMILY_ROOM  || light_7_fb_FAMILY_ROOM? 
+                 <img className="light_icon_z7" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z7" src={lightOff} />  
+                 } 
+             </button>
+
+             <button className="btn_location_8" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_8"))}>   
+                 {light_1_fb_FOYER|| light_2_fb_FOYER || light_3_fb_FOYER || light_4_fb_FOYER|| light_5_fb_FOYER || light_6_fb_FOYER ? 
+                 <img className="light_icon_z8" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z8" src={lightOff} />  
+                 } 
+             </button>
+
+             <button className="btn_location_9" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_9"))}> 
+                 {light_1_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN || light_5_fb_KITCHEN || light_6_fb_KITCHEN ? 
+                 <img className="light_icon_z9" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z9" src={lightOff} />  
+                 } 
+             </button>
+
+
+             <button className="btn_location_10" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_10"))}> 
+                 {light_1_fb_LIVING_ROOM|| light_2_fb_LIVING_ROOM || light_3_fb_LIVING_ROOM || light_4_fb_LIVING_ROOM? 
+                 <img className="light_icon_z10" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z10" src={lightOff} />  
+                 }  
+             </button>
+
+
+             <button className="btn_location_11" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_11"))}> 
+                 {light_1_fb_OFFICE_POWDER  ? 
+                 <img className="light_icon_z11" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z11" src={lightOff} />  
+                 } 
+             </button>
+
+             <button className="btn_location_12" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_12"))}> 
+                 {light_1_fb_STEVE_S_OFFICE||light_2_fb_STEVE_S_OFFICE||light_3_fb_STEVE_S_OFFICE? 
+                 <img className="light_icon_z12" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z12" src={lightOff} />  
+                 } 
+             </button>
+
+
+             <button className="btn_location_15" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_15"))}>   
+               {light_1_fb_GARAGE? 
+                 <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z15" src={lightOff} />  
+                 }   
+             </button>
+
+
+             <button className="btn_location_16" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_16"))}>   
+               {light_1_fb_LANDSCAPE? 
+                 <img className="light_icon_z16" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z16" src={lightOff} />  
+                 }   
+             </button>
+
+             <button className="btn_location_17" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_17"))}>   
+               {light_9_fb_LANDSCAPE? 
+                 <img className="light_icon_z17" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z17" src={lightOff} />  
+                 }   
+             </button>
+
+             <button className="btn_location_18" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_18"))}>   
+               {light_7_fb_LANDSCAPE? 
+                 <img className="light_icon_z18" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z18" src={lightOff} />  
+                 }   
+             </button>
+
+             <button className="btn_location_19" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_19"))}>   
+               {light_8_fb_LANDSCAPE? 
+                 <img className="light_icon_z19" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z19" src={lightOff} />  
+                 }   
+             </button>
+
+             <button className="btn_location_20" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_20"))}>   
+               {light_2_fb_LANDSCAPE? 
+                 <img className="light_icon_z20" id="lightZoneActive" src={lightOn} />  
+                 :
+                 <img className="light_icon_z20" src={lightOff} />  
+                 }   
+             </button>
+
+           
+         </div> 
+
+         <div className={lightMenuDisplay}>
+
+             <div className="close_menu_btn">
+                 <img className="btn_image" onTouchEnd={()=>lightMenu("closeMap1")} src={close}/>
+             </div>
+             
+
+
+
+             {zone_1? lightZone_BAR : <></>}
+             {zone_2? lightZone_Billiard: <></>}
+             {zone_3? lightZone_BREAKFAST : <></>}
+             {zone_4? lightZone_BUTLER_PANTRY : <></>}
+             {zone_5? lightZone_DINING_ROOM : <></>}
+             {zone_6? lightZone_ELEVATOR_HALL : <></>}
+             {zone_7? lightZone_FAMILY_ROOM : <></>}
+             {zone_8? lightZone_FOYER : <></>}
+             {zone_9? lightZone_KITCHEN : <></>}
+             {zone_10? lightZone_LIVING_ROOM : <></>}
+             {zone_11? lightZone_OFFICE_POWDER : <></>}
+             {zone_12? lightZone_STEVE_S_OFFICE : <></>}
+             {zone_15? lightZone_GARAGE : <></>}
+
+             {zone_16? singleZone_tennis : <></>}
+             {zone_17? singleZone_poolArea : <></>}
+             {zone_18? singleZone_backYard : <></>}
+             {zone_19? singleZone_frontYard : <></>}
+             {zone_20? singleZone_breezyway: <></>}
+
+           
+
+
+
+
+
+
+
+
+         </div>
+
+         
+         
+     </>
+     : <></>}
+
+    {upStairs?     
+     <>
+             <div className={map2}> 
+                 <img className="floor_2_img" src={floor2}/>
+
+                 <button className="btn_location_13" onTouchEnd={()=>(lightMenu("openMap2"),  lightZone("zone_13"))}>  
+                   {light_1_fb_BAR || light_2_fb_HALL || light_3_fb_HALL || light_4_fb_HALL || light_5_fb_HALL? 
+                   <img className="light_icon_z13" id="lightZoneActive" src={lightOn} />  
+                   :
+                   <img className="light_icon_z13" src={lightOff} />  
+                   }
+                 </button>
+
+                 <button className="btn_location_14" onTouchEnd={()=>(lightMenu("openMap2"),  lightZone("zone_14"))}>  
+                   {light_1_fb_MEDIA_ROOM || light_2_fb_MEDIA_ROOM || light_3_fb_MEDIA_ROOM || light_4_fb_MEDIA_ROOM || light_5_fb_MEDIA_ROOM? 
+                   <img className="light_icon_z14" id="lightZoneActive" src={lightOn} />  
+                   :
+                   <img className="light_icon_z14" src={lightOff} />  
+                   }
+                 </button>
+
+                
+               
+             </div> 
+
+             <div className={lightMenuDisplay2}>
+
+                 <div className="close_menu_btn">
+                     <img className="btn_image" onTouchEnd={()=>lightMenu("closeMap2")} src={close}/>
+                 </div>
+                 
+
+
+
+                 {zone_13? lightZone_HALL : <></>}
+                 {zone_14? lightZone_MEDIA_ROOM: <></>}
+                 
+            
+               
+             </div>
+
+            
+             
+     </>
+     :<></>
+    }
+
+    {outDoors?
+    <>
+
+     <div className="out_door_lighting">
+         <div className="out_door_1"> {lightZone_REAR}       </div>
+         <div className="out_door_2"> {lightZone_LANDSCAPE}  </div>
+         <div className="out_door_3"> {lightZone_FRONT}      </div>
+     </div>
+
+    </>:<></>}
+     
+
+    </div>
+
+  )
+
+
+
+  const [panelOverlay, setPanelOverlay] = useState(false)
+
+  const lightPanel = (
+    <div className="light_map_panel">
+
+
+     <div className={panelOverlay? "display_none":"light_panel"}>
+            <button className="btn_square" onTouchEnd={()=>(lightZone("zone_1"), setPanelOverlay(true))}>
+                {light_1_fb_BAR || light_2_fb_BAR || light_3_fb_BAR ? 
+                <>
+                  <p> Breakfast </p>
+                  <img className="light_icon_z1" id="lightZoneActive" src={lightOn} />  
+                </>
+              :
+                <>
+                <p> Breakfast </p>
+                <img className="light_icon_z1" src={lightOff} />  
+                </>
+                }
+            </button>
+
+
+            <button className="btn_square" onTouchEnd={()=>(lightZone("zone_2"), setPanelOverlay(true))}>
+                {light_1_fb_BILLIARD_ROOM || light_2_fb_BILLIARD_ROOM || light_3_fb_BILLIARD_ROOM || light_4_fb_BILLIARD_ROOM || light_5_fb_BILLIARD_ROOM || light_6_fb_BILLIARD_ROOM || light_7_fb_BILLIARD_ROOM || light_8_fb_BILLIARD_ROOM || light_9_fb_BILLIARD_ROOM?  
+                
+                <>
+                
+                <p>Billiards</p>
+                <img className="light_icon_z2" id="lightZoneActive" src={lightOn} />  
+
+                </>
+                 :
+
+                 <>
+                
+                 <p>Billiards</p>
+                 <img className="light_icon_z2" src={lightOff} />  
+                 </>
+                 }
+
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),lightZone("zone_3"))}>  
+                 {light_1_fb_BREAKFAST || light_2_fb_BREAKFAST || light_3_fb_BREAKFAST  || light_4_fb_BREAKFAST || light_5_fb_BREAKFAST || light_6_fb_BREAKFAST || light_7_fb_BREAKFAST  || light_8_fb_BREAKFAST  ? 
+                 
+                 <>
+                
+                 <p>Breaskfast</p>
+                 <img className="light_icon_z3" id="lightZoneActive" src={lightOn} />  
+                 </>
+                 :
+                 <>
+                
+                <p>Breaskfast</p>
+                 <img className="light_icon_z3" src={lightOff} />  
+                 </>
+                 } 
+              </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),lightZone("zone_4"))}>  
+                 {light_1_fb_BUTLER_PANTRY||light_2_fb_BUTLER_PANTRY||light_3_fb_BUTLER_PANTRY||light_4_fb_BUTLER_PANTRY||light_5_fb_BUTLER_PANTRY||light_6_fb_BUTLER_PANTRY||light_7_fb_BUTLER_PANTRY ? 
+                    <>
+                    <p>Butler Pantry</p>
+                    <img className="light_icon_z4" id="lightZoneActive" src={lightOn} />  
+                    </>
+                 :
+
+                 <>
+                 <p>Butler Pantry</p>
+                 <img className="light_icon_z4" src={lightOff} />  
+                 </>
+           
+                 } 
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),lightZone("zone_5"))}>  
+                 {light_1_fb_DINING_ROOM || light_2_fb_DINING_ROOM || light_3_fb_DINING_ROOM   || light_4_fb_DINING_ROOM  ? 
+                    <>
+                      <p>Dining Room</p>
+                    <img className="light_icon_z5" id="lightZoneActive" src={lightOn} />  
+                    </>
+                 :
+                 <>
+                    <p>Dining Room</p>
+                    <img className="light_icon_z5" src={lightOff} />  
+                    </>
+              
+                 } 
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),lightZone("zone_6"))}>
+               {light_1_fb_ELEVATOR_HALL|| light_2_fb_ELEVATOR_HALL|| light_3_fb_ELEVATOR_HALL || light_4_fb_ELEVATOR_HALL  ? 
+                <>
+                  <p>Elevator Hall</p>
+                  <img className="light_icon_z6" id="lightZoneActive" src={lightOn} />  
+                </> 
+                 :
+
+                <>
+                   <p>Elevator Hall</p>
+                 <img className="light_icon_z6" src={lightOff} />   
+                </> 
+            
+                 } 
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),  lightZone("zone_7"))}>    
+                 {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM || light_5_fb_FAMILY_ROOM || light_6_fb_FAMILY_ROOM  || light_7_fb_FAMILY_ROOM? 
+                  <>
+                  <p>Family Room </p>
+                  <img className="light_icon_z7" id="lightZoneActive" src={lightOn} />  
+                </> 
+                 :
+
+                  <>
+                   <p>Family Room </p>
+                    <img className="light_icon_z7" src={lightOff} />  
+                  </> 
+                 } 
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),  lightZone("zone_8"))}>   
+                 {light_1_fb_FOYER|| light_2_fb_FOYER || light_3_fb_FOYER || light_4_fb_FOYER|| light_5_fb_FOYER || light_6_fb_FOYER ? 
+                   <>
+                   <p>Foyer</p>
+                   <img className="light_icon_z8" id="lightZoneActive" src={lightOn} />  
+                 </> 
+                 :
+
+                 <>
+                 <p>Foyer</p>
+                 <img className="light_icon_z8" src={lightOff} />  
+               </> 
+                 } 
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),  lightZone("zone_9"))}> 
+                 {light_1_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN || light_5_fb_KITCHEN || light_6_fb_KITCHEN ? 
+                 <>
+                 <p>Kitchen </p>
+                 <img className="light_icon_z9" id="lightZoneActive" src={lightOn} />  
+                </> 
+                 :
+
+                 <>
+                 <p>Kitchen</p>
+                 <img className="light_icon_z9" src={lightOff} />  
+                </> 
+                 } 
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true), lightZone("zone_10"))}> 
+                 {light_1_fb_LIVING_ROOM|| light_2_fb_LIVING_ROOM || light_3_fb_LIVING_ROOM || light_4_fb_LIVING_ROOM? 
+                <>
+                  <p>Living Room </p>
+                  <img className="light_icon_z10" id="lightZoneActive" src={lightOn} />  
+                </>                  
+                :
+                <>
+                <p>Living Room </p>
+                <img className="light_icon_z10" src={lightOff} />  
+               </> 
+                
+                 }  
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true), lightZone("zone_11"))}> 
+                 {light_1_fb_OFFICE_POWDER  ? 
+                 <>
+                  <p>Office Powder </p>
+                  <img className="light_icon_z11" id="lightZoneActive" src={lightOn} />  
+                 </> 
+                 :
+                 <>
+                  <p>Office Powder </p>
+                 <img className="light_icon_z11" src={lightOff} />  
+                </> 
+               
+                 } 
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true), lightZone("zone_12"))}> 
+                 {light_1_fb_STEVE_S_OFFICE||light_2_fb_STEVE_S_OFFICE||light_3_fb_STEVE_S_OFFICE? 
+                   <>
+                   <p>Steve's Office </p>
+                   <img className="light_icon_z12" id="lightZoneActive" src={lightOn} />  
+                  </> 
+                 :
+
+                 <>
+                 <p>Steve's Office </p>
+                  <img className="light_icon_z12" src={lightOff} />  
+                  </> 
+                 } 
+             </button>
+
+             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),  lightZone("zone_15"))}>   
+               {light_1_fb_GARAGE? 
+                 <>
+                 <p>Garage </p>
+                 <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
+                </> 
+                 :
+                 <>
+                 <p>Garage </p>
+                 <img className="light_icon_z15" src={lightOff} />  
+                </> 
+                 }   
+             </button>
+
+
+       
+
+     </div>
+
+     <div className={panelOverlay? "light_panel_overlay" : "display_none"}>
+
+      <button className = "btn_square" id="light_panel_overlay_close" onClick={()=> setPanelOverlay(false)}> <img className="btn_image" src={close}/> <p>Close</p> </button>
+       
+
+
+       <div className="panel_title"> 
+
+        {zone_1? <p>Bar</p> : <></>}
+        {zone_2? <p>Billiard</p>: <></>}
+        {zone_3? <p>Breakfast</p> : <></>}
+        {zone_4? <p>Butler Pantry </p>: <></>}
+        {zone_5? <p>Dining Room</p> : <></>}
+        {zone_6? <p>Elevator Room</p> : <></>}
+        {zone_7? <p>Family Room</p> : <></>}
+        {zone_8? <p>Foyer</p> : <></>}
+        {zone_9? <p>Kitchen</p> : <></>}
+        {zone_10? <p>Living Room</p> : <></>}
+        {zone_11? <p>Steve's Powder</p> : <></>}
+        {zone_12? <p>Steve's Office</p> : <></>}
+        {zone_15? <p>Garage</p> : <></>}
+      
+
+       </div>
+       
+      <div className="panel_light_display">
+        {zone_1? lightZone_BAR : <></>}
+        {zone_2? lightZone_Billiard: <></>}
+        {zone_3? lightZone_BREAKFAST : <></>}
+        {zone_4? lightZone_BUTLER_PANTRY : <></>}
+        {zone_5? lightZone_DINING_ROOM : <></>}
+        {zone_6? lightZone_ELEVATOR_HALL : <></>}
+        {zone_7? lightZone_FAMILY_ROOM : <></>}
+        {zone_8? lightZone_FOYER : <></>}
+        {zone_9? lightZone_KITCHEN : <></>}
+        {zone_10? lightZone_LIVING_ROOM : <></>}
+        {zone_11? lightZone_OFFICE_POWDER : <></>}
+        {zone_12? lightZone_STEVE_S_OFFICE : <></>}
+        {zone_15? lightZone_GARAGE : <></>}
+    
+      </div>
+
+
+     </div>
+    </div>
+  )
+
 
     return(
 
@@ -2235,279 +2789,10 @@ const LightDashboard = () => {
             <h1 className="title_info"> Light Dashboard</h1>
                 
                 
-                
-                <div className="light_map_container">
-                    
-                
-                   {main?    
-                    <>
-                        <div className={map1}> 
-                            <img className="floor_1_img" src={floor1}/>
-
-                            <button className="btn_location_1" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_1"))}>
-                                {light_1_fb_BAR || light_2_fb_BAR || light_3_fb_BAR ? 
-                                <img className="light_icon_z1" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z1" src={lightOff} />  
-                                }
-                            </button>
-
-                            <button className="btn_location_2" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_2"))}>
-                               {light_1_fb_BILLIARD_ROOM || light_2_fb_BILLIARD_ROOM || light_3_fb_BILLIARD_ROOM || light_4_fb_BILLIARD_ROOM || light_5_fb_BILLIARD_ROOM || light_6_fb_BILLIARD_ROOM || light_7_fb_BILLIARD_ROOM || light_8_fb_BILLIARD_ROOM || light_9_fb_BILLIARD_ROOM?  
-                                <img className="light_icon_z2" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z2" src={lightOff} />  
-                                }
-
-                            </button>
-
-                            <button className="btn_location_3" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_3"))}>  
-                                {light_1_fb_BREAKFAST || light_2_fb_BREAKFAST || light_3_fb_BREAKFAST  || light_4_fb_BREAKFAST || light_5_fb_BREAKFAST || light_6_fb_BREAKFAST || light_7_fb_BREAKFAST  || light_8_fb_BREAKFAST  ? 
-                                <img className="light_icon_z3" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z3" src={lightOff} />  
-                                } 
-                             </button>
-
-                            <button className="btn_location_4" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_4"))}>  
-                                {light_1_fb_BUTLER_PANTRY||light_2_fb_BUTLER_PANTRY||light_3_fb_BUTLER_PANTRY||light_4_fb_BUTLER_PANTRY||light_5_fb_BUTLER_PANTRY||light_6_fb_BUTLER_PANTRY||light_7_fb_BUTLER_PANTRY ? 
-                                <img className="light_icon_z4" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z4" src={lightOff} />  
-                                } 
-                            </button>
 
 
-                            <button className="btn_location_5" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_5"))}>  
-                                {light_1_fb_DINING_ROOM || light_2_fb_DINING_ROOM || light_3_fb_DINING_ROOM   || light_4_fb_DINING_ROOM  ? 
-                                <img className="light_icon_z5" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z5" src={lightOff} />  
-                                } 
-                            </button>
-
-                            <button className="btn_location_6" onTouchEnd={()=>(lightMenu("openMap1"),lightZone("zone_6"))}>
-                              {light_1_fb_ELEVATOR_HALL|| light_2_fb_ELEVATOR_HALL|| light_3_fb_ELEVATOR_HALL || light_4_fb_ELEVATOR_HALL  ? 
-                                <img className="light_icon_z6" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z6" src={lightOff} />  
-                                } 
-                            </button>
-
-
-                            <button className="btn_location_7" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_7"))}>    
-                                {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM || light_5_fb_FAMILY_ROOM || light_6_fb_FAMILY_ROOM  || light_7_fb_FAMILY_ROOM? 
-                                <img className="light_icon_z7" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z7" src={lightOff} />  
-                                } 
-                            </button>
-
-                            <button className="btn_location_8" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_8"))}>   
-                                {light_1_fb_FOYER|| light_2_fb_FOYER || light_3_fb_FOYER || light_4_fb_FOYER|| light_5_fb_FOYER || light_6_fb_FOYER ? 
-                                <img className="light_icon_z8" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z8" src={lightOff} />  
-                                } 
-                            </button>
-
-                            <button className="btn_location_9" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_9"))}> 
-                                {light_1_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN || light_5_fb_KITCHEN || light_6_fb_KITCHEN ? 
-                                <img className="light_icon_z9" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z9" src={lightOff} />  
-                                } 
-                            </button>
-
-
-                            <button className="btn_location_10" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_10"))}> 
-                                {light_1_fb_LIVING_ROOM|| light_2_fb_LIVING_ROOM || light_3_fb_LIVING_ROOM || light_4_fb_LIVING_ROOM? 
-                                <img className="light_icon_z10" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z10" src={lightOff} />  
-                                }  
-                            </button>
-
-
-                            <button className="btn_location_11" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_11"))}> 
-                                {light_1_fb_OFFICE_POWDER  ? 
-                                <img className="light_icon_z11" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z11" src={lightOff} />  
-                                } 
-                            </button>
-
-                            <button className="btn_location_12" onTouchEnd={()=>(lightMenu("openMap1"), lightZone("zone_12"))}> 
-                                {light_1_fb_STEVE_S_OFFICE||light_2_fb_STEVE_S_OFFICE||light_3_fb_STEVE_S_OFFICE? 
-                                <img className="light_icon_z12" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z12" src={lightOff} />  
-                                } 
-                            </button>
-
-
-                            <button className="btn_location_15" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_15"))}>   
-                              {light_1_fb_GARAGE? 
-                                <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z15" src={lightOff} />  
-                                }   
-                            </button>
-
-
-                            <button className="btn_location_16" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_16"))}>   
-                              {light_1_fb_LANDSCAPE? 
-                                <img className="light_icon_z16" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z16" src={lightOff} />  
-                                }   
-                            </button>
-
-                            <button className="btn_location_17" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_17"))}>   
-                              {light_9_fb_LANDSCAPE? 
-                                <img className="light_icon_z17" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z17" src={lightOff} />  
-                                }   
-                            </button>
-
-                            <button className="btn_location_18" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_18"))}>   
-                              {light_7_fb_LANDSCAPE? 
-                                <img className="light_icon_z18" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z18" src={lightOff} />  
-                                }   
-                            </button>
-
-                            <button className="btn_location_19" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_19"))}>   
-                              {light_8_fb_LANDSCAPE? 
-                                <img className="light_icon_z19" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z19" src={lightOff} />  
-                                }   
-                            </button>
-
-                            <button className="btn_location_20" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_20"))}>   
-                              {light_2_fb_LANDSCAPE? 
-                                <img className="light_icon_z20" id="lightZoneActive" src={lightOn} />  
-                                :
-                                <img className="light_icon_z20" src={lightOff} />  
-                                }   
-                            </button>
-
-                          
-                        </div> 
-
-                        <div className={lightMenuDisplay}>
-
-                            <div className="close_menu_btn">
-                                <img className="btn_image" onTouchEnd={()=>lightMenu("closeMap1")} src={close}/>
-                            </div>
-                            
-
-
-
-                            {zone_1? lightZone_BAR : <></>}
-                            {zone_2? lightZone_Billiard: <></>}
-                            {zone_3? lightZone_BREAKFAST : <></>}
-                            {zone_4? lightZone_BUTLER_PANTRY : <></>}
-                            {zone_5? lightZone_DINING_ROOM : <></>}
-                            {zone_6? lightZone_ELEVATOR_HALL : <></>}
-                            {zone_7? lightZone_FAMILY_ROOM : <></>}
-                            {zone_8? lightZone_FOYER : <></>}
-                            {zone_9? lightZone_KITCHEN : <></>}
-                            {zone_10? lightZone_LIVING_ROOM : <></>}
-                            {zone_11? lightZone_OFFICE_POWDER : <></>}
-                            {zone_12? lightZone_STEVE_S_OFFICE : <></>}
-                            {zone_15? lightZone_GARAGE : <></>}
-
-                            {zone_16? singleZone_tennis : <></>}
-                            {zone_17? singleZone_poolArea : <></>}
-                            {zone_18? singleZone_backYard : <></>}
-                            {zone_19? singleZone_frontYard : <></>}
-                            {zone_20? singleZone_breezyway: <></>}
-
-                          
-
-
-
-
-
-
-
-
-                        </div>
-
-                        
-                        
-                    </>
-                    : <></>}
-
-                   {upStairs?     
-                    <>
-                            <div className={map2}> 
-                                <img className="floor_2_img" src={floor2}/>
-
-                                <button className="btn_location_13" onTouchEnd={()=>(lightMenu("openMap2"),  lightZone("zone_13"))}>  
-                                  {light_1_fb_BAR || light_2_fb_HALL || light_3_fb_HALL || light_4_fb_HALL || light_5_fb_HALL? 
-                                  <img className="light_icon_z13" id="lightZoneActive" src={lightOn} />  
-                                  :
-                                  <img className="light_icon_z13" src={lightOff} />  
-                                  }
-                                </button>
-
-                                <button className="btn_location_14" onTouchEnd={()=>(lightMenu("openMap2"),  lightZone("zone_14"))}>  
-                                  {light_1_fb_MEDIA_ROOM || light_2_fb_MEDIA_ROOM || light_3_fb_MEDIA_ROOM || light_4_fb_MEDIA_ROOM || light_5_fb_MEDIA_ROOM? 
-                                  <img className="light_icon_z14" id="lightZoneActive" src={lightOn} />  
-                                  :
-                                  <img className="light_icon_z14" src={lightOff} />  
-                                  }
-                                </button>
-
-                               
-                              
-                            </div> 
-
-                            <div className={lightMenuDisplay2}>
-
-                                <div className="close_menu_btn">
-                                    <img className="btn_image" onTouchEnd={()=>lightMenu("closeMap2")} src={close}/>
-                                </div>
-                                
-
-
-
-                                {zone_13? lightZone_HALL : <></>}
-                                {zone_14? lightZone_MEDIA_ROOM: <></>}
-                                
-                           
-                              
-                            </div>
-
-                           
-                            
-                    </>
-                    :<></>
-                   }
-
-                   {outDoors?
-                   <>
-
-                    <div className="out_door_lighting">
-                        <div className="out_door_1"> {lightZone_REAR}       </div>
-                        <div className="out_door_2"> {lightZone_LANDSCAPE}  </div>
-                        <div className="out_door_3"> {lightZone_FRONT}      </div>
-                    </div>
-
-                   </>:<></>}
-                    
-             
-                </div>
-
-          
-
-
-
+                {screenSize.width > 549 ? lightMap : lightPanel }
+        
                 <div className="landscape_warning">
                 <h1> Please rotate your device back to portrait mode. </h1>
                 <img src={portraitMode}  />

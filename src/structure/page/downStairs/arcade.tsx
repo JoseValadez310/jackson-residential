@@ -1695,7 +1695,7 @@ if(media1){
                         <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv3"), display_tile(), setTrigger3(!trigger3))}     className={tvOptions && sourceSelectionThree?   "btn_selected" : "btn_not_selected"}   >  <img src={TV2}  style={{height:"60%"}}   /> </button>
 
 
-                        <Link to={"/AudioDashboard"}  state={{roomId:"arcade", activity: activeSource}}                 className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+                        <Link to={"/AudioDashboard"}  state={{lastLoc:"arcade",roomId:"arcade", activity: activeSource}}                 className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
                         <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "display_none"}   >  <img src={lights}  /> </button>
                 </div>
                 

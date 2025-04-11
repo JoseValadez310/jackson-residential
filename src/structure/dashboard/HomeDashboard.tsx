@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 
 // React Router DOM
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 // CSS Files 
 import "../../assets/css/index.css"
@@ -175,6 +175,10 @@ const HomeDashboard = () => {
     
             }
         }
+
+        const location = useLocation();
+
+        const lastLocationUsed = location.state?.lastLocationUsed
     
     
 
@@ -352,7 +356,7 @@ const HomeDashboard = () => {
                     <p className="card_title"> Rooms </p>
                 </Link>
             
-                <Link  className="card_container" to='/AudioDashboard' state ={{activity:-1}}style={{textDecoration:"none"}}> 
+                <Link  className="card_container" to='/AudioDashboard' state ={{activity:-1, lastLoc:"",lastUsed:lastLocationUsed}}style={{textDecoration:"none"}}> 
                     <img className="card_image" src={Audio}/>
                     <p className="card_title"> Audio </p>
                 </Link> 

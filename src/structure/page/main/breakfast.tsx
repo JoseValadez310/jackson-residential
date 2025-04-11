@@ -1403,7 +1403,7 @@ useEffect(()=>{
 
                         <button onTouchEnd={() => (roomApp("TV"), sourceDisplay("tv1"),setTrigger1(!trigger1))}     className={tvOptions && sourceSelectionOne?   "btn_selected" : "btn_not_selected"}   >  <img src={TV1}   style={{height:"60%"}}  /> </button>
 
-                        <Link to={"/AudioDashboard"} state={{roomId:"breakfast",activity: activeSource2 }} className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+                        <Link to={"/AudioDashboard"} state={{roomId:"breakfast",activity: activeSource2, lastLoc:"breakfast" }} className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
                         <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
                 </div>
                 

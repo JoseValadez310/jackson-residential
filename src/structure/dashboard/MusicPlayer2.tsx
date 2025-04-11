@@ -62,7 +62,7 @@ interface BrowseItem {
 
 
 
-const MusicPLayer1 = () =>{
+const MusicPLayer2 = () =>{
 
 
     
@@ -821,4 +821,4 @@ const MusicPLayer1 = () =>{
 
 
 
-export default MusicPLayer1
+export default MusicPLayer2

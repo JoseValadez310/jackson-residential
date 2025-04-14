@@ -994,11 +994,14 @@
 
 
     @media only screen and (max-device-width: 550px)  and (orientation: portrait){
+        .browser_card_title{
+            font-size: large;
+        }
 
         .browser_container{
-            grid-column:2/9;
+            grid-column:1/10;
             grid-row: 2/11;
-            width: 115%;
+            width: 100%;
             height: 100%;
         }
 

@@ -1468,15 +1468,19 @@ useEffect(()=>{
                         Which TV in the {roomName} room would you like to turn off?
                     </p>
 
-                    <div className="power_menu_button">
+                    <div className="breakfast_power_menu_button">
 
-                    <div className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone2") , display_tile())}> 
-                            <p style={{width:"100%", fontSize:"x-large"}}>Turn Off TV #1</p> 
-                        </div> 
-                        <div className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone1") , display_tile())}>  
-                            <p style={{width:"100%", fontSize:"x-large"}}>Turn Off TV #2</p> 
+                        <div className="breakfast_yes_btn">
+                                <div className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone2") , display_tile())}> 
+                                    <p style={{width:"100%", fontSize:"x-large"}}>Turn Off TV #1</p> 
+                                </div> 
+                                <div className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone1") , display_tile())}>  
+                                    <p style={{width:"100%", fontSize:"x-large"}}>Turn Off TV #2</p> 
+                                </div>
+
                         </div>
 
+                    
                        
                         
                         <button className="no_reboot" onTouchEnd={()=> powerMenu("menu")}> 

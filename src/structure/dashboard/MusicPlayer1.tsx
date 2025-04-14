@@ -292,6 +292,8 @@ const MusicPLayer1 = () =>{
         if (!message.includes('ReportState')) return;
         const parsedData: Record<string, string> = {};
         const lines = message.split('\n');
+
+        
     
         for (const line of lines) {
           const match = line.match(/ReportState Player_A (\w+)=([\s\S]*)/);
@@ -581,7 +583,7 @@ const MusicPLayer1 = () =>{
   
         <div className='music_selection'>
               <button  className="pill_shape_audio" 
-                onTouchEnd={() => {          
+                onClick={() => {          
                   if (!isBrowseMenuVisible) {
                     browseTopMenu();
                     setIsBrowseMenuVisible(true);
@@ -657,26 +659,26 @@ const MusicPLayer1 = () =>{
     
                 <div className='playback_controls'>
                   <button 
-                    onTouchEnd={toggleShuffle} 
+                    onClick={toggleShuffle} 
                     className={currentStatus.shuffle ? 'transport_button_active' : 'btn_circle'}
                   >
                     <img className='btn_image' src={shuffle} alt="shuffle" />
                   </button>
-                  <button onTouchEnd={skipPrevious} className='btn_circle'>
+                  <button onClick={skipPrevious} className='btn_circle'>
                     <img  className='btn_image' src={skip} style={{transform:'rotate(180deg)'}} alt="previous" />
                   </button>
-                  <button onTouchEnd={togglePlayPause} className='btn_circle'>
+                  <button onClick={togglePlayPause} className='btn_circle'>
                     <img 
                     className='btn_image'
                       src={currentStatus.playState === 'Playing' ? pasue : play} 
                       alt="play/pause" 
                     />
                   </button>
-                  <button onTouchEnd={skipNext} className='btn_circle'>
+                  <button onClick={skipNext} className='btn_circle'>
                     <img className='btn_image' src={skip} alt="next" />
                   </button>
                   <button 
-                    onTouchEnd={toggleRepeat} 
+                    onClick={toggleRepeat} 
                     className={currentStatus.repeat ? 'transport_button_active' : 'btn_circle'}
                   >
                     <img className='btn_image' src={repeat} alt="repeat" style={{transform:"scaleX(-1)"}}/>
@@ -692,7 +694,7 @@ const MusicPLayer1 = () =>{
                     value={seekPosition}
                     onChange={handleSliderChange}
                     onMouseUp={handleSliderMouseUp}
-                    onTouchEnd={handleSliderMouseUp}
+                    onClick={handleSliderMouseUp}
                     style={{
                       borderRadius: '15px',
                       background: `linear-gradient(to right, rgb(125, 135, 156) 0%, rgb(48, 79, 146) ${progress}%, #e0e0e0 ${progress}%, #e0e0e0 100%)`
@@ -707,7 +709,7 @@ const MusicPLayer1 = () =>{
           <div className='broswer_header'>
             
             <div className='broswer_button_container'>
-              <button onTouchEnd={goBackOneLevel} className={canGoBack ? "brower_container_back" : "display_none"}>
+              <button onClick={goBackOneLevel} className={canGoBack ? "brower_container_back" : "display_none"}>
                 <p>Return</p>
               </button>
             </div>
@@ -725,7 +727,7 @@ const MusicPLayer1 = () =>{
               <div key={item.guid} className='broswer_card_wrapper'>
                 <button 
                   className='broswer_card' 
-                  onTouchEnd={() => handleItemClick(item)}
+                  onClick={() => handleItemClick(item)}
                 >
                   <div className='image_title'>
                     <img 
@@ -756,13 +758,13 @@ const MusicPLayer1 = () =>{
                     />
                     <div className='search_buttons'>
                       <button 
-                        onTouchEnd={handleSearchSubmit} 
+                        onClick={handleSearchSubmit} 
                         className='search_button'
                       >
                         <p>Search</p>
                       </button>
                       <button
-                        onTouchEnd={() => {
+                        onClick={() => {
                           console.log("[searchOverlay] Canceling search");
                           if (inputBoxGuid) {
                             sendCommand(`AckButton ${inputBoxGuid} Cancel`);
@@ -787,20 +789,20 @@ const MusicPLayer1 = () =>{
                     <p>{questionMessage}</p>
                     <div>
                       <button
-                        onTouchEnd={() => handleQuestionAnswer("Artist Name")}
+                        onClick={() => handleQuestionAnswer("Artist Name")}
                         className='btn_circle'
                       >
                         Artist
                       </button>
                       <button
-                        onTouchEnd={() => handleQuestionAnswer("Song Name")}
+                        onClick={() => handleQuestionAnswer("Song Name")}
                         className='btn_circle' 
                         style={{ marginLeft: "1rem" }}
                       >
                         Song
                       </button>
                       <button
-                        onTouchEnd={() => handleQuestionAnswer("Cancel")}
+                        onClick={() => handleQuestionAnswer("Cancel")}
                         className='btn_circle' 
                         style={{ marginLeft: "1rem" }}
                       >

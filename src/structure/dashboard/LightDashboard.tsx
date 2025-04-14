@@ -60,6 +60,8 @@ const LightDashboard = () => {
     const [zone_19,setZone_19] = useState(false)
     const [zone_20,setZone_20] = useState(false)
 
+    const [zone_21,setZone_21] = useState(false)
+
 
 
 
@@ -1560,7 +1562,6 @@ const LightDashboard = () => {
   // Zone: Front
   const lightZone_FRONT = (
     <>
-     
     </>
   );
 
@@ -1768,18 +1769,31 @@ const LightDashboard = () => {
                 setUpStairs(false)
                 setMain(true)
                 setOutDoors(false)
+                setLightMenuDisplay("light_menu_closed")
+                setLightMenuDisplay2("light_menu_closed")
+                setMap1("map_layout_1")
+                setMap2("map_layout_2")
+
               } 
 
             else if (id === "up"){
                 setUpStairs(true)
                 setMain(false)
                 setOutDoors(false)
+                setLightMenuDisplay("light_menu_closed")
+                setLightMenuDisplay2("light_menu_closed")
+                setMap1("map_layout_1")
+                setMap2("map_layout_2")
             }   
 
             else if (id === "out"){
               setUpStairs(false)
               setMain(false)
               setOutDoors(true)
+              setLightMenuDisplay("light_menu_closed")
+              setLightMenuDisplay2("light_menu_closed")
+              setMap1("map_layout_1")
+              setMap2("map_layout_2")
             }   
         }
 
@@ -1841,12 +1855,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
+              setZone_13(false)
+              setZone_14(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+                            setZone_21(false)
+
 
             } else if (id === "zone_2"){
               setZone_1(false)
@@ -1861,12 +1879,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
+              setZone_13(false)
+              setZone_14(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+                            setZone_21(false)
+
 
             } else if (id === "zone_3"){
               setZone_1(false)
@@ -1881,12 +1903,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
             }else if (id === "zone_4"){
               setZone_1(false)
@@ -1901,12 +1927,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
             }else if (id === "zone_5"){
               setZone_1(false)
@@ -1921,12 +1951,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
             }else if (id === "zone_6"){
               setZone_1(false)
@@ -1941,12 +1975,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
             }else if (id === "zone_7"){
               setZone_1(false)
@@ -1961,12 +1999,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
             }else if (id === "zone_8"){
               setZone_1(false)
@@ -1981,12 +2023,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
             }else if (id === "zone_9"){
               setZone_1(false)
@@ -2001,12 +2047,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
             }else if (id === "zone_10"){
               setZone_1(false)
@@ -2021,12 +2071,16 @@ const LightDashboard = () => {
               setZone_10(true)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
             }else if (id === "zone_11"){
               setZone_1(false)
@@ -2041,12 +2095,16 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(true)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
                               setZone_15(false)
                                 setZone_16(false)
                                 setZone_17(false)
                                   setZone_18(false)
                                   setZone_19(false)
                                   setZone_20(false)
+                                                setZone_21(false)
+
 
               
 
@@ -2063,35 +2121,18 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(true)
-              setZone_15(false)
-                setZone_16(false)
-                setZone_17(false)
-                  setZone_18(false)
-                  setZone_19(false)
-                  setZone_20(false)
-            }else if (id === "zone_13"){
-        
-
-              setZone_13(true)
+              setZone_13(false)
               setZone_14(false)
               setZone_15(false)
-                setZone_16(false)
-                setZone_17(false)
-                  setZone_18(false)
-                  setZone_19(false)
-                  setZone_20(false)
-            }else if (id === "zone_14"){
-              
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+                            setZone_21(false)
 
-              setZone_13(false)
-              setZone_14(true)
-              setZone_15(false)
-                setZone_16(false)
-                setZone_17(false)
-                  setZone_18(false)
-                  setZone_19(false)
-                  setZone_20(false)
-            }else if (id === "zone_15"){
+            }else if (id === "zone_13"){
+        
               setZone_1(false)
               setZone_2(false)
               setZone_3(false)
@@ -2104,14 +2145,67 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(true)
+              setZone_14(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+                            setZone_21(false)
+
+            }else if (id === "zone_14"){
+              
+              setZone_1(false)
+              setZone_2(false)
+              setZone_3(false)
+              setZone_4(false)
+              setZone_5(false)
+              setZone_6(false)
+              setZone_7(false)
+              setZone_8(false)
+              setZone_9(false)
+              setZone_10(false)
+              setZone_11(false)
+              setZone_12(false)
+              setZone_13(false)
+              setZone_14(true)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+                            setZone_21(false)
+
+            }else if (id === "zone_15"){
+
+              setZone_1(false)
+              setZone_2(false)
+              setZone_3(false)
+              setZone_4(false)
+              setZone_5(false)
+              setZone_6(false)
+              setZone_7(false)
+              setZone_8(false)
+              setZone_9(false)
+              setZone_10(false)
+              setZone_11(false)
+              setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
               setZone_15(true)
               setZone_16(false)
               setZone_17(false)
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
+                            setZone_21(false)
+
 
             } else if (id === "zone_16"){
+
               setZone_1(false)
               setZone_2(false)
               setZone_3(false)
@@ -2124,14 +2218,19 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
               setZone_15(false)
               setZone_16(true)
               setZone_17(false)
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
+                            setZone_21(false)
+
 
             } else if (id === "zone_17"){
+
               setZone_1(false)
               setZone_2(false)
               setZone_3(false)
@@ -2144,14 +2243,19 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
               setZone_15(false)
               setZone_16(false)
               setZone_17(true)
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
+                            setZone_21(false)
+
 
             } else if (id === "zone_18"){
+
               setZone_1(false)
               setZone_2(false)
               setZone_3(false)
@@ -2164,14 +2268,19 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
               setZone_15(false)
               setZone_16(false)
               setZone_17(false)
               setZone_18(true)
               setZone_19(false)
               setZone_20(false)
+                            setZone_21(false)
+
 
             } else if (id === "zone_19"){
+
               setZone_1(false)
               setZone_2(false)
               setZone_3(false)
@@ -2184,14 +2293,19 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
               setZone_15(false)
               setZone_16(false)
               setZone_17(false)
               setZone_18(false)
               setZone_19(true)
               setZone_20(false)
+                            setZone_21(false)
+
 
             } else if (id === "zone_20"){
+
               setZone_1(false)
               setZone_2(false)
               setZone_3(false)
@@ -2204,12 +2318,44 @@ const LightDashboard = () => {
               setZone_10(false)
               setZone_11(false)
               setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
               setZone_15(false)
               setZone_16(false)
               setZone_17(false)
               setZone_18(false)
               setZone_19(false)
               setZone_20(true)
+              setZone_21(false)
+
+
+            } else if (id === "zone_21"){
+
+              setZone_1(false)
+              setZone_2(false)
+              setZone_3(false)
+              setZone_4(false)
+              setZone_5(false)
+              setZone_6(false)
+              setZone_7(false)
+              setZone_8(false)
+              setZone_9(false)
+              setZone_10(false)
+              setZone_11(false)
+              setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+                           
+
+
+              setZone_21(true)
+
 
             }
           
@@ -2493,11 +2639,12 @@ const LightDashboard = () => {
   const [panelOverlay, setPanelOverlay] = useState(false)
 
   const lightPanel = (
-    <div className="light_map_panel">
 
-
-     <div className={panelOverlay? "display_none":"light_panel"}>
-            <button className="btn_square" onTouchEnd={()=>(lightZone("zone_1"), setPanelOverlay(true))}>
+    <>
+    
+    <div className={main? "light_map_panel":"display_none"}>
+      <div className={panelOverlay? "display_none":"light_panel"}>
+            <button className="btn_square" onClick={()=>(lightZone("zone_1"), setPanelOverlay(true))}>
                 {light_1_fb_BAR || light_2_fb_BAR || light_3_fb_BAR ? 
                 <>
                   <p> Breakfast </p>
@@ -2512,7 +2659,7 @@ const LightDashboard = () => {
             </button>
 
 
-            <button className="btn_square" onTouchEnd={()=>(lightZone("zone_2"), setPanelOverlay(true))}>
+            <button className="btn_square" onClick={()=>(lightZone("zone_2"), setPanelOverlay(true))}>
                 {light_1_fb_BILLIARD_ROOM || light_2_fb_BILLIARD_ROOM || light_3_fb_BILLIARD_ROOM || light_4_fb_BILLIARD_ROOM || light_5_fb_BILLIARD_ROOM || light_6_fb_BILLIARD_ROOM || light_7_fb_BILLIARD_ROOM || light_8_fb_BILLIARD_ROOM || light_9_fb_BILLIARD_ROOM?  
                 
                 <>
@@ -2521,128 +2668,128 @@ const LightDashboard = () => {
                 <img className="light_icon_z2" id="lightZoneActive" src={lightOn} />  
 
                 </>
-                 :
+                  :
 
-                 <>
+                  <>
                 
-                 <p>Billiards</p>
-                 <img className="light_icon_z2" src={lightOff} />  
-                 </>
-                 }
+                  <p>Billiards</p>
+                  <img className="light_icon_z2" src={lightOff} />  
+                  </>
+                  }
 
-             </button>
-
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),lightZone("zone_3"))}>  
-                 {light_1_fb_BREAKFAST || light_2_fb_BREAKFAST || light_3_fb_BREAKFAST  || light_4_fb_BREAKFAST || light_5_fb_BREAKFAST || light_6_fb_BREAKFAST || light_7_fb_BREAKFAST  || light_8_fb_BREAKFAST  ? 
-                 
-                 <>
-                
-                 <p>Breaskfast</p>
-                 <img className="light_icon_z3" id="lightZoneActive" src={lightOn} />  
-                 </>
-                 :
-                 <>
-                
-                <p>Breaskfast</p>
-                 <img className="light_icon_z3" src={lightOff} />  
-                 </>
-                 } 
               </button>
 
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),lightZone("zone_4"))}>  
-                 {light_1_fb_BUTLER_PANTRY||light_2_fb_BUTLER_PANTRY||light_3_fb_BUTLER_PANTRY||light_4_fb_BUTLER_PANTRY||light_5_fb_BUTLER_PANTRY||light_6_fb_BUTLER_PANTRY||light_7_fb_BUTLER_PANTRY ? 
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),lightZone("zone_3"))}>  
+                  {light_1_fb_BREAKFAST || light_2_fb_BREAKFAST || light_3_fb_BREAKFAST  || light_4_fb_BREAKFAST || light_5_fb_BREAKFAST || light_6_fb_BREAKFAST || light_7_fb_BREAKFAST  || light_8_fb_BREAKFAST  ? 
+                  
+                  <>
+                
+                  <p>Breaskfast</p>
+                  <img className="light_icon_z3" id="lightZoneActive" src={lightOn} />  
+                  </>
+                  :
+                  <>
+                
+                <p>Breaskfast</p>
+                  <img className="light_icon_z3" src={lightOff} />  
+                  </>
+                  } 
+              </button>
+
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),lightZone("zone_4"))}>  
+                  {light_1_fb_BUTLER_PANTRY||light_2_fb_BUTLER_PANTRY||light_3_fb_BUTLER_PANTRY||light_4_fb_BUTLER_PANTRY||light_5_fb_BUTLER_PANTRY||light_6_fb_BUTLER_PANTRY||light_7_fb_BUTLER_PANTRY ? 
                     <>
                     <p>Butler Pantry</p>
                     <img className="light_icon_z4" id="lightZoneActive" src={lightOn} />  
                     </>
-                 :
+                  :
 
-                 <>
-                 <p>Butler Pantry</p>
-                 <img className="light_icon_z4" src={lightOff} />  
-                 </>
-           
-                 } 
-             </button>
+                  <>
+                  <p>Butler Pantry</p>
+                  <img className="light_icon_z4" src={lightOff} />  
+                  </>
+            
+                  } 
+              </button>
 
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),lightZone("zone_5"))}>  
-                 {light_1_fb_DINING_ROOM || light_2_fb_DINING_ROOM || light_3_fb_DINING_ROOM   || light_4_fb_DINING_ROOM  ? 
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),lightZone("zone_5"))}>  
+                  {light_1_fb_DINING_ROOM || light_2_fb_DINING_ROOM || light_3_fb_DINING_ROOM   || light_4_fb_DINING_ROOM  ? 
                     <>
                       <p>Dining Room</p>
                     <img className="light_icon_z5" id="lightZoneActive" src={lightOn} />  
                     </>
-                 :
-                 <>
+                  :
+                  <>
                     <p>Dining Room</p>
                     <img className="light_icon_z5" src={lightOff} />  
                     </>
               
-                 } 
-             </button>
+                  } 
+              </button>
 
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),lightZone("zone_6"))}>
-               {light_1_fb_ELEVATOR_HALL|| light_2_fb_ELEVATOR_HALL|| light_3_fb_ELEVATOR_HALL || light_4_fb_ELEVATOR_HALL  ? 
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),lightZone("zone_6"))}>
+                {light_1_fb_ELEVATOR_HALL|| light_2_fb_ELEVATOR_HALL|| light_3_fb_ELEVATOR_HALL || light_4_fb_ELEVATOR_HALL  ? 
                 <>
                   <p>Elevator Hall</p>
                   <img className="light_icon_z6" id="lightZoneActive" src={lightOn} />  
                 </> 
-                 :
+                  :
 
                 <>
-                   <p>Elevator Hall</p>
-                 <img className="light_icon_z6" src={lightOff} />   
+                    <p>Elevator Hall</p>
+                  <img className="light_icon_z6" src={lightOff} />   
                 </> 
             
-                 } 
-             </button>
+                  } 
+              </button>
 
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),  lightZone("zone_7"))}>    
-                 {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM || light_5_fb_FAMILY_ROOM || light_6_fb_FAMILY_ROOM  || light_7_fb_FAMILY_ROOM? 
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),  lightZone("zone_7"))}>    
+                  {light_1_fb_FAMILY_ROOM || light_2_fb_FAMILY_ROOM  || light_3_fb_FAMILY_ROOM || light_4_fb_FAMILY_ROOM || light_5_fb_FAMILY_ROOM || light_6_fb_FAMILY_ROOM  || light_7_fb_FAMILY_ROOM? 
                   <>
                   <p>Family Room </p>
                   <img className="light_icon_z7" id="lightZoneActive" src={lightOn} />  
                 </> 
-                 :
+                  :
 
                   <>
-                   <p>Family Room </p>
+                    <p>Family Room </p>
                     <img className="light_icon_z7" src={lightOff} />  
                   </> 
-                 } 
-             </button>
+                  } 
+              </button>
 
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),  lightZone("zone_8"))}>   
-                 {light_1_fb_FOYER|| light_2_fb_FOYER || light_3_fb_FOYER || light_4_fb_FOYER|| light_5_fb_FOYER || light_6_fb_FOYER ? 
-                   <>
-                   <p>Foyer</p>
-                   <img className="light_icon_z8" id="lightZoneActive" src={lightOn} />  
-                 </> 
-                 :
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),  lightZone("zone_8"))}>   
+                  {light_1_fb_FOYER|| light_2_fb_FOYER || light_3_fb_FOYER || light_4_fb_FOYER|| light_5_fb_FOYER || light_6_fb_FOYER ? 
+                    <>
+                    <p>Foyer</p>
+                    <img className="light_icon_z8" id="lightZoneActive" src={lightOn} />  
+                  </> 
+                  :
 
-                 <>
-                 <p>Foyer</p>
-                 <img className="light_icon_z8" src={lightOff} />  
-               </> 
-                 } 
-             </button>
-
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),  lightZone("zone_9"))}> 
-                 {light_1_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN || light_5_fb_KITCHEN || light_6_fb_KITCHEN ? 
-                 <>
-                 <p>Kitchen </p>
-                 <img className="light_icon_z9" id="lightZoneActive" src={lightOn} />  
+                  <>
+                  <p>Foyer</p>
+                  <img className="light_icon_z8" src={lightOff} />  
                 </> 
-                 :
+                  } 
+              </button>
 
-                 <>
-                 <p>Kitchen</p>
-                 <img className="light_icon_z9" src={lightOff} />  
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),  lightZone("zone_9"))}> 
+                  {light_1_fb_KITCHEN|| light_3_fb_KITCHEN || light_4_fb_KITCHEN || light_5_fb_KITCHEN || light_6_fb_KITCHEN ? 
+                  <>
+                  <p>Kitchen </p>
+                  <img className="light_icon_z9" id="lightZoneActive" src={lightOn} />  
                 </> 
-                 } 
-             </button>
+                  :
 
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true), lightZone("zone_10"))}> 
-                 {light_1_fb_LIVING_ROOM|| light_2_fb_LIVING_ROOM || light_3_fb_LIVING_ROOM || light_4_fb_LIVING_ROOM? 
+                  <>
+                  <p>Kitchen</p>
+                  <img className="light_icon_z9" src={lightOff} />  
+                </> 
+                  } 
+              </button>
+
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true), lightZone("zone_10"))}> 
+                  {light_1_fb_LIVING_ROOM|| light_2_fb_LIVING_ROOM || light_3_fb_LIVING_ROOM || light_4_fb_LIVING_ROOM? 
                 <>
                   <p>Living Room </p>
                   <img className="light_icon_z10" id="lightZoneActive" src={lightOn} />  
@@ -2651,105 +2798,196 @@ const LightDashboard = () => {
                 <>
                 <p>Living Room </p>
                 <img className="light_icon_z10" src={lightOff} />  
-               </> 
+                </> 
                 
-                 }  
-             </button>
+                  }  
+              </button>
 
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true), lightZone("zone_11"))}> 
-                 {light_1_fb_OFFICE_POWDER  ? 
-                 <>
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true), lightZone("zone_11"))}> 
+                  {light_1_fb_OFFICE_POWDER  ? 
+                  <>
                   <p>Office Powder </p>
                   <img className="light_icon_z11" id="lightZoneActive" src={lightOn} />  
-                 </> 
-                 :
-                 <>
-                  <p>Office Powder </p>
-                 <img className="light_icon_z11" src={lightOff} />  
-                </> 
-               
-                 } 
-             </button>
-
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true), lightZone("zone_12"))}> 
-                 {light_1_fb_STEVE_S_OFFICE||light_2_fb_STEVE_S_OFFICE||light_3_fb_STEVE_S_OFFICE? 
-                   <>
-                   <p>Steve's Office </p>
-                   <img className="light_icon_z12" id="lightZoneActive" src={lightOn} />  
                   </> 
-                 :
+                  :
+                  <>
+                  <p>Office Powder </p>
+                  <img className="light_icon_z11" src={lightOff} />  
+                </> 
+                
+                  } 
+              </button>
 
-                 <>
-                 <p>Steve's Office </p>
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true), lightZone("zone_12"))}> 
+                  {light_1_fb_STEVE_S_OFFICE||light_2_fb_STEVE_S_OFFICE||light_3_fb_STEVE_S_OFFICE? 
+                    <>
+                    <p>Steve's Office </p>
+                    <img className="light_icon_z12" id="lightZoneActive" src={lightOn} />  
+                  </> 
+                  :
+
+                  <>
+                  <p>Steve's Office </p>
                   <img className="light_icon_z12" src={lightOff} />  
                   </> 
-                 } 
-             </button>
+                  } 
+              </button>
 
-             <button className="btn_square" onTouchEnd={()=>( setPanelOverlay(true),  lightZone("zone_15"))}>   
-               {light_1_fb_GARAGE? 
-                 <>
-                 <p>Garage </p>
-                 <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),  lightZone("zone_15"))}>   
+                {light_1_fb_GARAGE? 
+                  <>
+                  <p>Garage </p>
+                  <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
                 </> 
-                 :
-                 <>
-                 <p>Garage </p>
-                 <img className="light_icon_z15" src={lightOff} />  
+                  :
+                  <>
+                  <p>Garage </p>
+                  <img className="light_icon_z15" src={lightOff} />  
                 </> 
-                 }   
-             </button>
+                  }   
+              </button>
 
 
-       
+        
 
-     </div>
-
-     <div className={panelOverlay? "light_panel_overlay" : "display_none"}>
-
-      <button className = "btn_square" id="light_panel_overlay_close" onClick={()=> setPanelOverlay(false)}> <img className="btn_image" src={close}/> <p>Close</p> </button>
-       
-
-
-       <div className="panel_title"> 
-
-        {zone_1? <p>Bar</p> : <></>}
-        {zone_2? <p>Billiard</p>: <></>}
-        {zone_3? <p>Breakfast</p> : <></>}
-        {zone_4? <p>Butler Pantry </p>: <></>}
-        {zone_5? <p>Dining Room</p> : <></>}
-        {zone_6? <p>Elevator Room</p> : <></>}
-        {zone_7? <p>Family Room</p> : <></>}
-        {zone_8? <p>Foyer</p> : <></>}
-        {zone_9? <p>Kitchen</p> : <></>}
-        {zone_10? <p>Living Room</p> : <></>}
-        {zone_11? <p>Steve's Powder</p> : <></>}
-        {zone_12? <p>Steve's Office</p> : <></>}
-        {zone_15? <p>Garage</p> : <></>}
-      
-
-       </div>
-       
-      <div className="panel_light_display">
-        {zone_1? lightZone_BAR : <></>}
-        {zone_2? lightZone_Billiard: <></>}
-        {zone_3? lightZone_BREAKFAST : <></>}
-        {zone_4? lightZone_BUTLER_PANTRY : <></>}
-        {zone_5? lightZone_DINING_ROOM : <></>}
-        {zone_6? lightZone_ELEVATOR_HALL : <></>}
-        {zone_7? lightZone_FAMILY_ROOM : <></>}
-        {zone_8? lightZone_FOYER : <></>}
-        {zone_9? lightZone_KITCHEN : <></>}
-        {zone_10? lightZone_LIVING_ROOM : <></>}
-        {zone_11? lightZone_OFFICE_POWDER : <></>}
-        {zone_12? lightZone_STEVE_S_OFFICE : <></>}
-        {zone_15? lightZone_GARAGE : <></>}
-    
       </div>
-
-
-     </div>
     </div>
+
+    <div className={upStairs? "light_map_panel":"display_none"}>
+      <div className={panelOverlay? "display_none":"light_panel"}>
+
+
+        
+   
+
+
+
+              <button className="btn_square" id="low_light_count" onClick={()=>(lightZone("zone_13"), setPanelOverlay(true))}>
+              {light_1_fb_BAR || light_2_fb_HALL || light_3_fb_HALL || light_4_fb_HALL || light_5_fb_HALL? 
+                
+                <>
+                
+                <p>Hall</p>
+                <img className="light_icon_z2" id="lightZoneActive" src={lightOn} />  
+
+                </>
+                  :
+
+                  <>
+                
+                  <p>Hall</p>
+                  <img className="light_icon_z2" src={lightOff} />  
+                  </>
+                  }
+
+              </button>
+
+              <button className="btn_square" id="low_light_count"  onClick={()=>( setPanelOverlay(true),lightZone("zone_14"))}>  
+               {light_1_fb_MEDIA_ROOM || light_2_fb_MEDIA_ROOM || light_3_fb_MEDIA_ROOM || light_4_fb_MEDIA_ROOM || light_5_fb_MEDIA_ROOM? 
+                  
+                  <>
+                
+                  <p>Media Room</p>
+                  <img className="light_icon_z2" id="lightZoneActive" src={lightOn} />  
+                  </>
+                  :
+                  <>
+                
+                <p>Media Room</p>
+                  <img className="light_icon_z2" src={lightOff} />  
+                  </>
+                  } 
+              </button>
+
+    
+
+      </div>
+    </div>
+
+
+    <div className={outDoors? "light_map_panel":"display_none"}>
+    <div className={panelOverlay? "display_none":"light_panel"}>
+
+
+        
+
+
+
+              <button className="btn_square" id="low_light_count_single"  onClick={()=>( setPanelOverlay(true),lightZone("zone_21"))}>  
+                {light_1_fb_MEDIA_ROOM || light_2_fb_MEDIA_ROOM || light_3_fb_MEDIA_ROOM || light_4_fb_MEDIA_ROOM || light_5_fb_MEDIA_ROOM? 
+                  
+                  <>
+                
+                  <p>Media Room</p>
+                  <img className="light_icon_z2" id="lightZoneActive" src={lightOn} />  
+                  </>
+                  :
+                  <>
+                
+                <p>Media Room</p>
+                  <img className="light_icon_z2" src={lightOff} />  
+                  </>
+                  } 
+              </button>
+
+
+
+      </div>
+    </div>
+    
+
+    <div className={panelOverlay? "light_panel_overlay" : "display_none"}>
+
+<button className = "btn_square" id="light_panel_overlay_close" onClick={()=> setPanelOverlay(false)}> <img className="btn_image" src={close}/> <p>Close</p> </button>
+ 
+
+
+ <div className="panel_title"> 
+
+  {zone_1? <p>Bar</p> : <></>}
+  {zone_2? <p>Billiard</p>: <></>}
+  {zone_3? <p>Breakfast</p> : <></>}
+  {zone_4? <p>Butler Pantry </p>: <></>}
+  {zone_5? <p>Dining Room</p> : <></>}
+  {zone_6? <p>Elevator Room</p> : <></>}
+  {zone_7? <p>Family Room</p> : <></>}
+  {zone_8? <p>Foyer</p> : <></>}
+  {zone_9? <p>Kitchen</p> : <></>}
+  {zone_10? <p>Living Room</p> : <></>}
+  {zone_11? <p>Steve's Powder</p> : <></>}
+  {zone_12? <p>Steve's Office</p> : <></>}
+  {zone_13? <p>Hallway</p> : <></>}
+  {zone_14? <p>Media Room</p> : <></>}
+  {zone_15? <p>Garage</p> : <></>}
+
+  {zone_21? <p> Landscape</p> : <> </>}
+
+
+ </div>
+ 
+<div className="panel_light_display">
+  {zone_1? lightZone_BAR : <></>}
+  {zone_2? lightZone_Billiard: <></>}
+  {zone_3? lightZone_BREAKFAST : <></>}
+  {zone_4? lightZone_BUTLER_PANTRY : <></>}
+  {zone_5? lightZone_DINING_ROOM : <></>}
+  {zone_6? lightZone_ELEVATOR_HALL : <></>}
+  {zone_7? lightZone_FAMILY_ROOM : <></>}
+  {zone_8? lightZone_FOYER : <></>}
+  {zone_9? lightZone_KITCHEN : <></>}
+  {zone_10? lightZone_LIVING_ROOM : <></>}
+  {zone_11? lightZone_OFFICE_POWDER : <></>}
+  {zone_12? lightZone_STEVE_S_OFFICE : <></>}
+  {zone_13? lightZone_HALL : <></>}
+  {zone_14? lightZone_MEDIA_ROOM : <></>}
+  {zone_15? lightZone_GARAGE : <></>}
+  {zone_21? lightZone_LANDSCAPE:<></>}
+
+</div>
+
+
+    </div>
+    </>
   )
 
 
@@ -2774,9 +3012,9 @@ const LightDashboard = () => {
 
         <div className="nav_container">
             <div className="nav">
-                <button onTouchEnd={() => ( currentFloor("up"))}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> 2nd Floor</p>     </button>
+                <button onTouchEnd={() => (currentFloor("up"))}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> 2nd Floor</p>     </button>
                 <button onTouchEnd={() => (currentFloor("main"))}  className={main? "btn_selected" : "btn_not_selected"}>            <p> 1st Floor </p>         </button>
-                <button onTouchEnd={() => (currentFloor("out"))}  className={outDoors? "btn_selected" : "btn_not_selected"}>            <p> Out Door </p>         </button>
+                <button onTouchEnd={() => (currentFloor("out"))}  className={outDoors? "btn_selected" : "btn_not_selected"}>         <p> Out Door </p>         </button>
             </div>
         </div>
 

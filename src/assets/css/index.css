@@ -444,6 +444,10 @@ body {
 /*
 ---------------------------------------------------------- nav 
 */
+
+.nav_container{
+  overflow: hidden;
+}
 .room_back_corner{
   grid-column: 1/2;
   grid-row: 1;
@@ -475,7 +479,7 @@ body {
 
 .nav_container{
   height: 100%;
-  width: 100%;
+  width: 85%;
   border-radius: 15px;
   background-color: transparent;
   grid-row: 2/9;
@@ -503,6 +507,7 @@ body {
       z-index: 1;
       backdrop-filter: blur(15px);
       animation: room_selection 1000ms;
+      overflow: hidden;
 
   }
       .nav .btn_square{
@@ -512,6 +517,7 @@ body {
           z-index: 1;
           background-color: transparent;
           backdrop-filter: blur(90px);
+          
       }
           .nav .btn_square p{
               font-weight: bold;
@@ -552,6 +558,37 @@ body {
     opacity: 0.4250;
     z-index: 0;
     border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.nav{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav .btn_selected{
+  
+  border-radius: 0px;
+  background-size: 300% 300%;
+  background-image: linear-gradient(-45deg,rgb(20, 72, 133)25%,rgb(42, 123, 160) 50%,rgb(33, 98, 172) 100%);
+  animation: AnimateBG 10s ease infinite;
+  border-radius: 15px;
+  
+}
+
+
+.nav .btn_not_selected img{
+  height: 65%;
+}
+
+.nav .btn_selected img{
+  height: 65%;
 }
 
 
@@ -561,6 +598,9 @@ body {
 .btn_selected{
   z-index: 10;
 }
+
+
+
 
 
         @keyframes glow1 {

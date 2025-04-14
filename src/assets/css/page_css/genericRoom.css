@@ -15,6 +15,8 @@
     box-sizing: border-box;
     padding: 1rem;
     position: relative;
+
+    justify-items: center
 }
 
 .media_off{
@@ -30,7 +32,7 @@
 
 .title_info{
     grid-row: 1/2;
-   
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,8 +42,55 @@
     animation: room_selection 1000ms;
     color: rgb(247, 247, 247);
     text-shadow: 1px 1px 1px rgb(202, 201, 201);
+    z-index: 200;
 }
 
+.title_info_nav{
+    height: 3rem;
+    position:absolute;
+    bottom: -2rem;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+  
+}
+
+.title_info_nav .btn_selected{
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg,rgb(20, 72, 133)25%,rgb(42, 123, 160) 50%,rgb(33, 98, 172) 100%);
+    animation: AnimateBG 10s ease infinite;
+    height: 90%;
+    width: 6rem;
+    border-radius: 50px;
+    box-shadow: none;
+   
+}
+
+
+
+
+.title_info_nav .btn_not_selected{
+    background-color: transparent;
+    height: 90%;
+    width: 6rem;
+    border-radius: 50px;
+    box-shadow: none;
+    animation: none;
+}
+
+.title_info_nav .btn_selected img{
+    height: 100%;
+}
+.title_info_nav .btn_not_selected img{
+    height: 100%;
+}
+
+
+.nav{
+    gap: 2rem;
+}
 
 
 /*
@@ -356,7 +405,7 @@
 
        overflow: hidden;
 
-       z-index: 50;
+       z-index: 400;
        box-shadow: rgb(30, 30, 30) 0px 20px 30px -10px;
 
        
@@ -803,7 +852,7 @@
     z-index: 500;
     position: absolute;
 
-    right: 1px;
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -973,16 +1022,113 @@
 
 
 
+    .breakfast_power_menu_button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 60%;
+
+    }
+
+    .breakfast_yes_btn{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 60%;
+    }
+
+    .power_menu_text{
+        font-size: x-large;
+    }
+
+    .breakfast_power_menu_button .no_reboot{
+        width: 75%;
+        height: 3rem;
+        border-radius: 10px;
+    }
+
+    .breakfast_power_menu_button .yes_reboot{
+        width: 45%;
+        display: flex;
+        
+        text-align: center;
+    }
 
 
 
+    .arcade_power_menu_button{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .arcade_yes_btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 5rem;
+        gap: 10px;
+    }
+
+    .arcade_power_menu_button .no_reboot{
+        height: 3rem;
+        width: 50%;
+        border-radius: 10px;
+    }
 
 
+
+    #mobile_btn{
+        display: none;
+    }
 
 
 
 
     @media only screen and (max-width: 550px) and (orientation: portrait){
+
+        
+    .title_info_nav{
+        display: none;
+    }
+
+    #mobile_btn{
+        display: block;
+    }
+
+    
+
+
+        
+    .arcade_power_menu_button{
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .arcade_yes_btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 5rem;
+        gap: 10px;
+    }
+
+    .arcade_power_menu_button .no_reboot{
+        height: 3rem;
+        width: 50%;
+        border-radius: 10px;
+    }
 
         
         .source_card .img_container {
@@ -1041,11 +1187,11 @@
         .power_menu_overlay {
             grid-column: 1 / 13;
             grid-row: 1 / 9;
-            height: 120%;
-            width: 110%;
+            height: 100%;
+            width: 100%;
             z-index: 200;
             position: relative;
-            right: 20px;
+     
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1068,6 +1214,42 @@
                 text-align: center;
             }
       
+
+            .breakfast_power_menu_button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 60%;
+
+            }
+
+            .breakfast_yes_btn{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 100%;
+                height: 60%;
+            }
+
+            .power_menu_text{
+                font-size: x-large;
+            }
+
+            .breakfast_power_menu_button .no_reboot{
+                width: 75%;
+                height: 3rem;
+                border-radius: 10px;
+            }
+
+            .breakfast_power_menu_button .yes_reboot{
+                width: 45%;
+                display: flex;
+                
+                text-align: center;
+            }
+         
+          
             /*
             ---------------------------------------------------------------------------------------------------------- Nav
             */   
@@ -1077,6 +1259,8 @@
         
             display: flex;
             height: 100%;
+            width: 100%;
+            overflow: hidden;
     
        
         }
@@ -1086,10 +1270,42 @@
         }
         
         .nav{
-            width: 100%;
+            display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: center;
+            align-items: center;
+            gap: 1px;
+            width: 100%;
+            overflow: hidden;
         }
+
+        .nav .btn_selected{
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+            background-size: 300% 300%;
+            background-image: linear-gradient(-45deg,rgb(20, 72, 133)25%,rgb(42, 123, 160) 50%,rgb(33, 98, 172) 100%);
+            animation: AnimateBG 10s ease infinite;
+            
+        }
+        .nav .btn_not_selected{
+            width: 100%;
+            height: 100%;   
+        }
+
+
+        .nav .btn_not_selected img{
+            height: 65%;
+        }
+
+        .nav .btn_selected img{
+            height: 65%;
+        }
+
+
+ 
+
+    
         
         
         /*
@@ -1553,6 +1769,14 @@
                 height: 3rem;
             }
             .media_10_img_display img{
+                height: 2rem;
+            }
+
+            .source_card .media_10_img {
+                height: 3rem;
+            }
+
+            .source_card .media_9_img {
                 height: 3rem;
             }
         }
@@ -1604,7 +1828,7 @@
         .power_menu_overlay {
             grid-column: 1 / 13;
             grid-row: 1 / 9;
-            height: 120%;
+            height: 100%;
             width: 100%;
             z-index: 200;
          
@@ -1642,19 +1866,43 @@
             display: flex;
             height: 100%;
     
-       
-        }
-        
-        .nav_clock{
-            display: none;
+            overflow: hidden;
         }
         
         .nav{
-            width: 100%;
+            display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: center;
+            align-items: center;
+            gap: 1px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .nav .btn_selected{
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+            background-size: 300% 300%;
+            background-image: linear-gradient(-45deg,rgb(20, 72, 133)25%,rgb(42, 123, 160) 50%,rgb(33, 98, 172) 100%);
+            animation: AnimateBG 10s ease infinite;
+            
+        }
+        .nav .btn_not_selected{
+            width: 100%;
+            height: 100%;   
+        }
+
+
+        .nav .btn_not_selected img{
+            height: 65%;
+        }
+
+        .nav .btn_selected img{
+            height: 65%;
         }
         
+      
         
         /*
         ------------------------------------------------------------------------------------------------------------- Cards
@@ -2112,57 +2360,6 @@
 
     
 
-/*
------------------------------------------------------------------------------------------------------------------ iphone 14
-
-
-@media only screen and (max-device-width: 390px) and (max-device-width: 763px) and (orientation: portrait){
-    .generic_room .title_info{
-     
-        font-size: 1.75rem;
-    }
-
-
-    .room_sources_container{
-
-        width: 0%;
-     
-    }
-    /*
-    ----------------------------------------------------------------------- source card
- 
-    .source_card{
-        height:8.7rem;
-        width: 10.75rem;
-    }
-
-     /*
-    ----------------------------------------------------------------------- light cards
-  
-    .light_tile{
-        height:165px;
-        width: 170px;
-    }
-
-    #breakfast_nook .light_tile{
-       height:8.7rem;
-        width: 10.75rem;
-    }
-
-
-    /*
-    ----------------------------------------------------------------------------------------------------------------- volume container
-  
-
-
-    .volume_container{
-   
-        top: 3.75rem;
- 
-    }
-
-
-}
 
 
 
@@ -2175,26 +2372,8 @@
 
 
 
-@media only screen and (max-device-width: 375px) and (orientation: portrait){
-    .generic_room .title_info{
-        font-size: x-large;
-    }
-    .source_card{
-        height: 10rem;
-        width: 9.5rem;
-    }
-
-    .light_tile{
-        height: 10rem;
-        width: 9.5rem;
-    }
-      .light_tile .light_info .light_name{
-            font-size: large;
-        }
-}
 
 
-*/
 
 
 
@@ -2229,6 +2408,9 @@
 
 
 
+    .title_info_nav{
+        display: none;
+    }
     
     .generic_room .landscape_warning{
         grid-column: 2/12;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link, useLocation} from "react-router-dom"
+import {useLocation,useNavigate } from "react-router-dom"
 import "../../assets/css/dashboard_css/Audio_Dashboard.css";
 
 
@@ -40,7 +40,9 @@ const MediaServerWebSocket: React.FC  = () => {
           setActivePlayer(false)      
         }
   }
-     
+   
+  
+  const navigate = useNavigate();
 
 
 
@@ -1442,11 +1444,11 @@ const zone_name_23    = "Upper Pool Deck";
                     id={zone_active_15 === 12? 'active_user':" " }>
                     {zone_active_15 === 12?  
 
-                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_15_location, 12)}>
+                      <p onTouchEnd={() => window.CrComLib.publishEvent("n",zone_15_location, 0)}>
                         Turn Off Music
                       </p> 
                       : 
-                      <p onTouchEnd={() => (( lastRoom("game"),window.CrComLib.publishEvent("n",zone_15_location, 0),showAudioControls(false)))}>
+                      <p onTouchEnd={() => ( lastRoom("game"),window.CrComLib.publishEvent("n",zone_15_location, 12),showAudioControls(false))}>
                         Ellen
                       </p> 
                     } 
@@ -2406,7 +2408,6 @@ const zone_name_23    = "Upper Pool Deck";
     const location = useLocation();
 
     const roomIdState = location.state?.roomId;
-    const lastLocation = location.state?.lastLoc;
     const controllerStarter =location.state?.lastUsed
     const [roomId, setRoomId] = useState(roomIdState)
   
@@ -2492,13 +2493,12 @@ const zone_name_23    = "Upper Pool Deck";
 
 
   const showAudioControls = (value:boolean) =>{
-    setAudioControl(value)
+    setAudioControl(value)  
   }
 
 
 
   const lastRoom = (roomLocation:string) =>{
-
       setRoomId(roomLocation)
       setAudioControl(true)
   }
@@ -3220,11 +3220,11 @@ const zone_name_23    = "Upper Pool Deck";
 
 </div>
 
-<Link className="audio_back_button" to = {`/${lastLocation}`} state ={{lastLocationUsed:roomId}}> 
+<div className="audio_back_button" onClick={()=> navigate(-1)}> 
         <button className="pill_shape_audio">
             <img className="btn_image" src={backbutton}/>
         </button>
-</Link> 
+</div> 
         
 <div className={openZones? "zone_menu": "display_none"}>
             <div className='off_button_menu' style={{background:"none"}}>

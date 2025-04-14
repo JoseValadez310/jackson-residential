@@ -1327,12 +1327,15 @@ const sourceDisplay = (tvSelection:string) =>{
             <div className="nav_container" id ={active_media? "mobile_display_none" : "mobile_display_contemt" } >
 
             
-                <div className="nav">
-                        <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1),sourceDisplay('tv1'))}     className={tvOptions && sourceSelectionOne?     "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
-                        <button onTouchEnd={() => (roomApp("TV"), setTrigger2(!trigger2),sourceDisplay('tv2'))}     className={tvOptions && sourceSelectionTwo?     "btn_selected" : "btn_not_selected"}   >  <img src={TV1}     /> </button>
-                        <button onTouchEnd={() => (roomApp("TV"), setTrigger3(!trigger3),sourceDisplay('tv3'))}     className={tvOptions && sourceSelectionThree?   "btn_selected" : "btn_not_selected"}   >  <img src={TV2}     /> </button>
-
+                <div className="nav">                        
                         <Link to={"/AudioDashboard"}    state={{lastLoc:"mediaroom",roomId:"media", activity: activeSource}}               className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+
+
+                        <button id="mobile_btn" onTouchEnd={() => (roomApp("TV"), setTrigger2(!trigger2),sourceDisplay('tv2'))}     className={tvOptions && sourceSelectionTwo?     "btn_selected" : "btn_not_selected"}   >  <img src={TV1}     /> </button>
+                        <button id="mobile_btn" onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1),sourceDisplay('tv1'))}     className={tvOptions && sourceSelectionOne?     "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
+                        <button id="mobile_btn" onTouchEnd={() => (roomApp("TV"), setTrigger3(!trigger3),sourceDisplay('tv3'))}     className={tvOptions && sourceSelectionThree?   "btn_selected" : "btn_not_selected"}   >  <img src={TV2}     /> </button>
+
+                    
                         <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "btn_not_selected"}   >  <img src={lights}  /> </button>
                 </div>
                 
@@ -1360,7 +1363,15 @@ const sourceDisplay = (tvSelection:string) =>{
 
 
        
-            <h1 className="title_info"> {roomName} </h1>
+            <h1 className="title_info"> {roomName} 
+
+                <div className="title_info_nav">
+                    <button onTouchEnd={() => (roomApp("TV"), setTrigger2(!trigger2),sourceDisplay('tv2'))}     className={tvOptions && sourceSelectionTwo?     "btn_selected" : "btn_not_selected"}   >  <img src={TV1}     /> </button>
+                    <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1),sourceDisplay('tv1'))}     className={tvOptions && sourceSelectionOne?     "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
+                    <button onTouchEnd={() => (roomApp("TV"), setTrigger3(!trigger3),sourceDisplay('tv3'))}     className={tvOptions && sourceSelectionThree?   "btn_selected" : "btn_not_selected"}   >  <img src={TV2}     /> </button>
+
+                </div>
+            </h1>
 
             <div className={tvPowerMenu? "power_menu_overlay" : "hide_power_menu_overlay"} >
                 <div className="power_menu">

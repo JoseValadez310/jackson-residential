@@ -289,18 +289,16 @@ const Kaleidescape = () =>{
                 <img className="btn_image"src={skip} alt="" />
                 </button>
 
-                <button className="btn_circle" onTouchStart={() => kaleidescapeTransports("audio")}>
-                <p> Audio </p>
+             
+                <button className="btn_circle" id="skip2" style={{backgroundColor:"transparent", boxShadow:"none"}}>
+                    <img className="display_none"src={skip} alt="" />
                 </button>
 
                 <button className="btn_circle" onTouchStart={() => kaleidescapeTransports("pause")}>
                 <img className="btn_image"src={pause} alt="" />
                 </button>
 
-                <button className="btn_circle" onTouchStart={() => kaleidescapeTransports("subtitle")}>
-                <p> Subtitle </p>
-                </button>
-
+          
 
         </div>
     </>)
@@ -329,18 +327,27 @@ const Kaleidescape = () =>{
             <p> Menu </p> 
             </button>
 
+
+            <button className="btn_circle" onTouchStart={() => kaleidescapeTransports("audio")}>
+                <p> Audio </p>
+                </button>
+
+                <button className="btn_circle" onTouchStart={() => kaleidescapeTransports("subtitle")}>
+                <p> Subtitle </p>
+                </button>
+
             
 
-                <button className="btn_circle" id = "home" onTouchStart={() => kaleidescapeTransports("List")}>
+                <button className="display_none" id = "home" onTouchStart={() => kaleidescapeTransports("List")}>
                 <p> List </p>
                 </button>
 
 
-                <button className="btn_circle"  onTouchStart={() => kaleidescapeTransports("Covers")}>
+                <button className="display_none"  onTouchStart={() => kaleidescapeTransports("Covers")}>
                     <p> Covers </p>
                 </button>
 
-                <button className="btn_circle"  onTouchStart={() => kaleidescapeTransports("Collections")}>
+                <button className="display_none"  onTouchStart={() => kaleidescapeTransports("Collections")}>
                     <p> Collect.  </p>
                 </button>
 
@@ -350,6 +357,12 @@ const Kaleidescape = () =>{
 
         </div>
     </>)
+
+
+
+
+
+
 
 
 const mobile_section_one = (
@@ -466,28 +479,28 @@ const mobile_section_two = (
 </button>
 
 
-<button className="btn_circle" onTouchStart={() => kaleidescapeTransports("audio")}>
+            <button className="btn_circle" onTouchStart={() => kaleidescapeTransports("audio")}>
             <p> Audio </p>
             </button>
 
           
 
-            <button className="btn_circle" onTouchStart={() => kaleidescapeTransports("subtitle")}>
+            <button className="display_none" onTouchStart={() => kaleidescapeTransports("subtitle")}>
             <p> Subtitle </p>
             </button>
 
-    <button className="btn_circle" id = "home" onTouchStart={() => kaleidescapeTransports("List")}>
-    <p> List </p>
-    </button>
+            <button className="display_none" id = "home" onTouchStart={() => kaleidescapeTransports("List")}>
+            <p> List </p>
+            </button>
 
 
-    <button className="btn_circle"  onTouchStart={() => kaleidescapeTransports("Covers")}>
-        <p> Covers </p>
-    </button>
+            <button className="display_none"  onTouchStart={() => kaleidescapeTransports("Covers")}>
+                <p> Covers </p>
+            </button>
 
-    <button className="btn_circle"  onTouchStart={() => kaleidescapeTransports("Collections")}>
-        <p> Collect.  </p>
-    </button>
+            <button className="display_none"  onTouchStart={() => kaleidescapeTransports("Collections")}>
+                <p> Collect.  </p>
+            </button>
 
 
 

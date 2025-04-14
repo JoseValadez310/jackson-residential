@@ -203,8 +203,8 @@ const HomeDashboard = () => {
            
 
             <div className={tvPowerMenu? "room_selection_power_menu" : "display_none"} >
-                <div className="power_menu_title">
-                    <p className="active_zone_title">These rooms are currently active. Which would you like to turn off?</p>
+            <div className="power_menu_title">
+                    <p className="active_zone_title">Global power menu</p>
                 </div>
 
                 <div className="active_zone_menu">

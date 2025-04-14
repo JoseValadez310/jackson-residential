@@ -407,7 +407,9 @@
 
 
 
-  @media only screen and (max-width: 500px) and  (orientation: portrait){
+  @media only screen and (max-width: 550px) and  (orientation: portrait){
+
+   
 
     .show_option_2{
         height: 90%;
@@ -476,6 +478,7 @@
     .channel_container{
         position: relative;
         right: 1.2rem;
+        width:5rem;
     }
         .channel_container .btn_circle{
             width: 3.5rem;
@@ -495,8 +498,9 @@
             gap: 1rem;
         }
 
-
-
+        .chan_title h2{
+            color: white;
+        }
 }
 
 

@@ -1720,10 +1720,9 @@ if(media1){
                         Which TV in the {roomName} would you like to turn off?
                     </p>
 
-                    <div className="power_menu_button">
+                    <div className="arcade_power_menu_button">
 
-                        <div style={{width:"30%",height:"4rem",  display:"flex", justifyContent:"center", flexDirection:"column",gap:"10px"}}>
-                    
+                    <div className="arcade_yes_btn">                    
                             <button style ={{width:"100%", height:"100%"}}className="yes_reboot" onTouchEnd={()=> (multiZoneOff("zone1") , display_tile())}> 
                                 <p style={{width:"100%"}}>TV #1</p> 
                             </button> 

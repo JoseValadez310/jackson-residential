@@ -1,6 +1,6 @@
 import './assets/css/Index.css'
 import 'animate.css';
-import {useMemo, useState, useEffect} from 'react';
+import {useMemo} from 'react';
 import useWebXPanel from './hooks/useWebXPanel';
 
 import {createHashRouter, RouterProvider} from 'react-router-dom'
@@ -59,19 +59,6 @@ function App() {
 
 
   
-          const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
-          
-          const updateScreenSize = () => {
-              setScreenSize({
-              width: window.innerWidth,
-              height: window.innerHeight,
-              });
-          };
-            
-          useEffect(() => {
-              window.addEventListener('resize', updateScreenSize);
-              return () => window.removeEventListener('resize', updateScreenSize);
-          }, []);
   
   
 
@@ -217,7 +204,7 @@ function App() {
   
   const webXPanelConfig = useMemo(() => ({
     ipId: '31',
-    host: '192.168.14.90',
+    //host: '192.168.14.90',
     roomId: '',
     authToken: ''
   }), []); // Dependencies array is empty, so this object is created only once
@@ -227,7 +214,7 @@ function App() {
 
   
   return (
-    <div className='project_container' id={screenSize.width > 1500? "xPanel":""}>
+    <div className='project_container'>
       <RouterProvider router={router} />
       <img className="imageApp" src={imageBackground} />
     </div>

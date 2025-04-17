@@ -527,6 +527,11 @@ const MusicPLayer2 = () =>{
           }
         } else {
           sendCommand(`AckPickItem ${item.guid}`);
+          if(item.hasChildren === false){
+            setIsBrowseMenuVisible(false)
+            sendCommand("browseTopMenu")
+         }
+         
           setTimeout(() => {
             sendCommand('GetStatus');
             setIsAtTopMenu(false);

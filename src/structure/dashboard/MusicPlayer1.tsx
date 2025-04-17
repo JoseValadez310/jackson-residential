@@ -439,6 +439,8 @@ const MusicPLayer1 = () =>{
         }
         else {
           console.log(message);
+     
+         
         }
       }, [
         loadingGuid,
@@ -529,10 +531,15 @@ const MusicPLayer1 = () =>{
           }
         } else {
           sendCommand(`AckPickItem ${item.guid}`);
+          console.log("does item, have children", item.hasChildren)
+          if(item.hasChildren === false){
+             setIsBrowseMenuVisible(false)
+             sendCommand("browseTopMenu")
+          }
           setTimeout(() => {
             sendCommand('GetStatus');
             setIsAtTopMenu(false);
-          }, 250);
+          }, 1000);
         }
       };
     

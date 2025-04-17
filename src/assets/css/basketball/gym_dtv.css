@@ -1655,3 +1655,131 @@ html,body {
 
 
 
+
+
+@media screen and (max-width: 550px) and (orientation: portrait) {
+    .background_image_bb{
+        grid-column: 1/11;
+        grid-row: 1/11;
+        position: absolute;
+    }
+    .mobile_bb{
+        position: absolute;
+        grid-column: 1/11;
+        grid-row: 1/11;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 6% 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  6%;
+        justify-items: start;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        position: relative;
+        justify-items: center;
+        background-color: rgb(255, 193, 24);
+        overflow: hidden;
+
+    }
+
+    .mobile_bb .btn_square{
+        background-color: rgb(36, 34, 34);
+        box-shadow: 0px 0px 10px black, inset 0px 0px 2px 1px rgb(255, 255, 255);
+
+    }
+
+    #back_button_bb_court{
+        grid-column: 1/4;
+        grid-row: 1;    
+    }
+    #power_button_bb_court{
+        grid-column: 10/13;
+        width: 5rem;
+        border-radius: 50px;
+    }
+
+
+    .mobile_selection{
+        position: relative;
+        grid-column: 1/13;
+        grid-row: 2;
+        width: 100%;
+        z-index: 10;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    
+
+    }
+
+    .dropdown_title{
+        display: none;    
+    }
+
+
+
+    .tv_dropdown_list{
+        grid-column: 1/13 ;
+        grid-row: 2/3;
+        z-index: 100;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        background-color: transparent;
+        ;
+    }
+        .tv_dropdown_list button{
+            margin: 0%;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        #first_button, #last_button{
+            margin: 0px;
+        }
+
+
+
+        .controller_background{
+            grid-column: 1/13;
+            grid-row: 3/9;
+
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+        }
+
+
+
+        .mobile_bb .mobile_controller_nav{
+            height: 20%;    
+        }
+
+
+        .mobile_bb .mobile_controller_nav .show_option_1{
+            height: 100%;
+
+        }
+
+
+        .short_cut_menu{
+            grid-column: 1/13;
+            grid-row: ;
+        }
+
+
+    .current_label{
+        display: none;
+    }
+
+}

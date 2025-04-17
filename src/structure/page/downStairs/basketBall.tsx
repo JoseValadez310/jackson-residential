@@ -38,6 +38,21 @@ import { Link } from "react-router-dom"
 
 
 
+
+import rewind      from "../../../assets/images/icons/icons8-replay.svg"
+import record      from "../../../assets/images/icons/icons8-record.svg"
+import returnArrow      from "../../../assets/images/icons/icons8-return-arrow.svg"
+import play        from "../../../assets/images/icons/icons8-play.svg"
+import skip        from "../../../assets/images/icons/icons8-fast-forward.svg"
+import pause       from "../../../assets/images/icons/icons8-pause.svg"
+import stop        from "../../../assets/images/icons/icons8-stop.svg"
+
+
+
+
+
+    
+
     import BB from "../../../assets/images/backgrounds/court2.jpg"
 
 
@@ -46,7 +61,44 @@ import { Link } from "react-router-dom"
 
 const Main_1 = () => {
 
+
+    
+    
+    const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+    
+        const updateScreenSize = () => {
+            setScreenSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            });
+        };
+        
+        useEffect(() => {
+            window.addEventListener('resize', updateScreenSize);
+            return () => window.removeEventListener('resize', updateScreenSize);
+        }, []);
+    
+
+
+
+
+
    
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
     const [modal, setModal] = useState(false)
 
     const [dtv_option_1,setdtv_option_1] = useState(true)
@@ -1443,544 +1495,1261 @@ const Main_1 = () => {
 
     }
     
+
+
+
+
+
+
+
+
+
+
+    const tst1080bbCourt = (     <main>
+        <div  className="page_layout"  id="basketball">
+
+            
+
+            <Link className="back_button" to={"/"}>
+                <img src={back_button} />
+            </Link>
+    
+            <button  className="home_button" style={{borderRadius:"30px", width:"5rem", gridColumn:"11/12"}} onTouchEnd ={()=> console.log("power off")}>
+                    
+
+                        <img onTouchEnd={toggleModal} src={power_button}   />      
+            </button>  
+            
+            <div className = "input_selection" >
+                <div className="dropdown_tv_selection">
+                <p className="dropdown_title"> TV Selection </p>
+                    <div className="current_tv_selection"> 
+
+                        <div className="box_one" >
+                            <button className={tv1? "tv_active" : "tv_off"} onTouchEnd={()=> dropdown("dropdown_1")}> 
+                                <p>TV 1</p>    
+                            </button>
+
+                            <div className = {tvBoxOption1? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_1_label} </p></div>
+                            <div className={tvBoxOption1? "tv_dropdown_list":"hide_tv_dropdown_list" }>
+                            
+                                <button className={dtv_1_a? "selected":"not_selected"} id="first_button" onTouchEnd ={()=> tv_one_video_output("TV_1_Box_1")}>    <p>DTV 1 Audio</p>  </button>
+                                <button className={dtv_1_b? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_2")}>    <p>DTV 2</p>        </button>
+                                <button className={dtv_1_c? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_3")}>    <p>DTV 3</p>        </button>
+                                <button className={dtv_1_d? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_4")}>    <p>DTV 4</p>        </button>
+                                <button id="last_button"                                                  onTouchEnd={()=> dropdown("close_dropdown_1")}>    <p>Turn Off</p>  </button>
+                
+                            </div>
+
+                            
+                        </div>
+
+                        <div className="box_two">
+                            <button className={tv2? "tv_active" : "tv_off"} onTouchEnd={()=> dropdown("dropdown_2")}> 
+                                <p>TV 2</p>    
+                            </button>
+                            <div className = {tvBoxOption2? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_2_label} </p></div>
+                            
+
+                            <div className={tvBoxOption2? "tv_dropdown_list":"hide_tv_dropdown_list" }>
+                                <button className={dtv_2_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_two_video_output("TV_2_Box_1")}>    <p>DTV 1 Audio</p>  </button>
+                                <button className={dtv_2_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_2")}>    <p>DTV 2</p>        </button>
+                                <button className={dtv_2_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_3")}>    <p>DTV 3</p>        </button>
+                                <button className={dtv_2_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_4")}>    <p>DTV 4</p>        </button>
+                                <button                                                 id="last_button"   onTouchEnd={()=> dropdown("close_dropdown_2")}>    <p>Turn Off</p>  </button>
+
+                            </div>
+                        </div>
+
+                        <div className="box_three">
+                            <button className={tv3? "tv_active" : "tv_off"} onTouchEnd={()=> dropdown("dropdown_3")}> 
+                                <p>TV 3</p>    
+                            </button>
+
+                            <div className = {tvBoxOption3? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_3_label} </p></div>
+
+
+                            <div className={tvBoxOption3? "tv_dropdown_list":"hide_tv_dropdown_list" }>
+                                <button className={dtv_3_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_three_video_output("TV_3_Box_1")}>    <p>DTV 1 Audio</p>  </button>
+                                <button className={dtv_3_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_2")}>    <p>DTV 2</p>        </button>
+                                <button className={dtv_3_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_3")}>    <p>DTV 3</p>        </button>
+                                <button className={dtv_3_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_4")}>    <p>DTV 4</p>        </button>
+                                <button                                                id="last_button"    onTouchEnd={()=> dropdown("close_dropdown_3")}>    <p>Turn Off</p>  </button>
+                            </div>
+                        </div>
+
+                        <div className="box_four">
+                            <button className={tv4? "tv_active" : "tv_off"} onTouchEnd={()=> dropdown("dropdown_4")}> 
+                                <p>TV 4</p>      
+                            </button>
+
+                            <div className = {tvBoxOption4? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_4_label} </p></div>
+
+                            <div className={tvBoxOption4? "tv_dropdown_list":"hide_tv_dropdown_list" }>
+                                <button className={dtv_4_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_four_video_output("TV_4_Box_1")}>    <p>DTV 1 Audio</p>  </button>
+                                <button className={dtv_4_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_2")}>    <p>DTV 2</p>        </button>
+                                <button className={dtv_4_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_3")}>    <p>DTV 3</p>        </button>
+                                <button className={dtv_4_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_4")}>    <p>DTV 4</p>        </button>
+                                <button                                                id="last_button"    onTouchEnd={()=> dropdown("close_dropdown_4")}>    <p>Turn Off</p>  </button>
+
+                            </div>
+                        </div>
+
+                        <div className="box_five">
+                            <button  className="tv_off" onTouchEnd ={()=>all_on() }> 
+                                <p className="mirror_all">  All On </p>      
+                            </button>
+
+                            <p className = "current_label"> </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div className = "controller_background">
+                
+                <div className="dtv_controller_controls_bb">
+                    <div className="controller_nav_bb">
+
+                        <button onTouchEnd={()=>changedtvOptions("dtv_1")} className = {dtv_option_1? "controller_nav_1_selected_bb" : "controller_nav_1_bb"}>
+                            <img src={keypad}/>
+                        </button>
+
+                        
+
+                        <button onTouchEnd={()=>changedtvOptions("dtv_3")} className = {dtv_option_3? "controller_nav_3_selected_bb" : "controller_nav_3_bb"} id="favorite_hide">
+                            <img src={favorite}/>
+                        </button>
+
+                    </div>
+                    
+                    <div className={dtv_option_1?"show_option_1_bb":"none_option"}>
+
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key1")}>
+                                <p>1</p>
+                            </button>
+                            
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key2")}>
+                                <p>2</p>
+                            </button>
+
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key3")}>
+                                <p>3</p>
+                            </button>
+
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key4")}>
+                                <p>4</p>
+                            </button>
+                            
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key5")}>
+                                <p>5</p>
+                            </button>
+
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key6")}>
+                                <p>6</p>
+                            </button>
+                    
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key7")}>
+                                <p>7</p>
+                            </button>
+                            
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key8")}>
+                                <p>8</p>
+                            </button>
+
+                            <button className="transport_button" onTouchEnd={()=> dtvTransports("key9")}>
+                                <p style={{color:"black"}}>9</p>
+                            </button>
+                    
+                            <button className="transport_button" id="small_text_bb" onTouchEnd={()=> dtvTransports("exit_key")}>
+                                <p>Exit</p>
+                            </button>
+                            
+                            <button className="transport_button"  onTouchEnd={()=> dtvTransports("key0")}>
+                                <p>0</p>
+                            </button>
+
+                            <button className="transport_button" id="small_text_bb" onTouchEnd={()=> dtvTransports("enter")}>
+                                <p>Enter</p>
+                            </button>
+
+                        
+                    
+                    </div>
+
+                
+                    <div className={dtv_option_3?"show_option_3_bb":"none_option"}>
+                        <button className="transport_button" onTouchEnd={() => favChannel("690")}>
+                            <img src={chan690} alt="" />
+                        
+                        </button>
+
+
+                        <button className="transport_button" onTouchEnd={() => favChannel("2")}>
+                            <img src={chan2} alt="" />
+                        </button>
+
+                        <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("4")}>
+                            <img src={chan4} alt="" />
+                        </button>
+
+                        <button className="transport_button" onTouchEnd={() => favChannel("11")}>
+                            <img src={chan11} alt="" />
+                        </button>
+
+                    
+
+                        <button className="transport_button" onTouchEnd={() => favChannel("206")}>
+                            <img style={{height:"1.5rem"}} src={chan206} alt="" />
+                        </button>
+
+                        <button className="transport_button" onTouchEnd={() => favChannel("209")}>
+                            <img style={{height:"1.5rem"}} src={chan209} alt="" />
+                        </button>
+
+                        <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9552")}>
+                            <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9552</p>
+                        </button>
+                        
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9553")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9553</p>
+                        </button>
+
+                        <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9554")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9554</p>
+                        </button>
+
+                        <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9555")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9555</p>
+                        </button>
+
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9556")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9556</p>
+                        </button>
+
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9557")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9557</p>
+                        </button>
+
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9558")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9558</p>
+                        </button>
+
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9559")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9559</p>
+                        </button>
+
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9560")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9560</p>
+                        </button>
+
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9561")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9561</p>
+                        </button>
+
+                        <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9562")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9562</p>
+                        </button>
+
+                        <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9563")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9563</p>
+                        </button>
+                        
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9564")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9564</p>
+                        </button>
+
+                        <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9565")}>
+                        <img src={NFL} alt="" />
+                            <p style={{color:"black"}}>9565</p>
+                        </button>
+                    
+                        
+                    </div>
+
+
+                </div>
+
+                <div className="dtv_controller_movement_bb" >
+                
+
+                <div className="dtv_controlling_div" onTouchEnd={()=> dropdown("dropdown_5")}>
+                        <div className="dtv_controlling_btn">  <p> {controlling_dtv} </p> </div>
+
+                        <div className={tvBoxOption5? "tv_dropdown_list_controller":"hide_tv_dropdown_list" }>
+                            
+                            <button className="not_selected" id="first_button" onTouchEnd ={()=> controlling_DTV("DTV_1")}>    <p>DTV 1 Audio</p>  </button>
+                            <button className="not_selected"                   onTouchEnd ={()=> controlling_DTV("DTV_2")}>    <p>DTV 2</p>        </button>
+                            <button className="not_selected"                   onTouchEnd ={()=> controlling_DTV("DTV_3")}>    <p>DTV 3</p>        </button>
+                            <button id="last_btn" className="not_selected"     onTouchEnd ={()=> controlling_DTV("DTV_4")}>    <p>DTV 4</p>        </button>
+                            
+            
+                    </div>
+                </div>
+                
+
+
+            
+                
+
+                    <div className="controller_bb" >
+                        <div className="container_bb">
+                            <div className="circle-menu_bb">
+                                <div className="circle ok-inner_bb">
+                                    <button className="center_button_bb" onTouchEnd={() => controllerClick("center")}>
+                                    
+                                    </button>
+                                </div>
+                                
+                                <div className="circle ok-outer"></div>
+                                
+                                <div className="control-icon right_bb" >
+                                    <button className="center_button_bb" onTouchEnd={() => controllerClick("right")}>
+                                    <img src ={basketball} className="basketball_button" />
+                                    <img src={arrow} className="arrow_right"/>
+                                    </button> 
+                                </div>
+                                
+                                <div className="control-icon bottom_bb">
+                                    <button className="center_button_bb" onTouchEnd={() => controllerClick("bottom")}>
+                                        <img src ={basketball} className="basketball_button" />
+                                        <img src={arrow} className="arrow_bottom" id="white"/>
+                                    </button>
+                                </div>
+                                
+                                <div className="control-icon left_bb">
+                                    <button className="center_button_bb" onTouchEnd={() => controllerClick("left")}>
+                                    <img src ={basketball} className="basketball_button" />
+                                        <img src={arrow} className="arrow_left"/>
+                                    </button>
+                                </div>
+
+                                <div className="control-icon top_bb">
+                                    <button className="center_button_bb" onTouchEnd={() => controllerClick("top")}>
+                                        <img src={arrow} className="arrow_top"/>
+                                        <img src ={basketball} className="basketball_button"  />
+
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                
+                </div>
+
+                <div className="dtv_controller_controls_2_bb">
+
+                    <div className="show_option_1_bb">
+
+                        <button onTouchEnd={()=> dtvTransports("channel-")} className="transport_button" id="chan_down_bb">
+                                <img src={increment} alt="chan down" className="chan_icon"/>
+                        </button>
+
+                        <button className="transport_button" id="chan_title_bb">
+                            <h2> Chan </h2>
+                        </button>
+
+                        <button className="transport_button"  id="chan_up_bb" onTouchEnd={()=> dtvTransports("channel+")}>
+                            <img src={increment} alt="chan up" className="chan_icon" style={{transform:"rotate(180deg)"}} />
+                        </button>
+                    
+
+                        <button className="transport_button" id="info_bb" onTouchEnd={()=> dtvTransports("info")}>
+                            <p className="id"> Info </p>
+                        </button>
+
+                        <button className="transport_button" id="exit_bb" onTouchEnd={()=> dtvTransports("exit")}>
+                            <p> Exit </p>
+                        </button>
+
+                        <button className="transport_button" id="prev_bb" onTouchEnd={()=> dtvTransports("prev")}>
+                        <p> Prev</p>
+                        </button>
+
+                        <button className="transport_button" id="menu_bb" onTouchEnd={()=> dtvTransports("menu")}>
+                            <p> Menu </p>
+                        </button>
+
+                        <button className="transport_button"id="guide_bb" onTouchEnd={()=> dtvTransports("guide")}>
+                            <p> Guide </p>
+                        </button>
+
+
+                    
+
+
+                        
+
+
+                        
+
+                    </div>
+                
+                
+                </div>
+                
+            </div>
+
+            <div className="short_cut_menu">
+
+            <button className="cards_in_dtv" id={dtv_audio? "active_media_dtv" : "media_dtv" } onTouchEnd={()=>switchAudio("dtv")}>
+
+                <div className="dtv_audio_card_title">
+                    <p className="tile_name">DirecTV</p>
+                </div>
+
+                <div className="tile_image_div">
+                    <img src={controller} className="tile_image" alt="icon" />
+                </div>
+
+            </button>
+
+            <div className="volume_control">
+                                
+                                <button className="transport_button" id="vol_button" onTouchEnd={()=>switchAudio("volume_down")} >
+        
+                                    <img src={increment} alt="volume down" />
+        
+                                </button>
+
+                            
+                                
+                                <button className="transport_button" id="vol_button"  onTouchEnd={()=>switchAudio("mute")}> 
+                                {audio_mute? <img src = {mute} className="mute_icon"/> :  
+                                <div className="vol_state_container">
+                                    <p className="volume_level">{((volume_level/65535) * 100).toFixed(0)}</p>
+                                    <p className="volume_level_mute"> Mute </p>
+                                </div> }
+
+                                
+                                </button>
+                                
+                                <button className="transport_button" id="vol_button" onTouchEnd={()=>switchAudio("volume_up")}>
+                                    <img src={increment} alt="volume up" style={{transform:"rotate(180deg)"}} />
+                                </button>
+        
+            </div>
+
+            <button className="cards_in_dtv" id={music_audio? "active_audio_dtv" : "audio_dtv"} onTouchEnd={()=>switchAudio("music")} >
+    
+                <div className="dtv_audio_card_title">
+                    <p className="tile_name">Music</p>
+                </div>
+                
+                <div className="tile_image_div">
+                    <img src={audio} className="tile_image" alt="icon" />
+                </div>
+
+            </button>
+
+            
+
+            </div>
+
+
+
+
+
+
+
+
+            {modal && ( 
+                <div className="modal" onTouchEnd={toggleModal}>
+                <div onTouchEnd={toggleModal} className="overlay">
+                    <div className="modal-content">
+                    <p className="powerMenu">Power Menu</p>
+                    
+                    
+                    <div className="power_menus">
+                        <div className="power_menu_1">
+                                <p className="menutext"> Turn Off Room?</p>
+                                <div className="power_menu_btn">
+                                    <button onTouchEnd={() => toggleModal} className="no-modal">
+                                        <p> No </p> 
+                                    </button>
+
+                                    <button onTouchEnd={()=> (toggleModal(), modalTurnOff("wholeRoom") )} className="turn-off-modal">
+                                        <p> Yes </p>
+                                    </button>
+                                </div>
+                                
+                        </div>
+                        
+                        <div className="power_menu_2">
+                                <p className="menutext"> Turn Off All TVs?</p>
+                                    <div className="power_menu_btn">
+
+                                    <button onTouchEnd={() => toggleModal} className="no-modal">
+                                        <p> No </p> 
+                                    </button>
+
+                                    <button onTouchEnd={()=> (toggleModal(), modalTurnOff('allTvs'))} className="turn-off-modal">
+                                        <p> Yes </p>
+                                    </button>
+                                </div>
+                                
+                        </div>
+                        
+                        <div className="power_menu_3">
+                                <p className="menutext"> Turn Off Music? </p>
+
+                                <div className="power_menu_btn">
+                                    <button onTouchEnd={() => toggleModal} className="no-modal">
+                                        <p> No </p> 
+                                    </button>
+
+                                    <button onTouchEnd={()=> (toggleModal(), modalTurnOff('music'))} className="turn-off-modal">
+                                        <p> Yes </p>
+                                    </button>
+                                </div>
+                                
+                        </div>
+                    </div>
+
+
+
+
+                    </div>
+                </div>
+                </div>
+                )}
+
+        </div>
+
+
+
+        <div className="background_image_bb" >
+         <img className="bbcourtimg"src={BB}  />
+        </div>
+
+
+    </main>)
+
+
+
+
+const [currentTab, setCurrentTab] = useState(1)
+
+
+const coontrollerNav = (id:number) =>{
+
+    if (id === 1){
+        setCurrentTab(id)
+
+    } else if (id === 2){
+        setCurrentTab(id)
+
+    } else if (id === 3){
+        setCurrentTab(id)
+
+    } else if (id === 4){
+        setCurrentTab(id)
+
+    }
+
+}
+
+
+const mobile_section_one =(
+    <>
+        <div className="dtv_controller_movement">
+            <div className="controller">
+                <div className="container">
+                    <div className="circle-menu">
+                        
+                        <div className="circle ok-outer">
+                            <button className="btn_circle" style={{height:"5rem", width:"5rem"}} onTouchEnd={() => controllerClick("center")}>
+                            </button>
+                        </div>
+
+                        <div className="control-icon right" >
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("right")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(90deg)",height:"85%"}}/>
+                            </button> 
+                        </div>
+
+                        <div className="control-icon bottom">
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("bottom")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(180deg)",height:"85%"}}/>
+                            </button>
+                        </div>
+
+                        <div className="control-icon left">
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("left")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', transform:"rotate(270deg)",height:"85%"}}/>
+                            </button>
+                        </div>
+
+                        <div className="control-icon top">
+                            <button className="btn_circle" onTouchEnd={() => controllerClick("top")}>
+                                <img className="btn_image" src={arrow} style={{filter:'invert(0)', height:"85%"}}/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="channel_container">
+                    <button onTouchEnd={()=> dtvTransports("channel-")} className="btn_circle" id="chan_down">
+                            <img className="btn_image" src={increment} alt="chan down" />
+                    </button>
+
+                    <button className="btn_circle" id="chan_title"  >
+                        <h2> CH </h2>
+                    </button>
+
+                    <button className="btn_circle"  id="chan_up" onTouchEnd={()=> dtvTransports("channel+")}>
+                        <img className="btn_image" src={increment} alt="chan up"  style={{transform:"rotate(180deg)"}} />
+                    </button>
+            </div>
+            </div> 
+
+
+          
+
+            <div className="bottom_row_1_controller">
+                    <button className="btn_circle"id="guide" onTouchEnd={()=> dtvTransports("guide")}>
+                        <p> GUIDE </p>
+                    </button>
+
+                    <button className="btn_circle" id="menu" onTouchEnd={()=> dtvTransports("menu")}>
+                        <p> MENU </p>
+                    </button>
+
+                    <button className="btn_circle" id="list" onTouchEnd={()=> dtvTransports("list")}>
+                        <p> LIST </p>
+                    </button>
+
+                    
+
+            </div>
+            <div className="bottom_row_2_controller">
+                   
+
+                    <button className="btn_circle" id="exit" onTouchEnd={()=> dtvTransports("exit")}>
+                        <p> EXIT </p>
+                    </button>
+
+
+                    <button className="btn_circle" id="info" onTouchEnd={()=> dtvTransports("info")}>
+                        <p className="id"> INFO </p>
+                    </button>
+
+
+                    <button className="btn_circle" id="prev" onTouchEnd={()=> dtvTransports("prev")}>
+                    <p> PREV </p>
+                    </button>
+
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+    </>
+)
+
+const mobile_section_two =(
+    <>
+  <div className="show_option_2">
+            <button className="btn_circle" onTouchEnd={()=>dtvTransports("stop")}>
+                <img className="btn_image" src={stop} alt="stop btn" />
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=>dtvTransports("play")}>
+                <img className="btn_image" src={play} />
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=>dtvTransports("pause")}>
+                <img className="btn_image" src={pause} />
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=>dtvTransports("skip-")}>
+                <img className="btn_image" src={skip} style={{transform:"rotate(180deg)"}}/>
+            </button>
+
+            <button className="display_none" onTouchEnd={()=>dtvTransports("rewind")}>
+                <img className="btn_image" src={rewind} />
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=>dtvTransports("skip+")}>
+                <img className="btn_image" src={skip} />
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=>dtvTransports("back")}>
+                <img className="btn_image" src={returnArrow} />
+            </button>
+
+            <button className="btn_circle" id="transport_hide"onTouchEnd={()=>dtvTransports("DVR")}></button>
+
+            <button className="btn_circle" onTouchEnd={()=>dtvTransports("record")}>
+                <img className="btn_image" src={record} />
+            </button>
+
+
+            <div className="rgyb">
+                <button className="small_btn_circle" id="button_red"    onTouchEnd={() => dtvTransports("red")}>  
+                    <p style={{color:"black"}}>R</p>  
+                </button>
+
+                <button className="small_btn_circle" id="button_green"  onTouchEnd={() => dtvTransports("green")}> 
+                    <p style={{color:"black"}}>G</p>
+                </button>
+
+                <button className="small_btn_circle" id="button_yellow" onTouchEnd={() => dtvTransports("yellow")}> 
+                    <p style={{color:"black"}}>Y</p>
+                </button>
+
+                <button className="small_btn_circle" id="button_blue"   onTouchEnd={() => dtvTransports("blue")}> 
+                    <p style={{color:"black"}}>B</p>
+                </button>
+            </div>
+
+        </div>
+    </>
+)
+
+const mobile_section_three =(
+    <>
+        <div className="show_option_1">
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key1")}>
+            <p className="key_num">1</p>
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key2")}>
+            <p className="key_num">2</p>
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key3")}>
+            <p className="key_num">3</p>
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key4")}>
+            <p className="key_num">4</p>
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key5")}>
+            <p className="key_num">5</p>
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key6")}>
+            <p className="key_num">6</p>
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key7")}>
+            <p className="key_num">7</p>
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key8")}>
+            <p className="key_num">8</p>
+            </button>
+
+            <button className="btn_circle" onTouchEnd={()=> dtvTransports("key9")}>
+            <p className="key_num">9</p>
+            </button>
+
+            <button className="btn_circle" id="small_text" onTouchEnd={()=> dtvTransports("dash_key")}>
+            <p>DASH</p>
+            </button>
+
+            <button className="btn_circle"  onTouchEnd={()=> dtvTransports("key0")}>
+            <p className="key_num">0</p>
+            </button>
+
+            <button className="btn_circle" id="small_text" onTouchEnd={()=> dtvTransports("enter")}>
+            <p>ENTER</p>
+            </button>
+        
+        </div>
+
+    </>
+)
+
+const mobile_section_four =(
+    <>
+       
+    </>
+)
+
+
+let currentViewing 
+
+
+if(currentTab === 1 ){
+currentViewing = mobile_section_one
+} else  if(currentTab === 2 ){
+currentViewing = mobile_section_two
+} else  if(currentTab === 3 ){
+currentViewing = mobile_section_three
+} else  if(currentTab === 4 ){
+currentViewing = mobile_section_four
+}
+
+
+
+
+const dtvmobile = (
+    <>
+
+        <div className="mobile_controller_nav">
+                <button className={currentTab === 1? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(1)}> <img className="btn_image" src={controller}/></button>
+                <button className={currentTab === 3? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(3)}> <img className="btn_image" src={keypad}/></button>
+                <button className={currentTab === 4? "btn_circle_active" : "btn_circle"} onTouchEnd={() => coontrollerNav(4)}> <img className="btn_image" src={favorite}/></button>
+
+
+        </div>
+
+
+        <div className="currentViewing"> {currentViewing}</div>
+           
+    </>
+)
+
+
+const mobileController = (
+    
+    <main>
+
+
+            <div className="mobile_bb">
+
+                    <Link id="back_button_bb_court" className="back_button" to={"/roomsdashboard"}>
+                        <img src={back_button} />
+                    </Link>
+            
+                    <button id="power_button_bb_court" className="home_button" onTouchEnd ={()=> console.log("power off")}>
+                        <img onTouchEnd={toggleModal} src={power_button}   />      
+                    </button>
+                
+                
+                    <div className="mobile_selection"> 
+
+                        <div className="mobile_box_one" >
+                            <button className="btn_square" id={tvBoxOption1? "active_btn": ""} onTouchEnd={()=> dropdown("dropdown_1")}> 
+                                <p>TV 1</p>    
+                            </button>
+
+                         
+
+                            
+                        </div>
+
+                        <div className="mobile_box_two">
+                        <button className="btn_square" id={tvBoxOption2? "active_btn": ""} onTouchEnd={()=> dropdown("dropdown_2")}> 
+                                <p>TV 2</p>    
+                            </button>
+                            
+
+
+
+
+                        </div>
+
+                        <div className="mobile_box_three">
+                        <button className="btn_square" id={tvBoxOption3? "active_btn": ""} onTouchEnd={()=> dropdown("dropdown_3")}> 
+                                <p>TV 3</p>    
+                            </button>
+
+                            <div className = {tvBoxOption3? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_3_label} </p></div>
+
+                          
+                        </div>
+
+                        <div className="mobile_box_four">
+                        <button className="btn_square" id={tvBoxOption4? "active_btn": ""} onTouchEnd={()=> dropdown("dropdown_4")}> 
+                                <p>TV 4</p>      
+                            </button>
+
+                            <div className = {tvBoxOption4? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_4_label} </p></div>
+
+
+
+                       
+                        </div>
+
+
+                        <div className="mobile_box_five">
+                            <button className="btn_square" onTouchEnd ={()=>all_on() }> 
+                                <p className="mirror_all">  All On </p>      
+                            </button>
+
+                            <p className = "current_label"> </p>
+
+                        </div>
+
+                    </div>
+
+                    
+                    <div className={tvBoxOption1? "tv_dropdown_list":"hide_tv_dropdown_list" }>
+                                
+                                <button className={dtv_1_a? "selected":"not_selected"} id="first_button" onTouchEnd ={()=> tv_one_video_output("TV_1_Box_1")}>    <p>DTV 1 Audio</p>  </button>
+                                <button className={dtv_1_b? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_2")}>    <p>DTV 2</p>        </button>
+                                <button className={dtv_1_c? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_3")}>    <p>DTV 3</p>        </button>
+                                <button className={dtv_1_d? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_4")}>    <p>DTV 4</p>        </button>
+                                <button id="last_button"                                                  onTouchEnd={()=> dropdown("close_dropdown_1")}>    <p>Turn Off</p>  </button>
+                
+                        </div>
+
+                    <div className={tvBoxOption2? "tv_dropdown_list":"hide_tv_dropdown_list" }>
+                        <button className={dtv_2_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_two_video_output("TV_2_Box_1")}>    <p>DTV 1 Audio</p>  </button>
+                        <button className={dtv_2_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_2")}>    <p>DTV 2</p>        </button>
+                        <button className={dtv_2_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_3")}>    <p>DTV 3</p>        </button>
+                        <button className={dtv_2_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_4")}>    <p>DTV 4</p>        </button>
+                        <button                                                 id="last_button"   onTouchEnd={()=> dropdown("close_dropdown_2")}>    <p>Turn Off</p>  </button>
+
+                        </div>
+                    
+                    <div className={tvBoxOption3? "tv_dropdown_list":"hide_tv_dropdown_list" }>
+                        <button className={dtv_3_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_three_video_output("TV_3_Box_1")}>    <p>DTV 1 Audio</p>  </button>
+                        <button className={dtv_3_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_2")}>    <p>DTV 2</p>        </button>
+                        <button className={dtv_3_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_3")}>    <p>DTV 3</p>        </button>
+                        <button className={dtv_3_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_4")}>    <p>DTV 4</p>        </button>
+                        <button                                                id="last_button"    onTouchEnd={()=> dropdown("close_dropdown_3")}>    <p>Turn Off</p>  </button>
+                        </div>
+                    
+                    <div className={tvBoxOption4? "tv_dropdown_list":"hide_tv_dropdown_list" }>
+                        <button className={dtv_4_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_four_video_output("TV_4_Box_1")}>    <p>DTV 1 Audio</p>  </button>
+                        <button className={dtv_4_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_2")}>    <p>DTV 2</p>        </button>
+                        <button className={dtv_4_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_3")}>    <p>DTV 3</p>        </button>
+                        <button className={dtv_4_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_4")}>    <p>DTV 4</p>        </button>
+                        <button                                                id="last_button"    onTouchEnd={()=> dropdown("close_dropdown_4")}>    <p>Turn Off</p>  </button>
+
+                        </div>
+
+
+
+
+                    <div className = "controller_background">
+                
+                            <div id="display_none" className="dtv_controller_controls_bb">
+                                <div className="controller_nav_bb">
+
+                                    <button onTouchEnd={()=>changedtvOptions("dtv_1")} className = {dtv_option_1? "controller_nav_1_selected_bb" : "controller_nav_1_bb"}>
+                                        <img src={keypad}/>
+                                    </button>
+
+                                    
+
+                                    <button onTouchEnd={()=>changedtvOptions("dtv_3")} className = {dtv_option_3? "controller_nav_3_selected_bb" : "controller_nav_3_bb"} id="favorite_hide">
+                                        <img src={favorite}/>
+                                    </button>
+
+                                </div>
+                                
+                                <div className={dtv_option_1?"show_option_1_bb":"none_option"}>
+
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key1")}>
+                                            <p>1</p>
+                                        </button>
+                                        
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key2")}>
+                                            <p>2</p>
+                                        </button>
+
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key3")}>
+                                            <p>3</p>
+                                        </button>
+
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key4")}>
+                                            <p>4</p>
+                                        </button>
+                                        
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key5")}>
+                                            <p>5</p>
+                                        </button>
+
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key6")}>
+                                            <p>6</p>
+                                        </button>
+                                
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key7")}>
+                                            <p>7</p>
+                                        </button>
+                                        
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key8")}>
+                                            <p>8</p>
+                                        </button>
+
+                                        <button className="transport_button" onTouchEnd={()=> dtvTransports("key9")}>
+                                            <p style={{color:"black"}}>9</p>
+                                        </button>
+                                
+                                        <button className="transport_button" id="small_text_bb" onTouchEnd={()=> dtvTransports("exit_key")}>
+                                            <p>Exit</p>
+                                        </button>
+                                        
+                                        <button className="transport_button"  onTouchEnd={()=> dtvTransports("key0")}>
+                                            <p>0</p>
+                                        </button>
+
+                                        <button className="transport_button" id="small_text_bb" onTouchEnd={()=> dtvTransports("enter")}>
+                                            <p>Enter</p>
+                                        </button>
+
+                                    
+                                
+                                </div>
+
+                            
+                                <div className={dtv_option_3?"show_option_3_bb":"none_option"}>
+                                    <button className="transport_button" onTouchEnd={() => favChannel("690")}>
+                                        <img src={chan690} alt="" />
+                                    
+                                    </button>
+
+
+                                    <button className="transport_button" onTouchEnd={() => favChannel("2")}>
+                                        <img src={chan2} alt="" />
+                                    </button>
+
+                                    <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("4")}>
+                                        <img src={chan4} alt="" />
+                                    </button>
+
+                                    <button className="transport_button" onTouchEnd={() => favChannel("11")}>
+                                        <img src={chan11} alt="" />
+                                    </button>
+
+                                
+
+                                    <button className="transport_button" onTouchEnd={() => favChannel("206")}>
+                                        <img style={{height:"1.5rem"}} src={chan206} alt="" />
+                                    </button>
+
+                                    <button className="transport_button" onTouchEnd={() => favChannel("209")}>
+                                        <img style={{height:"1.5rem"}} src={chan209} alt="" />
+                                    </button>
+
+                                    <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9552")}>
+                                        <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9552</p>
+                                    </button>
+                                    
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9553")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9553</p>
+                                    </button>
+
+                                    <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9554")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9554</p>
+                                    </button>
+
+                                    <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9555")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9555</p>
+                                    </button>
+
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9556")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9556</p>
+                                    </button>
+
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9557")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9557</p>
+                                    </button>
+
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9558")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9558</p>
+                                    </button>
+
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9559")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9559</p>
+                                    </button>
+
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9560")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9560</p>
+                                    </button>
+
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9561")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9561</p>
+                                    </button>
+
+                                    <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9562")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9562</p>
+                                    </button>
+
+                                    <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9563")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9563</p>
+                                    </button>
+                                    
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9564")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9564</p>
+                                    </button>
+
+                                    <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9565")}>
+                                    <img src={NFL} alt="" />
+                                        <p style={{color:"black"}}>9565</p>
+                                    </button>
+                                
+                                    
+                                </div>
+
+
+                            </div>
+                            
+                            {dtvmobile}
+
+                            <div id="display_none"className="dtv_controller_controls_2_bb">
+
+                            <div className="show_option_1_bb">
+
+                                <button onTouchEnd={()=> dtvTransports("channel-")} className="transport_button" id="chan_down_bb">
+                                        <img src={increment} alt="chan down" className="chan_icon"/>
+                                </button>
+
+                                <button className="transport_button" id="chan_title_bb">
+                                    <h2> Chan </h2>
+                                </button>
+
+                                <button className="transport_button"  id="chan_up_bb" onTouchEnd={()=> dtvTransports("channel+")}>
+                                    <img src={increment} alt="chan up" className="chan_icon" style={{transform:"rotate(180deg)"}} />
+                                </button>
+                            
+
+                                <button className="transport_button" id="info_bb" onTouchEnd={()=> dtvTransports("info")}>
+                                    <p className="id"> Info </p>
+                                </button>
+
+                                <button className="transport_button" id="exit_bb" onTouchEnd={()=> dtvTransports("exit")}>
+                                    <p> Exit </p>
+                                </button>
+
+                                <button className="transport_button" id="prev_bb" onTouchEnd={()=> dtvTransports("prev")}>
+                                <p> Prev</p>
+                                </button>
+
+                                <button className="transport_button" id="menu_bb" onTouchEnd={()=> dtvTransports("menu")}>
+                                    <p> Menu </p>
+                                </button>
+
+                                <button className="transport_button"id="guide_bb" onTouchEnd={()=> dtvTransports("guide")}>
+                                    <p> Guide </p>
+                                </button>
+
+
+                            
+
+
+                                
+
+
+                                
+
+                            </div>
+
+                    </div>
+                
+                     </div>
+
+
+<div className="short_cut_menu">
+
+    <button className="cards_in_dtv" id={dtv_audio? "active_media_dtv" : "media_dtv" } onTouchEnd={()=>switchAudio("dtv")}>
+
+        <div className="dtv_audio_card_title">
+            <p className="tile_name">DirecTV</p>
+        </div>
+
+        <div className="tile_image_div">
+            <img src={controller} className="tile_image" alt="icon" />
+        </div>
+
+    </button>
+
+    <div className="volume_control">
+                        
+                        <button className="transport_button" id="vol_button" onTouchEnd={()=>switchAudio("volume_down")} >
+
+                            <img src={increment} alt="volume down" />
+
+                        </button>
+
+                    
+                        
+                        <button className="transport_button" id="vol_button"  onTouchEnd={()=>switchAudio("mute")}> 
+                        {audio_mute? <img src = {mute} className="mute_icon"/> :  
+                        <div className="vol_state_container">
+                            <p className="volume_level">{((volume_level/65535) * 100).toFixed(0)}</p>
+                            <p className="volume_level_mute"> Mute </p>
+                        </div> }
+
+                        
+                        </button>
+                        
+                        <button className="transport_button" id="vol_button" onTouchEnd={()=>switchAudio("volume_up")}>
+                            <img src={increment} alt="volume up" style={{transform:"rotate(180deg)"}} />
+                        </button>
+
+    </div>
+
+    <button className="cards_in_dtv" id={music_audio? "active_audio_dtv" : "audio_dtv"} onTouchEnd={()=>switchAudio("music")} >
+
+        <div className="dtv_audio_card_title">
+            <p className="tile_name">Music</p>
+        </div>
+        
+        <div className="tile_image_div">
+            <img src={audio} className="tile_image" alt="icon" />
+        </div>
+
+    </button>
+
+</div>
+                
+
+                
+
+
+
+
+            </div>
+
+    
+           
+
+    </main>
+    
+)
     return(
 
-        <main>
-            <div  className="page_layout"  id="basketball">
-
-                
-
-                <Link className="back_button" to={"/"}>
-                    <img src={back_button} />
-                </Link>
+        <>
         
-                <button  className="home_button" style={{borderRadius:"30px", width:"5rem", gridColumn:"11/12"}} onTouchEnd ={()=> console.log("power off")}>
-                        
 
-                            <img onTouchEnd={toggleModal} src={power_button}   />      
-                </button>  
-                
-                <div className = "input_selection" >
-                    <div className="dropdown_tv_selection">
-                    <p className="dropdown_title"> TV Selection </p>
-                        <div className="current_tv_selection"> 
 
-                            <div className="box_one" >
-                                <button className={tv1? "tv_active" : "tv_off"} onTouchEnd={()=> dropdown("dropdown_1")}> 
-                                    <p>TV 1</p>    
-                                </button>
-
-                                <div className = {tvBoxOption1? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_1_label} </p></div>
-                                <div className={tvBoxOption1? "tv_dropdown_list":"hide_tv_dropdown_list" }>
-                                
-                                    <button className={dtv_1_a? "selected":"not_selected"} id="first_button" onTouchEnd ={()=> tv_one_video_output("TV_1_Box_1")}>    <p>DTV 1 Audio</p>  </button>
-                                    <button className={dtv_1_b? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_2")}>    <p>DTV 2</p>        </button>
-                                    <button className={dtv_1_c? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_3")}>    <p>DTV 3</p>        </button>
-                                    <button className={dtv_1_d? "selected":"not_selected"}                   onTouchEnd ={()=> tv_one_video_output("TV_1_Box_4")}>    <p>DTV 4</p>        </button>
-                                    <button id="last_button"                                                  onTouchEnd={()=> dropdown("close_dropdown_1")}>    <p>Turn Off</p>  </button>
-                    
-                                </div>
-
-                                
-                            </div>
-
-                            <div className="box_two">
-                                <button className={tv2? "tv_active" : "tv_off"} onTouchEnd={()=> dropdown("dropdown_2")}> 
-                                    <p>TV 2</p>    
-                                </button>
-                                <div className = {tvBoxOption2? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_2_label} </p></div>
-                                
-
-                                <div className={tvBoxOption2? "tv_dropdown_list":"hide_tv_dropdown_list" }>
-                                    <button className={dtv_2_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_two_video_output("TV_2_Box_1")}>    <p>DTV 1 Audio</p>  </button>
-                                    <button className={dtv_2_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_2")}>    <p>DTV 2</p>        </button>
-                                    <button className={dtv_2_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_3")}>    <p>DTV 3</p>        </button>
-                                    <button className={dtv_2_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_two_video_output("TV_2_Box_4")}>    <p>DTV 4</p>        </button>
-                                    <button                                                 id="last_button"   onTouchEnd={()=> dropdown("close_dropdown_2")}>    <p>Turn Off</p>  </button>
-
-                                </div>
-                            </div>
-
-                            <div className="box_three">
-                                <button className={tv3? "tv_active" : "tv_off"} onTouchEnd={()=> dropdown("dropdown_3")}> 
-                                    <p>TV 3</p>    
-                                </button>
-
-                                <div className = {tvBoxOption3? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_3_label} </p></div>
-
-
-                                <div className={tvBoxOption3? "tv_dropdown_list":"hide_tv_dropdown_list" }>
-                                    <button className={dtv_3_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_three_video_output("TV_3_Box_1")}>    <p>DTV 1 Audio</p>  </button>
-                                    <button className={dtv_3_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_2")}>    <p>DTV 2</p>        </button>
-                                    <button className={dtv_3_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_3")}>    <p>DTV 3</p>        </button>
-                                    <button className={dtv_3_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_three_video_output("TV_3_Box_4")}>    <p>DTV 4</p>        </button>
-                                    <button                                                id="last_button"    onTouchEnd={()=> dropdown("close_dropdown_3")}>    <p>Turn Off</p>  </button>
-                                </div>
-                            </div>
-
-                            <div className="box_four">
-                                <button className={tv4? "tv_active" : "tv_off"} onTouchEnd={()=> dropdown("dropdown_4")}> 
-                                    <p>TV 4</p>      
-                                </button>
-
-                                <div className = {tvBoxOption4? "hide_current_label": "current_label" }> <p style={{color:"black", zIndex:"1"}}>{tv_4_label} </p></div>
-
-                                <div className={tvBoxOption4? "tv_dropdown_list":"hide_tv_dropdown_list" }>
-                                    <button className={dtv_4_a? "selected":"not_selected"} id="first_button"  onTouchEnd ={()=> tv_four_video_output("TV_4_Box_1")}>    <p>DTV 1 Audio</p>  </button>
-                                    <button className={dtv_4_b? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_2")}>    <p>DTV 2</p>        </button>
-                                    <button className={dtv_4_c? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_3")}>    <p>DTV 3</p>        </button>
-                                    <button className={dtv_4_d? "selected":"not_selected"}                    onTouchEnd ={()=> tv_four_video_output("TV_4_Box_4")}>    <p>DTV 4</p>        </button>
-                                    <button                                                id="last_button"    onTouchEnd={()=> dropdown("close_dropdown_4")}>    <p>Turn Off</p>  </button>
-
-                                </div>
-                            </div>
-
-                            <div className="box_five">
-                                <button  className="tv_off" onTouchEnd ={()=>all_on() }> 
-                                    <p className="mirror_all">  All On </p>      
-                                </button>
-
-                                <p className = "current_label"> </p>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className = "controller_background">
-                    
-                    <div className="dtv_controller_controls_bb">
-                        <div className="controller_nav_bb">
-
-                            <button onTouchEnd={()=>changedtvOptions("dtv_1")} className = {dtv_option_1? "controller_nav_1_selected_bb" : "controller_nav_1_bb"}>
-                                <img src={keypad}/>
-                            </button>
-
-                            
-
-                            <button onTouchEnd={()=>changedtvOptions("dtv_3")} className = {dtv_option_3? "controller_nav_3_selected_bb" : "controller_nav_3_bb"} id="favorite_hide">
-                                <img src={favorite}/>
-                            </button>
-
-                        </div>
-                        
-                        <div className={dtv_option_1?"show_option_1_bb":"none_option"}>
-
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key1")}>
-                                    <p>1</p>
-                                </button>
-                                
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key2")}>
-                                    <p>2</p>
-                                </button>
-
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key3")}>
-                                    <p>3</p>
-                                </button>
-
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key4")}>
-                                    <p>4</p>
-                                </button>
-                                
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key5")}>
-                                    <p>5</p>
-                                </button>
-
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key6")}>
-                                    <p>6</p>
-                                </button>
-                        
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key7")}>
-                                    <p>7</p>
-                                </button>
-                                
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key8")}>
-                                    <p>8</p>
-                                </button>
-
-                                <button className="transport_button" onTouchEnd={()=> dtvTransports("key9")}>
-                                    <p style={{color:"black"}}>9</p>
-                                </button>
-                        
-                                <button className="transport_button" id="small_text_bb" onTouchEnd={()=> dtvTransports("exit_key")}>
-                                    <p>Exit</p>
-                                </button>
-                                
-                                <button className="transport_button"  onTouchEnd={()=> dtvTransports("key0")}>
-                                    <p>0</p>
-                                </button>
-
-                                <button className="transport_button" id="small_text_bb" onTouchEnd={()=> dtvTransports("enter")}>
-                                    <p>Enter</p>
-                                </button>
-
-                            
-                        
-                        </div>
-
-                    
-                        <div className={dtv_option_3?"show_option_3_bb":"none_option"}>
-                            <button className="transport_button" onTouchEnd={() => favChannel("690")}>
-                                <img src={chan690} alt="" />
-                            
-                            </button>
-
-
-                            <button className="transport_button" onTouchEnd={() => favChannel("2")}>
-                                <img src={chan2} alt="" />
-                            </button>
-
-                            <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("4")}>
-                                <img src={chan4} alt="" />
-                            </button>
-
-                            <button className="transport_button" onTouchEnd={() => favChannel("11")}>
-                                <img src={chan11} alt="" />
-                            </button>
-
-                        
-
-                            <button className="transport_button" onTouchEnd={() => favChannel("206")}>
-                                <img style={{height:"1.5rem"}} src={chan206} alt="" />
-                            </button>
-
-                            <button className="transport_button" onTouchEnd={() => favChannel("209")}>
-                                <img style={{height:"1.5rem"}} src={chan209} alt="" />
-                            </button>
-
-                            <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9552")}>
-                                <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9552</p>
-                            </button>
-                            
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9553")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9553</p>
-                            </button>
-
-                            <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9554")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9554</p>
-                            </button>
-
-                            <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9555")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9555</p>
-                            </button>
-
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9556")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9556</p>
-                            </button>
-
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9557")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9557</p>
-                            </button>
-
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9558")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9558</p>
-                            </button>
-
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9559")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9559</p>
-                            </button>
-
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9560")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9560</p>
-                            </button>
-
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9561")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9561</p>
-                            </button>
-
-                            <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9562")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9562</p>
-                            </button>
-
-                            <button className="transport_button" id ="NFL_chan" onTouchEnd={() => favChannel("9563")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9563</p>
-                            </button>
-                            
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9564")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9564</p>
-                            </button>
-
-                            <button className="transport_button"  id ="NFL_chan"onTouchEnd={() => favChannel("9565")}>
-                            <img src={NFL} alt="" />
-                                <p style={{color:"black"}}>9565</p>
-                            </button>
-                        
-                            
-                        </div>
-
-
-                    </div>
-
-                    <div className="dtv_controller_movement_bb" >
-                    
-
-                    <div className="dtv_controlling_div" onTouchEnd={()=> dropdown("dropdown_5")}>
-                            <div className="dtv_controlling_btn">  <p> {controlling_dtv} </p> </div>
-
-                            <div className={tvBoxOption5? "tv_dropdown_list_controller":"hide_tv_dropdown_list" }>
-                                
-                                <button className="not_selected" id="first_button" onTouchEnd ={()=> controlling_DTV("DTV_1")}>    <p>DTV 1 Audio</p>  </button>
-                                <button className="not_selected"                   onTouchEnd ={()=> controlling_DTV("DTV_2")}>    <p>DTV 2</p>        </button>
-                                <button className="not_selected"                   onTouchEnd ={()=> controlling_DTV("DTV_3")}>    <p>DTV 3</p>        </button>
-                                <button id="last_btn" className="not_selected"     onTouchEnd ={()=> controlling_DTV("DTV_4")}>    <p>DTV 4</p>        </button>
-                                
-                
-                        </div>
-                    </div>
-                    
-
-
-                
-                    
-
-                        <div className="controller_bb" >
-                            <div className="container_bb">
-                                <div className="circle-menu_bb">
-                                    <div className="circle ok-inner_bb">
-                                        <button className="center_button_bb" onTouchEnd={() => controllerClick("center")}>
-                                        
-                                        </button>
-                                    </div>
-                                    
-                                    <div className="circle ok-outer"></div>
-                                    
-                                    <div className="control-icon right_bb" >
-                                        <button className="center_button_bb" onTouchEnd={() => controllerClick("right")}>
-                                        <img src ={basketball} className="basketball_button" />
-                                        <img src={arrow} className="arrow_right"/>
-                                        </button> 
-                                    </div>
-                                    
-                                    <div className="control-icon bottom_bb">
-                                        <button className="center_button_bb" onTouchEnd={() => controllerClick("bottom")}>
-                                            <img src ={basketball} className="basketball_button" />
-                                            <img src={arrow} className="arrow_bottom" id="white"/>
-                                        </button>
-                                    </div>
-                                    
-                                    <div className="control-icon left_bb">
-                                        <button className="center_button_bb" onTouchEnd={() => controllerClick("left")}>
-                                        <img src ={basketball} className="basketball_button" />
-                                            <img src={arrow} className="arrow_left"/>
-                                        </button>
-                                    </div>
-
-                                    <div className="control-icon top_bb">
-                                        <button className="center_button_bb" onTouchEnd={() => controllerClick("top")}>
-                                            <img src={arrow} className="arrow_top"/>
-                                            <img src ={basketball} className="basketball_button"  />
-
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                    
-                    </div>
-
-                    <div className="dtv_controller_controls_2_bb">
-
-                        <div className="show_option_1_bb">
-
-                            <button onTouchEnd={()=> dtvTransports("channel-")} className="transport_button" id="chan_down_bb">
-                                    <img src={increment} alt="chan down" className="chan_icon"/>
-                            </button>
-
-                            <button className="transport_button" id="chan_title_bb">
-                                <h2> Chan </h2>
-                            </button>
-
-                            <button className="transport_button"  id="chan_up_bb" onTouchEnd={()=> dtvTransports("channel+")}>
-                                <img src={increment} alt="chan up" className="chan_icon" style={{transform:"rotate(180deg)"}} />
-                            </button>
-                        
-
-                            <button className="transport_button" id="info_bb" onTouchEnd={()=> dtvTransports("info")}>
-                                <p className="id"> Info </p>
-                            </button>
-
-                            <button className="transport_button" id="exit_bb" onTouchEnd={()=> dtvTransports("exit")}>
-                                <p> Exit </p>
-                            </button>
-
-                            <button className="transport_button" id="prev_bb" onTouchEnd={()=> dtvTransports("prev")}>
-                            <p> Prev</p>
-                            </button>
-
-                            <button className="transport_button" id="menu_bb" onTouchEnd={()=> dtvTransports("menu")}>
-                                <p> Menu </p>
-                            </button>
-
-                            <button className="transport_button"id="guide_bb" onTouchEnd={()=> dtvTransports("guide")}>
-                                <p> Guide </p>
-                            </button>
-
-
-                        
-
-
-                            
-
-
-                            
-
-                        </div>
-                    
-                    
-                    </div>
-                    
-                </div>
-
-                <div className="short_cut_menu">
-
-                <button className="cards_in_dtv" id={dtv_audio? "active_media_dtv" : "media_dtv" } onTouchEnd={()=>switchAudio("dtv")}>
-
-                    <div className="dtv_audio_card_title">
-                        <p className="tile_name">DirecTV</p>
-                    </div>
-
-                    <div className="tile_image_div">
-                        <img src={controller} className="tile_image" alt="icon" />
-                    </div>
-
-                </button>
-
-                <div className="volume_control">
-                                    
-                                    <button className="transport_button" id="vol_button" onTouchEnd={()=>switchAudio("volume_down")} >
-            
-                                        <img src={increment} alt="volume down" />
-            
-                                    </button>
-
-                                
-                                    
-                                    <button className="transport_button" id="vol_button"  onTouchEnd={()=>switchAudio("mute")}> 
-                                    {audio_mute? <img src = {mute} className="mute_icon"/> :  
-                                    <div className="vol_state_container">
-                                        <p className="volume_level">{((volume_level/65535) * 100).toFixed(0)}</p>
-                                        <p className="volume_level_mute"> Mute </p>
-                                    </div> }
-
-                                    
-                                    </button>
-                                    
-                                    <button className="transport_button" id="vol_button" onTouchEnd={()=>switchAudio("volume_up")}>
-                                        <img src={increment} alt="volume up" style={{transform:"rotate(180deg)"}} />
-                                    </button>
-            
-                </div>
-
-                <button className="cards_in_dtv" id={music_audio? "active_audio_dtv" : "audio_dtv"} onTouchEnd={()=>switchAudio("music")} >
-        
-                    <div className="dtv_audio_card_title">
-                        <p className="tile_name">Music</p>
-                    </div>
-                    
-                    <div className="tile_image_div">
-                        <img src={audio} className="tile_image" alt="icon" />
-                    </div>
-
-                </button>
-
-                
-
-                </div>
-
-
-
-
-
-
-
-
-                {modal && ( 
-                    <div className="modal" onTouchEnd={toggleModal}>
-                    <div onTouchEnd={toggleModal} className="overlay">
-                        <div className="modal-content">
-                        <p className="powerMenu">Power Menu</p>
-                        
-                        
-                        <div className="power_menus">
-                            <div className="power_menu_1">
-                                    <p className="menutext"> Turn Off Room?</p>
-                                    <div className="power_menu_btn">
-                                        <button onTouchEnd={() => toggleModal} className="no-modal">
-                                            <p> No </p> 
-                                        </button>
-
-                                        <button onTouchEnd={()=> (toggleModal(), modalTurnOff("wholeRoom") )} className="turn-off-modal">
-                                            <p> Yes </p>
-                                        </button>
-                                    </div>
-                                    
-                            </div>
-                            
-                            <div className="power_menu_2">
-                                    <p className="menutext"> Turn Off All TVs?</p>
-                                        <div className="power_menu_btn">
-
-                                        <button onTouchEnd={() => toggleModal} className="no-modal">
-                                            <p> No </p> 
-                                        </button>
-
-                                        <button onTouchEnd={()=> (toggleModal(), modalTurnOff('allTvs'))} className="turn-off-modal">
-                                            <p> Yes </p>
-                                        </button>
-                                    </div>
-                                    
-                            </div>
-                            
-                            <div className="power_menu_3">
-                                    <p className="menutext"> Turn Off Music? </p>
-
-                                    <div className="power_menu_btn">
-                                        <button onTouchEnd={() => toggleModal} className="no-modal">
-                                            <p> No </p> 
-                                        </button>
-
-                                        <button onTouchEnd={()=> (toggleModal(), modalTurnOff('music'))} className="turn-off-modal">
-                                            <p> Yes </p>
-                                        </button>
-                                    </div>
-                                    
-                            </div>
-                        </div>
-
-
-
-
-                        </div>
-                    </div>
-                    </div>
-                    )}
-
-            </div>
-
-
-
-            <div className="background_image_bb" >
-             <img className="bbcourtimg"src={BB}  />
-            </div>
-
-        </main>
+            {screenSize.width <= 500? mobileController :tst1080bbCourt }
+        </>
     )
 }
 

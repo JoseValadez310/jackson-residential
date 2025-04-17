@@ -920,7 +920,7 @@ const zone_name_23    = "Upper Pool Deck";
           </div>
           </div>
             
-          <div id={zone_active_8 > 0 ? "active_btn" : "zone-8"} className='zone_container'>
+          <div id={zone_active_8 > 0 ? "display_none" : "display_none"} className='zone_container'>
           <div className='zone_title'>
           <p>{zone_name_8}</p>
           </div>

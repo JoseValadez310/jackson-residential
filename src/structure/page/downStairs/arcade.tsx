@@ -102,8 +102,8 @@ const FamilyRoom = () =>{
     const sub_title_3 = "DTV Arcade 1"
     const sub_title_4 = "DTV Arcade 2"
     const sub_title_5 = "DTV Steve"
-    const sub_title_6 = "ATV House 1"
-    const sub_title_7 = "ATV House 2"
+    const sub_title_6 = "ATV Ellen"
+    const sub_title_7 = "ATV House"
     const sub_title_8 = "ATV Steve"
 
     const media_1_img = bluRay

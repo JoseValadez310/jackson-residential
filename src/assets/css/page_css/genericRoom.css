@@ -42,7 +42,7 @@
     animation: room_selection 1000ms;
     color: rgb(247, 247, 247);
     text-shadow: 1px 1px 1px rgb(202, 201, 201);
-    z-index: 200;
+    z-index: 20;
 }
 
 .title_info_nav{
@@ -1685,7 +1685,7 @@
                     grid-column: 1/3;
                     width: 100%;
                     height: 2rem;
-                    z-index: 100;
+                    z-index: 150;
     
                 }
                 .room_back_corner a{

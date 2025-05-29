@@ -3009,14 +3009,24 @@ const LightDashboard = () => {
           
 
 
-
+        {screenSize.height > 1200?   
+        
+        <div className="nav_container" style={{gridColumn:"1/13", width:"100%"}}>
+            <div className="nav">
+                <button onTouchEnd={() => (currentFloor("up"))}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> 2nd Floor</p>     </button>
+                <button onTouchEnd={() => (currentFloor("main"))}  className={main? "btn_selected" : "btn_not_selected"}>            <p> 1st Floor </p>         </button>
+                <button onTouchEnd={() => (currentFloor("out"))}  className={outDoors? "btn_selected" : "btn_not_selected"}>         <p> Out Door </p>         </button>
+            </div>
+        </div>  
+        :   
         <div className="nav_container">
             <div className="nav">
                 <button onTouchEnd={() => (currentFloor("up"))}    className={upStairs?   "btn_selected" : "btn_not_selected"}>      <p> 2nd Floor</p>     </button>
                 <button onTouchEnd={() => (currentFloor("main"))}  className={main? "btn_selected" : "btn_not_selected"}>            <p> 1st Floor </p>         </button>
                 <button onTouchEnd={() => (currentFloor("out"))}  className={outDoors? "btn_selected" : "btn_not_selected"}>         <p> Out Door </p>         </button>
             </div>
-        </div>
+        </div> } 
+      
 
 
       
@@ -3028,13 +3038,24 @@ const LightDashboard = () => {
                 
                 
 
+                
+                {screenSize.height > 1200? 
+                <div className="landscape_warning" style={{zIndex:"10", display:"flex", gridColumn:"2/12", gridRow:"3/6", backgroundColor:"red", borderRadius:"10px", boxSizing:"border-box",padding:"2rem"}}>
+                  <h1> Please rotate your device back to landscape mode. </h1>
+                  <img style={{rotate:"90deg"}} src={portraitMode}  />
+                </div> 
+                
+                : 
 
-                {screenSize.width > 549 ? lightMap : lightPanel }
+                (screenSize.width > 875 ? lightMap : screenSize.width > screenSize.height?  
+                <div className="landscape_warning" style={{zIndex:"10", display:"flex", gridColumn:"2/12", gridRow:"3/6", backgroundColor:"red", borderRadius:"10px", boxSizing:"border-box",padding:"2rem"}}>
+                  <h1> Please rotate your device back to portrait mode. </h1>
+                  <img style={{rotate:"90deg"}} src={portraitMode}  />
+                </div> : lightPanel ) }
+
+                
         
-                <div className="landscape_warning">
-                <h1> Please rotate your device back to portrait mode. </h1>
-                <img src={portraitMode}  />
-        </div>
+               
 
         </div>
 

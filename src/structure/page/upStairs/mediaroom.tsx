@@ -111,11 +111,11 @@ const [sourceSelectionThree, setSourceSelectionThree] = useState(false) // Panas
 
     const sub_title_1 = "BluRay"
     const sub_title_2 = "Kaleidescape"
-    const sub_title_3 = "DTV House 1"
-    const sub_title_4 = "DTV House 2"
+    const sub_title_3 = "DTV Ellen"
+    const sub_title_4 = "DTV House"
     const sub_title_5 = "DTV Steve"
-    const sub_title_6 = "ATV House 1"
-    const sub_title_7 = "ATV House 2"
+    const sub_title_6 = "ATV Ellen"
+    const sub_title_7 = "ATV House"
     const sub_title_8 = "ATV Steve"
 
     // Special Local sources

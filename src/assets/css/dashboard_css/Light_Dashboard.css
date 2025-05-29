@@ -369,7 +369,7 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
         border-radius: 100%;
         
         position: relative;
-        bottom: 15px;
+        bottom: 25px;
         right: 14px;
       
     }
@@ -379,8 +379,8 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
     height: 12rem;
     width: 14rem;
     position: absolute;
-    left: 615px;
-    top: 450px;
+    left: 525px;
+    top: 385px;
     border-radius: 10px;
     border: none;
     background-color: transparent;

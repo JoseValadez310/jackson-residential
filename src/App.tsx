@@ -48,9 +48,8 @@ import PoolPatio from "./structure/page/outDoors/poolpatio"
 
 // Tools
 import ScreenSize from './structure/tools/ScreenSize';
-       
 import imageBackground from "../src/assets/images/backgrounds/the-cleveland-museum-of-art-xylbmpHmZhM-unsplash.jpg"
-        
+import Construction from './structure/tools/Construction';
      
 
    
@@ -66,9 +65,16 @@ function App() {
 
   const router = createHashRouter ([
     {
+      path: '/0',
+      element: <Construction />
+    },
+
+
+    {
       path: '/',
       element: <Home />
     },
+  
   
     // ------------------------------------ Dashboards
     {
@@ -204,7 +210,7 @@ function App() {
   
   const webXPanelConfig = useMemo(() => ({
     ipId: '31',
-    //host: '192.168.14.90',
+    host: '192.168.14.90',
     roomId: '',
     authToken: ''
   }), []); // Dependencies array is empty, so this object is created only once

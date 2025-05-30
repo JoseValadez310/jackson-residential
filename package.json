@@ -10,7 +10,7 @@
     "build:dev": "tsc && vite build --mode development",
     "build:prod": "tsc && vite build --mode production",
     "archive": "ch5-cli archive -p residential -d dist -o archive",
-    "deploy:mobile": "ch5-cli deploy -p -H 0.0.0.0 -t mobile archive/residential.ch5z",
+    "deploy": "ch5-cli deploy -p -H 192.169.1.200 -t mobile archive/JacksonProject.ch5z",
     "deploy:xpanel": "ch5-cli deploy -p -H 0.0.0.0 -t web archive/residential.ch5z",
     "deploy:panel": "ch5-cli deploy -p -H 0.0.0.0 -t touchscreen archive/residential.ch5z --slow-mode",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

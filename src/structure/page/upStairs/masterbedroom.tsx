@@ -13,8 +13,8 @@ import BluRay from "../../../components/controllers/BluRay"
 // Music Page import 
 
 //CSS for Controllers
-
 import "../../../assets/css/page_css/genericRoom.css"
+import "../../../assets/css/componets_css/sleepTimer.css"
 
 
 
@@ -30,21 +30,24 @@ import kscape       from "../../../assets/images/logos/Kaleidescape_(logo).svg"
 import bluRay       from '../../../assets/images/logos/blu-ray-disc.svg'
 
 // General Icons
-import TV          from "../../../assets/images/icons/icons8-tv.svg"
-import lights      from "../../../assets/images/icons/noun-light-bulb-2216273.svg"
-import music       from "../../../assets/images/icons/icons8-music.svg"
-import home_button from "../../../assets/images/icons/icons8-exterior.svg"
-import menu_button from "../../../assets/images/icons/icons8-arrow.svg"
-import mute        from "../../../assets/images/icons/icons8-no-audio.svg"
-import power       from "../../../assets/images/icons/icons8-power.svg"
-import arrow       from "../../../assets/images/icons/icons8-triangle-arrow.svg"
+import TV           from "../../../assets/images/icons/icons8-tv.svg"
+import lights       from "../../../assets/images/icons/noun-light-bulb-2216273.svg"
+import music        from "../../../assets/images/icons/icons8-music.svg"
+import home_button  from "../../../assets/images/icons/icons8-exterior.svg"
+import menu_button  from "../../../assets/images/icons/icons8-arrow.svg"
+import mute         from "../../../assets/images/icons/icons8-no-audio.svg"
+import power        from "../../../assets/images/icons/icons8-power.svg"
+import arrow        from "../../../assets/images/icons/icons8-triangle-arrow.svg"
 import portraitMode from "../../../assets/images/icons/icons8-iphone-16-pro.svg"
+import closeMeun    from "../../../assets/images/icons/icons8-x.svg" 
 
 
 // Light SVGs
 import lightOn from "../../../assets/images/icons/icons8-light-on.svg"
 import lightOff from "../../../assets/images/icons/icons8-light-off.svg"
 import Kaleidescape from "../../../components/controllers/Kaleidescape"
+import sleeptimer from "../../../assets/images/icons/icons8-timer.svg"
+
 
 const FamilyRoom = () =>{
 /*
@@ -178,8 +181,11 @@ const FamilyRoom = () =>{
 
 
 
-// console.log 
+/*
+--------------------------------------------------------------------------------------------------------------------------------------- Sleep timer
+*/
 
+const [sleepTimer, setSleepTimer] = useState(false)
 
 
 /*
@@ -885,9 +891,10 @@ if(media1){
 
             
                 <div className="nav">
-                <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}    className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
-                        <Link to={"/AudioDashboard"}  state={{lastLoc:"masterbedroom",roomId:"masterBed", activity: activeSource}}                 className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}   /> </Link>
+                        <button onTouchEnd={() => (roomApp("TV"), setTrigger1(!trigger1))}    className={tvOptions?   "btn_selected" : "btn_not_selected"}   >  <img src={TV}     /> </button>
+                        <Link to={"/AudioDashboard"}  state={{lastLoc:"masterbedroom",roomId:"masterBed", activity: activeSource}}                 className={musicOption? "btn_selected" : "btn_not_selected"}   >  <img src={music}    /> </Link>
                         <button onTouchEnd={() => roomApp("Lights")} className={lightsOption? "btn_selected" : "display_none"}   >  <img src={lights}  /> </button>
+                        <button onTouchEnd={() => setSleepTimer(!sleepTimer)} className={sleepTimer? "btn_selected" : "btn_not_selected"}> <img style={{height:"90%"}} src={sleeptimer} alt="" /></button>
                 </div>
                 
               
@@ -975,282 +982,294 @@ if(media1){
 
 
             <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
-                    <div className={active_media? "media_off":"room_sources_container"}>
-                            
-                            <div className="source_card" id= {activeSource === 1 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media1')}>
-                                <div className="img_container">
-                                    <img className="media_1_img" src={media_1_img}/>
-                                </div>
-                            
-                                <p>{sub_title_1}</p>
-                            </div>
-
-                            <div className="source_card" id= { activeSource === 2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media2')}>
-                                <div className="img_container">
-                                    <img className="media_2_img" src={media_2_img}/>
-                                </div>
-
-                                <p>{sub_title_2}</p>
-                            </div>
-
-                            <div className="source_card" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
-                                <div className="img_container">
-                                    <img className="media_3_img" src={media_3_img}/>
-                                </div>
-                                <p>{sub_title_3}</p>
-                            </div>
-
-                            <div className="display_none" id= {activeSource === 6 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media4')}>
-                                <div className="img_container">
-                                    <img className="media_4_img" src={media_4_img}/>
-                                </div>
-
-                                <p>{sub_title_4}</p>
-                            </div>
-
-                            <div className="display_none" id= {activeSource === 7 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media5')}>
-                                <div className="img_container">
-                                    <img className="media_5_img" src={media_5_img}/>
-                                </div>
-
-                                <p>{sub_title_5}</p>
-                            </div>
-
-                            <div className="source_card" id= {activeSource === 8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
-                                <div className="img_container">
-                                    <img className="media_6_img" src={media_6_img}/>
-                                </div>
-                            
-                                <p>{sub_title_6}</p>
-                            </div>
-
-                            <div className="display_none" id ={activeSource === 9 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media7')}>
-                                <div className="img_container">
-                                    <img className="media_7_img" src={media_7_img}/>
-                                </div>
-                            
-                                <p>{sub_title_7}</p>
-                            </div>
-
-                            
-                            <div className="display_none" id ={activeSource === 10 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media8')}>
-                                <div className="img_container">
-                                    <img className="media_8_img"  src={media_8_img}/>
-                                </div>
-                            
-                                <p>{sub_title_8}</p>
-                            </div>
-                            
+            <div className={active_media? "media_off":"room_sources_container"}>
+                    
+                    <div className="source_card" id= {activeSource === 1 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media1')}>
+                        <div className="img_container">
+                            <img className="media_1_img" src={media_1_img}/>
                         </div>
-                    <div className={active_media? "controller_layout": "media_off"}>
-
-                        <button id="controller_layout_back_button"  onTouchEnd = {display_tile}>
-                            <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
-                        </button>
-
-                
-                        <div className="logo_display">
-                            <div className={media1? "media_1_img_display":"media_off"}>
-                                <img src={media_1_img}/>
-                                <p>{sub_title_1}</p>
-                            </div>
-
-                            <div className={media2? "media_2_img_display":"media_off"}>
-                              <img src={media_2_img}/>
-                              <p>{sub_title_2}</p>
-                            </div>
-
-                            <div className={media3? "media_3_img_display":"media_off"}>
-                                <img src={media_3_img}/>
-                                <p>{sub_title_3}</p>
-                            </div>
-
-                            <div className={media4? "media_4_img_display":"media_off"}>
-                                <img src={media_4_img}/>
-                                <p>{sub_title_4}</p> 
-                            </div>
-
-                            <div className={media5? "media_5_img_display":"media_off"}>
-                                <img src={media_5_img}/>
-                                <p>{sub_title_5}</p>
-                            </div>
-
-                            <div className={media6? "media_6_img_display":"media_off"}>
-                                <img src={media_6_img}/>
-                                <p>{sub_title_6}</p>
-                            </div>
-
-                            <div className={media7? "media_7_img_display":"media_off"}>
-                                <img src={media_7_img}/>
-                                <p>{sub_title_7}</p>
-
-                            </div>
-
-                            <div className={media8? "media_8_img_display":"media_off"}>
-                                <img src={media_8_img}/>
-                                <p>{sub_title_8}</p>
-                            </div>
-
-
-                
-                        </div>
-                        <button className={media6 ||media7 || media8? "btn_circle": "media_off"} id="reboot_button" onTouchEnd={()=>appleTvRebootMenu("menu")}> 
-                            <p> REBOOT </p>
-                        </button>
-
-                        <div className="controller_grid">
-
-
-                         
-
-                            <div className={media_1} id={controller_styles_1}>
-                                {controller_1}
-                            </div>
-
-                            <div className={media_2} id={controller_styles_2}>
-                                {controller_2}
-                            </div>
-                               
-                            <div className={media_3} id={controller_styles_3}>
-                                {controller_3}
-                            </div>
-
-                            <div className={media_4} id={controller_styles_4}>
-                                {controller_4}
-                            </div>
-
-                            <div className={media_5} id={controller_styles_5}>
-                                {controller_5}
-                            </div>
-
-                            <div className={media_6} id={controller_styles_6}>
-                                {controller_6}
-                            </div>
-
-                            <div className={media_7} id={controller_styles_7}>
-                                {controller_7}
-                            </div>
-
-                            <div className={media_8} id={controller_styles_8}>
-                                {controller_8}
-                            </div>
-                            
-
-                        </div>
-                               
-
+                    
+                        <p>{sub_title_1}</p>
                     </div>
 
-                    <div className={active_media? "volume_container" : "media_off"}>
-           
-                      
-                            <button className="btn_square">
-                                <img className="btn_image"src={arrow} onTouchEnd={()=> tvVolState("down")}/>
-                            </button>
-                            
-                           
+                    <div className="source_card" id= { activeSource === 2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media2')}>
+                        <div className="img_container">
+                            <img className="media_2_img" src={media_2_img}/>
+                        </div>
 
-                            <button className="btn_square_wide" onTouchEnd={()=> tvVolState("mute")}>
-                                {roomMute? 
-                                <>
-                                 <img src={mute} className="volume_mute_btn" />
-                                 <p className="mute_btn_txt">Click to Unmute</p>
-                                </>
-                                  
-                                    :
-                                <>
-                                    <p className="volume_txt">{((roomVolume/65535) * 100).toFixed(0)}</p>
-                                    <p className="mute_btn_txt">Click to Mute</p>
-                                  </>
-                            }
-                            </button>
-
-                            <button className="btn_square" onTouchEnd={()=> tvVolState("up")}>
-                                <img className="btn_image"src={arrow} id="flip"/>
-                            </button>
-
-
+                        <p>{sub_title_2}</p>
                     </div>
+
+                    <div className="source_card" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
+                        <div className="img_container">
+                            <img className="media_3_img" src={media_3_img}/>
+                        </div>
+                        <p>{sub_title_3}</p>
+                    </div>
+
+                    <div className="display_none" id= {activeSource === 6 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media4')}>
+                        <div className="img_container">
+                            <img className="media_4_img" src={media_4_img}/>
+                        </div>
+
+                        <p>{sub_title_4}</p>
+                    </div>
+
+                    <div className="display_none" id= {activeSource === 7 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media5')}>
+                        <div className="img_container">
+                            <img className="media_5_img" src={media_5_img}/>
+                        </div>
+
+                        <p>{sub_title_5}</p>
+                    </div>
+
+                    <div className="source_card" id= {activeSource === 8? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
+                        <div className="img_container">
+                            <img className="media_6_img" src={media_6_img}/>
+                        </div>
+                    
+                        <p>{sub_title_6}</p>
+                    </div>
+
+                    <div className="display_none" id ={activeSource === 9 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media7')}>
+                        <div className="img_container">
+                            <img className="media_7_img" src={media_7_img}/>
+                        </div>
+                    
+                        <p>{sub_title_7}</p>
+                    </div>
+
+                    
+                    <div className="display_none" id ={activeSource === 10 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media8')}>
+                        <div className="img_container">
+                            <img className="media_8_img"  src={media_8_img}/>
+                        </div>
+                    
+                        <p>{sub_title_8}</p>
+                    </div>
+                    
                 </div>
+            <div className={active_media? "controller_layout": "media_off"}>
 
-                    <div className={musicOption? "music_app" : "media_off"} >
+                <button id="controller_layout_back_button"  onTouchEnd = {display_tile}>
+                    <img src={menu_button}  alt="back arrow" className="back_button_svg"/>
+                </button>
+
+        
+                <div className="logo_display">
+                    <div className={media1? "media_1_img_display":"media_off"}>
+                        <img src={media_1_img}/>
+                        <p>{sub_title_1}</p>
                     </div>
 
-                    <div className={lightsOption? "lights_app" : "display_none"} >
-
-                        <div className="light_container">
-                            
-                            
-                            
-                            
-                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_1")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_1_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_1 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-
-                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_2")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_2_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_2 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_3")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_3_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_3 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_4")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_4_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_4 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                            <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_5")}>
-                                <div className="light_info">
-                                    <p className="light_name">{light_5_name}</p>
-                                </div>
-
-                                <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
-                                    <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
-                                </button>
-                            </div>
-
-                        </div>
-
-                      
-                      
-    
-
-                       
-
-                            
+                    <div className={media2? "media_2_img_display":"media_off"}>
+                        <img src={media_2_img}/>
+                        <p>{sub_title_2}</p>
                     </div>
+
+                    <div className={media3? "media_3_img_display":"media_off"}>
+                        <img src={media_3_img}/>
+                        <p>{sub_title_3}</p>
+                    </div>
+
+                    <div className={media4? "media_4_img_display":"media_off"}>
+                        <img src={media_4_img}/>
+                        <p>{sub_title_4}</p> 
+                    </div>
+
+                    <div className={media5? "media_5_img_display":"media_off"}>
+                        <img src={media_5_img}/>
+                        <p>{sub_title_5}</p>
+                    </div>
+
+                    <div className={media6? "media_6_img_display":"media_off"}>
+                        <img src={media_6_img}/>
+                        <p>{sub_title_6}</p>
+                    </div>
+
+                    <div className={media7? "media_7_img_display":"media_off"}>
+                        <img src={media_7_img}/>
+                        <p>{sub_title_7}</p>
+
+                    </div>
+
+                    <div className={media8? "media_8_img_display":"media_off"}>
+                        <img src={media_8_img}/>
+                        <p>{sub_title_8}</p>
+                    </div>
+
+
+        
+                </div>
+                <button className={media6 ||media7 || media8? "btn_circle": "media_off"} id="reboot_button" onTouchEnd={()=>appleTvRebootMenu("menu")}> 
+                    <p> REBOOT </p>
+                </button>
+
+                <div className="controller_grid">
 
 
                     
-                <div className="landscape_warning">
-                    <h1> Please rotate your device back to portrait mode. </h1>
-                    <img src={portraitMode}  />
-                 </div>
+
+                    <div className={media_1} id={controller_styles_1}>
+                        {controller_1}
+                    </div>
+
+                    <div className={media_2} id={controller_styles_2}>
+                        {controller_2}
+                    </div>
+                        
+                    <div className={media_3} id={controller_styles_3}>
+                        {controller_3}
+                    </div>
+
+                    <div className={media_4} id={controller_styles_4}>
+                        {controller_4}
+                    </div>
+
+                    <div className={media_5} id={controller_styles_5}>
+                        {controller_5}
+                    </div>
+
+                    <div className={media_6} id={controller_styles_6}>
+                        {controller_6}
+                    </div>
+
+                    <div className={media_7} id={controller_styles_7}>
+                        {controller_7}
+                    </div>
+
+                    <div className={media_8} id={controller_styles_8}>
+                        {controller_8}
+                    </div>
+                    
+
+                </div>
+                        
+
+            </div>
+
+            <div className={active_media? "volume_container" : "media_off"}>
+    
+                
+                    <button className="btn_square">
+                        <img className="btn_image"src={arrow} onTouchEnd={()=> tvVolState("down")}/>
+                    </button>
+                    
+                    
+
+                    <button className="btn_square_wide" onTouchEnd={()=> tvVolState("mute")}>
+                        {roomMute? 
+                        <>
+                            <img src={mute} className="volume_mute_btn" />
+                            <p className="mute_btn_txt">Click to Unmute</p>
+                        </>
+                            
+                            :
+                        <>
+                            <p className="volume_txt">{((roomVolume/65535) * 100).toFixed(0)}</p>
+                            <p className="mute_btn_txt">Click to Mute</p>
+                            </>
+                    }
+                    </button>
+
+                    <button className="btn_square" onTouchEnd={()=> tvVolState("up")}>
+                        <img className="btn_image"src={arrow} id="flip"/>
+                    </button>
+
+
+            </div>
+            </div>
+
+            <div className={musicOption? "music_app" : "media_off"} >
+            </div>
+
+            <div className={lightsOption? "lights_app" : "display_none"} >
+
+                <div className="light_container">
+                    
+                    
+                    
+                    
+                    <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_1")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_1_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_1 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_1 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+
+                    <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_2")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_2_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_2 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_2 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_3")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_3_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_3 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_3 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_4")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_4_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_4 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_4 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                    <div className="light_tile" onTouchEnd={() => sliderValue(true,"light_5")}>
+                        <div className="light_info">
+                            <p className="light_name">{light_5_name}</p>
+                        </div>
+
+                        <button className="btn_circle" id={light_5 ? "light_btn_on" : ""}>
+                            <img className="btn_image" src={light_5 ? lightOn : lightOff}/>
+                        </button>
+                    </div>
+
+                </div>
+
+                
+                
+
+
+                
+
+                    
+            </div>
+
+            <div className={sleepTimer? "sleep-timer" : "display_none"}>
+             
+                <button className="close-menu" onTouchEnd ={() => setSleepTimer(false)}> <img className="btn_image" src={closeMeun} /> </button>
+                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","51",true),window.CrComLib.publishEvent("b","51",false))}> <p> 15 Mintues </p> </button>
+                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","52",true),window.CrComLib.publishEvent("b","52",false))}> <p> 30 Mintues </p> </button>
+                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","53",true),window.CrComLib.publishEvent("b","53",false))}> <p> 45 Mintues </p> </button>
+                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","54",true),window.CrComLib.publishEvent("b","54",false))}> <p> 60 Mintues </p> </button>
+                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","55",true),window.CrComLib.publishEvent("b","55",false))}> <p> Cancel Timer </p> </button>
+                    
+            </div>
+
+
+                
+                    
+            <div className="landscape_warning">
+                <h1> Please rotate your device back to portrait mode. </h1>
+            <img src={portraitMode}  />
+            </div>
 
             
         </div>

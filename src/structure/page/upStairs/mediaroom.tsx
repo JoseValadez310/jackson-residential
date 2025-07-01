@@ -376,7 +376,7 @@ const sliderValue = (value: boolean, id: string) => {
 ---------------------------------------------------------------------------- Checks to see if any media sources are currently on
 */
 
-if(media1){
+    if(media1){
     //display controller and hide source selection
        active_media = true
     //displaying the correct controller and hiding the rest
@@ -390,8 +390,7 @@ if(media1){
         media_8 = "media_off"  
         media_9 = "media_off"
         media_10 = "media_off"
-    } 
-    else if(media2){
+    } else if(media2){
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -405,8 +404,7 @@ if(media1){
        media_8 = "media_off"    
        media_9 = "media_off"
        media_10 = "media_off" 
-    } 
-    else if(media3){
+    } else if(media3){
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -420,8 +418,7 @@ if(media1){
         media_8 = "media_off"  
          media_9 = "media_off"
         media_10 = "media_off"
-    } 
-    else if(media4){
+    } else if(media4){
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -435,8 +432,7 @@ if(media1){
         media_8 = "media_off" 
         media_9 = "media_off"
         media_10 = "media_off" 
-    } 
-    else if(media5){
+    } else if(media5){
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -450,8 +446,7 @@ if(media1){
         media_8 = "media_off" 
         media_9 = "media_off"
         media_10 = "media_off" 
-    } 
-    else if(media6){
+    } else if(media6){
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -465,8 +460,7 @@ if(media1){
         media_8 = "media_off"  
          media_9 = "media_off"
         media_10 = "media_off"
-    } 
-    else if(media7){
+    } else if(media7){
     //display controller and hide source selection
         active_media = true
     //displaying the correct controller and hiding the rest
@@ -480,8 +474,7 @@ if(media1){
         media_8 = "media_off"  
          media_9 = "media_off"
         media_10 = "media_off"
-    } 
-    else if(media8){
+    } else if(media8){
     //display controller and hide source selection
         active_media = true
      //displaying the correct controller and hiding the rest
@@ -523,8 +516,7 @@ if(media1){
         media_8 = "media_off"  
         media_9 = "media_off"
         media_10 = "media_on"  
-    } 
-    else {
+    } else {
        //display controller and hide source selection
         active_media = false
        //displaying the correct controller and hiding the rest
@@ -940,29 +932,31 @@ if(media1){
 
 
     // Volume control for current room
-        const tvVolState = (id:string) =>{
+        /*
+    const tvVolState = (id:string) =>{
 
-        if(id === "up"){
-            console.log('vol up join',audio_increase_join)
-            
-            window.CrComLib.publishEvent("b",audio_increase_join,true)
-            window.CrComLib.publishEvent("b",audio_increase_join,false)
-        } 
+    if(id === "up"){
+        console.log('vol up join',audio_increase_join)
         
-        else if(id === "down"){
-            console.log('vol down join', audio_decrease_join)
-            
-            window.CrComLib.publishEvent("b",audio_decrease_join,true)
-            window.CrComLib.publishEvent("b",audio_decrease_join,false)
-        } 
+        window.CrComLib.publishEvent("b",audio_increase_join,true)
+        window.CrComLib.publishEvent("b",audio_increase_join,false)
+    } 
+    
+    else if(id === "down"){
+        console.log('vol down join', audio_decrease_join)
         
-        else if(id === "mute"){
-            console.log('vol mute join', audio_mute_join)
-            window.CrComLib.publishEvent("b",audio_mute_join,true)
-            window.CrComLib.publishEvent("b",audio_mute_join,false)
-        }
+        window.CrComLib.publishEvent("b",audio_decrease_join,true)
+        window.CrComLib.publishEvent("b",audio_decrease_join,false)
+    } 
+    
+    else if(id === "mute"){
+        console.log('vol mute join', audio_mute_join)
+        window.CrComLib.publishEvent("b",audio_mute_join,true)
+        window.CrComLib.publishEvent("b",audio_mute_join,false)
+    }
 
-            }
+    }
+    */
 
     // Power menu for current room
         const powerMenu = (id:string) =>{
@@ -1661,33 +1655,33 @@ const sourceDisplay = (tvSelection:string) =>{
                     <div className={active_media? "volume_container" : "media_off"}>
            
                       
-                            <button className="btn_square">
-                                <img className="btn_image"src={arrow} onTouchEnd={()=> tvVolState("down")}/>
-                            </button>
-                            
-                           
+           <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b",audio_decrease_join,true)} onTouchEnd={()=> window.CrComLib.publishEvent("b",audio_decrease_join,false)}>
+               <img className="btn_image"src={arrow}/>
+           </button>
+           
+          
 
-                            <button className="btn_square_wide" onTouchEnd={()=> tvVolState("mute")}>
-                                {roomMute? 
-                                <>
-                                 <img src={mute} className="volume_mute_btn" />
-                                 <p className="mute_btn_txt">Click to Unmute</p>
-                                </>
-                                  
-                                    :
-                                <>
-                                    <p className="volume_txt">{((roomVolume/65535) * 100).toFixed(0)}</p>
-                                    <p className="mute_btn_txt">Click to Mute</p>
-                                  </>
-                            }
-                            </button>
+           <button className="btn_square_wide" onTouchEnd={()=> (window.CrComLib.publishEvent("b",audio_mute_join,true),window.CrComLib.publishEvent("b",audio_mute_join,false))}>
+               {roomMute? 
+               <>
+                <img src={mute} className="volume_mute_btn" />
+                <p className="mute_btn_txt">Click to Unmute</p>
+               </>
+                 
+                   :
+               <>
+                   <p className="volume_txt">{((roomVolume/65535) * 100).toFixed(0)}</p>
+                   <p className="mute_btn_txt">Click to Mute</p>
+                 </>
+           }
+           </button>
 
-                            <button className="btn_square" onTouchEnd={()=> tvVolState("up")}>
-                                <img className="btn_image"src={arrow} id="flip"/>
-                            </button>
+           <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b",audio_increase_join,true)} onTouchEnd={()=> window.CrComLib.publishEvent("b",audio_increase_join,false)}>
+               <img className="btn_image"src={arrow} id="flip"/>
+           </button>
 
 
-                    </div>
+   </div>
                 </div>
 
                     <div className={musicOption? "music_app" : "media_off"} >

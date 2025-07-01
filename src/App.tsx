@@ -209,10 +209,10 @@ function App() {
 
   
   const webXPanelConfig = useMemo(() => ({
-    ipId: '31',
+    ipId: '35',
     host: '192.168.14.90',
     roomId: '',
-    authToken: ''
+    authToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsIlNvdXJjZSI6IkNvbnRyb2wgU3lzdGVtIn0.eyJleHAiOjE3NDkwODAzNTksInVzZXJuYW1lIjoiVG9rZW4iLCJPcHRpb25hbCI6IjExMzMwNjczODQifQ.dED8QGouZXf6stlKuc5Ko-Mlr2OBWh2OR-RNCYbl_bo'
   }), []); // Dependencies array is empty, so this object is created only once
 
   useWebXPanel(webXPanelConfig);

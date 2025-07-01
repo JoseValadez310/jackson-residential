@@ -313,12 +313,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1; 
-    
- 
 
-     
-      
-      
   }
 
     .btn_circle:active{
@@ -584,6 +579,17 @@ body {
 }
 
 
+.active-button{
+  
+  border-radius: 0px;
+  background-size: 300% 300%;
+  background-image: linear-gradient(-45deg,rgb(20, 72, 133)25%,rgb(42, 123, 160) 50%,rgb(33, 98, 172) 100%);
+  animation: AnimateBG 10s ease infinite;
+  border-radius: 15px;
+  
+}
+
+x
 .nav .btn_not_selected img{
   height: 65%;
 }

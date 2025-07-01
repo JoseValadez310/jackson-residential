@@ -178,6 +178,8 @@ const FamilyRoom = () =>{
     const [light_8, setLight_8] = useState(false)
     const [light_9, setLight_9] = useState(false)
 
+    console.log(roomVolume)
+    console.log(roomMute)
 
 
 
@@ -626,6 +628,7 @@ if(media1){
         } 
         }
     // Volume control for current room
+    /*
         const tvVolState = (id:string) =>{
 
         if(id === "up"){
@@ -649,7 +652,7 @@ if(media1){
         }
 
             }
-
+        */
     // Power menu for current room
         const powerMenu = (id:string) =>{
             if(id==="menu"){
@@ -1161,34 +1164,20 @@ if(media1){
                     </div>
 
                     <div className={active_media? "volume_container" : "media_off"}>
-           
-                      
-                            <button className="btn_square">
-                                <img className="btn_image"src={arrow} onTouchEnd={()=> tvVolState("down")}/>
-                            </button>
-                            
                            
-
-                            <button className="btn_square_wide" onTouchEnd={()=> tvVolState("mute")}>
-                                {roomMute? 
-                                <>
-                                 <img src={mute} className="volume_mute_btn" />
-                                 <p className="mute_btn_txt">Click to Unmute</p>
-                                </>
-                                  
-                                    :
-                                <>
-                                    <p className="volume_txt">{((roomVolume/65535) * 100).toFixed(0)}</p>
-                                    <p className="mute_btn_txt">Click to Mute</p>
-                                  </>
-                            }
-                            </button>
-
-                            <button className="btn_square" onTouchEnd={()=> tvVolState("up")}>
-                                <img className="btn_image"src={arrow} id="flip"/>
-                            </button>
-
-
+                           <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b",audio_decrease_join,true)} onTouchEnd={()=> window.CrComLib.publishEvent("b",audio_decrease_join,false)}>
+                               <img className="btn_image"src={arrow}/>
+                           </button>
+                           
+                           <button className="btn_square_wide" onTouchEnd={()=> (window.CrComLib.publishEvent("b",audio_mute_join,true),window.CrComLib.publishEvent("b",audio_mute_join,false))}>
+                                <img src={mute} className="volume_mute_btn" />
+                                <p className="mute_btn_txt">Click to Mute</p>
+                           </button>
+                
+                           <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b",audio_increase_join,true)} onTouchEnd={()=> window.CrComLib.publishEvent("b",audio_increase_join,false)}>
+                               <img className="btn_image"src={arrow} id="flip"/>
+                           </button>
+                
                     </div>
                 </div>
 

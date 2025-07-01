@@ -475,10 +475,11 @@
             filter: invert(0);
         }
 
+        /*
         .volume_container .btn_square_wide img{
             filter: brightness(0) saturate(100%) invert(16%) sepia(88%) saturate(7466%) hue-rotate(358deg) brightness(97%) contrast(127%);
         }
-
+*/
     .mute_btn_txt{
         border-top: solid 1px black;
         color: black;

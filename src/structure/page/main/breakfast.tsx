@@ -142,6 +142,10 @@ const FamilyRoom = () =>{
     const audio_decrease_join = "504"
 
 
+
+    console.log(roomVolume, roomMute)
+
+
 /*
 ---------------------------------------------------------------------------- Modals for Apple Tv Reboot or Room shutdown
 */
@@ -188,9 +192,9 @@ const FamilyRoom = () =>{
 
 
 // console.log 
-const [currentTVSource, setCourrentTVSource] = useState("1 W/Audio")
-const [sourceSelectionOne, setSourceSelectionOne] = useState(false) // Tv without audio now marked as tv 2
-const [sourceSelectionTwo, setSourceSelectionTwo] = useState(true) // tv with aduio and now marked as TV 1
+const [currentTVSource, setCourrentTVSource] = useState("1 - West ")
+const [sourceSelectionOne, setSourceSelectionOne] = useState(false) // Tv without audio now marked as tv 2 East 
+const [sourceSelectionTwo, setSourceSelectionTwo] = useState(true) // tv with aduio and now marked as TV 1 West 
 
 
 //const [sourceSelectionMirror, setSourceSelectionMirror] = useState(false)
@@ -201,12 +205,12 @@ const sourceDisplay = (tvSelection:string) =>{
         setSourceSelectionOne(true)
         setSourceSelectionTwo(false)
 
-        setCourrentTVSource("2 W/Out Audio")
+        setCourrentTVSource("2 - East ")
     } else if (tvSelection === "tv2"){
         setSourceSelectionOne(false)
         setSourceSelectionTwo(true)  
 
-        setCourrentTVSource("1 W/Audio")
+        setCourrentTVSource("1 - West")
 
     } 
 }
@@ -943,6 +947,7 @@ useEffect(()=>{
    
     
     // Volume control for current room
+    /*
         const tvVolState = (id:string) =>{
 
         if(id === "up"){
@@ -966,6 +971,8 @@ useEffect(()=>{
         }
 
             }
+
+    */
     // Power menu for current room
         const powerMenu = (id:string) =>{
             if(id==="menu"){
@@ -1770,36 +1777,54 @@ useEffect(()=>{
                                
 
                     </div>
-                    <div className={active_media? "volume_container" : "media_off"}>
+                    
+                    
+                    
            
-                      
-                            <button className="btn_square">
-                                <img className="btn_image"src={arrow} onTouchEnd={()=> tvVolState("down")}/>
-                            </button>
-                            
-                           
 
-                            <button className="btn_square_wide" onTouchEnd={()=> tvVolState("mute")}>
-                                {roomMute? 
-                                <>
-                                 <img src={mute} className="volume_mute_btn" />
-                                 <p className="mute_btn_txt">Click to Unmute</p>
-                                </>
-                                  
-                                    :
-                                <>
-                                    <p className="volume_txt">{((roomVolume/65535) * 100).toFixed(0)}</p>
-                                    <p className="mute_btn_txt">Click to Mute</p>
-                                  </>
-                            }
+
+                   {sourceSelectionOne? 
+                    <div className={active_media? "volume_container" : "media_off"}>
+                        <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b","500",true)} onTouchEnd={()=> window.CrComLib.publishEvent("b","500",false)}>
+                            <img className="btn_image"src={arrow}/>
+                        </button>
+                        
+                            <button className="btn_square_wide" onTouchEnd={()=> (window.CrComLib.publishEvent("b","501",true),window.CrComLib.publishEvent("b","501",false))}>
+                                <img src={mute} className="volume_mute_btn" />
+                                <p className="mute_btn_txt">Click to Mute</p>
                             </button>
 
-                            <button className="btn_square" onTouchEnd={()=> tvVolState("up")}>
-                                <img className="btn_image"src={arrow} id="flip"/>
-                            </button>
+                        <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b","502",true)} onTouchEnd={()=> window.CrComLib.publishEvent("b","502",false)}>
+                            <img className="btn_image"src={arrow} id="flip"/>
+                        </button>
 
-
+                     
                     </div>
+
+                    :
+
+                    <div className={active_media? "volume_container" : "media_off"}>
+                        <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b",audio_decrease_join,true)} onTouchEnd={()=> window.CrComLib.publishEvent("b",audio_decrease_join,false)}>
+                            <img className="btn_image"src={arrow}/>
+                        </button>
+                        
+                            <button className="btn_square_wide" onTouchEnd={()=> (window.CrComLib.publishEvent("b",audio_mute_join,true),window.CrComLib.publishEvent("b",audio_mute_join,false))}>
+                                <img src={mute} className="volume_mute_btn" />
+                                <p className="mute_btn_txt">Click to Mute</p>
+                            
+                            </button>
+
+                        <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b",audio_increase_join,true)} onTouchEnd={()=> window.CrComLib.publishEvent("b",audio_increase_join,false)}>
+                            <img className="btn_image"src={arrow} id="flip"/>
+                        </button>
+
+                       
+                    </div>
+
+                    }
+
+
+               
             </div>
 
             <div className={musicOption? "music_app" : "media_off"} >

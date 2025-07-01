@@ -523,10 +523,42 @@ background-color: rgb(243, 84, 84);;        height: 2.5rem;
                         right: -55px;
                     }
      
+
+
+
+                    .btn_location_22{
+                        height: 5.5rem;
+                        width: 4.75rem;
+                        position: absolute;
+                        left: 125px;
+                        top: 160px;
+                        border-radius: 10px;
+                        border: none;
+                        background-color: transparent;
+                     }
+
+                    .light_icon_z22{
+                        background-color: rgb(243, 84, 84);
+                        height: 2.5rem;
+                        box-shadow: 0px 0px 10px;
+                        border-radius: 100%;
+                        position: relative;
+                        top:2px;
+                        right: -55px;
+                        
+                    }
  
 
  #lightZoneActive{
     background-color: rgb(209, 209, 117);
+    box-sizing: border-box;
+    padding: 3px;
+    animation: light_on 3s infinite ;
+ }
+
+ #lightZoneActiveSpecial{
+    background: #FDB827;
+    background: radial-gradient(circle, rgb(253, 184, 39) 0%, rgba(84, 37, 131) 100%);
     box-sizing: border-box;
     padding: 3px;
     animation: light_on 3s infinite ;

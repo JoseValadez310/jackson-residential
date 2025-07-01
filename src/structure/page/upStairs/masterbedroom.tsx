@@ -176,6 +176,8 @@ const FamilyRoom = () =>{
     const [light_7, setLight_7] = useState(false)
     const [light_8, setLight_8] = useState(false)
 
+    console.log(roomVolume)
+    console.log(roomMute)
 
 
 
@@ -187,6 +189,16 @@ const FamilyRoom = () =>{
 
 const [sleepTimer, setSleepTimer] = useState(false)
 
+
+
+const [sleepHi, setSleepHi]   = useState(0)
+const [sleepLo, setSleepLo]   = useState(0)
+
+const [room15, setRoom15] = useState(false)
+const [room30, setRoom30] = useState(false)
+const [sleepTimerComCancel,setSleepTimerComCancel] = useState(false)
+
+console.log(sleepHi, sleepLo)
 
 /*
 ----------------------------------------------------------------------------------------------------------------------------------------
@@ -220,8 +232,26 @@ const [sleepTimer, setSleepTimer] = useState(false)
   
 
         const activeSource = window.CrComLib.subscribeState("n",roomLocation,(value: number) => {setActiveSource(value);});
-        return () => {
 
+
+        //sleep timer feedback
+
+        
+        const roomSleepBar = window.CrComLib.subscribeState('n',"50",(value:number)=> {setSleepBar(value)})
+        const roomSleepHi = window.CrComLib.subscribeState('n',"51",(value:number)=> {setSleepHi(value)})
+        const roomSleepLo = window.CrComLib.subscribeState('n',"52",(value:number)=> {setSleepLo(value)})
+
+        const room15 = window.CrComLib.subscribeState('b','52',(value:boolean) => {setRoom15(value)})
+        const room30 = window.CrComLib.subscribeState('b','54',(value:boolean) => {setRoom30(value)})
+
+        return () => {
+            window.CrComLib.unsubscribeState("n","50",roomSleepBar)
+            window.CrComLib.unsubscribeState("n","51",roomSleepHi)
+            window.CrComLib.unsubscribeState("n","52",roomSleepLo)
+
+            window.CrComLib.unsubscribeState("b","52",room15)
+            window.CrComLib.unsubscribeState("b","54",room30)
+         
            
             window.CrComLib.unsubscribeState("n",roomLocation,activeSource)
             // TV Soucres
@@ -255,6 +285,15 @@ const [sleepTimer, setSleepTimer] = useState(false)
             
         }
       }, []);
+
+
+
+      const [sleepBar, setSleepBar] = useState(0)
+
+      const progressBar = (sleepBar/655.35)
+
+    const [sleepTimerCom30, setSleepTimerCom30] = useState(false)
+    const [sleepTimerCom60, setSleepTimerCom60] = useState(false)
 
 
 /*
@@ -616,29 +655,7 @@ if(media1){
         } 
         }
     // Volume control for current room
-        const tvVolState = (id:string) =>{
-
-        if(id === "up"){
-            console.log('vol up join',audio_increase_join)
-            
-            window.CrComLib.publishEvent("b",audio_increase_join,true)
-            window.CrComLib.publishEvent("b",audio_increase_join,false)
-        } 
-        
-        else if(id === "down"){
-            console.log('vol down join', audio_decrease_join)
-            
-            window.CrComLib.publishEvent("b",audio_decrease_join,true)
-            window.CrComLib.publishEvent("b",audio_decrease_join,false)
-        } 
-        
-        else if(id === "mute"){
-            console.log('vol mute join', audio_mute_join)
-            window.CrComLib.publishEvent("b",audio_mute_join,true)
-            window.CrComLib.publishEvent("b",audio_mute_join,false)
-        }
-
-            }
+    
 
     // Power menu for current room
         const powerMenu = (id:string) =>{
@@ -1149,35 +1166,21 @@ if(media1){
             </div>
 
             <div className={active_media? "volume_container" : "media_off"}>
-    
-                
-                    <button className="btn_square">
-                        <img className="btn_image"src={arrow} onTouchEnd={()=> tvVolState("down")}/>
-                    </button>
-                    
-                    
+                           
+           <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b",audio_decrease_join,true)} onTouchEnd={()=> window.CrComLib.publishEvent("b",audio_decrease_join,false)}>
+               <img className="btn_image"src={arrow}/>
+           </button>
+           
+           <button className="btn_square_wide" onTouchEnd={()=> (window.CrComLib.publishEvent("b",audio_mute_join,true),window.CrComLib.publishEvent("b",audio_mute_join,false))}>
+                <img src={mute} className="volume_mute_btn" />
+                <p className="mute_btn_txt">Click to Mute</p>
+           </button>
 
-                    <button className="btn_square_wide" onTouchEnd={()=> tvVolState("mute")}>
-                        {roomMute? 
-                        <>
-                            <img src={mute} className="volume_mute_btn" />
-                            <p className="mute_btn_txt">Click to Unmute</p>
-                        </>
-                            
-                            :
-                        <>
-                            <p className="volume_txt">{((roomVolume/65535) * 100).toFixed(0)}</p>
-                            <p className="mute_btn_txt">Click to Mute</p>
-                            </>
-                    }
-                    </button>
+           <button className="btn_square" onTouchStart={()=> window.CrComLib.publishEvent("b",audio_increase_join,true)} onTouchEnd={()=> window.CrComLib.publishEvent("b",audio_increase_join,false)}>
+               <img className="btn_image"src={arrow} id="flip"/>
+           </button>
 
-                    <button className="btn_square" onTouchEnd={()=> tvVolState("up")}>
-                        <img className="btn_image"src={arrow} id="flip"/>
-                    </button>
-
-
-            </div>
+    </div>
             </div>
 
             <div className={musicOption? "music_app" : "media_off"} >
@@ -1254,15 +1257,52 @@ if(media1){
 
             <div className={sleepTimer? "sleep-timer" : "display_none"}>
              
-                <button className="close-menu" onTouchEnd ={() => setSleepTimer(false)}> <img className="btn_image" src={closeMeun} /> </button>
-                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","51",true),window.CrComLib.publishEvent("b","51",false))}> <p> 15 Mintues </p> </button>
-                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","52",true),window.CrComLib.publishEvent("b","52",false))}> <p> 30 Mintues </p> </button>
-                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","53",true),window.CrComLib.publishEvent("b","53",false))}> <p> 45 Mintues </p> </button>
-                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","54",true),window.CrComLib.publishEvent("b","54",false))}> <p> 60 Mintues </p> </button>
-                <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","55",true),window.CrComLib.publishEvent("b","55",false))}> <p> Cancel Timer </p> </button>
+                <button className="close-menu" onTouchEnd ={() => setSleepTimer(false)}> <img className="btn_image" src={closeMeun} /> <p> Close Timer Menu</p> </button>
+
+                    <div className="display_none">
+                        <p className="display_none">Sleep bar - {sleepBar}</p>
+                        <p className="display_none">Timer in P.Bar {progressBar}</p>
+                    </div>
+
+
+                <button className={room15? "active-button":""} onTouchEnd={()=>(setSleepTimerCom30(true), setSleepTimerCom60(false),setSleepTimerComCancel(false))}> <p> 30 Mintues </p> </button>
+                <button className={room30? "active-button":""} onTouchEnd={()=>(setSleepTimerCom30(false), setSleepTimerCom60(true),setSleepTimerComCancel(false))}> <p> 60 Mintues </p> </button>
+                <button                                        onTouchEnd={()=>(setSleepTimerCom30(false), setSleepTimerCom60(false),setSleepTimerComCancel(true))}> <p> Cancel Timer </p> </button>
                     
             </div>
 
+            <div className={sleepTimerCom30? "sleep-timer-com" : "display_none"}>
+                <p> Would you like to start the 30 minute sleep timer? </p>
+
+                <div>
+                    <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","52",true),window.CrComLib.publishEvent("b","52",false), setSleepTimerCom30(false), setSleepTimer(false))}> <p>Yes, Begin</p> </button>
+                    <button onTouchEnd={() => (setSleepTimerCom30(false), setSleepTimerCom60(false),setSleepTimerComCancel(false))}> <p> No, Cancel  </p></button>
+                </div>
+
+            </div>
+
+
+            <div className={sleepTimerCom60? "sleep-timer-com" : "display_none"}>
+
+                <p> Would you like to start the 60 minute sleep timer? </p>
+
+                <div>
+                    <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","54",true),window.CrComLib.publishEvent("b","54",false), setSleepTimerCom60(false), setSleepTimer(false))}> <p>Yes, Begin</p></button>
+                    <button onTouchEnd={() => (setSleepTimerCom30(false), setSleepTimerCom60(false),setSleepTimerComCancel(false))}> <p> No, Cancel  </p></button>
+                </div>
+            </div>
+
+
+            
+            <div className={sleepTimerComCancel? "sleep-timer-com" : "display_none"}>
+
+                <p> Would you like to cancel current sleep timer? </p>
+
+                <div>
+                    <button onTouchEnd={()=>(window.CrComLib.publishEvent("b","55",true),window.CrComLib.publishEvent("b","55",false), setSleepTimerComCancel(false), setSleepTimer(false))}> <p>Yes</p></button>
+                    <button onTouchEnd={() => (setSleepTimerComCancel(false), setSleepTimerCom60(false), setSleepTimerCom30(false))}> <p> No </p></button>
+                </div>
+            </div>
 
                 
                     

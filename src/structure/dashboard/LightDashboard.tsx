@@ -63,6 +63,11 @@ const LightDashboard = () => {
     const [zone_21,setZone_21] = useState(false)
 
 
+    // new addition basket ball court 
+    const [zone_22,setZone_22] = useState(false)
+
+
+
 
 
     const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
@@ -487,6 +492,16 @@ const LightDashboard = () => {
     const light_9_title_LANDSCAPE = "Pool Area";
     
 
+
+    const [light_1_fb_bb_court, setLight_1_fb_bb_court] = useState(false)
+    const light_1_join_bb_court = "369";
+    const light_1_title_bb_court = "Basketball Court Light 1";
+
+    const [light_2_fb_bb_court, setLight_2_fb_bb_court] = useState(false)
+    const light_2_join_bb_court = "370";
+    const light_2_title_bb_court = "Basketball Court Light 2";
+
+
     useEffect(() => {
         // BAR
         const sub_light_1_BAR = window.CrComLib.subscribeState("b", light_1_join_BAR, (value:boolean) => setLight_1_fb_BAR(value));
@@ -620,7 +635,12 @@ const LightDashboard = () => {
         const sub_light_7_LANDSCAPE = window.CrComLib.subscribeState("b", light_7_join_LANDSCAPE, (value:boolean) => setLight_7_fb_LANDSCAPE(value));
         const sub_light_8_LANDSCAPE = window.CrComLib.subscribeState("b", light_8_join_LANDSCAPE, (value:boolean) => setLight_8_fb_LANDSCAPE(value));
         const sub_light_9_LANDSCAPE = window.CrComLib.subscribeState("b", light_9_join_LANDSCAPE, (value:boolean) => setLight_9_fb_LANDSCAPE(value));
-      
+
+
+      // basketball court 
+      const sub_light_1_basketball = window.CrComLib.subscribeState("b", light_1_join_bb_court, (value:boolean) => setLight_1_fb_bb_court(value))
+      const sub_light_2_basketball = window.CrComLib.subscribeState("b", light_2_join_bb_court, (value:boolean) => setLight_2_fb_bb_court(value))
+
       
         return () => {
           // BAR
@@ -745,7 +765,12 @@ const LightDashboard = () => {
 
           window.CrComLib.unsubscribeState("b", light_1_join_GARAGE, sub_light_1_GARAGE);
           window.CrComLib.unsubscribeState("b", light_2_join_GARAGE, sub_light_2_GARAGE);
- 
+
+          
+          window.CrComLib.unsubscribeState("b", light_1_join_bb_court, sub_light_1_basketball);
+          window.CrComLib.unsubscribeState("b", light_2_join_bb_court, sub_light_2_basketball);
+
+
         };
       }, []);
       
@@ -1694,7 +1719,7 @@ const LightDashboard = () => {
         window.CrComLib.publishEvent("b", light_1_join_LANDSCAPE, true);
         window.CrComLib.publishEvent("b", light_1_join_LANDSCAPE, false);
       }}>
-        <img className="btn_image" src={light_1_join_LANDSCAPE ? lightOn : lightOff} />
+        <img className="btn_image" src={light_1_fb_LANDSCAPE ? lightOn : lightOff} />
         <p>{light_1_title_LANDSCAPE}</p>
       </button>
 
@@ -1709,7 +1734,7 @@ const LightDashboard = () => {
         window.CrComLib.publishEvent("b", light_9_join_LANDSCAPE, true);
         window.CrComLib.publishEvent("b", light_9_join_LANDSCAPE, false);
       }}>
-        <img className="btn_image" src={light_9_join_LANDSCAPE ? lightOn : lightOff} />
+        <img className="btn_image" src={light_9_fb_LANDSCAPE ? lightOn : lightOff} />
         <p>{light_9_title_LANDSCAPE}</p>
       </button>
 
@@ -1724,7 +1749,7 @@ const LightDashboard = () => {
         window.CrComLib.publishEvent("b", light_8_join_LANDSCAPE, true);
         window.CrComLib.publishEvent("b", light_8_join_LANDSCAPE, false);
       }}>
-        <img className="btn_image" src={light_8_join_LANDSCAPE ? lightOn : lightOff} />
+        <img className="btn_image" src={light_8_fb_LANDSCAPE ? lightOn : lightOff} />
         <p>{light_8_title_LANDSCAPE}</p>
       </button>
 
@@ -1754,13 +1779,38 @@ const LightDashboard = () => {
         window.CrComLib.publishEvent("b", light_2_join_LANDSCAPE, true);
         window.CrComLib.publishEvent("b", light_2_join_LANDSCAPE, false);
       }}>
-        <img className="btn_image" src={light_2_join_LANDSCAPE ? lightOn : lightOff} />
+        <img className="btn_image" src={light_2_fb_LANDSCAPE ? lightOn : lightOff} />
         <p>{light_2_title_LANDSCAPE}</p>
       </button>
 
     
     </div>
   </>)
+
+const singleZone_basketball =(<>
+  <h2 className="light_menu_title"> Basketball Court </h2>
+     <div className="button_list">
+
+     <button className="btn_square" onTouchEnd={() => {
+       window.CrComLib.publishEvent("b", light_1_join_bb_court, true);
+       window.CrComLib.publishEvent("b", light_1_join_bb_court, false);
+     }}>
+       <img className="btn_image" src={light_1_fb_bb_court ? lightOn : lightOff} />
+       <p>{light_1_title_bb_court}</p>
+     </button>
+
+     <button className="btn_square" onTouchEnd={() => {
+       window.CrComLib.publishEvent("b", light_2_join_bb_court, true);
+       window.CrComLib.publishEvent("b", light_2_join_bb_court, false);
+     }}>
+       <img className="btn_image" src={light_2_fb_bb_court ? lightOn : lightOff} />
+       <p>{light_2_title_bb_court}</p>
+     </button>
+
+   
+   </div>
+ </>)
+
 
 
 
@@ -1863,7 +1913,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             } else if (id === "zone_2"){
@@ -1887,7 +1938,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             } else if (id === "zone_3"){
@@ -1905,13 +1957,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             }else if (id === "zone_4"){
@@ -1929,13 +1982,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             }else if (id === "zone_5"){
@@ -1953,13 +2007,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             }else if (id === "zone_6"){
@@ -1977,13 +2032,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             }else if (id === "zone_7"){
@@ -2001,13 +2057,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             }else if (id === "zone_8"){
@@ -2025,13 +2082,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             }else if (id === "zone_9"){
@@ -2049,13 +2107,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             }else if (id === "zone_10"){
@@ -2073,13 +2132,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             }else if (id === "zone_11"){
@@ -2097,13 +2157,14 @@ const LightDashboard = () => {
               setZone_12(false)
               setZone_13(false)
               setZone_14(false)
-                              setZone_15(false)
-                                setZone_16(false)
-                                setZone_17(false)
-                                  setZone_18(false)
-                                  setZone_19(false)
-                                  setZone_20(false)
-                                                setZone_21(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
               
@@ -2129,7 +2190,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
             }else if (id === "zone_13"){
         
@@ -2153,7 +2215,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
             }else if (id === "zone_14"){
               
@@ -2177,7 +2240,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
             }else if (id === "zone_15"){
 
@@ -2201,7 +2265,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             } else if (id === "zone_16"){
@@ -2226,7 +2291,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             } else if (id === "zone_17"){
@@ -2251,7 +2317,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             } else if (id === "zone_18"){
@@ -2276,7 +2343,8 @@ const LightDashboard = () => {
               setZone_18(true)
               setZone_19(false)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             } else if (id === "zone_19"){
@@ -2301,7 +2369,8 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(true)
               setZone_20(false)
-                            setZone_21(false)
+              setZone_21(false)
+              setZone_22(false)
 
 
             } else if (id === "zone_20"){
@@ -2327,6 +2396,7 @@ const LightDashboard = () => {
               setZone_19(false)
               setZone_20(true)
               setZone_21(false)
+              setZone_22(false)
 
 
             } else if (id === "zone_21"){
@@ -2351,10 +2421,36 @@ const LightDashboard = () => {
               setZone_18(false)
               setZone_19(false)
               setZone_20(false)
-                           
-
-
               setZone_21(true)
+              setZone_22(false)
+
+
+
+            } else if (id === "zone_22"){
+
+              setZone_1(false)
+              setZone_2(false)
+              setZone_3(false)
+              setZone_4(false)
+              setZone_5(false)
+              setZone_6(false)
+              setZone_7(false)
+              setZone_8(false)
+              setZone_9(false)
+              setZone_10(false)
+              setZone_11(false)
+              setZone_12(false)
+              setZone_13(false)
+              setZone_14(false)
+              setZone_15(false)
+              setZone_16(false)
+              setZone_17(false)
+              setZone_18(false)
+              setZone_19(false)
+              setZone_20(false)
+              setZone_21(false)
+              setZone_22(true)
+
 
 
             }
@@ -2523,6 +2619,15 @@ const LightDashboard = () => {
                  }   
              </button>
 
+
+             <button className="btn_location_22" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_22"))}>   
+               {light_1_fb_bb_court? 
+                 <img className="light_icon_z22" id="lightZoneActiveSpecial" src={lightOn} />  
+                 :
+                 <img className="light_icon_z22" src={lightOff} />  
+                 }   
+             </button>
+
            
          </div> 
 
@@ -2554,6 +2659,8 @@ const LightDashboard = () => {
              {zone_18? singleZone_backYard : <></>}
              {zone_19? singleZone_frontYard : <></>}
              {zone_20? singleZone_breezyway: <></>}
+
+             {zone_22? singleZone_basketball : <></>}
 
            
 
@@ -2647,12 +2754,12 @@ const LightDashboard = () => {
             <button className="btn_square" onClick={()=>(lightZone("zone_1"), setPanelOverlay(true))}>
                 {light_1_fb_BAR || light_2_fb_BAR || light_3_fb_BAR ? 
                 <>
-                  <p> Breakfast </p>
+                  <p> Bar </p>
                   <img className="light_icon_z1" id="lightZoneActive" src={lightOn} />  
                 </>
               :
                 <>
-                <p> Breakfast </p>
+                <p> Bar </p>
                 <img className="light_icon_z1" src={lightOff} />  
                 </>
                 }
@@ -2848,6 +2955,22 @@ const LightDashboard = () => {
               </button>
 
 
+              
+              <button className="btn_square" onClick={()=>( setPanelOverlay(true),  lightZone("zone_22"))}>   
+                {light_1_fb_bb_court? 
+                  <>
+                  <p>Basketball Court </p>
+                  <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
+                </> 
+                  :
+                  <>
+                  <p>Basketball Court </p>
+                  <img className="light_icon_z15" src={lightOff} />  
+                </> 
+                  }   
+              </button>
+
+
         
 
       </div>
@@ -2961,6 +3084,7 @@ const LightDashboard = () => {
   {zone_15? <p>Garage</p> : <></>}
 
   {zone_21? <p> Landscape</p> : <> </>}
+  {zone_22? <p> Basketball Court</p> : <> </>}
 
 
  </div>
@@ -2982,7 +3106,7 @@ const LightDashboard = () => {
   {zone_14? lightZone_MEDIA_ROOM : <></>}
   {zone_15? lightZone_GARAGE : <></>}
   {zone_21? lightZone_LANDSCAPE:<></>}
-
+  {zone_22? singleZone_basketball:<></>}
 </div>
 
 

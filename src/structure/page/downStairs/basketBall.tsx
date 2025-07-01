@@ -25,6 +25,8 @@ import { Link } from "react-router-dom"
     import increment from "../../../assets/images/icons/general/icons8-triangle-arrow.svg"
 
 
+    import lightOff from "../../../assets/images/icons/icons8-light-off.svg"
+import lightOn from "../../../assets/images/icons/icons8-light-on.svg"
 
     // fav icons 
 
@@ -41,7 +43,7 @@ import { Link } from "react-router-dom"
 
 import rewind      from "../../../assets/images/icons/icons8-replay.svg"
 import record      from "../../../assets/images/icons/icons8-record.svg"
-import returnArrow      from "../../../assets/images/icons/icons8-return-arrow.svg"
+import returnArrow from "../../../assets/images/icons/icons8-return-arrow.svg"
 import play        from "../../../assets/images/icons/icons8-play.svg"
 import skip        from "../../../assets/images/icons/icons8-fast-forward.svg"
 import pause       from "../../../assets/images/icons/icons8-pause.svg"
@@ -61,7 +63,8 @@ import stop        from "../../../assets/images/icons/icons8-stop.svg"
 
 const Main_1 = () => {
 
-
+    const [light_1_fb_bb_court, setLight_1_fb_bb_court] = useState(false)
+    const light_1_join_bb_court = "369";
     
     
     const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
@@ -160,6 +163,8 @@ const Main_1 = () => {
     useEffect(() => {
 
 
+        const sub_light_1_basketball = window.CrComLib.subscribeState("b", light_1_join_bb_court, (value:boolean) => setLight_1_fb_bb_court(value))
+
         const dtv_audio   = window.CrComLib.subscribeState("b","1070",(value: boolean) => setDtv_audio(value))
         const music_audio = window.CrComLib.subscribeState("b","1071",(value: boolean) => setMusic_audio(value))
         const audio_mute  = window.CrComLib.subscribeState("b","1072",(value: boolean) => setAudio_mute(value))
@@ -194,6 +199,9 @@ const Main_1 = () => {
 
         return () => {
             quickCheck()
+
+            window.CrComLib.unsubscribeState("b", light_1_join_bb_court, sub_light_1_basketball);
+
 
             window.CrComLib.unsubscribeState("b","1039",Tv_One)
             window.CrComLib.unsubscribeState("b","1045",Tv_Two)
@@ -1519,6 +1527,16 @@ const Main_1 = () => {
 
                         <img onTouchEnd={toggleModal} src={power_button}   />      
             </button>  
+
+
+
+            <button  className="home_button" style={{borderRadius:"30px", width:"5rem", zIndex:"10",gridColumn:"11/12", gridRow:"11"}}onTouchEnd={() => {
+                window.CrComLib.publishEvent("b", light_1_join_bb_court, true);
+                window.CrComLib.publishEvent("b", light_1_join_bb_court, false);
+                }}>
+                    
+       <img  src={light_1_fb_bb_court ? lightOn : lightOff} />
+        </button>  
             
             <div className = "input_selection" >
                 <div className="dropdown_tv_selection">

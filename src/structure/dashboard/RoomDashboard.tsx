@@ -240,7 +240,7 @@ const RoomsDashboard = () => {
                 </div>
             </Link>
             
-           <Link to={`/guestbathroom`} className="room_card">    
+           <Link to={`/guestbathroom`} className={room16Active> 0?"room_card_active":"room_card"}>   
                 <div className="test">
                     <p className="room_name">Guest Bathroom</p>
     

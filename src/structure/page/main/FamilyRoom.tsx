@@ -178,7 +178,7 @@ const FamilyRoom = () =>{
     const [light_8, setLight_8] = useState(false)
     const [light_9, setLight_9] = useState(false)
 
-    console.log(roomVolume)
+  console.log(roomVolume)
     console.log(roomMute)
 
 
@@ -998,69 +998,69 @@ if(media1){
             <div className={tvOptions? "generic_media_container" : "media_off"} id="all_source_layout" >
                     <div className={active_media? "media_off":"room_sources_container"}>
                             
-                            <div className="source_card" id= {activeSource === 1 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media1')}>
+                            <button className="source_card" id= {activeSource === 1 ? 'active_source' : 'not_active'} onTouchStart={()=>playSource('media1')}>
                                 <div className="img_container">
                                     <img className="media_1_img" src={media_1_img}/>
                                 </div>
                             
                                 <p>{sub_title_1}</p>
-                            </div>
+                            </button>
 
-                            <div className="source_card" id= { activeSource === 2 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media2')}>
+                            <button className="source_card" id= { activeSource === 2 ? 'active_source' : 'not_active'} onTouchStart={()=>playSource('media2')}>
                                 <div className="img_container">
                                     <img className="media_2_img" src={media_2_img}/>
                                 </div>
 
                                 <p>{sub_title_2}</p>
-                            </div>
+                            </button>
 
-                            <div className="source_card" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media3')}>
+                            <button className="source_card" id= {activeSource === 5 ? 'active_source' : 'not_active'} onTouchStart={()=>playSource('media3')}>
                                 <div className="img_container">
                                     <img className="media_3_img" src={media_3_img}/>
                                 </div>
                                 <p>{sub_title_3}</p>
-                            </div>
+                            </button>
 
-                            <div className="source_card" id= {activeSource === 6 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media4')}>
+                            <button className="source_card" id= {activeSource === 6 ? 'active_source' : 'not_active'} onTouchStart={()=>playSource('media4')}>
                                 <div className="img_container">
                                     <img className="media_4_img" src={media_4_img}/>
                                 </div>
 
                                 <p>{sub_title_4}</p>
-                            </div>
+                            </button>
 
-                            <div className="source_card" id= {activeSource === 7 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media5')}>
+                            <button className="source_card" id= {activeSource === 7 ? 'active_source' : 'not_active'} onTouchStart={()=>playSource('media5')}>
                                 <div className="img_container">
                                     <img className="media_5_img" src={media_5_img}/>
                                 </div>
 
                                 <p>{sub_title_5}</p>
-                            </div>
+                            </button>
 
-                            <div className="source_card" id= {activeSource === 8 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media6')}>
+                            <button className="source_card" id= {activeSource === 8 ? 'active_source' : 'not_active'} onTouchStart={()=>playSource('media6')}>
                                 <div className="img_container">
                                     <img className="media_6_img" src={media_6_img}/>
                                 </div>
                             
                                 <p>{sub_title_6}</p>
-                            </div>
+                            </button>
 
-                            <div className="source_card" id ={activeSource === 9 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media7')}>
+                            <button className="source_card" id ={activeSource === 9 ? 'active_source' : 'not_active'} onTouchStart={()=>playSource('media7')}>
                                 <div className="img_container">
                                     <img className="media_7_img" src={media_7_img}/>
                                 </div>
                             
                                 <p>{sub_title_7}</p>
-                            </div>
+                            </button>
 
                             
-                            <div className="source_card" id ={activeSource === 10 ? 'active_source' : 'not_active'} onTouchEnd={()=>playSource('media8')}>
+                            <button className="source_card" id ={activeSource === 10 ? 'active_source' : 'not_active'} onTouchStart={()=>playSource('media8')}>
                                 <div className="img_container">
                                     <img className="media_8_img"  src={media_8_img}/>
                                 </div>
                             
                                 <p>{sub_title_8}</p>
-                            </div>
+                            </button>
                             
                         </div>
                     <div className={active_media? "controller_layout": "media_off"}>

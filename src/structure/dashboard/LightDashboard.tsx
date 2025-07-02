@@ -2621,8 +2621,8 @@ const singleZone_basketball =(<>
 
 
              <button className="btn_location_22" onTouchEnd={()=>(lightMenu("openMap1"),  lightZone("zone_22"))}>   
-               {light_1_fb_bb_court? 
-                 <img className="light_icon_z22" id="lightZoneActiveSpecial" src={lightOn} />  
+               {light_1_fb_bb_court || light_2_fb_bb_court? 
+                 <img className="light_icon_z22" id="lightZoneActive" src={lightOn} />  
                  :
                  <img className="light_icon_z22" src={lightOff} />  
                  }   
@@ -2957,16 +2957,16 @@ const singleZone_basketball =(<>
 
               
               <button className="btn_square" onClick={()=>( setPanelOverlay(true),  lightZone("zone_22"))}>   
-                {light_1_fb_bb_court? 
-                  <>
-                  <p>Basketball Court </p>
-                  <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
-                </> 
+                {light_1_fb_bb_court || light_2_fb_bb_court? 
+                    <>
+                    <p>Basketball Court </p>
+                    <img className="light_icon_z15" id="lightZoneActive" src={lightOn} />  
+                    </> 
                   :
-                  <>
-                  <p>Basketball Court </p>
-                  <img className="light_icon_z15" src={lightOff} />  
-                </> 
+                    <>
+                    <p>Basketball Court </p>
+                    <img className="light_icon_z15" src={lightOff} />  
+                    </> 
                   }   
               </button>
 

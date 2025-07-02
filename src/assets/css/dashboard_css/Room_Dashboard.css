@@ -12,13 +12,11 @@
     width: 100vw;  
     box-sizing: border-box; 
     padding: 1rem;
-
     z-index: 10;
-  
     position: relative;
-
     justify-items: center;
     align-items: center;
+
 }
 
 .title_info{
@@ -756,6 +754,9 @@
             
            
   }
+
+
+
 
 
 

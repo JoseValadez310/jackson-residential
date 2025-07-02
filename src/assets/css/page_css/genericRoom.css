@@ -22,8 +22,7 @@
 .media_off{
     display: none;    
 }
-    
-    
+
 
 
 /*
@@ -161,10 +160,11 @@
     backdrop-filter: blur(25px);
     box-shadow: -3px -3px 5px rgb(68, 67, 67), 1px 1px 5px rgb(0, 0, 0);
     position: relative;
-    z-index: 1;
+    z-index: 10;
     backdrop-filter: blur(25px);
-    
     animation: left-load 1s;
+    border: none;
+    cursor: pointer;
 
 }
     .source_card::before{

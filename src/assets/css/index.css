@@ -80,6 +80,9 @@
 .project_container{
   display: grid;
   overflow: hidden;
+  justify-items: center;
+  width: 100vw;
+  height: 100vh;
 }
  
  .imageApp{
@@ -912,3 +915,6 @@ x
 
 
      
+
+
+

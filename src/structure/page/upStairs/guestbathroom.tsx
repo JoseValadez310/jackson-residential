@@ -85,7 +85,7 @@ const FamilyRoom = () =>{
     let media_7:string
     let media_8:string
 
-    const roomLocation:string = "" // needs location
+    const roomLocation:string = "16" // needs location
 
     const sub_title_1 = "BluRay"
     const sub_title_2 = "Kaleidescape"
@@ -129,9 +129,9 @@ const FamilyRoom = () =>{
     const [roomMute, setRoomMute]     = useState(false)
     
     const audio_volume_join   = "" // needs
-    const audio_mute_join     = "" //
-    const audio_increase_join = "" //
-    const audio_decrease_join = "" //
+    const audio_mute_join     = "561" //
+    const audio_increase_join = "562" //
+    const audio_decrease_join = "560" //
 
 
 /*
@@ -770,12 +770,7 @@ if(media1){
                     setMedia5(false)
                     setMedia6(false)
                     setMedia7(false)
-                    setMedia8(false)        
-                    window.CrComLib.publishEvent("b","1",true)
-                    window.CrComLib.publishEvent("b","1",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,1)
-
-
+                    setMedia8(false)
                     break;
     
                 case 2:
@@ -786,10 +781,7 @@ if(media1){
                     setMedia5(false)
                     setMedia6(false)
                     setMedia7(false)
-                    setMedia8(false)          
-                    window.CrComLib.publishEvent("b","2",true)
-                    window.CrComLib.publishEvent("b","2",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,2)
+                    setMedia8(false)
                     break;
     
                 case 5:
@@ -801,9 +793,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","5",true)
-                    window.CrComLib.publishEvent("b","5",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,5)
                     break;
     
                 case 6:   
@@ -815,9 +804,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","6",true)
-                    window.CrComLib.publishEvent("b","6",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,6)
                     break;
     
                 case 7:
@@ -830,9 +816,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","7",true)
-                    window.CrComLib.publishEvent("b","7",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,7)
                     break;
     
                 case 8:
@@ -845,9 +828,6 @@ if(media1){
                     setMedia6(true)
                     setMedia7(false)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","8",true)
-                    window.CrComLib.publishEvent("b","8",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,8)
                     break;
     
                 case 9:
@@ -859,9 +839,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(true)
                     setMedia8(false)
-                    window.CrComLib.publishEvent("b","9",true)
-                    window.CrComLib.publishEvent("b","9",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,9)
                     break;
     
                 case 10:
@@ -873,9 +850,6 @@ if(media1){
                     setMedia6(false)
                     setMedia7(false)
                     setMedia8(true)
-                    window.CrComLib.publishEvent("b","10",true)
-                    window.CrComLib.publishEvent("b","10",false)
-                    window.CrComLib.publishEvent("n",`${roomLocation}`,10)
                     break;
             
                 default:
@@ -891,6 +865,10 @@ if(media1){
             }
     
         },[activeSource, trigger1])
+    
+
+
+       
     
       
        

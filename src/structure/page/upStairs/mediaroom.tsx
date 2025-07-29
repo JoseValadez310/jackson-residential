@@ -1659,8 +1659,7 @@ const sourceDisplay = (tvSelection:string) =>{
                <img className="btn_image"src={arrow}/>
            </button>
            
-          
-
+        
            <button className="btn_square_wide" onTouchEnd={()=> (window.CrComLib.publishEvent("b",audio_mute_join,true),window.CrComLib.publishEvent("b",audio_mute_join,false))}>
                {roomMute? 
                <>

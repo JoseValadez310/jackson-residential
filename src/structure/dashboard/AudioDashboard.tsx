@@ -392,6 +392,23 @@ const zone_name_23    = "Upper Pool Deck";
 
 
 
+
+
+const [zone24_vol, setZone24_vol] = useState(0);
+const [zone24_mute, setZone24_mute] = useState(false);
+
+const zone_24_location = '24' 
+const [zone_active_24,setZone_active_24] = useState(0) // souce FB if Zeo then off, otherwise its on
+//const [zone_active_12_ellen,setZone_active_13_ellen] = useState(0) //
+const zone_music_24_steve   = 11; // zone_9_music for steve
+
+const zone_decrease_24 = "592"; // zone_decrease
+const zone_mute_24    = "593"; // zone_mute
+const zone_increase_24 = "594"; // zone_increase
+const zone_name_24    = "Basketball Court";
+
+
+
     useEffect(() => {
 
 
@@ -420,6 +437,8 @@ const zone_name_23    = "Upper Pool Deck";
     const zone_21_active_fb_steve = window.CrComLib.subscribeState("n",zone_21_location,(value: number)=> setZone_active_21(value))
     const zone_22_active_fb_steve = window.CrComLib.subscribeState("n",zone_22_location,(value: number)=> setZone_active_22(value))
     const zone_23_active_fb_steve = window.CrComLib.subscribeState("n",zone_23_location,(value: number)=> setZone_active_23(value))
+    const zone_24_active_fb_steve = window.CrComLib.subscribeState("n",zone_24_location,(value: number)=> setZone_active_24(value))
+
 
 // Ellens dont worry about these just yet 
 //---------------------------------------------------------------------------------------------------------------------------------------------
@@ -453,6 +472,8 @@ const zone_name_23    = "Upper Pool Deck";
       const zone_21 = window.CrComLib.subscribeState("b", zone_mute_21, (value: boolean) => { setZone21_mute(value); });
       const zone_22 = window.CrComLib.subscribeState("b", zone_mute_22, (value: boolean) => { setZone22_mute(value); });
       const zone_23 = window.CrComLib.subscribeState("b", zone_mute_23, (value: boolean) => { setZone23_mute(value); });
+      const zone_24 = window.CrComLib.subscribeState("b", zone_mute_24, (value: boolean) => { setZone24_mute(value); });
+
 
 // --- Subscribe to Volume States for Zones 1-23 ---
       const zone_vol_1  = window.CrComLib.subscribeState("n", "100", (value: number) => { setZone1_vol(value); }); // skip
@@ -481,6 +502,7 @@ const zone_name_23    = "Upper Pool Deck";
       const zone_vol_21 = window.CrComLib.subscribeState("n", "120", (value: number) => { setZone21_vol(value); });
       const zone_vol_22 = window.CrComLib.subscribeState("n", "121", (value: number) => { setZone22_vol(value); });
       const zone_vol_23 = window.CrComLib.subscribeState("n", "122", (value: number) => { setZone23_vol(value); });
+      const zone_vol_24 = window.CrComLib.subscribeState("n", "123", (value: number) => { setZone24_vol(value); });
 
 
       const zone_music_state_1  = window.CrComLib.subscribeState("b", zone_music_1,  (value: boolean) => { setZone_music_1_state(value); });
@@ -517,6 +539,8 @@ const zone_name_23    = "Upper Pool Deck";
         window.CrComLib.unsubscribeState("n",zone_21_location,zone_21_active_fb_steve)
         window.CrComLib.unsubscribeState("n",zone_22_location,zone_22_active_fb_steve)
         window.CrComLib.unsubscribeState("n",zone_23_location,zone_23_active_fb_steve)
+        window.CrComLib.unsubscribeState("n",zone_24_location,zone_24_active_fb_steve)
+
 
         //Ellen feedback zones
      
@@ -547,6 +571,8 @@ const zone_name_23    = "Upper Pool Deck";
         window.CrComLib.unsubscribeState("b", zone_mute_21, zone_21);
         window.CrComLib.unsubscribeState("b", zone_mute_22, zone_22);
         window.CrComLib.unsubscribeState("b", zone_mute_23, zone_23);
+        window.CrComLib.unsubscribeState("b", zone_mute_24, zone_24);
+
       
         window.CrComLib.unsubscribeState("n", "100", zone_vol_1);
         window.CrComLib.unsubscribeState("n", "101", zone_vol_2);
@@ -573,6 +599,8 @@ const zone_name_23    = "Upper Pool Deck";
         window.CrComLib.unsubscribeState("n", "120", zone_vol_21); // Gym
         window.CrComLib.unsubscribeState("n", "121", zone_vol_22); // Breeze Way
         window.CrComLib.unsubscribeState("n", "122", zone_vol_23); // upper pool deck
+        window.CrComLib.unsubscribeState("n", "123", zone_vol_24); // Bb Court
+
   
 
         window.CrComLib.unsubscribeState("b", zone_music_1,  zone_music_state_1);
@@ -2154,6 +2182,93 @@ const zone_name_23    = "Upper Pool Deck";
           </div>
           </div>
 
+
+          <div id={zone_active_24 > 0 ? "active_btn" : "zone-24"} className='zone_container'>
+          <div className='zone_title'>
+          <p>{zone_name_24}</p>
+          </div>
+
+
+
+
+          <button className='zone_container_user_1'
+          id={zone_active_24 === 11 ? 'active_user' : " "}>
+          {zone_active_24 === 11 ?  
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_24_location, 0)}>
+          Turn Off Music
+          </p>
+          : 
+          <p onTouchEnd={() => ( lastRoom("BB Court"),window.CrComLib.publishEvent("n", zone_24_location, zone_music_24_steve))}>
+          Steve
+          </p>
+          }
+          </button>
+
+          <button className='zone_container_user_2'
+          id={zone_active_24 === 12 ? 'active_user' : " "}>
+          {zone_active_24 === 12 ?  
+          <p onTouchEnd={() => window.CrComLib.publishEvent("n", zone_24_location, 0)}>
+          Turn Off Music
+          </p>
+          : 
+          <p onTouchEnd={() =>  ( lastRoom("BB Court"),window.CrComLib.publishEvent("n", zone_24_location, 12))}>
+          Ellen
+          </p>
+          }
+          </button>
+
+          <div className='zone_controls'>
+          <button className="btn_circle"
+          onTouchEnd={() => (
+          window.CrComLib.publishEvent("b", zone_decrease_24, true),
+          window.CrComLib.publishEvent("b", zone_decrease_24, false),
+          console.log(zone_decrease_24)
+          )}>
+          <img className="btn_image" src={arrow} />
+          </button>
+
+          <button className="btn_square_wide"
+          onTouchEnd={() => (
+          window.CrComLib.publishEvent("b", zone_mute_24, true),
+          window.CrComLib.publishEvent("b", zone_mute_24, false),
+          console.log(zone_mute_24)
+          )}>
+          {zone24_mute ? (
+          <>
+          <img src={MuteIcon} className="volume_mute_btn" />
+          <p className="mute_btn_txt">Click to Unmute</p>
+          </>
+          ) : (
+          <>
+          <p className="volume_txt">{((zone24_vol / 65535) * 100).toFixed(0)}</p>
+          <p className="mute_btn_txt">Click to Mute</p>
+          </>
+          )}
+          </button>
+
+          <button className="btn_circle"
+          onTouchEnd={() => (
+          window.CrComLib.publishEvent("b", zone_increase_24, true),
+          window.CrComLib.publishEvent("b", zone_increase_24, false),
+          console.log(zone_increase_24)
+          )}>
+          <img className="btn_image" src={arrow} id="flip" />
+          </button>
+          </div>
+
+          <div className='power_on_off'>
+          {zone_active_24 === 11 ? (
+          <p>Steve is currnetly playing music.</p>
+          ) : zone_active_24 === 12 ? (
+          <p>Ellen is currnetly playing music.</p>
+          ) : zone_active_24 > 0 ? (
+          <p>A user is currently watching TV in this Zone</p>
+          ) : (
+          <p>System Off</p>
+          )}
+          </div>
+          </div>
+
           
 
 
@@ -2473,11 +2588,12 @@ const zone_name_23    = "Upper Pool Deck";
       } else if(roomId === "poolPatio"){
         setRoomLocation('14')
         setLocationTitle("Pool Patio")
-      } else (
-        lastRoom(controllerStarter)
-      )
-
-
+      } else if(roomId === "BB Court"){
+      setRoomLocation('24')
+      setLocationTitle("Basketball Court")
+    } else (
+      lastRoom(controllerStarter)
+    )
 
 
       if(currentZoneActivity === 11 || currentZoneActivity === 12 ){
@@ -3165,6 +3281,39 @@ const zone_name_23    = "Upper Pool Deck";
         </button>
 
         <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_19, true), window.CrComLib.publishEvent("b", zone_increase_19, false))}>
+          <img className="btn_image" src={arrow} id="flip" />
+        </button>
+      </div>
+
+    </div>
+      )
+   
+
+  }  else if(roomId === "BB Court" && audioControl){
+    quickAudioController =(
+    
+      <div className='quickAudioControls'>
+          
+      <div className='zone_controls'>
+        <button className="btn_circle" id='decrease' onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_decrease_24, true), window.CrComLib.publishEvent("b", zone_decrease_24, false), console.log("test down BB Court"))}>
+          <img className="btn_image" src={arrow} />
+        </button>
+
+        <button className="btn_square_wide" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_mute_24, true), window.CrComLib.publishEvent("b", zone_mute_24, false) , console.log("test Mute BB Court"))}>
+          {zone24_mute ? (
+            <>
+              <img src={MuteIcon} className="volume_mute_btn" />
+              <p className="mute_btn_txt">Click to Unmute</p>
+            </>
+          ) : (
+            <>
+              <p className="volume_txt">{ ((zone24_vol/65535) * 100).toFixed(0)}</p>
+              <p className="mute_btn_txt">Click to Mute</p>
+            </>
+          )}
+        </button>
+
+        <button className="btn_circle" id="increase" onTouchEnd={() => (window.CrComLib.publishEvent("b", zone_increase_24, true), window.CrComLib.publishEvent("b", zone_increase_24, false) , console.log("test up BB Court"))}>
           <img className="btn_image" src={arrow} id="flip" />
         </button>
       </div>

@@ -66,6 +66,8 @@ const Main_1 = () => {
     const [light_1_fb_bb_court, setLight_1_fb_bb_court] = useState(false)
     const light_1_join_bb_court = "369";
     
+
+    const light_2_join_bb_court = "370";
     
     const [screenSize, setScreenSize] = useState({ width: window.innerWidth, height: window.innerHeight });
     
@@ -1530,12 +1532,14 @@ const Main_1 = () => {
 
 
 
-            <button  className="home_button" style={{borderRadius:"30px", width:"5rem", zIndex:"10",gridColumn:"11/12", gridRow:"11"}}onTouchEnd={() => {
-                window.CrComLib.publishEvent("b", light_1_join_bb_court, true);
-                window.CrComLib.publishEvent("b", light_1_join_bb_court, false);
-                }}>
+        <button  className="home_button" style={{borderRadius:"30px", width:"5rem", zIndex:"10",gridColumn:"11/12", gridRow:"11"}} onTouchEnd={() => {
+            window.CrComLib.publishEvent("b", light_1_join_bb_court, true);
+            window.CrComLib.publishEvent("b", light_2_join_bb_court, true);
+            window.CrComLib.publishEvent("b", light_1_join_bb_court, false);
+            window.CrComLib.publishEvent("b", light_2_join_bb_court, false);
+            }}>
                     
-       <img  src={light_1_fb_bb_court ? lightOn : lightOff} />
+                <img  src={light_1_fb_bb_court ? lightOn : lightOff} />
         </button>  
             
             <div className = "input_selection" >
@@ -1966,7 +1970,7 @@ const Main_1 = () => {
         
             </div>
 
-            <button className="cards_in_dtv" id={music_audio? "active_audio_dtv" : "audio_dtv"} onTouchEnd={()=>switchAudio("music")} >
+            <Link to={"/AudioDashboard"} state={{roomId:"BB Court", lastLoc:"BB Court" }} style={{zIndex:"10"}} className="cards_in_dtv" id={music_audio? "active_audio_dtv" : "audio_dtv"} onTouchEnd={()=>switchAudio("music")} >
     
                 <div className="dtv_audio_card_title">
                     <p className="tile_name">Music</p>
@@ -1976,7 +1980,7 @@ const Main_1 = () => {
                     <img src={audio} className="tile_image" alt="icon" />
                 </div>
 
-            </button>
+            </Link>
 
             
 
@@ -2732,7 +2736,7 @@ const mobileController = (
 
     </div>
 
-    <button className="cards_in_dtv" id={music_audio? "active_audio_dtv" : "audio_dtv"} onTouchEnd={()=>switchAudio("music")} >
+    <Link to={"/AudioDashboard"} state={{roomId:"BB Court", lastLoc:"BB Court" }} style={{zIndex:"10"}} className="cards_in_dtv" id={music_audio? "active_audio_dtv" : "audio_dtv"}  >
 
         <div className="dtv_audio_card_title">
             <p className="tile_name">Music</p>
@@ -2742,7 +2746,7 @@ const mobileController = (
             <img src={audio} className="tile_image" alt="icon" />
         </div>
 
-    </button>
+    </Link>
 
 </div>
                 

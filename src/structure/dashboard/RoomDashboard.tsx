@@ -619,7 +619,7 @@ const RoomsDashboard = () => {
             <div className="nav">
                     <button className={ location1? "btn_selected" : 'btn_not_selected'}  onTouchEnd={()=> changeRooms('1')}> <p> Up Stairs   </p> </button>
                     <button className={ location2? "btn_selected" : 'btn_not_selected'}  onTouchEnd={()=> changeRooms('2')}> <p> Main        </p> </button>
-                    <button className={ location3? "btn_selected" : 'btn_not_selected'}  onTouchEnd={()=> changeRooms('3')}> <p> Down Stairs </p> </button>
+                    <button className={ location3? "btn_selected" : 'btn_not_selected'}  onTouchEnd={()=> changeRooms('3')}> <p style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}> <p style={{fontSize:"14px"}}>Arcade</p>  <p style={{fontSize:"13.25px"}}>BB Court</p>  </p> </button>
                     <button className={ location4? "btn_selected" : 'btn_not_selected'}  onTouchEnd={()=> changeRooms('4')}> <p> Out Doors   </p> </button>
                   
             </div>  
